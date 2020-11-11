@@ -64,7 +64,7 @@ defmodule ZitadelApi.MixProject do
   defp deps do
     [
       {:google_protos, "~> 0.1.0"},
-      {:grpc, github: "elixir-grpc/grpc"},
+      {:grpc, "~> 0.5.0-beta.1"},
       {:ex_doc, "~> 0.19", only: :dev, runtime: false},
       {:excoveralls, "~> 0.5", only: [:test], runtime: false},
       {:dialyxir, "~> 1.0", only: [:dev], runtime: false},
