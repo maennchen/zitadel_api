@@ -3,7 +3,7 @@ defmodule ZitadelApi.MixProject do
 
   use Mix.Project
 
-  @version "1.0.0-beta.2"
+  @version "1.0.0-beta.3"
 
   def project do
     [
