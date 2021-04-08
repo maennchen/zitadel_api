@@ -9,6 +9,6 @@ defmodule Caos.Zitadel.ManagementTest do
   test "works" do
     assert {:ok, channel} = GRPC.Stub.connect("api.zitadel.ch:443", cred: %{ssl: []})
 
-    assert {:error, %GRPC.RPCError{status: 2}} = ManagementStub.ready(channel, Empty.new())
+    assert {:ok, %Empty{}} = ManagementStub.healthz(channel, Empty.new())
   end
 end
