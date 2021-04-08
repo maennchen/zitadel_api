@@ -1,4 +1,4 @@
-defmodule Caos.Zitadel.Api.V1.ErrorDetail do
+defmodule Zitadel.V1.ErrorDetail do
   @moduledoc false
 
   use Protobuf, syntax: :proto3
@@ -24,7 +24,7 @@ defmodule Caos.Zitadel.Api.V1.ErrorDetail do
   field(:message, 2, type: :string)
 end
 
-defmodule Caos.Zitadel.Api.V1.LocalizedMessage do
+defmodule Zitadel.V1.LocalizedMessage do
   @moduledoc false
 
   use Protobuf, syntax: :proto3

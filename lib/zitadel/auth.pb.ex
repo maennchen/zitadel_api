@@ -1,0 +1,2343 @@
+defmodule Zitadel.Auth.V1.HealthzRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type t :: %__MODULE__{}
+
+  defstruct []
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 14, 72, 101, 97, 108, 116, 104, 122, 82, 101, 113, 117, 101, 115, 116>>
+    )
+  end
+end
+
+defmodule Zitadel.Auth.V1.HealthzResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type t :: %__MODULE__{}
+
+  defstruct []
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 15, 72, 101, 97, 108, 116, 104, 122, 82, 101, 115, 112, 111, 110, 115, 101>>
+    )
+  end
+end
+
+defmodule Zitadel.Auth.V1.GetMyUserRequest do
+  @moduledoc """
+  GetMyUserRequest is an empty request
+  the request parameters are read from the token-header
+  """
+
+  use Protobuf, syntax: :proto3
+  @type t :: %__MODULE__{}
+
+  defstruct []
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 16, 71, 101, 116, 77, 121, 85, 115, 101, 114, 82, 101, 113, 117, 101, 115, 116>>
+    )
+  end
+end
+
+defmodule Zitadel.Auth.V1.GetMyUserResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type user :: Zitadel.User.V1.User.t() | nil
+  @type last_login :: Google.Protobuf.Timestamp.t() | nil
+  @type t :: %__MODULE__{
+          user: user(),
+          last_login: last_login()
+        }
+
+  defstruct [:user, :last_login]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 17, 71, 101, 116, 77, 121, 85, 115, 101, 114, 82, 101, 115, 112, 111, 110, 115, 101,
+        18, 41, 10, 4, 117, 115, 101, 114, 24, 1, 32, 1, 40, 11, 50, 21, 46, 122, 105, 116, 97,
+        100, 101, 108, 46, 117, 115, 101, 114, 46, 118, 49, 46, 85, 115, 101, 114, 82, 4, 117,
+        115, 101, 114, 18, 65, 10, 10, 108, 97, 115, 116, 95, 108, 111, 103, 105, 110, 24, 2, 32,
+        1, 40, 11, 50, 26, 46, 103, 111, 111, 103, 108, 101, 46, 112, 114, 111, 116, 111, 98, 117,
+        102, 46, 84, 105, 109, 101, 115, 116, 97, 109, 112, 66, 6, 24, 0, 40, 0, 80, 0, 82, 9,
+        108, 97, 115, 116, 76, 111, 103, 105, 110>>
+    )
+  end
+
+  field(:user, 1, type: Zitadel.User.V1.User)
+  field(:last_login, 2, type: Google.Protobuf.Timestamp, json_name: "lastLogin")
+end
+
+defmodule Zitadel.Auth.V1.ListMyUserChangesRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type query :: Zitadel.Change.V1.ChangeQuery.t() | nil
+  @type t :: %__MODULE__{
+          query: query()
+        }
+
+  defstruct [:query]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 24, 76, 105, 115, 116, 77, 121, 85, 115, 101, 114, 67, 104, 97, 110, 103, 101, 115,
+        82, 101, 113, 117, 101, 115, 116, 18, 52, 10, 5, 113, 117, 101, 114, 121, 24, 1, 32, 1,
+        40, 11, 50, 30, 46, 122, 105, 116, 97, 100, 101, 108, 46, 99, 104, 97, 110, 103, 101, 46,
+        118, 49, 46, 67, 104, 97, 110, 103, 101, 81, 117, 101, 114, 121, 82, 5, 113, 117, 101,
+        114, 121>>
+    )
+  end
+
+  field(:query, 1, type: Zitadel.Change.V1.ChangeQuery)
+end
+
+defmodule Zitadel.Auth.V1.ListMyUserChangesResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ListDetails.t() | nil
+  @type result :: [Zitadel.Change.V1.Change.t()]
+  @type t :: %__MODULE__{
+          details: details(),
+          result: result()
+        }
+
+  defstruct [:details, :result]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 25, 76, 105, 115, 116, 77, 121, 85, 115, 101, 114, 67, 104, 97, 110, 103, 101, 115,
+        82, 101, 115, 112, 111, 110, 115, 101, 18, 49, 10, 7, 100, 101, 116, 97, 105, 108, 115,
+        24, 1, 32, 1, 40, 11, 50, 23, 46, 122, 105, 116, 97, 100, 101, 108, 46, 118, 49, 46, 76,
+        105, 115, 116, 68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101, 116, 97, 105, 108, 115,
+        18, 49, 10, 6, 114, 101, 115, 117, 108, 116, 24, 2, 32, 3, 40, 11, 50, 25, 46, 122, 105,
+        116, 97, 100, 101, 108, 46, 99, 104, 97, 110, 103, 101, 46, 118, 49, 46, 67, 104, 97, 110,
+        103, 101, 82, 6, 114, 101, 115, 117, 108, 116>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ListDetails)
+  field(:result, 2, repeated: true, type: Zitadel.Change.V1.Change)
+end
+
+defmodule Zitadel.Auth.V1.ListMyUserSessionsRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type t :: %__MODULE__{}
+
+  defstruct []
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 25, 76, 105, 115, 116, 77, 121, 85, 115, 101, 114, 83, 101, 115, 115, 105, 111, 110,
+        115, 82, 101, 113, 117, 101, 115, 116>>
+    )
+  end
+end
+
+defmodule Zitadel.Auth.V1.ListMyUserSessionsResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type result :: [Zitadel.User.V1.Session.t()]
+  @type t :: %__MODULE__{
+          result: result()
+        }
+
+  defstruct [:result]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 26, 76, 105, 115, 116, 77, 121, 85, 115, 101, 114, 83, 101, 115, 115, 105, 111, 110,
+        115, 82, 101, 115, 112, 111, 110, 115, 101, 18, 48, 10, 6, 114, 101, 115, 117, 108, 116,
+        24, 1, 32, 3, 40, 11, 50, 24, 46, 122, 105, 116, 97, 100, 101, 108, 46, 117, 115, 101,
+        114, 46, 118, 49, 46, 83, 101, 115, 115, 105, 111, 110, 82, 6, 114, 101, 115, 117, 108,
+        116>>
+    )
+  end
+
+  field(:result, 1, repeated: true, type: Zitadel.User.V1.Session)
+end
+
+defmodule Zitadel.Auth.V1.UpdateMyUserNameRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type user_name :: String.t()
+  @type t :: %__MODULE__{
+          user_name: user_name()
+        }
+
+  defstruct [:user_name]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 23, 85, 112, 100, 97, 116, 101, 77, 121, 85, 115, 101, 114, 78, 97, 109, 101, 82, 101,
+        113, 117, 101, 115, 116, 18, 35, 10, 9, 117, 115, 101, 114, 95, 110, 97, 109, 101, 24, 1,
+        32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 8, 117, 115, 101, 114, 78, 97, 109, 101>>
+    )
+  end
+
+  field(:user_name, 1, type: :string, json_name: "userName")
+end
+
+defmodule Zitadel.Auth.V1.UpdateMyUserNameResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          details: details()
+        }
+
+  defstruct [:details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 24, 85, 112, 100, 97, 116, 101, 77, 121, 85, 115, 101, 114, 78, 97, 109, 101, 82, 101,
+        115, 112, 111, 110, 115, 101, 18, 51, 10, 7, 100, 101, 116, 97, 105, 108, 115, 24, 1, 32,
+        1, 40, 11, 50, 25, 46, 122, 105, 116, 97, 100, 101, 108, 46, 118, 49, 46, 79, 98, 106,
+        101, 99, 116, 68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101, 116, 97, 105, 108, 115>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Auth.V1.GetMyPasswordComplexityPolicyRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type t :: %__MODULE__{}
+
+  defstruct []
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode("\n$GetMyPasswordComplexityPolicyRequest")
+  end
+end
+
+defmodule Zitadel.Auth.V1.GetMyPasswordComplexityPolicyResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type policy :: Zitadel.Policy.V1.PasswordComplexityPolicy.t() | nil
+  @type t :: %__MODULE__{
+          policy: policy()
+        }
+
+  defstruct [:policy]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 37, 71, 101, 116, 77, 121, 80, 97, 115, 115, 119, 111, 114, 100, 67, 111, 109, 112,
+        108, 101, 120, 105, 116, 121, 80, 111, 108, 105, 99, 121, 82, 101, 115, 112, 111, 110,
+        115, 101, 18, 67, 10, 6, 112, 111, 108, 105, 99, 121, 24, 1, 32, 1, 40, 11, 50, 43, 46,
+        122, 105, 116, 97, 100, 101, 108, 46, 112, 111, 108, 105, 99, 121, 46, 118, 49, 46, 80,
+        97, 115, 115, 119, 111, 114, 100, 67, 111, 109, 112, 108, 101, 120, 105, 116, 121, 80,
+        111, 108, 105, 99, 121, 82, 6, 112, 111, 108, 105, 99, 121>>
+    )
+  end
+
+  field(:policy, 1, type: Zitadel.Policy.V1.PasswordComplexityPolicy)
+end
+
+defmodule Zitadel.Auth.V1.UpdateMyPasswordRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type old_password :: String.t()
+  @type new_password :: String.t()
+  @type t :: %__MODULE__{
+          old_password: old_password(),
+          new_password: new_password()
+        }
+
+  defstruct [:old_password, :new_password]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 23, 85, 112, 100, 97, 116, 101, 77, 121, 80, 97, 115, 115, 119, 111, 114, 100, 82,
+        101, 113, 117, 101, 115, 116, 18, 41, 10, 12, 111, 108, 100, 95, 112, 97, 115, 115, 119,
+        111, 114, 100, 24, 1, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 11, 111, 108, 100, 80,
+        97, 115, 115, 119, 111, 114, 100, 18, 41, 10, 12, 110, 101, 119, 95, 112, 97, 115, 115,
+        119, 111, 114, 100, 24, 2, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 11, 110, 101,
+        119, 80, 97, 115, 115, 119, 111, 114, 100>>
+    )
+  end
+
+  field(:old_password, 1, type: :string, json_name: "oldPassword")
+  field(:new_password, 2, type: :string, json_name: "newPassword")
+end
+
+defmodule Zitadel.Auth.V1.UpdateMyPasswordResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          details: details()
+        }
+
+  defstruct [:details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 24, 85, 112, 100, 97, 116, 101, 77, 121, 80, 97, 115, 115, 119, 111, 114, 100, 82,
+        101, 115, 112, 111, 110, 115, 101, 18, 51, 10, 7, 100, 101, 116, 97, 105, 108, 115, 24, 1,
+        32, 1, 40, 11, 50, 25, 46, 122, 105, 116, 97, 100, 101, 108, 46, 118, 49, 46, 79, 98, 106,
+        101, 99, 116, 68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101, 116, 97, 105, 108, 115>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Auth.V1.GetMyProfileRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type t :: %__MODULE__{}
+
+  defstruct []
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 19, 71, 101, 116, 77, 121, 80, 114, 111, 102, 105, 108, 101, 82, 101, 113, 117, 101,
+        115, 116>>
+    )
+  end
+end
+
+defmodule Zitadel.Auth.V1.GetMyProfileResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type profile :: Zitadel.User.V1.Profile.t() | nil
+  @type t :: %__MODULE__{
+          details: details(),
+          profile: profile()
+        }
+
+  defstruct [:details, :profile]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 20, 71, 101, 116, 77, 121, 80, 114, 111, 102, 105, 108, 101, 82, 101, 115, 112, 111,
+        110, 115, 101, 18, 51, 10, 7, 100, 101, 116, 97, 105, 108, 115, 24, 1, 32, 1, 40, 11, 50,
+        25, 46, 122, 105, 116, 97, 100, 101, 108, 46, 118, 49, 46, 79, 98, 106, 101, 99, 116, 68,
+        101, 116, 97, 105, 108, 115, 82, 7, 100, 101, 116, 97, 105, 108, 115, 18, 50, 10, 7, 112,
+        114, 111, 102, 105, 108, 101, 24, 2, 32, 1, 40, 11, 50, 24, 46, 122, 105, 116, 97, 100,
+        101, 108, 46, 117, 115, 101, 114, 46, 118, 49, 46, 80, 114, 111, 102, 105, 108, 101, 82,
+        7, 112, 114, 111, 102, 105, 108, 101>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+  field(:profile, 2, type: Zitadel.User.V1.Profile)
+end
+
+defmodule Zitadel.Auth.V1.UpdateMyProfileRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type first_name :: String.t()
+  @type last_name :: String.t()
+  @type nick_name :: String.t()
+  @type display_name :: String.t()
+  @type preferred_language :: String.t()
+  @type gender :: Zitadel.User.V1.Gender.t()
+  @type t :: %__MODULE__{
+          first_name: first_name(),
+          last_name: last_name(),
+          nick_name: nick_name(),
+          display_name: display_name(),
+          preferred_language: preferred_language(),
+          gender: gender()
+        }
+
+  defstruct [:first_name, :last_name, :nick_name, :display_name, :preferred_language, :gender]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 22, 85, 112, 100, 97, 116, 101, 77, 121, 80, 114, 111, 102, 105, 108, 101, 82, 101,
+        113, 117, 101, 115, 116, 18, 37, 10, 10, 102, 105, 114, 115, 116, 95, 110, 97, 109, 101,
+        24, 1, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 9, 102, 105, 114, 115, 116, 78, 97,
+        109, 101, 18, 35, 10, 9, 108, 97, 115, 116, 95, 110, 97, 109, 101, 24, 2, 32, 1, 40, 9,
+        66, 6, 24, 0, 40, 0, 80, 0, 82, 8, 108, 97, 115, 116, 78, 97, 109, 101, 18, 35, 10, 9,
+        110, 105, 99, 107, 95, 110, 97, 109, 101, 24, 3, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0,
+        82, 8, 110, 105, 99, 107, 78, 97, 109, 101, 18, 41, 10, 12, 100, 105, 115, 112, 108, 97,
+        121, 95, 110, 97, 109, 101, 24, 4, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 11, 100,
+        105, 115, 112, 108, 97, 121, 78, 97, 109, 101, 18, 53, 10, 18, 112, 114, 101, 102, 101,
+        114, 114, 101, 100, 95, 108, 97, 110, 103, 117, 97, 103, 101, 24, 5, 32, 1, 40, 9, 66, 6,
+        24, 0, 40, 0, 80, 0, 82, 17, 112, 114, 101, 102, 101, 114, 114, 101, 100, 76, 97, 110,
+        103, 117, 97, 103, 101, 18, 47, 10, 6, 103, 101, 110, 100, 101, 114, 24, 6, 32, 1, 40, 14,
+        50, 23, 46, 122, 105, 116, 97, 100, 101, 108, 46, 117, 115, 101, 114, 46, 118, 49, 46, 71,
+        101, 110, 100, 101, 114, 82, 6, 103, 101, 110, 100, 101, 114>>
+    )
+  end
+
+  field(:first_name, 1, type: :string, json_name: "firstName")
+  field(:last_name, 2, type: :string, json_name: "lastName")
+  field(:nick_name, 3, type: :string, json_name: "nickName")
+  field(:display_name, 4, type: :string, json_name: "displayName")
+  field(:preferred_language, 5, type: :string, json_name: "preferredLanguage")
+  field(:gender, 6, type: Zitadel.User.V1.Gender, enum: true)
+end
+
+defmodule Zitadel.Auth.V1.UpdateMyProfileResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          details: details()
+        }
+
+  defstruct [:details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 23, 85, 112, 100, 97, 116, 101, 77, 121, 80, 114, 111, 102, 105, 108, 101, 82, 101,
+        115, 112, 111, 110, 115, 101, 18, 51, 10, 7, 100, 101, 116, 97, 105, 108, 115, 24, 1, 32,
+        1, 40, 11, 50, 25, 46, 122, 105, 116, 97, 100, 101, 108, 46, 118, 49, 46, 79, 98, 106,
+        101, 99, 116, 68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101, 116, 97, 105, 108, 115>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Auth.V1.GetMyEmailRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type t :: %__MODULE__{}
+
+  defstruct []
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 17, 71, 101, 116, 77, 121, 69, 109, 97, 105, 108, 82, 101, 113, 117, 101, 115, 116>>
+    )
+  end
+end
+
+defmodule Zitadel.Auth.V1.GetMyEmailResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type email :: Zitadel.User.V1.Email.t() | nil
+  @type t :: %__MODULE__{
+          details: details(),
+          email: email()
+        }
+
+  defstruct [:details, :email]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 18, 71, 101, 116, 77, 121, 69, 109, 97, 105, 108, 82, 101, 115, 112, 111, 110, 115,
+        101, 18, 51, 10, 7, 100, 101, 116, 97, 105, 108, 115, 24, 1, 32, 1, 40, 11, 50, 25, 46,
+        122, 105, 116, 97, 100, 101, 108, 46, 118, 49, 46, 79, 98, 106, 101, 99, 116, 68, 101,
+        116, 97, 105, 108, 115, 82, 7, 100, 101, 116, 97, 105, 108, 115, 18, 44, 10, 5, 101, 109,
+        97, 105, 108, 24, 2, 32, 1, 40, 11, 50, 22, 46, 122, 105, 116, 97, 100, 101, 108, 46, 117,
+        115, 101, 114, 46, 118, 49, 46, 69, 109, 97, 105, 108, 82, 5, 101, 109, 97, 105, 108>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+  field(:email, 2, type: Zitadel.User.V1.Email)
+end
+
+defmodule Zitadel.Auth.V1.SetMyEmailRequest do
+  use Protobuf, syntax: :proto3
+
+  @typedoc """
+  TODO: check if no value is allowed
+  """
+  @type email :: String.t()
+
+  @type t :: %__MODULE__{
+          email: email()
+        }
+
+  defstruct [:email]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 17, 83, 101, 116, 77, 121, 69, 109, 97, 105, 108, 82, 101, 113, 117, 101, 115, 116,
+        18, 28, 10, 5, 101, 109, 97, 105, 108, 24, 1, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0,
+        82, 5, 101, 109, 97, 105, 108>>
+    )
+  end
+
+  field(:email, 1, type: :string)
+end
+
+defmodule Zitadel.Auth.V1.SetMyEmailResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          details: details()
+        }
+
+  defstruct [:details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 18, 83, 101, 116, 77, 121, 69, 109, 97, 105, 108, 82, 101, 115, 112, 111, 110, 115,
+        101, 18, 51, 10, 7, 100, 101, 116, 97, 105, 108, 115, 24, 1, 32, 1, 40, 11, 50, 25, 46,
+        122, 105, 116, 97, 100, 101, 108, 46, 118, 49, 46, 79, 98, 106, 101, 99, 116, 68, 101,
+        116, 97, 105, 108, 115, 82, 7, 100, 101, 116, 97, 105, 108, 115>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Auth.V1.VerifyMyEmailRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type code :: String.t()
+  @type t :: %__MODULE__{
+          code: code()
+        }
+
+  defstruct [:code]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 20, 86, 101, 114, 105, 102, 121, 77, 121, 69, 109, 97, 105, 108, 82, 101, 113, 117,
+        101, 115, 116, 18, 26, 10, 4, 99, 111, 100, 101, 24, 1, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0,
+        80, 0, 82, 4, 99, 111, 100, 101>>
+    )
+  end
+
+  field(:code, 1, type: :string)
+end
+
+defmodule Zitadel.Auth.V1.VerifyMyEmailResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          details: details()
+        }
+
+  defstruct [:details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 21, 86, 101, 114, 105, 102, 121, 77, 121, 69, 109, 97, 105, 108, 82, 101, 115, 112,
+        111, 110, 115, 101, 18, 51, 10, 7, 100, 101, 116, 97, 105, 108, 115, 24, 1, 32, 1, 40, 11,
+        50, 25, 46, 122, 105, 116, 97, 100, 101, 108, 46, 118, 49, 46, 79, 98, 106, 101, 99, 116,
+        68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101, 116, 97, 105, 108, 115>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Auth.V1.ResendMyEmailVerificationRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type t :: %__MODULE__{}
+
+  defstruct []
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode("\n ResendMyEmailVerificationRequest")
+  end
+end
+
+defmodule Zitadel.Auth.V1.ResendMyEmailVerificationResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          details: details()
+        }
+
+  defstruct [:details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 33, 82, 101, 115, 101, 110, 100, 77, 121, 69, 109, 97, 105, 108, 86, 101, 114, 105,
+        102, 105, 99, 97, 116, 105, 111, 110, 82, 101, 115, 112, 111, 110, 115, 101, 18, 51, 10,
+        7, 100, 101, 116, 97, 105, 108, 115, 24, 1, 32, 1, 40, 11, 50, 25, 46, 122, 105, 116, 97,
+        100, 101, 108, 46, 118, 49, 46, 79, 98, 106, 101, 99, 116, 68, 101, 116, 97, 105, 108,
+        115, 82, 7, 100, 101, 116, 97, 105, 108, 115>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Auth.V1.GetMyPhoneRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type t :: %__MODULE__{}
+
+  defstruct []
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 17, 71, 101, 116, 77, 121, 80, 104, 111, 110, 101, 82, 101, 113, 117, 101, 115, 116>>
+    )
+  end
+end
+
+defmodule Zitadel.Auth.V1.GetMyPhoneResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type phone :: Zitadel.User.V1.Phone.t() | nil
+  @type t :: %__MODULE__{
+          details: details(),
+          phone: phone()
+        }
+
+  defstruct [:details, :phone]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 18, 71, 101, 116, 77, 121, 80, 104, 111, 110, 101, 82, 101, 115, 112, 111, 110, 115,
+        101, 18, 51, 10, 7, 100, 101, 116, 97, 105, 108, 115, 24, 1, 32, 1, 40, 11, 50, 25, 46,
+        122, 105, 116, 97, 100, 101, 108, 46, 118, 49, 46, 79, 98, 106, 101, 99, 116, 68, 101,
+        116, 97, 105, 108, 115, 82, 7, 100, 101, 116, 97, 105, 108, 115, 18, 44, 10, 5, 112, 104,
+        111, 110, 101, 24, 2, 32, 1, 40, 11, 50, 22, 46, 122, 105, 116, 97, 100, 101, 108, 46,
+        117, 115, 101, 114, 46, 118, 49, 46, 80, 104, 111, 110, 101, 82, 5, 112, 104, 111, 110,
+        101>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+  field(:phone, 2, type: Zitadel.User.V1.Phone)
+end
+
+defmodule Zitadel.Auth.V1.SetMyPhoneRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type phone :: String.t()
+  @type t :: %__MODULE__{
+          phone: phone()
+        }
+
+  defstruct [:phone]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 17, 83, 101, 116, 77, 121, 80, 104, 111, 110, 101, 82, 101, 113, 117, 101, 115, 116,
+        18, 28, 10, 5, 112, 104, 111, 110, 101, 24, 1, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0,
+        82, 5, 112, 104, 111, 110, 101>>
+    )
+  end
+
+  field(:phone, 1, type: :string)
+end
+
+defmodule Zitadel.Auth.V1.SetMyPhoneResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          details: details()
+        }
+
+  defstruct [:details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 18, 83, 101, 116, 77, 121, 80, 104, 111, 110, 101, 82, 101, 115, 112, 111, 110, 115,
+        101, 18, 51, 10, 7, 100, 101, 116, 97, 105, 108, 115, 24, 1, 32, 1, 40, 11, 50, 25, 46,
+        122, 105, 116, 97, 100, 101, 108, 46, 118, 49, 46, 79, 98, 106, 101, 99, 116, 68, 101,
+        116, 97, 105, 108, 115, 82, 7, 100, 101, 116, 97, 105, 108, 115>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Auth.V1.VerifyMyPhoneRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type code :: String.t()
+  @type t :: %__MODULE__{
+          code: code()
+        }
+
+  defstruct [:code]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 20, 86, 101, 114, 105, 102, 121, 77, 121, 80, 104, 111, 110, 101, 82, 101, 113, 117,
+        101, 115, 116, 18, 26, 10, 4, 99, 111, 100, 101, 24, 1, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0,
+        80, 0, 82, 4, 99, 111, 100, 101>>
+    )
+  end
+
+  field(:code, 1, type: :string)
+end
+
+defmodule Zitadel.Auth.V1.VerifyMyPhoneResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          details: details()
+        }
+
+  defstruct [:details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 21, 86, 101, 114, 105, 102, 121, 77, 121, 80, 104, 111, 110, 101, 82, 101, 115, 112,
+        111, 110, 115, 101, 18, 51, 10, 7, 100, 101, 116, 97, 105, 108, 115, 24, 1, 32, 1, 40, 11,
+        50, 25, 46, 122, 105, 116, 97, 100, 101, 108, 46, 118, 49, 46, 79, 98, 106, 101, 99, 116,
+        68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101, 116, 97, 105, 108, 115>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Auth.V1.ResendMyPhoneVerificationRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type t :: %__MODULE__{}
+
+  defstruct []
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode("\n ResendMyPhoneVerificationRequest")
+  end
+end
+
+defmodule Zitadel.Auth.V1.ResendMyPhoneVerificationResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          details: details()
+        }
+
+  defstruct [:details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 33, 82, 101, 115, 101, 110, 100, 77, 121, 80, 104, 111, 110, 101, 86, 101, 114, 105,
+        102, 105, 99, 97, 116, 105, 111, 110, 82, 101, 115, 112, 111, 110, 115, 101, 18, 51, 10,
+        7, 100, 101, 116, 97, 105, 108, 115, 24, 1, 32, 1, 40, 11, 50, 25, 46, 122, 105, 116, 97,
+        100, 101, 108, 46, 118, 49, 46, 79, 98, 106, 101, 99, 116, 68, 101, 116, 97, 105, 108,
+        115, 82, 7, 100, 101, 116, 97, 105, 108, 115>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Auth.V1.RemoveMyPhoneRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type t :: %__MODULE__{}
+
+  defstruct []
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 20, 82, 101, 109, 111, 118, 101, 77, 121, 80, 104, 111, 110, 101, 82, 101, 113, 117,
+        101, 115, 116>>
+    )
+  end
+end
+
+defmodule Zitadel.Auth.V1.RemoveMyPhoneResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          details: details()
+        }
+
+  defstruct [:details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 21, 82, 101, 109, 111, 118, 101, 77, 121, 80, 104, 111, 110, 101, 82, 101, 115, 112,
+        111, 110, 115, 101, 18, 51, 10, 7, 100, 101, 116, 97, 105, 108, 115, 24, 1, 32, 1, 40, 11,
+        50, 25, 46, 122, 105, 116, 97, 100, 101, 108, 46, 118, 49, 46, 79, 98, 106, 101, 99, 116,
+        68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101, 116, 97, 105, 108, 115>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Auth.V1.ListMyLinkedIDPsRequest do
+  use Protobuf, syntax: :proto3
+
+  @typedoc """
+  list limitations and ordering
+
+  PLANNED: queries for idp name and login name
+  """
+  @type query :: Zitadel.V1.ListQuery.t() | nil
+
+  @type t :: %__MODULE__{
+          query: query()
+        }
+
+  defstruct [:query]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 23, 76, 105, 115, 116, 77, 121, 76, 105, 110, 107, 101, 100, 73, 68, 80, 115, 82, 101,
+        113, 117, 101, 115, 116, 18, 43, 10, 5, 113, 117, 101, 114, 121, 24, 1, 32, 1, 40, 11, 50,
+        21, 46, 122, 105, 116, 97, 100, 101, 108, 46, 118, 49, 46, 76, 105, 115, 116, 81, 117,
+        101, 114, 121, 82, 5, 113, 117, 101, 114, 121>>
+    )
+  end
+
+  field(:query, 1, type: Zitadel.V1.ListQuery)
+end
+
+defmodule Zitadel.Auth.V1.ListMyLinkedIDPsResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ListDetails.t() | nil
+  @type result :: [Zitadel.Idp.V1.IDPUserLink.t()]
+  @type t :: %__MODULE__{
+          details: details(),
+          result: result()
+        }
+
+  defstruct [:details, :result]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 24, 76, 105, 115, 116, 77, 121, 76, 105, 110, 107, 101, 100, 73, 68, 80, 115, 82, 101,
+        115, 112, 111, 110, 115, 101, 18, 49, 10, 7, 100, 101, 116, 97, 105, 108, 115, 24, 1, 32,
+        1, 40, 11, 50, 23, 46, 122, 105, 116, 97, 100, 101, 108, 46, 118, 49, 46, 76, 105, 115,
+        116, 68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101, 116, 97, 105, 108, 115, 18, 51, 10,
+        6, 114, 101, 115, 117, 108, 116, 24, 2, 32, 3, 40, 11, 50, 27, 46, 122, 105, 116, 97, 100,
+        101, 108, 46, 105, 100, 112, 46, 118, 49, 46, 73, 68, 80, 85, 115, 101, 114, 76, 105, 110,
+        107, 82, 6, 114, 101, 115, 117, 108, 116>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ListDetails)
+  field(:result, 2, repeated: true, type: Zitadel.Idp.V1.IDPUserLink)
+end
+
+defmodule Zitadel.Auth.V1.RemoveMyLinkedIDPRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type idp_id :: String.t()
+  @type linked_user_id :: String.t()
+  @type t :: %__MODULE__{
+          idp_id: idp_id(),
+          linked_user_id: linked_user_id()
+        }
+
+  defstruct [:idp_id, :linked_user_id]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 24, 82, 101, 109, 111, 118, 101, 77, 121, 76, 105, 110, 107, 101, 100, 73, 68, 80, 82,
+        101, 113, 117, 101, 115, 116, 18, 29, 10, 6, 105, 100, 112, 95, 105, 100, 24, 1, 32, 1,
+        40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 5, 105, 100, 112, 73, 100, 18, 44, 10, 14, 108,
+        105, 110, 107, 101, 100, 95, 117, 115, 101, 114, 95, 105, 100, 24, 2, 32, 1, 40, 9, 66, 6,
+        24, 0, 40, 0, 80, 0, 82, 12, 108, 105, 110, 107, 101, 100, 85, 115, 101, 114, 73, 100>>
+    )
+  end
+
+  field(:idp_id, 1, type: :string, json_name: "idpId")
+  field(:linked_user_id, 2, type: :string, json_name: "linkedUserId")
+end
+
+defmodule Zitadel.Auth.V1.RemoveMyLinkedIDPResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          details: details()
+        }
+
+  defstruct [:details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 25, 82, 101, 109, 111, 118, 101, 77, 121, 76, 105, 110, 107, 101, 100, 73, 68, 80, 82,
+        101, 115, 112, 111, 110, 115, 101, 18, 51, 10, 7, 100, 101, 116, 97, 105, 108, 115, 24, 1,
+        32, 1, 40, 11, 50, 25, 46, 122, 105, 116, 97, 100, 101, 108, 46, 118, 49, 46, 79, 98, 106,
+        101, 99, 116, 68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101, 116, 97, 105, 108, 115>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Auth.V1.ListMyAuthFactorsRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type t :: %__MODULE__{}
+
+  defstruct []
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 24, 76, 105, 115, 116, 77, 121, 65, 117, 116, 104, 70, 97, 99, 116, 111, 114, 115, 82,
+        101, 113, 117, 101, 115, 116>>
+    )
+  end
+end
+
+defmodule Zitadel.Auth.V1.ListMyAuthFactorsResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type result :: [Zitadel.User.V1.AuthFactor.t()]
+  @type t :: %__MODULE__{
+          result: result()
+        }
+
+  defstruct [:result]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 25, 76, 105, 115, 116, 77, 121, 65, 117, 116, 104, 70, 97, 99, 116, 111, 114, 115, 82,
+        101, 115, 112, 111, 110, 115, 101, 18, 51, 10, 6, 114, 101, 115, 117, 108, 116, 24, 1, 32,
+        3, 40, 11, 50, 27, 46, 122, 105, 116, 97, 100, 101, 108, 46, 117, 115, 101, 114, 46, 118,
+        49, 46, 65, 117, 116, 104, 70, 97, 99, 116, 111, 114, 82, 6, 114, 101, 115, 117, 108,
+        116>>
+    )
+  end
+
+  field(:result, 1, repeated: true, type: Zitadel.User.V1.AuthFactor)
+end
+
+defmodule Zitadel.Auth.V1.AddMyAuthFactorU2FRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type t :: %__MODULE__{}
+
+  defstruct []
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 25, 65, 100, 100, 77, 121, 65, 117, 116, 104, 70, 97, 99, 116, 111, 114, 85, 50, 70,
+        82, 101, 113, 117, 101, 115, 116>>
+    )
+  end
+end
+
+defmodule Zitadel.Auth.V1.AddMyAuthFactorU2FResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type key :: Zitadel.User.V1.WebAuthNKey.t() | nil
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          key: key(),
+          details: details()
+        }
+
+  defstruct [:key, :details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 26, 65, 100, 100, 77, 121, 65, 117, 116, 104, 70, 97, 99, 116, 111, 114, 85, 50, 70,
+        82, 101, 115, 112, 111, 110, 115, 101, 18, 46, 10, 3, 107, 101, 121, 24, 1, 32, 1, 40, 11,
+        50, 28, 46, 122, 105, 116, 97, 100, 101, 108, 46, 117, 115, 101, 114, 46, 118, 49, 46, 87,
+        101, 98, 65, 117, 116, 104, 78, 75, 101, 121, 82, 3, 107, 101, 121, 18, 51, 10, 7, 100,
+        101, 116, 97, 105, 108, 115, 24, 2, 32, 1, 40, 11, 50, 25, 46, 122, 105, 116, 97, 100,
+        101, 108, 46, 118, 49, 46, 79, 98, 106, 101, 99, 116, 68, 101, 116, 97, 105, 108, 115, 82,
+        7, 100, 101, 116, 97, 105, 108, 115>>
+    )
+  end
+
+  field(:key, 1, type: Zitadel.User.V1.WebAuthNKey)
+  field(:details, 2, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Auth.V1.AddMyAuthFactorOTPRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type t :: %__MODULE__{}
+
+  defstruct []
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 25, 65, 100, 100, 77, 121, 65, 117, 116, 104, 70, 97, 99, 116, 111, 114, 79, 84, 80,
+        82, 101, 113, 117, 101, 115, 116>>
+    )
+  end
+end
+
+defmodule Zitadel.Auth.V1.AddMyAuthFactorOTPResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type url :: String.t()
+  @type secret :: String.t()
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          url: url(),
+          secret: secret(),
+          details: details()
+        }
+
+  defstruct [:url, :secret, :details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 26, 65, 100, 100, 77, 121, 65, 117, 116, 104, 70, 97, 99, 116, 111, 114, 79, 84, 80,
+        82, 101, 115, 112, 111, 110, 115, 101, 18, 16, 10, 3, 117, 114, 108, 24, 1, 32, 1, 40, 9,
+        82, 3, 117, 114, 108, 18, 22, 10, 6, 115, 101, 99, 114, 101, 116, 24, 2, 32, 1, 40, 9, 82,
+        6, 115, 101, 99, 114, 101, 116, 18, 51, 10, 7, 100, 101, 116, 97, 105, 108, 115, 24, 3,
+        32, 1, 40, 11, 50, 25, 46, 122, 105, 116, 97, 100, 101, 108, 46, 118, 49, 46, 79, 98, 106,
+        101, 99, 116, 68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101, 116, 97, 105, 108, 115>>
+    )
+  end
+
+  field(:url, 1, type: :string)
+  field(:secret, 2, type: :string)
+  field(:details, 3, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Auth.V1.VerifyMyAuthFactorOTPRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type code :: String.t()
+  @type t :: %__MODULE__{
+          code: code()
+        }
+
+  defstruct [:code]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 28, 86, 101, 114, 105, 102, 121, 77, 121, 65, 117, 116, 104, 70, 97, 99, 116, 111,
+        114, 79, 84, 80, 82, 101, 113, 117, 101, 115, 116, 18, 26, 10, 4, 99, 111, 100, 101, 24,
+        1, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 4, 99, 111, 100, 101>>
+    )
+  end
+
+  field(:code, 1, type: :string)
+end
+
+defmodule Zitadel.Auth.V1.VerifyMyAuthFactorOTPResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          details: details()
+        }
+
+  defstruct [:details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 29, 86, 101, 114, 105, 102, 121, 77, 121, 65, 117, 116, 104, 70, 97, 99, 116, 111,
+        114, 79, 84, 80, 82, 101, 115, 112, 111, 110, 115, 101, 18, 51, 10, 7, 100, 101, 116, 97,
+        105, 108, 115, 24, 1, 32, 1, 40, 11, 50, 25, 46, 122, 105, 116, 97, 100, 101, 108, 46,
+        118, 49, 46, 79, 98, 106, 101, 99, 116, 68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101,
+        116, 97, 105, 108, 115>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Auth.V1.VerifyMyAuthFactorU2FRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type verification :: Zitadel.User.V1.WebAuthNVerification.t() | nil
+  @type t :: %__MODULE__{
+          verification: verification()
+        }
+
+  defstruct [:verification]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 28, 86, 101, 114, 105, 102, 121, 77, 121, 65, 117, 116, 104, 70, 97, 99, 116, 111,
+        114, 85, 50, 70, 82, 101, 113, 117, 101, 115, 116, 18, 81, 10, 12, 118, 101, 114, 105,
+        102, 105, 99, 97, 116, 105, 111, 110, 24, 1, 32, 1, 40, 11, 50, 37, 46, 122, 105, 116, 97,
+        100, 101, 108, 46, 117, 115, 101, 114, 46, 118, 49, 46, 87, 101, 98, 65, 117, 116, 104,
+        78, 86, 101, 114, 105, 102, 105, 99, 97, 116, 105, 111, 110, 66, 6, 24, 0, 40, 0, 80, 0,
+        82, 12, 118, 101, 114, 105, 102, 105, 99, 97, 116, 105, 111, 110>>
+    )
+  end
+
+  field(:verification, 1, type: Zitadel.User.V1.WebAuthNVerification)
+end
+
+defmodule Zitadel.Auth.V1.VerifyMyAuthFactorU2FResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          details: details()
+        }
+
+  defstruct [:details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 29, 86, 101, 114, 105, 102, 121, 77, 121, 65, 117, 116, 104, 70, 97, 99, 116, 111,
+        114, 85, 50, 70, 82, 101, 115, 112, 111, 110, 115, 101, 18, 51, 10, 7, 100, 101, 116, 97,
+        105, 108, 115, 24, 1, 32, 1, 40, 11, 50, 25, 46, 122, 105, 116, 97, 100, 101, 108, 46,
+        118, 49, 46, 79, 98, 106, 101, 99, 116, 68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101,
+        116, 97, 105, 108, 115>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Auth.V1.RemoveMyAuthFactorOTPRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type t :: %__MODULE__{}
+
+  defstruct []
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 28, 82, 101, 109, 111, 118, 101, 77, 121, 65, 117, 116, 104, 70, 97, 99, 116, 111,
+        114, 79, 84, 80, 82, 101, 113, 117, 101, 115, 116>>
+    )
+  end
+end
+
+defmodule Zitadel.Auth.V1.RemoveMyAuthFactorOTPResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          details: details()
+        }
+
+  defstruct [:details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 29, 82, 101, 109, 111, 118, 101, 77, 121, 65, 117, 116, 104, 70, 97, 99, 116, 111,
+        114, 79, 84, 80, 82, 101, 115, 112, 111, 110, 115, 101, 18, 51, 10, 7, 100, 101, 116, 97,
+        105, 108, 115, 24, 1, 32, 1, 40, 11, 50, 25, 46, 122, 105, 116, 97, 100, 101, 108, 46,
+        118, 49, 46, 79, 98, 106, 101, 99, 116, 68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101,
+        116, 97, 105, 108, 115>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Auth.V1.RemoveMyAuthFactorU2FRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type token_id :: String.t()
+  @type t :: %__MODULE__{
+          token_id: token_id()
+        }
+
+  defstruct [:token_id]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 28, 82, 101, 109, 111, 118, 101, 77, 121, 65, 117, 116, 104, 70, 97, 99, 116, 111,
+        114, 85, 50, 70, 82, 101, 113, 117, 101, 115, 116, 18, 33, 10, 8, 116, 111, 107, 101, 110,
+        95, 105, 100, 24, 1, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 7, 116, 111, 107, 101,
+        110, 73, 100>>
+    )
+  end
+
+  field(:token_id, 1, type: :string, json_name: "tokenId")
+end
+
+defmodule Zitadel.Auth.V1.RemoveMyAuthFactorU2FResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          details: details()
+        }
+
+  defstruct [:details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 29, 82, 101, 109, 111, 118, 101, 77, 121, 65, 117, 116, 104, 70, 97, 99, 116, 111,
+        114, 85, 50, 70, 82, 101, 115, 112, 111, 110, 115, 101, 18, 51, 10, 7, 100, 101, 116, 97,
+        105, 108, 115, 24, 1, 32, 1, 40, 11, 50, 25, 46, 122, 105, 116, 97, 100, 101, 108, 46,
+        118, 49, 46, 79, 98, 106, 101, 99, 116, 68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101,
+        116, 97, 105, 108, 115>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Auth.V1.ListMyPasswordlessRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type t :: %__MODULE__{}
+
+  defstruct []
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 25, 76, 105, 115, 116, 77, 121, 80, 97, 115, 115, 119, 111, 114, 100, 108, 101, 115,
+        115, 82, 101, 113, 117, 101, 115, 116>>
+    )
+  end
+end
+
+defmodule Zitadel.Auth.V1.ListMyPasswordlessResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type result :: [Zitadel.User.V1.WebAuthNToken.t()]
+  @type t :: %__MODULE__{
+          result: result()
+        }
+
+  defstruct [:result]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 26, 76, 105, 115, 116, 77, 121, 80, 97, 115, 115, 119, 111, 114, 100, 108, 101, 115,
+        115, 82, 101, 115, 112, 111, 110, 115, 101, 18, 54, 10, 6, 114, 101, 115, 117, 108, 116,
+        24, 1, 32, 3, 40, 11, 50, 30, 46, 122, 105, 116, 97, 100, 101, 108, 46, 117, 115, 101,
+        114, 46, 118, 49, 46, 87, 101, 98, 65, 117, 116, 104, 78, 84, 111, 107, 101, 110, 82, 6,
+        114, 101, 115, 117, 108, 116>>
+    )
+  end
+
+  field(:result, 1, repeated: true, type: Zitadel.User.V1.WebAuthNToken)
+end
+
+defmodule Zitadel.Auth.V1.AddMyPasswordlessRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type t :: %__MODULE__{}
+
+  defstruct []
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 24, 65, 100, 100, 77, 121, 80, 97, 115, 115, 119, 111, 114, 100, 108, 101, 115, 115,
+        82, 101, 113, 117, 101, 115, 116>>
+    )
+  end
+end
+
+defmodule Zitadel.Auth.V1.AddMyPasswordlessResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type key :: Zitadel.User.V1.WebAuthNKey.t() | nil
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          key: key(),
+          details: details()
+        }
+
+  defstruct [:key, :details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 25, 65, 100, 100, 77, 121, 80, 97, 115, 115, 119, 111, 114, 100, 108, 101, 115, 115,
+        82, 101, 115, 112, 111, 110, 115, 101, 18, 46, 10, 3, 107, 101, 121, 24, 1, 32, 1, 40, 11,
+        50, 28, 46, 122, 105, 116, 97, 100, 101, 108, 46, 117, 115, 101, 114, 46, 118, 49, 46, 87,
+        101, 98, 65, 117, 116, 104, 78, 75, 101, 121, 82, 3, 107, 101, 121, 18, 51, 10, 7, 100,
+        101, 116, 97, 105, 108, 115, 24, 2, 32, 1, 40, 11, 50, 25, 46, 122, 105, 116, 97, 100,
+        101, 108, 46, 118, 49, 46, 79, 98, 106, 101, 99, 116, 68, 101, 116, 97, 105, 108, 115, 82,
+        7, 100, 101, 116, 97, 105, 108, 115>>
+    )
+  end
+
+  field(:key, 1, type: Zitadel.User.V1.WebAuthNKey)
+  field(:details, 2, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Auth.V1.VerifyMyPasswordlessRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type verification :: Zitadel.User.V1.WebAuthNVerification.t() | nil
+  @type t :: %__MODULE__{
+          verification: verification()
+        }
+
+  defstruct [:verification]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 27, 86, 101, 114, 105, 102, 121, 77, 121, 80, 97, 115, 115, 119, 111, 114, 100, 108,
+        101, 115, 115, 82, 101, 113, 117, 101, 115, 116, 18, 81, 10, 12, 118, 101, 114, 105, 102,
+        105, 99, 97, 116, 105, 111, 110, 24, 1, 32, 1, 40, 11, 50, 37, 46, 122, 105, 116, 97, 100,
+        101, 108, 46, 117, 115, 101, 114, 46, 118, 49, 46, 87, 101, 98, 65, 117, 116, 104, 78, 86,
+        101, 114, 105, 102, 105, 99, 97, 116, 105, 111, 110, 66, 6, 24, 0, 40, 0, 80, 0, 82, 12,
+        118, 101, 114, 105, 102, 105, 99, 97, 116, 105, 111, 110>>
+    )
+  end
+
+  field(:verification, 1, type: Zitadel.User.V1.WebAuthNVerification)
+end
+
+defmodule Zitadel.Auth.V1.VerifyMyPasswordlessResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          details: details()
+        }
+
+  defstruct [:details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 28, 86, 101, 114, 105, 102, 121, 77, 121, 80, 97, 115, 115, 119, 111, 114, 100, 108,
+        101, 115, 115, 82, 101, 115, 112, 111, 110, 115, 101, 18, 51, 10, 7, 100, 101, 116, 97,
+        105, 108, 115, 24, 1, 32, 1, 40, 11, 50, 25, 46, 122, 105, 116, 97, 100, 101, 108, 46,
+        118, 49, 46, 79, 98, 106, 101, 99, 116, 68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101,
+        116, 97, 105, 108, 115>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Auth.V1.RemoveMyPasswordlessRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type token_id :: String.t()
+  @type t :: %__MODULE__{
+          token_id: token_id()
+        }
+
+  defstruct [:token_id]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 27, 82, 101, 109, 111, 118, 101, 77, 121, 80, 97, 115, 115, 119, 111, 114, 100, 108,
+        101, 115, 115, 82, 101, 113, 117, 101, 115, 116, 18, 33, 10, 8, 116, 111, 107, 101, 110,
+        95, 105, 100, 24, 1, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 7, 116, 111, 107, 101,
+        110, 73, 100>>
+    )
+  end
+
+  field(:token_id, 1, type: :string, json_name: "tokenId")
+end
+
+defmodule Zitadel.Auth.V1.RemoveMyPasswordlessResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          details: details()
+        }
+
+  defstruct [:details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 28, 82, 101, 109, 111, 118, 101, 77, 121, 80, 97, 115, 115, 119, 111, 114, 100, 108,
+        101, 115, 115, 82, 101, 115, 112, 111, 110, 115, 101, 18, 51, 10, 7, 100, 101, 116, 97,
+        105, 108, 115, 24, 1, 32, 1, 40, 11, 50, 25, 46, 122, 105, 116, 97, 100, 101, 108, 46,
+        118, 49, 46, 79, 98, 106, 101, 99, 116, 68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101,
+        116, 97, 105, 108, 115>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Auth.V1.ListMyUserGrantsRequest do
+  use Protobuf, syntax: :proto3
+
+  @typedoc """
+  list limitations and ordering
+  """
+  @type query :: Zitadel.V1.ListQuery.t() | nil
+
+  @type t :: %__MODULE__{
+          query: query()
+        }
+
+  defstruct [:query]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 23, 76, 105, 115, 116, 77, 121, 85, 115, 101, 114, 71, 114, 97, 110, 116, 115, 82,
+        101, 113, 117, 101, 115, 116, 18, 43, 10, 5, 113, 117, 101, 114, 121, 24, 1, 32, 1, 40,
+        11, 50, 21, 46, 122, 105, 116, 97, 100, 101, 108, 46, 118, 49, 46, 76, 105, 115, 116, 81,
+        117, 101, 114, 121, 82, 5, 113, 117, 101, 114, 121>>
+    )
+  end
+
+  field(:query, 1, type: Zitadel.V1.ListQuery)
+end
+
+defmodule Zitadel.Auth.V1.ListMyUserGrantsResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ListDetails.t() | nil
+  @type result :: [Zitadel.Auth.V1.UserGrant.t()]
+  @type t :: %__MODULE__{
+          details: details(),
+          result: result()
+        }
+
+  defstruct [:details, :result]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 24, 76, 105, 115, 116, 77, 121, 85, 115, 101, 114, 71, 114, 97, 110, 116, 115, 82,
+        101, 115, 112, 111, 110, 115, 101, 18, 49, 10, 7, 100, 101, 116, 97, 105, 108, 115, 24, 1,
+        32, 1, 40, 11, 50, 23, 46, 122, 105, 116, 97, 100, 101, 108, 46, 118, 49, 46, 76, 105,
+        115, 116, 68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101, 116, 97, 105, 108, 115, 18,
+        50, 10, 6, 114, 101, 115, 117, 108, 116, 24, 2, 32, 3, 40, 11, 50, 26, 46, 122, 105, 116,
+        97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 85, 115, 101, 114, 71, 114, 97,
+        110, 116, 82, 6, 114, 101, 115, 117, 108, 116>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ListDetails)
+  field(:result, 2, repeated: true, type: Zitadel.Auth.V1.UserGrant)
+end
+
+defmodule Zitadel.Auth.V1.UserGrant do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type org_id :: String.t()
+  @type project_id :: String.t()
+  @type user_id :: String.t()
+  @type roles :: [String.t()]
+  @type org_name :: String.t()
+  @type grant_id :: String.t()
+  @type t :: %__MODULE__{
+          org_id: org_id(),
+          project_id: project_id(),
+          user_id: user_id(),
+          roles: roles(),
+          org_name: org_name(),
+          grant_id: grant_id()
+        }
+
+  defstruct [:org_id, :project_id, :user_id, :roles, :org_name, :grant_id]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 9, 85, 115, 101, 114, 71, 114, 97, 110, 116, 18, 21, 10, 6, 111, 114, 103, 95, 105,
+        100, 24, 1, 32, 1, 40, 9, 82, 5, 111, 114, 103, 73, 100, 18, 29, 10, 10, 112, 114, 111,
+        106, 101, 99, 116, 95, 105, 100, 24, 2, 32, 1, 40, 9, 82, 9, 112, 114, 111, 106, 101, 99,
+        116, 73, 100, 18, 23, 10, 7, 117, 115, 101, 114, 95, 105, 100, 24, 3, 32, 1, 40, 9, 82, 6,
+        117, 115, 101, 114, 73, 100, 18, 20, 10, 5, 114, 111, 108, 101, 115, 24, 4, 32, 3, 40, 9,
+        82, 5, 114, 111, 108, 101, 115, 18, 25, 10, 8, 111, 114, 103, 95, 110, 97, 109, 101, 24,
+        5, 32, 1, 40, 9, 82, 7, 111, 114, 103, 78, 97, 109, 101, 18, 25, 10, 8, 103, 114, 97, 110,
+        116, 95, 105, 100, 24, 6, 32, 1, 40, 9, 82, 7, 103, 114, 97, 110, 116, 73, 100>>
+    )
+  end
+
+  field(:org_id, 1, type: :string, json_name: "orgId")
+  field(:project_id, 2, type: :string, json_name: "projectId")
+  field(:user_id, 3, type: :string, json_name: "userId")
+  field(:roles, 4, repeated: true, type: :string)
+  field(:org_name, 5, type: :string, json_name: "orgName")
+  field(:grant_id, 6, type: :string, json_name: "grantId")
+end
+
+defmodule Zitadel.Auth.V1.ListMyProjectOrgsRequest do
+  use Protobuf, syntax: :proto3
+
+  @typedoc """
+  list limitations and ordering
+  """
+  @type query :: Zitadel.V1.ListQuery.t() | nil
+
+  @typedoc """
+  criterias the client is looking for
+  """
+  @type queries :: [Zitadel.Org.V1.OrgQuery.t()]
+
+  @type t :: %__MODULE__{
+          query: query(),
+          queries: queries()
+        }
+
+  defstruct [:query, :queries]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 24, 76, 105, 115, 116, 77, 121, 80, 114, 111, 106, 101, 99, 116, 79, 114, 103, 115,
+        82, 101, 113, 117, 101, 115, 116, 18, 43, 10, 5, 113, 117, 101, 114, 121, 24, 1, 32, 1,
+        40, 11, 50, 21, 46, 122, 105, 116, 97, 100, 101, 108, 46, 118, 49, 46, 76, 105, 115, 116,
+        81, 117, 101, 114, 121, 82, 5, 113, 117, 101, 114, 121, 18, 50, 10, 7, 113, 117, 101, 114,
+        105, 101, 115, 24, 2, 32, 3, 40, 11, 50, 24, 46, 122, 105, 116, 97, 100, 101, 108, 46,
+        111, 114, 103, 46, 118, 49, 46, 79, 114, 103, 81, 117, 101, 114, 121, 82, 7, 113, 117,
+        101, 114, 105, 101, 115>>
+    )
+  end
+
+  field(:query, 1, type: Zitadel.V1.ListQuery)
+  field(:queries, 2, repeated: true, type: Zitadel.Org.V1.OrgQuery)
+end
+
+defmodule Zitadel.Auth.V1.ListMyProjectOrgsResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ListDetails.t() | nil
+  @type result :: [Zitadel.Org.V1.Org.t()]
+  @type t :: %__MODULE__{
+          details: details(),
+          result: result()
+        }
+
+  defstruct [:details, :result]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 25, 76, 105, 115, 116, 77, 121, 80, 114, 111, 106, 101, 99, 116, 79, 114, 103, 115,
+        82, 101, 115, 112, 111, 110, 115, 101, 18, 49, 10, 7, 100, 101, 116, 97, 105, 108, 115,
+        24, 1, 32, 1, 40, 11, 50, 23, 46, 122, 105, 116, 97, 100, 101, 108, 46, 118, 49, 46, 76,
+        105, 115, 116, 68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101, 116, 97, 105, 108, 115,
+        18, 43, 10, 6, 114, 101, 115, 117, 108, 116, 24, 2, 32, 3, 40, 11, 50, 19, 46, 122, 105,
+        116, 97, 100, 101, 108, 46, 111, 114, 103, 46, 118, 49, 46, 79, 114, 103, 82, 6, 114, 101,
+        115, 117, 108, 116>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ListDetails)
+  field(:result, 2, repeated: true, type: Zitadel.Org.V1.Org)
+end
+
+defmodule Zitadel.Auth.V1.ListMyZitadelFeaturesRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type t :: %__MODULE__{}
+
+  defstruct []
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 28, 76, 105, 115, 116, 77, 121, 90, 105, 116, 97, 100, 101, 108, 70, 101, 97, 116,
+        117, 114, 101, 115, 82, 101, 113, 117, 101, 115, 116>>
+    )
+  end
+end
+
+defmodule Zitadel.Auth.V1.ListMyZitadelFeaturesResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type result :: [String.t()]
+  @type t :: %__MODULE__{
+          result: result()
+        }
+
+  defstruct [:result]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 29, 76, 105, 115, 116, 77, 121, 90, 105, 116, 97, 100, 101, 108, 70, 101, 97, 116,
+        117, 114, 101, 115, 82, 101, 115, 112, 111, 110, 115, 101, 18, 22, 10, 6, 114, 101, 115,
+        117, 108, 116, 24, 1, 32, 3, 40, 9, 82, 6, 114, 101, 115, 117, 108, 116>>
+    )
+  end
+
+  field(:result, 1, repeated: true, type: :string)
+end
+
+defmodule Zitadel.Auth.V1.ListMyZitadelPermissionsRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type t :: %__MODULE__{}
+
+  defstruct []
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 31, 76, 105, 115, 116, 77, 121, 90, 105, 116, 97, 100, 101, 108, 80, 101, 114, 109,
+        105, 115, 115, 105, 111, 110, 115, 82, 101, 113, 117, 101, 115, 116>>
+    )
+  end
+end
+
+defmodule Zitadel.Auth.V1.ListMyZitadelPermissionsResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type result :: [String.t()]
+  @type t :: %__MODULE__{
+          result: result()
+        }
+
+  defstruct [:result]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 32, 76, 105, 115, 116, 77, 121, 90, 105, 116, 97, 100, 101, 108, 80, 101, 114, 109,
+        105, 115, 115, 105, 111, 110, 115, 82, 101, 115, 112, 111, 110, 115, 101, 18, 22, 10, 6,
+        114, 101, 115, 117, 108, 116, 24, 1, 32, 3, 40, 9, 82, 6, 114, 101, 115, 117, 108, 116>>
+    )
+  end
+
+  field(:result, 1, repeated: true, type: :string)
+end
+
+defmodule Zitadel.Auth.V1.ListMyProjectPermissionsRequest do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type t :: %__MODULE__{}
+
+  defstruct []
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 31, 76, 105, 115, 116, 77, 121, 80, 114, 111, 106, 101, 99, 116, 80, 101, 114, 109,
+        105, 115, 115, 105, 111, 110, 115, 82, 101, 113, 117, 101, 115, 116>>
+    )
+  end
+end
+
+defmodule Zitadel.Auth.V1.ListMyProjectPermissionsResponse do
+  @moduledoc false
+
+  use Protobuf, syntax: :proto3
+  @type result :: [String.t()]
+  @type t :: %__MODULE__{
+          result: result()
+        }
+
+  defstruct [:result]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 32, 76, 105, 115, 116, 77, 121, 80, 114, 111, 106, 101, 99, 116, 80, 101, 114, 109,
+        105, 115, 115, 105, 111, 110, 115, 82, 101, 115, 112, 111, 110, 115, 101, 18, 22, 10, 6,
+        114, 101, 115, 117, 108, 116, 24, 1, 32, 3, 40, 9, 82, 6, 114, 101, 115, 117, 108, 116>>
+    )
+  end
+
+  field(:result, 1, repeated: true, type: :string)
+end
+
+defmodule Zitadel.Auth.V1.AuthService.Service do
+  @moduledoc false
+  use GRPC.Service, name: "zitadel.auth.v1.AuthService"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.ServiceDescriptorProto.decode(
+      <<10, 11, 65, 117, 116, 104, 83, 101, 114, 118, 105, 99, 101, 18, 85, 10, 7, 72, 101, 97,
+        108, 116, 104, 122, 18, 31, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104,
+        46, 118, 49, 46, 72, 101, 97, 108, 116, 104, 122, 82, 101, 113, 117, 101, 115, 116, 26,
+        32, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 72, 101,
+        97, 108, 116, 104, 122, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0,
+        48, 0, 18, 91, 10, 9, 71, 101, 116, 77, 121, 85, 115, 101, 114, 18, 33, 46, 122, 105, 116,
+        97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 71, 101, 116, 77, 121, 85, 115,
+        101, 114, 82, 101, 113, 117, 101, 115, 116, 26, 34, 46, 122, 105, 116, 97, 100, 101, 108,
+        46, 97, 117, 116, 104, 46, 118, 49, 46, 71, 101, 116, 77, 121, 85, 115, 101, 114, 82, 101,
+        115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 115, 10, 17, 76, 105,
+        115, 116, 77, 121, 85, 115, 101, 114, 67, 104, 97, 110, 103, 101, 115, 18, 41, 46, 122,
+        105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 76, 105, 115, 116,
+        77, 121, 85, 115, 101, 114, 67, 104, 97, 110, 103, 101, 115, 82, 101, 113, 117, 101, 115,
+        116, 26, 42, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46,
+        76, 105, 115, 116, 77, 121, 85, 115, 101, 114, 67, 104, 97, 110, 103, 101, 115, 82, 101,
+        115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 118, 10, 18, 76, 105,
+        115, 116, 77, 121, 85, 115, 101, 114, 83, 101, 115, 115, 105, 111, 110, 115, 18, 42, 46,
+        122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 76, 105, 115,
+        116, 77, 121, 85, 115, 101, 114, 83, 101, 115, 115, 105, 111, 110, 115, 82, 101, 113, 117,
+        101, 115, 116, 26, 43, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46,
+        118, 49, 46, 76, 105, 115, 116, 77, 121, 85, 115, 101, 114, 83, 101, 115, 115, 105, 111,
+        110, 115, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 112,
+        10, 16, 85, 112, 100, 97, 116, 101, 77, 121, 85, 115, 101, 114, 78, 97, 109, 101, 18, 40,
+        46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 85, 112,
+        100, 97, 116, 101, 77, 121, 85, 115, 101, 114, 78, 97, 109, 101, 82, 101, 113, 117, 101,
+        115, 116, 26, 41, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118,
+        49, 46, 85, 112, 100, 97, 116, 101, 77, 121, 85, 115, 101, 114, 78, 97, 109, 101, 82, 101,
+        115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 151, 1, 10, 29, 71, 101,
+        116, 77, 121, 80, 97, 115, 115, 119, 111, 114, 100, 67, 111, 109, 112, 108, 101, 120, 105,
+        116, 121, 80, 111, 108, 105, 99, 121, 18, 53, 46, 122, 105, 116, 97, 100, 101, 108, 46,
+        97, 117, 116, 104, 46, 118, 49, 46, 71, 101, 116, 77, 121, 80, 97, 115, 115, 119, 111,
+        114, 100, 67, 111, 109, 112, 108, 101, 120, 105, 116, 121, 80, 111, 108, 105, 99, 121, 82,
+        101, 113, 117, 101, 115, 116, 26, 54, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117,
+        116, 104, 46, 118, 49, 46, 71, 101, 116, 77, 121, 80, 97, 115, 115, 119, 111, 114, 100,
+        67, 111, 109, 112, 108, 101, 120, 105, 116, 121, 80, 111, 108, 105, 99, 121, 82, 101, 115,
+        112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 112, 10, 16, 85, 112, 100,
+        97, 116, 101, 77, 121, 80, 97, 115, 115, 119, 111, 114, 100, 18, 40, 46, 122, 105, 116,
+        97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 85, 112, 100, 97, 116, 101, 77,
+        121, 80, 97, 115, 115, 119, 111, 114, 100, 82, 101, 113, 117, 101, 115, 116, 26, 41, 46,
+        122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 85, 112, 100,
+        97, 116, 101, 77, 121, 80, 97, 115, 115, 119, 111, 114, 100, 82, 101, 115, 112, 111, 110,
+        115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 100, 10, 12, 71, 101, 116, 77, 121, 80, 114,
+        111, 102, 105, 108, 101, 18, 36, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116,
+        104, 46, 118, 49, 46, 71, 101, 116, 77, 121, 80, 114, 111, 102, 105, 108, 101, 82, 101,
+        113, 117, 101, 115, 116, 26, 37, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116,
+        104, 46, 118, 49, 46, 71, 101, 116, 77, 121, 80, 114, 111, 102, 105, 108, 101, 82, 101,
+        115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 109, 10, 15, 85, 112,
+        100, 97, 116, 101, 77, 121, 80, 114, 111, 102, 105, 108, 101, 18, 39, 46, 122, 105, 116,
+        97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 85, 112, 100, 97, 116, 101, 77,
+        121, 80, 114, 111, 102, 105, 108, 101, 82, 101, 113, 117, 101, 115, 116, 26, 40, 46, 122,
+        105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 85, 112, 100, 97,
+        116, 101, 77, 121, 80, 114, 111, 102, 105, 108, 101, 82, 101, 115, 112, 111, 110, 115,
+        101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 94, 10, 10, 71, 101, 116, 77, 121, 69, 109, 97,
+        105, 108, 18, 34, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118,
+        49, 46, 71, 101, 116, 77, 121, 69, 109, 97, 105, 108, 82, 101, 113, 117, 101, 115, 116,
+        26, 35, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 71,
+        101, 116, 77, 121, 69, 109, 97, 105, 108, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3,
+        136, 2, 0, 40, 0, 48, 0, 18, 94, 10, 10, 83, 101, 116, 77, 121, 69, 109, 97, 105, 108, 18,
+        34, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 83, 101,
+        116, 77, 121, 69, 109, 97, 105, 108, 82, 101, 113, 117, 101, 115, 116, 26, 35, 46, 122,
+        105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 83, 101, 116, 77,
+        121, 69, 109, 97, 105, 108, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40,
+        0, 48, 0, 18, 103, 10, 13, 86, 101, 114, 105, 102, 121, 77, 121, 69, 109, 97, 105, 108,
+        18, 37, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 86,
+        101, 114, 105, 102, 121, 77, 121, 69, 109, 97, 105, 108, 82, 101, 113, 117, 101, 115, 116,
+        26, 38, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 86,
+        101, 114, 105, 102, 121, 77, 121, 69, 109, 97, 105, 108, 82, 101, 115, 112, 111, 110, 115,
+        101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 139, 1, 10, 25, 82, 101, 115, 101, 110, 100, 77,
+        121, 69, 109, 97, 105, 108, 86, 101, 114, 105, 102, 105, 99, 97, 116, 105, 111, 110, 18,
+        49, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 82, 101,
+        115, 101, 110, 100, 77, 121, 69, 109, 97, 105, 108, 86, 101, 114, 105, 102, 105, 99, 97,
+        116, 105, 111, 110, 82, 101, 113, 117, 101, 115, 116, 26, 50, 46, 122, 105, 116, 97, 100,
+        101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 82, 101, 115, 101, 110, 100, 77, 121,
+        69, 109, 97, 105, 108, 86, 101, 114, 105, 102, 105, 99, 97, 116, 105, 111, 110, 82, 101,
+        115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 94, 10, 10, 71, 101,
+        116, 77, 121, 80, 104, 111, 110, 101, 18, 34, 46, 122, 105, 116, 97, 100, 101, 108, 46,
+        97, 117, 116, 104, 46, 118, 49, 46, 71, 101, 116, 77, 121, 80, 104, 111, 110, 101, 82,
+        101, 113, 117, 101, 115, 116, 26, 35, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117,
+        116, 104, 46, 118, 49, 46, 71, 101, 116, 77, 121, 80, 104, 111, 110, 101, 82, 101, 115,
+        112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 94, 10, 10, 83, 101, 116, 77,
+        121, 80, 104, 111, 110, 101, 18, 34, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117,
+        116, 104, 46, 118, 49, 46, 83, 101, 116, 77, 121, 80, 104, 111, 110, 101, 82, 101, 113,
+        117, 101, 115, 116, 26, 35, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104,
+        46, 118, 49, 46, 83, 101, 116, 77, 121, 80, 104, 111, 110, 101, 82, 101, 115, 112, 111,
+        110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 103, 10, 13, 86, 101, 114, 105, 102,
+        121, 77, 121, 80, 104, 111, 110, 101, 18, 37, 46, 122, 105, 116, 97, 100, 101, 108, 46,
+        97, 117, 116, 104, 46, 118, 49, 46, 86, 101, 114, 105, 102, 121, 77, 121, 80, 104, 111,
+        110, 101, 82, 101, 113, 117, 101, 115, 116, 26, 38, 46, 122, 105, 116, 97, 100, 101, 108,
+        46, 97, 117, 116, 104, 46, 118, 49, 46, 86, 101, 114, 105, 102, 121, 77, 121, 80, 104,
+        111, 110, 101, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18,
+        139, 1, 10, 25, 82, 101, 115, 101, 110, 100, 77, 121, 80, 104, 111, 110, 101, 86, 101,
+        114, 105, 102, 105, 99, 97, 116, 105, 111, 110, 18, 49, 46, 122, 105, 116, 97, 100, 101,
+        108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 82, 101, 115, 101, 110, 100, 77, 121, 80,
+        104, 111, 110, 101, 86, 101, 114, 105, 102, 105, 99, 97, 116, 105, 111, 110, 82, 101, 113,
+        117, 101, 115, 116, 26, 50, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104,
+        46, 118, 49, 46, 82, 101, 115, 101, 110, 100, 77, 121, 80, 104, 111, 110, 101, 86, 101,
+        114, 105, 102, 105, 99, 97, 116, 105, 111, 110, 82, 101, 115, 112, 111, 110, 115, 101, 34,
+        3, 136, 2, 0, 40, 0, 48, 0, 18, 103, 10, 13, 82, 101, 109, 111, 118, 101, 77, 121, 80,
+        104, 111, 110, 101, 18, 37, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104,
+        46, 118, 49, 46, 82, 101, 109, 111, 118, 101, 77, 121, 80, 104, 111, 110, 101, 82, 101,
+        113, 117, 101, 115, 116, 26, 38, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116,
+        104, 46, 118, 49, 46, 82, 101, 109, 111, 118, 101, 77, 121, 80, 104, 111, 110, 101, 82,
+        101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 112, 10, 16, 76,
+        105, 115, 116, 77, 121, 76, 105, 110, 107, 101, 100, 73, 68, 80, 115, 18, 40, 46, 122,
+        105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 76, 105, 115, 116,
+        77, 121, 76, 105, 110, 107, 101, 100, 73, 68, 80, 115, 82, 101, 113, 117, 101, 115, 116,
+        26, 41, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 76,
+        105, 115, 116, 77, 121, 76, 105, 110, 107, 101, 100, 73, 68, 80, 115, 82, 101, 115, 112,
+        111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 115, 10, 17, 82, 101, 109, 111,
+        118, 101, 77, 121, 76, 105, 110, 107, 101, 100, 73, 68, 80, 18, 41, 46, 122, 105, 116, 97,
+        100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 82, 101, 109, 111, 118, 101, 77,
+        121, 76, 105, 110, 107, 101, 100, 73, 68, 80, 82, 101, 113, 117, 101, 115, 116, 26, 42,
+        46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 82, 101,
+        109, 111, 118, 101, 77, 121, 76, 105, 110, 107, 101, 100, 73, 68, 80, 82, 101, 115, 112,
+        111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 115, 10, 17, 76, 105, 115, 116,
+        77, 121, 65, 117, 116, 104, 70, 97, 99, 116, 111, 114, 115, 18, 41, 46, 122, 105, 116, 97,
+        100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 76, 105, 115, 116, 77, 121, 65,
+        117, 116, 104, 70, 97, 99, 116, 111, 114, 115, 82, 101, 113, 117, 101, 115, 116, 26, 42,
+        46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 76, 105,
+        115, 116, 77, 121, 65, 117, 116, 104, 70, 97, 99, 116, 111, 114, 115, 82, 101, 115, 112,
+        111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 118, 10, 18, 65, 100, 100, 77,
+        121, 65, 117, 116, 104, 70, 97, 99, 116, 111, 114, 79, 84, 80, 18, 42, 46, 122, 105, 116,
+        97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 65, 100, 100, 77, 121, 65, 117,
+        116, 104, 70, 97, 99, 116, 111, 114, 79, 84, 80, 82, 101, 113, 117, 101, 115, 116, 26, 43,
+        46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 65, 100,
+        100, 77, 121, 65, 117, 116, 104, 70, 97, 99, 116, 111, 114, 79, 84, 80, 82, 101, 115, 112,
+        111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 127, 10, 21, 86, 101, 114, 105,
+        102, 121, 77, 121, 65, 117, 116, 104, 70, 97, 99, 116, 111, 114, 79, 84, 80, 18, 45, 46,
+        122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 86, 101, 114,
+        105, 102, 121, 77, 121, 65, 117, 116, 104, 70, 97, 99, 116, 111, 114, 79, 84, 80, 82, 101,
+        113, 117, 101, 115, 116, 26, 46, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116,
+        104, 46, 118, 49, 46, 86, 101, 114, 105, 102, 121, 77, 121, 65, 117, 116, 104, 70, 97, 99,
+        116, 111, 114, 79, 84, 80, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0,
+        48, 0, 18, 127, 10, 21, 82, 101, 109, 111, 118, 101, 77, 121, 65, 117, 116, 104, 70, 97,
+        99, 116, 111, 114, 79, 84, 80, 18, 45, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117,
+        116, 104, 46, 118, 49, 46, 82, 101, 109, 111, 118, 101, 77, 121, 65, 117, 116, 104, 70,
+        97, 99, 116, 111, 114, 79, 84, 80, 82, 101, 113, 117, 101, 115, 116, 26, 46, 46, 122, 105,
+        116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 82, 101, 109, 111, 118,
+        101, 77, 121, 65, 117, 116, 104, 70, 97, 99, 116, 111, 114, 79, 84, 80, 82, 101, 115, 112,
+        111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 118, 10, 18, 65, 100, 100, 77,
+        121, 65, 117, 116, 104, 70, 97, 99, 116, 111, 114, 85, 50, 70, 18, 42, 46, 122, 105, 116,
+        97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 65, 100, 100, 77, 121, 65, 117,
+        116, 104, 70, 97, 99, 116, 111, 114, 85, 50, 70, 82, 101, 113, 117, 101, 115, 116, 26, 43,
+        46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 65, 100,
+        100, 77, 121, 65, 117, 116, 104, 70, 97, 99, 116, 111, 114, 85, 50, 70, 82, 101, 115, 112,
+        111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 127, 10, 21, 86, 101, 114, 105,
+        102, 121, 77, 121, 65, 117, 116, 104, 70, 97, 99, 116, 111, 114, 85, 50, 70, 18, 45, 46,
+        122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 86, 101, 114,
+        105, 102, 121, 77, 121, 65, 117, 116, 104, 70, 97, 99, 116, 111, 114, 85, 50, 70, 82, 101,
+        113, 117, 101, 115, 116, 26, 46, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116,
+        104, 46, 118, 49, 46, 86, 101, 114, 105, 102, 121, 77, 121, 65, 117, 116, 104, 70, 97, 99,
+        116, 111, 114, 85, 50, 70, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0,
+        48, 0, 18, 127, 10, 21, 82, 101, 109, 111, 118, 101, 77, 121, 65, 117, 116, 104, 70, 97,
+        99, 116, 111, 114, 85, 50, 70, 18, 45, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117,
+        116, 104, 46, 118, 49, 46, 82, 101, 109, 111, 118, 101, 77, 121, 65, 117, 116, 104, 70,
+        97, 99, 116, 111, 114, 85, 50, 70, 82, 101, 113, 117, 101, 115, 116, 26, 46, 46, 122, 105,
+        116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 82, 101, 109, 111, 118,
+        101, 77, 121, 65, 117, 116, 104, 70, 97, 99, 116, 111, 114, 85, 50, 70, 82, 101, 115, 112,
+        111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 118, 10, 18, 76, 105, 115, 116,
+        77, 121, 80, 97, 115, 115, 119, 111, 114, 100, 108, 101, 115, 115, 18, 42, 46, 122, 105,
+        116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 76, 105, 115, 116, 77,
+        121, 80, 97, 115, 115, 119, 111, 114, 100, 108, 101, 115, 115, 82, 101, 113, 117, 101,
+        115, 116, 26, 43, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118,
+        49, 46, 76, 105, 115, 116, 77, 121, 80, 97, 115, 115, 119, 111, 114, 100, 108, 101, 115,
+        115, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 115, 10,
+        17, 65, 100, 100, 77, 121, 80, 97, 115, 115, 119, 111, 114, 100, 108, 101, 115, 115, 18,
+        41, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 65, 100,
+        100, 77, 121, 80, 97, 115, 115, 119, 111, 114, 100, 108, 101, 115, 115, 82, 101, 113, 117,
+        101, 115, 116, 26, 42, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46,
+        118, 49, 46, 65, 100, 100, 77, 121, 80, 97, 115, 115, 119, 111, 114, 100, 108, 101, 115,
+        115, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 124, 10,
+        20, 86, 101, 114, 105, 102, 121, 77, 121, 80, 97, 115, 115, 119, 111, 114, 100, 108, 101,
+        115, 115, 18, 44, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118,
+        49, 46, 86, 101, 114, 105, 102, 121, 77, 121, 80, 97, 115, 115, 119, 111, 114, 100, 108,
+        101, 115, 115, 82, 101, 113, 117, 101, 115, 116, 26, 45, 46, 122, 105, 116, 97, 100, 101,
+        108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 86, 101, 114, 105, 102, 121, 77, 121, 80, 97,
+        115, 115, 119, 111, 114, 100, 108, 101, 115, 115, 82, 101, 115, 112, 111, 110, 115, 101,
+        34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 124, 10, 20, 82, 101, 109, 111, 118, 101, 77, 121, 80,
+        97, 115, 115, 119, 111, 114, 100, 108, 101, 115, 115, 18, 44, 46, 122, 105, 116, 97, 100,
+        101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 82, 101, 109, 111, 118, 101, 77, 121,
+        80, 97, 115, 115, 119, 111, 114, 100, 108, 101, 115, 115, 82, 101, 113, 117, 101, 115,
+        116, 26, 45, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46,
+        82, 101, 109, 111, 118, 101, 77, 121, 80, 97, 115, 115, 119, 111, 114, 100, 108, 101, 115,
+        115, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 112, 10,
+        16, 76, 105, 115, 116, 77, 121, 85, 115, 101, 114, 71, 114, 97, 110, 116, 115, 18, 40, 46,
+        122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 76, 105, 115,
+        116, 77, 121, 85, 115, 101, 114, 71, 114, 97, 110, 116, 115, 82, 101, 113, 117, 101, 115,
+        116, 26, 41, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46,
+        76, 105, 115, 116, 77, 121, 85, 115, 101, 114, 71, 114, 97, 110, 116, 115, 82, 101, 115,
+        112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 115, 10, 17, 76, 105, 115,
+        116, 77, 121, 80, 114, 111, 106, 101, 99, 116, 79, 114, 103, 115, 18, 41, 46, 122, 105,
+        116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 76, 105, 115, 116, 77,
+        121, 80, 114, 111, 106, 101, 99, 116, 79, 114, 103, 115, 82, 101, 113, 117, 101, 115, 116,
+        26, 42, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 76,
+        105, 115, 116, 77, 121, 80, 114, 111, 106, 101, 99, 116, 79, 114, 103, 115, 82, 101, 115,
+        112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 127, 10, 21, 76, 105, 115,
+        116, 77, 121, 90, 105, 116, 97, 100, 101, 108, 70, 101, 97, 116, 117, 114, 101, 115, 18,
+        45, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 76, 105,
+        115, 116, 77, 121, 90, 105, 116, 97, 100, 101, 108, 70, 101, 97, 116, 117, 114, 101, 115,
+        82, 101, 113, 117, 101, 115, 116, 26, 46, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97,
+        117, 116, 104, 46, 118, 49, 46, 76, 105, 115, 116, 77, 121, 90, 105, 116, 97, 100, 101,
+        108, 70, 101, 97, 116, 117, 114, 101, 115, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3,
+        136, 2, 0, 40, 0, 48, 0, 18, 136, 1, 10, 24, 76, 105, 115, 116, 77, 121, 90, 105, 116, 97,
+        100, 101, 108, 80, 101, 114, 109, 105, 115, 115, 105, 111, 110, 115, 18, 48, 46, 122, 105,
+        116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 76, 105, 115, 116, 77,
+        121, 90, 105, 116, 97, 100, 101, 108, 80, 101, 114, 109, 105, 115, 115, 105, 111, 110,
+        115, 82, 101, 113, 117, 101, 115, 116, 26, 49, 46, 122, 105, 116, 97, 100, 101, 108, 46,
+        97, 117, 116, 104, 46, 118, 49, 46, 76, 105, 115, 116, 77, 121, 90, 105, 116, 97, 100,
+        101, 108, 80, 101, 114, 109, 105, 115, 115, 105, 111, 110, 115, 82, 101, 115, 112, 111,
+        110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 136, 1, 10, 24, 76, 105, 115, 116, 77,
+        121, 80, 114, 111, 106, 101, 99, 116, 80, 101, 114, 109, 105, 115, 115, 105, 111, 110,
+        115, 18, 48, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46,
+        76, 105, 115, 116, 77, 121, 80, 114, 111, 106, 101, 99, 116, 80, 101, 114, 109, 105, 115,
+        115, 105, 111, 110, 115, 82, 101, 113, 117, 101, 115, 116, 26, 49, 46, 122, 105, 116, 97,
+        100, 101, 108, 46, 97, 117, 116, 104, 46, 118, 49, 46, 76, 105, 115, 116, 77, 121, 80,
+        114, 111, 106, 101, 99, 116, 80, 101, 114, 109, 105, 115, 115, 105, 111, 110, 115, 82,
+        101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0>>
+    )
+  end
+
+  rpc(:Healthz, Zitadel.Auth.V1.HealthzRequest, Zitadel.Auth.V1.HealthzResponse)
+
+  rpc(:GetMyUser, Zitadel.Auth.V1.GetMyUserRequest, Zitadel.Auth.V1.GetMyUserResponse)
+
+  rpc(
+    :ListMyUserChanges,
+    Zitadel.Auth.V1.ListMyUserChangesRequest,
+    Zitadel.Auth.V1.ListMyUserChangesResponse
+  )
+
+  rpc(
+    :ListMyUserSessions,
+    Zitadel.Auth.V1.ListMyUserSessionsRequest,
+    Zitadel.Auth.V1.ListMyUserSessionsResponse
+  )
+
+  rpc(
+    :UpdateMyUserName,
+    Zitadel.Auth.V1.UpdateMyUserNameRequest,
+    Zitadel.Auth.V1.UpdateMyUserNameResponse
+  )
+
+  rpc(
+    :GetMyPasswordComplexityPolicy,
+    Zitadel.Auth.V1.GetMyPasswordComplexityPolicyRequest,
+    Zitadel.Auth.V1.GetMyPasswordComplexityPolicyResponse
+  )
+
+  rpc(
+    :UpdateMyPassword,
+    Zitadel.Auth.V1.UpdateMyPasswordRequest,
+    Zitadel.Auth.V1.UpdateMyPasswordResponse
+  )
+
+  rpc(:GetMyProfile, Zitadel.Auth.V1.GetMyProfileRequest, Zitadel.Auth.V1.GetMyProfileResponse)
+
+  rpc(
+    :UpdateMyProfile,
+    Zitadel.Auth.V1.UpdateMyProfileRequest,
+    Zitadel.Auth.V1.UpdateMyProfileResponse
+  )
+
+  rpc(:GetMyEmail, Zitadel.Auth.V1.GetMyEmailRequest, Zitadel.Auth.V1.GetMyEmailResponse)
+
+  rpc(:SetMyEmail, Zitadel.Auth.V1.SetMyEmailRequest, Zitadel.Auth.V1.SetMyEmailResponse)
+
+  rpc(:VerifyMyEmail, Zitadel.Auth.V1.VerifyMyEmailRequest, Zitadel.Auth.V1.VerifyMyEmailResponse)
+
+  rpc(
+    :ResendMyEmailVerification,
+    Zitadel.Auth.V1.ResendMyEmailVerificationRequest,
+    Zitadel.Auth.V1.ResendMyEmailVerificationResponse
+  )
+
+  rpc(:GetMyPhone, Zitadel.Auth.V1.GetMyPhoneRequest, Zitadel.Auth.V1.GetMyPhoneResponse)
+
+  rpc(:SetMyPhone, Zitadel.Auth.V1.SetMyPhoneRequest, Zitadel.Auth.V1.SetMyPhoneResponse)
+
+  rpc(:VerifyMyPhone, Zitadel.Auth.V1.VerifyMyPhoneRequest, Zitadel.Auth.V1.VerifyMyPhoneResponse)
+
+  rpc(
+    :ResendMyPhoneVerification,
+    Zitadel.Auth.V1.ResendMyPhoneVerificationRequest,
+    Zitadel.Auth.V1.ResendMyPhoneVerificationResponse
+  )
+
+  rpc(:RemoveMyPhone, Zitadel.Auth.V1.RemoveMyPhoneRequest, Zitadel.Auth.V1.RemoveMyPhoneResponse)
+
+  rpc(
+    :ListMyLinkedIDPs,
+    Zitadel.Auth.V1.ListMyLinkedIDPsRequest,
+    Zitadel.Auth.V1.ListMyLinkedIDPsResponse
+  )
+
+  rpc(
+    :RemoveMyLinkedIDP,
+    Zitadel.Auth.V1.RemoveMyLinkedIDPRequest,
+    Zitadel.Auth.V1.RemoveMyLinkedIDPResponse
+  )
+
+  rpc(
+    :ListMyAuthFactors,
+    Zitadel.Auth.V1.ListMyAuthFactorsRequest,
+    Zitadel.Auth.V1.ListMyAuthFactorsResponse
+  )
+
+  rpc(
+    :AddMyAuthFactorOTP,
+    Zitadel.Auth.V1.AddMyAuthFactorOTPRequest,
+    Zitadel.Auth.V1.AddMyAuthFactorOTPResponse
+  )
+
+  rpc(
+    :VerifyMyAuthFactorOTP,
+    Zitadel.Auth.V1.VerifyMyAuthFactorOTPRequest,
+    Zitadel.Auth.V1.VerifyMyAuthFactorOTPResponse
+  )
+
+  rpc(
+    :RemoveMyAuthFactorOTP,
+    Zitadel.Auth.V1.RemoveMyAuthFactorOTPRequest,
+    Zitadel.Auth.V1.RemoveMyAuthFactorOTPResponse
+  )
+
+  rpc(
+    :AddMyAuthFactorU2F,
+    Zitadel.Auth.V1.AddMyAuthFactorU2FRequest,
+    Zitadel.Auth.V1.AddMyAuthFactorU2FResponse
+  )
+
+  rpc(
+    :VerifyMyAuthFactorU2F,
+    Zitadel.Auth.V1.VerifyMyAuthFactorU2FRequest,
+    Zitadel.Auth.V1.VerifyMyAuthFactorU2FResponse
+  )
+
+  rpc(
+    :RemoveMyAuthFactorU2F,
+    Zitadel.Auth.V1.RemoveMyAuthFactorU2FRequest,
+    Zitadel.Auth.V1.RemoveMyAuthFactorU2FResponse
+  )
+
+  rpc(
+    :ListMyPasswordless,
+    Zitadel.Auth.V1.ListMyPasswordlessRequest,
+    Zitadel.Auth.V1.ListMyPasswordlessResponse
+  )
+
+  rpc(
+    :AddMyPasswordless,
+    Zitadel.Auth.V1.AddMyPasswordlessRequest,
+    Zitadel.Auth.V1.AddMyPasswordlessResponse
+  )
+
+  rpc(
+    :VerifyMyPasswordless,
+    Zitadel.Auth.V1.VerifyMyPasswordlessRequest,
+    Zitadel.Auth.V1.VerifyMyPasswordlessResponse
+  )
+
+  rpc(
+    :RemoveMyPasswordless,
+    Zitadel.Auth.V1.RemoveMyPasswordlessRequest,
+    Zitadel.Auth.V1.RemoveMyPasswordlessResponse
+  )
+
+  rpc(
+    :ListMyUserGrants,
+    Zitadel.Auth.V1.ListMyUserGrantsRequest,
+    Zitadel.Auth.V1.ListMyUserGrantsResponse
+  )
+
+  rpc(
+    :ListMyProjectOrgs,
+    Zitadel.Auth.V1.ListMyProjectOrgsRequest,
+    Zitadel.Auth.V1.ListMyProjectOrgsResponse
+  )
+
+  rpc(
+    :ListMyZitadelFeatures,
+    Zitadel.Auth.V1.ListMyZitadelFeaturesRequest,
+    Zitadel.Auth.V1.ListMyZitadelFeaturesResponse
+  )
+
+  rpc(
+    :ListMyZitadelPermissions,
+    Zitadel.Auth.V1.ListMyZitadelPermissionsRequest,
+    Zitadel.Auth.V1.ListMyZitadelPermissionsResponse
+  )
+
+  rpc(
+    :ListMyProjectPermissions,
+    Zitadel.Auth.V1.ListMyProjectPermissionsRequest,
+    Zitadel.Auth.V1.ListMyProjectPermissionsResponse
+  )
+end
+
+defmodule Zitadel.Auth.V1.AuthService.Stub do
+  @moduledoc false
+  use GRPC.Stub, service: Zitadel.Auth.V1.AuthService.Service
+end
+
+defmodule Zitadel.Auth.V1.AuthService.Behaviour do
+  @callback healthz(input :: Zitadel.Auth.V1.HealthzRequest.t(), stream :: GRPC.Server.Stream.t()) ::
+              Zitadel.Auth.V1.HealthzResponse.t()
+  @callback get_my_user(
+              input :: Zitadel.Auth.V1.GetMyUserRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.GetMyUserResponse.t()
+  @callback list_my_user_changes(
+              input :: Zitadel.Auth.V1.ListMyUserChangesRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.ListMyUserChangesResponse.t()
+  @callback list_my_user_sessions(
+              input :: Zitadel.Auth.V1.ListMyUserSessionsRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.ListMyUserSessionsResponse.t()
+  @callback update_my_user_name(
+              input :: Zitadel.Auth.V1.UpdateMyUserNameRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.UpdateMyUserNameResponse.t()
+  @callback get_my_password_complexity_policy(
+              input :: Zitadel.Auth.V1.GetMyPasswordComplexityPolicyRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.GetMyPasswordComplexityPolicyResponse.t()
+  @callback update_my_password(
+              input :: Zitadel.Auth.V1.UpdateMyPasswordRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.UpdateMyPasswordResponse.t()
+  @callback get_my_profile(
+              input :: Zitadel.Auth.V1.GetMyProfileRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.GetMyProfileResponse.t()
+  @callback update_my_profile(
+              input :: Zitadel.Auth.V1.UpdateMyProfileRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.UpdateMyProfileResponse.t()
+  @callback get_my_email(
+              input :: Zitadel.Auth.V1.GetMyEmailRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.GetMyEmailResponse.t()
+  @callback set_my_email(
+              input :: Zitadel.Auth.V1.SetMyEmailRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.SetMyEmailResponse.t()
+  @callback verify_my_email(
+              input :: Zitadel.Auth.V1.VerifyMyEmailRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.VerifyMyEmailResponse.t()
+  @callback resend_my_email_verification(
+              input :: Zitadel.Auth.V1.ResendMyEmailVerificationRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.ResendMyEmailVerificationResponse.t()
+  @callback get_my_phone(
+              input :: Zitadel.Auth.V1.GetMyPhoneRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.GetMyPhoneResponse.t()
+  @callback set_my_phone(
+              input :: Zitadel.Auth.V1.SetMyPhoneRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.SetMyPhoneResponse.t()
+  @callback verify_my_phone(
+              input :: Zitadel.Auth.V1.VerifyMyPhoneRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.VerifyMyPhoneResponse.t()
+  @callback resend_my_phone_verification(
+              input :: Zitadel.Auth.V1.ResendMyPhoneVerificationRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.ResendMyPhoneVerificationResponse.t()
+  @callback remove_my_phone(
+              input :: Zitadel.Auth.V1.RemoveMyPhoneRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.RemoveMyPhoneResponse.t()
+  @callback list_my_linked_id_ps(
+              input :: Zitadel.Auth.V1.ListMyLinkedIDPsRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.ListMyLinkedIDPsResponse.t()
+  @callback remove_my_linked_idp(
+              input :: Zitadel.Auth.V1.RemoveMyLinkedIDPRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.RemoveMyLinkedIDPResponse.t()
+  @callback list_my_auth_factors(
+              input :: Zitadel.Auth.V1.ListMyAuthFactorsRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.ListMyAuthFactorsResponse.t()
+  @callback add_my_auth_factor_otp(
+              input :: Zitadel.Auth.V1.AddMyAuthFactorOTPRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.AddMyAuthFactorOTPResponse.t()
+  @callback verify_my_auth_factor_otp(
+              input :: Zitadel.Auth.V1.VerifyMyAuthFactorOTPRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.VerifyMyAuthFactorOTPResponse.t()
+  @callback remove_my_auth_factor_otp(
+              input :: Zitadel.Auth.V1.RemoveMyAuthFactorOTPRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.RemoveMyAuthFactorOTPResponse.t()
+  @callback add_my_auth_factor_u2_f(
+              input :: Zitadel.Auth.V1.AddMyAuthFactorU2FRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.AddMyAuthFactorU2FResponse.t()
+  @callback verify_my_auth_factor_u2_f(
+              input :: Zitadel.Auth.V1.VerifyMyAuthFactorU2FRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.VerifyMyAuthFactorU2FResponse.t()
+  @callback remove_my_auth_factor_u2_f(
+              input :: Zitadel.Auth.V1.RemoveMyAuthFactorU2FRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.RemoveMyAuthFactorU2FResponse.t()
+  @callback list_my_passwordless(
+              input :: Zitadel.Auth.V1.ListMyPasswordlessRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.ListMyPasswordlessResponse.t()
+  @callback add_my_passwordless(
+              input :: Zitadel.Auth.V1.AddMyPasswordlessRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.AddMyPasswordlessResponse.t()
+  @callback verify_my_passwordless(
+              input :: Zitadel.Auth.V1.VerifyMyPasswordlessRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.VerifyMyPasswordlessResponse.t()
+  @callback remove_my_passwordless(
+              input :: Zitadel.Auth.V1.RemoveMyPasswordlessRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.RemoveMyPasswordlessResponse.t()
+  @callback list_my_user_grants(
+              input :: Zitadel.Auth.V1.ListMyUserGrantsRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.ListMyUserGrantsResponse.t()
+  @callback list_my_project_orgs(
+              input :: Zitadel.Auth.V1.ListMyProjectOrgsRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.ListMyProjectOrgsResponse.t()
+  @callback list_my_zitadel_features(
+              input :: Zitadel.Auth.V1.ListMyZitadelFeaturesRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.ListMyZitadelFeaturesResponse.t()
+  @callback list_my_zitadel_permissions(
+              input :: Zitadel.Auth.V1.ListMyZitadelPermissionsRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.ListMyZitadelPermissionsResponse.t()
+  @callback list_my_project_permissions(
+              input :: Zitadel.Auth.V1.ListMyProjectPermissionsRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Auth.V1.ListMyProjectPermissionsResponse.t()
+  @optional_callbacks healthz: 2,
+                      get_my_user: 2,
+                      list_my_user_changes: 2,
+                      list_my_user_sessions: 2,
+                      update_my_user_name: 2,
+                      get_my_password_complexity_policy: 2,
+                      update_my_password: 2,
+                      get_my_profile: 2,
+                      update_my_profile: 2,
+                      get_my_email: 2,
+                      set_my_email: 2,
+                      verify_my_email: 2,
+                      resend_my_email_verification: 2,
+                      get_my_phone: 2,
+                      set_my_phone: 2,
+                      verify_my_phone: 2,
+                      resend_my_phone_verification: 2,
+                      remove_my_phone: 2,
+                      list_my_linked_id_ps: 2,
+                      remove_my_linked_idp: 2,
+                      list_my_auth_factors: 2,
+                      add_my_auth_factor_otp: 2,
+                      verify_my_auth_factor_otp: 2,
+                      remove_my_auth_factor_otp: 2,
+                      add_my_auth_factor_u2_f: 2,
+                      verify_my_auth_factor_u2_f: 2,
+                      remove_my_auth_factor_u2_f: 2,
+                      list_my_passwordless: 2,
+                      add_my_passwordless: 2,
+                      verify_my_passwordless: 2,
+                      remove_my_passwordless: 2,
+                      list_my_user_grants: 2,
+                      list_my_project_orgs: 2,
+                      list_my_zitadel_features: 2,
+                      list_my_zitadel_permissions: 2,
+                      list_my_project_permissions: 2
+end

@@ -1,14 +1,14 @@
-defmodule Caos.Zitadel.AdminTest do
+defmodule Zitadel.AdminTest do
   @moduledoc false
 
   use ExUnit.Case, async: true
 
-  alias Caos.Zitadel.Admin.Api.V1.AdminService.Stub, as: AdminStub
   alias Google.Protobuf.Empty
+  alias Zitadel.Admin.V1.AdminService.Stub, as: AdminStub
 
   test "works" do
     assert {:ok, channel} = GRPC.Stub.connect("api.zitadel.ch:443", cred: %{ssl: []})
 
-    assert {:ok, %Empty{}} = AdminStub.healthz(channel, Empty.new())
+    assert {:error, %GRPC.RPCError{status: 2}} = AdminStub.healthz(channel, Empty.new())
   end
 end

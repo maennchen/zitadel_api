@@ -1,18 +1,22 @@
 #! /bin/sh
 
 SCRIPT=$(readlink -f "$0")
-BIN_DIR="$( dirname $SCRIPT )"
-ROOT_DIR="$( dirname $BIN_DIR )"
+BIN_DIR="$( dirname "$SCRIPT" )"
+ROOT_DIR="$( dirname "$BIN_DIR" )"
 LIB_DIR="$ROOT_DIR/lib"
 PROTO_ROOT="$ROOT_DIR/priv/proto"
 
-set -eux
+set -eu
 
-echo "Remove old files"
-rm -rf "$LIB_DIR/proto/"
+echo >&2 "Remove Old Source Code"
+rm -rf "$LIB_DIR/zitadel/"
 
-echo "Create folders"
+echo >&2 "Remove Old Proto Files"
+rm -rf "${PROTO_ROOT:?}"/*
+
+echo >&2 "Ensure Target Directories exist"
 mkdir -p "$LIB_DIR"
+mkdir -p "$PROTO_ROOT"
 
 store_lib () {
    DIR="$PROTO_ROOT/$1"
@@ -20,34 +24,50 @@ store_lib () {
 
   (
     cd "$DIR"
-    curl -O $2
+    curl -O --fail --silent "$2"
   )
 }
 
-echo "Download additional protofiles"
-store_lib proto https://raw.githubusercontent.com/caos/zitadel/master/pkg/grpc/management/proto/management.proto
-store_lib proto https://raw.githubusercontent.com/caos/zitadel/master/pkg/grpc/message/proto/message.proto
-store_lib proto https://raw.githubusercontent.com/caos/zitadel/master/pkg/grpc/admin/proto/admin.proto
-store_lib proto https://raw.githubusercontent.com/caos/zitadel/master/pkg/grpc/auth/proto/auth.proto
-store_lib authoption https://raw.githubusercontent.com/caos/zitadel/master/internal/protoc/protoc-gen-authoption/authoption/options.proto
-store_lib validate https://raw.githubusercontent.com/envoyproxy/protoc-gen-validate/v0.4.0/validate/validate.proto
-store_lib protoc-gen-swagger/options https://raw.githubusercontent.com/grpc-ecosystem/grpc-gateway/v1.14.6/protoc-gen-swagger/options/annotations.proto
-store_lib protoc-gen-swagger/options https://raw.githubusercontent.com/grpc-ecosystem/grpc-gateway/v1.14.6/protoc-gen-swagger/options/openapiv2.proto
-store_lib google/api https://raw.githubusercontent.com/googleapis/googleapis/master/google/api/annotations.proto
-store_lib google/api https://raw.githubusercontent.com/googleapis/googleapis/master/google/api/http.proto
+echo >&2 "Download protofiles"
+ZITADEL_FILES="admin.proto app.proto auth.proto auth_n_key.proto change.proto features.proto idp.proto management.proto member.proto message.proto object.proto options.proto org.proto policy.proto project.proto user.proto"
+for ZITADEL_FILE in $ZITADEL_FILES; do
+  store_lib zitadel "https://raw.githubusercontent.com/caos/zitadel/main/proto/zitadel/$ZITADEL_FILE"
+done
+OPENAPI_V2_FILES="annotations.proto openapiv2.proto"
+for OPENAPI_V2_FILE in $OPENAPI_V2_FILES; do
+  store_lib "protoc-gen-openapiv2/options" "https://raw.githubusercontent.com/grpc-ecosystem/grpc-gateway/master/protoc-gen-openapiv2/options/$OPENAPI_V2_FILE"
+done
+GOOGLE_API_FILES="annotations.proto http.proto"
+for GOOGLE_API_FILE in $GOOGLE_API_FILES; do
+  store_lib "google/api" "https://raw.githubusercontent.com/googleapis/googleapis/master/google/api/$GOOGLE_API_FILE"
+done
+store_lib "validate" "https://raw.githubusercontent.com/envoyproxy/protoc-gen-validate/v0.4.1/validate/validate.proto"
 
-echo "Install ELixir Protoc Plugin"
-# TODO: Use Hex Package when https://github.com/tony612/protobuf-elixir/pull/123 is released
-mix escript.install github zetaron/protobuf-elixir branch gen_docs --force
+if command -v protoc-gen-elixir > /dev/null; then
+  echo >&2 "Elixir Protoc Plugin already installed"
+else
+  echo >&2 "Install Elixir Protoc Plugin"
+  # TODO: Use Hex Package when https://github.com/tony612/protobuf-elixir/pull/123 is released
+  mix escript.install github zetaron/protobuf-elixir branch gen_docs --force
+fi
 
-echo "Generate grpc"
+echo >&2 "Generate Source Code"
 
-protoc \
-  --proto_path="$PROTO_ROOT" \
-  --elixir_out="gen_descriptors=true,plugins=grpc:$LIB_DIR" \
-  $PROTO_ROOT/proto/*.proto
+for PROTO in "$PROTO_ROOT"/zitadel/*.proto; do
+  PROTO_NAME="$( basename "$PROTO" ".proto" )"
+  # TODO: Re-Add options.proto
+  # options.proto is removed because extend is not currently supported by elixir / protobuf
+  if  [ "$PROTO_NAME" = "options" ]; then
+    echo >&2 "Skipping Options"
+  else
+    protoc \
+      --proto_path="$PROTO_ROOT" \
+      --elixir_out="gen_descriptors=true,plugins=grpc:$LIB_DIR" \
+      "$PROTO"
+  fi
+done
 
-echo "Format"
+echo >&2 "Format"
 
 (
   cd "$ROOT_DIR"
