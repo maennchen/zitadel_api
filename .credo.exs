@@ -31,7 +31,7 @@
           "apps/*/test/",
           "apps/*/web/"
         ],
-        excluded: [~r"/lib/proto/", ~r"/_build/", ~r"/deps/", ~r"/node_modules/"]
+        excluded: [~r"\.pb\.ex", ~r"/_build/", ~r"/deps/", ~r"/node_modules/"]
       },
       #
       # Load and configure plugins here:
