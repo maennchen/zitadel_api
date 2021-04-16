@@ -32,7 +32,7 @@ end
 
 defmodule Zitadel.Admin.V1.IsOrgUniqueRequest do
   @moduledoc """
-  parameters are ORed
+  if name or domain is already in use, org is not unique
   """
 
   use Protobuf, syntax: :proto3
@@ -1654,11 +1654,14 @@ defmodule Zitadel.Admin.V1.GetCustomOrgIAMPolicyResponse do
 end
 
 defmodule Zitadel.Admin.V1.AddCustomOrgIAMPolicyRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type org_id :: String.t()
+
+  @typedoc """
+  the username has to end with the domain of it's organisation (uniqueness is organisation based)
+  """
   @type user_login_must_be_domain :: boolean
+
   @type t :: %__MODULE__{
           org_id: org_id(),
           user_login_must_be_domain: user_login_must_be_domain()
@@ -2098,10 +2101,13 @@ defmodule Zitadel.Admin.V1.ListLoginPolicyIDPsResponse do
 end
 
 defmodule Zitadel.Admin.V1.AddIDPToLoginPolicyRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
+
+  @typedoc """
+  Id of the predefined idp configuration
+  """
   @type idp_id :: String.t()
+
   @type t :: %__MODULE__{
           idp_id: idp_id()
         }
@@ -2744,7 +2750,7 @@ defmodule Zitadel.Admin.V1.UpdatePasswordLockoutPolicyRequest do
   @type max_attempts :: non_neg_integer
 
   @typedoc """
-  TODO: how to describe?
+  If an error should be displayed during a lockout or not
   """
   @type show_lockout_failure :: boolean
 
@@ -3251,13 +3257,16 @@ defmodule Zitadel.Admin.V1.RemoveFailedEventResponse do
 end
 
 defmodule Zitadel.Admin.V1.View do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type database :: String.t()
   @type view_name :: String.t()
   @type processed_sequence :: non_neg_integer
+
+  @typedoc """
+  The timestamp the event occured
+  """
   @type event_timestamp :: Google.Protobuf.Timestamp.t() | nil
+
   @type last_successful_spooler_run :: Google.Protobuf.Timestamp.t() | nil
   @type t :: %__MODULE__{
           database: database(),
