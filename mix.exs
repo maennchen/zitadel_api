@@ -3,6 +3,11 @@ defmodule ZitadelApi.MixProject do
 
   use Mix.Project
 
+  api_version_file = __ENV__.file |> Path.dirname() |> Path.join("API_VERSION")
+
+  @external_resource api_version_file
+
+  @api_version api_version_file |> File.read!() |> String.trim()
   @version "1.0.0-rc.2"
 
   def project do
@@ -31,7 +36,7 @@ defmodule ZitadelApi.MixProject do
 
   defp description do
     """
-    Zitadel GRPC CLient
+    Zitadel #{@api_version} GRPC CLient
     """
   end
 
@@ -46,7 +51,7 @@ defmodule ZitadelApi.MixProject do
     # These are the default files included in the package
     [
       name: :zitadel_api,
-      files: ["lib", "mix.exs", "README*", "LICENSE*"],
+      files: ["lib", "mix.exs", "README*", "LICENSE*", "API_VERSION"],
       maintainers: ["Jonatan Männchen"],
       licenses: ["Apache-2.0"],
       links: %{"GitHub" => "https://github.com/jshmrtn/zitadel_api"}
