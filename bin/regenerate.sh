@@ -8,6 +8,10 @@ PROTO_ROOT="$ROOT_DIR/priv/proto"
 
 set -eu
 
+echo >&2 "Zitadel API Version"
+API_VERSION="$( cat "$ROOT_DIR/API_VERSION"  | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' )"
+echo >&2 "$API_VERSION"
+
 echo >&2 "Remove Old Source Code"
 rm -rf "$LIB_DIR/zitadel/"
 
@@ -31,7 +35,7 @@ store_lib () {
 echo >&2 "Download protofiles"
 ZITADEL_FILES="admin.proto app.proto auth.proto auth_n_key.proto change.proto features.proto idp.proto management.proto member.proto message.proto object.proto options.proto org.proto policy.proto project.proto user.proto"
 for ZITADEL_FILE in $ZITADEL_FILES; do
-  store_lib zitadel "https://raw.githubusercontent.com/caos/zitadel/main/proto/zitadel/$ZITADEL_FILE"
+  store_lib zitadel "https://raw.githubusercontent.com/caos/zitadel/$API_VERSION/proto/zitadel/$ZITADEL_FILE"
 done
 OPENAPI_V2_FILES="annotations.proto openapiv2.proto"
 for OPENAPI_V2_FILE in $OPENAPI_V2_FILES; do

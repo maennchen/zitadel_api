@@ -1185,6 +1185,7 @@ defmodule Zitadel.Admin.V1.SetDefaultFeaturesRequest do
   @type login_policy_passwordless :: boolean
   @type password_complexity_policy :: boolean
   @type label_policy :: boolean
+  @type custom_domain :: boolean
   @type t :: %__MODULE__{
           tier_name: tier_name(),
           description: description(),
@@ -1195,7 +1196,8 @@ defmodule Zitadel.Admin.V1.SetDefaultFeaturesRequest do
           login_policy_factors: login_policy_factors(),
           login_policy_passwordless: login_policy_passwordless(),
           password_complexity_policy: password_complexity_policy(),
-          label_policy: label_policy()
+          label_policy: label_policy(),
+          custom_domain: custom_domain()
         }
 
   defstruct [
@@ -1208,7 +1210,8 @@ defmodule Zitadel.Admin.V1.SetDefaultFeaturesRequest do
     :login_policy_factors,
     :login_policy_passwordless,
     :password_complexity_policy,
-    :label_policy
+    :label_policy,
+    :custom_domain
   ]
 
   def descriptor do
@@ -1242,7 +1245,9 @@ defmodule Zitadel.Admin.V1.SetDefaultFeaturesRequest do
         24, 11, 32, 1, 40, 8, 82, 24, 112, 97, 115, 115, 119, 111, 114, 100, 67, 111, 109, 112,
         108, 101, 120, 105, 116, 121, 80, 111, 108, 105, 99, 121, 18, 33, 10, 12, 108, 97, 98,
         101, 108, 95, 112, 111, 108, 105, 99, 121, 24, 12, 32, 1, 40, 8, 82, 11, 108, 97, 98, 101,
-        108, 80, 111, 108, 105, 99, 121>>
+        108, 80, 111, 108, 105, 99, 121, 18, 35, 10, 13, 99, 117, 115, 116, 111, 109, 95, 100,
+        111, 109, 97, 105, 110, 24, 13, 32, 1, 40, 8, 82, 12, 99, 117, 115, 116, 111, 109, 68,
+        111, 109, 97, 105, 110>>
     )
   end
 
@@ -1256,6 +1261,7 @@ defmodule Zitadel.Admin.V1.SetDefaultFeaturesRequest do
   field(:login_policy_passwordless, 10, type: :bool, json_name: "loginPolicyPasswordless")
   field(:password_complexity_policy, 11, type: :bool, json_name: "passwordComplexityPolicy")
   field(:label_policy, 12, type: :bool, json_name: "labelPolicy")
+  field(:custom_domain, 13, type: :bool, json_name: "customDomain")
 end
 
 defmodule Zitadel.Admin.V1.SetDefaultFeaturesResponse do
@@ -1348,6 +1354,7 @@ defmodule Zitadel.Admin.V1.SetOrgFeaturesRequest do
   @type login_policy_passwordless :: boolean
   @type password_complexity_policy :: boolean
   @type label_policy :: boolean
+  @type custom_domain :: boolean
   @type t :: %__MODULE__{
           org_id: org_id(),
           tier_name: tier_name(),
@@ -1361,7 +1368,8 @@ defmodule Zitadel.Admin.V1.SetOrgFeaturesRequest do
           login_policy_factors: login_policy_factors(),
           login_policy_passwordless: login_policy_passwordless(),
           password_complexity_policy: password_complexity_policy(),
-          label_policy: label_policy()
+          label_policy: label_policy(),
+          custom_domain: custom_domain()
         }
 
   defstruct [
@@ -1377,7 +1385,8 @@ defmodule Zitadel.Admin.V1.SetOrgFeaturesRequest do
     :login_policy_factors,
     :login_policy_passwordless,
     :password_complexity_policy,
-    :label_policy
+    :label_policy,
+    :custom_domain
   ]
 
   def descriptor do
@@ -1418,7 +1427,9 @@ defmodule Zitadel.Admin.V1.SetOrgFeaturesRequest do
         40, 8, 82, 24, 112, 97, 115, 115, 119, 111, 114, 100, 67, 111, 109, 112, 108, 101, 120,
         105, 116, 121, 80, 111, 108, 105, 99, 121, 18, 33, 10, 12, 108, 97, 98, 101, 108, 95, 112,
         111, 108, 105, 99, 121, 24, 13, 32, 1, 40, 8, 82, 11, 108, 97, 98, 101, 108, 80, 111, 108,
-        105, 99, 121>>
+        105, 99, 121, 18, 35, 10, 13, 99, 117, 115, 116, 111, 109, 95, 100, 111, 109, 97, 105,
+        110, 24, 14, 32, 1, 40, 8, 82, 12, 99, 117, 115, 116, 111, 109, 68, 111, 109, 97, 105,
+        110>>
     )
   end
 
@@ -1435,6 +1446,7 @@ defmodule Zitadel.Admin.V1.SetOrgFeaturesRequest do
   field(:login_policy_passwordless, 11, type: :bool, json_name: "loginPolicyPasswordless")
   field(:password_complexity_policy, 12, type: :bool, json_name: "passwordComplexityPolicy")
   field(:label_policy, 13, type: :bool, json_name: "labelPolicy")
+  field(:custom_domain, 14, type: :bool, json_name: "customDomain")
 end
 
 defmodule Zitadel.Admin.V1.SetOrgFeaturesResponse do
