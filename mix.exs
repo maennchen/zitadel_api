@@ -8,7 +8,7 @@ defmodule ZitadelApi.MixProject do
   @external_resource api_version_file
 
   @api_version api_version_file |> File.read!() |> String.trim()
-  @version "1.0.0-rc.3"
+  @version "1.0.0-rc.4"
 
   def project do
     [
