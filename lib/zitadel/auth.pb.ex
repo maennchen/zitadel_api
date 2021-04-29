@@ -1,5 +1,7 @@
 defmodule Zitadel.Auth.V1.HealthzRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -15,7 +17,9 @@ defmodule Zitadel.Auth.V1.HealthzRequest do
 end
 
 defmodule Zitadel.Auth.V1.HealthzResponse do
-  @moduledoc false
+  @moduledoc """
+  This is an empty response
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -32,7 +36,7 @@ end
 
 defmodule Zitadel.Auth.V1.GetMyUserRequest do
   @moduledoc """
-  GetMyUserRequest is an empty request
+  This is an empty request
   the request parameters are read from the token-header
   """
 
@@ -135,7 +139,9 @@ defmodule Zitadel.Auth.V1.ListMyUserChangesResponse do
 end
 
 defmodule Zitadel.Auth.V1.ListMyUserSessionsRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -224,7 +230,9 @@ defmodule Zitadel.Auth.V1.UpdateMyUserNameResponse do
 end
 
 defmodule Zitadel.Auth.V1.GetMyPasswordComplexityPolicyRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -317,7 +325,9 @@ defmodule Zitadel.Auth.V1.UpdateMyPasswordResponse do
 end
 
 defmodule Zitadel.Auth.V1.GetMyProfileRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -437,7 +447,9 @@ defmodule Zitadel.Auth.V1.UpdateMyProfileResponse do
 end
 
 defmodule Zitadel.Auth.V1.GetMyEmailRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -579,7 +591,9 @@ defmodule Zitadel.Auth.V1.VerifyMyEmailResponse do
 end
 
 defmodule Zitadel.Auth.V1.ResendMyEmailVerificationRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -618,7 +632,9 @@ defmodule Zitadel.Auth.V1.ResendMyEmailVerificationResponse do
 end
 
 defmodule Zitadel.Auth.V1.GetMyPhoneRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -758,7 +774,9 @@ defmodule Zitadel.Auth.V1.VerifyMyPhoneResponse do
 end
 
 defmodule Zitadel.Auth.V1.ResendMyPhoneVerificationRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -797,7 +815,9 @@ defmodule Zitadel.Auth.V1.ResendMyPhoneVerificationResponse do
 end
 
 defmodule Zitadel.Auth.V1.RemoveMyPhoneRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -842,8 +862,6 @@ defmodule Zitadel.Auth.V1.ListMyLinkedIDPsRequest do
 
   @typedoc """
   list limitations and ordering
-
-  PLANNED: queries for idp name and login name
   """
   @type query :: Zitadel.V1.ListQuery.t() | nil
 
@@ -949,7 +967,9 @@ defmodule Zitadel.Auth.V1.RemoveMyLinkedIDPResponse do
 end
 
 defmodule Zitadel.Auth.V1.ListMyAuthFactorsRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -991,7 +1011,9 @@ defmodule Zitadel.Auth.V1.ListMyAuthFactorsResponse do
 end
 
 defmodule Zitadel.Auth.V1.AddMyAuthFactorU2FRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -1038,7 +1060,9 @@ defmodule Zitadel.Auth.V1.AddMyAuthFactorU2FResponse do
 end
 
 defmodule Zitadel.Auth.V1.AddMyAuthFactorOTPRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -1186,7 +1210,9 @@ defmodule Zitadel.Auth.V1.VerifyMyAuthFactorU2FResponse do
 end
 
 defmodule Zitadel.Auth.V1.RemoveMyAuthFactorOTPRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -1277,7 +1303,9 @@ defmodule Zitadel.Auth.V1.RemoveMyAuthFactorU2FResponse do
 end
 
 defmodule Zitadel.Auth.V1.ListMyPasswordlessRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -1319,7 +1347,9 @@ defmodule Zitadel.Auth.V1.ListMyPasswordlessResponse do
 end
 
 defmodule Zitadel.Auth.V1.AddMyPasswordlessRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -1633,7 +1663,9 @@ defmodule Zitadel.Auth.V1.ListMyProjectOrgsResponse do
 end
 
 defmodule Zitadel.Auth.V1.ListMyZitadelFeaturesRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -1673,7 +1705,9 @@ defmodule Zitadel.Auth.V1.ListMyZitadelFeaturesResponse do
 end
 
 defmodule Zitadel.Auth.V1.ListMyZitadelPermissionsRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -1713,7 +1747,9 @@ defmodule Zitadel.Auth.V1.ListMyZitadelPermissionsResponse do
 end
 
 defmodule Zitadel.Auth.V1.ListMyProjectPermissionsRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -2164,146 +2200,293 @@ end
 defmodule Zitadel.Auth.V1.AuthService.Behaviour do
   @callback healthz(input :: Zitadel.Auth.V1.HealthzRequest.t(), stream :: GRPC.Server.Stream.t()) ::
               Zitadel.Auth.V1.HealthzResponse.t()
+
+  @doc """
+  Returns my full blown user
+  """
   @callback get_my_user(
               input :: Zitadel.Auth.V1.GetMyUserRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.GetMyUserResponse.t()
+
+  @doc """
+  Returns the history of the authorized user (each event)
+  """
   @callback list_my_user_changes(
               input :: Zitadel.Auth.V1.ListMyUserChangesRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.ListMyUserChangesResponse.t()
+
+  @doc """
+  Returns the user sessions of the authorized user of the current useragent
+  """
   @callback list_my_user_sessions(
               input :: Zitadel.Auth.V1.ListMyUserSessionsRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.ListMyUserSessionsResponse.t()
+
+  @doc """
+  Change the user name of the authorize user
+  """
   @callback update_my_user_name(
               input :: Zitadel.Auth.V1.UpdateMyUserNameRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.UpdateMyUserNameResponse.t()
+
+  @doc """
+  Returns the password complexity policy of my organisation
+  This policy defines how the password should look
+  """
   @callback get_my_password_complexity_policy(
               input :: Zitadel.Auth.V1.GetMyPasswordComplexityPolicyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.GetMyPasswordComplexityPolicyResponse.t()
+
+  @doc """
+  Change the password of the authorized user
+  """
   @callback update_my_password(
               input :: Zitadel.Auth.V1.UpdateMyPasswordRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.UpdateMyPasswordResponse.t()
+
+  @doc """
+  Returns the profile information of the authorized user
+  """
   @callback get_my_profile(
               input :: Zitadel.Auth.V1.GetMyProfileRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.GetMyProfileResponse.t()
+
+  @doc """
+  Changes the profile information of the authorized user
+  """
   @callback update_my_profile(
               input :: Zitadel.Auth.V1.UpdateMyProfileRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.UpdateMyProfileResponse.t()
+
+  @doc """
+  Returns the email address of the authorized user
+  """
   @callback get_my_email(
               input :: Zitadel.Auth.V1.GetMyEmailRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.GetMyEmailResponse.t()
+
+  @doc """
+  Changes the email address of the authorized user
+  An email is sent to the given address, to verify it
+  """
   @callback set_my_email(
               input :: Zitadel.Auth.V1.SetMyEmailRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.SetMyEmailResponse.t()
+
+  @doc """
+  Sets the email address to verified
+  """
   @callback verify_my_email(
               input :: Zitadel.Auth.V1.VerifyMyEmailRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.VerifyMyEmailResponse.t()
+
+  @doc """
+  Sends a new email to the last given address to verify it
+  """
   @callback resend_my_email_verification(
               input :: Zitadel.Auth.V1.ResendMyEmailVerificationRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.ResendMyEmailVerificationResponse.t()
+
+  @doc """
+  Returns the phone number of the authorized user
+  """
   @callback get_my_phone(
               input :: Zitadel.Auth.V1.GetMyPhoneRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.GetMyPhoneResponse.t()
+
+  @doc """
+  Sets the phone number of the authorized user
+  An sms is sent to the number with a verification code
+  """
   @callback set_my_phone(
               input :: Zitadel.Auth.V1.SetMyPhoneRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.SetMyPhoneResponse.t()
+
+  @doc """
+  Sets the phone number to verified
+  """
   @callback verify_my_phone(
               input :: Zitadel.Auth.V1.VerifyMyPhoneRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.VerifyMyPhoneResponse.t()
+
+  @doc """
+  Resends a sms to the last given phone number, to verify it
+  """
   @callback resend_my_phone_verification(
               input :: Zitadel.Auth.V1.ResendMyPhoneVerificationRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.ResendMyPhoneVerificationResponse.t()
+
+  @doc """
+  Removed the phone number of the authorized user
+  """
   @callback remove_my_phone(
               input :: Zitadel.Auth.V1.RemoveMyPhoneRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.RemoveMyPhoneResponse.t()
+
+  @doc """
+  Returns a list of all linked identity providers (social logins, eg. Google, Microsoft, AD, etc.)
+  """
   @callback list_my_linked_id_ps(
               input :: Zitadel.Auth.V1.ListMyLinkedIDPsRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.ListMyLinkedIDPsResponse.t()
+
+  @doc """
+  Removes a linked identity provider (social logins, eg. Google, Microsoft, AD, etc.)
+  """
   @callback remove_my_linked_idp(
               input :: Zitadel.Auth.V1.RemoveMyLinkedIDPRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.RemoveMyLinkedIDPResponse.t()
+
+  @doc """
+  Returns all configured authentication factors (second and multi)
+  """
   @callback list_my_auth_factors(
               input :: Zitadel.Auth.V1.ListMyAuthFactorsRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.ListMyAuthFactorsResponse.t()
+
+  @doc """
+  Adds a new OTP (One Time Password) Second Factor to the authorized user
+  Only one OTP can be configured per user
+  """
   @callback add_my_auth_factor_otp(
               input :: Zitadel.Auth.V1.AddMyAuthFactorOTPRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.AddMyAuthFactorOTPResponse.t()
+
+  @doc """
+  Verify the last added OTP (One Time Password)
+  """
   @callback verify_my_auth_factor_otp(
               input :: Zitadel.Auth.V1.VerifyMyAuthFactorOTPRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.VerifyMyAuthFactorOTPResponse.t()
+
+  @doc """
+  Removed the configured OTP (One Time Password) Factor
+  """
   @callback remove_my_auth_factor_otp(
               input :: Zitadel.Auth.V1.RemoveMyAuthFactorOTPRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.RemoveMyAuthFactorOTPResponse.t()
+
+  @doc """
+  Adds a new U2F (Universal Second Factor) to the authorized user
+  Multiple U2Fs can be configured
+  """
   @callback add_my_auth_factor_u2_f(
               input :: Zitadel.Auth.V1.AddMyAuthFactorU2FRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.AddMyAuthFactorU2FResponse.t()
+
+  @doc """
+  Verifies the last added U2F (Universal Second Factor) of the authorized user
+  """
   @callback verify_my_auth_factor_u2_f(
               input :: Zitadel.Auth.V1.VerifyMyAuthFactorU2FRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.VerifyMyAuthFactorU2FResponse.t()
+
+  @doc """
+  Removes the U2F Authentication from the authorized user
+  """
   @callback remove_my_auth_factor_u2_f(
               input :: Zitadel.Auth.V1.RemoveMyAuthFactorU2FRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.RemoveMyAuthFactorU2FResponse.t()
+
+  @doc """
+  Returns all configured passwordless authentications of the authorized user
+  """
   @callback list_my_passwordless(
               input :: Zitadel.Auth.V1.ListMyPasswordlessRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.ListMyPasswordlessResponse.t()
+
+  @doc """
+  Adds a new passwordless authentications to the authorized user
+  Multiple passwordless authentications can be configured
+  """
   @callback add_my_passwordless(
               input :: Zitadel.Auth.V1.AddMyPasswordlessRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.AddMyPasswordlessResponse.t()
+
+  @doc """
+  Verifies the last added passwordless configuration
+  """
   @callback verify_my_passwordless(
               input :: Zitadel.Auth.V1.VerifyMyPasswordlessRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.VerifyMyPasswordlessResponse.t()
+
+  @doc """
+  Removes the passwordless configuration from the authorized user
+  """
   @callback remove_my_passwordless(
               input :: Zitadel.Auth.V1.RemoveMyPasswordlessRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.RemoveMyPasswordlessResponse.t()
+
+  @doc """
+  Returns all user grants (authorizations) of the authorized user
+  """
   @callback list_my_user_grants(
               input :: Zitadel.Auth.V1.ListMyUserGrantsRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.ListMyUserGrantsResponse.t()
+
+  @doc """
+  Returns a list of organisations where the authorized user has a user grant (authorization) in the context of the requested project
+  """
   @callback list_my_project_orgs(
               input :: Zitadel.Auth.V1.ListMyProjectOrgsRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.ListMyProjectOrgsResponse.t()
+
+  @doc """
+  Returns a list of features, which are allowed on these organisation based on the subscription of the organisation
+  """
   @callback list_my_zitadel_features(
               input :: Zitadel.Auth.V1.ListMyZitadelFeaturesRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.ListMyZitadelFeaturesResponse.t()
+
+  @doc """
+  Returns the permissions the authorized user has in ZITADEL based on his manager roles (e.g ORG_OWNER)
+  """
   @callback list_my_zitadel_permissions(
               input :: Zitadel.Auth.V1.ListMyZitadelPermissionsRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.ListMyZitadelPermissionsResponse.t()
+
+  @doc """
+  Returns a list of roles for the authorized user and project
+  """
   @callback list_my_project_permissions(
               input :: Zitadel.Auth.V1.ListMyProjectPermissionsRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Auth.V1.ListMyProjectPermissionsResponse.t()
+
   @optional_callbacks healthz: 2,
                       get_my_user: 2,
                       list_my_user_changes: 2,

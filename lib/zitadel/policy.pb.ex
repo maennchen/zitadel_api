@@ -30,14 +30,11 @@ defmodule Zitadel.Policy.V1.SecondFactorType do
 end
 
 defmodule Zitadel.Policy.V1.MultiFactorType do
+  @moduledoc false
+
   use Protobuf, enum: true, syntax: :proto3
   @type multi_factor_type_unspecified :: :MULTI_FACTOR_TYPE_UNSPECIFIED
-
-  @typedoc """
-  TODO: what does livio think after the weekend? :D
-  """
   @type multi_factor_type_u2f_with_verification :: :MULTI_FACTOR_TYPE_U2F_WITH_VERIFICATION
-
   @type t :: integer | multi_factor_type_unspecified() | multi_factor_type_u2f_with_verification()
 
   def descriptor do

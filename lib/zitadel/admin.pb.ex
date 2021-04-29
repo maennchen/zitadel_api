@@ -1,5 +1,7 @@
 defmodule Zitadel.Admin.V1.HealthzRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -15,7 +17,9 @@ defmodule Zitadel.Admin.V1.HealthzRequest do
 end
 
 defmodule Zitadel.Admin.V1.HealthzResponse do
-  @moduledoc false
+  @moduledoc """
+  This is an empty response
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -1828,7 +1832,9 @@ defmodule Zitadel.Admin.V1.ResetCustomOrgIAMPolicyToDefaultResponse do
 end
 
 defmodule Zitadel.Admin.V1.GetLabelPolicyRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -1929,7 +1935,9 @@ defmodule Zitadel.Admin.V1.UpdateLabelPolicyResponse do
 end
 
 defmodule Zitadel.Admin.V1.GetLoginPolicyRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -2214,7 +2222,9 @@ defmodule Zitadel.Admin.V1.RemoveIDPFromLoginPolicyResponse do
 end
 
 defmodule Zitadel.Admin.V1.ListLoginPolicySecondFactorsRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -2361,7 +2371,9 @@ defmodule Zitadel.Admin.V1.RemoveSecondFactorFromLoginPolicyResponse do
 end
 
 defmodule Zitadel.Admin.V1.ListLoginPolicyMultiFactorsRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -2617,7 +2629,9 @@ defmodule Zitadel.Admin.V1.UpdatePasswordComplexityPolicyResponse do
 end
 
 defmodule Zitadel.Admin.V1.GetPasswordAgePolicyRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -2711,7 +2725,9 @@ defmodule Zitadel.Admin.V1.UpdatePasswordAgePolicyResponse do
 end
 
 defmodule Zitadel.Admin.V1.GetPasswordLockoutPolicyRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -2973,7 +2989,9 @@ defmodule Zitadel.Admin.V1.RemoveIAMMemberResponse do
 end
 
 defmodule Zitadel.Admin.V1.ListIAMMemberRolesRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -3086,7 +3104,9 @@ defmodule Zitadel.Admin.V1.ListIAMMembersResponse do
 end
 
 defmodule Zitadel.Admin.V1.ListViewsRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -3157,7 +3177,9 @@ defmodule Zitadel.Admin.V1.ClearViewRequest do
 end
 
 defmodule Zitadel.Admin.V1.ClearViewResponse do
-  @moduledoc false
+  @moduledoc """
+  This is an empty response
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -3173,7 +3195,9 @@ defmodule Zitadel.Admin.V1.ClearViewResponse do
 end
 
 defmodule Zitadel.Admin.V1.ListFailedEventsRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -3252,7 +3276,9 @@ defmodule Zitadel.Admin.V1.RemoveFailedEventRequest do
 end
 
 defmodule Zitadel.Admin.V1.RemoveFailedEventResponse do
-  @moduledoc false
+  @moduledoc """
+  This is an empty response
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -3989,6 +4015,9 @@ defmodule Zitadel.Admin.V1.AdminService.Behaviour do
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Admin.V1.IsOrgUniqueResponse.t()
 
+  @doc """
+  Returns an organisation by id
+  """
   @callback get_org_by_id(
               input :: Zitadel.Admin.V1.GetOrgByIDRequest.t(),
               stream :: GRPC.Server.Stream.t()
@@ -3996,7 +4025,7 @@ defmodule Zitadel.Admin.V1.AdminService.Behaviour do
 
   @doc """
   Returns all organisations matching the request
-  all queries need to match (ANDed)
+  all queries need to match (AND)
   """
   @callback list_orgs(
               input :: Zitadel.Admin.V1.ListOrgsRequest.t(),
@@ -4012,14 +4041,25 @@ defmodule Zitadel.Admin.V1.AdminService.Behaviour do
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Admin.V1.SetUpOrgResponse.t()
 
+  @doc """
+  Returns a identity provider configuration of the IAM
+  """
   @callback get_idp_by_id(
               input :: Zitadel.Admin.V1.GetIDPByIDRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Admin.V1.GetIDPByIDResponse.t()
+
+  @doc """
+  Returns all identity provider configurations of the IAM
+  """
   @callback list_id_ps(
               input :: Zitadel.Admin.V1.ListIDPsRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Admin.V1.ListIDPsResponse.t()
+
+  @doc """
+  Adds a new oidc identity provider configuration the IAM
+  """
   @callback add_oidcidp(
               input :: Zitadel.Admin.V1.AddOIDCIDPRequest.t(),
               stream :: GRPC.Server.Stream.t()

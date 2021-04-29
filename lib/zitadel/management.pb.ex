@@ -20,7 +20,9 @@ defmodule Zitadel.Management.V1.SendHumanResetPasswordNotificationRequest.Type d
 end
 
 defmodule Zitadel.Management.V1.HealthzRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -36,7 +38,9 @@ defmodule Zitadel.Management.V1.HealthzRequest do
 end
 
 defmodule Zitadel.Management.V1.HealthzResponse do
-  @moduledoc false
+  @moduledoc """
+  This is an empty response
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -52,7 +56,9 @@ defmodule Zitadel.Management.V1.HealthzResponse do
 end
 
 defmodule Zitadel.Management.V1.GetOIDCInformationRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -97,7 +103,9 @@ defmodule Zitadel.Management.V1.GetOIDCInformationResponse do
 end
 
 defmodule Zitadel.Management.V1.GetIAMRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -2610,7 +2618,9 @@ defmodule Zitadel.Management.V1.ListUserMembershipsResponse do
 end
 
 defmodule Zitadel.Management.V1.GetMyOrgRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -2803,7 +2813,9 @@ defmodule Zitadel.Management.V1.AddOrgResponse do
 end
 
 defmodule Zitadel.Management.V1.DeactivateOrgRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -2844,7 +2856,9 @@ defmodule Zitadel.Management.V1.DeactivateOrgResponse do
 end
 
 defmodule Zitadel.Management.V1.ReactivateOrgRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -3198,7 +3212,9 @@ defmodule Zitadel.Management.V1.SetPrimaryOrgDomainResponse do
 end
 
 defmodule Zitadel.Management.V1.ListOrgMemberRolesRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -4024,7 +4040,9 @@ defmodule Zitadel.Management.V1.RemoveProjectResponse do
 end
 
 defmodule Zitadel.Management.V1.ListProjectMemberRolesRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -8049,7 +8067,9 @@ defmodule Zitadel.Management.V1.GetPasswordComplexityPolicyResponse do
 end
 
 defmodule Zitadel.Management.V1.GetDefaultPasswordComplexityPolicyRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -8226,7 +8246,9 @@ defmodule Zitadel.Management.V1.UpdateCustomPasswordComplexityPolicyResponse do
 end
 
 defmodule Zitadel.Management.V1.ResetPasswordComplexityPolicyToDefaultRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -8268,7 +8290,9 @@ defmodule Zitadel.Management.V1.ResetPasswordComplexityPolicyToDefaultResponse d
 end
 
 defmodule Zitadel.Management.V1.GetPasswordAgePolicyRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -8312,7 +8336,9 @@ defmodule Zitadel.Management.V1.GetPasswordAgePolicyResponse do
 end
 
 defmodule Zitadel.Management.V1.GetDefaultPasswordAgePolicyRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -8460,7 +8486,9 @@ defmodule Zitadel.Management.V1.UpdateCustomPasswordAgePolicyResponse do
 end
 
 defmodule Zitadel.Management.V1.ResetPasswordAgePolicyToDefaultRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -8499,7 +8527,9 @@ defmodule Zitadel.Management.V1.ResetPasswordAgePolicyToDefaultResponse do
 end
 
 defmodule Zitadel.Management.V1.GetPasswordLockoutPolicyRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -8546,7 +8576,9 @@ defmodule Zitadel.Management.V1.GetPasswordLockoutPolicyResponse do
 end
 
 defmodule Zitadel.Management.V1.GetDefaultPasswordLockoutPolicyRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -8696,7 +8728,9 @@ defmodule Zitadel.Management.V1.UpdateCustomPasswordLockoutPolicyResponse do
 end
 
 defmodule Zitadel.Management.V1.ResetPasswordLockoutPolicyToDefaultRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -8735,7 +8769,9 @@ defmodule Zitadel.Management.V1.ResetPasswordLockoutPolicyToDefaultResponse do
 end
 
 defmodule Zitadel.Management.V1.GetLabelPolicyRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -8781,7 +8817,9 @@ defmodule Zitadel.Management.V1.GetLabelPolicyResponse do
 end
 
 defmodule Zitadel.Management.V1.GetDefaultLabelPolicyRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -8945,7 +8983,9 @@ defmodule Zitadel.Management.V1.UpdateCustomLabelPolicyResponse do
 end
 
 defmodule Zitadel.Management.V1.ResetLabelPolicyToDefaultRequest do
-  @moduledoc false
+  @moduledoc """
+  This is an empty request
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -9408,7 +9448,9 @@ defmodule Zitadel.Management.V1.RemoveOrgIDPRequest do
 end
 
 defmodule Zitadel.Management.V1.RemoveOrgIDPResponse do
-  @moduledoc false
+  @moduledoc """
+  This is an empty response
+  """
 
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
@@ -11639,20 +11681,23 @@ defmodule Zitadel.Management.V1.ManagementService.Behaviour do
             ) :: Zitadel.Management.V1.GetOIDCInformationResponse.t()
 
   @doc """
-  GetIam returns some needed settings of the iam (Global Organisation ID, Zitadel Project ID)
+  Returns some needed settings of the IAM (Global Organisation ID, Zitadel Project ID)
   """
   @callback get_iam(
               input :: Zitadel.Management.V1.GetIAMRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.GetIAMResponse.t()
 
+  @doc """
+  Returns the requested full blown user (human or machine)
+  """
   @callback get_user_by_id(
               input :: Zitadel.Management.V1.GetUserByIDRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.GetUserByIDResponse.t()
 
   @doc """
-  GetUserByLoginNameGlobal searches a user over all organisations
+  Searches a user over all organisations
   the login name has to match exactly
   """
   @callback get_user_by_login_name_global(
@@ -11661,6 +11706,7 @@ defmodule Zitadel.Management.V1.ManagementService.Behaviour do
             ) :: Zitadel.Management.V1.GetUserByLoginNameGlobalResponse.t()
 
   @doc """
+  Return the users matching the query
   Limit should always be set, there is a default limit set by the service
   """
   @callback list_users(
@@ -11668,86 +11714,183 @@ defmodule Zitadel.Management.V1.ManagementService.Behaviour do
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ListUsersResponse.t()
 
+  @doc """
+  Returns the history of the user (each event)
+  Limit should always be set, there is a default limit set by the service
+  """
   @callback list_user_changes(
               input :: Zitadel.Management.V1.ListUserChangesRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ListUserChangesResponse.t()
+
+  @doc """
+  Returns if a user with the searched email or username is unique
+  """
   @callback is_user_unique(
               input :: Zitadel.Management.V1.IsUserUniqueRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.IsUserUniqueResponse.t()
+
+  @doc """
+  Create a user of the type human
+  A email will be sent to the user if email is not verified or no password is set
+  If a password is given, the user has to change on the next login
+  """
   @callback add_human_user(
               input :: Zitadel.Management.V1.AddHumanUserRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.AddHumanUserResponse.t()
+
+  @doc """
+  Create a user of the type human
+  A email will be sent to the user if email is not verified or no password is set
+  If a password is given, the user doesn't have to change on the next login
+  """
   @callback import_human_user(
               input :: Zitadel.Management.V1.ImportHumanUserRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ImportHumanUserResponse.t()
+
+  @doc """
+  Create a user of the type machine
+  """
   @callback add_machine_user(
               input :: Zitadel.Management.V1.AddMachineUserRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.AddMachineUserResponse.t()
+
+  @doc """
+  Changes the user state to deactivated
+  The user will not be able to login
+  returns an error if user state is already deactivated
+  """
   @callback deactivate_user(
               input :: Zitadel.Management.V1.DeactivateUserRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.DeactivateUserResponse.t()
+
+  @doc """
+  Changes the user state to active
+  returns an error if user state is not deactivated
+  """
   @callback reactivate_user(
               input :: Zitadel.Management.V1.ReactivateUserRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ReactivateUserResponse.t()
+
+  @doc """
+  Changes the user state to deactivated
+  The user will not be able to login
+  returns an error if user state is already locked
+  """
   @callback lock_user(
               input :: Zitadel.Management.V1.LockUserRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.LockUserResponse.t()
+
+  @doc """
+  Changes the user state to active
+  returns an error if user state is not locked
+  """
   @callback unlock_user(
               input :: Zitadel.Management.V1.UnlockUserRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.UnlockUserResponse.t()
+
+  @doc """
+  Changes the user state to deleted
+  """
   @callback remove_user(
               input :: Zitadel.Management.V1.RemoveUserRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.RemoveUserResponse.t()
+
+  @doc """
+  Changes the username
+  """
   @callback update_user_name(
               input :: Zitadel.Management.V1.UpdateUserNameRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.UpdateUserNameResponse.t()
+
+  @doc """
+  Returns the profile of the human
+  """
   @callback get_human_profile(
               input :: Zitadel.Management.V1.GetHumanProfileRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.GetHumanProfileResponse.t()
+
+  @doc """
+  Changes the profile of the human
+  """
   @callback update_human_profile(
               input :: Zitadel.Management.V1.UpdateHumanProfileRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.UpdateHumanProfileResponse.t()
+
+  @doc """
+  GetHumanEmail returns the email and verified state of the human
+  """
   @callback get_human_email(
               input :: Zitadel.Management.V1.GetHumanEmailRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.GetHumanEmailResponse.t()
+
+  @doc """
+  Changes the email of the human
+  If state is not verified, the user will get a verification email
+  """
   @callback update_human_email(
               input :: Zitadel.Management.V1.UpdateHumanEmailRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.UpdateHumanEmailResponse.t()
+
+  @doc """
+  Resends an email to the given email address to finish the initialization process of the user
+  Changes the email address of the user if it is provided
+  """
   @callback resend_human_initialization(
               input :: Zitadel.Management.V1.ResendHumanInitializationRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ResendHumanInitializationResponse.t()
+
+  @doc """
+  Resends an email to the given email address to finish the email verification process of the user
+  """
   @callback resend_human_email_verification(
               input :: Zitadel.Management.V1.ResendHumanEmailVerificationRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ResendHumanEmailVerificationResponse.t()
+
+  @doc """
+  Returns the phone and verified state of the human phone
+  """
   @callback get_human_phone(
               input :: Zitadel.Management.V1.GetHumanPhoneRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.GetHumanPhoneResponse.t()
+
+  @doc """
+  Changes the phone number
+  If verified is not set, the user will get an sms to verify the number
+  """
   @callback update_human_phone(
               input :: Zitadel.Management.V1.UpdateHumanPhoneRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.UpdateHumanPhoneResponse.t()
+
+  @doc """
+  Removes the phone number of the human
+  """
   @callback remove_human_phone(
               input :: Zitadel.Management.V1.RemoveHumanPhoneRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.RemoveHumanPhoneResponse.t()
+
+  @doc """
+  An sms will be sent to the given phone number to finish the phone verification process of the user
+  """
   @callback resend_human_phone_verification(
               input :: Zitadel.Management.V1.ResendHumanPhoneVerificationRequest.t(),
               stream :: GRPC.Server.Stream.t()
@@ -11761,130 +11904,268 @@ defmodule Zitadel.Management.V1.ManagementService.Behaviour do
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.SetHumanInitialPasswordResponse.t()
 
+  @doc """
+  An email will be sent to the given address to reset the password of the user
+  """
   @callback send_human_reset_password_notification(
               input :: Zitadel.Management.V1.SendHumanResetPasswordNotificationRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.SendHumanResetPasswordNotificationResponse.t()
+
+  @doc """
+  Returns a list of all factors (second and multi) which are configured on the user
+  """
   @callback list_human_auth_factors(
               input :: Zitadel.Management.V1.ListHumanAuthFactorsRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ListHumanAuthFactorsResponse.t()
+
+  @doc """
+  The otp second factor will be removed from the user
+  Because only one otp can be configured per user, the configured one will be removed
+  """
   @callback remove_human_auth_factor_otp(
               input :: Zitadel.Management.V1.RemoveHumanAuthFactorOTPRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.RemoveHumanAuthFactorOTPResponse.t()
+
+  @doc """
+  The u2f (universial second factor) will be removed from the user
+  """
   @callback remove_human_auth_factor_u2_f(
               input :: Zitadel.Management.V1.RemoveHumanAuthFactorU2FRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.RemoveHumanAuthFactorU2FResponse.t()
+
+  @doc """
+  Returns all configured passwordless authentications
+  """
   @callback list_human_passwordless(
               input :: Zitadel.Management.V1.ListHumanPasswordlessRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ListHumanPasswordlessResponse.t()
+
+  @doc """
+  Removed a configured passwordless authentication
+  """
   @callback remove_human_passwordless(
               input :: Zitadel.Management.V1.RemoveHumanPasswordlessRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.RemoveHumanPasswordlessResponse.t()
+
+  @doc """
+  Changes a machine user
+  """
   @callback update_machine(
               input :: Zitadel.Management.V1.UpdateMachineRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.UpdateMachineResponse.t()
+
+  @doc """
+  Returns a machine key of a (machine) user
+  """
   @callback get_machine_key_by_i_ds(
               input :: Zitadel.Management.V1.GetMachineKeyByIDsRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.GetMachineKeyByIDsResponse.t()
+
+  @doc """
+  Returns all machine keys of a (machine) user which match the query
+  Limit should always be set, there is a default limit set by the service
+  """
   @callback list_machine_keys(
               input :: Zitadel.Management.V1.ListMachineKeysRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ListMachineKeysResponse.t()
+
+  @doc """
+  Generates a new machine key, details should be stored after return
+  """
   @callback add_machine_key(
               input :: Zitadel.Management.V1.AddMachineKeyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.AddMachineKeyResponse.t()
+
+  @doc """
+  Removed a machine key
+  """
   @callback remove_machine_key(
               input :: Zitadel.Management.V1.RemoveMachineKeyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.RemoveMachineKeyResponse.t()
+
+  @doc """
+  Lists all identity providers (social logins) which a human has configured (e.g Google, Microsoft, AD, etc..)
+  Limit should always be set, there is a default limit set by the service
+  """
   @callback list_human_linked_id_ps(
               input :: Zitadel.Management.V1.ListHumanLinkedIDPsRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ListHumanLinkedIDPsResponse.t()
+
+  @doc """
+  Removed a configured identity provider (social login) of a human
+  """
   @callback remove_human_linked_idp(
               input :: Zitadel.Management.V1.RemoveHumanLinkedIDPRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.RemoveHumanLinkedIDPResponse.t()
+
+  @doc """
+  Show all the permissions a user has iin ZITADEL (ZITADEL Manager)
+  Limit should always be set, there is a default limit set by the service
+  """
   @callback list_user_memberships(
               input :: Zitadel.Management.V1.ListUserMembershipsRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ListUserMembershipsResponse.t()
+
+  @doc """
+  Returns the org given in the header
+  """
   @callback get_my_org(
               input :: Zitadel.Management.V1.GetMyOrgRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.GetMyOrgResponse.t()
+
+  @doc """
+  Search a org over all organisations
+  Domain must match exactly
+  """
   @callback get_org_by_domain_global(
               input :: Zitadel.Management.V1.GetOrgByDomainGlobalRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.GetOrgByDomainGlobalResponse.t()
+
+  @doc """
+  Returns the history of my organisation (each event)
+  Limit should always be set, there is a default limit set by the service
+  """
   @callback list_org_changes(
               input :: Zitadel.Management.V1.ListOrgChangesRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ListOrgChangesResponse.t()
+
+  @doc """
+  Creates a new organisation
+  """
   @callback add_org(
               input :: Zitadel.Management.V1.AddOrgRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.AddOrgResponse.t()
+
+  @doc """
+  Sets the state of my organisation to deactivated
+  Users of this organisation will not be able login
+  """
   @callback deactivate_org(
               input :: Zitadel.Management.V1.DeactivateOrgRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.DeactivateOrgResponse.t()
+
+  @doc """
+  Sets the state of my organisation to active
+  """
   @callback reactivate_org(
               input :: Zitadel.Management.V1.ReactivateOrgRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ReactivateOrgResponse.t()
+
+  @doc """
+  Returns all registered domains of my organisation
+  Limit should always be set, there is a default limit set by the service
+  """
   @callback list_org_domains(
               input :: Zitadel.Management.V1.ListOrgDomainsRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ListOrgDomainsResponse.t()
+
+  @doc """
+  Adds a new domain to my organisation
+  """
   @callback add_org_domain(
               input :: Zitadel.Management.V1.AddOrgDomainRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.AddOrgDomainResponse.t()
+
+  @doc """
+  Removed the domain from my organisation
+  """
   @callback remove_org_domain(
               input :: Zitadel.Management.V1.RemoveOrgDomainRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.RemoveOrgDomainResponse.t()
+
+  @doc """
+  Generates a new file to validate you domain
+  """
   @callback generate_org_domain_validation(
               input :: Zitadel.Management.V1.GenerateOrgDomainValidationRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.GenerateOrgDomainValidationResponse.t()
+
+  @doc """
+  Validates your domain with the choosen method
+  Validated domains must be unique
+  """
   @callback validate_org_domain(
               input :: Zitadel.Management.V1.ValidateOrgDomainRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ValidateOrgDomainResponse.t()
+
+  @doc """
+  Sets the domain as primary
+  Primary domain is shown as suffix on the preferred username on the users of the organisation
+  """
   @callback set_primary_org_domain(
               input :: Zitadel.Management.V1.SetPrimaryOrgDomainRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.SetPrimaryOrgDomainResponse.t()
+
+  @doc """
+  Returns all ZITADEL roles which are for organisation managers
+  """
   @callback list_org_member_roles(
               input :: Zitadel.Management.V1.ListOrgMemberRolesRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ListOrgMemberRolesResponse.t()
+
+  @doc """
+  Returns all ZITADEL managers of this organisation (Project and Project Grant managers not included)
+  Limit should always be set, there is a default limit set by the service
+  """
   @callback list_org_members(
               input :: Zitadel.Management.V1.ListOrgMembersRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ListOrgMembersResponse.t()
+
+  @doc """
+  Adds a new organisation manager, which is allowed to administrate ZITADEL
+  """
   @callback add_org_member(
               input :: Zitadel.Management.V1.AddOrgMemberRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.AddOrgMemberResponse.t()
+
+  @doc """
+  Changes the organisation manager
+  """
   @callback update_org_member(
               input :: Zitadel.Management.V1.UpdateOrgMemberRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.UpdateOrgMemberResponse.t()
+
+  @doc """
+  Removes an organisation manager
+  """
   @callback remove_org_member(
               input :: Zitadel.Management.V1.RemoveOrgMemberRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.RemoveOrgMemberResponse.t()
+
+  @doc """
+  Returns a project from my organisation (no granted projects)
+  """
   @callback get_project_by_id(
               input :: Zitadel.Management.V1.GetProjectByIDRequest.t(),
               stream :: GRPC.Server.Stream.t()
@@ -11898,6 +12179,10 @@ defmodule Zitadel.Management.V1.ManagementService.Behaviour do
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.GetGrantedProjectByIDResponse.t()
 
+  @doc """
+  Returns all projects my organisation is the owner (no granted projects)
+  Limit should always be set, there is a default limit set by the service
+  """
   @callback list_projects(
               input :: Zitadel.Management.V1.ListProjectsRequest.t(),
               stream :: GRPC.Server.Stream.t()
@@ -11905,6 +12190,7 @@ defmodule Zitadel.Management.V1.ManagementService.Behaviour do
 
   @doc """
   returns all projects my organisation got granted from another organisation
+  Limit should always be set, there is a default limit set by the service
   """
   @callback list_granted_projects(
               input :: Zitadel.Management.V1.ListGrantedProjectsRequest.t(),
@@ -11913,40 +12199,77 @@ defmodule Zitadel.Management.V1.ManagementService.Behaviour do
 
   @doc """
   returns all roles of a project grant
+  Limit should always be set, there is a default limit set by the service
   """
   @callback list_granted_project_roles(
               input :: Zitadel.Management.V1.ListGrantedProjectRolesRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ListGrantedProjectRolesResponse.t()
 
+  @doc """
+  Returns the history of the project (each event)
+  Limit should always be set, there is a default limit set by the service
+  """
   @callback list_project_changes(
               input :: Zitadel.Management.V1.ListProjectChangesRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ListProjectChangesResponse.t()
+
+  @doc """
+  Adds an new project to the organisation
+  """
   @callback add_project(
               input :: Zitadel.Management.V1.AddProjectRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.AddProjectResponse.t()
+
+  @doc """
+  Changes a project
+  """
   @callback update_project(
               input :: Zitadel.Management.V1.UpdateProjectRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.UpdateProjectResponse.t()
+
+  @doc """
+  Sets the state of a project to deactivated
+  Returns an error if project is already deactivated
+  """
   @callback deactivate_project(
               input :: Zitadel.Management.V1.DeactivateProjectRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.DeactivateProjectResponse.t()
+
+  @doc """
+  Sets the state of a project to active
+  Returns an error if project is not deactivated
+  """
   @callback reactivate_project(
               input :: Zitadel.Management.V1.ReactivateProjectRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ReactivateProjectResponse.t()
+
+  @doc """
+  Removes a project
+  All project grants, applications and user grants for this project will be removed
+  """
   @callback remove_project(
               input :: Zitadel.Management.V1.RemoveProjectRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.RemoveProjectResponse.t()
+
+  @doc """
+  Returns all roles of a project matching the search query
+  If no limit is requested, default limit will be set, if the limit is higher then the default an error will be returned
+  """
   @callback list_project_roles(
               input :: Zitadel.Management.V1.ListProjectRolesRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ListProjectRolesResponse.t()
+
+  @doc """
+  Adds a role to a project, key must be unique in the project
+  """
   @callback add_project_role(
               input :: Zitadel.Management.V1.AddProjectRoleRequest.t(),
               stream :: GRPC.Server.Stream.t()
@@ -11960,184 +12283,368 @@ defmodule Zitadel.Management.V1.ManagementService.Behaviour do
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.BulkAddProjectRolesResponse.t()
 
+  @doc """
+  Changes a project role, key is not editable
+  If a key should change, remove the role and create a new
+  """
   @callback update_project_role(
               input :: Zitadel.Management.V1.UpdateProjectRoleRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.UpdateProjectRoleResponse.t()
 
   @doc """
-  RemoveProjectRole removes role from UserGrants, ProjectGrants and from Project
+  Removes role from UserGrants, ProjectGrants and from Project
   """
   @callback remove_project_role(
               input :: Zitadel.Management.V1.RemoveProjectRoleRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.RemoveProjectRoleResponse.t()
 
+  @doc """
+  Returns all ZITADEL roles which are for project managers
+  """
   @callback list_project_member_roles(
               input :: Zitadel.Management.V1.ListProjectMemberRolesRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ListProjectMemberRolesResponse.t()
+
+  @doc """
+  Returns all ZITADEL managers of a projects
+  Limit should always be set, there is a default limit set by the service
+  """
   @callback list_project_members(
               input :: Zitadel.Management.V1.ListProjectMembersRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ListProjectMembersResponse.t()
+
+  @doc """
+  Adds a new project manager, which is allowed to administrate in ZITADEL
+  """
   @callback add_project_member(
               input :: Zitadel.Management.V1.AddProjectMemberRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.AddProjectMemberResponse.t()
+
+  @doc """
+  Change project manager, which is allowed to administrate in ZITADEL
+  """
   @callback update_project_member(
               input :: Zitadel.Management.V1.UpdateProjectMemberRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.UpdateProjectMemberResponse.t()
+
+  @doc """
+  Remove project manager, which is allowed to administrate in ZITADEL
+  """
   @callback remove_project_member(
               input :: Zitadel.Management.V1.RemoveProjectMemberRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.RemoveProjectMemberResponse.t()
+
+  @doc """
+  Returns an application (oidc or api)
+  """
   @callback get_app_by_id(
               input :: Zitadel.Management.V1.GetAppByIDRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.GetAppByIDResponse.t()
+
+  @doc """
+  Returns all applications of a project matching the query
+  Limit should always be set, there is a default limit set by the service
+  """
   @callback list_apps(
               input :: Zitadel.Management.V1.ListAppsRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ListAppsResponse.t()
+
+  @doc """
+  Returns the history of the application (each event)
+  Limit should always be set, there is a default limit set by the service
+  """
   @callback list_app_changes(
               input :: Zitadel.Management.V1.ListAppChangesRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ListAppChangesResponse.t()
+
+  @doc """
+  Adds a new oidc client
+  Returns a client id
+  Returns a new generated secret if needed (Depending on the configuration)
+  """
   @callback add_oidc_app(
               input :: Zitadel.Management.V1.AddOIDCAppRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.AddOIDCAppResponse.t()
+
+  @doc """
+  Adds a new api application
+  Returns a client id
+  Returns a new generated secret if needed (Depending on the configuration)
+  """
   @callback add_api_app(
               input :: Zitadel.Management.V1.AddAPIAppRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.AddAPIAppResponse.t()
+
+  @doc """
+  Changes application
+  """
   @callback update_app(
               input :: Zitadel.Management.V1.UpdateAppRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.UpdateAppResponse.t()
+
+  @doc """
+  Changes the configuration of the oidc client
+  """
   @callback update_oidc_app_config(
               input :: Zitadel.Management.V1.UpdateOIDCAppConfigRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.UpdateOIDCAppConfigResponse.t()
+
+  @doc """
+  Changes the configuration of the api application
+  """
   @callback update_api_app_config(
               input :: Zitadel.Management.V1.UpdateAPIAppConfigRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.UpdateAPIAppConfigResponse.t()
+
+  @doc """
+  Set the state to deactivated
+  Its not possible to request tokens for deactivated apps
+  Returns an error if already deactivated
+  """
   @callback deactivate_app(
               input :: Zitadel.Management.V1.DeactivateAppRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.DeactivateAppResponse.t()
+
+  @doc """
+  Set the state to active
+  Returns an error if not deactivated
+  """
   @callback reactivate_app(
               input :: Zitadel.Management.V1.ReactivateAppRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ReactivateAppResponse.t()
+
+  @doc """
+  Removed the application
+  """
   @callback remove_app(
               input :: Zitadel.Management.V1.RemoveAppRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.RemoveAppResponse.t()
+
+  @doc """
+  Generates a new client secret for the oidc client, make sure to save the response
+  """
   @callback regenerate_oidc_client_secret(
               input :: Zitadel.Management.V1.RegenerateOIDCClientSecretRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.RegenerateOIDCClientSecretResponse.t()
+
+  @doc """
+  Generates a new client secret for the api application, make sure to save the response
+  """
   @callback regenerate_api_client_secret(
               input :: Zitadel.Management.V1.RegenerateAPIClientSecretRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.RegenerateAPIClientSecretResponse.t()
+
+  @doc """
+  Returns an application key
+  """
   @callback get_app_key(
               input :: Zitadel.Management.V1.GetAppKeyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.GetAppKeyResponse.t()
+
+  @doc """
+  Returns all application keys matching the result
+  Limit should always be set, there is a default limit set by the service
+  """
   @callback list_app_keys(
               input :: Zitadel.Management.V1.ListAppKeysRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ListAppKeysResponse.t()
+
+  @doc """
+  Creates a new app key
+  Will return key details in result, make sure to save it
+  """
   @callback add_app_key(
               input :: Zitadel.Management.V1.AddAppKeyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.AddAppKeyResponse.t()
+
+  @doc """
+  Removes an app key
+  """
   @callback remove_app_key(
               input :: Zitadel.Management.V1.RemoveAppKeyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.RemoveAppKeyResponse.t()
+
+  @doc """
+  Returns a project grant (ProjectGrant = Grant another organisation for my project)
+  """
   @callback get_project_grant_by_id(
               input :: Zitadel.Management.V1.GetProjectGrantByIDRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.GetProjectGrantByIDResponse.t()
+
+  @doc """
+  Returns all project grants matching the query, (ProjectGrant = Grant another organisation for my project)
+  Limit should always be set, there is a default limit set by the service
+  """
   @callback list_project_grants(
               input :: Zitadel.Management.V1.ListProjectGrantsRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ListProjectGrantsResponse.t()
+
+  @doc """
+  Add a new project grant (ProjectGrant = Grant another organisation for my project)
+  Project Grant will be listed in granted project of the other organisation
+  """
   @callback add_project_grant(
               input :: Zitadel.Management.V1.AddProjectGrantRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.AddProjectGrantResponse.t()
+
+  @doc """
+  Change project grant (ProjectGrant = Grant another organisation for my project)
+  Project Grant will be listed in granted project of the other organisation
+  """
   @callback update_project_grant(
               input :: Zitadel.Management.V1.UpdateProjectGrantRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.UpdateProjectGrantResponse.t()
+
+  @doc """
+  Set state of project grant to deactivated (ProjectGrant = Grant another organisation for my project)
+  Returns error if project not active
+  """
   @callback deactivate_project_grant(
               input :: Zitadel.Management.V1.DeactivateProjectGrantRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.DeactivateProjectGrantResponse.t()
+
+  @doc """
+  Set state of project grant to active (ProjectGrant = Grant another organisation for my project)
+  Returns error if project not deactivated
+  """
   @callback reactivate_project_grant(
               input :: Zitadel.Management.V1.ReactivateProjectGrantRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ReactivateProjectGrantResponse.t()
 
   @doc """
-  RemoveProjectGrant removes project grant and all user grants for this project grant
+  Removes project grant and all user grants for this project grant
   """
   @callback remove_project_grant(
               input :: Zitadel.Management.V1.RemoveProjectGrantRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.RemoveProjectGrantResponse.t()
 
+  @doc """
+  Returns all ZITADEL roles which are for project grant managers
+  """
   @callback list_project_grant_member_roles(
               input :: Zitadel.Management.V1.ListProjectGrantMemberRolesRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ListProjectGrantMemberRolesResponse.t()
+
+  @doc """
+  Returns all ZITADEL managers of this project grant
+  Limit should always be set, there is a default limit set by the service
+  """
   @callback list_project_grant_members(
               input :: Zitadel.Management.V1.ListProjectGrantMembersRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ListProjectGrantMembersResponse.t()
+
+  @doc """
+  Adds a new project grant manager, which is allowed to administrate in ZITADEL
+  """
   @callback add_project_grant_member(
               input :: Zitadel.Management.V1.AddProjectGrantMemberRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.AddProjectGrantMemberResponse.t()
+
+  @doc """
+  Changes project grant manager, which is allowed to administrate in ZITADEL
+  """
   @callback update_project_grant_member(
               input :: Zitadel.Management.V1.UpdateProjectGrantMemberRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.UpdateProjectGrantMemberResponse.t()
+
+  @doc """
+  Removed project grant manager
+  """
   @callback remove_project_grant_member(
               input :: Zitadel.Management.V1.RemoveProjectGrantMemberRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.RemoveProjectGrantMemberResponse.t()
+
+  @doc """
+  Returns a user grant (authorization of a user for a project)
+  """
   @callback get_user_grant_by_id(
               input :: Zitadel.Management.V1.GetUserGrantByIDRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.GetUserGrantByIDResponse.t()
+
+  @doc """
+  Returns al user grant matching the query (authorizations of user for projects)
+  Limit should always be set, there is a default limit set by the service
+  """
   @callback list_user_grants(
               input :: Zitadel.Management.V1.ListUserGrantRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ListUserGrantResponse.t()
+
+  @doc """
+  Creates a new user grant (authorization of a user for a project with specified roles)
+  """
   @callback add_user_grant(
               input :: Zitadel.Management.V1.AddUserGrantRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.AddUserGrantResponse.t()
+
+  @doc """
+  Changes a user grant (authorization of a user for a project with specified roles)
+  """
   @callback update_user_grant(
               input :: Zitadel.Management.V1.UpdateUserGrantRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.UpdateUserGrantResponse.t()
+
+  @doc """
+  Sets the state of a user grant to deactivated
+  User will not be able to use the granted project anymore
+  Returns an error if user grant is already deactivated
+  """
   @callback deactivate_user_grant(
               input :: Zitadel.Management.V1.DeactivateUserGrantRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.DeactivateUserGrantResponse.t()
+
+  @doc """
+  Sets the state of a user grant to active
+  Returns an error if user grant is not deactivated
+  """
   @callback reactivate_user_grant(
               input :: Zitadel.Management.V1.ReactivateUserGrantRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ReactivateUserGrantResponse.t()
+
+  @doc """
+  Removes a user grant
+  """
   @callback remove_user_grant(
               input :: Zitadel.Management.V1.RemoveUserGrantRequest.t(),
               stream :: GRPC.Server.Stream.t()
@@ -12155,178 +12662,372 @@ defmodule Zitadel.Management.V1.ManagementService.Behaviour do
               input :: Zitadel.Management.V1.GetFeaturesRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.GetFeaturesResponse.t()
+
+  @doc """
+  Returns the org iam policy (this policy is managed by the iam administrator)
+  """
   @callback get_org_iam_policy(
               input :: Zitadel.Management.V1.GetOrgIAMPolicyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.GetOrgIAMPolicyResponse.t()
+
+  @doc """
+  Returns the login policy of the organisation
+  With this policy the login gui can be configured
+  """
   @callback get_login_policy(
               input :: Zitadel.Management.V1.GetLoginPolicyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.GetLoginPolicyResponse.t()
+
+  @doc """
+  Returns the default login policy configured in the IAM
+  """
   @callback get_default_login_policy(
               input :: Zitadel.Management.V1.GetDefaultLoginPolicyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.GetDefaultLoginPolicyResponse.t()
+
+  @doc """
+  Add a custom login policy for the organisation
+  With this policy the login gui can be configured
+  """
   @callback add_custom_login_policy(
               input :: Zitadel.Management.V1.AddCustomLoginPolicyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.AddCustomLoginPolicyResponse.t()
+
+  @doc """
+  Change the custom login policy for the organisation
+  With this policy the login gui can be configured
+  """
   @callback update_custom_login_policy(
               input :: Zitadel.Management.V1.UpdateCustomLoginPolicyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.UpdateCustomLoginPolicyResponse.t()
+
+  @doc """
+  Removes the custom login policy of the organisation
+  The default policy of the IAM will trigger after
+  """
   @callback reset_login_policy_to_default(
               input :: Zitadel.Management.V1.ResetLoginPolicyToDefaultRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ResetLoginPolicyToDefaultResponse.t()
+
+  @doc """
+  Lists all possible identity providers configured on the organisation
+  Limit should always be set, there is a default limit set by the service
+  """
   @callback list_login_policy_id_ps(
               input :: Zitadel.Management.V1.ListLoginPolicyIDPsRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ListLoginPolicyIDPsResponse.t()
+
+  @doc """
+  Add a (preconfigured) identity provider to the custom login policy
+  """
   @callback add_idp_to_login_policy(
               input :: Zitadel.Management.V1.AddIDPToLoginPolicyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.AddIDPToLoginPolicyResponse.t()
+
+  @doc """
+  Remove a identity provider from the custom login policy
+  """
   @callback remove_idp_from_login_policy(
               input :: Zitadel.Management.V1.RemoveIDPFromLoginPolicyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.RemoveIDPFromLoginPolicyResponse.t()
+
+  @doc """
+  Returns all configured second factors of the custom login policy
+  """
   @callback list_login_policy_second_factors(
               input :: Zitadel.Management.V1.ListLoginPolicySecondFactorsRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ListLoginPolicySecondFactorsResponse.t()
+
+  @doc """
+  Adds a new second factor to the custom login policy
+  """
   @callback add_second_factor_to_login_policy(
               input :: Zitadel.Management.V1.AddSecondFactorToLoginPolicyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.AddSecondFactorToLoginPolicyResponse.t()
+
+  @doc """
+  Remove a second factor from the custom login policy
+  """
   @callback remove_second_factor_from_login_policy(
               input :: Zitadel.Management.V1.RemoveSecondFactorFromLoginPolicyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.RemoveSecondFactorFromLoginPolicyResponse.t()
+
+  @doc """
+  Returns all configured multi factors of the custom login policy
+  """
   @callback list_login_policy_multi_factors(
               input :: Zitadel.Management.V1.ListLoginPolicyMultiFactorsRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ListLoginPolicyMultiFactorsResponse.t()
+
+  @doc """
+  Adds a new multi factor to the custom login policy
+  """
   @callback add_multi_factor_to_login_policy(
               input :: Zitadel.Management.V1.AddMultiFactorToLoginPolicyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.AddMultiFactorToLoginPolicyResponse.t()
+
+  @doc """
+  Remove a multi factor from the custom login policy
+  """
   @callback remove_multi_factor_from_login_policy(
               input :: Zitadel.Management.V1.RemoveMultiFactorFromLoginPolicyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.RemoveMultiFactorFromLoginPolicyResponse.t()
+
+  @doc """
+  Returns the password complexity policy of the organisation
+  With this policy the password strength can be configured
+  """
   @callback get_password_complexity_policy(
               input :: Zitadel.Management.V1.GetPasswordComplexityPolicyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.GetPasswordComplexityPolicyResponse.t()
+
+  @doc """
+  Returns the default password complexity policy of the IAM
+  With this policy the password strength can be configured
+  """
   @callback get_default_password_complexity_policy(
               input :: Zitadel.Management.V1.GetDefaultPasswordComplexityPolicyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.GetDefaultPasswordComplexityPolicyResponse.t()
+
+  @doc """
+  Add a custom password complexity policy for the organisation
+  With this policy the password strength can be configured
+  """
   @callback add_custom_password_complexity_policy(
               input :: Zitadel.Management.V1.AddCustomPasswordComplexityPolicyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.AddCustomPasswordComplexityPolicyResponse.t()
+
+  @doc """
+  Update the custom password complexity policy for the organisation
+  With this policy the password strength can be configured
+  """
   @callback update_custom_password_complexity_policy(
               input :: Zitadel.Management.V1.UpdateCustomPasswordComplexityPolicyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.UpdateCustomPasswordComplexityPolicyResponse.t()
+
+  @doc """
+  Removes the custom password complexity policy of the organisation
+  The default policy of the IAM will trigger after
+  """
   @callback reset_password_complexity_policy_to_default(
               input :: Zitadel.Management.V1.ResetPasswordComplexityPolicyToDefaultRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ResetPasswordComplexityPolicyToDefaultResponse.t()
+
+  @doc """
+  The password age policy is not used at the moment
+  """
   @callback get_password_age_policy(
               input :: Zitadel.Management.V1.GetPasswordAgePolicyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.GetPasswordAgePolicyResponse.t()
+
+  @doc """
+  The password age policy is not used at the moment
+  """
   @callback get_default_password_age_policy(
               input :: Zitadel.Management.V1.GetDefaultPasswordAgePolicyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.GetDefaultPasswordAgePolicyResponse.t()
+
+  @doc """
+  The password age policy is not used at the moment
+  """
   @callback add_custom_password_age_policy(
               input :: Zitadel.Management.V1.AddCustomPasswordAgePolicyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.AddCustomPasswordAgePolicyResponse.t()
+
+  @doc """
+  The password age policy is not used at the moment
+  """
   @callback update_custom_password_age_policy(
               input :: Zitadel.Management.V1.UpdateCustomPasswordAgePolicyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.UpdateCustomPasswordAgePolicyResponse.t()
+
+  @doc """
+  The password age policy is not used at the moment
+  """
   @callback reset_password_age_policy_to_default(
               input :: Zitadel.Management.V1.ResetPasswordAgePolicyToDefaultRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ResetPasswordAgePolicyToDefaultResponse.t()
+
+  @doc """
+  The password lockout policy is not used at the moment
+  """
   @callback get_password_lockout_policy(
               input :: Zitadel.Management.V1.GetPasswordLockoutPolicyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.GetPasswordLockoutPolicyResponse.t()
+
+  @doc """
+  The password lockout policy is not used at the moment
+  """
   @callback get_default_password_lockout_policy(
               input :: Zitadel.Management.V1.GetDefaultPasswordLockoutPolicyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.GetDefaultPasswordLockoutPolicyResponse.t()
+
+  @doc """
+  The password lockout policy is not used at the moment
+  """
   @callback add_custom_password_lockout_policy(
               input :: Zitadel.Management.V1.AddCustomPasswordLockoutPolicyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.AddCustomPasswordLockoutPolicyResponse.t()
+
+  @doc """
+  The password lockout policy is not used at the moment
+  """
   @callback update_custom_password_lockout_policy(
               input :: Zitadel.Management.V1.UpdateCustomPasswordLockoutPolicyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.UpdateCustomPasswordLockoutPolicyResponse.t()
+
+  @doc """
+  The password lockout policy is not used at the moment
+  """
   @callback reset_password_lockout_policy_to_default(
               input :: Zitadel.Management.V1.ResetPasswordLockoutPolicyToDefaultRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ResetPasswordLockoutPolicyToDefaultResponse.t()
+
+  @doc """
+  Returns the label policy of the organisation
+  With this policy the private labeling can be configured (colors, etc.)
+  """
   @callback get_label_policy(
               input :: Zitadel.Management.V1.GetLabelPolicyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.GetLabelPolicyResponse.t()
+
+  @doc """
+  Returns the default label policy of the IAM
+  With this policy the private labeling can be configured (colors, etc.)
+  """
   @callback get_default_label_policy(
               input :: Zitadel.Management.V1.GetDefaultLabelPolicyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.GetDefaultLabelPolicyResponse.t()
+
+  @doc """
+  Add a custom label policy for the organisation
+  With this policy the private labeling can be configured (colors, etc.)
+  """
   @callback add_custom_label_policy(
               input :: Zitadel.Management.V1.AddCustomLabelPolicyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.AddCustomLabelPolicyResponse.t()
+
+  @doc """
+  Changes the custom label policy for the organisation
+  With this policy the private labeling can be configured (colors, etc.)
+  """
   @callback update_custom_label_policy(
               input :: Zitadel.Management.V1.UpdateCustomLabelPolicyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.UpdateCustomLabelPolicyResponse.t()
+
+  @doc """
+  Removes the custom label policy of the organisation
+  The default policy of the IAM will trigger after
+  """
   @callback reset_label_policy_to_default(
               input :: Zitadel.Management.V1.ResetLabelPolicyToDefaultRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ResetLabelPolicyToDefaultResponse.t()
+
+  @doc """
+  Returns a identity provider configuration of the organisation
+  """
   @callback get_org_idp_by_id(
               input :: Zitadel.Management.V1.GetOrgIDPByIDRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.GetOrgIDPByIDResponse.t()
+
+  @doc """
+  Returns all identity provider configuration in the organisation, which match the query
+  Limit should always be set, there is a default limit set by the service
+  """
   @callback list_org_id_ps(
               input :: Zitadel.Management.V1.ListOrgIDPsRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ListOrgIDPsResponse.t()
+
+  @doc """
+  Add a new identity provider configuration in the organisation
+  Provider must be OIDC compliant
+  """
   @callback add_org_oidcidp(
               input :: Zitadel.Management.V1.AddOrgOIDCIDPRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.AddOrgOIDCIDPResponse.t()
+
+  @doc """
+  Deactivate identity provider configuration
+  Users will not be able to use this provider for login (e.g Google, Microsoft, AD, etc)
+  Returns error if already deactivated
+  """
   @callback deactivate_org_idp(
               input :: Zitadel.Management.V1.DeactivateOrgIDPRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.DeactivateOrgIDPResponse.t()
+
+  @doc """
+  Activate identity provider configuration
+  Returns error if not deactivated
+  """
   @callback reactivate_org_idp(
               input :: Zitadel.Management.V1.ReactivateOrgIDPRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.ReactivateOrgIDPResponse.t()
+
+  @doc """
+  Removes identity provider configuration
+  Will remove all linked providers of this configuration on the users
+  """
   @callback remove_org_idp(
               input :: Zitadel.Management.V1.RemoveOrgIDPRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.RemoveOrgIDPResponse.t()
+
+  @doc """
+  Change identity provider configuration of the organisation
+  """
   @callback update_org_idp(
               input :: Zitadel.Management.V1.UpdateOrgIDPRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.UpdateOrgIDPResponse.t()
+
+  @doc """
+  Change OIDC identity provider configuration of the organisation
+  """
   @callback update_org_idpoidc_config(
               input :: Zitadel.Management.V1.UpdateOrgIDPOIDCConfigRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Management.V1.UpdateOrgIDPOIDCConfigResponse.t()
+
   @optional_callbacks healthz: 2,
                       get_oidc_information: 2,
                       get_iam: 2,
