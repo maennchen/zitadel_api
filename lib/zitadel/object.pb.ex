@@ -1,6 +1,4 @@
 defmodule Zitadel.V1.TextQueryMethod do
-  @moduledoc false
-
   use Protobuf, enum: true, syntax: :proto3
   @type text_query_method_equals :: :TEXT_QUERY_METHOD_EQUALS
   @type text_query_method_equals_ignore_case :: :TEXT_QUERY_METHOD_EQUALS_IGNORE_CASE
@@ -128,8 +126,6 @@ defmodule Zitadel.V1.ObjectDetails do
 end
 
 defmodule Zitadel.V1.ListQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type offset :: non_neg_integer
   @type limit :: non_neg_integer
@@ -159,8 +155,6 @@ defmodule Zitadel.V1.ListQuery do
 end
 
 defmodule Zitadel.V1.ListDetails do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type total_result :: non_neg_integer
   @type processed_sequence :: non_neg_integer

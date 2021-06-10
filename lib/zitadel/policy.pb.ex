@@ -1,6 +1,4 @@
 defmodule Zitadel.Policy.V1.SecondFactorType do
-  @moduledoc false
-
   use Protobuf, enum: true, syntax: :proto3
   @type second_factor_type_unspecified :: :SECOND_FACTOR_TYPE_UNSPECIFIED
   @type second_factor_type_otp :: :SECOND_FACTOR_TYPE_OTP
@@ -30,8 +28,6 @@ defmodule Zitadel.Policy.V1.SecondFactorType do
 end
 
 defmodule Zitadel.Policy.V1.MultiFactorType do
-  @moduledoc false
-
   use Protobuf, enum: true, syntax: :proto3
   @type multi_factor_type_unspecified :: :MULTI_FACTOR_TYPE_UNSPECIFIED
   @type multi_factor_type_u2f_with_verification :: :MULTI_FACTOR_TYPE_U2F_WITH_VERIFICATION
@@ -80,8 +76,6 @@ defmodule Zitadel.Policy.V1.PasswordlessType do
 end
 
 defmodule Zitadel.Policy.V1.OrgIAMPolicy do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type user_login_must_be_domain :: boolean
@@ -115,8 +109,6 @@ defmodule Zitadel.Policy.V1.OrgIAMPolicy do
 end
 
 defmodule Zitadel.Policy.V1.LabelPolicy do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type primary_color :: String.t()
@@ -160,8 +152,6 @@ defmodule Zitadel.Policy.V1.LabelPolicy do
 end
 
 defmodule Zitadel.Policy.V1.LoginPolicy do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type allow_username_password :: boolean
@@ -232,8 +222,6 @@ defmodule Zitadel.Policy.V1.LoginPolicy do
 end
 
 defmodule Zitadel.Policy.V1.PasswordComplexityPolicy do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type min_length :: non_neg_integer
@@ -294,8 +282,6 @@ defmodule Zitadel.Policy.V1.PasswordComplexityPolicy do
 end
 
 defmodule Zitadel.Policy.V1.PasswordAgePolicy do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type max_age_days :: non_neg_integer
@@ -333,8 +319,6 @@ defmodule Zitadel.Policy.V1.PasswordAgePolicy do
 end
 
 defmodule Zitadel.Policy.V1.PasswordLockoutPolicy do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type max_attempts :: non_neg_integer

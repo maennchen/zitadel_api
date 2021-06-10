@@ -1,6 +1,4 @@
 defmodule Zitadel.App.V1.AppState do
-  @moduledoc false
-
   use Protobuf, enum: true, syntax: :proto3
   @type app_state_unspecified :: :APP_STATE_UNSPECIFIED
   @type app_state_active :: :APP_STATE_ACTIVE
@@ -25,8 +23,6 @@ defmodule Zitadel.App.V1.AppState do
 end
 
 defmodule Zitadel.App.V1.OIDCResponseType do
-  @moduledoc false
-
   use Protobuf, enum: true, syntax: :proto3
   @type oidc_response_type_code :: :OIDC_RESPONSE_TYPE_CODE
   @type oidc_response_type_id_token :: :OIDC_RESPONSE_TYPE_ID_TOKEN
@@ -57,8 +53,6 @@ defmodule Zitadel.App.V1.OIDCResponseType do
 end
 
 defmodule Zitadel.App.V1.OIDCGrantType do
-  @moduledoc false
-
   use Protobuf, enum: true, syntax: :proto3
   @type oidc_grant_type_authorization_code :: :OIDC_GRANT_TYPE_AUTHORIZATION_CODE
   @type oidc_grant_type_implicit :: :OIDC_GRANT_TYPE_IMPLICIT
@@ -89,8 +83,6 @@ defmodule Zitadel.App.V1.OIDCGrantType do
 end
 
 defmodule Zitadel.App.V1.OIDCAppType do
-  @moduledoc false
-
   use Protobuf, enum: true, syntax: :proto3
   @type oidc_app_type_web :: :OIDC_APP_TYPE_WEB
   @type oidc_app_type_user_agent :: :OIDC_APP_TYPE_USER_AGENT
@@ -116,8 +108,6 @@ defmodule Zitadel.App.V1.OIDCAppType do
 end
 
 defmodule Zitadel.App.V1.OIDCAuthMethodType do
-  @moduledoc false
-
   use Protobuf, enum: true, syntax: :proto3
   @type oidc_auth_method_type_basic :: :OIDC_AUTH_METHOD_TYPE_BASIC
   @type oidc_auth_method_type_post :: :OIDC_AUTH_METHOD_TYPE_POST
@@ -154,8 +144,6 @@ defmodule Zitadel.App.V1.OIDCAuthMethodType do
 end
 
 defmodule Zitadel.App.V1.OIDCVersion do
-  @moduledoc false
-
   use Protobuf, enum: true, syntax: :proto3
   @type oidc_version_1_0 :: :OIDC_VERSION_1_0
   @type t :: integer | oidc_version_1_0()
@@ -172,8 +160,6 @@ defmodule Zitadel.App.V1.OIDCVersion do
 end
 
 defmodule Zitadel.App.V1.OIDCTokenType do
-  @moduledoc false
-
   use Protobuf, enum: true, syntax: :proto3
   @type oidc_token_type_bearer :: :OIDC_TOKEN_TYPE_BEARER
   @type oidc_token_type_jwt :: :OIDC_TOKEN_TYPE_JWT
@@ -195,8 +181,6 @@ defmodule Zitadel.App.V1.OIDCTokenType do
 end
 
 defmodule Zitadel.App.V1.APIAuthMethodType do
-  @moduledoc false
-
   use Protobuf, enum: true, syntax: :proto3
   @type api_auth_method_type_basic :: :API_AUTH_METHOD_TYPE_BASIC
   @type api_auth_method_type_private_key_jwt :: :API_AUTH_METHOD_TYPE_PRIVATE_KEY_JWT
@@ -219,8 +203,6 @@ defmodule Zitadel.App.V1.APIAuthMethodType do
 end
 
 defmodule Zitadel.App.V1.App do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type id :: String.t()
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
@@ -271,8 +253,6 @@ defmodule Zitadel.App.V1.App do
 end
 
 defmodule Zitadel.App.V1.AppQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type name_query :: Zitadel.App.V1.AppNameQuery.t() | nil
   @type query :: {:name_query, name_query()} | nil
@@ -299,8 +279,6 @@ defmodule Zitadel.App.V1.AppQuery do
 end
 
 defmodule Zitadel.App.V1.AppNameQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type name :: String.t()
   @type method :: Zitadel.V1.TextQueryMethod.t()
@@ -327,8 +305,6 @@ defmodule Zitadel.App.V1.AppNameQuery do
 end
 
 defmodule Zitadel.App.V1.OIDCConfig do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type redirect_uris :: [String.t()]
   @type response_types :: [[Zitadel.App.V1.OIDCResponseType.t()]]
@@ -503,8 +479,6 @@ defmodule Zitadel.App.V1.OIDCConfig do
 end
 
 defmodule Zitadel.App.V1.APIConfig do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type client_id :: String.t()
   @type client_secret :: String.t()

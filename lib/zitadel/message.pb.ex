@@ -1,6 +1,4 @@
 defmodule Zitadel.V1.ErrorDetail do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type id :: String.t()
   @type message :: String.t()
@@ -25,8 +23,6 @@ defmodule Zitadel.V1.ErrorDetail do
 end
 
 defmodule Zitadel.V1.LocalizedMessage do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type key :: String.t()
   @type localized_message :: String.t()

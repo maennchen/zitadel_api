@@ -1,6 +1,4 @@
 defmodule Zitadel.Project.V1.ProjectState do
-  @moduledoc false
-
   use Protobuf, enum: true, syntax: :proto3
   @type project_state_unspecified :: :PROJECT_STATE_UNSPECIFIED
   @type project_state_active :: :PROJECT_STATE_ACTIVE
@@ -30,8 +28,6 @@ defmodule Zitadel.Project.V1.ProjectState do
 end
 
 defmodule Zitadel.Project.V1.ProjectGrantState do
-  @moduledoc false
-
   use Protobuf, enum: true, syntax: :proto3
   @type project_grant_state_unspecified :: :PROJECT_GRANT_STATE_UNSPECIFIED
   @type project_grant_state_active :: :PROJECT_GRANT_STATE_ACTIVE
@@ -118,8 +114,6 @@ defmodule Zitadel.Project.V1.Project do
 end
 
 defmodule Zitadel.Project.V1.GrantedProject do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type grant_id :: String.t()
   @type granted_org_id :: String.t()
@@ -201,8 +195,6 @@ defmodule Zitadel.Project.V1.GrantedProject do
 end
 
 defmodule Zitadel.Project.V1.ProjectQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type name_query :: Zitadel.Project.V1.ProjectNameQuery.t() | nil
   @type query :: {:name_query, name_query()} | nil
@@ -233,8 +225,6 @@ defmodule Zitadel.Project.V1.ProjectQuery do
 end
 
 defmodule Zitadel.Project.V1.ProjectNameQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type name :: String.t()
   @type method :: Zitadel.V1.TextQueryMethod.t()
@@ -262,8 +252,6 @@ defmodule Zitadel.Project.V1.ProjectNameQuery do
 end
 
 defmodule Zitadel.Project.V1.Role do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type key :: String.t()
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
@@ -299,8 +287,6 @@ defmodule Zitadel.Project.V1.Role do
 end
 
 defmodule Zitadel.Project.V1.RoleQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type key_query :: Zitadel.Project.V1.RoleKeyQuery.t() | nil
   @type display_name_query :: Zitadel.Project.V1.RoleDisplayNameQuery.t() | nil
@@ -338,8 +324,6 @@ defmodule Zitadel.Project.V1.RoleQuery do
 end
 
 defmodule Zitadel.Project.V1.RoleKeyQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type key :: String.t()
   @type method :: Zitadel.V1.TextQueryMethod.t()
@@ -366,8 +350,6 @@ defmodule Zitadel.Project.V1.RoleKeyQuery do
 end
 
 defmodule Zitadel.Project.V1.RoleDisplayNameQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type display_name :: String.t()
   @type method :: Zitadel.V1.TextQueryMethod.t()
@@ -396,8 +378,6 @@ defmodule Zitadel.Project.V1.RoleDisplayNameQuery do
 end
 
 defmodule Zitadel.Project.V1.ProjectGrantQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type project_name_query :: Zitadel.Project.V1.GrantProjectNameQuery.t() | nil
   @type role_key_query :: Zitadel.Project.V1.GrantRoleKeyQuery.t() | nil
@@ -442,8 +422,6 @@ defmodule Zitadel.Project.V1.ProjectGrantQuery do
 end
 
 defmodule Zitadel.Project.V1.GrantProjectNameQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type name :: String.t()
   @type method :: Zitadel.V1.TextQueryMethod.t()
@@ -471,8 +449,6 @@ defmodule Zitadel.Project.V1.GrantProjectNameQuery do
 end
 
 defmodule Zitadel.Project.V1.GrantRoleKeyQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type role_key :: String.t()
   @type method :: Zitadel.V1.TextQueryMethod.t()

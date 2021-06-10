@@ -1,6 +1,4 @@
 defmodule Zitadel.Org.V1.OrgState do
-  @moduledoc false
-
   use Protobuf, enum: true, syntax: :proto3
   @type org_state_unspecified :: :ORG_STATE_UNSPECIFIED
   @type org_state_active :: :ORG_STATE_ACTIVE
@@ -25,8 +23,6 @@ defmodule Zitadel.Org.V1.OrgState do
 end
 
 defmodule Zitadel.Org.V1.DomainValidationType do
-  @moduledoc false
-
   use Protobuf, enum: true, syntax: :proto3
   @type domain_validation_type_unspecified :: :DOMAIN_VALIDATION_TYPE_UNSPECIFIED
   @type domain_validation_type_http :: :DOMAIN_VALIDATION_TYPE_HTTP
@@ -57,8 +53,6 @@ defmodule Zitadel.Org.V1.DomainValidationType do
 end
 
 defmodule Zitadel.Org.V1.OrgFieldName do
-  @moduledoc false
-
   use Protobuf, enum: true, syntax: :proto3
   @type org_field_name_unspecified :: :ORG_FIELD_NAME_UNSPECIFIED
   @type org_field_name_name :: :ORG_FIELD_NAME_NAME
@@ -80,8 +74,6 @@ defmodule Zitadel.Org.V1.OrgFieldName do
 end
 
 defmodule Zitadel.Org.V1.Org do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type id :: String.t()
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
@@ -123,8 +115,6 @@ defmodule Zitadel.Org.V1.Org do
 end
 
 defmodule Zitadel.Org.V1.Domain do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type org_id :: String.t()
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
@@ -178,8 +168,6 @@ defmodule Zitadel.Org.V1.Domain do
 end
 
 defmodule Zitadel.Org.V1.OrgQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type name_query :: Zitadel.Org.V1.OrgNameQuery.t() | nil
   @type domain_query :: Zitadel.Org.V1.OrgDomainQuery.t() | nil
@@ -211,8 +199,6 @@ defmodule Zitadel.Org.V1.OrgQuery do
 end
 
 defmodule Zitadel.Org.V1.OrgNameQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type name :: String.t()
   @type method :: Zitadel.V1.TextQueryMethod.t()
@@ -239,8 +225,6 @@ defmodule Zitadel.Org.V1.OrgNameQuery do
 end
 
 defmodule Zitadel.Org.V1.OrgDomainQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type domain :: String.t()
   @type method :: Zitadel.V1.TextQueryMethod.t()
@@ -268,8 +252,6 @@ defmodule Zitadel.Org.V1.OrgDomainQuery do
 end
 
 defmodule Zitadel.Org.V1.DomainSearchQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type domain_name_query :: Zitadel.Org.V1.DomainNameQuery.t() | nil
   @type query :: {:domain_name_query, domain_name_query()} | nil
@@ -301,8 +283,6 @@ defmodule Zitadel.Org.V1.DomainSearchQuery do
 end
 
 defmodule Zitadel.Org.V1.DomainNameQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type name :: String.t()
   @type method :: Zitadel.V1.TextQueryMethod.t()

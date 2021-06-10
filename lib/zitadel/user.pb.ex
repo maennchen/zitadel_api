@@ -1,6 +1,4 @@
 defmodule Zitadel.User.V1.UserState do
-  @moduledoc false
-
   use Protobuf, enum: true, syntax: :proto3
   @type user_state_unspecified :: :USER_STATE_UNSPECIFIED
   @type user_state_active :: :USER_STATE_ACTIVE
@@ -50,8 +48,6 @@ defmodule Zitadel.User.V1.UserState do
 end
 
 defmodule Zitadel.User.V1.Gender do
-  @moduledoc false
-
   use Protobuf, enum: true, syntax: :proto3
   @type gender_unspecified :: :GENDER_UNSPECIFIED
   @type gender_female :: :GENDER_FEMALE
@@ -79,8 +75,6 @@ defmodule Zitadel.User.V1.Gender do
 end
 
 defmodule Zitadel.User.V1.Type do
-  @moduledoc false
-
   use Protobuf, enum: true, syntax: :proto3
   @type type_unspecified :: :TYPE_UNSPECIFIED
   @type type_human :: :TYPE_HUMAN
@@ -104,8 +98,6 @@ defmodule Zitadel.User.V1.Type do
 end
 
 defmodule Zitadel.User.V1.UserFieldName do
-  @moduledoc false
-
   use Protobuf, enum: true, syntax: :proto3
   @type user_field_name_unspecified :: :USER_FIELD_NAME_UNSPECIFIED
   @type user_field_name_user_name :: :USER_FIELD_NAME_USER_NAME
@@ -167,8 +159,6 @@ defmodule Zitadel.User.V1.UserFieldName do
 end
 
 defmodule Zitadel.User.V1.AuthFactorState do
-  @moduledoc false
-
   use Protobuf, enum: true, syntax: :proto3
   @type auth_factor_state_unspecified :: :AUTH_FACTOR_STATE_UNSPECIFIED
   @type auth_factor_state_not_ready :: :AUTH_FACTOR_STATE_NOT_READY
@@ -204,8 +194,6 @@ defmodule Zitadel.User.V1.AuthFactorState do
 end
 
 defmodule Zitadel.User.V1.SessionState do
-  @moduledoc false
-
   use Protobuf, enum: true, syntax: :proto3
   @type session_state_unspecified :: :SESSION_STATE_UNSPECIFIED
   @type session_state_active :: :SESSION_STATE_ACTIVE
@@ -235,8 +223,6 @@ defmodule Zitadel.User.V1.SessionState do
 end
 
 defmodule Zitadel.User.V1.UserGrantState do
-  @moduledoc false
-
   use Protobuf, enum: true, syntax: :proto3
   @type user_grant_state_unspecified :: :USER_GRANT_STATE_UNSPECIFIED
   @type user_grant_state_active :: :USER_GRANT_STATE_ACTIVE
@@ -266,8 +252,6 @@ defmodule Zitadel.User.V1.UserGrantState do
 end
 
 defmodule Zitadel.User.V1.User do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type id :: String.t()
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
@@ -329,8 +313,6 @@ defmodule Zitadel.User.V1.User do
 end
 
 defmodule Zitadel.User.V1.Human do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type profile :: Zitadel.User.V1.Profile.t() | nil
   @type email :: Zitadel.User.V1.Email.t() | nil
@@ -363,8 +345,6 @@ defmodule Zitadel.User.V1.Human do
 end
 
 defmodule Zitadel.User.V1.Machine do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type name :: String.t()
   @type description :: String.t()
@@ -390,8 +370,6 @@ defmodule Zitadel.User.V1.Machine do
 end
 
 defmodule Zitadel.User.V1.Profile do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type first_name :: String.t()
   @type last_name :: String.t()
@@ -439,8 +417,6 @@ defmodule Zitadel.User.V1.Profile do
 end
 
 defmodule Zitadel.User.V1.Email do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type email :: String.t()
   @type is_email_verified :: boolean
@@ -467,8 +443,6 @@ defmodule Zitadel.User.V1.Email do
 end
 
 defmodule Zitadel.User.V1.Phone do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type phone :: String.t()
   @type is_phone_verified :: boolean
@@ -495,8 +469,6 @@ defmodule Zitadel.User.V1.Phone do
 end
 
 defmodule Zitadel.User.V1.SearchQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type user_name_query :: Zitadel.User.V1.UserNameQuery.t() | nil
   @type first_name_query :: Zitadel.User.V1.FirstNameQuery.t() | nil
@@ -596,8 +568,6 @@ defmodule Zitadel.User.V1.SearchQuery do
 end
 
 defmodule Zitadel.User.V1.UserNameQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type user_name :: String.t()
   @type method :: Zitadel.V1.TextQueryMethod.t()
@@ -625,8 +595,6 @@ defmodule Zitadel.User.V1.UserNameQuery do
 end
 
 defmodule Zitadel.User.V1.FirstNameQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type first_name :: String.t()
   @type method :: Zitadel.V1.TextQueryMethod.t()
@@ -654,8 +622,6 @@ defmodule Zitadel.User.V1.FirstNameQuery do
 end
 
 defmodule Zitadel.User.V1.LastNameQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type last_name :: String.t()
   @type method :: Zitadel.V1.TextQueryMethod.t()
@@ -683,8 +649,6 @@ defmodule Zitadel.User.V1.LastNameQuery do
 end
 
 defmodule Zitadel.User.V1.NickNameQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type nick_name :: String.t()
   @type method :: Zitadel.V1.TextQueryMethod.t()
@@ -712,8 +676,6 @@ defmodule Zitadel.User.V1.NickNameQuery do
 end
 
 defmodule Zitadel.User.V1.DisplayNameQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type display_name :: String.t()
   @type method :: Zitadel.V1.TextQueryMethod.t()
@@ -741,8 +703,6 @@ defmodule Zitadel.User.V1.DisplayNameQuery do
 end
 
 defmodule Zitadel.User.V1.EmailQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type email_address :: String.t()
   @type method :: Zitadel.V1.TextQueryMethod.t()
@@ -822,8 +782,6 @@ defmodule Zitadel.User.V1.TypeQuery do
 end
 
 defmodule Zitadel.User.V1.AuthFactor do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type state :: Zitadel.User.V1.AuthFactorState.t()
   @type otp :: Zitadel.User.V1.AuthFactorOTP.t() | nil
@@ -860,8 +818,6 @@ defmodule Zitadel.User.V1.AuthFactor do
 end
 
 defmodule Zitadel.User.V1.AuthFactorOTP do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
 
@@ -874,8 +830,6 @@ defmodule Zitadel.User.V1.AuthFactorOTP do
 end
 
 defmodule Zitadel.User.V1.AuthFactorU2F do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type id :: String.t()
   @type name :: String.t()
@@ -900,8 +854,6 @@ defmodule Zitadel.User.V1.AuthFactorU2F do
 end
 
 defmodule Zitadel.User.V1.WebAuthNKey do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type public_key :: binary
   @type t :: %__MODULE__{
@@ -923,8 +875,6 @@ defmodule Zitadel.User.V1.WebAuthNKey do
 end
 
 defmodule Zitadel.User.V1.WebAuthNVerification do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type public_key_credential :: binary
   @type token_name :: String.t()
@@ -952,8 +902,6 @@ defmodule Zitadel.User.V1.WebAuthNVerification do
 end
 
 defmodule Zitadel.User.V1.WebAuthNToken do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type id :: String.t()
   @type state :: Zitadel.User.V1.AuthFactorState.t()
@@ -985,8 +933,6 @@ defmodule Zitadel.User.V1.WebAuthNToken do
 end
 
 defmodule Zitadel.User.V1.Membership do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type user_id :: String.t()
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
@@ -1047,8 +993,6 @@ defmodule Zitadel.User.V1.Membership do
 end
 
 defmodule Zitadel.User.V1.MembershipQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type org_query :: Zitadel.User.V1.MembershipOrgQuery.t() | nil
   @type project_query :: Zitadel.User.V1.MembershipProjectQuery.t() | nil
@@ -1211,8 +1155,6 @@ defmodule Zitadel.User.V1.MembershipIAMQuery do
 end
 
 defmodule Zitadel.User.V1.Session do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type session_id :: String.t()
   @type agent_id :: String.t()
@@ -1279,8 +1221,6 @@ defmodule Zitadel.User.V1.Session do
 end
 
 defmodule Zitadel.User.V1.UserGrant do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type id :: String.t()
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
@@ -1392,8 +1332,6 @@ defmodule Zitadel.User.V1.UserGrant do
 end
 
 defmodule Zitadel.User.V1.UserGrantQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type project_id_query :: Zitadel.User.V1.UserGrantProjectIDQuery.t() | nil
   @type user_id_query :: Zitadel.User.V1.UserGrantUserIDQuery.t() | nil
@@ -1576,8 +1514,6 @@ defmodule Zitadel.User.V1.UserGrantQuery do
 end
 
 defmodule Zitadel.User.V1.UserGrantProjectIDQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type project_id :: String.t()
   @type t :: %__MODULE__{
@@ -1600,8 +1536,6 @@ defmodule Zitadel.User.V1.UserGrantProjectIDQuery do
 end
 
 defmodule Zitadel.User.V1.UserGrantUserIDQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type user_id :: String.t()
   @type t :: %__MODULE__{
@@ -1623,8 +1557,6 @@ defmodule Zitadel.User.V1.UserGrantUserIDQuery do
 end
 
 defmodule Zitadel.User.V1.UserGrantWithGrantedQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type with_granted :: boolean
   @type t :: %__MODULE__{
@@ -1647,8 +1579,6 @@ defmodule Zitadel.User.V1.UserGrantWithGrantedQuery do
 end
 
 defmodule Zitadel.User.V1.UserGrantRoleKeyQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type role_key :: String.t()
   @type method :: Zitadel.V1.TextQueryMethod.t()
@@ -1676,8 +1606,6 @@ defmodule Zitadel.User.V1.UserGrantRoleKeyQuery do
 end
 
 defmodule Zitadel.User.V1.UserGrantProjectGrantIDQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type project_grant_id :: String.t()
   @type t :: %__MODULE__{
@@ -1700,8 +1628,6 @@ defmodule Zitadel.User.V1.UserGrantProjectGrantIDQuery do
 end
 
 defmodule Zitadel.User.V1.UserGrantUserNameQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type user_name :: String.t()
   @type method :: Zitadel.V1.TextQueryMethod.t()
@@ -1729,8 +1655,6 @@ defmodule Zitadel.User.V1.UserGrantUserNameQuery do
 end
 
 defmodule Zitadel.User.V1.UserGrantFirstNameQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type first_name :: String.t()
   @type method :: Zitadel.V1.TextQueryMethod.t()
@@ -1759,8 +1683,6 @@ defmodule Zitadel.User.V1.UserGrantFirstNameQuery do
 end
 
 defmodule Zitadel.User.V1.UserGrantLastNameQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type last_name :: String.t()
   @type method :: Zitadel.V1.TextQueryMethod.t()
@@ -1788,8 +1710,6 @@ defmodule Zitadel.User.V1.UserGrantLastNameQuery do
 end
 
 defmodule Zitadel.User.V1.UserGrantEmailQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type email :: String.t()
   @type method :: Zitadel.V1.TextQueryMethod.t()
@@ -1817,8 +1737,6 @@ defmodule Zitadel.User.V1.UserGrantEmailQuery do
 end
 
 defmodule Zitadel.User.V1.UserGrantOrgNameQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type org_name :: String.t()
   @type method :: Zitadel.V1.TextQueryMethod.t()
@@ -1846,8 +1764,6 @@ defmodule Zitadel.User.V1.UserGrantOrgNameQuery do
 end
 
 defmodule Zitadel.User.V1.UserGrantOrgDomainQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type org_domain :: String.t()
   @type method :: Zitadel.V1.TextQueryMethod.t()
@@ -1876,8 +1792,6 @@ defmodule Zitadel.User.V1.UserGrantOrgDomainQuery do
 end
 
 defmodule Zitadel.User.V1.UserGrantProjectNameQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type project_name :: String.t()
   @type method :: Zitadel.V1.TextQueryMethod.t()
@@ -1906,8 +1820,6 @@ defmodule Zitadel.User.V1.UserGrantProjectNameQuery do
 end
 
 defmodule Zitadel.User.V1.UserGrantDisplayNameQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type display_name :: String.t()
   @type method :: Zitadel.V1.TextQueryMethod.t()

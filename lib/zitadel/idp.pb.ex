@@ -1,6 +1,4 @@
 defmodule Zitadel.Idp.V1.IDPState do
-  @moduledoc false
-
   use Protobuf, enum: true, syntax: :proto3
   @type idp_state_unspecified :: :IDP_STATE_UNSPECIFIED
   @type idp_state_active :: :IDP_STATE_ACTIVE
@@ -25,8 +23,6 @@ defmodule Zitadel.Idp.V1.IDPState do
 end
 
 defmodule Zitadel.Idp.V1.IDPStylingType do
-  @moduledoc false
-
   use Protobuf, enum: true, syntax: :proto3
   @type styling_type_unspecified :: :STYLING_TYPE_UNSPECIFIED
   @type styling_type_google :: :STYLING_TYPE_GOOGLE
@@ -116,8 +112,6 @@ defmodule Zitadel.Idp.V1.IDPOwnerType do
 end
 
 defmodule Zitadel.Idp.V1.OIDCMappingField do
-  @moduledoc false
-
   use Protobuf, enum: true, syntax: :proto3
   @type oidc_mapping_field_unspecified :: :OIDC_MAPPING_FIELD_UNSPECIFIED
   @type oidc_mapping_field_preferred_username :: :OIDC_MAPPING_FIELD_PREFERRED_USERNAME
@@ -148,8 +142,6 @@ defmodule Zitadel.Idp.V1.OIDCMappingField do
 end
 
 defmodule Zitadel.Idp.V1.IDPFieldName do
-  @moduledoc false
-
   use Protobuf, enum: true, syntax: :proto3
   @type idp_field_name_unspecified :: :IDP_FIELD_NAME_UNSPECIFIED
   @type idp_field_name_name :: :IDP_FIELD_NAME_NAME
@@ -171,8 +163,6 @@ defmodule Zitadel.Idp.V1.IDPFieldName do
 end
 
 defmodule Zitadel.Idp.V1.IDP do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type id :: String.t()
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
@@ -236,8 +226,6 @@ defmodule Zitadel.Idp.V1.IDP do
 end
 
 defmodule Zitadel.Idp.V1.IDPUserLink do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type user_id :: String.t()
   @type idp_id :: String.t()
@@ -285,8 +273,6 @@ defmodule Zitadel.Idp.V1.IDPUserLink do
 end
 
 defmodule Zitadel.Idp.V1.IDPLoginPolicyLink do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type idp_id :: String.t()
   @type idp_name :: String.t()
@@ -318,8 +304,6 @@ defmodule Zitadel.Idp.V1.IDPLoginPolicyLink do
 end
 
 defmodule Zitadel.Idp.V1.OIDCConfig do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type client_id :: String.t()
   @type issuer :: String.t()
@@ -375,8 +359,6 @@ defmodule Zitadel.Idp.V1.OIDCConfig do
 end
 
 defmodule Zitadel.Idp.V1.IDPIDQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type id :: String.t()
   @type t :: %__MODULE__{
@@ -397,8 +379,6 @@ defmodule Zitadel.Idp.V1.IDPIDQuery do
 end
 
 defmodule Zitadel.Idp.V1.IDPNameQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type name :: String.t()
   @type method :: Zitadel.V1.TextQueryMethod.t()
@@ -425,8 +405,6 @@ defmodule Zitadel.Idp.V1.IDPNameQuery do
 end
 
 defmodule Zitadel.Idp.V1.IDPOwnerTypeQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type owner_type :: Zitadel.Idp.V1.IDPOwnerType.t()
   @type t :: %__MODULE__{

@@ -54,8 +54,6 @@ defmodule Zitadel.Auth.V1.GetMyUserRequest do
 end
 
 defmodule Zitadel.Auth.V1.GetMyUserResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type user :: Zitadel.User.V1.User.t() | nil
   @type last_login :: Google.Protobuf.Timestamp.t() | nil
@@ -84,8 +82,6 @@ defmodule Zitadel.Auth.V1.GetMyUserResponse do
 end
 
 defmodule Zitadel.Auth.V1.ListMyUserChangesRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type query :: Zitadel.Change.V1.ChangeQuery.t() | nil
   @type t :: %__MODULE__{
@@ -109,8 +105,6 @@ defmodule Zitadel.Auth.V1.ListMyUserChangesRequest do
 end
 
 defmodule Zitadel.Auth.V1.ListMyUserChangesResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ListDetails.t() | nil
   @type result :: [Zitadel.Change.V1.Change.t()]
@@ -158,8 +152,6 @@ defmodule Zitadel.Auth.V1.ListMyUserSessionsRequest do
 end
 
 defmodule Zitadel.Auth.V1.ListMyUserSessionsResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type result :: [Zitadel.User.V1.Session.t()]
   @type t :: %__MODULE__{
@@ -183,8 +175,6 @@ defmodule Zitadel.Auth.V1.ListMyUserSessionsResponse do
 end
 
 defmodule Zitadel.Auth.V1.UpdateMyUserNameRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type user_name :: String.t()
   @type t :: %__MODULE__{
@@ -206,8 +196,6 @@ defmodule Zitadel.Auth.V1.UpdateMyUserNameRequest do
 end
 
 defmodule Zitadel.Auth.V1.UpdateMyUserNameResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -246,8 +234,6 @@ defmodule Zitadel.Auth.V1.GetMyPasswordComplexityPolicyRequest do
 end
 
 defmodule Zitadel.Auth.V1.GetMyPasswordComplexityPolicyResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type policy :: Zitadel.Policy.V1.PasswordComplexityPolicy.t() | nil
   @type t :: %__MODULE__{
@@ -272,8 +258,6 @@ defmodule Zitadel.Auth.V1.GetMyPasswordComplexityPolicyResponse do
 end
 
 defmodule Zitadel.Auth.V1.UpdateMyPasswordRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type old_password :: String.t()
   @type new_password :: String.t()
@@ -301,8 +285,6 @@ defmodule Zitadel.Auth.V1.UpdateMyPasswordRequest do
 end
 
 defmodule Zitadel.Auth.V1.UpdateMyPasswordResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -344,8 +326,6 @@ defmodule Zitadel.Auth.V1.GetMyProfileRequest do
 end
 
 defmodule Zitadel.Auth.V1.GetMyProfileResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type profile :: Zitadel.User.V1.Profile.t() | nil
@@ -374,8 +354,6 @@ defmodule Zitadel.Auth.V1.GetMyProfileResponse do
 end
 
 defmodule Zitadel.Auth.V1.UpdateMyProfileRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type first_name :: String.t()
   @type last_name :: String.t()
@@ -423,8 +401,6 @@ defmodule Zitadel.Auth.V1.UpdateMyProfileRequest do
 end
 
 defmodule Zitadel.Auth.V1.UpdateMyProfileResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -465,8 +441,6 @@ defmodule Zitadel.Auth.V1.GetMyEmailRequest do
 end
 
 defmodule Zitadel.Auth.V1.GetMyEmailResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type email :: Zitadel.User.V1.Email.t() | nil
@@ -520,8 +494,6 @@ defmodule Zitadel.Auth.V1.SetMyEmailRequest do
 end
 
 defmodule Zitadel.Auth.V1.SetMyEmailResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -544,8 +516,6 @@ defmodule Zitadel.Auth.V1.SetMyEmailResponse do
 end
 
 defmodule Zitadel.Auth.V1.VerifyMyEmailRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type code :: String.t()
   @type t :: %__MODULE__{
@@ -567,8 +537,6 @@ defmodule Zitadel.Auth.V1.VerifyMyEmailRequest do
 end
 
 defmodule Zitadel.Auth.V1.VerifyMyEmailResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -607,8 +575,6 @@ defmodule Zitadel.Auth.V1.ResendMyEmailVerificationRequest do
 end
 
 defmodule Zitadel.Auth.V1.ResendMyEmailVerificationResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -650,8 +616,6 @@ defmodule Zitadel.Auth.V1.GetMyPhoneRequest do
 end
 
 defmodule Zitadel.Auth.V1.GetMyPhoneResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type phone :: Zitadel.User.V1.Phone.t() | nil
@@ -680,8 +644,6 @@ defmodule Zitadel.Auth.V1.GetMyPhoneResponse do
 end
 
 defmodule Zitadel.Auth.V1.SetMyPhoneRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type phone :: String.t()
   @type t :: %__MODULE__{
@@ -703,8 +665,6 @@ defmodule Zitadel.Auth.V1.SetMyPhoneRequest do
 end
 
 defmodule Zitadel.Auth.V1.SetMyPhoneResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -727,8 +687,6 @@ defmodule Zitadel.Auth.V1.SetMyPhoneResponse do
 end
 
 defmodule Zitadel.Auth.V1.VerifyMyPhoneRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type code :: String.t()
   @type t :: %__MODULE__{
@@ -750,8 +708,6 @@ defmodule Zitadel.Auth.V1.VerifyMyPhoneRequest do
 end
 
 defmodule Zitadel.Auth.V1.VerifyMyPhoneResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -790,8 +746,6 @@ defmodule Zitadel.Auth.V1.ResendMyPhoneVerificationRequest do
 end
 
 defmodule Zitadel.Auth.V1.ResendMyPhoneVerificationResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -834,8 +788,6 @@ defmodule Zitadel.Auth.V1.RemoveMyPhoneRequest do
 end
 
 defmodule Zitadel.Auth.V1.RemoveMyPhoneResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -885,8 +837,6 @@ defmodule Zitadel.Auth.V1.ListMyLinkedIDPsRequest do
 end
 
 defmodule Zitadel.Auth.V1.ListMyLinkedIDPsResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ListDetails.t() | nil
   @type result :: [Zitadel.Idp.V1.IDPUserLink.t()]
@@ -915,8 +865,6 @@ defmodule Zitadel.Auth.V1.ListMyLinkedIDPsResponse do
 end
 
 defmodule Zitadel.Auth.V1.RemoveMyLinkedIDPRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type idp_id :: String.t()
   @type linked_user_id :: String.t()
@@ -943,8 +891,6 @@ defmodule Zitadel.Auth.V1.RemoveMyLinkedIDPRequest do
 end
 
 defmodule Zitadel.Auth.V1.RemoveMyLinkedIDPResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -986,8 +932,6 @@ defmodule Zitadel.Auth.V1.ListMyAuthFactorsRequest do
 end
 
 defmodule Zitadel.Auth.V1.ListMyAuthFactorsResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type result :: [Zitadel.User.V1.AuthFactor.t()]
   @type t :: %__MODULE__{
@@ -1030,8 +974,6 @@ defmodule Zitadel.Auth.V1.AddMyAuthFactorU2FRequest do
 end
 
 defmodule Zitadel.Auth.V1.AddMyAuthFactorU2FResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type key :: Zitadel.User.V1.WebAuthNKey.t() | nil
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
@@ -1079,8 +1021,6 @@ defmodule Zitadel.Auth.V1.AddMyAuthFactorOTPRequest do
 end
 
 defmodule Zitadel.Auth.V1.AddMyAuthFactorOTPResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type url :: String.t()
   @type secret :: String.t()
@@ -1111,8 +1051,6 @@ defmodule Zitadel.Auth.V1.AddMyAuthFactorOTPResponse do
 end
 
 defmodule Zitadel.Auth.V1.VerifyMyAuthFactorOTPRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type code :: String.t()
   @type t :: %__MODULE__{
@@ -1134,8 +1072,6 @@ defmodule Zitadel.Auth.V1.VerifyMyAuthFactorOTPRequest do
 end
 
 defmodule Zitadel.Auth.V1.VerifyMyAuthFactorOTPResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -1159,8 +1095,6 @@ defmodule Zitadel.Auth.V1.VerifyMyAuthFactorOTPResponse do
 end
 
 defmodule Zitadel.Auth.V1.VerifyMyAuthFactorU2FRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type verification :: Zitadel.User.V1.WebAuthNVerification.t() | nil
   @type t :: %__MODULE__{
@@ -1185,8 +1119,6 @@ defmodule Zitadel.Auth.V1.VerifyMyAuthFactorU2FRequest do
 end
 
 defmodule Zitadel.Auth.V1.VerifyMyAuthFactorU2FResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -1229,8 +1161,6 @@ defmodule Zitadel.Auth.V1.RemoveMyAuthFactorOTPRequest do
 end
 
 defmodule Zitadel.Auth.V1.RemoveMyAuthFactorOTPResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -1254,8 +1184,6 @@ defmodule Zitadel.Auth.V1.RemoveMyAuthFactorOTPResponse do
 end
 
 defmodule Zitadel.Auth.V1.RemoveMyAuthFactorU2FRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type token_id :: String.t()
   @type t :: %__MODULE__{
@@ -1278,8 +1206,6 @@ defmodule Zitadel.Auth.V1.RemoveMyAuthFactorU2FRequest do
 end
 
 defmodule Zitadel.Auth.V1.RemoveMyAuthFactorU2FResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -1322,8 +1248,6 @@ defmodule Zitadel.Auth.V1.ListMyPasswordlessRequest do
 end
 
 defmodule Zitadel.Auth.V1.ListMyPasswordlessResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type result :: [Zitadel.User.V1.WebAuthNToken.t()]
   @type t :: %__MODULE__{
@@ -1366,8 +1290,6 @@ defmodule Zitadel.Auth.V1.AddMyPasswordlessRequest do
 end
 
 defmodule Zitadel.Auth.V1.AddMyPasswordlessResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type key :: Zitadel.User.V1.WebAuthNKey.t() | nil
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
@@ -1396,8 +1318,6 @@ defmodule Zitadel.Auth.V1.AddMyPasswordlessResponse do
 end
 
 defmodule Zitadel.Auth.V1.VerifyMyPasswordlessRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type verification :: Zitadel.User.V1.WebAuthNVerification.t() | nil
   @type t :: %__MODULE__{
@@ -1422,8 +1342,6 @@ defmodule Zitadel.Auth.V1.VerifyMyPasswordlessRequest do
 end
 
 defmodule Zitadel.Auth.V1.VerifyMyPasswordlessResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -1447,8 +1365,6 @@ defmodule Zitadel.Auth.V1.VerifyMyPasswordlessResponse do
 end
 
 defmodule Zitadel.Auth.V1.RemoveMyPasswordlessRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type token_id :: String.t()
   @type t :: %__MODULE__{
@@ -1471,8 +1387,6 @@ defmodule Zitadel.Auth.V1.RemoveMyPasswordlessRequest do
 end
 
 defmodule Zitadel.Auth.V1.RemoveMyPasswordlessResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -1523,8 +1437,6 @@ defmodule Zitadel.Auth.V1.ListMyUserGrantsRequest do
 end
 
 defmodule Zitadel.Auth.V1.ListMyUserGrantsResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ListDetails.t() | nil
   @type result :: [Zitadel.Auth.V1.UserGrant.t()]
@@ -1553,8 +1465,6 @@ defmodule Zitadel.Auth.V1.ListMyUserGrantsResponse do
 end
 
 defmodule Zitadel.Auth.V1.UserGrant do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type org_id :: String.t()
   @type project_id :: String.t()
@@ -1633,8 +1543,6 @@ defmodule Zitadel.Auth.V1.ListMyProjectOrgsRequest do
 end
 
 defmodule Zitadel.Auth.V1.ListMyProjectOrgsResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ListDetails.t() | nil
   @type result :: [Zitadel.Org.V1.Org.t()]
@@ -1682,8 +1590,6 @@ defmodule Zitadel.Auth.V1.ListMyZitadelFeaturesRequest do
 end
 
 defmodule Zitadel.Auth.V1.ListMyZitadelFeaturesResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type result :: [String.t()]
   @type t :: %__MODULE__{
@@ -1724,8 +1630,6 @@ defmodule Zitadel.Auth.V1.ListMyZitadelPermissionsRequest do
 end
 
 defmodule Zitadel.Auth.V1.ListMyZitadelPermissionsResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type result :: [String.t()]
   @type t :: %__MODULE__{
@@ -1766,8 +1670,6 @@ defmodule Zitadel.Auth.V1.ListMyProjectPermissionsRequest do
 end
 
 defmodule Zitadel.Auth.V1.ListMyProjectPermissionsResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type result :: [String.t()]
   @type t :: %__MODULE__{
@@ -1789,7 +1691,6 @@ defmodule Zitadel.Auth.V1.ListMyProjectPermissionsResponse do
 end
 
 defmodule Zitadel.Auth.V1.AuthService.Service do
-  @moduledoc false
   use GRPC.Service, name: "zitadel.auth.v1.AuthService"
 
   def descriptor do
@@ -2193,7 +2094,6 @@ defmodule Zitadel.Auth.V1.AuthService.Service do
 end
 
 defmodule Zitadel.Auth.V1.AuthService.Stub do
-  @moduledoc false
   use GRPC.Stub, service: Zitadel.Auth.V1.AuthService.Service
 end
 

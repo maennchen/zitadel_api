@@ -1,6 +1,4 @@
 defmodule Zitadel.Authn.V1.KeyType do
-  @moduledoc false
-
   use Protobuf, enum: true, syntax: :proto3
   @type key_type_unspecified :: :KEY_TYPE_UNSPECIFIED
   @type key_type_json :: :KEY_TYPE_JSON
@@ -21,8 +19,6 @@ defmodule Zitadel.Authn.V1.KeyType do
 end
 
 defmodule Zitadel.Authn.V1.Key do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type id :: String.t()
   @type details :: Zitadel.V1.ObjectDetails.t() | nil

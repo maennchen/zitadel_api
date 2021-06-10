@@ -65,8 +65,6 @@ defmodule Zitadel.Admin.V1.IsOrgUniqueRequest do
 end
 
 defmodule Zitadel.Admin.V1.IsOrgUniqueResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type is_unique :: boolean
   @type t :: %__MODULE__{
@@ -88,8 +86,6 @@ defmodule Zitadel.Admin.V1.IsOrgUniqueResponse do
 end
 
 defmodule Zitadel.Admin.V1.GetOrgByIDRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type id :: String.t()
   @type t :: %__MODULE__{
@@ -110,8 +106,6 @@ defmodule Zitadel.Admin.V1.GetOrgByIDRequest do
 end
 
 defmodule Zitadel.Admin.V1.GetOrgByIDResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type org :: Zitadel.Org.V1.Org.t() | nil
   @type t :: %__MODULE__{
@@ -186,8 +180,6 @@ defmodule Zitadel.Admin.V1.ListOrgsRequest do
 end
 
 defmodule Zitadel.Admin.V1.ListOrgsResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ListDetails.t() | nil
   @type sorting_column :: Zitadel.Org.V1.OrgFieldName.t()
@@ -228,8 +220,6 @@ defmodule Zitadel.Admin.V1.ListOrgsResponse do
 end
 
 defmodule Zitadel.Admin.V1.SetUpOrgRequest.Org do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type name :: String.t()
   @type domain :: String.t()
@@ -255,8 +245,6 @@ defmodule Zitadel.Admin.V1.SetUpOrgRequest.Org do
 end
 
 defmodule Zitadel.Admin.V1.SetUpOrgRequest.Human.Profile do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type first_name :: String.t()
   @type last_name :: String.t()
@@ -304,8 +292,6 @@ defmodule Zitadel.Admin.V1.SetUpOrgRequest.Human.Profile do
 end
 
 defmodule Zitadel.Admin.V1.SetUpOrgRequest.Human.Email do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type email :: String.t()
   @type is_email_verified :: boolean
@@ -332,8 +318,6 @@ defmodule Zitadel.Admin.V1.SetUpOrgRequest.Human.Email do
 end
 
 defmodule Zitadel.Admin.V1.SetUpOrgRequest.Human.Phone do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type phone :: String.t()
   @type is_phone_verified :: boolean
@@ -360,8 +344,6 @@ defmodule Zitadel.Admin.V1.SetUpOrgRequest.Human.Phone do
 end
 
 defmodule Zitadel.Admin.V1.SetUpOrgRequest.Human do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type user_name :: String.t()
   @type profile :: Zitadel.Admin.V1.SetUpOrgRequest.Human.Profile.t() | nil
@@ -508,8 +490,6 @@ defmodule Zitadel.Admin.V1.SetUpOrgRequest do
 end
 
 defmodule Zitadel.Admin.V1.SetUpOrgResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type org_id :: String.t()
@@ -540,8 +520,6 @@ defmodule Zitadel.Admin.V1.SetUpOrgResponse do
 end
 
 defmodule Zitadel.Admin.V1.GetIDPByIDRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type id :: String.t()
   @type t :: %__MODULE__{
@@ -562,8 +540,6 @@ defmodule Zitadel.Admin.V1.GetIDPByIDRequest do
 end
 
 defmodule Zitadel.Admin.V1.GetIDPByIDResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type idp :: Zitadel.Idp.V1.IDP.t() | nil
   @type t :: %__MODULE__{
@@ -638,8 +614,6 @@ defmodule Zitadel.Admin.V1.ListIDPsRequest do
 end
 
 defmodule Zitadel.Admin.V1.IDPQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type idp_id_query :: Zitadel.Idp.V1.IDPIDQuery.t() | nil
   @type idp_name_query :: Zitadel.Idp.V1.IDPNameQuery.t() | nil
@@ -672,8 +646,6 @@ defmodule Zitadel.Admin.V1.IDPQuery do
 end
 
 defmodule Zitadel.Admin.V1.ListIDPsResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ListDetails.t() | nil
   @type sorting_column :: Zitadel.Idp.V1.IDPFieldName.t()
@@ -714,8 +686,6 @@ defmodule Zitadel.Admin.V1.ListIDPsResponse do
 end
 
 defmodule Zitadel.Admin.V1.AddOIDCIDPRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type name :: String.t()
   @type styling_type :: Zitadel.Idp.V1.IDPStylingType.t()
@@ -802,8 +772,6 @@ defmodule Zitadel.Admin.V1.AddOIDCIDPRequest do
 end
 
 defmodule Zitadel.Admin.V1.AddOIDCIDPResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type idp_id :: String.t()
@@ -830,8 +798,6 @@ defmodule Zitadel.Admin.V1.AddOIDCIDPResponse do
 end
 
 defmodule Zitadel.Admin.V1.UpdateIDPRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type idp_id :: String.t()
   @type name :: String.t()
@@ -869,8 +835,6 @@ defmodule Zitadel.Admin.V1.UpdateIDPRequest do
 end
 
 defmodule Zitadel.Admin.V1.UpdateIDPResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -893,8 +857,6 @@ defmodule Zitadel.Admin.V1.UpdateIDPResponse do
 end
 
 defmodule Zitadel.Admin.V1.DeactivateIDPRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type idp_id :: String.t()
   @type t :: %__MODULE__{
@@ -916,8 +878,6 @@ defmodule Zitadel.Admin.V1.DeactivateIDPRequest do
 end
 
 defmodule Zitadel.Admin.V1.DeactivateIDPResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -940,8 +900,6 @@ defmodule Zitadel.Admin.V1.DeactivateIDPResponse do
 end
 
 defmodule Zitadel.Admin.V1.ReactivateIDPRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type idp_id :: String.t()
   @type t :: %__MODULE__{
@@ -963,8 +921,6 @@ defmodule Zitadel.Admin.V1.ReactivateIDPRequest do
 end
 
 defmodule Zitadel.Admin.V1.ReactivateIDPResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -987,8 +943,6 @@ defmodule Zitadel.Admin.V1.ReactivateIDPResponse do
 end
 
 defmodule Zitadel.Admin.V1.RemoveIDPRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type idp_id :: String.t()
   @type t :: %__MODULE__{
@@ -1010,8 +964,6 @@ defmodule Zitadel.Admin.V1.RemoveIDPRequest do
 end
 
 defmodule Zitadel.Admin.V1.RemoveIDPResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -1034,8 +986,6 @@ defmodule Zitadel.Admin.V1.RemoveIDPResponse do
 end
 
 defmodule Zitadel.Admin.V1.UpdateIDPOIDCConfigRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type idp_id :: String.t()
   @type issuer :: String.t()
@@ -1109,8 +1059,6 @@ defmodule Zitadel.Admin.V1.UpdateIDPOIDCConfigRequest do
 end
 
 defmodule Zitadel.Admin.V1.UpdateIDPOIDCConfigResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -1134,8 +1082,6 @@ defmodule Zitadel.Admin.V1.UpdateIDPOIDCConfigResponse do
 end
 
 defmodule Zitadel.Admin.V1.GetDefaultFeaturesRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
 
@@ -1151,8 +1097,6 @@ defmodule Zitadel.Admin.V1.GetDefaultFeaturesRequest do
 end
 
 defmodule Zitadel.Admin.V1.GetDefaultFeaturesResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type features :: Zitadel.Features.V1.Features.t() | nil
   @type t :: %__MODULE__{
@@ -1176,8 +1120,6 @@ defmodule Zitadel.Admin.V1.GetDefaultFeaturesResponse do
 end
 
 defmodule Zitadel.Admin.V1.SetDefaultFeaturesRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type tier_name :: String.t()
   @type description :: String.t()
@@ -1269,8 +1211,6 @@ defmodule Zitadel.Admin.V1.SetDefaultFeaturesRequest do
 end
 
 defmodule Zitadel.Admin.V1.SetDefaultFeaturesResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -1294,8 +1234,6 @@ defmodule Zitadel.Admin.V1.SetDefaultFeaturesResponse do
 end
 
 defmodule Zitadel.Admin.V1.GetOrgFeaturesRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type org_id :: String.t()
   @type t :: %__MODULE__{
@@ -1317,8 +1255,6 @@ defmodule Zitadel.Admin.V1.GetOrgFeaturesRequest do
 end
 
 defmodule Zitadel.Admin.V1.GetOrgFeaturesResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type features :: Zitadel.Features.V1.Features.t() | nil
   @type t :: %__MODULE__{
@@ -1342,8 +1278,6 @@ defmodule Zitadel.Admin.V1.GetOrgFeaturesResponse do
 end
 
 defmodule Zitadel.Admin.V1.SetOrgFeaturesRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type org_id :: String.t()
   @type tier_name :: String.t()
@@ -1454,8 +1388,6 @@ defmodule Zitadel.Admin.V1.SetOrgFeaturesRequest do
 end
 
 defmodule Zitadel.Admin.V1.SetOrgFeaturesResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -1478,8 +1410,6 @@ defmodule Zitadel.Admin.V1.SetOrgFeaturesResponse do
 end
 
 defmodule Zitadel.Admin.V1.ResetOrgFeaturesRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type org_id :: String.t()
   @type t :: %__MODULE__{
@@ -1501,8 +1431,6 @@ defmodule Zitadel.Admin.V1.ResetOrgFeaturesRequest do
 end
 
 defmodule Zitadel.Admin.V1.ResetOrgFeaturesResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -1525,8 +1453,6 @@ defmodule Zitadel.Admin.V1.ResetOrgFeaturesResponse do
 end
 
 defmodule Zitadel.Admin.V1.GetOrgIAMPolicyRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
 
@@ -1542,8 +1468,6 @@ defmodule Zitadel.Admin.V1.GetOrgIAMPolicyRequest do
 end
 
 defmodule Zitadel.Admin.V1.GetOrgIAMPolicyResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type policy :: Zitadel.Policy.V1.OrgIAMPolicy.t() | nil
   @type t :: %__MODULE__{
@@ -1567,8 +1491,6 @@ defmodule Zitadel.Admin.V1.GetOrgIAMPolicyResponse do
 end
 
 defmodule Zitadel.Admin.V1.UpdateOrgIAMPolicyRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type user_login_must_be_domain :: boolean
   @type t :: %__MODULE__{
@@ -1592,8 +1514,6 @@ defmodule Zitadel.Admin.V1.UpdateOrgIAMPolicyRequest do
 end
 
 defmodule Zitadel.Admin.V1.UpdateOrgIAMPolicyResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -1617,8 +1537,6 @@ defmodule Zitadel.Admin.V1.UpdateOrgIAMPolicyResponse do
 end
 
 defmodule Zitadel.Admin.V1.GetCustomOrgIAMPolicyRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type org_id :: String.t()
   @type t :: %__MODULE__{
@@ -1641,8 +1559,6 @@ defmodule Zitadel.Admin.V1.GetCustomOrgIAMPolicyRequest do
 end
 
 defmodule Zitadel.Admin.V1.GetCustomOrgIAMPolicyResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type policy :: Zitadel.Policy.V1.OrgIAMPolicy.t() | nil
   @type is_default :: boolean
@@ -1703,8 +1619,6 @@ defmodule Zitadel.Admin.V1.AddCustomOrgIAMPolicyRequest do
 end
 
 defmodule Zitadel.Admin.V1.AddCustomOrgIAMPolicyResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -1728,8 +1642,6 @@ defmodule Zitadel.Admin.V1.AddCustomOrgIAMPolicyResponse do
 end
 
 defmodule Zitadel.Admin.V1.UpdateCustomOrgIAMPolicyRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type org_id :: String.t()
   @type user_login_must_be_domain :: boolean
@@ -1758,8 +1670,6 @@ defmodule Zitadel.Admin.V1.UpdateCustomOrgIAMPolicyRequest do
 end
 
 defmodule Zitadel.Admin.V1.UpdateCustomOrgIAMPolicyResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -1783,8 +1693,6 @@ defmodule Zitadel.Admin.V1.UpdateCustomOrgIAMPolicyResponse do
 end
 
 defmodule Zitadel.Admin.V1.ResetCustomOrgIAMPolicyToDefaultRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type org_id :: String.t()
   @type t :: %__MODULE__{
@@ -1807,8 +1715,6 @@ defmodule Zitadel.Admin.V1.ResetCustomOrgIAMPolicyToDefaultRequest do
 end
 
 defmodule Zitadel.Admin.V1.ResetCustomOrgIAMPolicyToDefaultResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -1851,8 +1757,6 @@ defmodule Zitadel.Admin.V1.GetLabelPolicyRequest do
 end
 
 defmodule Zitadel.Admin.V1.GetLabelPolicyResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type policy :: Zitadel.Policy.V1.LabelPolicy.t() | nil
   @type t :: %__MODULE__{
@@ -1875,8 +1779,6 @@ defmodule Zitadel.Admin.V1.GetLabelPolicyResponse do
 end
 
 defmodule Zitadel.Admin.V1.UpdateLabelPolicyRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type primary_color :: String.t()
   @type secondary_color :: String.t()
@@ -1911,8 +1813,6 @@ defmodule Zitadel.Admin.V1.UpdateLabelPolicyRequest do
 end
 
 defmodule Zitadel.Admin.V1.UpdateLabelPolicyResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -1954,8 +1854,6 @@ defmodule Zitadel.Admin.V1.GetLoginPolicyRequest do
 end
 
 defmodule Zitadel.Admin.V1.GetLoginPolicyResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type policy :: Zitadel.Policy.V1.LoginPolicy.t() | nil
   @type t :: %__MODULE__{
@@ -1979,8 +1877,6 @@ defmodule Zitadel.Admin.V1.GetLoginPolicyResponse do
 end
 
 defmodule Zitadel.Admin.V1.UpdateLoginPolicyRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type allow_username_password :: boolean
   @type allow_register :: boolean
@@ -2038,8 +1934,6 @@ defmodule Zitadel.Admin.V1.UpdateLoginPolicyRequest do
 end
 
 defmodule Zitadel.Admin.V1.UpdateLoginPolicyResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -2090,8 +1984,6 @@ defmodule Zitadel.Admin.V1.ListLoginPolicyIDPsRequest do
 end
 
 defmodule Zitadel.Admin.V1.ListLoginPolicyIDPsResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ListDetails.t() | nil
   @type result :: [Zitadel.Idp.V1.IDPLoginPolicyLink.t()]
@@ -2148,8 +2040,6 @@ defmodule Zitadel.Admin.V1.AddIDPToLoginPolicyRequest do
 end
 
 defmodule Zitadel.Admin.V1.AddIDPToLoginPolicyResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -2173,8 +2063,6 @@ defmodule Zitadel.Admin.V1.AddIDPToLoginPolicyResponse do
 end
 
 defmodule Zitadel.Admin.V1.RemoveIDPFromLoginPolicyRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type idp_id :: String.t()
   @type t :: %__MODULE__{
@@ -2197,8 +2085,6 @@ defmodule Zitadel.Admin.V1.RemoveIDPFromLoginPolicyRequest do
 end
 
 defmodule Zitadel.Admin.V1.RemoveIDPFromLoginPolicyResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -2238,8 +2124,6 @@ defmodule Zitadel.Admin.V1.ListLoginPolicySecondFactorsRequest do
 end
 
 defmodule Zitadel.Admin.V1.ListLoginPolicySecondFactorsResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ListDetails.t() | nil
   @type result :: [[Zitadel.Policy.V1.SecondFactorType.t()]]
@@ -2269,8 +2153,6 @@ defmodule Zitadel.Admin.V1.ListLoginPolicySecondFactorsResponse do
 end
 
 defmodule Zitadel.Admin.V1.AddSecondFactorToLoginPolicyRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type type :: Zitadel.Policy.V1.SecondFactorType.t()
   @type t :: %__MODULE__{
@@ -2295,8 +2177,6 @@ defmodule Zitadel.Admin.V1.AddSecondFactorToLoginPolicyRequest do
 end
 
 defmodule Zitadel.Admin.V1.AddSecondFactorToLoginPolicyResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -2320,8 +2200,6 @@ defmodule Zitadel.Admin.V1.AddSecondFactorToLoginPolicyResponse do
 end
 
 defmodule Zitadel.Admin.V1.RemoveSecondFactorFromLoginPolicyRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type type :: Zitadel.Policy.V1.SecondFactorType.t()
   @type t :: %__MODULE__{
@@ -2346,8 +2224,6 @@ defmodule Zitadel.Admin.V1.RemoveSecondFactorFromLoginPolicyRequest do
 end
 
 defmodule Zitadel.Admin.V1.RemoveSecondFactorFromLoginPolicyResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -2387,8 +2263,6 @@ defmodule Zitadel.Admin.V1.ListLoginPolicyMultiFactorsRequest do
 end
 
 defmodule Zitadel.Admin.V1.ListLoginPolicyMultiFactorsResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ListDetails.t() | nil
   @type result :: [[Zitadel.Policy.V1.MultiFactorType.t()]]
@@ -2418,8 +2292,6 @@ defmodule Zitadel.Admin.V1.ListLoginPolicyMultiFactorsResponse do
 end
 
 defmodule Zitadel.Admin.V1.AddMultiFactorToLoginPolicyRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type type :: Zitadel.Policy.V1.MultiFactorType.t()
   @type t :: %__MODULE__{
@@ -2444,8 +2316,6 @@ defmodule Zitadel.Admin.V1.AddMultiFactorToLoginPolicyRequest do
 end
 
 defmodule Zitadel.Admin.V1.AddMultiFactorToLoginPolicyResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -2469,8 +2339,6 @@ defmodule Zitadel.Admin.V1.AddMultiFactorToLoginPolicyResponse do
 end
 
 defmodule Zitadel.Admin.V1.RemoveMultiFactorFromLoginPolicyRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type type :: Zitadel.Policy.V1.MultiFactorType.t()
   @type t :: %__MODULE__{
@@ -2495,8 +2363,6 @@ defmodule Zitadel.Admin.V1.RemoveMultiFactorFromLoginPolicyRequest do
 end
 
 defmodule Zitadel.Admin.V1.RemoveMultiFactorFromLoginPolicyResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -2520,8 +2386,6 @@ defmodule Zitadel.Admin.V1.RemoveMultiFactorFromLoginPolicyResponse do
 end
 
 defmodule Zitadel.Admin.V1.GetPasswordComplexityPolicyRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type t :: %__MODULE__{}
 
@@ -2534,8 +2398,6 @@ defmodule Zitadel.Admin.V1.GetPasswordComplexityPolicyRequest do
 end
 
 defmodule Zitadel.Admin.V1.GetPasswordComplexityPolicyResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type policy :: Zitadel.Policy.V1.PasswordComplexityPolicy.t() | nil
   @type t :: %__MODULE__{
@@ -2560,8 +2422,6 @@ defmodule Zitadel.Admin.V1.GetPasswordComplexityPolicyResponse do
 end
 
 defmodule Zitadel.Admin.V1.UpdatePasswordComplexityPolicyRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type min_length :: non_neg_integer
   @type has_uppercase :: boolean
@@ -2604,8 +2464,6 @@ defmodule Zitadel.Admin.V1.UpdatePasswordComplexityPolicyRequest do
 end
 
 defmodule Zitadel.Admin.V1.UpdatePasswordComplexityPolicyResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -2645,8 +2503,6 @@ defmodule Zitadel.Admin.V1.GetPasswordAgePolicyRequest do
 end
 
 defmodule Zitadel.Admin.V1.GetPasswordAgePolicyResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type policy :: Zitadel.Policy.V1.PasswordAgePolicy.t() | nil
   @type t :: %__MODULE__{
@@ -2670,8 +2526,6 @@ defmodule Zitadel.Admin.V1.GetPasswordAgePolicyResponse do
 end
 
 defmodule Zitadel.Admin.V1.UpdatePasswordAgePolicyRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type max_age_days :: non_neg_integer
   @type expire_warn_days :: non_neg_integer
@@ -2700,8 +2554,6 @@ defmodule Zitadel.Admin.V1.UpdatePasswordAgePolicyRequest do
 end
 
 defmodule Zitadel.Admin.V1.UpdatePasswordAgePolicyResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -2744,8 +2596,6 @@ defmodule Zitadel.Admin.V1.GetPasswordLockoutPolicyRequest do
 end
 
 defmodule Zitadel.Admin.V1.GetPasswordLockoutPolicyResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type policy :: Zitadel.Policy.V1.PasswordLockoutPolicy.t() | nil
   @type t :: %__MODULE__{
@@ -2807,8 +2657,6 @@ defmodule Zitadel.Admin.V1.UpdatePasswordLockoutPolicyRequest do
 end
 
 defmodule Zitadel.Admin.V1.UpdatePasswordLockoutPolicyResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -2862,8 +2710,6 @@ defmodule Zitadel.Admin.V1.AddIAMMemberRequest do
 end
 
 defmodule Zitadel.Admin.V1.AddIAMMemberResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -2917,8 +2763,6 @@ defmodule Zitadel.Admin.V1.UpdateIAMMemberRequest do
 end
 
 defmodule Zitadel.Admin.V1.UpdateIAMMemberResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -2941,8 +2785,6 @@ defmodule Zitadel.Admin.V1.UpdateIAMMemberResponse do
 end
 
 defmodule Zitadel.Admin.V1.RemoveIAMMemberRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type user_id :: String.t()
   @type t :: %__MODULE__{
@@ -2965,8 +2807,6 @@ defmodule Zitadel.Admin.V1.RemoveIAMMemberRequest do
 end
 
 defmodule Zitadel.Admin.V1.RemoveIAMMemberResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type t :: %__MODULE__{
@@ -3008,8 +2848,6 @@ defmodule Zitadel.Admin.V1.ListIAMMemberRolesRequest do
 end
 
 defmodule Zitadel.Admin.V1.ListIAMMemberRolesResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ListDetails.t() | nil
   @type roles :: [String.t()]
@@ -3074,8 +2912,6 @@ defmodule Zitadel.Admin.V1.ListIAMMembersRequest do
 end
 
 defmodule Zitadel.Admin.V1.ListIAMMembersResponse do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ListDetails.t() | nil
   @type result :: [Zitadel.Member.V1.Member.t()]
@@ -3149,8 +2985,6 @@ defmodule Zitadel.Admin.V1.ListViewsResponse do
 end
 
 defmodule Zitadel.Admin.V1.ClearViewRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type database :: String.t()
   @type view_name :: String.t()
@@ -3242,8 +3076,6 @@ defmodule Zitadel.Admin.V1.ListFailedEventsResponse do
 end
 
 defmodule Zitadel.Admin.V1.RemoveFailedEventRequest do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type database :: String.t()
   @type view_name :: String.t()
@@ -3356,8 +3188,6 @@ defmodule Zitadel.Admin.V1.View do
 end
 
 defmodule Zitadel.Admin.V1.FailedEvent do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type database :: String.t()
   @type view_name :: String.t()
@@ -3399,7 +3229,6 @@ defmodule Zitadel.Admin.V1.FailedEvent do
 end
 
 defmodule Zitadel.Admin.V1.AdminService.Service do
-  @moduledoc false
   use GRPC.Service, name: "zitadel.admin.v1.AdminService"
 
   def descriptor do
@@ -3993,7 +3822,6 @@ defmodule Zitadel.Admin.V1.AdminService.Service do
 end
 
 defmodule Zitadel.Admin.V1.AdminService.Stub do
-  @moduledoc false
   use GRPC.Stub, service: Zitadel.Admin.V1.AdminService.Service
 end
 

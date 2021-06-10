@@ -1,6 +1,4 @@
 defmodule Zitadel.Features.V1.FeaturesState do
-  @moduledoc false
-
   use Protobuf, enum: true, syntax: :proto3
   @type features_state_active :: :FEATURES_STATE_ACTIVE
   @type features_state_action_required :: :FEATURES_STATE_ACTION_REQUIRED
@@ -36,8 +34,6 @@ defmodule Zitadel.Features.V1.FeaturesState do
 end
 
 defmodule Zitadel.Features.V1.Features do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
   @type tier :: Zitadel.Features.V1.FeatureTier.t() | nil
@@ -135,8 +131,6 @@ defmodule Zitadel.Features.V1.Features do
 end
 
 defmodule Zitadel.Features.V1.FeatureTier do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type name :: String.t()
   @type description :: String.t()

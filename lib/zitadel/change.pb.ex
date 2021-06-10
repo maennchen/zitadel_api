@@ -1,6 +1,4 @@
 defmodule Zitadel.Change.V1.Change do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type change_date :: Google.Protobuf.Timestamp.t() | nil
   @type event_type :: Zitadel.V1.LocalizedMessage.t() | nil

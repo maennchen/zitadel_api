@@ -1,6 +1,4 @@
 defmodule Zitadel.Member.V1.Member do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type user_id :: String.t()
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
@@ -65,8 +63,6 @@ defmodule Zitadel.Member.V1.Member do
 end
 
 defmodule Zitadel.Member.V1.SearchQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type first_name_query :: Zitadel.Member.V1.FirstNameQuery.t() | nil
   @type last_name_query :: Zitadel.Member.V1.LastNameQuery.t() | nil
@@ -126,8 +122,6 @@ defmodule Zitadel.Member.V1.SearchQuery do
 end
 
 defmodule Zitadel.Member.V1.FirstNameQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type first_name :: String.t()
   @type method :: Zitadel.V1.TextQueryMethod.t()
@@ -155,8 +149,6 @@ defmodule Zitadel.Member.V1.FirstNameQuery do
 end
 
 defmodule Zitadel.Member.V1.LastNameQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type last_name :: String.t()
   @type method :: Zitadel.V1.TextQueryMethod.t()
@@ -184,8 +176,6 @@ defmodule Zitadel.Member.V1.LastNameQuery do
 end
 
 defmodule Zitadel.Member.V1.EmailQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type email :: String.t()
   @type method :: Zitadel.V1.TextQueryMethod.t()
@@ -212,8 +202,6 @@ defmodule Zitadel.Member.V1.EmailQuery do
 end
 
 defmodule Zitadel.Member.V1.UserIDQuery do
-  @moduledoc false
-
   use Protobuf, syntax: :proto3
   @type user_id :: String.t()
   @type t :: %__MODULE__{
