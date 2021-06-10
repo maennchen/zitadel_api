@@ -47,6 +47,10 @@ defmodule Zitadel.Features.V1.Features do
   @type password_complexity_policy :: boolean
   @type label_policy :: boolean
   @type custom_domain :: boolean
+  @type login_policy_password_reset :: boolean
+  @type label_policy_private_label :: boolean
+  @type label_policy_watermark :: boolean
+  @type custom_text :: boolean
   @type t :: %__MODULE__{
           details: details(),
           tier: tier(),
@@ -59,7 +63,11 @@ defmodule Zitadel.Features.V1.Features do
           login_policy_passwordless: login_policy_passwordless(),
           password_complexity_policy: password_complexity_policy(),
           label_policy: label_policy(),
-          custom_domain: custom_domain()
+          custom_domain: custom_domain(),
+          login_policy_password_reset: login_policy_password_reset(),
+          label_policy_private_label: label_policy_private_label(),
+          label_policy_watermark: label_policy_watermark(),
+          custom_text: custom_text()
         }
 
   defstruct [
@@ -74,7 +82,11 @@ defmodule Zitadel.Features.V1.Features do
     :login_policy_passwordless,
     :password_complexity_policy,
     :label_policy,
-    :custom_domain
+    :custom_domain,
+    :login_policy_password_reset,
+    :label_policy_private_label,
+    :label_policy_watermark,
+    :custom_text
   ]
 
   def descriptor do
@@ -112,7 +124,17 @@ defmodule Zitadel.Features.V1.Features do
         112, 111, 108, 105, 99, 121, 24, 11, 32, 1, 40, 8, 82, 11, 108, 97, 98, 101, 108, 80, 111,
         108, 105, 99, 121, 18, 35, 10, 13, 99, 117, 115, 116, 111, 109, 95, 100, 111, 109, 97,
         105, 110, 24, 12, 32, 1, 40, 8, 82, 12, 99, 117, 115, 116, 111, 109, 68, 111, 109, 97,
-        105, 110>>
+        105, 110, 18, 61, 10, 27, 108, 111, 103, 105, 110, 95, 112, 111, 108, 105, 99, 121, 95,
+        112, 97, 115, 115, 119, 111, 114, 100, 95, 114, 101, 115, 101, 116, 24, 13, 32, 1, 40, 8,
+        82, 24, 108, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 80, 97, 115, 115, 119, 111,
+        114, 100, 82, 101, 115, 101, 116, 18, 59, 10, 26, 108, 97, 98, 101, 108, 95, 112, 111,
+        108, 105, 99, 121, 95, 112, 114, 105, 118, 97, 116, 101, 95, 108, 97, 98, 101, 108, 24,
+        14, 32, 1, 40, 8, 82, 23, 108, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121, 80, 114, 105,
+        118, 97, 116, 101, 76, 97, 98, 101, 108, 18, 52, 10, 22, 108, 97, 98, 101, 108, 95, 112,
+        111, 108, 105, 99, 121, 95, 119, 97, 116, 101, 114, 109, 97, 114, 107, 24, 15, 32, 1, 40,
+        8, 82, 20, 108, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121, 87, 97, 116, 101, 114, 109,
+        97, 114, 107, 18, 31, 10, 11, 99, 117, 115, 116, 111, 109, 95, 116, 101, 120, 116, 24, 16,
+        32, 1, 40, 8, 82, 10, 99, 117, 115, 116, 111, 109, 84, 101, 120, 116>>
     )
   end
 
@@ -128,6 +150,10 @@ defmodule Zitadel.Features.V1.Features do
   field(:password_complexity_policy, 10, type: :bool, json_name: "passwordComplexityPolicy")
   field(:label_policy, 11, type: :bool, json_name: "labelPolicy")
   field(:custom_domain, 12, type: :bool, json_name: "customDomain")
+  field(:login_policy_password_reset, 13, type: :bool, json_name: "loginPolicyPasswordReset")
+  field(:label_policy_private_label, 14, type: :bool, json_name: "labelPolicyPrivateLabel")
+  field(:label_policy_watermark, 15, type: :bool, json_name: "labelPolicyWatermark")
+  field(:custom_text, 16, type: :bool, json_name: "customText")
 end
 
 defmodule Zitadel.Features.V1.FeatureTier do

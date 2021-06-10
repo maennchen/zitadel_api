@@ -6,13 +6,15 @@ defmodule Zitadel.Change.V1.Change do
   @type editor_id :: String.t()
   @type editor_display_name :: String.t()
   @type resource_owner_id :: String.t()
+  @type editor_preferred_login_name :: String.t()
   @type t :: %__MODULE__{
           change_date: change_date(),
           event_type: event_type(),
           sequence: sequence(),
           editor_id: editor_id(),
           editor_display_name: editor_display_name(),
-          resource_owner_id: resource_owner_id()
+          resource_owner_id: resource_owner_id(),
+          editor_preferred_login_name: editor_preferred_login_name()
         }
 
   defstruct [
@@ -21,7 +23,8 @@ defmodule Zitadel.Change.V1.Change do
     :sequence,
     :editor_id,
     :editor_display_name,
-    :resource_owner_id
+    :resource_owner_id,
+    :editor_preferred_login_name
   ]
 
   def descriptor do
@@ -42,7 +45,11 @@ defmodule Zitadel.Change.V1.Change do
         80, 0, 82, 17, 101, 100, 105, 116, 111, 114, 68, 105, 115, 112, 108, 97, 121, 78, 97, 109,
         101, 18, 50, 10, 17, 114, 101, 115, 111, 117, 114, 99, 101, 95, 111, 119, 110, 101, 114,
         95, 105, 100, 24, 6, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 15, 114, 101, 115, 111,
-        117, 114, 99, 101, 79, 119, 110, 101, 114, 73, 100>>
+        117, 114, 99, 101, 79, 119, 110, 101, 114, 73, 100, 18, 69, 10, 27, 101, 100, 105, 116,
+        111, 114, 95, 112, 114, 101, 102, 101, 114, 114, 101, 100, 95, 108, 111, 103, 105, 110,
+        95, 110, 97, 109, 101, 24, 7, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 24, 101, 100,
+        105, 116, 111, 114, 80, 114, 101, 102, 101, 114, 114, 101, 100, 76, 111, 103, 105, 110,
+        78, 97, 109, 101>>
     )
   end
 
@@ -52,6 +59,7 @@ defmodule Zitadel.Change.V1.Change do
   field(:editor_id, 4, type: :string, json_name: "editorId")
   field(:editor_display_name, 5, type: :string, json_name: "editorDisplayName")
   field(:resource_owner_id, 6, type: :string, json_name: "resourceOwnerId")
+  field(:editor_preferred_login_name, 7, type: :string, json_name: "editorPreferredLoginName")
 end
 
 defmodule Zitadel.Change.V1.ChangeQuery do

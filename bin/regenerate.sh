@@ -33,7 +33,7 @@ store_lib () {
 }
 
 echo >&2 "Download protofiles"
-ZITADEL_FILES="admin.proto app.proto auth.proto auth_n_key.proto change.proto features.proto idp.proto management.proto member.proto message.proto object.proto options.proto org.proto policy.proto project.proto user.proto"
+ZITADEL_FILES="admin.proto app.proto auth.proto auth_n_key.proto change.proto features.proto idp.proto management.proto member.proto message.proto object.proto options.proto org.proto policy.proto project.proto text.proto user.proto"
 for ZITADEL_FILE in $ZITADEL_FILES; do
   store_lib zitadel "https://raw.githubusercontent.com/caos/zitadel/$API_VERSION/proto/zitadel/$ZITADEL_FILE"
 done

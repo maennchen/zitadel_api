@@ -1132,6 +1132,10 @@ defmodule Zitadel.Admin.V1.SetDefaultFeaturesRequest do
   @type password_complexity_policy :: boolean
   @type label_policy :: boolean
   @type custom_domain :: boolean
+  @type login_policy_password_reset :: boolean
+  @type label_policy_private_label :: boolean
+  @type label_policy_watermark :: boolean
+  @type custom_text :: boolean
   @type t :: %__MODULE__{
           tier_name: tier_name(),
           description: description(),
@@ -1143,7 +1147,11 @@ defmodule Zitadel.Admin.V1.SetDefaultFeaturesRequest do
           login_policy_passwordless: login_policy_passwordless(),
           password_complexity_policy: password_complexity_policy(),
           label_policy: label_policy(),
-          custom_domain: custom_domain()
+          custom_domain: custom_domain(),
+          login_policy_password_reset: login_policy_password_reset(),
+          label_policy_private_label: label_policy_private_label(),
+          label_policy_watermark: label_policy_watermark(),
+          custom_text: custom_text()
         }
 
   defstruct [
@@ -1157,7 +1165,11 @@ defmodule Zitadel.Admin.V1.SetDefaultFeaturesRequest do
     :login_policy_passwordless,
     :password_complexity_policy,
     :label_policy,
-    :custom_domain
+    :custom_domain,
+    :login_policy_password_reset,
+    :label_policy_private_label,
+    :label_policy_watermark,
+    :custom_text
   ]
 
   def descriptor do
@@ -1193,7 +1205,17 @@ defmodule Zitadel.Admin.V1.SetDefaultFeaturesRequest do
         101, 108, 95, 112, 111, 108, 105, 99, 121, 24, 12, 32, 1, 40, 8, 82, 11, 108, 97, 98, 101,
         108, 80, 111, 108, 105, 99, 121, 18, 35, 10, 13, 99, 117, 115, 116, 111, 109, 95, 100,
         111, 109, 97, 105, 110, 24, 13, 32, 1, 40, 8, 82, 12, 99, 117, 115, 116, 111, 109, 68,
-        111, 109, 97, 105, 110>>
+        111, 109, 97, 105, 110, 18, 61, 10, 27, 108, 111, 103, 105, 110, 95, 112, 111, 108, 105,
+        99, 121, 95, 112, 97, 115, 115, 119, 111, 114, 100, 95, 114, 101, 115, 101, 116, 24, 14,
+        32, 1, 40, 8, 82, 24, 108, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 80, 97, 115,
+        115, 119, 111, 114, 100, 82, 101, 115, 101, 116, 18, 59, 10, 26, 108, 97, 98, 101, 108,
+        95, 112, 111, 108, 105, 99, 121, 95, 112, 114, 105, 118, 97, 116, 101, 95, 108, 97, 98,
+        101, 108, 24, 15, 32, 1, 40, 8, 82, 23, 108, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121,
+        80, 114, 105, 118, 97, 116, 101, 76, 97, 98, 101, 108, 18, 52, 10, 22, 108, 97, 98, 101,
+        108, 95, 112, 111, 108, 105, 99, 121, 95, 119, 97, 116, 101, 114, 109, 97, 114, 107, 24,
+        16, 32, 1, 40, 8, 82, 20, 108, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121, 87, 97, 116,
+        101, 114, 109, 97, 114, 107, 18, 31, 10, 11, 99, 117, 115, 116, 111, 109, 95, 116, 101,
+        120, 116, 24, 17, 32, 1, 40, 8, 82, 10, 99, 117, 115, 116, 111, 109, 84, 101, 120, 116>>
     )
   end
 
@@ -1208,6 +1230,10 @@ defmodule Zitadel.Admin.V1.SetDefaultFeaturesRequest do
   field(:password_complexity_policy, 11, type: :bool, json_name: "passwordComplexityPolicy")
   field(:label_policy, 12, type: :bool, json_name: "labelPolicy")
   field(:custom_domain, 13, type: :bool, json_name: "customDomain")
+  field(:login_policy_password_reset, 14, type: :bool, json_name: "loginPolicyPasswordReset")
+  field(:label_policy_private_label, 15, type: :bool, json_name: "labelPolicyPrivateLabel")
+  field(:label_policy_watermark, 16, type: :bool, json_name: "labelPolicyWatermark")
+  field(:custom_text, 17, type: :bool, json_name: "customText")
 end
 
 defmodule Zitadel.Admin.V1.SetDefaultFeaturesResponse do
@@ -1293,6 +1319,10 @@ defmodule Zitadel.Admin.V1.SetOrgFeaturesRequest do
   @type password_complexity_policy :: boolean
   @type label_policy :: boolean
   @type custom_domain :: boolean
+  @type login_policy_password_reset :: boolean
+  @type label_policy_private_label :: boolean
+  @type label_policy_watermark :: boolean
+  @type custom_text :: boolean
   @type t :: %__MODULE__{
           org_id: org_id(),
           tier_name: tier_name(),
@@ -1307,7 +1337,11 @@ defmodule Zitadel.Admin.V1.SetOrgFeaturesRequest do
           login_policy_passwordless: login_policy_passwordless(),
           password_complexity_policy: password_complexity_policy(),
           label_policy: label_policy(),
-          custom_domain: custom_domain()
+          custom_domain: custom_domain(),
+          login_policy_password_reset: login_policy_password_reset(),
+          label_policy_private_label: label_policy_private_label(),
+          label_policy_watermark: label_policy_watermark(),
+          custom_text: custom_text()
         }
 
   defstruct [
@@ -1324,7 +1358,11 @@ defmodule Zitadel.Admin.V1.SetOrgFeaturesRequest do
     :login_policy_passwordless,
     :password_complexity_policy,
     :label_policy,
-    :custom_domain
+    :custom_domain,
+    :login_policy_password_reset,
+    :label_policy_private_label,
+    :label_policy_watermark,
+    :custom_text
   ]
 
   def descriptor do
@@ -1367,7 +1405,17 @@ defmodule Zitadel.Admin.V1.SetOrgFeaturesRequest do
         111, 108, 105, 99, 121, 24, 13, 32, 1, 40, 8, 82, 11, 108, 97, 98, 101, 108, 80, 111, 108,
         105, 99, 121, 18, 35, 10, 13, 99, 117, 115, 116, 111, 109, 95, 100, 111, 109, 97, 105,
         110, 24, 14, 32, 1, 40, 8, 82, 12, 99, 117, 115, 116, 111, 109, 68, 111, 109, 97, 105,
-        110>>
+        110, 18, 61, 10, 27, 108, 111, 103, 105, 110, 95, 112, 111, 108, 105, 99, 121, 95, 112,
+        97, 115, 115, 119, 111, 114, 100, 95, 114, 101, 115, 101, 116, 24, 15, 32, 1, 40, 8, 82,
+        24, 108, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 80, 97, 115, 115, 119, 111, 114,
+        100, 82, 101, 115, 101, 116, 18, 59, 10, 26, 108, 97, 98, 101, 108, 95, 112, 111, 108,
+        105, 99, 121, 95, 112, 114, 105, 118, 97, 116, 101, 95, 108, 97, 98, 101, 108, 24, 16, 32,
+        1, 40, 8, 82, 23, 108, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121, 80, 114, 105, 118,
+        97, 116, 101, 76, 97, 98, 101, 108, 18, 52, 10, 22, 108, 97, 98, 101, 108, 95, 112, 111,
+        108, 105, 99, 121, 95, 119, 97, 116, 101, 114, 109, 97, 114, 107, 24, 17, 32, 1, 40, 8,
+        82, 20, 108, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121, 87, 97, 116, 101, 114, 109, 97,
+        114, 107, 18, 31, 10, 11, 99, 117, 115, 116, 111, 109, 95, 116, 101, 120, 116, 24, 18, 32,
+        1, 40, 8, 82, 10, 99, 117, 115, 116, 111, 109, 84, 101, 120, 116>>
     )
   end
 
@@ -1385,6 +1433,10 @@ defmodule Zitadel.Admin.V1.SetOrgFeaturesRequest do
   field(:password_complexity_policy, 12, type: :bool, json_name: "passwordComplexityPolicy")
   field(:label_policy, 13, type: :bool, json_name: "labelPolicy")
   field(:custom_domain, 14, type: :bool, json_name: "customDomain")
+  field(:login_policy_password_reset, 15, type: :bool, json_name: "loginPolicyPasswordReset")
+  field(:label_policy_private_label, 16, type: :bool, json_name: "labelPolicyPrivateLabel")
+  field(:label_policy_watermark, 17, type: :bool, json_name: "labelPolicyWatermark")
+  field(:custom_text, 18, type: :bool, json_name: "customText")
 end
 
 defmodule Zitadel.Admin.V1.SetOrgFeaturesResponse do
@@ -1778,18 +1830,85 @@ defmodule Zitadel.Admin.V1.GetLabelPolicyResponse do
   field(:policy, 1, type: Zitadel.Policy.V1.LabelPolicy)
 end
 
+defmodule Zitadel.Admin.V1.GetPreviewLabelPolicyRequest do
+  @moduledoc """
+  This is an empty request
+  """
+
+  use Protobuf, syntax: :proto3
+  @type t :: %__MODULE__{}
+
+  defstruct []
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 28, 71, 101, 116, 80, 114, 101, 118, 105, 101, 119, 76, 97, 98, 101, 108, 80, 111,
+        108, 105, 99, 121, 82, 101, 113, 117, 101, 115, 116>>
+    )
+  end
+end
+
+defmodule Zitadel.Admin.V1.GetPreviewLabelPolicyResponse do
+  use Protobuf, syntax: :proto3
+  @type policy :: Zitadel.Policy.V1.LabelPolicy.t() | nil
+  @type t :: %__MODULE__{
+          policy: policy()
+        }
+
+  defstruct [:policy]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 29, 71, 101, 116, 80, 114, 101, 118, 105, 101, 119, 76, 97, 98, 101, 108, 80, 111,
+        108, 105, 99, 121, 82, 101, 115, 112, 111, 110, 115, 101, 18, 54, 10, 6, 112, 111, 108,
+        105, 99, 121, 24, 1, 32, 1, 40, 11, 50, 30, 46, 122, 105, 116, 97, 100, 101, 108, 46, 112,
+        111, 108, 105, 99, 121, 46, 118, 49, 46, 76, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121,
+        82, 6, 112, 111, 108, 105, 99, 121>>
+    )
+  end
+
+  field(:policy, 1, type: Zitadel.Policy.V1.LabelPolicy)
+end
+
 defmodule Zitadel.Admin.V1.UpdateLabelPolicyRequest do
   use Protobuf, syntax: :proto3
   @type primary_color :: String.t()
-  @type secondary_color :: String.t()
   @type hide_login_name_suffix :: boolean
+  @type warn_color :: String.t()
+  @type background_color :: String.t()
+  @type font_color :: String.t()
+  @type primary_color_dark :: String.t()
+  @type background_color_dark :: String.t()
+  @type warn_color_dark :: String.t()
+  @type font_color_dark :: String.t()
+  @type disable_watermark :: boolean
   @type t :: %__MODULE__{
           primary_color: primary_color(),
-          secondary_color: secondary_color(),
-          hide_login_name_suffix: hide_login_name_suffix()
+          hide_login_name_suffix: hide_login_name_suffix(),
+          warn_color: warn_color(),
+          background_color: background_color(),
+          font_color: font_color(),
+          primary_color_dark: primary_color_dark(),
+          background_color_dark: background_color_dark(),
+          warn_color_dark: warn_color_dark(),
+          font_color_dark: font_color_dark(),
+          disable_watermark: disable_watermark()
         }
 
-  defstruct [:primary_color, :secondary_color, :hide_login_name_suffix]
+  defstruct [
+    :primary_color,
+    :hide_login_name_suffix,
+    :warn_color,
+    :background_color,
+    :font_color,
+    :primary_color_dark,
+    :background_color_dark,
+    :warn_color_dark,
+    :font_color_dark,
+    :disable_watermark
+  ]
 
   def descriptor do
     # credo:disable-for-next-line
@@ -1797,19 +1916,41 @@ defmodule Zitadel.Admin.V1.UpdateLabelPolicyRequest do
       <<10, 24, 85, 112, 100, 97, 116, 101, 76, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121, 82,
         101, 113, 117, 101, 115, 116, 18, 43, 10, 13, 112, 114, 105, 109, 97, 114, 121, 95, 99,
         111, 108, 111, 114, 24, 1, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 12, 112, 114,
-        105, 109, 97, 114, 121, 67, 111, 108, 111, 114, 18, 47, 10, 15, 115, 101, 99, 111, 110,
-        100, 97, 114, 121, 95, 99, 111, 108, 111, 114, 24, 2, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0,
-        80, 0, 82, 14, 115, 101, 99, 111, 110, 100, 97, 114, 121, 67, 111, 108, 111, 114, 18, 59,
-        10, 22, 104, 105, 100, 101, 95, 108, 111, 103, 105, 110, 95, 110, 97, 109, 101, 95, 115,
-        117, 102, 102, 105, 120, 24, 3, 32, 1, 40, 8, 66, 6, 24, 0, 40, 0, 80, 0, 82, 19, 104,
-        105, 100, 101, 76, 111, 103, 105, 110, 78, 97, 109, 101, 83, 117, 102, 102, 105, 120, 58,
-        6, 8, 0, 16, 0, 24, 0>>
+        105, 109, 97, 114, 121, 67, 111, 108, 111, 114, 18, 59, 10, 22, 104, 105, 100, 101, 95,
+        108, 111, 103, 105, 110, 95, 110, 97, 109, 101, 95, 115, 117, 102, 102, 105, 120, 24, 3,
+        32, 1, 40, 8, 66, 6, 24, 0, 40, 0, 80, 0, 82, 19, 104, 105, 100, 101, 76, 111, 103, 105,
+        110, 78, 97, 109, 101, 83, 117, 102, 102, 105, 120, 18, 37, 10, 10, 119, 97, 114, 110, 95,
+        99, 111, 108, 111, 114, 24, 4, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 9, 119, 97,
+        114, 110, 67, 111, 108, 111, 114, 18, 49, 10, 16, 98, 97, 99, 107, 103, 114, 111, 117,
+        110, 100, 95, 99, 111, 108, 111, 114, 24, 5, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82,
+        15, 98, 97, 99, 107, 103, 114, 111, 117, 110, 100, 67, 111, 108, 111, 114, 18, 37, 10, 10,
+        102, 111, 110, 116, 95, 99, 111, 108, 111, 114, 24, 6, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0,
+        80, 0, 82, 9, 102, 111, 110, 116, 67, 111, 108, 111, 114, 18, 52, 10, 18, 112, 114, 105,
+        109, 97, 114, 121, 95, 99, 111, 108, 111, 114, 95, 100, 97, 114, 107, 24, 7, 32, 1, 40, 9,
+        66, 6, 24, 0, 40, 0, 80, 0, 82, 16, 112, 114, 105, 109, 97, 114, 121, 67, 111, 108, 111,
+        114, 68, 97, 114, 107, 18, 58, 10, 21, 98, 97, 99, 107, 103, 114, 111, 117, 110, 100, 95,
+        99, 111, 108, 111, 114, 95, 100, 97, 114, 107, 24, 8, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0,
+        80, 0, 82, 19, 98, 97, 99, 107, 103, 114, 111, 117, 110, 100, 67, 111, 108, 111, 114, 68,
+        97, 114, 107, 18, 46, 10, 15, 119, 97, 114, 110, 95, 99, 111, 108, 111, 114, 95, 100, 97,
+        114, 107, 24, 9, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 13, 119, 97, 114, 110, 67,
+        111, 108, 111, 114, 68, 97, 114, 107, 18, 46, 10, 15, 102, 111, 110, 116, 95, 99, 111,
+        108, 111, 114, 95, 100, 97, 114, 107, 24, 10, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0,
+        82, 13, 102, 111, 110, 116, 67, 111, 108, 111, 114, 68, 97, 114, 107, 18, 43, 10, 17, 100,
+        105, 115, 97, 98, 108, 101, 95, 119, 97, 116, 101, 114, 109, 97, 114, 107, 24, 11, 32, 1,
+        40, 8, 82, 16, 100, 105, 115, 97, 98, 108, 101, 87, 97, 116, 101, 114, 109, 97, 114, 107>>
     )
   end
 
   field(:primary_color, 1, type: :string, json_name: "primaryColor")
-  field(:secondary_color, 2, type: :string, json_name: "secondaryColor")
   field(:hide_login_name_suffix, 3, type: :bool, json_name: "hideLoginNameSuffix")
+  field(:warn_color, 4, type: :string, json_name: "warnColor")
+  field(:background_color, 5, type: :string, json_name: "backgroundColor")
+  field(:font_color, 6, type: :string, json_name: "fontColor")
+  field(:primary_color_dark, 7, type: :string, json_name: "primaryColorDark")
+  field(:background_color_dark, 8, type: :string, json_name: "backgroundColorDark")
+  field(:warn_color_dark, 9, type: :string, json_name: "warnColorDark")
+  field(:font_color_dark, 10, type: :string, json_name: "fontColorDark")
+  field(:disable_watermark, 11, type: :bool, json_name: "disableWatermark")
 end
 
 defmodule Zitadel.Admin.V1.UpdateLabelPolicyResponse do
@@ -1828,6 +1969,252 @@ defmodule Zitadel.Admin.V1.UpdateLabelPolicyResponse do
         101, 115, 112, 111, 110, 115, 101, 18, 51, 10, 7, 100, 101, 116, 97, 105, 108, 115, 24, 1,
         32, 1, 40, 11, 50, 25, 46, 122, 105, 116, 97, 100, 101, 108, 46, 118, 49, 46, 79, 98, 106,
         101, 99, 116, 68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101, 116, 97, 105, 108, 115>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Admin.V1.ActivateLabelPolicyRequest do
+  @moduledoc """
+  This is an empty request
+  """
+
+  use Protobuf, syntax: :proto3
+  @type t :: %__MODULE__{}
+
+  defstruct []
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 26, 65, 99, 116, 105, 118, 97, 116, 101, 76, 97, 98, 101, 108, 80, 111, 108, 105, 99,
+        121, 82, 101, 113, 117, 101, 115, 116>>
+    )
+  end
+end
+
+defmodule Zitadel.Admin.V1.ActivateLabelPolicyResponse do
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          details: details()
+        }
+
+  defstruct [:details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 27, 65, 99, 116, 105, 118, 97, 116, 101, 76, 97, 98, 101, 108, 80, 111, 108, 105, 99,
+        121, 82, 101, 115, 112, 111, 110, 115, 101, 18, 51, 10, 7, 100, 101, 116, 97, 105, 108,
+        115, 24, 1, 32, 1, 40, 11, 50, 25, 46, 122, 105, 116, 97, 100, 101, 108, 46, 118, 49, 46,
+        79, 98, 106, 101, 99, 116, 68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101, 116, 97, 105,
+        108, 115>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Admin.V1.RemoveLabelPolicyLogoRequest do
+  @moduledoc """
+  This is an empty request
+  """
+
+  use Protobuf, syntax: :proto3
+  @type t :: %__MODULE__{}
+
+  defstruct []
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 28, 82, 101, 109, 111, 118, 101, 76, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121, 76,
+        111, 103, 111, 82, 101, 113, 117, 101, 115, 116>>
+    )
+  end
+end
+
+defmodule Zitadel.Admin.V1.RemoveLabelPolicyLogoResponse do
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          details: details()
+        }
+
+  defstruct [:details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 29, 82, 101, 109, 111, 118, 101, 76, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121, 76,
+        111, 103, 111, 82, 101, 115, 112, 111, 110, 115, 101, 18, 51, 10, 7, 100, 101, 116, 97,
+        105, 108, 115, 24, 1, 32, 1, 40, 11, 50, 25, 46, 122, 105, 116, 97, 100, 101, 108, 46,
+        118, 49, 46, 79, 98, 106, 101, 99, 116, 68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101,
+        116, 97, 105, 108, 115>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Admin.V1.RemoveLabelPolicyLogoDarkRequest do
+  @moduledoc """
+  This is an empty request
+  """
+
+  use Protobuf, syntax: :proto3
+  @type t :: %__MODULE__{}
+
+  defstruct []
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode("\n RemoveLabelPolicyLogoDarkRequest")
+  end
+end
+
+defmodule Zitadel.Admin.V1.RemoveLabelPolicyLogoDarkResponse do
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          details: details()
+        }
+
+  defstruct [:details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 33, 82, 101, 109, 111, 118, 101, 76, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121, 76,
+        111, 103, 111, 68, 97, 114, 107, 82, 101, 115, 112, 111, 110, 115, 101, 18, 51, 10, 7,
+        100, 101, 116, 97, 105, 108, 115, 24, 1, 32, 1, 40, 11, 50, 25, 46, 122, 105, 116, 97,
+        100, 101, 108, 46, 118, 49, 46, 79, 98, 106, 101, 99, 116, 68, 101, 116, 97, 105, 108,
+        115, 82, 7, 100, 101, 116, 97, 105, 108, 115>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Admin.V1.RemoveLabelPolicyIconRequest do
+  @moduledoc """
+  This is an empty request
+  """
+
+  use Protobuf, syntax: :proto3
+  @type t :: %__MODULE__{}
+
+  defstruct []
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 28, 82, 101, 109, 111, 118, 101, 76, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121, 73,
+        99, 111, 110, 82, 101, 113, 117, 101, 115, 116>>
+    )
+  end
+end
+
+defmodule Zitadel.Admin.V1.RemoveLabelPolicyIconResponse do
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          details: details()
+        }
+
+  defstruct [:details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 29, 82, 101, 109, 111, 118, 101, 76, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121, 73,
+        99, 111, 110, 82, 101, 115, 112, 111, 110, 115, 101, 18, 51, 10, 7, 100, 101, 116, 97,
+        105, 108, 115, 24, 1, 32, 1, 40, 11, 50, 25, 46, 122, 105, 116, 97, 100, 101, 108, 46,
+        118, 49, 46, 79, 98, 106, 101, 99, 116, 68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101,
+        116, 97, 105, 108, 115>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Admin.V1.RemoveLabelPolicyIconDarkRequest do
+  @moduledoc """
+  This is an empty request
+  """
+
+  use Protobuf, syntax: :proto3
+  @type t :: %__MODULE__{}
+
+  defstruct []
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode("\n RemoveLabelPolicyIconDarkRequest")
+  end
+end
+
+defmodule Zitadel.Admin.V1.RemoveLabelPolicyIconDarkResponse do
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          details: details()
+        }
+
+  defstruct [:details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 33, 82, 101, 109, 111, 118, 101, 76, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121, 73,
+        99, 111, 110, 68, 97, 114, 107, 82, 101, 115, 112, 111, 110, 115, 101, 18, 51, 10, 7, 100,
+        101, 116, 97, 105, 108, 115, 24, 1, 32, 1, 40, 11, 50, 25, 46, 122, 105, 116, 97, 100,
+        101, 108, 46, 118, 49, 46, 79, 98, 106, 101, 99, 116, 68, 101, 116, 97, 105, 108, 115, 82,
+        7, 100, 101, 116, 97, 105, 108, 115>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Admin.V1.RemoveLabelPolicyFontRequest do
+  @moduledoc """
+  This is an empty request
+  """
+
+  use Protobuf, syntax: :proto3
+  @type t :: %__MODULE__{}
+
+  defstruct []
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 28, 82, 101, 109, 111, 118, 101, 76, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121, 70,
+        111, 110, 116, 82, 101, 113, 117, 101, 115, 116>>
+    )
+  end
+end
+
+defmodule Zitadel.Admin.V1.RemoveLabelPolicyFontResponse do
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          details: details()
+        }
+
+  defstruct [:details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 29, 82, 101, 109, 111, 118, 101, 76, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121, 70,
+        111, 110, 116, 82, 101, 115, 112, 111, 110, 115, 101, 18, 51, 10, 7, 100, 101, 116, 97,
+        105, 108, 115, 24, 1, 32, 1, 40, 11, 50, 25, 46, 122, 105, 116, 97, 100, 101, 108, 46,
+        118, 49, 46, 79, 98, 106, 101, 99, 116, 68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101,
+        116, 97, 105, 108, 115>>
     )
   end
 
@@ -1883,12 +2270,14 @@ defmodule Zitadel.Admin.V1.UpdateLoginPolicyRequest do
   @type allow_external_idp :: boolean
   @type force_mfa :: boolean
   @type passwordless_type :: Zitadel.Policy.V1.PasswordlessType.t()
+  @type hide_password_reset :: boolean
   @type t :: %__MODULE__{
           allow_username_password: allow_username_password(),
           allow_register: allow_register(),
           allow_external_idp: allow_external_idp(),
           force_mfa: force_mfa(),
-          passwordless_type: passwordless_type()
+          passwordless_type: passwordless_type(),
+          hide_password_reset: hide_password_reset()
         }
 
   defstruct [
@@ -1896,7 +2285,8 @@ defmodule Zitadel.Admin.V1.UpdateLoginPolicyRequest do
     :allow_register,
     :allow_external_idp,
     :force_mfa,
-    :passwordless_type
+    :passwordless_type,
+    :hide_password_reset
   ]
 
   def descriptor do
@@ -1917,7 +2307,10 @@ defmodule Zitadel.Admin.V1.UpdateLoginPolicyRequest do
         116, 121, 112, 101, 24, 5, 32, 1, 40, 14, 50, 35, 46, 122, 105, 116, 97, 100, 101, 108,
         46, 112, 111, 108, 105, 99, 121, 46, 118, 49, 46, 80, 97, 115, 115, 119, 111, 114, 100,
         108, 101, 115, 115, 84, 121, 112, 101, 66, 6, 24, 0, 40, 0, 80, 0, 82, 16, 112, 97, 115,
-        115, 119, 111, 114, 100, 108, 101, 115, 115, 84, 121, 112, 101>>
+        115, 119, 111, 114, 100, 108, 101, 115, 115, 84, 121, 112, 101, 18, 54, 10, 19, 104, 105,
+        100, 101, 95, 112, 97, 115, 115, 119, 111, 114, 100, 95, 114, 101, 115, 101, 116, 24, 6,
+        32, 1, 40, 8, 66, 6, 24, 0, 40, 0, 80, 0, 82, 17, 104, 105, 100, 101, 80, 97, 115, 115,
+        119, 111, 114, 100, 82, 101, 115, 101, 116>>
     )
   end
 
@@ -1931,6 +2324,8 @@ defmodule Zitadel.Admin.V1.UpdateLoginPolicyRequest do
     enum: true,
     json_name: "passwordlessType"
   )
+
+  field(:hide_password_reset, 6, type: :bool, json_name: "hidePasswordReset")
 end
 
 defmodule Zitadel.Admin.V1.UpdateLoginPolicyResponse do
@@ -2679,6 +3074,690 @@ defmodule Zitadel.Admin.V1.UpdatePasswordLockoutPolicyResponse do
   field(:details, 1, type: Zitadel.V1.ObjectDetails)
 end
 
+defmodule Zitadel.Admin.V1.GetDefaultInitMessageTextRequest do
+  @moduledoc """
+  This is an empty request
+  """
+
+  use Protobuf, syntax: :proto3
+  @type language :: String.t()
+  @type t :: %__MODULE__{
+          language: language()
+        }
+
+  defstruct [:language]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 32, 71, 101, 116, 68, 101, 102, 97, 117, 108, 116, 73, 110, 105, 116, 77, 101, 115,
+        115, 97, 103, 101, 84, 101, 120, 116, 82, 101, 113, 117, 101, 115, 116, 18, 34, 10, 8,
+        108, 97, 110, 103, 117, 97, 103, 101, 24, 1, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82,
+        8, 108, 97, 110, 103, 117, 97, 103, 101>>
+    )
+  end
+
+  field(:language, 1, type: :string)
+end
+
+defmodule Zitadel.Admin.V1.GetDefaultInitMessageTextResponse do
+  use Protobuf, syntax: :proto3
+  @type custom_text :: Zitadel.Text.V1.MessageCustomText.t() | nil
+  @type t :: %__MODULE__{
+          custom_text: custom_text()
+        }
+
+  defstruct [:custom_text]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 33, 71, 101, 116, 68, 101, 102, 97, 117, 108, 116, 73, 110, 105, 116, 77, 101, 115,
+        115, 97, 103, 101, 84, 101, 120, 116, 82, 101, 115, 112, 111, 110, 115, 101, 18, 67, 10,
+        11, 99, 117, 115, 116, 111, 109, 95, 116, 101, 120, 116, 24, 1, 32, 1, 40, 11, 50, 34, 46,
+        122, 105, 116, 97, 100, 101, 108, 46, 116, 101, 120, 116, 46, 118, 49, 46, 77, 101, 115,
+        115, 97, 103, 101, 67, 117, 115, 116, 111, 109, 84, 101, 120, 116, 82, 10, 99, 117, 115,
+        116, 111, 109, 84, 101, 120, 116>>
+    )
+  end
+
+  field(:custom_text, 1, type: Zitadel.Text.V1.MessageCustomText, json_name: "customText")
+end
+
+defmodule Zitadel.Admin.V1.SetDefaultInitMessageTextRequest do
+  use Protobuf, syntax: :proto3
+  @type language :: String.t()
+  @type title :: String.t()
+  @type pre_header :: String.t()
+  @type subject :: String.t()
+  @type greeting :: String.t()
+  @type text :: String.t()
+  @type button_text :: String.t()
+  @type footer_text :: String.t()
+  @type t :: %__MODULE__{
+          language: language(),
+          title: title(),
+          pre_header: pre_header(),
+          subject: subject(),
+          greeting: greeting(),
+          text: text(),
+          button_text: button_text(),
+          footer_text: footer_text()
+        }
+
+  defstruct [
+    :language,
+    :title,
+    :pre_header,
+    :subject,
+    :greeting,
+    :text,
+    :button_text,
+    :footer_text
+  ]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 32, 83, 101, 116, 68, 101, 102, 97, 117, 108, 116, 73, 110, 105, 116, 77, 101, 115,
+        115, 97, 103, 101, 84, 101, 120, 116, 82, 101, 113, 117, 101, 115, 116, 18, 34, 10, 8,
+        108, 97, 110, 103, 117, 97, 103, 101, 24, 1, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82,
+        8, 108, 97, 110, 103, 117, 97, 103, 101, 18, 28, 10, 5, 116, 105, 116, 108, 101, 24, 2,
+        32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 5, 116, 105, 116, 108, 101, 18, 37, 10, 10,
+        112, 114, 101, 95, 104, 101, 97, 100, 101, 114, 24, 3, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0,
+        80, 0, 82, 9, 112, 114, 101, 72, 101, 97, 100, 101, 114, 18, 32, 10, 7, 115, 117, 98, 106,
+        101, 99, 116, 24, 4, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 7, 115, 117, 98, 106,
+        101, 99, 116, 18, 34, 10, 8, 103, 114, 101, 101, 116, 105, 110, 103, 24, 5, 32, 1, 40, 9,
+        66, 6, 24, 0, 40, 0, 80, 0, 82, 8, 103, 114, 101, 101, 116, 105, 110, 103, 18, 26, 10, 4,
+        116, 101, 120, 116, 24, 6, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 4, 116, 101, 120,
+        116, 18, 39, 10, 11, 98, 117, 116, 116, 111, 110, 95, 116, 101, 120, 116, 24, 7, 32, 1,
+        40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 10, 98, 117, 116, 116, 111, 110, 84, 101, 120, 116,
+        18, 39, 10, 11, 102, 111, 111, 116, 101, 114, 95, 116, 101, 120, 116, 24, 8, 32, 1, 40, 9,
+        66, 6, 24, 0, 40, 0, 80, 0, 82, 10, 102, 111, 111, 116, 101, 114, 84, 101, 120, 116>>
+    )
+  end
+
+  field(:language, 1, type: :string)
+  field(:title, 2, type: :string)
+  field(:pre_header, 3, type: :string, json_name: "preHeader")
+  field(:subject, 4, type: :string)
+  field(:greeting, 5, type: :string)
+  field(:text, 6, type: :string)
+  field(:button_text, 7, type: :string, json_name: "buttonText")
+  field(:footer_text, 8, type: :string, json_name: "footerText")
+end
+
+defmodule Zitadel.Admin.V1.SetDefaultInitMessageTextResponse do
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          details: details()
+        }
+
+  defstruct [:details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 33, 83, 101, 116, 68, 101, 102, 97, 117, 108, 116, 73, 110, 105, 116, 77, 101, 115,
+        115, 97, 103, 101, 84, 101, 120, 116, 82, 101, 115, 112, 111, 110, 115, 101, 18, 51, 10,
+        7, 100, 101, 116, 97, 105, 108, 115, 24, 1, 32, 1, 40, 11, 50, 25, 46, 122, 105, 116, 97,
+        100, 101, 108, 46, 118, 49, 46, 79, 98, 106, 101, 99, 116, 68, 101, 116, 97, 105, 108,
+        115, 82, 7, 100, 101, 116, 97, 105, 108, 115>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Admin.V1.GetDefaultPasswordResetMessageTextRequest do
+  @moduledoc """
+  This is an empty request
+  """
+
+  use Protobuf, syntax: :proto3
+  @type language :: String.t()
+  @type t :: %__MODULE__{
+          language: language()
+        }
+
+  defstruct [:language]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 41, 71, 101, 116, 68, 101, 102, 97, 117, 108, 116, 80, 97, 115, 115, 119, 111, 114,
+        100, 82, 101, 115, 101, 116, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116, 82, 101,
+        113, 117, 101, 115, 116, 18, 34, 10, 8, 108, 97, 110, 103, 117, 97, 103, 101, 24, 1, 32,
+        1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 8, 108, 97, 110, 103, 117, 97, 103, 101>>
+    )
+  end
+
+  field(:language, 1, type: :string)
+end
+
+defmodule Zitadel.Admin.V1.GetDefaultPasswordResetMessageTextResponse do
+  use Protobuf, syntax: :proto3
+  @type custom_text :: Zitadel.Text.V1.MessageCustomText.t() | nil
+  @type t :: %__MODULE__{
+          custom_text: custom_text()
+        }
+
+  defstruct [:custom_text]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 42, 71, 101, 116, 68, 101, 102, 97, 117, 108, 116, 80, 97, 115, 115, 119, 111, 114,
+        100, 82, 101, 115, 101, 116, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116, 82, 101,
+        115, 112, 111, 110, 115, 101, 18, 67, 10, 11, 99, 117, 115, 116, 111, 109, 95, 116, 101,
+        120, 116, 24, 1, 32, 1, 40, 11, 50, 34, 46, 122, 105, 116, 97, 100, 101, 108, 46, 116,
+        101, 120, 116, 46, 118, 49, 46, 77, 101, 115, 115, 97, 103, 101, 67, 117, 115, 116, 111,
+        109, 84, 101, 120, 116, 82, 10, 99, 117, 115, 116, 111, 109, 84, 101, 120, 116>>
+    )
+  end
+
+  field(:custom_text, 1, type: Zitadel.Text.V1.MessageCustomText, json_name: "customText")
+end
+
+defmodule Zitadel.Admin.V1.SetDefaultPasswordResetMessageTextRequest do
+  use Protobuf, syntax: :proto3
+  @type language :: String.t()
+  @type title :: String.t()
+  @type pre_header :: String.t()
+  @type subject :: String.t()
+  @type greeting :: String.t()
+  @type text :: String.t()
+  @type button_text :: String.t()
+  @type footer_text :: String.t()
+  @type t :: %__MODULE__{
+          language: language(),
+          title: title(),
+          pre_header: pre_header(),
+          subject: subject(),
+          greeting: greeting(),
+          text: text(),
+          button_text: button_text(),
+          footer_text: footer_text()
+        }
+
+  defstruct [
+    :language,
+    :title,
+    :pre_header,
+    :subject,
+    :greeting,
+    :text,
+    :button_text,
+    :footer_text
+  ]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 41, 83, 101, 116, 68, 101, 102, 97, 117, 108, 116, 80, 97, 115, 115, 119, 111, 114,
+        100, 82, 101, 115, 101, 116, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116, 82, 101,
+        113, 117, 101, 115, 116, 18, 34, 10, 8, 108, 97, 110, 103, 117, 97, 103, 101, 24, 1, 32,
+        1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 8, 108, 97, 110, 103, 117, 97, 103, 101, 18, 28,
+        10, 5, 116, 105, 116, 108, 101, 24, 2, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 5,
+        116, 105, 116, 108, 101, 18, 37, 10, 10, 112, 114, 101, 95, 104, 101, 97, 100, 101, 114,
+        24, 3, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 9, 112, 114, 101, 72, 101, 97, 100,
+        101, 114, 18, 32, 10, 7, 115, 117, 98, 106, 101, 99, 116, 24, 4, 32, 1, 40, 9, 66, 6, 24,
+        0, 40, 0, 80, 0, 82, 7, 115, 117, 98, 106, 101, 99, 116, 18, 34, 10, 8, 103, 114, 101,
+        101, 116, 105, 110, 103, 24, 5, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 8, 103, 114,
+        101, 101, 116, 105, 110, 103, 18, 26, 10, 4, 116, 101, 120, 116, 24, 6, 32, 1, 40, 9, 66,
+        6, 24, 0, 40, 0, 80, 0, 82, 4, 116, 101, 120, 116, 18, 39, 10, 11, 98, 117, 116, 116, 111,
+        110, 95, 116, 101, 120, 116, 24, 7, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 10, 98,
+        117, 116, 116, 111, 110, 84, 101, 120, 116, 18, 39, 10, 11, 102, 111, 111, 116, 101, 114,
+        95, 116, 101, 120, 116, 24, 8, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 10, 102, 111,
+        111, 116, 101, 114, 84, 101, 120, 116>>
+    )
+  end
+
+  field(:language, 1, type: :string)
+  field(:title, 2, type: :string)
+  field(:pre_header, 3, type: :string, json_name: "preHeader")
+  field(:subject, 4, type: :string)
+  field(:greeting, 5, type: :string)
+  field(:text, 6, type: :string)
+  field(:button_text, 7, type: :string, json_name: "buttonText")
+  field(:footer_text, 8, type: :string, json_name: "footerText")
+end
+
+defmodule Zitadel.Admin.V1.SetDefaultPasswordResetMessageTextResponse do
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          details: details()
+        }
+
+  defstruct [:details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 42, 83, 101, 116, 68, 101, 102, 97, 117, 108, 116, 80, 97, 115, 115, 119, 111, 114,
+        100, 82, 101, 115, 101, 116, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116, 82, 101,
+        115, 112, 111, 110, 115, 101, 18, 51, 10, 7, 100, 101, 116, 97, 105, 108, 115, 24, 1, 32,
+        1, 40, 11, 50, 25, 46, 122, 105, 116, 97, 100, 101, 108, 46, 118, 49, 46, 79, 98, 106,
+        101, 99, 116, 68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101, 116, 97, 105, 108, 115>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Admin.V1.GetDefaultVerifyEmailMessageTextRequest do
+  @moduledoc """
+  This is an empty request
+  """
+
+  use Protobuf, syntax: :proto3
+  @type language :: String.t()
+  @type t :: %__MODULE__{
+          language: language()
+        }
+
+  defstruct [:language]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 39, 71, 101, 116, 68, 101, 102, 97, 117, 108, 116, 86, 101, 114, 105, 102, 121, 69,
+        109, 97, 105, 108, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116, 82, 101, 113, 117,
+        101, 115, 116, 18, 34, 10, 8, 108, 97, 110, 103, 117, 97, 103, 101, 24, 1, 32, 1, 40, 9,
+        66, 6, 24, 0, 40, 0, 80, 0, 82, 8, 108, 97, 110, 103, 117, 97, 103, 101>>
+    )
+  end
+
+  field(:language, 1, type: :string)
+end
+
+defmodule Zitadel.Admin.V1.GetDefaultVerifyEmailMessageTextResponse do
+  use Protobuf, syntax: :proto3
+  @type custom_text :: Zitadel.Text.V1.MessageCustomText.t() | nil
+  @type t :: %__MODULE__{
+          custom_text: custom_text()
+        }
+
+  defstruct [:custom_text]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 40, 71, 101, 116, 68, 101, 102, 97, 117, 108, 116, 86, 101, 114, 105, 102, 121, 69,
+        109, 97, 105, 108, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116, 82, 101, 115, 112,
+        111, 110, 115, 101, 18, 67, 10, 11, 99, 117, 115, 116, 111, 109, 95, 116, 101, 120, 116,
+        24, 1, 32, 1, 40, 11, 50, 34, 46, 122, 105, 116, 97, 100, 101, 108, 46, 116, 101, 120,
+        116, 46, 118, 49, 46, 77, 101, 115, 115, 97, 103, 101, 67, 117, 115, 116, 111, 109, 84,
+        101, 120, 116, 82, 10, 99, 117, 115, 116, 111, 109, 84, 101, 120, 116>>
+    )
+  end
+
+  field(:custom_text, 1, type: Zitadel.Text.V1.MessageCustomText, json_name: "customText")
+end
+
+defmodule Zitadel.Admin.V1.SetDefaultVerifyEmailMessageTextRequest do
+  use Protobuf, syntax: :proto3
+  @type language :: String.t()
+  @type title :: String.t()
+  @type pre_header :: String.t()
+  @type subject :: String.t()
+  @type greeting :: String.t()
+  @type text :: String.t()
+  @type button_text :: String.t()
+  @type footer_text :: String.t()
+  @type t :: %__MODULE__{
+          language: language(),
+          title: title(),
+          pre_header: pre_header(),
+          subject: subject(),
+          greeting: greeting(),
+          text: text(),
+          button_text: button_text(),
+          footer_text: footer_text()
+        }
+
+  defstruct [
+    :language,
+    :title,
+    :pre_header,
+    :subject,
+    :greeting,
+    :text,
+    :button_text,
+    :footer_text
+  ]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 39, 83, 101, 116, 68, 101, 102, 97, 117, 108, 116, 86, 101, 114, 105, 102, 121, 69,
+        109, 97, 105, 108, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116, 82, 101, 113, 117,
+        101, 115, 116, 18, 34, 10, 8, 108, 97, 110, 103, 117, 97, 103, 101, 24, 1, 32, 1, 40, 9,
+        66, 6, 24, 0, 40, 0, 80, 0, 82, 8, 108, 97, 110, 103, 117, 97, 103, 101, 18, 28, 10, 5,
+        116, 105, 116, 108, 101, 24, 2, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 5, 116, 105,
+        116, 108, 101, 18, 37, 10, 10, 112, 114, 101, 95, 104, 101, 97, 100, 101, 114, 24, 3, 32,
+        1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 9, 112, 114, 101, 72, 101, 97, 100, 101, 114,
+        18, 32, 10, 7, 115, 117, 98, 106, 101, 99, 116, 24, 4, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0,
+        80, 0, 82, 7, 115, 117, 98, 106, 101, 99, 116, 18, 34, 10, 8, 103, 114, 101, 101, 116,
+        105, 110, 103, 24, 5, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 8, 103, 114, 101, 101,
+        116, 105, 110, 103, 18, 26, 10, 4, 116, 101, 120, 116, 24, 6, 32, 1, 40, 9, 66, 6, 24, 0,
+        40, 0, 80, 0, 82, 4, 116, 101, 120, 116, 18, 39, 10, 11, 98, 117, 116, 116, 111, 110, 95,
+        116, 101, 120, 116, 24, 7, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 10, 98, 117, 116,
+        116, 111, 110, 84, 101, 120, 116, 18, 39, 10, 11, 102, 111, 111, 116, 101, 114, 95, 116,
+        101, 120, 116, 24, 8, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 10, 102, 111, 111,
+        116, 101, 114, 84, 101, 120, 116>>
+    )
+  end
+
+  field(:language, 1, type: :string)
+  field(:title, 2, type: :string)
+  field(:pre_header, 3, type: :string, json_name: "preHeader")
+  field(:subject, 4, type: :string)
+  field(:greeting, 5, type: :string)
+  field(:text, 6, type: :string)
+  field(:button_text, 7, type: :string, json_name: "buttonText")
+  field(:footer_text, 8, type: :string, json_name: "footerText")
+end
+
+defmodule Zitadel.Admin.V1.SetDefaultVerifyEmailMessageTextResponse do
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          details: details()
+        }
+
+  defstruct [:details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 40, 83, 101, 116, 68, 101, 102, 97, 117, 108, 116, 86, 101, 114, 105, 102, 121, 69,
+        109, 97, 105, 108, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116, 82, 101, 115, 112,
+        111, 110, 115, 101, 18, 51, 10, 7, 100, 101, 116, 97, 105, 108, 115, 24, 1, 32, 1, 40, 11,
+        50, 25, 46, 122, 105, 116, 97, 100, 101, 108, 46, 118, 49, 46, 79, 98, 106, 101, 99, 116,
+        68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101, 116, 97, 105, 108, 115>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Admin.V1.GetDefaultVerifyPhoneMessageTextRequest do
+  @moduledoc """
+  This is an empty request
+  """
+
+  use Protobuf, syntax: :proto3
+  @type language :: String.t()
+  @type t :: %__MODULE__{
+          language: language()
+        }
+
+  defstruct [:language]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 39, 71, 101, 116, 68, 101, 102, 97, 117, 108, 116, 86, 101, 114, 105, 102, 121, 80,
+        104, 111, 110, 101, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116, 82, 101, 113, 117,
+        101, 115, 116, 18, 34, 10, 8, 108, 97, 110, 103, 117, 97, 103, 101, 24, 1, 32, 1, 40, 9,
+        66, 6, 24, 0, 40, 0, 80, 0, 82, 8, 108, 97, 110, 103, 117, 97, 103, 101>>
+    )
+  end
+
+  field(:language, 1, type: :string)
+end
+
+defmodule Zitadel.Admin.V1.GetDefaultVerifyPhoneMessageTextResponse do
+  use Protobuf, syntax: :proto3
+  @type custom_text :: Zitadel.Text.V1.MessageCustomText.t() | nil
+  @type t :: %__MODULE__{
+          custom_text: custom_text()
+        }
+
+  defstruct [:custom_text]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 40, 71, 101, 116, 68, 101, 102, 97, 117, 108, 116, 86, 101, 114, 105, 102, 121, 80,
+        104, 111, 110, 101, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116, 82, 101, 115, 112,
+        111, 110, 115, 101, 18, 67, 10, 11, 99, 117, 115, 116, 111, 109, 95, 116, 101, 120, 116,
+        24, 1, 32, 1, 40, 11, 50, 34, 46, 122, 105, 116, 97, 100, 101, 108, 46, 116, 101, 120,
+        116, 46, 118, 49, 46, 77, 101, 115, 115, 97, 103, 101, 67, 117, 115, 116, 111, 109, 84,
+        101, 120, 116, 82, 10, 99, 117, 115, 116, 111, 109, 84, 101, 120, 116>>
+    )
+  end
+
+  field(:custom_text, 1, type: Zitadel.Text.V1.MessageCustomText, json_name: "customText")
+end
+
+defmodule Zitadel.Admin.V1.SetDefaultVerifyPhoneMessageTextRequest do
+  use Protobuf, syntax: :proto3
+  @type language :: String.t()
+  @type title :: String.t()
+  @type pre_header :: String.t()
+  @type subject :: String.t()
+  @type greeting :: String.t()
+  @type text :: String.t()
+  @type button_text :: String.t()
+  @type footer_text :: String.t()
+  @type t :: %__MODULE__{
+          language: language(),
+          title: title(),
+          pre_header: pre_header(),
+          subject: subject(),
+          greeting: greeting(),
+          text: text(),
+          button_text: button_text(),
+          footer_text: footer_text()
+        }
+
+  defstruct [
+    :language,
+    :title,
+    :pre_header,
+    :subject,
+    :greeting,
+    :text,
+    :button_text,
+    :footer_text
+  ]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 39, 83, 101, 116, 68, 101, 102, 97, 117, 108, 116, 86, 101, 114, 105, 102, 121, 80,
+        104, 111, 110, 101, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116, 82, 101, 113, 117,
+        101, 115, 116, 18, 34, 10, 8, 108, 97, 110, 103, 117, 97, 103, 101, 24, 1, 32, 1, 40, 9,
+        66, 6, 24, 0, 40, 0, 80, 0, 82, 8, 108, 97, 110, 103, 117, 97, 103, 101, 18, 28, 10, 5,
+        116, 105, 116, 108, 101, 24, 2, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 5, 116, 105,
+        116, 108, 101, 18, 37, 10, 10, 112, 114, 101, 95, 104, 101, 97, 100, 101, 114, 24, 3, 32,
+        1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 9, 112, 114, 101, 72, 101, 97, 100, 101, 114,
+        18, 32, 10, 7, 115, 117, 98, 106, 101, 99, 116, 24, 4, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0,
+        80, 0, 82, 7, 115, 117, 98, 106, 101, 99, 116, 18, 34, 10, 8, 103, 114, 101, 101, 116,
+        105, 110, 103, 24, 5, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 8, 103, 114, 101, 101,
+        116, 105, 110, 103, 18, 26, 10, 4, 116, 101, 120, 116, 24, 6, 32, 1, 40, 9, 66, 6, 24, 0,
+        40, 0, 80, 0, 82, 4, 116, 101, 120, 116, 18, 39, 10, 11, 98, 117, 116, 116, 111, 110, 95,
+        116, 101, 120, 116, 24, 7, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 10, 98, 117, 116,
+        116, 111, 110, 84, 101, 120, 116, 18, 39, 10, 11, 102, 111, 111, 116, 101, 114, 95, 116,
+        101, 120, 116, 24, 8, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 10, 102, 111, 111,
+        116, 101, 114, 84, 101, 120, 116>>
+    )
+  end
+
+  field(:language, 1, type: :string)
+  field(:title, 2, type: :string)
+  field(:pre_header, 3, type: :string, json_name: "preHeader")
+  field(:subject, 4, type: :string)
+  field(:greeting, 5, type: :string)
+  field(:text, 6, type: :string)
+  field(:button_text, 7, type: :string, json_name: "buttonText")
+  field(:footer_text, 8, type: :string, json_name: "footerText")
+end
+
+defmodule Zitadel.Admin.V1.SetDefaultVerifyPhoneMessageTextResponse do
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          details: details()
+        }
+
+  defstruct [:details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 40, 83, 101, 116, 68, 101, 102, 97, 117, 108, 116, 86, 101, 114, 105, 102, 121, 80,
+        104, 111, 110, 101, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116, 82, 101, 115, 112,
+        111, 110, 115, 101, 18, 51, 10, 7, 100, 101, 116, 97, 105, 108, 115, 24, 1, 32, 1, 40, 11,
+        50, 25, 46, 122, 105, 116, 97, 100, 101, 108, 46, 118, 49, 46, 79, 98, 106, 101, 99, 116,
+        68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101, 116, 97, 105, 108, 115>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Admin.V1.GetDefaultDomainClaimedMessageTextRequest do
+  @moduledoc """
+  This is an empty request
+  """
+
+  use Protobuf, syntax: :proto3
+  @type language :: String.t()
+  @type t :: %__MODULE__{
+          language: language()
+        }
+
+  defstruct [:language]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 41, 71, 101, 116, 68, 101, 102, 97, 117, 108, 116, 68, 111, 109, 97, 105, 110, 67,
+        108, 97, 105, 109, 101, 100, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116, 82, 101,
+        113, 117, 101, 115, 116, 18, 34, 10, 8, 108, 97, 110, 103, 117, 97, 103, 101, 24, 1, 32,
+        1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 8, 108, 97, 110, 103, 117, 97, 103, 101>>
+    )
+  end
+
+  field(:language, 1, type: :string)
+end
+
+defmodule Zitadel.Admin.V1.GetDefaultDomainClaimedMessageTextResponse do
+  use Protobuf, syntax: :proto3
+  @type custom_text :: Zitadel.Text.V1.MessageCustomText.t() | nil
+  @type t :: %__MODULE__{
+          custom_text: custom_text()
+        }
+
+  defstruct [:custom_text]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 42, 71, 101, 116, 68, 101, 102, 97, 117, 108, 116, 68, 111, 109, 97, 105, 110, 67,
+        108, 97, 105, 109, 101, 100, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116, 82, 101,
+        115, 112, 111, 110, 115, 101, 18, 67, 10, 11, 99, 117, 115, 116, 111, 109, 95, 116, 101,
+        120, 116, 24, 1, 32, 1, 40, 11, 50, 34, 46, 122, 105, 116, 97, 100, 101, 108, 46, 116,
+        101, 120, 116, 46, 118, 49, 46, 77, 101, 115, 115, 97, 103, 101, 67, 117, 115, 116, 111,
+        109, 84, 101, 120, 116, 82, 10, 99, 117, 115, 116, 111, 109, 84, 101, 120, 116>>
+    )
+  end
+
+  field(:custom_text, 1, type: Zitadel.Text.V1.MessageCustomText, json_name: "customText")
+end
+
+defmodule Zitadel.Admin.V1.SetDefaultDomainClaimedMessageTextRequest do
+  use Protobuf, syntax: :proto3
+  @type language :: String.t()
+  @type title :: String.t()
+  @type pre_header :: String.t()
+  @type subject :: String.t()
+  @type greeting :: String.t()
+  @type text :: String.t()
+  @type button_text :: String.t()
+  @type footer_text :: String.t()
+  @type t :: %__MODULE__{
+          language: language(),
+          title: title(),
+          pre_header: pre_header(),
+          subject: subject(),
+          greeting: greeting(),
+          text: text(),
+          button_text: button_text(),
+          footer_text: footer_text()
+        }
+
+  defstruct [
+    :language,
+    :title,
+    :pre_header,
+    :subject,
+    :greeting,
+    :text,
+    :button_text,
+    :footer_text
+  ]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 41, 83, 101, 116, 68, 101, 102, 97, 117, 108, 116, 68, 111, 109, 97, 105, 110, 67,
+        108, 97, 105, 109, 101, 100, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116, 82, 101,
+        113, 117, 101, 115, 116, 18, 34, 10, 8, 108, 97, 110, 103, 117, 97, 103, 101, 24, 1, 32,
+        1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 8, 108, 97, 110, 103, 117, 97, 103, 101, 18, 28,
+        10, 5, 116, 105, 116, 108, 101, 24, 2, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 5,
+        116, 105, 116, 108, 101, 18, 37, 10, 10, 112, 114, 101, 95, 104, 101, 97, 100, 101, 114,
+        24, 3, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 9, 112, 114, 101, 72, 101, 97, 100,
+        101, 114, 18, 32, 10, 7, 115, 117, 98, 106, 101, 99, 116, 24, 4, 32, 1, 40, 9, 66, 6, 24,
+        0, 40, 0, 80, 0, 82, 7, 115, 117, 98, 106, 101, 99, 116, 18, 34, 10, 8, 103, 114, 101,
+        101, 116, 105, 110, 103, 24, 5, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 8, 103, 114,
+        101, 101, 116, 105, 110, 103, 18, 26, 10, 4, 116, 101, 120, 116, 24, 6, 32, 1, 40, 9, 66,
+        6, 24, 0, 40, 0, 80, 0, 82, 4, 116, 101, 120, 116, 18, 39, 10, 11, 98, 117, 116, 116, 111,
+        110, 95, 116, 101, 120, 116, 24, 7, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 10, 98,
+        117, 116, 116, 111, 110, 84, 101, 120, 116, 18, 39, 10, 11, 102, 111, 111, 116, 101, 114,
+        95, 116, 101, 120, 116, 24, 8, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 10, 102, 111,
+        111, 116, 101, 114, 84, 101, 120, 116>>
+    )
+  end
+
+  field(:language, 1, type: :string)
+  field(:title, 2, type: :string)
+  field(:pre_header, 3, type: :string, json_name: "preHeader")
+  field(:subject, 4, type: :string)
+  field(:greeting, 5, type: :string)
+  field(:text, 6, type: :string)
+  field(:button_text, 7, type: :string, json_name: "buttonText")
+  field(:footer_text, 8, type: :string, json_name: "footerText")
+end
+
+defmodule Zitadel.Admin.V1.SetDefaultDomainClaimedMessageTextResponse do
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type t :: %__MODULE__{
+          details: details()
+        }
+
+  defstruct [:details]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 42, 83, 101, 116, 68, 101, 102, 97, 117, 108, 116, 68, 111, 109, 97, 105, 110, 67,
+        108, 97, 105, 109, 101, 100, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116, 82, 101,
+        115, 112, 111, 110, 115, 101, 18, 51, 10, 7, 100, 101, 116, 97, 105, 108, 115, 24, 1, 32,
+        1, 40, 11, 50, 25, 46, 122, 105, 116, 97, 100, 101, 108, 46, 118, 49, 46, 79, 98, 106,
+        101, 99, 116, 68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101, 116, 97, 105, 108, 115>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
 defmodule Zitadel.Admin.V1.AddIAMMemberRequest do
   use Protobuf, syntax: :proto3
   @type user_id :: String.t()
@@ -3375,188 +4454,321 @@ defmodule Zitadel.Admin.V1.AdminService.Service do
         110, 46, 118, 49, 46, 71, 101, 116, 76, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121, 82,
         101, 113, 117, 101, 115, 116, 26, 40, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100,
         109, 105, 110, 46, 118, 49, 46, 71, 101, 116, 76, 97, 98, 101, 108, 80, 111, 108, 105, 99,
+        121, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 129, 1,
+        10, 21, 71, 101, 116, 80, 114, 101, 118, 105, 101, 119, 76, 97, 98, 101, 108, 80, 111,
+        108, 105, 99, 121, 18, 46, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105,
+        110, 46, 118, 49, 46, 71, 101, 116, 80, 114, 101, 118, 105, 101, 119, 76, 97, 98, 101,
+        108, 80, 111, 108, 105, 99, 121, 82, 101, 113, 117, 101, 115, 116, 26, 47, 46, 122, 105,
+        116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 71, 101, 116, 80,
+        114, 101, 118, 105, 101, 119, 76, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121, 82, 101,
+        115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 117, 10, 17, 85, 112,
+        100, 97, 116, 101, 76, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121, 18, 42, 46, 122, 105,
+        116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 85, 112, 100, 97,
+        116, 101, 76, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121, 82, 101, 113, 117, 101, 115,
+        116, 26, 43, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118,
+        49, 46, 85, 112, 100, 97, 116, 101, 76, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121, 82,
+        101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 123, 10, 19, 65,
+        99, 116, 105, 118, 97, 116, 101, 76, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121, 18, 44,
+        46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 65, 99,
+        116, 105, 118, 97, 116, 101, 76, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121, 82, 101,
+        113, 117, 101, 115, 116, 26, 45, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109,
+        105, 110, 46, 118, 49, 46, 65, 99, 116, 105, 118, 97, 116, 101, 76, 97, 98, 101, 108, 80,
+        111, 108, 105, 99, 121, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0,
+        48, 0, 18, 129, 1, 10, 21, 82, 101, 109, 111, 118, 101, 76, 97, 98, 101, 108, 80, 111,
+        108, 105, 99, 121, 76, 111, 103, 111, 18, 46, 46, 122, 105, 116, 97, 100, 101, 108, 46,
+        97, 100, 109, 105, 110, 46, 118, 49, 46, 82, 101, 109, 111, 118, 101, 76, 97, 98, 101,
+        108, 80, 111, 108, 105, 99, 121, 76, 111, 103, 111, 82, 101, 113, 117, 101, 115, 116, 26,
+        47, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 82,
+        101, 109, 111, 118, 101, 76, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121, 76, 111, 103,
+        111, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 141, 1,
+        10, 25, 82, 101, 109, 111, 118, 101, 76, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121, 76,
+        111, 103, 111, 68, 97, 114, 107, 18, 50, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97,
+        100, 109, 105, 110, 46, 118, 49, 46, 82, 101, 109, 111, 118, 101, 76, 97, 98, 101, 108,
+        80, 111, 108, 105, 99, 121, 76, 111, 103, 111, 68, 97, 114, 107, 82, 101, 113, 117, 101,
+        115, 116, 26, 51, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46,
+        118, 49, 46, 82, 101, 109, 111, 118, 101, 76, 97, 98, 101, 108, 80, 111, 108, 105, 99,
+        121, 76, 111, 103, 111, 68, 97, 114, 107, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3,
+        136, 2, 0, 40, 0, 48, 0, 18, 129, 1, 10, 21, 82, 101, 109, 111, 118, 101, 76, 97, 98, 101,
+        108, 80, 111, 108, 105, 99, 121, 73, 99, 111, 110, 18, 46, 46, 122, 105, 116, 97, 100,
+        101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 82, 101, 109, 111, 118, 101, 76,
+        97, 98, 101, 108, 80, 111, 108, 105, 99, 121, 73, 99, 111, 110, 82, 101, 113, 117, 101,
+        115, 116, 26, 47, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46,
+        118, 49, 46, 82, 101, 109, 111, 118, 101, 76, 97, 98, 101, 108, 80, 111, 108, 105, 99,
+        121, 73, 99, 111, 110, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48,
+        0, 18, 141, 1, 10, 25, 82, 101, 109, 111, 118, 101, 76, 97, 98, 101, 108, 80, 111, 108,
+        105, 99, 121, 73, 99, 111, 110, 68, 97, 114, 107, 18, 50, 46, 122, 105, 116, 97, 100, 101,
+        108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 82, 101, 109, 111, 118, 101, 76, 97, 98,
+        101, 108, 80, 111, 108, 105, 99, 121, 73, 99, 111, 110, 68, 97, 114, 107, 82, 101, 113,
+        117, 101, 115, 116, 26, 51, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105,
+        110, 46, 118, 49, 46, 82, 101, 109, 111, 118, 101, 76, 97, 98, 101, 108, 80, 111, 108,
+        105, 99, 121, 73, 99, 111, 110, 68, 97, 114, 107, 82, 101, 115, 112, 111, 110, 115, 101,
+        34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 129, 1, 10, 21, 82, 101, 109, 111, 118, 101, 76, 97,
+        98, 101, 108, 80, 111, 108, 105, 99, 121, 70, 111, 110, 116, 18, 46, 46, 122, 105, 116,
+        97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 82, 101, 109, 111, 118,
+        101, 76, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121, 70, 111, 110, 116, 82, 101, 113,
+        117, 101, 115, 116, 26, 47, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105,
+        110, 46, 118, 49, 46, 82, 101, 109, 111, 118, 101, 76, 97, 98, 101, 108, 80, 111, 108,
+        105, 99, 121, 70, 111, 110, 116, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0,
+        40, 0, 48, 0, 18, 108, 10, 14, 71, 101, 116, 76, 111, 103, 105, 110, 80, 111, 108, 105,
+        99, 121, 18, 39, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46,
+        118, 49, 46, 71, 101, 116, 76, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 82, 101,
+        113, 117, 101, 115, 116, 26, 40, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109,
+        105, 110, 46, 118, 49, 46, 71, 101, 116, 76, 111, 103, 105, 110, 80, 111, 108, 105, 99,
         121, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 117, 10,
-        17, 85, 112, 100, 97, 116, 101, 76, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121, 18, 42,
-        46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 85,
-        112, 100, 97, 116, 101, 76, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121, 82, 101, 113,
+        17, 85, 112, 100, 97, 116, 101, 76, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 18,
+        42, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 85,
+        112, 100, 97, 116, 101, 76, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 82, 101, 113,
         117, 101, 115, 116, 26, 43, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105,
-        110, 46, 118, 49, 46, 85, 112, 100, 97, 116, 101, 76, 97, 98, 101, 108, 80, 111, 108, 105,
-        99, 121, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 108,
-        10, 14, 71, 101, 116, 76, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 18, 39, 46, 122,
-        105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 71, 101, 116,
-        76, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 82, 101, 113, 117, 101, 115, 116, 26,
-        40, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 71,
-        101, 116, 76, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 82, 101, 115, 112, 111, 110,
-        115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 117, 10, 17, 85, 112, 100, 97, 116, 101, 76,
-        111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 18, 42, 46, 122, 105, 116, 97, 100, 101,
-        108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 85, 112, 100, 97, 116, 101, 76, 111,
-        103, 105, 110, 80, 111, 108, 105, 99, 121, 82, 101, 113, 117, 101, 115, 116, 26, 43, 46,
-        122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 85, 112,
-        100, 97, 116, 101, 76, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 82, 101, 115, 112,
-        111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 123, 10, 19, 76, 105, 115, 116,
-        76, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 73, 68, 80, 115, 18, 44, 46, 122, 105,
-        116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 76, 105, 115, 116,
-        76, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 73, 68, 80, 115, 82, 101, 113, 117,
-        101, 115, 116, 26, 45, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110,
-        46, 118, 49, 46, 76, 105, 115, 116, 76, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121,
-        73, 68, 80, 115, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0,
-        18, 123, 10, 19, 65, 100, 100, 73, 68, 80, 84, 111, 76, 111, 103, 105, 110, 80, 111, 108,
-        105, 99, 121, 18, 44, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110,
-        46, 118, 49, 46, 65, 100, 100, 73, 68, 80, 84, 111, 76, 111, 103, 105, 110, 80, 111, 108,
-        105, 99, 121, 82, 101, 113, 117, 101, 115, 116, 26, 45, 46, 122, 105, 116, 97, 100, 101,
-        108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 65, 100, 100, 73, 68, 80, 84, 111, 76,
-        111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 82, 101, 115, 112, 111, 110, 115, 101, 34,
-        3, 136, 2, 0, 40, 0, 48, 0, 18, 138, 1, 10, 24, 82, 101, 109, 111, 118, 101, 73, 68, 80,
-        70, 114, 111, 109, 76, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 18, 49, 46, 122,
-        105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 82, 101, 109,
-        111, 118, 101, 73, 68, 80, 70, 114, 111, 109, 76, 111, 103, 105, 110, 80, 111, 108, 105,
-        99, 121, 82, 101, 113, 117, 101, 115, 116, 26, 50, 46, 122, 105, 116, 97, 100, 101, 108,
-        46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 82, 101, 109, 111, 118, 101, 73, 68, 80, 70,
-        114, 111, 109, 76, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 82, 101, 115, 112, 111,
-        110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 150, 1, 10, 28, 76, 105, 115, 116, 76,
-        111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 83, 101, 99, 111, 110, 100, 70, 97, 99,
-        116, 111, 114, 115, 18, 53, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105,
-        110, 46, 118, 49, 46, 76, 105, 115, 116, 76, 111, 103, 105, 110, 80, 111, 108, 105, 99,
-        121, 83, 101, 99, 111, 110, 100, 70, 97, 99, 116, 111, 114, 115, 82, 101, 113, 117, 101,
-        115, 116, 26, 54, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46,
-        118, 49, 46, 76, 105, 115, 116, 76, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 83,
-        101, 99, 111, 110, 100, 70, 97, 99, 116, 111, 114, 115, 82, 101, 115, 112, 111, 110, 115,
-        101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 150, 1, 10, 28, 65, 100, 100, 83, 101, 99, 111,
-        110, 100, 70, 97, 99, 116, 111, 114, 84, 111, 76, 111, 103, 105, 110, 80, 111, 108, 105,
-        99, 121, 18, 53, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46,
-        118, 49, 46, 65, 100, 100, 83, 101, 99, 111, 110, 100, 70, 97, 99, 116, 111, 114, 84, 111,
-        76, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 82, 101, 113, 117, 101, 115, 116, 26,
-        54, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 65,
-        100, 100, 83, 101, 99, 111, 110, 100, 70, 97, 99, 116, 111, 114, 84, 111, 76, 111, 103,
-        105, 110, 80, 111, 108, 105, 99, 121, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136,
-        2, 0, 40, 0, 48, 0, 18, 165, 1, 10, 33, 82, 101, 109, 111, 118, 101, 83, 101, 99, 111,
-        110, 100, 70, 97, 99, 116, 111, 114, 70, 114, 111, 109, 76, 111, 103, 105, 110, 80, 111,
-        108, 105, 99, 121, 18, 58, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105,
-        110, 46, 118, 49, 46, 82, 101, 109, 111, 118, 101, 83, 101, 99, 111, 110, 100, 70, 97, 99,
-        116, 111, 114, 70, 114, 111, 109, 76, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 82,
-        101, 113, 117, 101, 115, 116, 26, 59, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100,
-        109, 105, 110, 46, 118, 49, 46, 82, 101, 109, 111, 118, 101, 83, 101, 99, 111, 110, 100,
-        70, 97, 99, 116, 111, 114, 70, 114, 111, 109, 76, 111, 103, 105, 110, 80, 111, 108, 105,
-        99, 121, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 147,
-        1, 10, 27, 76, 105, 115, 116, 76, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 77, 117,
-        108, 116, 105, 70, 97, 99, 116, 111, 114, 115, 18, 52, 46, 122, 105, 116, 97, 100, 101,
+        110, 46, 118, 49, 46, 85, 112, 100, 97, 116, 101, 76, 111, 103, 105, 110, 80, 111, 108,
+        105, 99, 121, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18,
+        123, 10, 19, 76, 105, 115, 116, 76, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 73,
+        68, 80, 115, 18, 44, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46,
+        118, 49, 46, 76, 105, 115, 116, 76, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 73,
+        68, 80, 115, 82, 101, 113, 117, 101, 115, 116, 26, 45, 46, 122, 105, 116, 97, 100, 101,
         108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 76, 105, 115, 116, 76, 111, 103, 105,
-        110, 80, 111, 108, 105, 99, 121, 77, 117, 108, 116, 105, 70, 97, 99, 116, 111, 114, 115,
-        82, 101, 113, 117, 101, 115, 116, 26, 53, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97,
-        100, 109, 105, 110, 46, 118, 49, 46, 76, 105, 115, 116, 76, 111, 103, 105, 110, 80, 111,
-        108, 105, 99, 121, 77, 117, 108, 116, 105, 70, 97, 99, 116, 111, 114, 115, 82, 101, 115,
-        112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 147, 1, 10, 27, 65, 100, 100,
-        77, 117, 108, 116, 105, 70, 97, 99, 116, 111, 114, 84, 111, 76, 111, 103, 105, 110, 80,
-        111, 108, 105, 99, 121, 18, 52, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109,
-        105, 110, 46, 118, 49, 46, 65, 100, 100, 77, 117, 108, 116, 105, 70, 97, 99, 116, 111,
-        114, 84, 111, 76, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 82, 101, 113, 117, 101,
-        115, 116, 26, 53, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46,
-        118, 49, 46, 65, 100, 100, 77, 117, 108, 116, 105, 70, 97, 99, 116, 111, 114, 84, 111, 76,
-        111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 82, 101, 115, 112, 111, 110, 115, 101, 34,
-        3, 136, 2, 0, 40, 0, 48, 0, 18, 162, 1, 10, 32, 82, 101, 109, 111, 118, 101, 77, 117, 108,
-        116, 105, 70, 97, 99, 116, 111, 114, 70, 114, 111, 109, 76, 111, 103, 105, 110, 80, 111,
-        108, 105, 99, 121, 18, 57, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105,
-        110, 46, 118, 49, 46, 82, 101, 109, 111, 118, 101, 77, 117, 108, 116, 105, 70, 97, 99,
-        116, 111, 114, 70, 114, 111, 109, 76, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 82,
-        101, 113, 117, 101, 115, 116, 26, 58, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100,
-        109, 105, 110, 46, 118, 49, 46, 82, 101, 109, 111, 118, 101, 77, 117, 108, 116, 105, 70,
-        97, 99, 116, 111, 114, 70, 114, 111, 109, 76, 111, 103, 105, 110, 80, 111, 108, 105, 99,
-        121, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 147, 1,
-        10, 27, 71, 101, 116, 80, 97, 115, 115, 119, 111, 114, 100, 67, 111, 109, 112, 108, 101,
-        120, 105, 116, 121, 80, 111, 108, 105, 99, 121, 18, 52, 46, 122, 105, 116, 97, 100, 101,
-        108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 71, 101, 116, 80, 97, 115, 115, 119,
-        111, 114, 100, 67, 111, 109, 112, 108, 101, 120, 105, 116, 121, 80, 111, 108, 105, 99,
-        121, 82, 101, 113, 117, 101, 115, 116, 26, 53, 46, 122, 105, 116, 97, 100, 101, 108, 46,
-        97, 100, 109, 105, 110, 46, 118, 49, 46, 71, 101, 116, 80, 97, 115, 115, 119, 111, 114,
-        100, 67, 111, 109, 112, 108, 101, 120, 105, 116, 121, 80, 111, 108, 105, 99, 121, 82, 101,
-        115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 156, 1, 10, 30, 85, 112,
-        100, 97, 116, 101, 80, 97, 115, 115, 119, 111, 114, 100, 67, 111, 109, 112, 108, 101, 120,
-        105, 116, 121, 80, 111, 108, 105, 99, 121, 18, 55, 46, 122, 105, 116, 97, 100, 101, 108,
-        46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 85, 112, 100, 97, 116, 101, 80, 97, 115, 115,
-        119, 111, 114, 100, 67, 111, 109, 112, 108, 101, 120, 105, 116, 121, 80, 111, 108, 105,
-        99, 121, 82, 101, 113, 117, 101, 115, 116, 26, 56, 46, 122, 105, 116, 97, 100, 101, 108,
-        46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 85, 112, 100, 97, 116, 101, 80, 97, 115, 115,
-        119, 111, 114, 100, 67, 111, 109, 112, 108, 101, 120, 105, 116, 121, 80, 111, 108, 105,
-        99, 121, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 126,
-        10, 20, 71, 101, 116, 80, 97, 115, 115, 119, 111, 114, 100, 65, 103, 101, 80, 111, 108,
-        105, 99, 121, 18, 45, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110,
-        46, 118, 49, 46, 71, 101, 116, 80, 97, 115, 115, 119, 111, 114, 100, 65, 103, 101, 80,
-        111, 108, 105, 99, 121, 82, 101, 113, 117, 101, 115, 116, 26, 46, 46, 122, 105, 116, 97,
-        100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 71, 101, 116, 80, 97, 115,
-        115, 119, 111, 114, 100, 65, 103, 101, 80, 111, 108, 105, 99, 121, 82, 101, 115, 112, 111,
-        110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 135, 1, 10, 23, 85, 112, 100, 97, 116,
-        101, 80, 97, 115, 115, 119, 111, 114, 100, 65, 103, 101, 80, 111, 108, 105, 99, 121, 18,
-        48, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 85,
-        112, 100, 97, 116, 101, 80, 97, 115, 115, 119, 111, 114, 100, 65, 103, 101, 80, 111, 108,
-        105, 99, 121, 82, 101, 113, 117, 101, 115, 116, 26, 49, 46, 122, 105, 116, 97, 100, 101,
-        108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 85, 112, 100, 97, 116, 101, 80, 97, 115,
-        115, 119, 111, 114, 100, 65, 103, 101, 80, 111, 108, 105, 99, 121, 82, 101, 115, 112, 111,
-        110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 138, 1, 10, 24, 71, 101, 116, 80, 97,
-        115, 115, 119, 111, 114, 100, 76, 111, 99, 107, 111, 117, 116, 80, 111, 108, 105, 99, 121,
-        18, 49, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46,
-        71, 101, 116, 80, 97, 115, 115, 119, 111, 114, 100, 76, 111, 99, 107, 111, 117, 116, 80,
-        111, 108, 105, 99, 121, 82, 101, 113, 117, 101, 115, 116, 26, 50, 46, 122, 105, 116, 97,
-        100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 71, 101, 116, 80, 97, 115,
-        115, 119, 111, 114, 100, 76, 111, 99, 107, 111, 117, 116, 80, 111, 108, 105, 99, 121, 82,
-        101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 147, 1, 10, 27, 85,
-        112, 100, 97, 116, 101, 80, 97, 115, 115, 119, 111, 114, 100, 76, 111, 99, 107, 111, 117,
-        116, 80, 111, 108, 105, 99, 121, 18, 52, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97,
-        100, 109, 105, 110, 46, 118, 49, 46, 85, 112, 100, 97, 116, 101, 80, 97, 115, 115, 119,
-        111, 114, 100, 76, 111, 99, 107, 111, 117, 116, 80, 111, 108, 105, 99, 121, 82, 101, 113,
-        117, 101, 115, 116, 26, 53, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105,
-        110, 46, 118, 49, 46, 85, 112, 100, 97, 116, 101, 80, 97, 115, 115, 119, 111, 114, 100,
-        76, 111, 99, 107, 111, 117, 116, 80, 111, 108, 105, 99, 121, 82, 101, 115, 112, 111, 110,
-        115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 120, 10, 18, 76, 105, 115, 116, 73, 65, 77,
-        77, 101, 109, 98, 101, 114, 82, 111, 108, 101, 115, 18, 43, 46, 122, 105, 116, 97, 100,
-        101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 76, 105, 115, 116, 73, 65, 77, 77,
-        101, 109, 98, 101, 114, 82, 111, 108, 101, 115, 82, 101, 113, 117, 101, 115, 116, 26, 44,
-        46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 76,
-        105, 115, 116, 73, 65, 77, 77, 101, 109, 98, 101, 114, 82, 111, 108, 101, 115, 82, 101,
-        115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 108, 10, 14, 76, 105,
-        115, 116, 73, 65, 77, 77, 101, 109, 98, 101, 114, 115, 18, 39, 46, 122, 105, 116, 97, 100,
-        101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 76, 105, 115, 116, 73, 65, 77, 77,
-        101, 109, 98, 101, 114, 115, 82, 101, 113, 117, 101, 115, 116, 26, 40, 46, 122, 105, 116,
-        97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 76, 105, 115, 116, 73, 65,
-        77, 77, 101, 109, 98, 101, 114, 115, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2,
-        0, 40, 0, 48, 0, 18, 102, 10, 12, 65, 100, 100, 73, 65, 77, 77, 101, 109, 98, 101, 114,
-        18, 37, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46,
-        65, 100, 100, 73, 65, 77, 77, 101, 109, 98, 101, 114, 82, 101, 113, 117, 101, 115, 116,
-        26, 38, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46,
-        65, 100, 100, 73, 65, 77, 77, 101, 109, 98, 101, 114, 82, 101, 115, 112, 111, 110, 115,
-        101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 111, 10, 15, 85, 112, 100, 97, 116, 101, 73, 65,
-        77, 77, 101, 109, 98, 101, 114, 18, 40, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100,
-        109, 105, 110, 46, 118, 49, 46, 85, 112, 100, 97, 116, 101, 73, 65, 77, 77, 101, 109, 98,
-        101, 114, 82, 101, 113, 117, 101, 115, 116, 26, 41, 46, 122, 105, 116, 97, 100, 101, 108,
-        46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 85, 112, 100, 97, 116, 101, 73, 65, 77, 77,
-        101, 109, 98, 101, 114, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0,
-        48, 0, 18, 111, 10, 15, 82, 101, 109, 111, 118, 101, 73, 65, 77, 77, 101, 109, 98, 101,
-        114, 18, 40, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118,
-        49, 46, 82, 101, 109, 111, 118, 101, 73, 65, 77, 77, 101, 109, 98, 101, 114, 82, 101, 113,
-        117, 101, 115, 116, 26, 41, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105,
-        110, 46, 118, 49, 46, 82, 101, 109, 111, 118, 101, 73, 65, 77, 77, 101, 109, 98, 101, 114,
-        82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 93, 10, 9, 76,
-        105, 115, 116, 86, 105, 101, 119, 115, 18, 34, 46, 122, 105, 116, 97, 100, 101, 108, 46,
-        97, 100, 109, 105, 110, 46, 118, 49, 46, 76, 105, 115, 116, 86, 105, 101, 119, 115, 82,
-        101, 113, 117, 101, 115, 116, 26, 35, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100,
-        109, 105, 110, 46, 118, 49, 46, 76, 105, 115, 116, 86, 105, 101, 119, 115, 82, 101, 115,
-        112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 93, 10, 9, 67, 108, 101, 97,
-        114, 86, 105, 101, 119, 18, 34, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109,
-        105, 110, 46, 118, 49, 46, 67, 108, 101, 97, 114, 86, 105, 101, 119, 82, 101, 113, 117,
-        101, 115, 116, 26, 35, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110,
-        46, 118, 49, 46, 67, 108, 101, 97, 114, 86, 105, 101, 119, 82, 101, 115, 112, 111, 110,
-        115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 114, 10, 16, 76, 105, 115, 116, 70, 97, 105,
-        108, 101, 100, 69, 118, 101, 110, 116, 115, 18, 41, 46, 122, 105, 116, 97, 100, 101, 108,
-        46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 76, 105, 115, 116, 70, 97, 105, 108, 101,
-        100, 69, 118, 101, 110, 116, 115, 82, 101, 113, 117, 101, 115, 116, 26, 42, 46, 122, 105,
-        116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 76, 105, 115, 116,
-        70, 97, 105, 108, 101, 100, 69, 118, 101, 110, 116, 115, 82, 101, 115, 112, 111, 110, 115,
-        101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 117, 10, 17, 82, 101, 109, 111, 118, 101, 70, 97,
-        105, 108, 101, 100, 69, 118, 101, 110, 116, 18, 42, 46, 122, 105, 116, 97, 100, 101, 108,
-        46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 82, 101, 109, 111, 118, 101, 70, 97, 105,
-        108, 101, 100, 69, 118, 101, 110, 116, 82, 101, 113, 117, 101, 115, 116, 26, 43, 46, 122,
+        110, 80, 111, 108, 105, 99, 121, 73, 68, 80, 115, 82, 101, 115, 112, 111, 110, 115, 101,
+        34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 123, 10, 19, 65, 100, 100, 73, 68, 80, 84, 111, 76,
+        111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 18, 44, 46, 122, 105, 116, 97, 100, 101,
+        108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 65, 100, 100, 73, 68, 80, 84, 111, 76,
+        111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 82, 101, 113, 117, 101, 115, 116, 26, 45,
+        46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 65,
+        100, 100, 73, 68, 80, 84, 111, 76, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 82,
+        101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 138, 1, 10, 24, 82,
+        101, 109, 111, 118, 101, 73, 68, 80, 70, 114, 111, 109, 76, 111, 103, 105, 110, 80, 111,
+        108, 105, 99, 121, 18, 49, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105,
+        110, 46, 118, 49, 46, 82, 101, 109, 111, 118, 101, 73, 68, 80, 70, 114, 111, 109, 76, 111,
+        103, 105, 110, 80, 111, 108, 105, 99, 121, 82, 101, 113, 117, 101, 115, 116, 26, 50, 46,
+        122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 82, 101,
+        109, 111, 118, 101, 73, 68, 80, 70, 114, 111, 109, 76, 111, 103, 105, 110, 80, 111, 108,
+        105, 99, 121, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18,
+        150, 1, 10, 28, 76, 105, 115, 116, 76, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 83,
+        101, 99, 111, 110, 100, 70, 97, 99, 116, 111, 114, 115, 18, 53, 46, 122, 105, 116, 97,
+        100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 76, 105, 115, 116, 76, 111,
+        103, 105, 110, 80, 111, 108, 105, 99, 121, 83, 101, 99, 111, 110, 100, 70, 97, 99, 116,
+        111, 114, 115, 82, 101, 113, 117, 101, 115, 116, 26, 54, 46, 122, 105, 116, 97, 100, 101,
+        108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 76, 105, 115, 116, 76, 111, 103, 105,
+        110, 80, 111, 108, 105, 99, 121, 83, 101, 99, 111, 110, 100, 70, 97, 99, 116, 111, 114,
+        115, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 150, 1,
+        10, 28, 65, 100, 100, 83, 101, 99, 111, 110, 100, 70, 97, 99, 116, 111, 114, 84, 111, 76,
+        111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 18, 53, 46, 122, 105, 116, 97, 100, 101,
+        108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 65, 100, 100, 83, 101, 99, 111, 110,
+        100, 70, 97, 99, 116, 111, 114, 84, 111, 76, 111, 103, 105, 110, 80, 111, 108, 105, 99,
+        121, 82, 101, 113, 117, 101, 115, 116, 26, 54, 46, 122, 105, 116, 97, 100, 101, 108, 46,
+        97, 100, 109, 105, 110, 46, 118, 49, 46, 65, 100, 100, 83, 101, 99, 111, 110, 100, 70, 97,
+        99, 116, 111, 114, 84, 111, 76, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 82, 101,
+        115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 165, 1, 10, 33, 82, 101,
+        109, 111, 118, 101, 83, 101, 99, 111, 110, 100, 70, 97, 99, 116, 111, 114, 70, 114, 111,
+        109, 76, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 18, 58, 46, 122, 105, 116, 97,
+        100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 82, 101, 109, 111, 118, 101,
+        83, 101, 99, 111, 110, 100, 70, 97, 99, 116, 111, 114, 70, 114, 111, 109, 76, 111, 103,
+        105, 110, 80, 111, 108, 105, 99, 121, 82, 101, 113, 117, 101, 115, 116, 26, 59, 46, 122,
         105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 82, 101, 109,
-        111, 118, 101, 70, 97, 105, 108, 101, 100, 69, 118, 101, 110, 116, 82, 101, 115, 112, 111,
-        110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0>>
+        111, 118, 101, 83, 101, 99, 111, 110, 100, 70, 97, 99, 116, 111, 114, 70, 114, 111, 109,
+        76, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 82, 101, 115, 112, 111, 110, 115, 101,
+        34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 147, 1, 10, 27, 76, 105, 115, 116, 76, 111, 103, 105,
+        110, 80, 111, 108, 105, 99, 121, 77, 117, 108, 116, 105, 70, 97, 99, 116, 111, 114, 115,
+        18, 52, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46,
+        76, 105, 115, 116, 76, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 77, 117, 108, 116,
+        105, 70, 97, 99, 116, 111, 114, 115, 82, 101, 113, 117, 101, 115, 116, 26, 53, 46, 122,
+        105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 76, 105, 115,
+        116, 76, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 77, 117, 108, 116, 105, 70, 97,
+        99, 116, 111, 114, 115, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0,
+        48, 0, 18, 147, 1, 10, 27, 65, 100, 100, 77, 117, 108, 116, 105, 70, 97, 99, 116, 111,
+        114, 84, 111, 76, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 18, 52, 46, 122, 105,
+        116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 65, 100, 100, 77,
+        117, 108, 116, 105, 70, 97, 99, 116, 111, 114, 84, 111, 76, 111, 103, 105, 110, 80, 111,
+        108, 105, 99, 121, 82, 101, 113, 117, 101, 115, 116, 26, 53, 46, 122, 105, 116, 97, 100,
+        101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 65, 100, 100, 77, 117, 108, 116,
+        105, 70, 97, 99, 116, 111, 114, 84, 111, 76, 111, 103, 105, 110, 80, 111, 108, 105, 99,
+        121, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 162, 1,
+        10, 32, 82, 101, 109, 111, 118, 101, 77, 117, 108, 116, 105, 70, 97, 99, 116, 111, 114,
+        70, 114, 111, 109, 76, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 18, 57, 46, 122,
+        105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 82, 101, 109,
+        111, 118, 101, 77, 117, 108, 116, 105, 70, 97, 99, 116, 111, 114, 70, 114, 111, 109, 76,
+        111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 82, 101, 113, 117, 101, 115, 116, 26, 58,
+        46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 82,
+        101, 109, 111, 118, 101, 77, 117, 108, 116, 105, 70, 97, 99, 116, 111, 114, 70, 114, 111,
+        109, 76, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 82, 101, 115, 112, 111, 110, 115,
+        101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 147, 1, 10, 27, 71, 101, 116, 80, 97, 115, 115,
+        119, 111, 114, 100, 67, 111, 109, 112, 108, 101, 120, 105, 116, 121, 80, 111, 108, 105,
+        99, 121, 18, 52, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46,
+        118, 49, 46, 71, 101, 116, 80, 97, 115, 115, 119, 111, 114, 100, 67, 111, 109, 112, 108,
+        101, 120, 105, 116, 121, 80, 111, 108, 105, 99, 121, 82, 101, 113, 117, 101, 115, 116, 26,
+        53, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 71,
+        101, 116, 80, 97, 115, 115, 119, 111, 114, 100, 67, 111, 109, 112, 108, 101, 120, 105,
+        116, 121, 80, 111, 108, 105, 99, 121, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136,
+        2, 0, 40, 0, 48, 0, 18, 156, 1, 10, 30, 85, 112, 100, 97, 116, 101, 80, 97, 115, 115, 119,
+        111, 114, 100, 67, 111, 109, 112, 108, 101, 120, 105, 116, 121, 80, 111, 108, 105, 99,
+        121, 18, 55, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118,
+        49, 46, 85, 112, 100, 97, 116, 101, 80, 97, 115, 115, 119, 111, 114, 100, 67, 111, 109,
+        112, 108, 101, 120, 105, 116, 121, 80, 111, 108, 105, 99, 121, 82, 101, 113, 117, 101,
+        115, 116, 26, 56, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46,
+        118, 49, 46, 85, 112, 100, 97, 116, 101, 80, 97, 115, 115, 119, 111, 114, 100, 67, 111,
+        109, 112, 108, 101, 120, 105, 116, 121, 80, 111, 108, 105, 99, 121, 82, 101, 115, 112,
+        111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 126, 10, 20, 71, 101, 116, 80, 97,
+        115, 115, 119, 111, 114, 100, 65, 103, 101, 80, 111, 108, 105, 99, 121, 18, 45, 46, 122,
+        105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 71, 101, 116,
+        80, 97, 115, 115, 119, 111, 114, 100, 65, 103, 101, 80, 111, 108, 105, 99, 121, 82, 101,
+        113, 117, 101, 115, 116, 26, 46, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109,
+        105, 110, 46, 118, 49, 46, 71, 101, 116, 80, 97, 115, 115, 119, 111, 114, 100, 65, 103,
+        101, 80, 111, 108, 105, 99, 121, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0,
+        40, 0, 48, 0, 18, 135, 1, 10, 23, 85, 112, 100, 97, 116, 101, 80, 97, 115, 115, 119, 111,
+        114, 100, 65, 103, 101, 80, 111, 108, 105, 99, 121, 18, 48, 46, 122, 105, 116, 97, 100,
+        101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 85, 112, 100, 97, 116, 101, 80, 97,
+        115, 115, 119, 111, 114, 100, 65, 103, 101, 80, 111, 108, 105, 99, 121, 82, 101, 113, 117,
+        101, 115, 116, 26, 49, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110,
+        46, 118, 49, 46, 85, 112, 100, 97, 116, 101, 80, 97, 115, 115, 119, 111, 114, 100, 65,
+        103, 101, 80, 111, 108, 105, 99, 121, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136,
+        2, 0, 40, 0, 48, 0, 18, 138, 1, 10, 24, 71, 101, 116, 80, 97, 115, 115, 119, 111, 114,
+        100, 76, 111, 99, 107, 111, 117, 116, 80, 111, 108, 105, 99, 121, 18, 49, 46, 122, 105,
+        116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 71, 101, 116, 80, 97,
+        115, 115, 119, 111, 114, 100, 76, 111, 99, 107, 111, 117, 116, 80, 111, 108, 105, 99, 121,
+        82, 101, 113, 117, 101, 115, 116, 26, 50, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97,
+        100, 109, 105, 110, 46, 118, 49, 46, 71, 101, 116, 80, 97, 115, 115, 119, 111, 114, 100,
+        76, 111, 99, 107, 111, 117, 116, 80, 111, 108, 105, 99, 121, 82, 101, 115, 112, 111, 110,
+        115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 147, 1, 10, 27, 85, 112, 100, 97, 116, 101,
+        80, 97, 115, 115, 119, 111, 114, 100, 76, 111, 99, 107, 111, 117, 116, 80, 111, 108, 105,
+        99, 121, 18, 52, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46,
+        118, 49, 46, 85, 112, 100, 97, 116, 101, 80, 97, 115, 115, 119, 111, 114, 100, 76, 111,
+        99, 107, 111, 117, 116, 80, 111, 108, 105, 99, 121, 82, 101, 113, 117, 101, 115, 116, 26,
+        53, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 85,
+        112, 100, 97, 116, 101, 80, 97, 115, 115, 119, 111, 114, 100, 76, 111, 99, 107, 111, 117,
+        116, 80, 111, 108, 105, 99, 121, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0,
+        40, 0, 48, 0, 18, 141, 1, 10, 25, 71, 101, 116, 68, 101, 102, 97, 117, 108, 116, 73, 110,
+        105, 116, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116, 18, 50, 46, 122, 105, 116,
+        97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 71, 101, 116, 68, 101,
+        102, 97, 117, 108, 116, 73, 110, 105, 116, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120,
+        116, 82, 101, 113, 117, 101, 115, 116, 26, 51, 46, 122, 105, 116, 97, 100, 101, 108, 46,
+        97, 100, 109, 105, 110, 46, 118, 49, 46, 71, 101, 116, 68, 101, 102, 97, 117, 108, 116,
+        73, 110, 105, 116, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116, 82, 101, 115, 112,
+        111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 141, 1, 10, 25, 83, 101, 116, 68,
+        101, 102, 97, 117, 108, 116, 73, 110, 105, 116, 77, 101, 115, 115, 97, 103, 101, 84, 101,
+        120, 116, 18, 50, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46,
+        118, 49, 46, 83, 101, 116, 68, 101, 102, 97, 117, 108, 116, 73, 110, 105, 116, 77, 101,
+        115, 115, 97, 103, 101, 84, 101, 120, 116, 82, 101, 113, 117, 101, 115, 116, 26, 51, 46,
+        122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 83, 101,
+        116, 68, 101, 102, 97, 117, 108, 116, 73, 110, 105, 116, 77, 101, 115, 115, 97, 103, 101,
+        84, 101, 120, 116, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0,
+        18, 168, 1, 10, 34, 71, 101, 116, 68, 101, 102, 97, 117, 108, 116, 80, 97, 115, 115, 119,
+        111, 114, 100, 82, 101, 115, 101, 116, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116,
+        18, 59, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46,
+        71, 101, 116, 68, 101, 102, 97, 117, 108, 116, 80, 97, 115, 115, 119, 111, 114, 100, 82,
+        101, 115, 101, 116, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116, 82, 101, 113, 117,
+        101, 115, 116, 26, 60, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110,
+        46, 118, 49, 46, 71, 101, 116, 68, 101, 102, 97, 117, 108, 116, 80, 97, 115, 115, 119,
+        111, 114, 100, 82, 101, 115, 101, 116, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116,
+        82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 168, 1, 10, 34,
+        83, 101, 116, 68, 101, 102, 97, 117, 108, 116, 80, 97, 115, 115, 119, 111, 114, 100, 82,
+        101, 115, 101, 116, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116, 18, 59, 46, 122,
+        105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 83, 101, 116,
+        68, 101, 102, 97, 117, 108, 116, 80, 97, 115, 115, 119, 111, 114, 100, 82, 101, 115, 101,
+        116, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116, 82, 101, 113, 117, 101, 115, 116,
+        26, 60, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46,
+        83, 101, 116, 68, 101, 102, 97, 117, 108, 116, 80, 97, 115, 115, 119, 111, 114, 100, 82,
+        101, 115, 101, 116, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116, 82, 101, 115, 112,
+        111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 162, 1, 10, 32, 71, 101, 116, 68,
+        101, 102, 97, 117, 108, 116, 86, 101, 114, 105, 102, 121, 69, 109, 97, 105, 108, 77, 101,
+        115, 115, 97, 103, 101, 84, 101, 120, 116, 18, 57, 46, 122, 105, 116, 97, 100, 101, 108,
+        46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 71, 101, 116, 68, 101, 102, 97, 117, 108,
+        116, 86, 101, 114, 105, 102, 121, 69, 109, 97, 105, 108, 77, 101, 115, 115, 97, 103, 101,
+        84, 101, 120, 116, 82, 101, 113, 117, 101, 115, 116, 26, 58, 46, 122, 105, 116, 97, 100,
+        101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 71, 101, 116, 68, 101, 102, 97,
+        117, 108, 116, 86, 101, 114, 105, 102, 121, 69, 109, 97, 105, 108, 77, 101, 115, 115, 97,
+        103, 101, 84, 101, 120, 116, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40,
+        0, 48, 0, 18, 162, 1, 10, 32, 83, 101, 116, 68, 101, 102, 97, 117, 108, 116, 86, 101, 114,
+        105, 102, 121, 69, 109, 97, 105, 108, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116,
+        18, 57, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46,
+        83, 101, 116, 68, 101, 102, 97, 117, 108, 116, 86, 101, 114, 105, 102, 121, 69, 109, 97,
+        105, 108, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116, 82, 101, 113, 117, 101, 115,
+        116, 26, 58, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118,
+        49, 46, 83, 101, 116, 68, 101, 102, 97, 117, 108, 116, 86, 101, 114, 105, 102, 121, 69,
+        109, 97, 105, 108, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116, 82, 101, 115, 112,
+        111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 162, 1, 10, 32, 71, 101, 116, 68,
+        101, 102, 97, 117, 108, 116, 86, 101, 114, 105, 102, 121, 80, 104, 111, 110, 101, 77, 101,
+        115, 115, 97, 103, 101, 84, 101, 120, 116, 18, 57, 46, 122, 105, 116, 97, 100, 101, 108,
+        46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 71, 101, 116, 68, 101, 102, 97, 117, 108,
+        116, 86, 101, 114, 105, 102, 121, 80, 104, 111, 110, 101, 77, 101, 115, 115, 97, 103, 101,
+        84, 101, 120, 116, 82, 101, 113, 117, 101, 115, 116, 26, 58, 46, 122, 105, 116, 97, 100,
+        101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 71, 101, 116, 68, 101, 102, 97,
+        117, 108, 116, 86, 101, 114, 105, 102, 121, 80, 104, 111, 110, 101, 77, 101, 115, 115, 97,
+        103, 101, 84, 101, 120, 116, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40,
+        0, 48, 0, 18, 162, 1, 10, 32, 83, 101, 116, 68, 101, 102, 97, 117, 108, 116, 86, 101, 114,
+        105, 102, 121, 80, 104, 111, 110, 101, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116,
+        18, 57, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46,
+        83, 101, 116, 68, 101, 102, 97, 117, 108, 116, 86, 101, 114, 105, 102, 121, 80, 104, 111,
+        110, 101, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116, 82, 101, 113, 117, 101, 115,
+        116, 26, 58, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118,
+        49, 46, 83, 101, 116, 68, 101, 102, 97, 117, 108, 116, 86, 101, 114, 105, 102, 121, 80,
+        104, 111, 110, 101, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116, 82, 101, 115, 112,
+        111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 168, 1, 10, 34, 71, 101, 116, 68,
+        101, 102, 97, 117, 108, 116, 68, 111, 109, 97, 105, 110, 67, 108, 97, 105, 109, 101, 100,
+        77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116, 18, 59, 46, 122, 105, 116, 97, 100,
+        101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 71, 101, 116, 68, 101, 102, 97,
+        117, 108, 116, 68, 111, 109, 97, 105, 110, 67, 108, 97, 105, 109, 101, 100, 77, 101, 115,
+        115, 97, 103, 101, 84, 101, 120, 116, 82, 101, 113, 117, 101, 115, 116, 26, 60, 46, 122,
+        105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 71, 101, 116,
+        68, 101, 102, 97, 117, 108, 116, 68, 111, 109, 97, 105, 110, 67, 108, 97, 105, 109, 101,
+        100, 77, 101, 115, 115, 97, 103, 101, 84, 101, 120, 116, 82, 101, 115, 112, 111, 110, 115,
+        101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 168, 1, 10, 34, 83, 101, 116, 68, 101, 102, 97,
+        117, 108, 116, 68, 111, 109, 97, 105, 110, 67, 108, 97, 105, 109, 101, 100, 77, 101, 115,
+        115, 97, 103, 101, 84, 101, 120, 116, 18, 59, 46, 122, 105, 116, 97, 100, 101, 108, 46,
+        97, 100, 109, 105, 110, 46, 118, 49, 46, 83, 101, 116, 68, 101, 102, 97, 117, 108, 116,
+        68, 111, 109, 97, 105, 110, 67, 108, 97, 105, 109, 101, 100, 77, 101, 115, 115, 97, 103,
+        101, 84, 101, 120, 116, 82, 101, 113, 117, 101, 115, 116, 26, 60, 46, 122, 105, 116, 97,
+        100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 83, 101, 116, 68, 101, 102,
+        97, 117, 108, 116, 68, 111, 109, 97, 105, 110, 67, 108, 97, 105, 109, 101, 100, 77, 101,
+        115, 115, 97, 103, 101, 84, 101, 120, 116, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3,
+        136, 2, 0, 40, 0, 48, 0, 18, 120, 10, 18, 76, 105, 115, 116, 73, 65, 77, 77, 101, 109, 98,
+        101, 114, 82, 111, 108, 101, 115, 18, 43, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97,
+        100, 109, 105, 110, 46, 118, 49, 46, 76, 105, 115, 116, 73, 65, 77, 77, 101, 109, 98, 101,
+        114, 82, 111, 108, 101, 115, 82, 101, 113, 117, 101, 115, 116, 26, 44, 46, 122, 105, 116,
+        97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 76, 105, 115, 116, 73, 65,
+        77, 77, 101, 109, 98, 101, 114, 82, 111, 108, 101, 115, 82, 101, 115, 112, 111, 110, 115,
+        101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 108, 10, 14, 76, 105, 115, 116, 73, 65, 77, 77,
+        101, 109, 98, 101, 114, 115, 18, 39, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100,
+        109, 105, 110, 46, 118, 49, 46, 76, 105, 115, 116, 73, 65, 77, 77, 101, 109, 98, 101, 114,
+        115, 82, 101, 113, 117, 101, 115, 116, 26, 40, 46, 122, 105, 116, 97, 100, 101, 108, 46,
+        97, 100, 109, 105, 110, 46, 118, 49, 46, 76, 105, 115, 116, 73, 65, 77, 77, 101, 109, 98,
+        101, 114, 115, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18,
+        102, 10, 12, 65, 100, 100, 73, 65, 77, 77, 101, 109, 98, 101, 114, 18, 37, 46, 122, 105,
+        116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 65, 100, 100, 73, 65,
+        77, 77, 101, 109, 98, 101, 114, 82, 101, 113, 117, 101, 115, 116, 26, 38, 46, 122, 105,
+        116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 65, 100, 100, 73, 65,
+        77, 77, 101, 109, 98, 101, 114, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0,
+        40, 0, 48, 0, 18, 111, 10, 15, 85, 112, 100, 97, 116, 101, 73, 65, 77, 77, 101, 109, 98,
+        101, 114, 18, 40, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46,
+        118, 49, 46, 85, 112, 100, 97, 116, 101, 73, 65, 77, 77, 101, 109, 98, 101, 114, 82, 101,
+        113, 117, 101, 115, 116, 26, 41, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109,
+        105, 110, 46, 118, 49, 46, 85, 112, 100, 97, 116, 101, 73, 65, 77, 77, 101, 109, 98, 101,
+        114, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 111, 10,
+        15, 82, 101, 109, 111, 118, 101, 73, 65, 77, 77, 101, 109, 98, 101, 114, 18, 40, 46, 122,
+        105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 82, 101, 109,
+        111, 118, 101, 73, 65, 77, 77, 101, 109, 98, 101, 114, 82, 101, 113, 117, 101, 115, 116,
+        26, 41, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46,
+        82, 101, 109, 111, 118, 101, 73, 65, 77, 77, 101, 109, 98, 101, 114, 82, 101, 115, 112,
+        111, 110, 115, 101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 93, 10, 9, 76, 105, 115, 116, 86,
+        105, 101, 119, 115, 18, 34, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105,
+        110, 46, 118, 49, 46, 76, 105, 115, 116, 86, 105, 101, 119, 115, 82, 101, 113, 117, 101,
+        115, 116, 26, 35, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46,
+        118, 49, 46, 76, 105, 115, 116, 86, 105, 101, 119, 115, 82, 101, 115, 112, 111, 110, 115,
+        101, 34, 3, 136, 2, 0, 40, 0, 48, 0, 18, 93, 10, 9, 67, 108, 101, 97, 114, 86, 105, 101,
+        119, 18, 34, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118,
+        49, 46, 67, 108, 101, 97, 114, 86, 105, 101, 119, 82, 101, 113, 117, 101, 115, 116, 26,
+        35, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 67,
+        108, 101, 97, 114, 86, 105, 101, 119, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136,
+        2, 0, 40, 0, 48, 0, 18, 114, 10, 16, 76, 105, 115, 116, 70, 97, 105, 108, 101, 100, 69,
+        118, 101, 110, 116, 115, 18, 41, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100, 109,
+        105, 110, 46, 118, 49, 46, 76, 105, 115, 116, 70, 97, 105, 108, 101, 100, 69, 118, 101,
+        110, 116, 115, 82, 101, 113, 117, 101, 115, 116, 26, 42, 46, 122, 105, 116, 97, 100, 101,
+        108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 76, 105, 115, 116, 70, 97, 105, 108,
+        101, 100, 69, 118, 101, 110, 116, 115, 82, 101, 115, 112, 111, 110, 115, 101, 34, 3, 136,
+        2, 0, 40, 0, 48, 0, 18, 117, 10, 17, 82, 101, 109, 111, 118, 101, 70, 97, 105, 108, 101,
+        100, 69, 118, 101, 110, 116, 18, 42, 46, 122, 105, 116, 97, 100, 101, 108, 46, 97, 100,
+        109, 105, 110, 46, 118, 49, 46, 82, 101, 109, 111, 118, 101, 70, 97, 105, 108, 101, 100,
+        69, 118, 101, 110, 116, 82, 101, 113, 117, 101, 115, 116, 26, 43, 46, 122, 105, 116, 97,
+        100, 101, 108, 46, 97, 100, 109, 105, 110, 46, 118, 49, 46, 82, 101, 109, 111, 118, 101,
+        70, 97, 105, 108, 101, 100, 69, 118, 101, 110, 116, 82, 101, 115, 112, 111, 110, 115, 101,
+        34, 3, 136, 2, 0, 40, 0, 48, 0>>
     )
   end
 
@@ -3671,9 +4883,51 @@ defmodule Zitadel.Admin.V1.AdminService.Service do
   )
 
   rpc(
+    :GetPreviewLabelPolicy,
+    Zitadel.Admin.V1.GetPreviewLabelPolicyRequest,
+    Zitadel.Admin.V1.GetPreviewLabelPolicyResponse
+  )
+
+  rpc(
     :UpdateLabelPolicy,
     Zitadel.Admin.V1.UpdateLabelPolicyRequest,
     Zitadel.Admin.V1.UpdateLabelPolicyResponse
+  )
+
+  rpc(
+    :ActivateLabelPolicy,
+    Zitadel.Admin.V1.ActivateLabelPolicyRequest,
+    Zitadel.Admin.V1.ActivateLabelPolicyResponse
+  )
+
+  rpc(
+    :RemoveLabelPolicyLogo,
+    Zitadel.Admin.V1.RemoveLabelPolicyLogoRequest,
+    Zitadel.Admin.V1.RemoveLabelPolicyLogoResponse
+  )
+
+  rpc(
+    :RemoveLabelPolicyLogoDark,
+    Zitadel.Admin.V1.RemoveLabelPolicyLogoDarkRequest,
+    Zitadel.Admin.V1.RemoveLabelPolicyLogoDarkResponse
+  )
+
+  rpc(
+    :RemoveLabelPolicyIcon,
+    Zitadel.Admin.V1.RemoveLabelPolicyIconRequest,
+    Zitadel.Admin.V1.RemoveLabelPolicyIconResponse
+  )
+
+  rpc(
+    :RemoveLabelPolicyIconDark,
+    Zitadel.Admin.V1.RemoveLabelPolicyIconDarkRequest,
+    Zitadel.Admin.V1.RemoveLabelPolicyIconDarkResponse
+  )
+
+  rpc(
+    :RemoveLabelPolicyFont,
+    Zitadel.Admin.V1.RemoveLabelPolicyFontRequest,
+    Zitadel.Admin.V1.RemoveLabelPolicyFontResponse
   )
 
   rpc(
@@ -3776,6 +5030,66 @@ defmodule Zitadel.Admin.V1.AdminService.Service do
     :UpdatePasswordLockoutPolicy,
     Zitadel.Admin.V1.UpdatePasswordLockoutPolicyRequest,
     Zitadel.Admin.V1.UpdatePasswordLockoutPolicyResponse
+  )
+
+  rpc(
+    :GetDefaultInitMessageText,
+    Zitadel.Admin.V1.GetDefaultInitMessageTextRequest,
+    Zitadel.Admin.V1.GetDefaultInitMessageTextResponse
+  )
+
+  rpc(
+    :SetDefaultInitMessageText,
+    Zitadel.Admin.V1.SetDefaultInitMessageTextRequest,
+    Zitadel.Admin.V1.SetDefaultInitMessageTextResponse
+  )
+
+  rpc(
+    :GetDefaultPasswordResetMessageText,
+    Zitadel.Admin.V1.GetDefaultPasswordResetMessageTextRequest,
+    Zitadel.Admin.V1.GetDefaultPasswordResetMessageTextResponse
+  )
+
+  rpc(
+    :SetDefaultPasswordResetMessageText,
+    Zitadel.Admin.V1.SetDefaultPasswordResetMessageTextRequest,
+    Zitadel.Admin.V1.SetDefaultPasswordResetMessageTextResponse
+  )
+
+  rpc(
+    :GetDefaultVerifyEmailMessageText,
+    Zitadel.Admin.V1.GetDefaultVerifyEmailMessageTextRequest,
+    Zitadel.Admin.V1.GetDefaultVerifyEmailMessageTextResponse
+  )
+
+  rpc(
+    :SetDefaultVerifyEmailMessageText,
+    Zitadel.Admin.V1.SetDefaultVerifyEmailMessageTextRequest,
+    Zitadel.Admin.V1.SetDefaultVerifyEmailMessageTextResponse
+  )
+
+  rpc(
+    :GetDefaultVerifyPhoneMessageText,
+    Zitadel.Admin.V1.GetDefaultVerifyPhoneMessageTextRequest,
+    Zitadel.Admin.V1.GetDefaultVerifyPhoneMessageTextResponse
+  )
+
+  rpc(
+    :SetDefaultVerifyPhoneMessageText,
+    Zitadel.Admin.V1.SetDefaultVerifyPhoneMessageTextRequest,
+    Zitadel.Admin.V1.SetDefaultVerifyPhoneMessageTextResponse
+  )
+
+  rpc(
+    :GetDefaultDomainClaimedMessageText,
+    Zitadel.Admin.V1.GetDefaultDomainClaimedMessageTextRequest,
+    Zitadel.Admin.V1.GetDefaultDomainClaimedMessageTextResponse
+  )
+
+  rpc(
+    :SetDefaultDomainClaimedMessageText,
+    Zitadel.Admin.V1.SetDefaultDomainClaimedMessageTextRequest,
+    Zitadel.Admin.V1.SetDefaultDomainClaimedMessageTextResponse
   )
 
   rpc(
@@ -4017,6 +5331,14 @@ defmodule Zitadel.Admin.V1.AdminService.Behaviour do
             ) :: Zitadel.Admin.V1.GetLabelPolicyResponse.t()
 
   @doc """
+  Returns the preview label policy defined by the administrators of ZITADEL
+  """
+  @callback get_preview_label_policy(
+              input :: Zitadel.Admin.V1.GetPreviewLabelPolicyRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Admin.V1.GetPreviewLabelPolicyResponse.t()
+
+  @doc """
   Updates the default label policy of ZITADEL
   it impacts all organisations without a customised policy
   """
@@ -4024,6 +5346,54 @@ defmodule Zitadel.Admin.V1.AdminService.Behaviour do
               input :: Zitadel.Admin.V1.UpdateLabelPolicyRequest.t(),
               stream :: GRPC.Server.Stream.t()
             ) :: Zitadel.Admin.V1.UpdateLabelPolicyResponse.t()
+
+  @doc """
+  Activates all changes of the label policy
+  """
+  @callback activate_label_policy(
+              input :: Zitadel.Admin.V1.ActivateLabelPolicyRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Admin.V1.ActivateLabelPolicyResponse.t()
+
+  @doc """
+  Removes the logo of the label policy
+  """
+  @callback remove_label_policy_logo(
+              input :: Zitadel.Admin.V1.RemoveLabelPolicyLogoRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Admin.V1.RemoveLabelPolicyLogoResponse.t()
+
+  @doc """
+  Removes the logo dark of the label policy
+  """
+  @callback remove_label_policy_logo_dark(
+              input :: Zitadel.Admin.V1.RemoveLabelPolicyLogoDarkRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Admin.V1.RemoveLabelPolicyLogoDarkResponse.t()
+
+  @doc """
+  Removes the icon of the label policy
+  """
+  @callback remove_label_policy_icon(
+              input :: Zitadel.Admin.V1.RemoveLabelPolicyIconRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Admin.V1.RemoveLabelPolicyIconResponse.t()
+
+  @doc """
+  Removes the logo dark of the label policy
+  """
+  @callback remove_label_policy_icon_dark(
+              input :: Zitadel.Admin.V1.RemoveLabelPolicyIconDarkRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Admin.V1.RemoveLabelPolicyIconDarkResponse.t()
+
+  @doc """
+  Removes the font of the label policy
+  """
+  @callback remove_label_policy_font(
+              input :: Zitadel.Admin.V1.RemoveLabelPolicyFontRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Admin.V1.RemoveLabelPolicyFontResponse.t()
 
   @doc """
   Returns the login policy defined by the administrators of ZITADEL
@@ -4173,6 +5543,101 @@ defmodule Zitadel.Admin.V1.AdminService.Behaviour do
             ) :: Zitadel.Admin.V1.UpdatePasswordLockoutPolicyResponse.t()
 
   @doc """
+  Returns the custom text for initial message
+  """
+  @callback get_default_init_message_text(
+              input :: Zitadel.Admin.V1.GetDefaultInitMessageTextRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Admin.V1.GetDefaultInitMessageTextResponse.t()
+
+  @doc """
+  Sets the default custom text for initial message
+  it impacts all organisations without customized initial message text
+  The Following Variables can be used:
+  {{.Code}} {{.UserName}} {{.FirstName}} {{.LastName}} {{.NickName}} {{.DisplayName}} {{.LastEmail}} {{.VerifiedEmail}} {{.LastPhone}} {{.VerifiedPhone}} {{.PreferredLoginName}} {{.LoginNames}} {{.ChangeDate}}
+  """
+  @callback set_default_init_message_text(
+              input :: Zitadel.Admin.V1.SetDefaultInitMessageTextRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Admin.V1.SetDefaultInitMessageTextResponse.t()
+
+  @doc """
+  Returns the custom text for password reset message
+  """
+  @callback get_default_password_reset_message_text(
+              input :: Zitadel.Admin.V1.GetDefaultPasswordResetMessageTextRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Admin.V1.GetDefaultPasswordResetMessageTextResponse.t()
+
+  @doc """
+  Sets the default custom text for password reset message
+  it impacts all organisations without customized password reset message text
+  The Following Variables can be used:
+  {{.Code}} {{.UserName}} {{.FirstName}} {{.LastName}} {{.NickName}} {{.DisplayName}} {{.LastEmail}} {{.VerifiedEmail}} {{.LastPhone}} {{.VerifiedPhone}} {{.PreferredLoginName}} {{.LoginNames}} {{.ChangeDate}}
+  """
+  @callback set_default_password_reset_message_text(
+              input :: Zitadel.Admin.V1.SetDefaultPasswordResetMessageTextRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Admin.V1.SetDefaultPasswordResetMessageTextResponse.t()
+
+  @doc """
+  Returns the custom text for verify email message
+  """
+  @callback get_default_verify_email_message_text(
+              input :: Zitadel.Admin.V1.GetDefaultVerifyEmailMessageTextRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Admin.V1.GetDefaultVerifyEmailMessageTextResponse.t()
+
+  @doc """
+  Sets the default custom text for verify email message
+  it impacts all organisations without customized verify email message text
+  The Following Variables can be used:
+  {{.Code}} {{.UserName}} {{.FirstName}} {{.LastName}} {{.NickName}} {{.DisplayName}} {{.LastEmail}} {{.VerifiedEmail}} {{.LastPhone}} {{.VerifiedPhone}} {{.PreferredLoginName}} {{.LoginNames}} {{.ChangeDate}}
+  """
+  @callback set_default_verify_email_message_text(
+              input :: Zitadel.Admin.V1.SetDefaultVerifyEmailMessageTextRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Admin.V1.SetDefaultVerifyEmailMessageTextResponse.t()
+
+  @doc """
+  Returns the custom text for verify phone message
+  """
+  @callback get_default_verify_phone_message_text(
+              input :: Zitadel.Admin.V1.GetDefaultVerifyPhoneMessageTextRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Admin.V1.GetDefaultVerifyPhoneMessageTextResponse.t()
+
+  @doc """
+  Sets the default custom text for verify phone message
+  it impacts all organisations without customized verify phone message text
+  The Following Variables can be used:
+  {{.Code}} {{.UserName}} {{.FirstName}} {{.LastName}} {{.NickName}} {{.DisplayName}} {{.LastEmail}} {{.VerifiedEmail}} {{.LastPhone}} {{.VerifiedPhone}} {{.PreferredLoginName}} {{.LoginNames}} {{.ChangeDate}}
+  """
+  @callback set_default_verify_phone_message_text(
+              input :: Zitadel.Admin.V1.SetDefaultVerifyPhoneMessageTextRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Admin.V1.SetDefaultVerifyPhoneMessageTextResponse.t()
+
+  @doc """
+  Returns the custom text for domain claimed message
+  """
+  @callback get_default_domain_claimed_message_text(
+              input :: Zitadel.Admin.V1.GetDefaultDomainClaimedMessageTextRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Admin.V1.GetDefaultDomainClaimedMessageTextResponse.t()
+
+  @doc """
+  Sets the default custom text for domain claimed phone message
+  it impacts all organisations without customized verify phone message text
+  The Following Variables can be used:
+  {{.Domain}} {{.TempUsername}} {{.UserName}} {{.FirstName}} {{.LastName}} {{.NickName}} {{.DisplayName}} {{.LastEmail}} {{.VerifiedEmail}} {{.LastPhone}} {{.VerifiedPhone}} {{.PreferredLoginName}} {{.LoginNames}} {{.ChangeDate}}
+  """
+  @callback set_default_domain_claimed_message_text(
+              input :: Zitadel.Admin.V1.SetDefaultDomainClaimedMessageTextRequest.t(),
+              stream :: GRPC.Server.Stream.t()
+            ) :: Zitadel.Admin.V1.SetDefaultDomainClaimedMessageTextResponse.t()
+
+  @doc """
   Returns the IAM roles visible for the requested user
   """
   @callback list_iam_member_roles(
@@ -4283,7 +5748,14 @@ defmodule Zitadel.Admin.V1.AdminService.Behaviour do
                       update_custom_org_iam_policy: 2,
                       reset_custom_org_iam_policy_to_default: 2,
                       get_label_policy: 2,
+                      get_preview_label_policy: 2,
                       update_label_policy: 2,
+                      activate_label_policy: 2,
+                      remove_label_policy_logo: 2,
+                      remove_label_policy_logo_dark: 2,
+                      remove_label_policy_icon: 2,
+                      remove_label_policy_icon_dark: 2,
+                      remove_label_policy_font: 2,
                       get_login_policy: 2,
                       update_login_policy: 2,
                       list_login_policy_id_ps: 2,
@@ -4301,6 +5773,16 @@ defmodule Zitadel.Admin.V1.AdminService.Behaviour do
                       update_password_age_policy: 2,
                       get_password_lockout_policy: 2,
                       update_password_lockout_policy: 2,
+                      get_default_init_message_text: 2,
+                      set_default_init_message_text: 2,
+                      get_default_password_reset_message_text: 2,
+                      set_default_password_reset_message_text: 2,
+                      get_default_verify_email_message_text: 2,
+                      set_default_verify_email_message_text: 2,
+                      get_default_verify_phone_message_text: 2,
+                      set_default_verify_phone_message_text: 2,
+                      get_default_domain_claimed_message_text: 2,
+                      set_default_domain_claimed_message_text: 2,
                       list_iam_member_roles: 2,
                       list_iam_members: 2,
                       add_iam_member: 2,

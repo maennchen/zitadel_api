@@ -1220,6 +1220,74 @@ defmodule Zitadel.User.V1.Session do
   field(:details, 9, type: Zitadel.V1.ObjectDetails)
 end
 
+defmodule Zitadel.User.V1.RefreshToken do
+  use Protobuf, syntax: :proto3
+  @type id :: String.t()
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type client_id :: String.t()
+  @type auth_time :: Google.Protobuf.Timestamp.t() | nil
+  @type idle_expiration :: Google.Protobuf.Timestamp.t() | nil
+  @type expiration :: Google.Protobuf.Timestamp.t() | nil
+  @type scopes :: [String.t()]
+  @type audience :: [String.t()]
+  @type t :: %__MODULE__{
+          id: id(),
+          details: details(),
+          client_id: client_id(),
+          auth_time: auth_time(),
+          idle_expiration: idle_expiration(),
+          expiration: expiration(),
+          scopes: scopes(),
+          audience: audience()
+        }
+
+  defstruct [
+    :id,
+    :details,
+    :client_id,
+    :auth_time,
+    :idle_expiration,
+    :expiration,
+    :scopes,
+    :audience
+  ]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 12, 82, 101, 102, 114, 101, 115, 104, 84, 111, 107, 101, 110, 18, 22, 10, 2, 105, 100,
+        24, 1, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 2, 105, 100, 18, 51, 10, 7, 100, 101,
+        116, 97, 105, 108, 115, 24, 2, 32, 1, 40, 11, 50, 25, 46, 122, 105, 116, 97, 100, 101,
+        108, 46, 118, 49, 46, 79, 98, 106, 101, 99, 116, 68, 101, 116, 97, 105, 108, 115, 82, 7,
+        100, 101, 116, 97, 105, 108, 115, 18, 35, 10, 9, 99, 108, 105, 101, 110, 116, 95, 105,
+        100, 24, 3, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 8, 99, 108, 105, 101, 110, 116,
+        73, 100, 18, 63, 10, 9, 97, 117, 116, 104, 95, 116, 105, 109, 101, 24, 4, 32, 1, 40, 11,
+        50, 26, 46, 103, 111, 111, 103, 108, 101, 46, 112, 114, 111, 116, 111, 98, 117, 102, 46,
+        84, 105, 109, 101, 115, 116, 97, 109, 112, 66, 6, 24, 0, 40, 0, 80, 0, 82, 8, 97, 117,
+        116, 104, 84, 105, 109, 101, 18, 75, 10, 15, 105, 100, 108, 101, 95, 101, 120, 112, 105,
+        114, 97, 116, 105, 111, 110, 24, 5, 32, 1, 40, 11, 50, 26, 46, 103, 111, 111, 103, 108,
+        101, 46, 112, 114, 111, 116, 111, 98, 117, 102, 46, 84, 105, 109, 101, 115, 116, 97, 109,
+        112, 66, 6, 24, 0, 40, 0, 80, 0, 82, 14, 105, 100, 108, 101, 69, 120, 112, 105, 114, 97,
+        116, 105, 111, 110, 18, 66, 10, 10, 101, 120, 112, 105, 114, 97, 116, 105, 111, 110, 24,
+        6, 32, 1, 40, 11, 50, 26, 46, 103, 111, 111, 103, 108, 101, 46, 112, 114, 111, 116, 111,
+        98, 117, 102, 46, 84, 105, 109, 101, 115, 116, 97, 109, 112, 66, 6, 24, 0, 40, 0, 80, 0,
+        82, 10, 101, 120, 112, 105, 114, 97, 116, 105, 111, 110, 18, 30, 10, 6, 115, 99, 111, 112,
+        101, 115, 24, 7, 32, 3, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 6, 115, 99, 111, 112, 101,
+        115, 18, 34, 10, 8, 97, 117, 100, 105, 101, 110, 99, 101, 24, 8, 32, 3, 40, 9, 66, 6, 24,
+        0, 40, 0, 80, 0, 82, 8, 97, 117, 100, 105, 101, 110, 99, 101>>
+    )
+  end
+
+  field(:id, 1, type: :string)
+  field(:details, 2, type: Zitadel.V1.ObjectDetails)
+  field(:client_id, 3, type: :string, json_name: "clientId")
+  field(:auth_time, 4, type: Google.Protobuf.Timestamp, json_name: "authTime")
+  field(:idle_expiration, 5, type: Google.Protobuf.Timestamp, json_name: "idleExpiration")
+  field(:expiration, 6, type: Google.Protobuf.Timestamp)
+  field(:scopes, 7, repeated: true, type: :string)
+  field(:audience, 8, repeated: true, type: :string)
+end
+
 defmodule Zitadel.User.V1.UserGrant do
   use Protobuf, syntax: :proto3
   @type id :: String.t()

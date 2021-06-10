@@ -111,19 +111,102 @@ end
 defmodule Zitadel.Policy.V1.LabelPolicy do
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
+
+  @typedoc """
+  hex value for primary color
+  """
   @type primary_color :: String.t()
-  @type secondary_color :: String.t()
+
+  @typedoc """
+  defines if the organisation's admin changed the policy
+  """
   @type is_default :: boolean
+
+  @typedoc """
+  hides the org suffix on the login form if the scope \"urn:zitadel:iam:org:domain:primary:{domainname}\" is set. Details about this scope in https://docs.zitadel.ch/concepts#Reserved_Scopes
+  """
   @type hide_login_name_suffix :: boolean
+
+  @typedoc """
+  hex value for secondary color
+  """
+  @type warn_color :: String.t()
+
+  @typedoc """
+  hex value for background color
+  """
+  @type background_color :: String.t()
+
+  @typedoc """
+  hex value for font color
+  """
+  @type font_color :: String.t()
+
+  @typedoc """
+  hex value for primary color dark theme
+  """
+  @type primary_color_dark :: String.t()
+
+  @typedoc """
+  hex value for background color dark theme
+  """
+  @type background_color_dark :: String.t()
+
+  @typedoc """
+  hex value for warn color dark theme
+  """
+  @type warn_color_dark :: String.t()
+
+  @typedoc """
+  hex value for font color dark theme
+  """
+  @type font_color_dark :: String.t()
+
+  @type disable_watermark :: boolean
+  @type logo_url :: String.t()
+  @type icon_url :: String.t()
+  @type logo_url_dark :: String.t()
+  @type icon_url_dark :: String.t()
+  @type font_url :: String.t()
   @type t :: %__MODULE__{
           details: details(),
           primary_color: primary_color(),
-          secondary_color: secondary_color(),
           is_default: is_default(),
-          hide_login_name_suffix: hide_login_name_suffix()
+          hide_login_name_suffix: hide_login_name_suffix(),
+          warn_color: warn_color(),
+          background_color: background_color(),
+          font_color: font_color(),
+          primary_color_dark: primary_color_dark(),
+          background_color_dark: background_color_dark(),
+          warn_color_dark: warn_color_dark(),
+          font_color_dark: font_color_dark(),
+          disable_watermark: disable_watermark(),
+          logo_url: logo_url(),
+          icon_url: icon_url(),
+          logo_url_dark: logo_url_dark(),
+          icon_url_dark: icon_url_dark(),
+          font_url: font_url()
         }
 
-  defstruct [:details, :primary_color, :secondary_color, :is_default, :hide_login_name_suffix]
+  defstruct [
+    :details,
+    :primary_color,
+    :is_default,
+    :hide_login_name_suffix,
+    :warn_color,
+    :background_color,
+    :font_color,
+    :primary_color_dark,
+    :background_color_dark,
+    :warn_color_dark,
+    :font_color_dark,
+    :disable_watermark,
+    :logo_url,
+    :icon_url,
+    :logo_url_dark,
+    :icon_url_dark,
+    :font_url
+  ]
 
   def descriptor do
     # credo:disable-for-next-line
@@ -133,22 +216,58 @@ defmodule Zitadel.Policy.V1.LabelPolicy do
         118, 49, 46, 79, 98, 106, 101, 99, 116, 68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101,
         116, 97, 105, 108, 115, 18, 43, 10, 13, 112, 114, 105, 109, 97, 114, 121, 95, 99, 111,
         108, 111, 114, 24, 2, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 12, 112, 114, 105,
-        109, 97, 114, 121, 67, 111, 108, 111, 114, 18, 47, 10, 15, 115, 101, 99, 111, 110, 100,
-        97, 114, 121, 95, 99, 111, 108, 111, 114, 24, 3, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0,
-        82, 14, 115, 101, 99, 111, 110, 100, 97, 114, 121, 67, 111, 108, 111, 114, 18, 37, 10, 10,
-        105, 115, 95, 100, 101, 102, 97, 117, 108, 116, 24, 4, 32, 1, 40, 8, 66, 6, 24, 0, 40, 0,
-        80, 0, 82, 9, 105, 115, 68, 101, 102, 97, 117, 108, 116, 18, 59, 10, 22, 104, 105, 100,
-        101, 95, 108, 111, 103, 105, 110, 95, 110, 97, 109, 101, 95, 115, 117, 102, 102, 105, 120,
-        24, 5, 32, 1, 40, 8, 66, 6, 24, 0, 40, 0, 80, 0, 82, 19, 104, 105, 100, 101, 76, 111, 103,
-        105, 110, 78, 97, 109, 101, 83, 117, 102, 102, 105, 120>>
+        109, 97, 114, 121, 67, 111, 108, 111, 114, 18, 37, 10, 10, 105, 115, 95, 100, 101, 102,
+        97, 117, 108, 116, 24, 4, 32, 1, 40, 8, 66, 6, 24, 0, 40, 0, 80, 0, 82, 9, 105, 115, 68,
+        101, 102, 97, 117, 108, 116, 18, 59, 10, 22, 104, 105, 100, 101, 95, 108, 111, 103, 105,
+        110, 95, 110, 97, 109, 101, 95, 115, 117, 102, 102, 105, 120, 24, 5, 32, 1, 40, 8, 66, 6,
+        24, 0, 40, 0, 80, 0, 82, 19, 104, 105, 100, 101, 76, 111, 103, 105, 110, 78, 97, 109, 101,
+        83, 117, 102, 102, 105, 120, 18, 37, 10, 10, 119, 97, 114, 110, 95, 99, 111, 108, 111,
+        114, 24, 6, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 9, 119, 97, 114, 110, 67, 111,
+        108, 111, 114, 18, 49, 10, 16, 98, 97, 99, 107, 103, 114, 111, 117, 110, 100, 95, 99, 111,
+        108, 111, 114, 24, 7, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 15, 98, 97, 99, 107,
+        103, 114, 111, 117, 110, 100, 67, 111, 108, 111, 114, 18, 37, 10, 10, 102, 111, 110, 116,
+        95, 99, 111, 108, 111, 114, 24, 8, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 9, 102,
+        111, 110, 116, 67, 111, 108, 111, 114, 18, 52, 10, 18, 112, 114, 105, 109, 97, 114, 121,
+        95, 99, 111, 108, 111, 114, 95, 100, 97, 114, 107, 24, 9, 32, 1, 40, 9, 66, 6, 24, 0, 40,
+        0, 80, 0, 82, 16, 112, 114, 105, 109, 97, 114, 121, 67, 111, 108, 111, 114, 68, 97, 114,
+        107, 18, 58, 10, 21, 98, 97, 99, 107, 103, 114, 111, 117, 110, 100, 95, 99, 111, 108, 111,
+        114, 95, 100, 97, 114, 107, 24, 10, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 19, 98,
+        97, 99, 107, 103, 114, 111, 117, 110, 100, 67, 111, 108, 111, 114, 68, 97, 114, 107, 18,
+        46, 10, 15, 119, 97, 114, 110, 95, 99, 111, 108, 111, 114, 95, 100, 97, 114, 107, 24, 11,
+        32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 13, 119, 97, 114, 110, 67, 111, 108, 111,
+        114, 68, 97, 114, 107, 18, 46, 10, 15, 102, 111, 110, 116, 95, 99, 111, 108, 111, 114, 95,
+        100, 97, 114, 107, 24, 12, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 13, 102, 111,
+        110, 116, 67, 111, 108, 111, 114, 68, 97, 114, 107, 18, 43, 10, 17, 100, 105, 115, 97, 98,
+        108, 101, 95, 119, 97, 116, 101, 114, 109, 97, 114, 107, 24, 13, 32, 1, 40, 8, 82, 16,
+        100, 105, 115, 97, 98, 108, 101, 87, 97, 116, 101, 114, 109, 97, 114, 107, 18, 25, 10, 8,
+        108, 111, 103, 111, 95, 117, 114, 108, 24, 14, 32, 1, 40, 9, 82, 7, 108, 111, 103, 111,
+        85, 114, 108, 18, 25, 10, 8, 105, 99, 111, 110, 95, 117, 114, 108, 24, 15, 32, 1, 40, 9,
+        82, 7, 105, 99, 111, 110, 85, 114, 108, 18, 34, 10, 13, 108, 111, 103, 111, 95, 117, 114,
+        108, 95, 100, 97, 114, 107, 24, 16, 32, 1, 40, 9, 82, 11, 108, 111, 103, 111, 85, 114,
+        108, 68, 97, 114, 107, 18, 34, 10, 13, 105, 99, 111, 110, 95, 117, 114, 108, 95, 100, 97,
+        114, 107, 24, 17, 32, 1, 40, 9, 82, 11, 105, 99, 111, 110, 85, 114, 108, 68, 97, 114, 107,
+        18, 25, 10, 8, 102, 111, 110, 116, 95, 117, 114, 108, 24, 18, 32, 1, 40, 9, 82, 7, 102,
+        111, 110, 116, 85, 114, 108>>
     )
   end
 
   field(:details, 1, type: Zitadel.V1.ObjectDetails)
   field(:primary_color, 2, type: :string, json_name: "primaryColor")
-  field(:secondary_color, 3, type: :string, json_name: "secondaryColor")
   field(:is_default, 4, type: :bool, json_name: "isDefault")
   field(:hide_login_name_suffix, 5, type: :bool, json_name: "hideLoginNameSuffix")
+  field(:warn_color, 6, type: :string, json_name: "warnColor")
+  field(:background_color, 7, type: :string, json_name: "backgroundColor")
+  field(:font_color, 8, type: :string, json_name: "fontColor")
+  field(:primary_color_dark, 9, type: :string, json_name: "primaryColorDark")
+  field(:background_color_dark, 10, type: :string, json_name: "backgroundColorDark")
+  field(:warn_color_dark, 11, type: :string, json_name: "warnColorDark")
+  field(:font_color_dark, 12, type: :string, json_name: "fontColorDark")
+  field(:disable_watermark, 13, type: :bool, json_name: "disableWatermark")
+  field(:logo_url, 14, type: :string, json_name: "logoUrl")
+  field(:icon_url, 15, type: :string, json_name: "iconUrl")
+  field(:logo_url_dark, 16, type: :string, json_name: "logoUrlDark")
+  field(:icon_url_dark, 17, type: :string, json_name: "iconUrlDark")
+  field(:font_url, 18, type: :string, json_name: "fontUrl")
 end
 
 defmodule Zitadel.Policy.V1.LoginPolicy do
@@ -160,6 +279,7 @@ defmodule Zitadel.Policy.V1.LoginPolicy do
   @type force_mfa :: boolean
   @type passwordless_type :: Zitadel.Policy.V1.PasswordlessType.t()
   @type is_default :: boolean
+  @type hide_password_reset :: boolean
   @type t :: %__MODULE__{
           details: details(),
           allow_username_password: allow_username_password(),
@@ -167,7 +287,8 @@ defmodule Zitadel.Policy.V1.LoginPolicy do
           allow_external_idp: allow_external_idp(),
           force_mfa: force_mfa(),
           passwordless_type: passwordless_type(),
-          is_default: is_default()
+          is_default: is_default(),
+          hide_password_reset: hide_password_reset()
         }
 
   defstruct [
@@ -177,7 +298,8 @@ defmodule Zitadel.Policy.V1.LoginPolicy do
     :allow_external_idp,
     :force_mfa,
     :passwordless_type,
-    :is_default
+    :is_default,
+    :hide_password_reset
   ]
 
   def descriptor do
@@ -202,7 +324,10 @@ defmodule Zitadel.Policy.V1.LoginPolicy do
         108, 101, 115, 115, 84, 121, 112, 101, 66, 6, 24, 0, 40, 0, 80, 0, 82, 16, 112, 97, 115,
         115, 119, 111, 114, 100, 108, 101, 115, 115, 84, 121, 112, 101, 18, 37, 10, 10, 105, 115,
         95, 100, 101, 102, 97, 117, 108, 116, 24, 7, 32, 1, 40, 8, 66, 6, 24, 0, 40, 0, 80, 0, 82,
-        9, 105, 115, 68, 101, 102, 97, 117, 108, 116>>
+        9, 105, 115, 68, 101, 102, 97, 117, 108, 116, 18, 54, 10, 19, 104, 105, 100, 101, 95, 112,
+        97, 115, 115, 119, 111, 114, 100, 95, 114, 101, 115, 101, 116, 24, 8, 32, 1, 40, 8, 66, 6,
+        24, 0, 40, 0, 80, 0, 82, 17, 104, 105, 100, 101, 80, 97, 115, 115, 119, 111, 114, 100, 82,
+        101, 115, 101, 116>>
     )
   end
 
@@ -219,6 +344,7 @@ defmodule Zitadel.Policy.V1.LoginPolicy do
   )
 
   field(:is_default, 7, type: :bool, json_name: "isDefault")
+  field(:hide_password_reset, 8, type: :bool, json_name: "hidePasswordReset")
 end
 
 defmodule Zitadel.Policy.V1.PasswordComplexityPolicy do

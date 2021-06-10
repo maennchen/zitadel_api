@@ -323,6 +323,8 @@ defmodule Zitadel.App.V1.OIDCConfig do
   @type id_token_role_assertion :: boolean
   @type id_token_userinfo_assertion :: boolean
   @type clock_skew :: Google.Protobuf.Duration.t() | nil
+  @type additional_origins :: [String.t()]
+  @type allowed_origins :: [String.t()]
   @type t :: %__MODULE__{
           redirect_uris: redirect_uris(),
           response_types: response_types(),
@@ -340,7 +342,9 @@ defmodule Zitadel.App.V1.OIDCConfig do
           access_token_role_assertion: access_token_role_assertion(),
           id_token_role_assertion: id_token_role_assertion(),
           id_token_userinfo_assertion: id_token_userinfo_assertion(),
-          clock_skew: clock_skew()
+          clock_skew: clock_skew(),
+          additional_origins: additional_origins(),
+          allowed_origins: allowed_origins()
         }
 
   defstruct [
@@ -360,7 +364,9 @@ defmodule Zitadel.App.V1.OIDCConfig do
     :access_token_role_assertion,
     :id_token_role_assertion,
     :id_token_userinfo_assertion,
-    :clock_skew
+    :clock_skew,
+    :additional_origins,
+    :allowed_origins
   ]
 
   def descriptor do
@@ -419,7 +425,12 @@ defmodule Zitadel.App.V1.OIDCConfig do
         111, 65, 115, 115, 101, 114, 116, 105, 111, 110, 18, 64, 10, 10, 99, 108, 111, 99, 107,
         95, 115, 107, 101, 119, 24, 17, 32, 1, 40, 11, 50, 25, 46, 103, 111, 111, 103, 108, 101,
         46, 112, 114, 111, 116, 111, 98, 117, 102, 46, 68, 117, 114, 97, 116, 105, 111, 110, 66,
-        6, 24, 0, 40, 0, 80, 0, 82, 9, 99, 108, 111, 99, 107, 83, 107, 101, 119>>
+        6, 24, 0, 40, 0, 80, 0, 82, 9, 99, 108, 111, 99, 107, 83, 107, 101, 119, 18, 53, 10, 18,
+        97, 100, 100, 105, 116, 105, 111, 110, 97, 108, 95, 111, 114, 105, 103, 105, 110, 115, 24,
+        18, 32, 3, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 17, 97, 100, 100, 105, 116, 105, 111,
+        110, 97, 108, 79, 114, 105, 103, 105, 110, 115, 18, 47, 10, 15, 97, 108, 108, 111, 119,
+        101, 100, 95, 111, 114, 105, 103, 105, 110, 115, 24, 19, 32, 3, 40, 9, 66, 6, 24, 0, 40,
+        0, 80, 0, 82, 14, 97, 108, 108, 111, 119, 101, 100, 79, 114, 105, 103, 105, 110, 115>>
     )
   end
 
@@ -476,6 +487,8 @@ defmodule Zitadel.App.V1.OIDCConfig do
   field(:id_token_role_assertion, 15, type: :bool, json_name: "idTokenRoleAssertion")
   field(:id_token_userinfo_assertion, 16, type: :bool, json_name: "idTokenUserinfoAssertion")
   field(:clock_skew, 17, type: Google.Protobuf.Duration, json_name: "clockSkew")
+  field(:additional_origins, 18, repeated: true, type: :string, json_name: "additionalOrigins")
+  field(:allowed_origins, 19, repeated: true, type: :string, json_name: "allowedOrigins")
 end
 
 defmodule Zitadel.App.V1.APIConfig do
