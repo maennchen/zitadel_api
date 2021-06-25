@@ -377,16 +377,26 @@ defmodule Zitadel.User.V1.Profile do
   @type display_name :: String.t()
   @type preferred_language :: String.t()
   @type gender :: Zitadel.User.V1.Gender.t()
+  @type avatar_url :: String.t()
   @type t :: %__MODULE__{
           first_name: first_name(),
           last_name: last_name(),
           nick_name: nick_name(),
           display_name: display_name(),
           preferred_language: preferred_language(),
-          gender: gender()
+          gender: gender(),
+          avatar_url: avatar_url()
         }
 
-  defstruct [:first_name, :last_name, :nick_name, :display_name, :preferred_language, :gender]
+  defstruct [
+    :first_name,
+    :last_name,
+    :nick_name,
+    :display_name,
+    :preferred_language,
+    :gender,
+    :avatar_url
+  ]
 
   def descriptor do
     # credo:disable-for-next-line
@@ -404,7 +414,8 @@ defmodule Zitadel.User.V1.Profile do
         97, 110, 103, 117, 97, 103, 101, 18, 55, 10, 6, 103, 101, 110, 100, 101, 114, 24, 6, 32,
         1, 40, 14, 50, 23, 46, 122, 105, 116, 97, 100, 101, 108, 46, 117, 115, 101, 114, 46, 118,
         49, 46, 71, 101, 110, 100, 101, 114, 66, 6, 24, 0, 40, 0, 80, 0, 82, 6, 103, 101, 110,
-        100, 101, 114>>
+        100, 101, 114, 18, 37, 10, 10, 97, 118, 97, 116, 97, 114, 95, 117, 114, 108, 24, 7, 32, 1,
+        40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 9, 97, 118, 97, 116, 97, 114, 85, 114, 108>>
     )
   end
 
@@ -414,6 +425,7 @@ defmodule Zitadel.User.V1.Profile do
   field(:display_name, 4, type: :string, json_name: "displayName")
   field(:preferred_language, 5, type: :string, json_name: "preferredLanguage")
   field(:gender, 6, type: Zitadel.User.V1.Gender, enum: true)
+  field(:avatar_url, 7, type: :string, json_name: "avatarUrl")
 end
 
 defmodule Zitadel.User.V1.Email do
@@ -1164,6 +1176,7 @@ defmodule Zitadel.User.V1.Session do
   @type login_name :: String.t()
   @type display_name :: String.t()
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type avatar_url :: String.t()
   @type t :: %__MODULE__{
           session_id: session_id(),
           agent_id: agent_id(),
@@ -1172,7 +1185,8 @@ defmodule Zitadel.User.V1.Session do
           user_name: user_name(),
           login_name: login_name(),
           display_name: display_name(),
-          details: details()
+          details: details(),
+          avatar_url: avatar_url()
         }
 
   defstruct [
@@ -1183,7 +1197,8 @@ defmodule Zitadel.User.V1.Session do
     :user_name,
     :login_name,
     :display_name,
-    :details
+    :details,
+    :avatar_url
   ]
 
   def descriptor do
@@ -1206,7 +1221,8 @@ defmodule Zitadel.User.V1.Session do
         115, 112, 108, 97, 121, 78, 97, 109, 101, 18, 51, 10, 7, 100, 101, 116, 97, 105, 108, 115,
         24, 9, 32, 1, 40, 11, 50, 25, 46, 122, 105, 116, 97, 100, 101, 108, 46, 118, 49, 46, 79,
         98, 106, 101, 99, 116, 68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101, 116, 97, 105,
-        108, 115>>
+        108, 115, 18, 37, 10, 10, 97, 118, 97, 116, 97, 114, 95, 117, 114, 108, 24, 10, 32, 1, 40,
+        9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 9, 97, 118, 97, 116, 97, 114, 85, 114, 108>>
     )
   end
 
@@ -1218,6 +1234,7 @@ defmodule Zitadel.User.V1.Session do
   field(:login_name, 7, type: :string, json_name: "loginName")
   field(:display_name, 8, type: :string, json_name: "displayName")
   field(:details, 9, type: Zitadel.V1.ObjectDetails)
+  field(:avatar_url, 10, type: :string, json_name: "avatarUrl")
 end
 
 defmodule Zitadel.User.V1.RefreshToken do
@@ -1306,6 +1323,7 @@ defmodule Zitadel.User.V1.UserGrant do
   @type project_id :: String.t()
   @type project_name :: String.t()
   @type project_grant_id :: String.t()
+  @type avatar_url :: String.t()
   @type t :: %__MODULE__{
           id: id(),
           details: details(),
@@ -1322,7 +1340,8 @@ defmodule Zitadel.User.V1.UserGrant do
           org_domain: org_domain(),
           project_id: project_id(),
           project_name: project_name(),
-          project_grant_id: project_grant_id()
+          project_grant_id: project_grant_id(),
+          avatar_url: avatar_url()
         }
 
   defstruct [
@@ -1341,7 +1360,8 @@ defmodule Zitadel.User.V1.UserGrant do
     :org_domain,
     :project_id,
     :project_name,
-    :project_grant_id
+    :project_grant_id,
+    :avatar_url
   ]
 
   def descriptor do
@@ -1377,7 +1397,8 @@ defmodule Zitadel.User.V1.UserGrant do
         80, 0, 82, 11, 112, 114, 111, 106, 101, 99, 116, 78, 97, 109, 101, 18, 48, 10, 16, 112,
         114, 111, 106, 101, 99, 116, 95, 103, 114, 97, 110, 116, 95, 105, 100, 24, 16, 32, 1, 40,
         9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 14, 112, 114, 111, 106, 101, 99, 116, 71, 114, 97, 110,
-        116, 73, 100>>
+        116, 73, 100, 18, 37, 10, 10, 97, 118, 97, 116, 97, 114, 95, 117, 114, 108, 24, 17, 32, 1,
+        40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 9, 97, 118, 97, 116, 97, 114, 85, 114, 108>>
     )
   end
 
@@ -1397,6 +1418,7 @@ defmodule Zitadel.User.V1.UserGrant do
   field(:project_id, 14, type: :string, json_name: "projectId")
   field(:project_name, 15, type: :string, json_name: "projectName")
   field(:project_grant_id, 16, type: :string, json_name: "projectGrantId")
+  field(:avatar_url, 17, type: :string, json_name: "avatarUrl")
 end
 
 defmodule Zitadel.User.V1.UserGrantQuery do

@@ -8,6 +8,7 @@ defmodule Zitadel.Member.V1.Member do
   @type first_name :: String.t()
   @type last_name :: String.t()
   @type display_name :: String.t()
+  @type avatar_url :: String.t()
   @type t :: %__MODULE__{
           user_id: user_id(),
           details: details(),
@@ -16,7 +17,8 @@ defmodule Zitadel.Member.V1.Member do
           email: email(),
           first_name: first_name(),
           last_name: last_name(),
-          display_name: display_name()
+          display_name: display_name(),
+          avatar_url: avatar_url()
         }
 
   defstruct [
@@ -27,7 +29,8 @@ defmodule Zitadel.Member.V1.Member do
     :email,
     :first_name,
     :last_name,
-    :display_name
+    :display_name,
+    :avatar_url
   ]
 
   def descriptor do
@@ -48,7 +51,9 @@ defmodule Zitadel.Member.V1.Member do
         35, 10, 9, 108, 97, 115, 116, 95, 110, 97, 109, 101, 24, 7, 32, 1, 40, 9, 66, 6, 24, 0,
         40, 0, 80, 0, 82, 8, 108, 97, 115, 116, 78, 97, 109, 101, 18, 41, 10, 12, 100, 105, 115,
         112, 108, 97, 121, 95, 110, 97, 109, 101, 24, 8, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0,
-        82, 11, 100, 105, 115, 112, 108, 97, 121, 78, 97, 109, 101>>
+        82, 11, 100, 105, 115, 112, 108, 97, 121, 78, 97, 109, 101, 18, 37, 10, 10, 97, 118, 97,
+        116, 97, 114, 95, 117, 114, 108, 24, 9, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 9,
+        97, 118, 97, 116, 97, 114, 85, 114, 108>>
     )
   end
 
@@ -60,6 +65,7 @@ defmodule Zitadel.Member.V1.Member do
   field(:first_name, 6, type: :string, json_name: "firstName")
   field(:last_name, 7, type: :string, json_name: "lastName")
   field(:display_name, 8, type: :string, json_name: "displayName")
+  field(:avatar_url, 9, type: :string, json_name: "avatarUrl")
 end
 
 defmodule Zitadel.Member.V1.SearchQuery do

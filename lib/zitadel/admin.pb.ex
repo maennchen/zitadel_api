@@ -3075,10 +3075,6 @@ defmodule Zitadel.Admin.V1.UpdatePasswordLockoutPolicyResponse do
 end
 
 defmodule Zitadel.Admin.V1.GetDefaultInitMessageTextRequest do
-  @moduledoc """
-  This is an empty request
-  """
-
   use Protobuf, syntax: :proto3
   @type language :: String.t()
   @type t :: %__MODULE__{
@@ -3211,10 +3207,6 @@ defmodule Zitadel.Admin.V1.SetDefaultInitMessageTextResponse do
 end
 
 defmodule Zitadel.Admin.V1.GetDefaultPasswordResetMessageTextRequest do
-  @moduledoc """
-  This is an empty request
-  """
-
   use Protobuf, syntax: :proto3
   @type language :: String.t()
   @type t :: %__MODULE__{
@@ -3348,10 +3340,6 @@ defmodule Zitadel.Admin.V1.SetDefaultPasswordResetMessageTextResponse do
 end
 
 defmodule Zitadel.Admin.V1.GetDefaultVerifyEmailMessageTextRequest do
-  @moduledoc """
-  This is an empty request
-  """
-
   use Protobuf, syntax: :proto3
   @type language :: String.t()
   @type t :: %__MODULE__{
@@ -3485,10 +3473,6 @@ defmodule Zitadel.Admin.V1.SetDefaultVerifyEmailMessageTextResponse do
 end
 
 defmodule Zitadel.Admin.V1.GetDefaultVerifyPhoneMessageTextRequest do
-  @moduledoc """
-  This is an empty request
-  """
-
   use Protobuf, syntax: :proto3
   @type language :: String.t()
   @type t :: %__MODULE__{
@@ -3622,10 +3606,6 @@ defmodule Zitadel.Admin.V1.SetDefaultVerifyPhoneMessageTextResponse do
 end
 
 defmodule Zitadel.Admin.V1.GetDefaultDomainClaimedMessageTextRequest do
-  @moduledoc """
-  This is an empty request
-  """
-
   use Protobuf, syntax: :proto3
   @type language :: String.t()
   @type t :: %__MODULE__{

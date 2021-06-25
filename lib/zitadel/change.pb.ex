@@ -7,6 +7,7 @@ defmodule Zitadel.Change.V1.Change do
   @type editor_display_name :: String.t()
   @type resource_owner_id :: String.t()
   @type editor_preferred_login_name :: String.t()
+  @type editor_avatar_url :: String.t()
   @type t :: %__MODULE__{
           change_date: change_date(),
           event_type: event_type(),
@@ -14,7 +15,8 @@ defmodule Zitadel.Change.V1.Change do
           editor_id: editor_id(),
           editor_display_name: editor_display_name(),
           resource_owner_id: resource_owner_id(),
-          editor_preferred_login_name: editor_preferred_login_name()
+          editor_preferred_login_name: editor_preferred_login_name(),
+          editor_avatar_url: editor_avatar_url()
         }
 
   defstruct [
@@ -24,7 +26,8 @@ defmodule Zitadel.Change.V1.Change do
     :editor_id,
     :editor_display_name,
     :resource_owner_id,
-    :editor_preferred_login_name
+    :editor_preferred_login_name,
+    :editor_avatar_url
   ]
 
   def descriptor do
@@ -49,7 +52,9 @@ defmodule Zitadel.Change.V1.Change do
         111, 114, 95, 112, 114, 101, 102, 101, 114, 114, 101, 100, 95, 108, 111, 103, 105, 110,
         95, 110, 97, 109, 101, 24, 7, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 24, 101, 100,
         105, 116, 111, 114, 80, 114, 101, 102, 101, 114, 114, 101, 100, 76, 111, 103, 105, 110,
-        78, 97, 109, 101>>
+        78, 97, 109, 101, 18, 50, 10, 17, 101, 100, 105, 116, 111, 114, 95, 97, 118, 97, 116, 97,
+        114, 95, 117, 114, 108, 24, 8, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 15, 101, 100,
+        105, 116, 111, 114, 65, 118, 97, 116, 97, 114, 85, 114, 108>>
     )
   end
 
@@ -60,6 +65,7 @@ defmodule Zitadel.Change.V1.Change do
   field(:editor_display_name, 5, type: :string, json_name: "editorDisplayName")
   field(:resource_owner_id, 6, type: :string, json_name: "resourceOwnerId")
   field(:editor_preferred_login_name, 7, type: :string, json_name: "editorPreferredLoginName")
+  field(:editor_avatar_url, 8, type: :string, json_name: "editorAvatarUrl")
 end
 
 defmodule Zitadel.Change.V1.ChangeQuery do
