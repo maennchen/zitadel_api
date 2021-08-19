@@ -444,40 +444,70 @@ defmodule Zitadel.Policy.V1.PasswordAgePolicy do
   field(:is_default, 4, type: :bool, json_name: "isDefault")
 end
 
-defmodule Zitadel.Policy.V1.PasswordLockoutPolicy do
+defmodule Zitadel.Policy.V1.LockoutPolicy do
   use Protobuf, syntax: :proto3
   @type details :: Zitadel.V1.ObjectDetails.t() | nil
-  @type max_attempts :: non_neg_integer
-  @type show_lockout_failure :: boolean
+  @type max_password_attempts :: non_neg_integer
   @type is_default :: boolean
   @type t :: %__MODULE__{
           details: details(),
-          max_attempts: max_attempts(),
-          show_lockout_failure: show_lockout_failure(),
+          max_password_attempts: max_password_attempts(),
           is_default: is_default()
         }
 
-  defstruct [:details, :max_attempts, :show_lockout_failure, :is_default]
+  defstruct [:details, :max_password_attempts, :is_default]
 
   def descriptor do
     # credo:disable-for-next-line
     Elixir.Google.Protobuf.DescriptorProto.decode(
-      <<10, 21, 80, 97, 115, 115, 119, 111, 114, 100, 76, 111, 99, 107, 111, 117, 116, 80, 111,
-        108, 105, 99, 121, 18, 51, 10, 7, 100, 101, 116, 97, 105, 108, 115, 24, 1, 32, 1, 40, 11,
-        50, 25, 46, 122, 105, 116, 97, 100, 101, 108, 46, 118, 49, 46, 79, 98, 106, 101, 99, 116,
-        68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101, 116, 97, 105, 108, 115, 18, 41, 10, 12,
-        109, 97, 120, 95, 97, 116, 116, 101, 109, 112, 116, 115, 24, 2, 32, 1, 40, 4, 66, 6, 24,
-        0, 40, 0, 80, 0, 82, 11, 109, 97, 120, 65, 116, 116, 101, 109, 112, 116, 115, 18, 56, 10,
-        20, 115, 104, 111, 119, 95, 108, 111, 99, 107, 111, 117, 116, 95, 102, 97, 105, 108, 117,
-        114, 101, 24, 3, 32, 1, 40, 8, 66, 6, 24, 0, 40, 0, 80, 0, 82, 18, 115, 104, 111, 119, 76,
-        111, 99, 107, 111, 117, 116, 70, 97, 105, 108, 117, 114, 101, 18, 37, 10, 10, 105, 115,
-        95, 100, 101, 102, 97, 117, 108, 116, 24, 4, 32, 1, 40, 8, 66, 6, 24, 0, 40, 0, 80, 0, 82,
-        9, 105, 115, 68, 101, 102, 97, 117, 108, 116>>
+      <<10, 13, 76, 111, 99, 107, 111, 117, 116, 80, 111, 108, 105, 99, 121, 18, 51, 10, 7, 100,
+        101, 116, 97, 105, 108, 115, 24, 1, 32, 1, 40, 11, 50, 25, 46, 122, 105, 116, 97, 100,
+        101, 108, 46, 118, 49, 46, 79, 98, 106, 101, 99, 116, 68, 101, 116, 97, 105, 108, 115, 82,
+        7, 100, 101, 116, 97, 105, 108, 115, 18, 58, 10, 21, 109, 97, 120, 95, 112, 97, 115, 115,
+        119, 111, 114, 100, 95, 97, 116, 116, 101, 109, 112, 116, 115, 24, 2, 32, 1, 40, 4, 66, 6,
+        24, 0, 40, 0, 80, 0, 82, 19, 109, 97, 120, 80, 97, 115, 115, 119, 111, 114, 100, 65, 116,
+        116, 101, 109, 112, 116, 115, 18, 37, 10, 10, 105, 115, 95, 100, 101, 102, 97, 117, 108,
+        116, 24, 4, 32, 1, 40, 8, 66, 6, 24, 0, 40, 0, 80, 0, 82, 9, 105, 115, 68, 101, 102, 97,
+        117, 108, 116>>
     )
   end
 
   field(:details, 1, type: Zitadel.V1.ObjectDetails)
-  field(:max_attempts, 2, type: :uint64, json_name: "maxAttempts")
-  field(:show_lockout_failure, 3, type: :bool, json_name: "showLockoutFailure")
+  field(:max_password_attempts, 2, type: :uint64, json_name: "maxPasswordAttempts")
+  field(:is_default, 4, type: :bool, json_name: "isDefault")
+end
+
+defmodule Zitadel.Policy.V1.PrivacyPolicy do
+  use Protobuf, syntax: :proto3
+  @type details :: Zitadel.V1.ObjectDetails.t() | nil
+  @type tos_link :: String.t()
+  @type privacy_link :: String.t()
+  @type is_default :: boolean
+  @type t :: %__MODULE__{
+          details: details(),
+          tos_link: tos_link(),
+          privacy_link: privacy_link(),
+          is_default: is_default()
+        }
+
+  defstruct [:details, :tos_link, :privacy_link, :is_default]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 13, 80, 114, 105, 118, 97, 99, 121, 80, 111, 108, 105, 99, 121, 18, 51, 10, 7, 100,
+        101, 116, 97, 105, 108, 115, 24, 1, 32, 1, 40, 11, 50, 25, 46, 122, 105, 116, 97, 100,
+        101, 108, 46, 118, 49, 46, 79, 98, 106, 101, 99, 116, 68, 101, 116, 97, 105, 108, 115, 82,
+        7, 100, 101, 116, 97, 105, 108, 115, 18, 25, 10, 8, 116, 111, 115, 95, 108, 105, 110, 107,
+        24, 2, 32, 1, 40, 9, 82, 7, 116, 111, 115, 76, 105, 110, 107, 18, 33, 10, 12, 112, 114,
+        105, 118, 97, 99, 121, 95, 108, 105, 110, 107, 24, 3, 32, 1, 40, 9, 82, 11, 112, 114, 105,
+        118, 97, 99, 121, 76, 105, 110, 107, 18, 29, 10, 10, 105, 115, 95, 100, 101, 102, 97, 117,
+        108, 116, 24, 4, 32, 1, 40, 8, 82, 9, 105, 115, 68, 101, 102, 97, 117, 108, 116>>
+    )
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+  field(:tos_link, 2, type: :string, json_name: "tosLink")
+  field(:privacy_link, 3, type: :string, json_name: "privacyLink")
   field(:is_default, 4, type: :bool, json_name: "isDefault")
 end

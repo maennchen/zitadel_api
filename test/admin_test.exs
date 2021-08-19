@@ -9,6 +9,6 @@ defmodule Zitadel.AdminTest do
   test "works" do
     assert {:ok, channel} = GRPC.Stub.connect("api.zitadel.ch:443", cred: %{ssl: []})
 
-    assert {:error, %GRPC.RPCError{status: 2}} = AdminStub.healthz(channel, Empty.new())
+    assert {:ok, %Zitadel.Admin.V1.HealthzResponse{}} = AdminStub.healthz(channel, Empty.new())
   end
 end

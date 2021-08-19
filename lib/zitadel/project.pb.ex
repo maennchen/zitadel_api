@@ -74,16 +74,30 @@ defmodule Zitadel.Project.V1.Project do
   """
   @type project_role_check :: boolean
 
+  @typedoc """
+  ZITADEL checks if the org of the user has permission to this project
+  """
+  @type has_project_check :: boolean
+
   @type t :: %__MODULE__{
           id: id(),
           details: details(),
           name: name(),
           state: state(),
           project_role_assertion: project_role_assertion(),
-          project_role_check: project_role_check()
+          project_role_check: project_role_check(),
+          has_project_check: has_project_check()
         }
 
-  defstruct [:id, :details, :name, :state, :project_role_assertion, :project_role_check]
+  defstruct [
+    :id,
+    :details,
+    :name,
+    :state,
+    :project_role_assertion,
+    :project_role_check,
+    :has_project_check
+  ]
 
   def descriptor do
     # credo:disable-for-next-line
@@ -101,7 +115,9 @@ defmodule Zitadel.Project.V1.Project do
         8, 82, 20, 112, 114, 111, 106, 101, 99, 116, 82, 111, 108, 101, 65, 115, 115, 101, 114,
         116, 105, 111, 110, 18, 44, 10, 18, 112, 114, 111, 106, 101, 99, 116, 95, 114, 111, 108,
         101, 95, 99, 104, 101, 99, 107, 24, 6, 32, 1, 40, 8, 82, 16, 112, 114, 111, 106, 101, 99,
-        116, 82, 111, 108, 101, 67, 104, 101, 99, 107>>
+        116, 82, 111, 108, 101, 67, 104, 101, 99, 107, 18, 42, 10, 17, 104, 97, 115, 95, 112, 114,
+        111, 106, 101, 99, 116, 95, 99, 104, 101, 99, 107, 24, 7, 32, 1, 40, 8, 82, 15, 104, 97,
+        115, 80, 114, 111, 106, 101, 99, 116, 67, 104, 101, 99, 107>>
     )
   end
 
@@ -111,6 +127,7 @@ defmodule Zitadel.Project.V1.Project do
   field(:state, 4, type: Zitadel.Project.V1.ProjectState, enum: true)
   field(:project_role_assertion, 5, type: :bool, json_name: "projectRoleAssertion")
   field(:project_role_check, 6, type: :bool, json_name: "projectRoleCheck")
+  field(:has_project_check, 7, type: :bool, json_name: "hasProjectCheck")
 end
 
 defmodule Zitadel.Project.V1.GrantedProject do

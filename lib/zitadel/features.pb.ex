@@ -51,6 +51,10 @@ defmodule Zitadel.Features.V1.Features do
   @type label_policy_private_label :: boolean
   @type label_policy_watermark :: boolean
   @type custom_text :: boolean
+  @type privacy_policy :: boolean
+  @type metadata_user :: boolean
+  @type custom_text_message :: boolean
+  @type custom_text_login :: boolean
   @type t :: %__MODULE__{
           details: details(),
           tier: tier(),
@@ -67,7 +71,11 @@ defmodule Zitadel.Features.V1.Features do
           login_policy_password_reset: login_policy_password_reset(),
           label_policy_private_label: label_policy_private_label(),
           label_policy_watermark: label_policy_watermark(),
-          custom_text: custom_text()
+          custom_text: custom_text(),
+          privacy_policy: privacy_policy(),
+          metadata_user: metadata_user(),
+          custom_text_message: custom_text_message(),
+          custom_text_login: custom_text_login()
         }
 
   defstruct [
@@ -86,7 +94,11 @@ defmodule Zitadel.Features.V1.Features do
     :login_policy_password_reset,
     :label_policy_private_label,
     :label_policy_watermark,
-    :custom_text
+    :custom_text,
+    :privacy_policy,
+    :metadata_user,
+    :custom_text_message,
+    :custom_text_login
   ]
 
   def descriptor do
@@ -134,7 +146,16 @@ defmodule Zitadel.Features.V1.Features do
         111, 108, 105, 99, 121, 95, 119, 97, 116, 101, 114, 109, 97, 114, 107, 24, 15, 32, 1, 40,
         8, 82, 20, 108, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121, 87, 97, 116, 101, 114, 109,
         97, 114, 107, 18, 31, 10, 11, 99, 117, 115, 116, 111, 109, 95, 116, 101, 120, 116, 24, 16,
-        32, 1, 40, 8, 82, 10, 99, 117, 115, 116, 111, 109, 84, 101, 120, 116>>
+        32, 1, 40, 8, 82, 10, 99, 117, 115, 116, 111, 109, 84, 101, 120, 116, 18, 37, 10, 14, 112,
+        114, 105, 118, 97, 99, 121, 95, 112, 111, 108, 105, 99, 121, 24, 17, 32, 1, 40, 8, 82, 13,
+        112, 114, 105, 118, 97, 99, 121, 80, 111, 108, 105, 99, 121, 18, 35, 10, 13, 109, 101,
+        116, 97, 100, 97, 116, 97, 95, 117, 115, 101, 114, 24, 18, 32, 1, 40, 8, 82, 12, 109, 101,
+        116, 97, 100, 97, 116, 97, 85, 115, 101, 114, 18, 46, 10, 19, 99, 117, 115, 116, 111, 109,
+        95, 116, 101, 120, 116, 95, 109, 101, 115, 115, 97, 103, 101, 24, 19, 32, 1, 40, 8, 82,
+        17, 99, 117, 115, 116, 111, 109, 84, 101, 120, 116, 77, 101, 115, 115, 97, 103, 101, 18,
+        42, 10, 17, 99, 117, 115, 116, 111, 109, 95, 116, 101, 120, 116, 95, 108, 111, 103, 105,
+        110, 24, 20, 32, 1, 40, 8, 82, 15, 99, 117, 115, 116, 111, 109, 84, 101, 120, 116, 76,
+        111, 103, 105, 110>>
     )
   end
 
@@ -154,6 +175,10 @@ defmodule Zitadel.Features.V1.Features do
   field(:label_policy_private_label, 14, type: :bool, json_name: "labelPolicyPrivateLabel")
   field(:label_policy_watermark, 15, type: :bool, json_name: "labelPolicyWatermark")
   field(:custom_text, 16, type: :bool, json_name: "customText")
+  field(:privacy_policy, 17, type: :bool, json_name: "privacyPolicy")
+  field(:metadata_user, 18, type: :bool, json_name: "metadataUser")
+  field(:custom_text_message, 19, type: :bool, json_name: "customTextMessage")
+  field(:custom_text_login, 20, type: :bool, json_name: "customTextLogin")
 end
 
 defmodule Zitadel.Features.V1.FeatureTier do
