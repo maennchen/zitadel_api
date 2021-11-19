@@ -55,6 +55,8 @@ defmodule Zitadel.Features.V1.Features do
   @type metadata_user :: boolean
   @type custom_text_message :: boolean
   @type custom_text_login :: boolean
+  @type lockout_policy :: boolean
+  @type actions :: boolean
   @type t :: %__MODULE__{
           details: details(),
           tier: tier(),
@@ -75,7 +77,9 @@ defmodule Zitadel.Features.V1.Features do
           privacy_policy: privacy_policy(),
           metadata_user: metadata_user(),
           custom_text_message: custom_text_message(),
-          custom_text_login: custom_text_login()
+          custom_text_login: custom_text_login(),
+          lockout_policy: lockout_policy(),
+          actions: actions()
         }
 
   defstruct [
@@ -98,7 +102,9 @@ defmodule Zitadel.Features.V1.Features do
     :privacy_policy,
     :metadata_user,
     :custom_text_message,
-    :custom_text_login
+    :custom_text_login,
+    :lockout_policy,
+    :actions
   ]
 
   def descriptor do
@@ -155,7 +161,10 @@ defmodule Zitadel.Features.V1.Features do
         17, 99, 117, 115, 116, 111, 109, 84, 101, 120, 116, 77, 101, 115, 115, 97, 103, 101, 18,
         42, 10, 17, 99, 117, 115, 116, 111, 109, 95, 116, 101, 120, 116, 95, 108, 111, 103, 105,
         110, 24, 20, 32, 1, 40, 8, 82, 15, 99, 117, 115, 116, 111, 109, 84, 101, 120, 116, 76,
-        111, 103, 105, 110>>
+        111, 103, 105, 110, 18, 37, 10, 14, 108, 111, 99, 107, 111, 117, 116, 95, 112, 111, 108,
+        105, 99, 121, 24, 21, 32, 1, 40, 8, 82, 13, 108, 111, 99, 107, 111, 117, 116, 80, 111,
+        108, 105, 99, 121, 18, 24, 10, 7, 97, 99, 116, 105, 111, 110, 115, 24, 22, 32, 1, 40, 8,
+        82, 7, 97, 99, 116, 105, 111, 110, 115>>
     )
   end
 
@@ -179,6 +188,8 @@ defmodule Zitadel.Features.V1.Features do
   field(:metadata_user, 18, type: :bool, json_name: "metadataUser")
   field(:custom_text_message, 19, type: :bool, json_name: "customTextMessage")
   field(:custom_text_login, 20, type: :bool, json_name: "customTextLogin")
+  field(:lockout_policy, 21, type: :bool, json_name: "lockoutPolicy")
+  field(:actions, 22, type: :bool)
 end
 
 defmodule Zitadel.Features.V1.FeatureTier do

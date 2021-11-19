@@ -27,6 +27,42 @@ defmodule Zitadel.Project.V1.ProjectState do
   field(:PROJECT_STATE_INACTIVE, 2)
 end
 
+defmodule Zitadel.Project.V1.PrivateLabelingSetting do
+  use Protobuf, enum: true, syntax: :proto3
+  @type private_labeling_setting_unspecified :: :PRIVATE_LABELING_SETTING_UNSPECIFIED
+  @type private_labeling_setting_enforce_project_resource_owner_policy ::
+          :PRIVATE_LABELING_SETTING_ENFORCE_PROJECT_RESOURCE_OWNER_POLICY
+  @type private_labeling_setting_allow_login_user_resource_owner_policy ::
+          :PRIVATE_LABELING_SETTING_ALLOW_LOGIN_USER_RESOURCE_OWNER_POLICY
+  @type t ::
+          integer
+          | private_labeling_setting_unspecified()
+          | private_labeling_setting_enforce_project_resource_owner_policy()
+          | private_labeling_setting_allow_login_user_resource_owner_policy()
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.EnumDescriptorProto.decode(
+      <<10, 22, 80, 114, 105, 118, 97, 116, 101, 76, 97, 98, 101, 108, 105, 110, 103, 83, 101,
+        116, 116, 105, 110, 103, 18, 40, 10, 36, 80, 82, 73, 86, 65, 84, 69, 95, 76, 65, 66, 69,
+        76, 73, 78, 71, 95, 83, 69, 84, 84, 73, 78, 71, 95, 85, 78, 83, 80, 69, 67, 73, 70, 73,
+        69, 68, 16, 0, 18, 66, 10, 62, 80, 82, 73, 86, 65, 84, 69, 95, 76, 65, 66, 69, 76, 73, 78,
+        71, 95, 83, 69, 84, 84, 73, 78, 71, 95, 69, 78, 70, 79, 82, 67, 69, 95, 80, 82, 79, 74,
+        69, 67, 84, 95, 82, 69, 83, 79, 85, 82, 67, 69, 95, 79, 87, 78, 69, 82, 95, 80, 79, 76,
+        73, 67, 89, 16, 1, 18, 67, 10, 63, 80, 82, 73, 86, 65, 84, 69, 95, 76, 65, 66, 69, 76, 73,
+        78, 71, 95, 83, 69, 84, 84, 73, 78, 71, 95, 65, 76, 76, 79, 87, 95, 76, 79, 71, 73, 78,
+        95, 85, 83, 69, 82, 95, 82, 69, 83, 79, 85, 82, 67, 69, 95, 79, 87, 78, 69, 82, 95, 80,
+        79, 76, 73, 67, 89, 16, 2>>
+    )
+  end
+
+  field(:PRIVATE_LABELING_SETTING_UNSPECIFIED, 0)
+
+  field(:PRIVATE_LABELING_SETTING_ENFORCE_PROJECT_RESOURCE_OWNER_POLICY, 1)
+
+  field(:PRIVATE_LABELING_SETTING_ALLOW_LOGIN_USER_RESOURCE_OWNER_POLICY, 2)
+end
+
 defmodule Zitadel.Project.V1.ProjectGrantState do
   use Protobuf, enum: true, syntax: :proto3
   @type project_grant_state_unspecified :: :PROJECT_GRANT_STATE_UNSPECIFIED
@@ -79,6 +115,11 @@ defmodule Zitadel.Project.V1.Project do
   """
   @type has_project_check :: boolean
 
+  @typedoc """
+  Defines from where the private labeling should be triggered
+  """
+  @type private_labeling_setting :: Zitadel.Project.V1.PrivateLabelingSetting.t()
+
   @type t :: %__MODULE__{
           id: id(),
           details: details(),
@@ -86,7 +127,8 @@ defmodule Zitadel.Project.V1.Project do
           state: state(),
           project_role_assertion: project_role_assertion(),
           project_role_check: project_role_check(),
-          has_project_check: has_project_check()
+          has_project_check: has_project_check(),
+          private_labeling_setting: private_labeling_setting()
         }
 
   defstruct [
@@ -96,7 +138,8 @@ defmodule Zitadel.Project.V1.Project do
     :state,
     :project_role_assertion,
     :project_role_check,
-    :has_project_check
+    :has_project_check,
+    :private_labeling_setting
   ]
 
   def descriptor do
@@ -117,7 +160,12 @@ defmodule Zitadel.Project.V1.Project do
         101, 95, 99, 104, 101, 99, 107, 24, 6, 32, 1, 40, 8, 82, 16, 112, 114, 111, 106, 101, 99,
         116, 82, 111, 108, 101, 67, 104, 101, 99, 107, 18, 42, 10, 17, 104, 97, 115, 95, 112, 114,
         111, 106, 101, 99, 116, 95, 99, 104, 101, 99, 107, 24, 7, 32, 1, 40, 8, 82, 15, 104, 97,
-        115, 80, 114, 111, 106, 101, 99, 116, 67, 104, 101, 99, 107>>
+        115, 80, 114, 111, 106, 101, 99, 116, 67, 104, 101, 99, 107, 18, 100, 10, 24, 112, 114,
+        105, 118, 97, 116, 101, 95, 108, 97, 98, 101, 108, 105, 110, 103, 95, 115, 101, 116, 116,
+        105, 110, 103, 24, 8, 32, 1, 40, 14, 50, 42, 46, 122, 105, 116, 97, 100, 101, 108, 46,
+        112, 114, 111, 106, 101, 99, 116, 46, 118, 49, 46, 80, 114, 105, 118, 97, 116, 101, 76,
+        97, 98, 101, 108, 105, 110, 103, 83, 101, 116, 116, 105, 110, 103, 82, 22, 112, 114, 105,
+        118, 97, 116, 101, 76, 97, 98, 101, 108, 105, 110, 103, 83, 101, 116, 116, 105, 110, 103>>
     )
   end
 
@@ -128,6 +176,12 @@ defmodule Zitadel.Project.V1.Project do
   field(:project_role_assertion, 5, type: :bool, json_name: "projectRoleAssertion")
   field(:project_role_check, 6, type: :bool, json_name: "projectRoleCheck")
   field(:has_project_check, 7, type: :bool, json_name: "hasProjectCheck")
+
+  field(:private_labeling_setting, 8,
+    type: Zitadel.Project.V1.PrivateLabelingSetting,
+    enum: true,
+    json_name: "privateLabelingSetting"
+  )
 end
 
 defmodule Zitadel.Project.V1.GrantedProject do
@@ -214,7 +268,11 @@ end
 defmodule Zitadel.Project.V1.ProjectQuery do
   use Protobuf, syntax: :proto3
   @type name_query :: Zitadel.Project.V1.ProjectNameQuery.t() | nil
-  @type query :: {:name_query, name_query()} | nil
+  @type project_resource_owner_query :: Zitadel.Project.V1.ProjectResourceOwnerQuery.t() | nil
+  @type query ::
+          {:name_query, name_query()}
+          | {:project_resource_owner_query, project_resource_owner_query()}
+          | nil
   @type t :: %__MODULE__{
           query: query()
         }
@@ -228,7 +286,13 @@ defmodule Zitadel.Project.V1.ProjectQuery do
         109, 101, 95, 113, 117, 101, 114, 121, 24, 1, 32, 1, 40, 11, 50, 36, 46, 122, 105, 116,
         97, 100, 101, 108, 46, 112, 114, 111, 106, 101, 99, 116, 46, 118, 49, 46, 80, 114, 111,
         106, 101, 99, 116, 78, 97, 109, 101, 81, 117, 101, 114, 121, 72, 0, 82, 9, 110, 97, 109,
-        101, 81, 117, 101, 114, 121, 66, 9, 10, 5, 113, 117, 101, 114, 121, 18, 0>>
+        101, 81, 117, 101, 114, 121, 18, 112, 10, 28, 112, 114, 111, 106, 101, 99, 116, 95, 114,
+        101, 115, 111, 117, 114, 99, 101, 95, 111, 119, 110, 101, 114, 95, 113, 117, 101, 114,
+        121, 24, 2, 32, 1, 40, 11, 50, 45, 46, 122, 105, 116, 97, 100, 101, 108, 46, 112, 114,
+        111, 106, 101, 99, 116, 46, 118, 49, 46, 80, 114, 111, 106, 101, 99, 116, 82, 101, 115,
+        111, 117, 114, 99, 101, 79, 119, 110, 101, 114, 81, 117, 101, 114, 121, 72, 0, 82, 25,
+        112, 114, 111, 106, 101, 99, 116, 82, 101, 115, 111, 117, 114, 99, 101, 79, 119, 110, 101,
+        114, 81, 117, 101, 114, 121, 66, 9, 10, 5, 113, 117, 101, 114, 121, 18, 0>>
     )
   end
 
@@ -237,6 +301,12 @@ defmodule Zitadel.Project.V1.ProjectQuery do
   field(:name_query, 1,
     type: Zitadel.Project.V1.ProjectNameQuery,
     json_name: "nameQuery",
+    oneof: 0
+  )
+
+  field(:project_resource_owner_query, 2,
+    type: Zitadel.Project.V1.ProjectResourceOwnerQuery,
+    json_name: "projectResourceOwnerQuery",
     oneof: 0
   )
 end
@@ -266,6 +336,28 @@ defmodule Zitadel.Project.V1.ProjectNameQuery do
 
   field(:name, 1, type: :string)
   field(:method, 2, type: Zitadel.V1.TextQueryMethod, enum: true)
+end
+
+defmodule Zitadel.Project.V1.ProjectResourceOwnerQuery do
+  use Protobuf, syntax: :proto3
+  @type resource_owner :: String.t()
+  @type t :: %__MODULE__{
+          resource_owner: resource_owner()
+        }
+
+  defstruct [:resource_owner]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 25, 80, 114, 111, 106, 101, 99, 116, 82, 101, 115, 111, 117, 114, 99, 101, 79, 119,
+        110, 101, 114, 81, 117, 101, 114, 121, 18, 45, 10, 14, 114, 101, 115, 111, 117, 114, 99,
+        101, 95, 111, 119, 110, 101, 114, 24, 1, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 13,
+        114, 101, 115, 111, 117, 114, 99, 101, 79, 119, 110, 101, 114>>
+    )
+  end
+
+  field(:resource_owner, 1, type: :string, json_name: "resourceOwner")
 end
 
 defmodule Zitadel.Project.V1.Role do
@@ -438,6 +530,77 @@ defmodule Zitadel.Project.V1.ProjectGrantQuery do
   )
 end
 
+defmodule Zitadel.Project.V1.AllProjectGrantQuery do
+  use Protobuf, syntax: :proto3
+  @type project_name_query :: Zitadel.Project.V1.GrantProjectNameQuery.t() | nil
+  @type role_key_query :: Zitadel.Project.V1.GrantRoleKeyQuery.t() | nil
+  @type project_id_query :: Zitadel.Project.V1.ProjectIDQuery.t() | nil
+  @type granted_org_id_query :: Zitadel.Project.V1.GrantedOrgIDQuery.t() | nil
+  @type query ::
+          {:project_name_query, project_name_query()}
+          | {:role_key_query, role_key_query()}
+          | {:project_id_query, project_id_query()}
+          | {:granted_org_id_query, granted_org_id_query()}
+          | nil
+  @type t :: %__MODULE__{
+          query: query()
+        }
+
+  defstruct [:query]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 20, 65, 108, 108, 80, 114, 111, 106, 101, 99, 116, 71, 114, 97, 110, 116, 81, 117,
+        101, 114, 121, 18, 89, 10, 18, 112, 114, 111, 106, 101, 99, 116, 95, 110, 97, 109, 101,
+        95, 113, 117, 101, 114, 121, 24, 1, 32, 1, 40, 11, 50, 41, 46, 122, 105, 116, 97, 100,
+        101, 108, 46, 112, 114, 111, 106, 101, 99, 116, 46, 118, 49, 46, 71, 114, 97, 110, 116,
+        80, 114, 111, 106, 101, 99, 116, 78, 97, 109, 101, 81, 117, 101, 114, 121, 72, 0, 82, 16,
+        112, 114, 111, 106, 101, 99, 116, 78, 97, 109, 101, 81, 117, 101, 114, 121, 18, 77, 10,
+        14, 114, 111, 108, 101, 95, 107, 101, 121, 95, 113, 117, 101, 114, 121, 24, 2, 32, 1, 40,
+        11, 50, 37, 46, 122, 105, 116, 97, 100, 101, 108, 46, 112, 114, 111, 106, 101, 99, 116,
+        46, 118, 49, 46, 71, 114, 97, 110, 116, 82, 111, 108, 101, 75, 101, 121, 81, 117, 101,
+        114, 121, 72, 0, 82, 12, 114, 111, 108, 101, 75, 101, 121, 81, 117, 101, 114, 121, 18, 78,
+        10, 16, 112, 114, 111, 106, 101, 99, 116, 95, 105, 100, 95, 113, 117, 101, 114, 121, 24,
+        3, 32, 1, 40, 11, 50, 34, 46, 122, 105, 116, 97, 100, 101, 108, 46, 112, 114, 111, 106,
+        101, 99, 116, 46, 118, 49, 46, 80, 114, 111, 106, 101, 99, 116, 73, 68, 81, 117, 101, 114,
+        121, 72, 0, 82, 14, 112, 114, 111, 106, 101, 99, 116, 73, 100, 81, 117, 101, 114, 121, 18,
+        88, 10, 20, 103, 114, 97, 110, 116, 101, 100, 95, 111, 114, 103, 95, 105, 100, 95, 113,
+        117, 101, 114, 121, 24, 4, 32, 1, 40, 11, 50, 37, 46, 122, 105, 116, 97, 100, 101, 108,
+        46, 112, 114, 111, 106, 101, 99, 116, 46, 118, 49, 46, 71, 114, 97, 110, 116, 101, 100,
+        79, 114, 103, 73, 68, 81, 117, 101, 114, 121, 72, 0, 82, 17, 103, 114, 97, 110, 116, 101,
+        100, 79, 114, 103, 73, 100, 81, 117, 101, 114, 121, 66, 9, 10, 5, 113, 117, 101, 114, 121,
+        18, 0>>
+    )
+  end
+
+  oneof(:query, 0)
+
+  field(:project_name_query, 1,
+    type: Zitadel.Project.V1.GrantProjectNameQuery,
+    json_name: "projectNameQuery",
+    oneof: 0
+  )
+
+  field(:role_key_query, 2,
+    type: Zitadel.Project.V1.GrantRoleKeyQuery,
+    json_name: "roleKeyQuery",
+    oneof: 0
+  )
+
+  field(:project_id_query, 3,
+    type: Zitadel.Project.V1.ProjectIDQuery,
+    json_name: "projectIdQuery",
+    oneof: 0
+  )
+
+  field(:granted_org_id_query, 4,
+    type: Zitadel.Project.V1.GrantedOrgIDQuery,
+    json_name: "grantedOrgIdQuery",
+    oneof: 0
+  )
+end
+
 defmodule Zitadel.Project.V1.GrantProjectNameQuery do
   use Protobuf, syntax: :proto3
   @type name :: String.t()
@@ -490,4 +653,47 @@ defmodule Zitadel.Project.V1.GrantRoleKeyQuery do
 
   field(:role_key, 1, type: :string, json_name: "roleKey")
   field(:method, 2, type: Zitadel.V1.TextQueryMethod, enum: true)
+end
+
+defmodule Zitadel.Project.V1.ProjectIDQuery do
+  use Protobuf, syntax: :proto3
+  @type project_id :: String.t()
+  @type t :: %__MODULE__{
+          project_id: project_id()
+        }
+
+  defstruct [:project_id]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 14, 80, 114, 111, 106, 101, 99, 116, 73, 68, 81, 117, 101, 114, 121, 18, 37, 10, 10,
+        112, 114, 111, 106, 101, 99, 116, 95, 105, 100, 24, 1, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0,
+        80, 0, 82, 9, 112, 114, 111, 106, 101, 99, 116, 73, 100>>
+    )
+  end
+
+  field(:project_id, 1, type: :string, json_name: "projectId")
+end
+
+defmodule Zitadel.Project.V1.GrantedOrgIDQuery do
+  use Protobuf, syntax: :proto3
+  @type granted_org_id :: String.t()
+  @type t :: %__MODULE__{
+          granted_org_id: granted_org_id()
+        }
+
+  defstruct [:granted_org_id]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 17, 71, 114, 97, 110, 116, 101, 100, 79, 114, 103, 73, 68, 81, 117, 101, 114, 121, 18,
+        44, 10, 14, 103, 114, 97, 110, 116, 101, 100, 95, 111, 114, 103, 95, 105, 100, 24, 1, 32,
+        1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 12, 103, 114, 97, 110, 116, 101, 100, 79, 114,
+        103, 73, 100>>
+    )
+  end
+
+  field(:granted_org_id, 1, type: :string, json_name: "grantedOrgId")
 end

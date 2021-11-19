@@ -33,7 +33,7 @@ store_lib () {
 }
 
 echo >&2 "Download protofiles"
-ZITADEL_FILES="admin.proto app.proto auth.proto auth_n_key.proto change.proto features.proto idp.proto management.proto member.proto message.proto metadata.proto object.proto options.proto org.proto policy.proto project.proto text.proto user.proto"
+ZITADEL_FILES="action.proto admin.proto app.proto auth.proto auth_n_key.proto change.proto features.proto idp.proto management.proto member.proto message.proto metadata.proto object.proto options.proto org.proto policy.proto project.proto text.proto user.proto"
 for ZITADEL_FILE in $ZITADEL_FILES; do
   store_lib zitadel "https://raw.githubusercontent.com/caos/zitadel/$API_VERSION/proto/zitadel/$ZITADEL_FILE"
 done
@@ -45,7 +45,7 @@ GOOGLE_API_FILES="annotations.proto http.proto"
 for GOOGLE_API_FILE in $GOOGLE_API_FILES; do
   store_lib "google/api" "https://raw.githubusercontent.com/googleapis/googleapis/master/google/api/$GOOGLE_API_FILE"
 done
-store_lib "validate" "https://raw.githubusercontent.com/envoyproxy/protoc-gen-validate/v0.4.1/validate/validate.proto"
+store_lib "validate" "https://raw.githubusercontent.com/envoyproxy/protoc-gen-validate/v0.6.2/validate/validate.proto"
 
 if command -v protoc-gen-elixir > /dev/null; then
   echo >&2 "Elixir Protoc Plugin already installed"

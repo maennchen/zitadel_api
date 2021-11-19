@@ -50,26 +50,30 @@ defmodule Zitadel.Idp.V1.IDPType do
 
   use Protobuf, enum: true, syntax: :proto3
   @type idp_type_unspecified :: :IDP_TYPE_UNSPECIFIED
+  @type idp_type_oidc :: :IDP_TYPE_OIDC
 
   @typedoc """
   PLANNED: IDP_TYPE_SAML
   """
-  @type idp_type_oidc :: :IDP_TYPE_OIDC
+  @type idp_type_jwt :: :IDP_TYPE_JWT
 
-  @type t :: integer | idp_type_unspecified() | idp_type_oidc()
+  @type t :: integer | idp_type_unspecified() | idp_type_oidc() | idp_type_jwt()
 
   def descriptor do
     # credo:disable-for-next-line
     Elixir.Google.Protobuf.EnumDescriptorProto.decode(
       <<10, 7, 73, 68, 80, 84, 121, 112, 101, 18, 24, 10, 20, 73, 68, 80, 95, 84, 89, 80, 69, 95,
         85, 78, 83, 80, 69, 67, 73, 70, 73, 69, 68, 16, 0, 18, 17, 10, 13, 73, 68, 80, 95, 84, 89,
-        80, 69, 95, 79, 73, 68, 67, 16, 1>>
+        80, 69, 95, 79, 73, 68, 67, 16, 1, 18, 16, 10, 12, 73, 68, 80, 95, 84, 89, 80, 69, 95, 74,
+        87, 84, 16, 3>>
     )
   end
 
   field(:IDP_TYPE_UNSPECIFIED, 0)
 
   field(:IDP_TYPE_OIDC, 1)
+
+  field(:IDP_TYPE_JWT, 3)
 end
 
 defmodule Zitadel.Idp.V1.IDPOwnerType do
@@ -171,7 +175,9 @@ defmodule Zitadel.Idp.V1.IDP do
   @type styling_type :: Zitadel.Idp.V1.IDPStylingType.t()
   @type owner :: Zitadel.Idp.V1.IDPOwnerType.t()
   @type oidc_config :: Zitadel.Idp.V1.OIDCConfig.t() | nil
-  @type config :: {:oidc_config, oidc_config()} | nil
+  @type jwt_config :: Zitadel.Idp.V1.JWTConfig.t() | nil
+  @type auto_register :: boolean
+  @type config :: {:oidc_config, oidc_config()} | {:jwt_config, jwt_config()} | nil
   @type t :: %__MODULE__{
           id: id(),
           details: details(),
@@ -179,10 +185,11 @@ defmodule Zitadel.Idp.V1.IDP do
           name: name(),
           styling_type: styling_type(),
           owner: owner(),
+          auto_register: auto_register(),
           config: config()
         }
 
-  defstruct [:config, :id, :details, :state, :name, :styling_type, :owner]
+  defstruct [:config, :id, :details, :state, :name, :styling_type, :owner, :auto_register]
 
   def descriptor do
     # credo:disable-for-next-line
@@ -204,7 +211,12 @@ defmodule Zitadel.Idp.V1.IDP do
         5, 111, 119, 110, 101, 114, 18, 61, 10, 11, 111, 105, 100, 99, 95, 99, 111, 110, 102, 105,
         103, 24, 7, 32, 1, 40, 11, 50, 26, 46, 122, 105, 116, 97, 100, 101, 108, 46, 105, 100,
         112, 46, 118, 49, 46, 79, 73, 68, 67, 67, 111, 110, 102, 105, 103, 72, 0, 82, 10, 111,
-        105, 100, 99, 67, 111, 110, 102, 105, 103, 66, 8, 10, 6, 99, 111, 110, 102, 105, 103>>
+        105, 100, 99, 67, 111, 110, 102, 105, 103, 18, 58, 10, 10, 106, 119, 116, 95, 99, 111,
+        110, 102, 105, 103, 24, 9, 32, 1, 40, 11, 50, 25, 46, 122, 105, 116, 97, 100, 101, 108,
+        46, 105, 100, 112, 46, 118, 49, 46, 74, 87, 84, 67, 111, 110, 102, 105, 103, 72, 0, 82, 9,
+        106, 119, 116, 67, 111, 110, 102, 105, 103, 18, 35, 10, 13, 97, 117, 116, 111, 95, 114,
+        101, 103, 105, 115, 116, 101, 114, 24, 8, 32, 1, 40, 8, 82, 12, 97, 117, 116, 111, 82,
+        101, 103, 105, 115, 116, 101, 114, 66, 8, 10, 6, 99, 111, 110, 102, 105, 103>>
     )
   end
 
@@ -223,6 +235,8 @@ defmodule Zitadel.Idp.V1.IDP do
 
   field(:owner, 6, type: Zitadel.Idp.V1.IDPOwnerType, enum: true)
   field(:oidc_config, 7, type: Zitadel.Idp.V1.OIDCConfig, json_name: "oidcConfig", oneof: 0)
+  field(:jwt_config, 9, type: Zitadel.Idp.V1.JWTConfig, json_name: "jwtConfig", oneof: 0)
+  field(:auto_register, 8, type: :bool, json_name: "autoRegister")
 end
 
 defmodule Zitadel.Idp.V1.IDPUserLink do
@@ -356,6 +370,42 @@ defmodule Zitadel.Idp.V1.OIDCConfig do
     enum: true,
     json_name: "usernameMapping"
   )
+end
+
+defmodule Zitadel.Idp.V1.JWTConfig do
+  use Protobuf, syntax: :proto3
+  @type jwt_endpoint :: String.t()
+  @type issuer :: String.t()
+  @type keys_endpoint :: String.t()
+  @type header_name :: String.t()
+  @type t :: %__MODULE__{
+          jwt_endpoint: jwt_endpoint(),
+          issuer: issuer(),
+          keys_endpoint: keys_endpoint(),
+          header_name: header_name()
+        }
+
+  defstruct [:jwt_endpoint, :issuer, :keys_endpoint, :header_name]
+
+  def descriptor do
+    # credo:disable-for-next-line
+    Elixir.Google.Protobuf.DescriptorProto.decode(
+      <<10, 9, 74, 87, 84, 67, 111, 110, 102, 105, 103, 18, 41, 10, 12, 106, 119, 116, 95, 101,
+        110, 100, 112, 111, 105, 110, 116, 24, 1, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82,
+        11, 106, 119, 116, 69, 110, 100, 112, 111, 105, 110, 116, 18, 30, 10, 6, 105, 115, 115,
+        117, 101, 114, 24, 2, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 6, 105, 115, 115, 117,
+        101, 114, 18, 43, 10, 13, 107, 101, 121, 115, 95, 101, 110, 100, 112, 111, 105, 110, 116,
+        24, 3, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 12, 107, 101, 121, 115, 69, 110, 100,
+        112, 111, 105, 110, 116, 18, 39, 10, 11, 104, 101, 97, 100, 101, 114, 95, 110, 97, 109,
+        101, 24, 4, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 10, 104, 101, 97, 100, 101, 114,
+        78, 97, 109, 101>>
+    )
+  end
+
+  field(:jwt_endpoint, 1, type: :string, json_name: "jwtEndpoint")
+  field(:issuer, 2, type: :string)
+  field(:keys_endpoint, 3, type: :string, json_name: "keysEndpoint")
+  field(:header_name, 4, type: :string, json_name: "headerName")
 end
 
 defmodule Zitadel.Idp.V1.IDPIDQuery do

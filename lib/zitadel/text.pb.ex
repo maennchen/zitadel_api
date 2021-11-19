@@ -2372,14 +2372,16 @@ defmodule Zitadel.Text.V1.PasswordlessRegistrationDoneScreenText do
   @type description :: String.t()
   @type next_button_text :: String.t()
   @type cancel_button_text :: String.t()
+  @type description_close :: String.t()
   @type t :: %__MODULE__{
           title: title(),
           description: description(),
           next_button_text: next_button_text(),
-          cancel_button_text: cancel_button_text()
+          cancel_button_text: cancel_button_text(),
+          description_close: description_close()
         }
 
-  defstruct [:title, :description, :next_button_text, :cancel_button_text]
+  defstruct [:title, :description, :next_button_text, :cancel_button_text, :description_close]
 
   def descriptor do
     # credo:disable-for-next-line
@@ -2394,7 +2396,10 @@ defmodule Zitadel.Text.V1.PasswordlessRegistrationDoneScreenText do
         40, 0, 80, 0, 82, 14, 110, 101, 120, 116, 66, 117, 116, 116, 111, 110, 84, 101, 120, 116,
         18, 52, 10, 18, 99, 97, 110, 99, 101, 108, 95, 98, 117, 116, 116, 111, 110, 95, 116, 101,
         120, 116, 24, 4, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 16, 99, 97, 110, 99, 101,
-        108, 66, 117, 116, 116, 111, 110, 84, 101, 120, 116>>
+        108, 66, 117, 116, 116, 111, 110, 84, 101, 120, 116, 18, 51, 10, 17, 100, 101, 115, 99,
+        114, 105, 112, 116, 105, 111, 110, 95, 99, 108, 111, 115, 101, 24, 5, 32, 1, 40, 9, 66, 6,
+        24, 0, 40, 0, 80, 0, 82, 16, 100, 101, 115, 99, 114, 105, 112, 116, 105, 111, 110, 67,
+        108, 111, 115, 101>>
     )
   end
 
@@ -2402,4 +2407,5 @@ defmodule Zitadel.Text.V1.PasswordlessRegistrationDoneScreenText do
   field(:description, 2, type: :string)
   field(:next_button_text, 3, type: :string, json_name: "nextButtonText")
   field(:cancel_button_text, 4, type: :string, json_name: "cancelButtonText")
+  field(:description_close, 5, type: :string, json_name: "descriptionClose")
 end
