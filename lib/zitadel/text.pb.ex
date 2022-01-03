@@ -8,6 +8,7 @@ defmodule Zitadel.Text.V1.MessageCustomText do
   @type text :: String.t()
   @type button_text :: String.t()
   @type footer_text :: String.t()
+  @type is_default :: boolean
   @type t :: %__MODULE__{
           details: details(),
           title: title(),
@@ -16,7 +17,8 @@ defmodule Zitadel.Text.V1.MessageCustomText do
           greeting: greeting(),
           text: text(),
           button_text: button_text(),
-          footer_text: footer_text()
+          footer_text: footer_text(),
+          is_default: is_default()
         }
 
   defstruct [
@@ -27,7 +29,8 @@ defmodule Zitadel.Text.V1.MessageCustomText do
     :greeting,
     :text,
     :button_text,
-    :footer_text
+    :footer_text,
+    :is_default
   ]
 
   def descriptor do
@@ -48,7 +51,8 @@ defmodule Zitadel.Text.V1.MessageCustomText do
         24, 7, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 10, 98, 117, 116, 116, 111, 110, 84,
         101, 120, 116, 18, 39, 10, 11, 102, 111, 111, 116, 101, 114, 95, 116, 101, 120, 116, 24,
         8, 32, 1, 40, 9, 66, 6, 24, 0, 40, 0, 80, 0, 82, 10, 102, 111, 111, 116, 101, 114, 84,
-        101, 120, 116>>
+        101, 120, 116, 18, 29, 10, 10, 105, 115, 95, 100, 101, 102, 97, 117, 108, 116, 24, 9, 32,
+        1, 40, 8, 82, 9, 105, 115, 68, 101, 102, 97, 117, 108, 116>>
     )
   end
 
@@ -60,6 +64,7 @@ defmodule Zitadel.Text.V1.MessageCustomText do
   field(:text, 6, type: :string)
   field(:button_text, 7, type: :string, json_name: "buttonText")
   field(:footer_text, 8, type: :string, json_name: "footerText")
+  field(:is_default, 9, type: :bool, json_name: "isDefault")
 end
 
 defmodule Zitadel.Text.V1.LoginCustomText do
