@@ -1,171 +1,443 @@
 defmodule Zitadel.Features.V1.FeaturesState do
-  use Protobuf, enum: true, syntax: :proto3
-  @type features_state_active :: :FEATURES_STATE_ACTIVE
-  @type features_state_action_required :: :FEATURES_STATE_ACTION_REQUIRED
-  @type features_state_canceled :: :FEATURES_STATE_CANCELED
-  @type features_state_grandfathered :: :FEATURES_STATE_GRANDFATHERED
-  @type t ::
-          integer
-          | features_state_active()
-          | features_state_action_required()
-          | features_state_canceled()
-          | features_state_grandfathered()
+  use Protobuf, enum: true, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
 
   def descriptor do
     # credo:disable-for-next-line
-    Elixir.Google.Protobuf.EnumDescriptorProto.decode(
-      <<10, 13, 70, 101, 97, 116, 117, 114, 101, 115, 83, 116, 97, 116, 101, 18, 25, 10, 21, 70,
-        69, 65, 84, 85, 82, 69, 83, 95, 83, 84, 65, 84, 69, 95, 65, 67, 84, 73, 86, 69, 16, 0, 18,
-        34, 10, 30, 70, 69, 65, 84, 85, 82, 69, 83, 95, 83, 84, 65, 84, 69, 95, 65, 67, 84, 73,
-        79, 78, 95, 82, 69, 81, 85, 73, 82, 69, 68, 16, 1, 18, 27, 10, 23, 70, 69, 65, 84, 85, 82,
-        69, 83, 95, 83, 84, 65, 84, 69, 95, 67, 65, 78, 67, 69, 76, 69, 68, 16, 2, 18, 32, 10, 28,
-        70, 69, 65, 84, 85, 82, 69, 83, 95, 83, 84, 65, 84, 69, 95, 71, 82, 65, 78, 68, 70, 65,
-        84, 72, 69, 82, 69, 68, 16, 3>>
-    )
+    %Google.Protobuf.EnumDescriptorProto{
+      __unknown_fields__: [],
+      name: "FeaturesState",
+      options: nil,
+      reserved_name: [],
+      reserved_range: [],
+      value: [
+        %Google.Protobuf.EnumValueDescriptorProto{
+          __unknown_fields__: [],
+          name: "FEATURES_STATE_ACTIVE",
+          number: 0,
+          options: nil
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          __unknown_fields__: [],
+          name: "FEATURES_STATE_ACTION_REQUIRED",
+          number: 1,
+          options: nil
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          __unknown_fields__: [],
+          name: "FEATURES_STATE_CANCELED",
+          number: 2,
+          options: nil
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          __unknown_fields__: [],
+          name: "FEATURES_STATE_GRANDFATHERED",
+          number: 3,
+          options: nil
+        }
+      ]
+    }
   end
 
   field(:FEATURES_STATE_ACTIVE, 0)
-
   field(:FEATURES_STATE_ACTION_REQUIRED, 1)
-
   field(:FEATURES_STATE_CANCELED, 2)
-
   field(:FEATURES_STATE_GRANDFATHERED, 3)
 end
 
-defmodule Zitadel.Features.V1.Features do
-  use Protobuf, syntax: :proto3
-  @type details :: Zitadel.V1.ObjectDetails.t() | nil
-  @type tier :: Zitadel.Features.V1.FeatureTier.t() | nil
-  @type is_default :: boolean
-  @type audit_log_retention :: Google.Protobuf.Duration.t() | nil
-  @type login_policy_username_login :: boolean
-  @type login_policy_registration :: boolean
-  @type login_policy_idp :: boolean
-  @type login_policy_factors :: boolean
-  @type login_policy_passwordless :: boolean
-  @type password_complexity_policy :: boolean
-  @type label_policy :: boolean
-  @type custom_domain :: boolean
-  @type login_policy_password_reset :: boolean
-  @type label_policy_private_label :: boolean
-  @type label_policy_watermark :: boolean
-  @type custom_text :: boolean
-  @type privacy_policy :: boolean
-  @type metadata_user :: boolean
-  @type custom_text_message :: boolean
-  @type custom_text_login :: boolean
-  @type lockout_policy :: boolean
-  @type actions :: boolean
-  @type t :: %__MODULE__{
-          details: details(),
-          tier: tier(),
-          is_default: is_default(),
-          audit_log_retention: audit_log_retention(),
-          login_policy_username_login: login_policy_username_login(),
-          login_policy_registration: login_policy_registration(),
-          login_policy_idp: login_policy_idp(),
-          login_policy_factors: login_policy_factors(),
-          login_policy_passwordless: login_policy_passwordless(),
-          password_complexity_policy: password_complexity_policy(),
-          label_policy: label_policy(),
-          custom_domain: custom_domain(),
-          login_policy_password_reset: login_policy_password_reset(),
-          label_policy_private_label: label_policy_private_label(),
-          label_policy_watermark: label_policy_watermark(),
-          custom_text: custom_text(),
-          privacy_policy: privacy_policy(),
-          metadata_user: metadata_user(),
-          custom_text_message: custom_text_message(),
-          custom_text_login: custom_text_login(),
-          lockout_policy: lockout_policy(),
-          actions: actions()
-        }
-
-  defstruct [
-    :details,
-    :tier,
-    :is_default,
-    :audit_log_retention,
-    :login_policy_username_login,
-    :login_policy_registration,
-    :login_policy_idp,
-    :login_policy_factors,
-    :login_policy_passwordless,
-    :password_complexity_policy,
-    :label_policy,
-    :custom_domain,
-    :login_policy_password_reset,
-    :label_policy_private_label,
-    :label_policy_watermark,
-    :custom_text,
-    :privacy_policy,
-    :metadata_user,
-    :custom_text_message,
-    :custom_text_login,
-    :lockout_policy,
-    :actions
-  ]
+defmodule Zitadel.Features.V1.ActionsAllowed do
+  use Protobuf, enum: true, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
 
   def descriptor do
     # credo:disable-for-next-line
-    Elixir.Google.Protobuf.DescriptorProto.decode(
-      <<10, 8, 70, 101, 97, 116, 117, 114, 101, 115, 18, 51, 10, 7, 100, 101, 116, 97, 105, 108,
-        115, 24, 1, 32, 1, 40, 11, 50, 25, 46, 122, 105, 116, 97, 100, 101, 108, 46, 118, 49, 46,
-        79, 98, 106, 101, 99, 116, 68, 101, 116, 97, 105, 108, 115, 82, 7, 100, 101, 116, 97, 105,
-        108, 115, 18, 52, 10, 4, 116, 105, 101, 114, 24, 2, 32, 1, 40, 11, 50, 32, 46, 122, 105,
-        116, 97, 100, 101, 108, 46, 102, 101, 97, 116, 117, 114, 101, 115, 46, 118, 49, 46, 70,
-        101, 97, 116, 117, 114, 101, 84, 105, 101, 114, 82, 4, 116, 105, 101, 114, 18, 29, 10, 10,
-        105, 115, 95, 100, 101, 102, 97, 117, 108, 116, 24, 3, 32, 1, 40, 8, 82, 9, 105, 115, 68,
-        101, 102, 97, 117, 108, 116, 18, 73, 10, 19, 97, 117, 100, 105, 116, 95, 108, 111, 103,
-        95, 114, 101, 116, 101, 110, 116, 105, 111, 110, 24, 4, 32, 1, 40, 11, 50, 25, 46, 103,
-        111, 111, 103, 108, 101, 46, 112, 114, 111, 116, 111, 98, 117, 102, 46, 68, 117, 114, 97,
-        116, 105, 111, 110, 82, 17, 97, 117, 100, 105, 116, 76, 111, 103, 82, 101, 116, 101, 110,
-        116, 105, 111, 110, 18, 61, 10, 27, 108, 111, 103, 105, 110, 95, 112, 111, 108, 105, 99,
-        121, 95, 117, 115, 101, 114, 110, 97, 109, 101, 95, 108, 111, 103, 105, 110, 24, 5, 32, 1,
-        40, 8, 82, 24, 108, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 85, 115, 101, 114,
-        110, 97, 109, 101, 76, 111, 103, 105, 110, 18, 58, 10, 25, 108, 111, 103, 105, 110, 95,
-        112, 111, 108, 105, 99, 121, 95, 114, 101, 103, 105, 115, 116, 114, 97, 116, 105, 111,
-        110, 24, 6, 32, 1, 40, 8, 82, 23, 108, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 82,
-        101, 103, 105, 115, 116, 114, 97, 116, 105, 111, 110, 18, 40, 10, 16, 108, 111, 103, 105,
-        110, 95, 112, 111, 108, 105, 99, 121, 95, 105, 100, 112, 24, 7, 32, 1, 40, 8, 82, 14, 108,
-        111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 73, 100, 112, 18, 48, 10, 20, 108, 111,
-        103, 105, 110, 95, 112, 111, 108, 105, 99, 121, 95, 102, 97, 99, 116, 111, 114, 115, 24,
-        8, 32, 1, 40, 8, 82, 18, 108, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 70, 97, 99,
-        116, 111, 114, 115, 18, 58, 10, 25, 108, 111, 103, 105, 110, 95, 112, 111, 108, 105, 99,
-        121, 95, 112, 97, 115, 115, 119, 111, 114, 100, 108, 101, 115, 115, 24, 9, 32, 1, 40, 8,
-        82, 23, 108, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 80, 97, 115, 115, 119, 111,
-        114, 100, 108, 101, 115, 115, 18, 60, 10, 26, 112, 97, 115, 115, 119, 111, 114, 100, 95,
-        99, 111, 109, 112, 108, 101, 120, 105, 116, 121, 95, 112, 111, 108, 105, 99, 121, 24, 10,
-        32, 1, 40, 8, 82, 24, 112, 97, 115, 115, 119, 111, 114, 100, 67, 111, 109, 112, 108, 101,
-        120, 105, 116, 121, 80, 111, 108, 105, 99, 121, 18, 33, 10, 12, 108, 97, 98, 101, 108, 95,
-        112, 111, 108, 105, 99, 121, 24, 11, 32, 1, 40, 8, 82, 11, 108, 97, 98, 101, 108, 80, 111,
-        108, 105, 99, 121, 18, 35, 10, 13, 99, 117, 115, 116, 111, 109, 95, 100, 111, 109, 97,
-        105, 110, 24, 12, 32, 1, 40, 8, 82, 12, 99, 117, 115, 116, 111, 109, 68, 111, 109, 97,
-        105, 110, 18, 61, 10, 27, 108, 111, 103, 105, 110, 95, 112, 111, 108, 105, 99, 121, 95,
-        112, 97, 115, 115, 119, 111, 114, 100, 95, 114, 101, 115, 101, 116, 24, 13, 32, 1, 40, 8,
-        82, 24, 108, 111, 103, 105, 110, 80, 111, 108, 105, 99, 121, 80, 97, 115, 115, 119, 111,
-        114, 100, 82, 101, 115, 101, 116, 18, 59, 10, 26, 108, 97, 98, 101, 108, 95, 112, 111,
-        108, 105, 99, 121, 95, 112, 114, 105, 118, 97, 116, 101, 95, 108, 97, 98, 101, 108, 24,
-        14, 32, 1, 40, 8, 82, 23, 108, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121, 80, 114, 105,
-        118, 97, 116, 101, 76, 97, 98, 101, 108, 18, 52, 10, 22, 108, 97, 98, 101, 108, 95, 112,
-        111, 108, 105, 99, 121, 95, 119, 97, 116, 101, 114, 109, 97, 114, 107, 24, 15, 32, 1, 40,
-        8, 82, 20, 108, 97, 98, 101, 108, 80, 111, 108, 105, 99, 121, 87, 97, 116, 101, 114, 109,
-        97, 114, 107, 18, 31, 10, 11, 99, 117, 115, 116, 111, 109, 95, 116, 101, 120, 116, 24, 16,
-        32, 1, 40, 8, 82, 10, 99, 117, 115, 116, 111, 109, 84, 101, 120, 116, 18, 37, 10, 14, 112,
-        114, 105, 118, 97, 99, 121, 95, 112, 111, 108, 105, 99, 121, 24, 17, 32, 1, 40, 8, 82, 13,
-        112, 114, 105, 118, 97, 99, 121, 80, 111, 108, 105, 99, 121, 18, 35, 10, 13, 109, 101,
-        116, 97, 100, 97, 116, 97, 95, 117, 115, 101, 114, 24, 18, 32, 1, 40, 8, 82, 12, 109, 101,
-        116, 97, 100, 97, 116, 97, 85, 115, 101, 114, 18, 46, 10, 19, 99, 117, 115, 116, 111, 109,
-        95, 116, 101, 120, 116, 95, 109, 101, 115, 115, 97, 103, 101, 24, 19, 32, 1, 40, 8, 82,
-        17, 99, 117, 115, 116, 111, 109, 84, 101, 120, 116, 77, 101, 115, 115, 97, 103, 101, 18,
-        42, 10, 17, 99, 117, 115, 116, 111, 109, 95, 116, 101, 120, 116, 95, 108, 111, 103, 105,
-        110, 24, 20, 32, 1, 40, 8, 82, 15, 99, 117, 115, 116, 111, 109, 84, 101, 120, 116, 76,
-        111, 103, 105, 110, 18, 37, 10, 14, 108, 111, 99, 107, 111, 117, 116, 95, 112, 111, 108,
-        105, 99, 121, 24, 21, 32, 1, 40, 8, 82, 13, 108, 111, 99, 107, 111, 117, 116, 80, 111,
-        108, 105, 99, 121, 18, 24, 10, 7, 97, 99, 116, 105, 111, 110, 115, 24, 22, 32, 1, 40, 8,
-        82, 7, 97, 99, 116, 105, 111, 110, 115>>
-    )
+    %Google.Protobuf.EnumDescriptorProto{
+      __unknown_fields__: [],
+      name: "ActionsAllowed",
+      options: nil,
+      reserved_name: [],
+      reserved_range: [],
+      value: [
+        %Google.Protobuf.EnumValueDescriptorProto{
+          __unknown_fields__: [],
+          name: "ACTIONS_ALLOWED_NOT_ALLOWED",
+          number: 0,
+          options: nil
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          __unknown_fields__: [],
+          name: "ACTIONS_ALLOWED_MAX",
+          number: 1,
+          options: nil
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          __unknown_fields__: [],
+          name: "ACTIONS_ALLOWED_UNLIMITED",
+          number: 2,
+          options: nil
+        }
+      ]
+    }
+  end
+
+  field(:ACTIONS_ALLOWED_NOT_ALLOWED, 0)
+  field(:ACTIONS_ALLOWED_MAX, 1)
+  field(:ACTIONS_ALLOWED_UNLIMITED, 2)
+end
+
+defmodule Zitadel.Features.V1.Features do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "details",
+          label: :LABEL_OPTIONAL,
+          name: "details",
+          number: 1,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "tier",
+          label: :LABEL_OPTIONAL,
+          name: "tier",
+          number: 2,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.features.v1.FeatureTier"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "isDefault",
+          label: :LABEL_OPTIONAL,
+          name: "is_default",
+          number: 3,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "auditLogRetention",
+          label: :LABEL_OPTIONAL,
+          name: "audit_log_retention",
+          number: 4,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".google.protobuf.Duration"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "loginPolicyUsernameLogin",
+          label: :LABEL_OPTIONAL,
+          name: "login_policy_username_login",
+          number: 5,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "loginPolicyRegistration",
+          label: :LABEL_OPTIONAL,
+          name: "login_policy_registration",
+          number: 6,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "loginPolicyIdp",
+          label: :LABEL_OPTIONAL,
+          name: "login_policy_idp",
+          number: 7,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "loginPolicyFactors",
+          label: :LABEL_OPTIONAL,
+          name: "login_policy_factors",
+          number: 8,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "loginPolicyPasswordless",
+          label: :LABEL_OPTIONAL,
+          name: "login_policy_passwordless",
+          number: 9,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "passwordComplexityPolicy",
+          label: :LABEL_OPTIONAL,
+          name: "password_complexity_policy",
+          number: 10,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "labelPolicy",
+          label: :LABEL_OPTIONAL,
+          name: "label_policy",
+          number: 11,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "customDomain",
+          label: :LABEL_OPTIONAL,
+          name: "custom_domain",
+          number: 12,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "loginPolicyPasswordReset",
+          label: :LABEL_OPTIONAL,
+          name: "login_policy_password_reset",
+          number: 13,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "labelPolicyPrivateLabel",
+          label: :LABEL_OPTIONAL,
+          name: "label_policy_private_label",
+          number: 14,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "labelPolicyWatermark",
+          label: :LABEL_OPTIONAL,
+          name: "label_policy_watermark",
+          number: 15,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "customText",
+          label: :LABEL_OPTIONAL,
+          name: "custom_text",
+          number: 16,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "privacyPolicy",
+          label: :LABEL_OPTIONAL,
+          name: "privacy_policy",
+          number: 17,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "metadataUser",
+          label: :LABEL_OPTIONAL,
+          name: "metadata_user",
+          number: 18,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "customTextMessage",
+          label: :LABEL_OPTIONAL,
+          name: "custom_text_message",
+          number: 19,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "customTextLogin",
+          label: :LABEL_OPTIONAL,
+          name: "custom_text_login",
+          number: 20,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "lockoutPolicy",
+          label: :LABEL_OPTIONAL,
+          name: "lockout_policy",
+          number: 21,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "actions",
+          label: :LABEL_OPTIONAL,
+          name: "actions",
+          number: 22,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "actionsAllowed",
+          label: :LABEL_OPTIONAL,
+          name: "actions_allowed",
+          number: 23,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.features.v1.ActionsAllowed"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "maxActions",
+          label: :LABEL_OPTIONAL,
+          name: "max_actions",
+          number: 24,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_INT32,
+          type_name: nil
+        }
+      ],
+      name: "Features",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
   end
 
   field(:details, 1, type: Zitadel.V1.ObjectDetails)
@@ -190,35 +462,91 @@ defmodule Zitadel.Features.V1.Features do
   field(:custom_text_login, 20, type: :bool, json_name: "customTextLogin")
   field(:lockout_policy, 21, type: :bool, json_name: "lockoutPolicy")
   field(:actions, 22, type: :bool)
+
+  field(:actions_allowed, 23,
+    type: Zitadel.Features.V1.ActionsAllowed,
+    json_name: "actionsAllowed",
+    enum: true
+  )
+
+  field(:max_actions, 24, type: :int32, json_name: "maxActions")
 end
 
 defmodule Zitadel.Features.V1.FeatureTier do
-  use Protobuf, syntax: :proto3
-  @type name :: String.t()
-  @type description :: String.t()
-  @type state :: Zitadel.Features.V1.FeaturesState.t()
-  @type status_info :: String.t()
-  @type t :: %__MODULE__{
-          name: name(),
-          description: description(),
-          state: state(),
-          status_info: status_info()
-        }
-
-  defstruct [:name, :description, :state, :status_info]
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
 
   def descriptor do
     # credo:disable-for-next-line
-    Elixir.Google.Protobuf.DescriptorProto.decode(
-      <<10, 11, 70, 101, 97, 116, 117, 114, 101, 84, 105, 101, 114, 18, 18, 10, 4, 110, 97, 109,
-        101, 24, 1, 32, 1, 40, 9, 82, 4, 110, 97, 109, 101, 18, 32, 10, 11, 100, 101, 115, 99,
-        114, 105, 112, 116, 105, 111, 110, 24, 2, 32, 1, 40, 9, 82, 11, 100, 101, 115, 99, 114,
-        105, 112, 116, 105, 111, 110, 18, 56, 10, 5, 115, 116, 97, 116, 101, 24, 3, 32, 1, 40, 14,
-        50, 34, 46, 122, 105, 116, 97, 100, 101, 108, 46, 102, 101, 97, 116, 117, 114, 101, 115,
-        46, 118, 49, 46, 70, 101, 97, 116, 117, 114, 101, 115, 83, 116, 97, 116, 101, 82, 5, 115,
-        116, 97, 116, 101, 18, 31, 10, 11, 115, 116, 97, 116, 117, 115, 95, 105, 110, 102, 111,
-        24, 4, 32, 1, 40, 9, 82, 10, 115, 116, 97, 116, 117, 115, 73, 110, 102, 111>>
-    )
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "name",
+          label: :LABEL_OPTIONAL,
+          name: "name",
+          number: 1,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "description",
+          label: :LABEL_OPTIONAL,
+          name: "description",
+          number: 2,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "state",
+          label: :LABEL_OPTIONAL,
+          name: "state",
+          number: 3,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.features.v1.FeaturesState"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "statusInfo",
+          label: :LABEL_OPTIONAL,
+          name: "status_info",
+          number: 4,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        }
+      ],
+      name: "FeatureTier",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
   end
 
   field(:name, 1, type: :string)
