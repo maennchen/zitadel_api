@@ -68,8 +68,8 @@ defmodule ZitadelApi.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:google_protos, "~> 0.1.0"},
-      {:grpc, "~> 0.5.0-beta.1"},
+      {:google_protos, "~> 0.3.0"},
+      {:grpc, "~> 0.5.0"},
       {:ex_doc, "~> 0.19", only: :dev, runtime: false},
       {:excoveralls, "~> 0.5", only: [:test], runtime: false},
       {:dialyxir, "~> 1.0", only: [:dev], runtime: false},

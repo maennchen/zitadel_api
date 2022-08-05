@@ -51,24 +51,16 @@ if command -v protoc-gen-elixir > /dev/null; then
   echo >&2 "Elixir Protoc Plugin already installed"
 else
   echo >&2 "Install Elixir Protoc Plugin"
-  # TODO: Use Hex Package when https://github.com/tony612/protobuf-elixir/pull/123 is released
-  mix escript.install github zetaron/protobuf-elixir branch gen_docs --force
+  mix escript.install hex protobuf --force
 fi
 
 echo >&2 "Generate Source Code"
 
 for PROTO in "$PROTO_ROOT"/zitadel/*.proto; do
-  PROTO_NAME="$( basename "$PROTO" ".proto" )"
-  # TODO: Re-Add options.proto
-  # options.proto is removed because extend is not currently supported by elixir / protobuf
-  if  [ "$PROTO_NAME" = "options" ]; then
-    echo >&2 "Skipping Options"
-  else
-    protoc \
-      --proto_path="$PROTO_ROOT" \
-      --elixir_out="gen_descriptors=true,plugins=grpc:$LIB_DIR" \
-      "$PROTO"
-  fi
+  protoc \
+    --proto_path="$PROTO_ROOT" \
+    --elixir_out="gen_descriptors=true,plugins=grpc:$LIB_DIR" \
+    "$PROTO"
 done
 
 echo >&2 "Remove @moduledoc false"
