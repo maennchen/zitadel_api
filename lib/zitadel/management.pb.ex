@@ -205,6 +205,20 @@ defmodule Zitadel.Management.V1.GetIAMResponse do
           proto3_optional: nil,
           type: :TYPE_STRING,
           type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "defaultOrgId",
+          label: :LABEL_OPTIONAL,
+          name: "default_org_id",
+          number: 3,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
         }
       ],
       name: "GetIAMResponse",
@@ -218,6 +232,7 @@ defmodule Zitadel.Management.V1.GetIAMResponse do
 
   field(:global_org_id, 1, type: :string, json_name: "globalOrgId")
   field(:iam_project_id, 2, type: :string, json_name: "iamProjectId")
+  field(:default_org_id, 3, type: :string, json_name: "defaultOrgId")
 end
 
 defmodule Zitadel.Management.V1.GetSupportedLanguagesRequest do
@@ -1825,6 +1840,59 @@ defmodule Zitadel.Management.V1.ImportHumanUserRequest.Phone do
   field(:is_phone_verified, 2, type: :bool, json_name: "isPhoneVerified")
 end
 
+defmodule Zitadel.Management.V1.ImportHumanUserRequest.HashedPassword do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "value",
+          label: :LABEL_OPTIONAL,
+          name: "value",
+          number: 1,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "algorithm",
+          label: :LABEL_OPTIONAL,
+          name: "algorithm",
+          number: 2,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        }
+      ],
+      name: "HashedPassword",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  field(:value, 1, type: :string)
+  field(:algorithm, 2, type: :string)
+end
+
 defmodule Zitadel.Management.V1.ImportHumanUserRequest do
   use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
 
@@ -1940,10 +2008,24 @@ defmodule Zitadel.Management.V1.ImportHumanUserRequest do
           __unknown_fields__: [],
           default_value: nil,
           extendee: nil,
+          json_name: "hashedPassword",
+          label: :LABEL_OPTIONAL,
+          name: "hashed_password",
+          number: 6,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.management.v1.ImportHumanUserRequest.HashedPassword"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
           json_name: "passwordChangeRequired",
           label: :LABEL_OPTIONAL,
           name: "password_change_required",
-          number: 6,
+          number: 7,
           oneof_index: nil,
           options: nil,
           proto3_optional: nil,
@@ -1957,11 +2039,25 @@ defmodule Zitadel.Management.V1.ImportHumanUserRequest do
           json_name: "requestPasswordlessRegistration",
           label: :LABEL_OPTIONAL,
           name: "request_passwordless_registration",
-          number: 7,
+          number: 8,
           oneof_index: nil,
           options: nil,
           proto3_optional: nil,
           type: :TYPE_BOOL,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "otpCode",
+          label: :LABEL_OPTIONAL,
+          name: "otp_code",
+          number: 9,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_STRING,
           type_name: nil
         }
       ],
@@ -2218,6 +2314,48 @@ defmodule Zitadel.Management.V1.ImportHumanUserRequest do
           options: nil,
           reserved_name: [],
           reserved_range: []
+        },
+        %Google.Protobuf.DescriptorProto{
+          __unknown_fields__: [],
+          enum_type: [],
+          extension: [],
+          extension_range: [],
+          field: [
+            %Google.Protobuf.FieldDescriptorProto{
+              __unknown_fields__: [],
+              default_value: nil,
+              extendee: nil,
+              json_name: "value",
+              label: :LABEL_OPTIONAL,
+              name: "value",
+              number: 1,
+              oneof_index: nil,
+              options: nil,
+              proto3_optional: nil,
+              type: :TYPE_STRING,
+              type_name: nil
+            },
+            %Google.Protobuf.FieldDescriptorProto{
+              __unknown_fields__: [],
+              default_value: nil,
+              extendee: nil,
+              json_name: "algorithm",
+              label: :LABEL_OPTIONAL,
+              name: "algorithm",
+              number: 2,
+              oneof_index: nil,
+              options: nil,
+              proto3_optional: nil,
+              type: :TYPE_STRING,
+              type_name: nil
+            }
+          ],
+          name: "HashedPassword",
+          nested_type: [],
+          oneof_decl: [],
+          options: nil,
+          reserved_name: [],
+          reserved_range: []
         }
       ],
       oneof_decl: [],
@@ -2234,12 +2372,20 @@ defmodule Zitadel.Management.V1.ImportHumanUserRequest do
   field(:email, 3, type: Zitadel.Management.V1.ImportHumanUserRequest.Email, deprecated: false)
   field(:phone, 4, type: Zitadel.Management.V1.ImportHumanUserRequest.Phone)
   field(:password, 5, type: :string)
-  field(:password_change_required, 6, type: :bool, json_name: "passwordChangeRequired")
 
-  field(:request_passwordless_registration, 7,
+  field(:hashed_password, 6,
+    type: Zitadel.Management.V1.ImportHumanUserRequest.HashedPassword,
+    json_name: "hashedPassword"
+  )
+
+  field(:password_change_required, 7, type: :bool, json_name: "passwordChangeRequired")
+
+  field(:request_passwordless_registration, 8,
     type: :bool,
     json_name: "requestPasswordlessRegistration"
   )
+
+  field(:otp_code, 9, type: :string, json_name: "otpCode")
 end
 
 defmodule Zitadel.Management.V1.ImportHumanUserResponse.PasswordlessRegistration do
@@ -9365,6 +9511,696 @@ defmodule Zitadel.Management.V1.RemoveOrgMemberResponse do
   field(:details, 1, type: Zitadel.V1.ObjectDetails)
 end
 
+defmodule Zitadel.Management.V1.ListOrgMetadataRequest do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "query",
+          label: :LABEL_OPTIONAL,
+          name: "query",
+          number: 1,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ListQuery"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "queries",
+          label: :LABEL_REPEATED,
+          name: "queries",
+          number: 2,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.metadata.v1.MetadataQuery"
+        }
+      ],
+      name: "ListOrgMetadataRequest",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  field(:query, 1, type: Zitadel.V1.ListQuery)
+  field(:queries, 2, repeated: true, type: Zitadel.Metadata.V1.MetadataQuery)
+end
+
+defmodule Zitadel.Management.V1.ListOrgMetadataResponse do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "details",
+          label: :LABEL_OPTIONAL,
+          name: "details",
+          number: 1,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ListDetails"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "result",
+          label: :LABEL_REPEATED,
+          name: "result",
+          number: 2,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.metadata.v1.Metadata"
+        }
+      ],
+      name: "ListOrgMetadataResponse",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ListDetails)
+  field(:result, 2, repeated: true, type: Zitadel.Metadata.V1.Metadata)
+end
+
+defmodule Zitadel.Management.V1.GetOrgMetadataRequest do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "key",
+          label: :LABEL_OPTIONAL,
+          name: "key",
+          number: 1,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        }
+      ],
+      name: "GetOrgMetadataRequest",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  field(:key, 1, type: :string, deprecated: false)
+end
+
+defmodule Zitadel.Management.V1.GetOrgMetadataResponse do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "metadata",
+          label: :LABEL_OPTIONAL,
+          name: "metadata",
+          number: 1,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.metadata.v1.Metadata"
+        }
+      ],
+      name: "GetOrgMetadataResponse",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  field(:metadata, 1, type: Zitadel.Metadata.V1.Metadata)
+end
+
+defmodule Zitadel.Management.V1.SetOrgMetadataRequest do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "key",
+          label: :LABEL_OPTIONAL,
+          name: "key",
+          number: 1,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "value",
+          label: :LABEL_OPTIONAL,
+          name: "value",
+          number: 2,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<122, 6, 16, 1, 24, 160, 194, 30>>}],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_BYTES,
+          type_name: nil
+        }
+      ],
+      name: "SetOrgMetadataRequest",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  field(:key, 1, type: :string, deprecated: false)
+  field(:value, 2, type: :bytes, deprecated: false)
+end
+
+defmodule Zitadel.Management.V1.SetOrgMetadataResponse do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "details",
+          label: :LABEL_OPTIONAL,
+          name: "details",
+          number: 1,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails"
+        }
+      ],
+      name: "SetOrgMetadataResponse",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Management.V1.BulkSetOrgMetadataRequest.Metadata do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "key",
+          label: :LABEL_OPTIONAL,
+          name: "key",
+          number: 1,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "value",
+          label: :LABEL_OPTIONAL,
+          name: "value",
+          number: 2,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<122, 6, 16, 1, 24, 160, 194, 30>>}],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_BYTES,
+          type_name: nil
+        }
+      ],
+      name: "Metadata",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  field(:key, 1, type: :string, deprecated: false)
+  field(:value, 2, type: :bytes, deprecated: false)
+end
+
+defmodule Zitadel.Management.V1.BulkSetOrgMetadataRequest do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "metadata",
+          label: :LABEL_REPEATED,
+          name: "metadata",
+          number: 1,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.management.v1.BulkSetOrgMetadataRequest.Metadata"
+        }
+      ],
+      name: "BulkSetOrgMetadataRequest",
+      nested_type: [
+        %Google.Protobuf.DescriptorProto{
+          __unknown_fields__: [],
+          enum_type: [],
+          extension: [],
+          extension_range: [],
+          field: [
+            %Google.Protobuf.FieldDescriptorProto{
+              __unknown_fields__: [],
+              default_value: nil,
+              extendee: nil,
+              json_name: "key",
+              label: :LABEL_OPTIONAL,
+              name: "key",
+              number: 1,
+              oneof_index: nil,
+              options: %Google.Protobuf.FieldOptions{
+                __pb_extensions__: %{},
+                __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
+                ctype: :STRING,
+                deprecated: false,
+                jstype: :JS_NORMAL,
+                lazy: false,
+                packed: nil,
+                uninterpreted_option: [],
+                weak: false
+              },
+              proto3_optional: nil,
+              type: :TYPE_STRING,
+              type_name: nil
+            },
+            %Google.Protobuf.FieldDescriptorProto{
+              __unknown_fields__: [],
+              default_value: nil,
+              extendee: nil,
+              json_name: "value",
+              label: :LABEL_OPTIONAL,
+              name: "value",
+              number: 2,
+              oneof_index: nil,
+              options: %Google.Protobuf.FieldOptions{
+                __pb_extensions__: %{},
+                __unknown_fields__: [{1071, 2, <<122, 6, 16, 1, 24, 160, 194, 30>>}],
+                ctype: :STRING,
+                deprecated: false,
+                jstype: :JS_NORMAL,
+                lazy: false,
+                packed: nil,
+                uninterpreted_option: [],
+                weak: false
+              },
+              proto3_optional: nil,
+              type: :TYPE_BYTES,
+              type_name: nil
+            }
+          ],
+          name: "Metadata",
+          nested_type: [],
+          oneof_decl: [],
+          options: nil,
+          reserved_name: [],
+          reserved_range: []
+        }
+      ],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  field(:metadata, 1,
+    repeated: true,
+    type: Zitadel.Management.V1.BulkSetOrgMetadataRequest.Metadata
+  )
+end
+
+defmodule Zitadel.Management.V1.BulkSetOrgMetadataResponse do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "details",
+          label: :LABEL_OPTIONAL,
+          name: "details",
+          number: 1,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails"
+        }
+      ],
+      name: "BulkSetOrgMetadataResponse",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Management.V1.RemoveOrgMetadataRequest do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "key",
+          label: :LABEL_OPTIONAL,
+          name: "key",
+          number: 1,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        }
+      ],
+      name: "RemoveOrgMetadataRequest",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  field(:key, 1, type: :string, deprecated: false)
+end
+
+defmodule Zitadel.Management.V1.RemoveOrgMetadataResponse do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "details",
+          label: :LABEL_OPTIONAL,
+          name: "details",
+          number: 1,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails"
+        }
+      ],
+      name: "RemoveOrgMetadataResponse",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Management.V1.BulkRemoveOrgMetadataRequest do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "keys",
+          label: :LABEL_REPEATED,
+          name: "keys",
+          number: 1,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<146, 1, 9, 34, 7, 114, 5, 16, 1, 24, 200, 1>>}],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        }
+      ],
+      name: "BulkRemoveOrgMetadataRequest",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  field(:keys, 1, repeated: true, type: :string, deprecated: false)
+end
+
+defmodule Zitadel.Management.V1.BulkRemoveOrgMetadataResponse do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "details",
+          label: :LABEL_OPTIONAL,
+          name: "details",
+          number: 1,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails"
+        }
+      ],
+      name: "BulkRemoveOrgMetadataResponse",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
 defmodule Zitadel.Management.V1.GetProjectByIDRequest do
   use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
 
@@ -12975,6 +13811,194 @@ defmodule Zitadel.Management.V1.AddOIDCAppResponse do
   )
 end
 
+defmodule Zitadel.Management.V1.AddSAMLAppRequest do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "projectId",
+          label: :LABEL_OPTIONAL,
+          name: "project_id",
+          number: 1,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "name",
+          label: :LABEL_OPTIONAL,
+          name: "name",
+          number: 2,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "metadataXml",
+          label: :LABEL_OPTIONAL,
+          name: "metadata_xml",
+          number: 3,
+          oneof_index: 0,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<122, 4, 24, 160, 194, 30>>}],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_BYTES,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "metadataUrl",
+          label: :LABEL_OPTIONAL,
+          name: "metadata_url",
+          number: 4,
+          oneof_index: 0,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        }
+      ],
+      name: "AddSAMLAppRequest",
+      nested_type: [],
+      oneof_decl: [
+        %Google.Protobuf.OneofDescriptorProto{
+          __unknown_fields__: [],
+          name: "metadata",
+          options: %Google.Protobuf.OneofOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 0, 1}],
+            uninterpreted_option: []
+          }
+        }
+      ],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  oneof(:metadata, 0)
+
+  field(:project_id, 1, type: :string, json_name: "projectId", deprecated: false)
+  field(:name, 2, type: :string, deprecated: false)
+  field(:metadata_xml, 3, type: :bytes, json_name: "metadataXml", oneof: 0, deprecated: false)
+  field(:metadata_url, 4, type: :string, json_name: "metadataUrl", oneof: 0, deprecated: false)
+end
+
+defmodule Zitadel.Management.V1.AddSAMLAppResponse do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "appId",
+          label: :LABEL_OPTIONAL,
+          name: "app_id",
+          number: 1,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "details",
+          label: :LABEL_OPTIONAL,
+          name: "details",
+          number: 2,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails"
+        }
+      ],
+      name: "AddSAMLAppResponse",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  field(:app_id, 1, type: :string, json_name: "appId")
+  field(:details, 2, type: Zitadel.V1.ObjectDetails)
+end
+
 defmodule Zitadel.Management.V1.AddAPIAppRequest do
   use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
 
@@ -13704,6 +14728,179 @@ defmodule Zitadel.Management.V1.UpdateOIDCAppConfigResponse do
         }
       ],
       name: "UpdateOIDCAppConfigResponse",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Management.V1.UpdateSAMLAppConfigRequest do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "projectId",
+          label: :LABEL_OPTIONAL,
+          name: "project_id",
+          number: 1,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "appId",
+          label: :LABEL_OPTIONAL,
+          name: "app_id",
+          number: 2,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "metadataXml",
+          label: :LABEL_OPTIONAL,
+          name: "metadata_xml",
+          number: 3,
+          oneof_index: 0,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<122, 4, 24, 160, 194, 30>>}],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_BYTES,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "metadataUrl",
+          label: :LABEL_OPTIONAL,
+          name: "metadata_url",
+          number: 4,
+          oneof_index: 0,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        }
+      ],
+      name: "UpdateSAMLAppConfigRequest",
+      nested_type: [],
+      oneof_decl: [
+        %Google.Protobuf.OneofDescriptorProto{
+          __unknown_fields__: [],
+          name: "metadata",
+          options: %Google.Protobuf.OneofOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 0, 1}],
+            uninterpreted_option: []
+          }
+        }
+      ],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  oneof(:metadata, 0)
+
+  field(:project_id, 1, type: :string, json_name: "projectId", deprecated: false)
+  field(:app_id, 2, type: :string, json_name: "appId", deprecated: false)
+  field(:metadata_xml, 3, type: :bytes, json_name: "metadataXml", oneof: 0, deprecated: false)
+  field(:metadata_url, 4, type: :string, json_name: "metadataUrl", oneof: 0, deprecated: false)
+end
+
+defmodule Zitadel.Management.V1.UpdateSAMLAppConfigResponse do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "details",
+          label: :LABEL_OPTIONAL,
+          name: "details",
+          number: 1,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails"
+        }
+      ],
+      name: "UpdateSAMLAppConfigResponse",
       nested_type: [],
       oneof_decl: [],
       options: nil,
@@ -15073,6 +16270,134 @@ defmodule Zitadel.Management.V1.RemoveAppKeyResponse do
   end
 
   field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Management.V1.ListProjectGrantChangesRequest do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "query",
+          label: :LABEL_OPTIONAL,
+          name: "query",
+          number: 1,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.change.v1.ChangeQuery"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "projectId",
+          label: :LABEL_OPTIONAL,
+          name: "project_id",
+          number: 2,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "grantId",
+          label: :LABEL_OPTIONAL,
+          name: "grant_id",
+          number: 3,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        }
+      ],
+      name: "ListProjectGrantChangesRequest",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  field(:query, 1, type: Zitadel.Change.V1.ChangeQuery)
+  field(:project_id, 2, type: :string, json_name: "projectId", deprecated: false)
+  field(:grant_id, 3, type: :string, json_name: "grantId", deprecated: false)
+end
+
+defmodule Zitadel.Management.V1.ListProjectGrantChangesResponse do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "result",
+          label: :LABEL_REPEATED,
+          name: "result",
+          number: 2,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.change.v1.Change"
+        }
+      ],
+      name: "ListProjectGrantChangesResponse",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: ["details"],
+      reserved_range: [
+        %Google.Protobuf.DescriptorProto.ReservedRange{__unknown_fields__: [], end: 2, start: 1}
+      ]
+    }
+  end
+
+  field(:result, 2, repeated: true, type: Zitadel.Change.V1.Change)
 end
 
 defmodule Zitadel.Management.V1.GetProjectGrantByIDRequest do
@@ -17624,65 +18949,6 @@ defmodule Zitadel.Management.V1.BulkRemoveUserGrantResponse do
   end
 end
 
-defmodule Zitadel.Management.V1.GetFeaturesRequest do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
-
-  def descriptor do
-    # credo:disable-for-next-line
-    %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
-      field: [],
-      name: "GetFeaturesRequest",
-      nested_type: [],
-      oneof_decl: [],
-      options: nil,
-      reserved_name: [],
-      reserved_range: []
-    }
-  end
-end
-
-defmodule Zitadel.Management.V1.GetFeaturesResponse do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
-
-  def descriptor do
-    # credo:disable-for-next-line
-    %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
-      field: [
-        %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "features",
-          label: :LABEL_OPTIONAL,
-          name: "features",
-          number: 1,
-          oneof_index: nil,
-          options: nil,
-          proto3_optional: nil,
-          type: :TYPE_MESSAGE,
-          type_name: ".zitadel.features.v1.Features"
-        }
-      ],
-      name: "GetFeaturesResponse",
-      nested_type: [],
-      oneof_decl: [],
-      options: nil,
-      reserved_name: [],
-      reserved_range: []
-    }
-  end
-
-  field(:features, 1, type: Zitadel.Features.V1.Features)
-end
-
 defmodule Zitadel.Management.V1.GetOrgIAMPolicyRequest do
   use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
 
@@ -17740,6 +19006,65 @@ defmodule Zitadel.Management.V1.GetOrgIAMPolicyResponse do
   end
 
   field(:policy, 1, type: Zitadel.Policy.V1.OrgIAMPolicy)
+end
+
+defmodule Zitadel.Management.V1.GetDomainPolicyRequest do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [],
+      name: "GetDomainPolicyRequest",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+end
+
+defmodule Zitadel.Management.V1.GetDomainPolicyResponse do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "policy",
+          label: :LABEL_OPTIONAL,
+          name: "policy",
+          number: 1,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.policy.v1.DomainPolicy"
+        }
+      ],
+      name: "GetDomainPolicyResponse",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  field(:policy, 1, type: Zitadel.Policy.V1.DomainPolicy)
 end
 
 defmodule Zitadel.Management.V1.GetLoginPolicyRequest do
@@ -17873,6 +19198,79 @@ defmodule Zitadel.Management.V1.GetDefaultLoginPolicyResponse do
   end
 
   field(:policy, 1, type: Zitadel.Policy.V1.LoginPolicy)
+end
+
+defmodule Zitadel.Management.V1.AddCustomLoginPolicyRequest.IDP do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "idpId",
+          label: :LABEL_OPTIONAL,
+          name: "idp_id",
+          number: 1,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "ownerType",
+          label: :LABEL_OPTIONAL,
+          name: "ownerType",
+          number: 2,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<130, 1, 4, 16, 1, 32, 0>>}],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.idp.v1.IDPOwnerType"
+        }
+      ],
+      name: "IDP",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  field(:idp_id, 1, type: :string, json_name: "idpId", deprecated: false)
+  field(:ownerType, 2, type: Zitadel.Idp.V1.IDPOwnerType, enum: true, deprecated: false)
 end
 
 defmodule Zitadel.Management.V1.AddCustomLoginPolicyRequest do
@@ -18033,10 +19431,223 @@ defmodule Zitadel.Management.V1.AddCustomLoginPolicyRequest do
           proto3_optional: nil,
           type: :TYPE_STRING,
           type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "passwordCheckLifetime",
+          label: :LABEL_OPTIONAL,
+          name: "password_check_lifetime",
+          number: 9,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".google.protobuf.Duration"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "externalLoginCheckLifetime",
+          label: :LABEL_OPTIONAL,
+          name: "external_login_check_lifetime",
+          number: 10,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".google.protobuf.Duration"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "mfaInitSkipLifetime",
+          label: :LABEL_OPTIONAL,
+          name: "mfa_init_skip_lifetime",
+          number: 11,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".google.protobuf.Duration"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "secondFactorCheckLifetime",
+          label: :LABEL_OPTIONAL,
+          name: "second_factor_check_lifetime",
+          number: 12,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".google.protobuf.Duration"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "multiFactorCheckLifetime",
+          label: :LABEL_OPTIONAL,
+          name: "multi_factor_check_lifetime",
+          number: 13,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".google.protobuf.Duration"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "secondFactors",
+          label: :LABEL_REPEATED,
+          name: "second_factors",
+          number: 14,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.policy.v1.SecondFactorType"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "multiFactors",
+          label: :LABEL_REPEATED,
+          name: "multi_factors",
+          number: 15,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.policy.v1.MultiFactorType"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "idps",
+          label: :LABEL_REPEATED,
+          name: "idps",
+          number: 16,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.management.v1.AddCustomLoginPolicyRequest.IDP"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "allowDomainDiscovery",
+          label: :LABEL_OPTIONAL,
+          name: "allow_domain_discovery",
+          number: 17,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<50, 200, 1, 73, 102, 32, 115, 101, 116, 32, 116, 111, 32, 116, 114, 117, 101, 44,
+                 32, 116, 104, 101, 32, 115, 117, 102, 102, 105, 120, 32, 40, 64, 100, 111, 109,
+                 97, 105, 110, 46, 99, 111, 109, 41, 32, 111, 102, 32, 97, 110, 32, 117, 110, 107,
+                 110, 111, 119, 110, 32, 117, 115, 101, 114, 110, 97, 109, 101, 32, 105, 110, 112,
+                 117, 116, 32, 111, 110, 32, 116, 104, 101, 32, 108, 111, 103, 105, 110, 32, 115,
+                 99, 114, 101, 101, 110, 32, 119, 105, 108, 108, 32, 98, 101, 32, 109, 97, 116,
+                 99, 104, 101, 100, 32, 97, 103, 97, 105, 110, 115, 116, 32, 116, 104, 101, 32,
+                 111, 114, 103, 32, 100, 111, 109, 97, 105, 110, 115, 32, 97, 110, 100, 32, 119,
+                 105, 108, 108, 32, 114, 101, 100, 105, 114, 101, 99, 116, 32, 116, 111, 32, 116,
+                 104, 101, 32, 114, 101, 103, 105, 115, 116, 114, 97, 116, 105, 111, 110, 32, 111,
+                 102, 32, 116, 104, 97, 116, 32, 111, 114, 103, 97, 110, 105, 115, 97, 116, 105,
+                 111, 110, 32, 111, 110, 32, 115, 117, 99, 99, 101, 115, 115, 46>>}
+            ],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
         }
       ],
       name: "AddCustomLoginPolicyRequest",
-      nested_type: [],
+      nested_type: [
+        %Google.Protobuf.DescriptorProto{
+          __unknown_fields__: [],
+          enum_type: [],
+          extension: [],
+          extension_range: [],
+          field: [
+            %Google.Protobuf.FieldDescriptorProto{
+              __unknown_fields__: [],
+              default_value: nil,
+              extendee: nil,
+              json_name: "idpId",
+              label: :LABEL_OPTIONAL,
+              name: "idp_id",
+              number: 1,
+              oneof_index: nil,
+              options: %Google.Protobuf.FieldOptions{
+                __pb_extensions__: %{},
+                __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
+                ctype: :STRING,
+                deprecated: false,
+                jstype: :JS_NORMAL,
+                lazy: false,
+                packed: nil,
+                uninterpreted_option: [],
+                weak: false
+              },
+              proto3_optional: nil,
+              type: :TYPE_STRING,
+              type_name: nil
+            },
+            %Google.Protobuf.FieldDescriptorProto{
+              __unknown_fields__: [],
+              default_value: nil,
+              extendee: nil,
+              json_name: "ownerType",
+              label: :LABEL_OPTIONAL,
+              name: "ownerType",
+              number: 2,
+              oneof_index: nil,
+              options: %Google.Protobuf.FieldOptions{
+                __pb_extensions__: %{},
+                __unknown_fields__: [{1071, 2, <<130, 1, 4, 16, 1, 32, 0>>}],
+                ctype: :STRING,
+                deprecated: false,
+                jstype: :JS_NORMAL,
+                lazy: false,
+                packed: nil,
+                uninterpreted_option: [],
+                weak: false
+              },
+              proto3_optional: nil,
+              type: :TYPE_ENUM,
+              type_name: ".zitadel.idp.v1.IDPOwnerType"
+            }
+          ],
+          name: "IDP",
+          nested_type: [],
+          oneof_decl: [],
+          options: nil,
+          reserved_name: [],
+          reserved_range: []
+        }
+      ],
       oneof_decl: [],
       options: nil,
       reserved_name: [],
@@ -18067,6 +19678,53 @@ defmodule Zitadel.Management.V1.AddCustomLoginPolicyRequest do
   field(:default_redirect_uri, 8,
     type: :string,
     json_name: "defaultRedirectUri",
+    deprecated: false
+  )
+
+  field(:password_check_lifetime, 9,
+    type: Google.Protobuf.Duration,
+    json_name: "passwordCheckLifetime"
+  )
+
+  field(:external_login_check_lifetime, 10,
+    type: Google.Protobuf.Duration,
+    json_name: "externalLoginCheckLifetime"
+  )
+
+  field(:mfa_init_skip_lifetime, 11,
+    type: Google.Protobuf.Duration,
+    json_name: "mfaInitSkipLifetime"
+  )
+
+  field(:second_factor_check_lifetime, 12,
+    type: Google.Protobuf.Duration,
+    json_name: "secondFactorCheckLifetime"
+  )
+
+  field(:multi_factor_check_lifetime, 13,
+    type: Google.Protobuf.Duration,
+    json_name: "multiFactorCheckLifetime"
+  )
+
+  field(:second_factors, 14,
+    repeated: true,
+    type: Zitadel.Policy.V1.SecondFactorType,
+    json_name: "secondFactors",
+    enum: true
+  )
+
+  field(:multi_factors, 15,
+    repeated: true,
+    type: Zitadel.Policy.V1.MultiFactorType,
+    json_name: "multiFactors",
+    enum: true
+  )
+
+  field(:idps, 16, repeated: true, type: Zitadel.Management.V1.AddCustomLoginPolicyRequest.IDP)
+
+  field(:allow_domain_discovery, 17,
+    type: :bool,
+    json_name: "allowDomainDiscovery",
     deprecated: false
   )
 end
@@ -18267,6 +19925,114 @@ defmodule Zitadel.Management.V1.UpdateCustomLoginPolicyRequest do
           proto3_optional: nil,
           type: :TYPE_STRING,
           type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "passwordCheckLifetime",
+          label: :LABEL_OPTIONAL,
+          name: "password_check_lifetime",
+          number: 9,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".google.protobuf.Duration"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "externalLoginCheckLifetime",
+          label: :LABEL_OPTIONAL,
+          name: "external_login_check_lifetime",
+          number: 10,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".google.protobuf.Duration"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "mfaInitSkipLifetime",
+          label: :LABEL_OPTIONAL,
+          name: "mfa_init_skip_lifetime",
+          number: 11,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".google.protobuf.Duration"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "secondFactorCheckLifetime",
+          label: :LABEL_OPTIONAL,
+          name: "second_factor_check_lifetime",
+          number: 12,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".google.protobuf.Duration"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "multiFactorCheckLifetime",
+          label: :LABEL_OPTIONAL,
+          name: "multi_factor_check_lifetime",
+          number: 13,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".google.protobuf.Duration"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "allowDomainDiscovery",
+          label: :LABEL_OPTIONAL,
+          name: "allow_domain_discovery",
+          number: 14,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<50, 200, 1, 73, 102, 32, 115, 101, 116, 32, 116, 111, 32, 116, 114, 117, 101, 44,
+                 32, 116, 104, 101, 32, 115, 117, 102, 102, 105, 120, 32, 40, 64, 100, 111, 109,
+                 97, 105, 110, 46, 99, 111, 109, 41, 32, 111, 102, 32, 97, 110, 32, 117, 110, 107,
+                 110, 111, 119, 110, 32, 117, 115, 101, 114, 110, 97, 109, 101, 32, 105, 110, 112,
+                 117, 116, 32, 111, 110, 32, 116, 104, 101, 32, 108, 111, 103, 105, 110, 32, 115,
+                 99, 114, 101, 101, 110, 32, 119, 105, 108, 108, 32, 98, 101, 32, 109, 97, 116,
+                 99, 104, 101, 100, 32, 97, 103, 97, 105, 110, 115, 116, 32, 116, 104, 101, 32,
+                 111, 114, 103, 32, 100, 111, 109, 97, 105, 110, 115, 32, 97, 110, 100, 32, 119,
+                 105, 108, 108, 32, 114, 101, 100, 105, 114, 101, 99, 116, 32, 116, 111, 32, 116,
+                 104, 101, 32, 114, 101, 103, 105, 115, 116, 114, 97, 116, 105, 111, 110, 32, 111,
+                 102, 32, 116, 104, 97, 116, 32, 111, 114, 103, 97, 110, 105, 115, 97, 116, 105,
+                 111, 110, 32, 111, 110, 32, 115, 117, 99, 99, 101, 115, 115, 46>>}
+            ],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
         }
       ],
       name: "UpdateCustomLoginPolicyRequest",
@@ -18301,6 +20067,37 @@ defmodule Zitadel.Management.V1.UpdateCustomLoginPolicyRequest do
   field(:default_redirect_uri, 8,
     type: :string,
     json_name: "defaultRedirectUri",
+    deprecated: false
+  )
+
+  field(:password_check_lifetime, 9,
+    type: Google.Protobuf.Duration,
+    json_name: "passwordCheckLifetime"
+  )
+
+  field(:external_login_check_lifetime, 10,
+    type: Google.Protobuf.Duration,
+    json_name: "externalLoginCheckLifetime"
+  )
+
+  field(:mfa_init_skip_lifetime, 11,
+    type: Google.Protobuf.Duration,
+    json_name: "mfaInitSkipLifetime"
+  )
+
+  field(:second_factor_check_lifetime, 12,
+    type: Google.Protobuf.Duration,
+    json_name: "secondFactorCheckLifetime"
+  )
+
+  field(:multi_factor_check_lifetime, 13,
+    type: Google.Protobuf.Duration,
+    json_name: "multiFactorCheckLifetime"
+  )
+
+  field(:allow_domain_discovery, 14,
+    type: :bool,
+    json_name: "allowDomainDiscovery",
     deprecated: false
   )
 end
@@ -21008,18 +22805,7 @@ defmodule Zitadel.Management.V1.AddCustomLabelPolicyRequest do
             __pb_extensions__: %{},
             __unknown_fields__: [
               {1042, 2,
-               <<50, 186, 1, 104, 105, 100, 101, 115, 32, 116, 104, 101, 32, 111, 114, 103, 32,
-                 115, 117, 102, 102, 105, 120, 32, 111, 110, 32, 116, 104, 101, 32, 108, 111, 103,
-                 105, 110, 32, 102, 111, 114, 109, 32, 105, 102, 32, 116, 104, 101, 32, 115, 99,
-                 111, 112, 101, 32, 34, 117, 114, 110, 58, 122, 105, 116, 97, 100, 101, 108, 58,
-                 105, 97, 109, 58, 111, 114, 103, 58, 100, 111, 109, 97, 105, 110, 58, 112, 114,
-                 105, 109, 97, 114, 121, 58, 123, 100, 111, 109, 97, 105, 110, 110, 97, 109, 101,
-                 125, 34, 32, 105, 115, 32, 115, 101, 116, 46, 32, 68, 101, 116, 97, 105, 108,
-                 115, 32, 97, 98, 111, 117, 116, 32, 116, 104, 105, 115, 32, 115, 99, 111, 112,
-                 101, 32, 105, 110, 32, 104, 116, 116, 112, 115, 58, 47, 47, 100, 111, 99, 115,
-                 46, 122, 105, 116, 97, 100, 101, 108, 46, 99, 104, 47, 99, 111, 110, 99, 101,
-                 112, 116, 115, 35, 82, 101, 115, 101, 114, 118, 101, 100, 95, 83, 99, 111, 112,
-                 101, 115>>}
+               "2lhides the org suffix on the login form if the scope \"urn:zitadel:iam:org:domain:primary:{domainname}\" is set"}
             ],
             ctype: :STRING,
             deprecated: false,
@@ -21335,18 +23121,7 @@ defmodule Zitadel.Management.V1.UpdateCustomLabelPolicyRequest do
             __pb_extensions__: %{},
             __unknown_fields__: [
               {1042, 2,
-               <<50, 186, 1, 104, 105, 100, 101, 115, 32, 116, 104, 101, 32, 111, 114, 103, 32,
-                 115, 117, 102, 102, 105, 120, 32, 111, 110, 32, 116, 104, 101, 32, 108, 111, 103,
-                 105, 110, 32, 102, 111, 114, 109, 32, 105, 102, 32, 116, 104, 101, 32, 115, 99,
-                 111, 112, 101, 32, 34, 117, 114, 110, 58, 122, 105, 116, 97, 100, 101, 108, 58,
-                 105, 97, 109, 58, 111, 114, 103, 58, 100, 111, 109, 97, 105, 110, 58, 112, 114,
-                 105, 109, 97, 114, 121, 58, 123, 100, 111, 109, 97, 105, 110, 110, 97, 109, 101,
-                 125, 34, 32, 105, 115, 32, 115, 101, 116, 46, 32, 68, 101, 116, 97, 105, 108,
-                 115, 32, 97, 98, 111, 117, 116, 32, 116, 104, 105, 115, 32, 115, 99, 111, 112,
-                 101, 32, 105, 110, 32, 104, 116, 116, 112, 115, 58, 47, 47, 100, 111, 99, 115,
-                 46, 122, 105, 116, 97, 100, 101, 108, 46, 99, 104, 47, 99, 111, 110, 99, 101,
-                 112, 116, 115, 35, 82, 101, 115, 101, 114, 118, 101, 100, 95, 83, 99, 111, 112,
-                 101, 115>>}
+               "2lhides the org suffix on the login form if the scope \"urn:zitadel:iam:org:domain:primary:{domainname}\" is set"}
             ],
             ctype: :STRING,
             deprecated: false,
@@ -28776,6 +30551,141 @@ defmodule Zitadel.Management.V1.DeleteActionResponse do
   end
 end
 
+defmodule Zitadel.Management.V1.ListFlowTypesRequest do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [],
+      name: "ListFlowTypesRequest",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+end
+
+defmodule Zitadel.Management.V1.ListFlowTypesResponse do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "result",
+          label: :LABEL_REPEATED,
+          name: "result",
+          number: 1,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.action.v1.FlowType"
+        }
+      ],
+      name: "ListFlowTypesResponse",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  field(:result, 1, repeated: true, type: Zitadel.Action.V1.FlowType)
+end
+
+defmodule Zitadel.Management.V1.ListFlowTriggerTypesRequest do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "type",
+          label: :LABEL_OPTIONAL,
+          name: "type",
+          number: 1,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        }
+      ],
+      name: "ListFlowTriggerTypesRequest",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  field(:type, 1, type: :string)
+end
+
+defmodule Zitadel.Management.V1.ListFlowTriggerTypesResponse do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "result",
+          label: :LABEL_REPEATED,
+          name: "result",
+          number: 1,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.action.v1.TriggerType"
+        }
+      ],
+      name: "ListFlowTriggerTypesResponse",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  field(:result, 1, repeated: true, type: Zitadel.Action.V1.TriggerType)
+end
+
 defmodule Zitadel.Management.V1.DeactivateActionRequest do
   use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
 
@@ -28950,8 +30860,8 @@ defmodule Zitadel.Management.V1.GetFlowRequest do
           oneof_index: nil,
           options: nil,
           proto3_optional: nil,
-          type: :TYPE_ENUM,
-          type_name: ".zitadel.action.v1.FlowType"
+          type: :TYPE_STRING,
+          type_name: nil
         }
       ],
       name: "GetFlowRequest",
@@ -28963,7 +30873,7 @@ defmodule Zitadel.Management.V1.GetFlowRequest do
     }
   end
 
-  field(:type, 1, type: Zitadel.Action.V1.FlowType, enum: true)
+  field(:type, 1, type: :string)
 end
 
 defmodule Zitadel.Management.V1.GetFlowResponse do
@@ -29026,8 +30936,8 @@ defmodule Zitadel.Management.V1.ClearFlowRequest do
           oneof_index: nil,
           options: nil,
           proto3_optional: nil,
-          type: :TYPE_ENUM,
-          type_name: ".zitadel.action.v1.FlowType"
+          type: :TYPE_STRING,
+          type_name: nil
         }
       ],
       name: "ClearFlowRequest",
@@ -29039,7 +30949,7 @@ defmodule Zitadel.Management.V1.ClearFlowRequest do
     }
   end
 
-  field(:type, 1, type: Zitadel.Action.V1.FlowType, enum: true)
+  field(:type, 1, type: :string)
 end
 
 defmodule Zitadel.Management.V1.ClearFlowResponse do
@@ -29102,8 +31012,8 @@ defmodule Zitadel.Management.V1.SetTriggerActionsRequest do
           oneof_index: nil,
           options: nil,
           proto3_optional: nil,
-          type: :TYPE_ENUM,
-          type_name: ".zitadel.action.v1.FlowType"
+          type: :TYPE_STRING,
+          type_name: nil
         },
         %Google.Protobuf.FieldDescriptorProto{
           __unknown_fields__: [],
@@ -29116,8 +31026,8 @@ defmodule Zitadel.Management.V1.SetTriggerActionsRequest do
           oneof_index: nil,
           options: nil,
           proto3_optional: nil,
-          type: :TYPE_ENUM,
-          type_name: ".zitadel.action.v1.TriggerType"
+          type: :TYPE_STRING,
+          type_name: nil
         },
         %Google.Protobuf.FieldDescriptorProto{
           __unknown_fields__: [],
@@ -29143,14 +31053,8 @@ defmodule Zitadel.Management.V1.SetTriggerActionsRequest do
     }
   end
 
-  field(:flow_type, 1, type: Zitadel.Action.V1.FlowType, json_name: "flowType", enum: true)
-
-  field(:trigger_type, 2,
-    type: Zitadel.Action.V1.TriggerType,
-    json_name: "triggerType",
-    enum: true
-  )
-
+  field(:flow_type, 1, type: :string, json_name: "flowType")
+  field(:trigger_type, 2, type: :string, json_name: "triggerType")
   field(:action_ids, 3, repeated: true, type: :string, json_name: "actionIds")
 end
 
@@ -29567,9 +31471,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<34, 26, 47, 117, 115, 101, 114, 115, 47, 123, 105, 100, 125, 47, 109, 101, 116,
                  97, 100, 97, 116, 97, 47, 123, 107, 101, 121, 125, 58, 1, 42>>},
-              {50000, 2,
-               <<10, 10, 117, 115, 101, 114, 46, 119, 114, 105, 116, 101, 26, 13, 109, 101, 116,
-                 97, 100, 97, 116, 97, 46, 117, 115, 101, 114>>}
+              {50000, 2, "\n\nuser.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -29589,9 +31491,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<34, 26, 47, 117, 115, 101, 114, 115, 47, 123, 105, 100, 125, 47, 109, 101, 116,
                  97, 100, 97, 116, 97, 47, 95, 98, 117, 108, 107, 58, 1, 42>>},
-              {50000, 2,
-               <<10, 10, 117, 115, 101, 114, 46, 119, 114, 105, 116, 101, 26, 13, 109, 101, 116,
-                 97, 100, 97, 116, 97, 46, 117, 115, 101, 114>>}
+              {50000, 2, "\n\nuser.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -29611,9 +31511,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<34, 28, 47, 117, 115, 101, 114, 115, 47, 123, 105, 100, 125, 47, 109, 101, 116,
                  97, 100, 97, 116, 97, 47, 95, 115, 101, 97, 114, 99, 104, 58, 1, 42>>},
-              {50000, 2,
-               <<10, 9, 117, 115, 101, 114, 46, 114, 101, 97, 100, 26, 13, 109, 101, 116, 97, 100,
-                 97, 116, 97, 46, 117, 115, 101, 114>>}
+              {50000, 2, "\n\tuser.read"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -29633,9 +31531,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<18, 26, 47, 117, 115, 101, 114, 115, 47, 123, 105, 100, 125, 47, 109, 101, 116,
                  97, 100, 97, 116, 97, 47, 123, 107, 101, 121, 125>>},
-              {50000, 2,
-               <<10, 9, 117, 115, 101, 114, 46, 114, 101, 97, 100, 26, 13, 109, 101, 116, 97, 100,
-                 97, 116, 97, 46, 117, 115, 101, 114>>}
+              {50000, 2, "\n\tuser.read"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -29655,9 +31551,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<42, 26, 47, 117, 115, 101, 114, 115, 47, 123, 105, 100, 125, 47, 109, 101, 116,
                  97, 100, 97, 116, 97, 47, 123, 107, 101, 121, 125>>},
-              {50000, 2,
-               <<10, 10, 117, 115, 101, 114, 46, 119, 114, 105, 116, 101, 26, 13, 109, 101, 116,
-                 97, 100, 97, 116, 97, 46, 117, 115, 101, 114>>}
+              {50000, 2, "\n\nuser.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -29677,9 +31571,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<42, 26, 47, 117, 115, 101, 114, 115, 47, 123, 105, 100, 125, 47, 109, 101, 116,
                  97, 100, 97, 116, 97, 47, 95, 98, 117, 108, 107, 58, 1, 42>>},
-              {50000, 2,
-               <<10, 10, 117, 115, 101, 114, 46, 119, 114, 105, 116, 101, 26, 13, 109, 101, 116,
-                 97, 100, 97, 116, 97, 46, 117, 115, 101, 114>>}
+              {50000, 2, "\n\nuser.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -30482,6 +32374,124 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
         %Google.Protobuf.MethodDescriptorProto{
           __unknown_fields__: [],
           client_streaming: false,
+          input_type: ".zitadel.management.v1.SetOrgMetadataRequest",
+          name: "SetOrgMetadata",
+          options: %Google.Protobuf.MethodOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<34, 15, 47, 109, 101, 116, 97, 100, 97, 116, 97, 47, 123, 107, 101, 121, 125, 58,
+                 1, 42>>},
+              {50000, 2, "\n\torg.write"}
+            ],
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: []
+          },
+          output_type: ".zitadel.management.v1.SetOrgMetadataResponse",
+          server_streaming: false
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          __unknown_fields__: [],
+          client_streaming: false,
+          input_type: ".zitadel.management.v1.BulkSetOrgMetadataRequest",
+          name: "BulkSetOrgMetadata",
+          options: %Google.Protobuf.MethodOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<34, 15, 47, 109, 101, 116, 97, 100, 97, 116, 97, 47, 95, 98, 117, 108, 107, 58,
+                 1, 42>>},
+              {50000, 2, "\n\torg.write"}
+            ],
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: []
+          },
+          output_type: ".zitadel.management.v1.BulkSetOrgMetadataResponse",
+          server_streaming: false
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          __unknown_fields__: [],
+          client_streaming: false,
+          input_type: ".zitadel.management.v1.ListOrgMetadataRequest",
+          name: "ListOrgMetadata",
+          options: %Google.Protobuf.MethodOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<34, 17, 47, 109, 101, 116, 97, 100, 97, 116, 97, 47, 95, 115, 101, 97, 114, 99,
+                 104, 58, 1, 42>>},
+              {50000, 2, "\n\borg.read"}
+            ],
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: []
+          },
+          output_type: ".zitadel.management.v1.ListOrgMetadataResponse",
+          server_streaming: false
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          __unknown_fields__: [],
+          client_streaming: false,
+          input_type: ".zitadel.management.v1.GetOrgMetadataRequest",
+          name: "GetOrgMetadata",
+          options: %Google.Protobuf.MethodOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<18, 15, 47, 109, 101, 116, 97, 100, 97, 116, 97, 47, 123, 107, 101, 121, 125>>},
+              {50000, 2, "\n\borg.read"}
+            ],
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: []
+          },
+          output_type: ".zitadel.management.v1.GetOrgMetadataResponse",
+          server_streaming: false
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          __unknown_fields__: [],
+          client_streaming: false,
+          input_type: ".zitadel.management.v1.RemoveOrgMetadataRequest",
+          name: "RemoveOrgMetadata",
+          options: %Google.Protobuf.MethodOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<42, 15, 47, 109, 101, 116, 97, 100, 97, 116, 97, 47, 123, 107, 101, 121, 125>>},
+              {50000, 2, "\n\torg.write"}
+            ],
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: []
+          },
+          output_type: ".zitadel.management.v1.RemoveOrgMetadataResponse",
+          server_streaming: false
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          __unknown_fields__: [],
+          client_streaming: false,
+          input_type: ".zitadel.management.v1.BulkRemoveOrgMetadataRequest",
+          name: "BulkRemoveOrgMetadata",
+          options: %Google.Protobuf.MethodOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<42, 15, 47, 109, 101, 116, 97, 100, 97, 116, 97, 47, 95, 98, 117, 108, 107, 58,
+                 1, 42>>},
+              {50000, 2, "\n\torg.write"}
+            ],
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: []
+          },
+          output_type: ".zitadel.management.v1.BulkRemoveOrgMetadataResponse",
+          server_streaming: false
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          __unknown_fields__: [],
+          client_streaming: false,
           input_type: ".zitadel.management.v1.ListOrgDomainsRequest",
           name: "ListOrgDomains",
           options: %Google.Protobuf.MethodOptions{
@@ -30510,9 +32520,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<34, 16, 47, 111, 114, 103, 115, 47, 109, 101, 47, 100, 111, 109, 97, 105, 110,
                  115, 58, 1, 42>>},
-              {50000, 2,
-               <<10, 9, 111, 114, 103, 46, 119, 114, 105, 116, 101, 26, 13, 99, 117, 115, 116,
-                 111, 109, 95, 100, 111, 109, 97, 105, 110>>}
+              {50000, 2, "\n\torg.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -30553,9 +32561,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<34, 46, 47, 111, 114, 103, 115, 47, 109, 101, 47, 100, 111, 109, 97, 105, 110,
                  115, 47, 123, 100, 111, 109, 97, 105, 110, 125, 47, 118, 97, 108, 105, 100, 97,
                  116, 105, 111, 110, 47, 95, 103, 101, 110, 101, 114, 97, 116, 101, 58, 1, 42>>},
-              {50000, 2,
-               <<10, 9, 111, 114, 103, 46, 119, 114, 105, 116, 101, 26, 13, 99, 117, 115, 116,
-                 111, 109, 95, 100, 111, 109, 97, 105, 110>>}
+              {50000, 2, "\n\torg.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -30576,9 +32582,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<34, 46, 47, 111, 114, 103, 115, 47, 109, 101, 47, 100, 111, 109, 97, 105, 110,
                  115, 47, 123, 100, 111, 109, 97, 105, 110, 125, 47, 118, 97, 108, 105, 100, 97,
                  116, 105, 111, 110, 47, 95, 118, 97, 108, 105, 100, 97, 116, 101, 58, 1, 42>>},
-              {50000, 2,
-               <<10, 9, 111, 114, 103, 46, 119, 114, 105, 116, 101, 26, 13, 99, 117, 115, 116,
-                 111, 109, 95, 100, 111, 109, 97, 105, 110>>}
+              {50000, 2, "\n\torg.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -30596,9 +32600,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
             __pb_extensions__: %{},
             __unknown_fields__: [
               {72_295_728, 2, "\"&/orgs/me/domains/{domain}/_set_primary"},
-              {50000, 2,
-               <<10, 9, 111, 114, 103, 46, 119, 114, 105, 116, 101, 26, 13, 99, 117, 115, 116,
-                 111, 109, 95, 100, 111, 109, 97, 105, 110>>}
+              {50000, 2, "\n\torg.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -30828,11 +32830,10 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
           options: %Google.Protobuf.MethodOptions{
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {72_295_728, 2,
-               <<34, 38, 47, 112, 114, 111, 106, 101, 99, 116, 115, 47, 123, 112, 114, 111, 106,
-                 101, 99, 116, 95, 105, 100, 125, 47, 99, 104, 97, 110, 103, 101, 115, 47, 95,
-                 115, 101, 97, 114, 99, 104, 58, 1, 42>>},
-              {50000, 2, "\n\fproject.read"}
+              {72_295_728, 2, "\"&/projects/{project_id}/changes/_search"},
+              {50000, 2,
+               <<10, 12, 112, 114, 111, 106, 101, 99, 116, 46, 114, 101, 97, 100, 18, 9, 80, 114,
+                 111, 106, 101, 99, 116, 73, 100>>}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -31223,11 +33224,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
           options: %Google.Protobuf.MethodOptions{
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {72_295_728, 2,
-               <<34, 52, 47, 112, 114, 111, 106, 101, 99, 116, 115, 47, 123, 112, 114, 111, 106,
-                 101, 99, 116, 95, 105, 100, 125, 47, 97, 112, 112, 115, 47, 123, 97, 112, 112,
-                 95, 105, 100, 125, 47, 99, 104, 97, 110, 103, 101, 115, 47, 95, 115, 101, 97,
-                 114, 99, 104, 58, 1, 42>>},
+              {72_295_728, 2, "\"4/projects/{project_id}/apps/{app_id}/changes/_search"},
               {50000, 2,
                <<10, 16, 112, 114, 111, 106, 101, 99, 116, 46, 97, 112, 112, 46, 114, 101, 97,
                  100, 18, 9, 80, 114, 111, 106, 101, 99, 116, 73, 100>>}
@@ -31260,6 +33257,29 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
             uninterpreted_option: []
           },
           output_type: ".zitadel.management.v1.AddOIDCAppResponse",
+          server_streaming: false
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          __unknown_fields__: [],
+          client_streaming: false,
+          input_type: ".zitadel.management.v1.AddSAMLAppRequest",
+          name: "AddSAMLApp",
+          options: %Google.Protobuf.MethodOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<34, 32, 47, 112, 114, 111, 106, 101, 99, 116, 115, 47, 123, 112, 114, 111, 106,
+                 101, 99, 116, 95, 105, 100, 125, 47, 97, 112, 112, 115, 47, 115, 97, 109, 108,
+                 58, 1, 42>>},
+              {50000, 2,
+               <<10, 17, 112, 114, 111, 106, 101, 99, 116, 46, 97, 112, 112, 46, 119, 114, 105,
+                 116, 101, 18, 9, 80, 114, 111, 106, 101, 99, 116, 73, 100>>}
+            ],
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: []
+          },
+          output_type: ".zitadel.management.v1.AddSAMLAppResponse",
           server_streaming: false
         },
         %Google.Protobuf.MethodDescriptorProto{
@@ -31330,6 +33350,30 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
             uninterpreted_option: []
           },
           output_type: ".zitadel.management.v1.UpdateOIDCAppConfigResponse",
+          server_streaming: false
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          __unknown_fields__: [],
+          client_streaming: false,
+          input_type: ".zitadel.management.v1.UpdateSAMLAppConfigRequest",
+          name: "UpdateSAMLAppConfig",
+          options: %Google.Protobuf.MethodOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<26, 48, 47, 112, 114, 111, 106, 101, 99, 116, 115, 47, 123, 112, 114, 111, 106,
+                 101, 99, 116, 95, 105, 100, 125, 47, 97, 112, 112, 115, 47, 123, 97, 112, 112,
+                 95, 105, 100, 125, 47, 115, 97, 109, 108, 95, 99, 111, 110, 102, 105, 103, 58, 1,
+                 42>>},
+              {50000, 2,
+               <<10, 17, 112, 114, 111, 106, 101, 99, 116, 46, 97, 112, 112, 46, 119, 114, 105,
+                 116, 101, 18, 9, 80, 114, 111, 106, 101, 99, 116, 73, 100>>}
+            ],
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: []
+          },
+          output_type: ".zitadel.management.v1.UpdateSAMLAppConfigResponse",
           server_streaming: false
         },
         %Google.Protobuf.MethodDescriptorProto{
@@ -31563,6 +33607,26 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
             uninterpreted_option: []
           },
           output_type: ".zitadel.management.v1.RemoveAppKeyResponse",
+          server_streaming: false
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          __unknown_fields__: [],
+          client_streaming: false,
+          input_type: ".zitadel.management.v1.ListProjectGrantChangesRequest",
+          name: "ListProjectGrantChanges",
+          options: %Google.Protobuf.MethodOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2, "\"8/projects/{project_id}/grants/{grant_id}/changes/_search"},
+              {50000, 2,
+               <<10, 18, 112, 114, 111, 106, 101, 99, 116, 46, 103, 114, 97, 110, 116, 46, 114,
+                 101, 97, 100, 18, 7, 71, 114, 97, 110, 116, 73, 100>>}
+            ],
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: []
+          },
+          output_type: ".zitadel.management.v1.ListProjectGrantChangesResponse",
           server_streaming: false
         },
         %Google.Protobuf.MethodDescriptorProto{
@@ -32035,24 +34099,6 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
         %Google.Protobuf.MethodDescriptorProto{
           __unknown_fields__: [],
           client_streaming: false,
-          input_type: ".zitadel.management.v1.GetFeaturesRequest",
-          name: "GetFeatures",
-          options: %Google.Protobuf.MethodOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [
-              {72_295_728, 2, <<18, 9, 47, 102, 101, 97, 116, 117, 114, 101, 115>>},
-              {50000, 2, "\n\rfeatures.read"}
-            ],
-            deprecated: false,
-            idempotency_level: :IDEMPOTENCY_UNKNOWN,
-            uninterpreted_option: []
-          },
-          output_type: ".zitadel.management.v1.GetFeaturesResponse",
-          server_streaming: false
-        },
-        %Google.Protobuf.MethodDescriptorProto{
-          __unknown_fields__: [],
-          client_streaming: false,
           input_type: ".zitadel.management.v1.GetOrgIAMPolicyRequest",
           name: "GetOrgIAMPolicy",
           options: %Google.Protobuf.MethodOptions{
@@ -32068,6 +34114,26 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
             uninterpreted_option: []
           },
           output_type: ".zitadel.management.v1.GetOrgIAMPolicyResponse",
+          server_streaming: false
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          __unknown_fields__: [],
+          client_streaming: false,
+          input_type: ".zitadel.management.v1.GetDomainPolicyRequest",
+          name: "GetDomainPolicy",
+          options: %Google.Protobuf.MethodOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<18, 16, 47, 112, 111, 108, 105, 99, 105, 101, 115, 47, 100, 111, 109, 97, 105,
+                 110>>},
+              {50000, 2, "\n\rauthenticated"}
+            ],
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: []
+          },
+          output_type: ".zitadel.management.v1.GetDomainPolicyResponse",
           server_streaming: false
         },
         %Google.Protobuf.MethodDescriptorProto{
@@ -32120,9 +34186,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<34, 15, 47, 112, 111, 108, 105, 99, 105, 101, 115, 47, 108, 111, 103, 105, 110,
                  58, 1, 42>>},
-              {50000, 2,
-               <<10, 12, 112, 111, 108, 105, 99, 121, 46, 119, 114, 105, 116, 101, 26, 12, 108,
-                 111, 103, 105, 110, 95, 112, 111, 108, 105, 99, 121>>}
+              {50000, 2, "\n\fpolicy.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -32142,9 +34206,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<26, 15, 47, 112, 111, 108, 105, 99, 105, 101, 115, 47, 108, 111, 103, 105, 110,
                  58, 1, 42>>},
-              {50000, 2,
-               <<10, 12, 112, 111, 108, 105, 99, 121, 46, 119, 114, 105, 116, 101, 26, 12, 108,
-                 111, 103, 105, 110, 95, 112, 111, 108, 105, 99, 121>>}
+              {50000, 2, "\n\fpolicy.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -32203,9 +34265,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<34, 20, 47, 112, 111, 108, 105, 99, 105, 101, 115, 47, 108, 111, 103, 105, 110,
                  47, 105, 100, 112, 115, 58, 1, 42>>},
-              {50000, 2,
-               <<10, 12, 112, 111, 108, 105, 99, 121, 46, 119, 114, 105, 116, 101, 26, 16, 108,
-                 111, 103, 105, 110, 95, 112, 111, 108, 105, 99, 121, 46, 105, 100, 112>>}
+              {50000, 2, "\n\fpolicy.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -32225,9 +34285,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<42, 29, 47, 112, 111, 108, 105, 99, 105, 101, 115, 47, 108, 111, 103, 105, 110,
                  47, 105, 100, 112, 115, 47, 123, 105, 100, 112, 95, 105, 100, 125>>},
-              {50000, 2,
-               <<10, 12, 112, 111, 108, 105, 99, 121, 46, 119, 114, 105, 116, 101, 26, 16, 108,
-                 111, 103, 105, 110, 95, 112, 111, 108, 105, 99, 121, 46, 105, 100, 112>>}
+              {50000, 2, "\n\fpolicy.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -32266,10 +34324,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<34, 30, 47, 112, 111, 108, 105, 99, 105, 101, 115, 47, 108, 111, 103, 105, 110,
                  47, 115, 101, 99, 111, 110, 100, 95, 102, 97, 99, 116, 111, 114, 115, 58, 1,
                  42>>},
-              {50000, 2,
-               <<10, 12, 112, 111, 108, 105, 99, 121, 46, 119, 114, 105, 116, 101, 26, 20, 108,
-                 111, 103, 105, 110, 95, 112, 111, 108, 105, 99, 121, 46, 102, 97, 99, 116, 111,
-                 114, 115>>}
+              {50000, 2, "\n\fpolicy.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -32287,10 +34342,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
             __pb_extensions__: %{},
             __unknown_fields__: [
               {72_295_728, 2, "*%/policies/login/second_factors/{type}"},
-              {50000, 2,
-               <<10, 12, 112, 111, 108, 105, 99, 121, 46, 119, 114, 105, 116, 101, 26, 20, 108,
-                 111, 103, 105, 110, 95, 112, 111, 108, 105, 99, 121, 46, 102, 97, 99, 116, 111,
-                 114, 115>>}
+              {50000, 2, "\n\fpolicy.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -32328,10 +34380,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<34, 29, 47, 112, 111, 108, 105, 99, 105, 101, 115, 47, 108, 111, 103, 105, 110,
                  47, 109, 117, 108, 116, 105, 95, 102, 97, 99, 116, 111, 114, 115, 58, 1, 42>>},
-              {50000, 2,
-               <<10, 12, 112, 111, 108, 105, 99, 121, 46, 119, 114, 105, 116, 101, 26, 20, 108,
-                 111, 103, 105, 110, 95, 112, 111, 108, 105, 99, 121, 46, 102, 97, 99, 116, 111,
-                 114, 115>>}
+              {50000, 2, "\n\fpolicy.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -32349,10 +34398,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
             __pb_extensions__: %{},
             __unknown_fields__: [
               {72_295_728, 2, "*$/policies/login/multi_factors/{type}"},
-              {50000, 2,
-               <<10, 12, 112, 111, 108, 105, 99, 121, 46, 119, 114, 105, 116, 101, 26, 20, 108,
-                 111, 103, 105, 110, 95, 112, 111, 108, 105, 99, 121, 46, 102, 97, 99, 116, 111,
-                 114, 115>>}
+              {50000, 2, "\n\fpolicy.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -32413,10 +34459,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<34, 29, 47, 112, 111, 108, 105, 99, 105, 101, 115, 47, 112, 97, 115, 115, 119,
                  111, 114, 100, 47, 99, 111, 109, 112, 108, 101, 120, 105, 116, 121, 58, 1, 42>>},
-              {50000, 2,
-               <<10, 12, 112, 111, 108, 105, 99, 121, 46, 119, 114, 105, 116, 101, 26, 26, 112,
-                 97, 115, 115, 119, 111, 114, 100, 95, 99, 111, 109, 112, 108, 101, 120, 105, 116,
-                 121, 95, 112, 111, 108, 105, 99, 121>>}
+              {50000, 2, "\n\fpolicy.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -32436,10 +34479,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<26, 29, 47, 112, 111, 108, 105, 99, 105, 101, 115, 47, 112, 97, 115, 115, 119,
                  111, 114, 100, 47, 99, 111, 109, 112, 108, 101, 120, 105, 116, 121, 58, 1, 42>>},
-              {50000, 2,
-               <<10, 12, 112, 111, 108, 105, 99, 121, 46, 119, 114, 105, 116, 101, 26, 26, 112,
-                 97, 115, 115, 119, 111, 114, 100, 95, 99, 111, 109, 112, 108, 101, 120, 105, 116,
-                 121, 95, 112, 111, 108, 105, 99, 121>>}
+              {50000, 2, "\n\fpolicy.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -32719,9 +34759,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<34, 17, 47, 112, 111, 108, 105, 99, 105, 101, 115, 47, 112, 114, 105, 118, 97,
                  99, 121, 58, 1, 42>>},
-              {50000, 2,
-               <<10, 12, 112, 111, 108, 105, 99, 121, 46, 119, 114, 105, 116, 101, 26, 14, 112,
-                 114, 105, 118, 97, 99, 121, 95, 112, 111, 108, 105, 99, 121>>}
+              {50000, 2, "\n\fpolicy.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -32741,9 +34779,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<26, 17, 47, 112, 111, 108, 105, 99, 105, 101, 115, 47, 112, 114, 105, 118, 97,
                  99, 121, 58, 1, 42>>},
-              {50000, 2,
-               <<10, 12, 112, 111, 108, 105, 99, 121, 46, 119, 114, 105, 116, 101, 26, 14, 112,
-                 114, 105, 118, 97, 99, 121, 95, 112, 111, 108, 105, 99, 121>>}
+              {50000, 2, "\n\fpolicy.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -32822,9 +34858,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<18, 23, 47, 112, 111, 108, 105, 99, 105, 101, 115, 47, 100, 101, 102, 97, 117,
                  108, 116, 47, 108, 97, 98, 101, 108>>},
-              {50000, 2,
-               <<10, 11, 112, 111, 108, 105, 99, 121, 46, 114, 101, 97, 100, 26, 12, 108, 97, 98,
-                 101, 108, 95, 112, 111, 108, 105, 99, 121>>}
+              {50000, 2, "\n\vpolicy.read"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -32844,9 +34878,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<34, 15, 47, 112, 111, 108, 105, 99, 105, 101, 115, 47, 108, 97, 98, 101, 108, 58,
                  1, 42>>},
-              {50000, 2,
-               <<10, 12, 112, 111, 108, 105, 99, 121, 46, 119, 114, 105, 116, 101, 26, 12, 108,
-                 97, 98, 101, 108, 95, 112, 111, 108, 105, 99, 121>>}
+              {50000, 2, "\n\fpolicy.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -32866,9 +34898,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<26, 15, 47, 112, 111, 108, 105, 99, 105, 101, 115, 47, 108, 97, 98, 101, 108, 58,
                  1, 42>>},
-              {50000, 2,
-               <<10, 12, 112, 111, 108, 105, 99, 121, 46, 119, 114, 105, 116, 101, 26, 12, 108,
-                 97, 98, 101, 108, 95, 112, 111, 108, 105, 99, 121>>}
+              {50000, 2, "\n\fpolicy.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -32888,9 +34918,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<34, 25, 47, 112, 111, 108, 105, 99, 105, 101, 115, 47, 108, 97, 98, 101, 108, 47,
                  95, 97, 99, 116, 105, 118, 97, 116, 101, 58, 1, 42>>},
-              {50000, 2,
-               <<10, 12, 112, 111, 108, 105, 99, 121, 46, 119, 114, 105, 116, 101, 26, 12, 108,
-                 97, 98, 101, 108, 95, 112, 111, 108, 105, 99, 121>>}
+              {50000, 2, "\n\fpolicy.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -32910,9 +34938,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<42, 20, 47, 112, 111, 108, 105, 99, 105, 101, 115, 47, 108, 97, 98, 101, 108, 47,
                  108, 111, 103, 111>>},
-              {50000, 2,
-               <<10, 12, 112, 111, 108, 105, 99, 121, 46, 119, 114, 105, 116, 101, 26, 12, 108,
-                 97, 98, 101, 108, 95, 112, 111, 108, 105, 99, 121>>}
+              {50000, 2, "\n\fpolicy.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -32932,9 +34958,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<42, 25, 47, 112, 111, 108, 105, 99, 105, 101, 115, 47, 108, 97, 98, 101, 108, 47,
                  108, 111, 103, 111, 95, 100, 97, 114, 107>>},
-              {50000, 2,
-               <<10, 12, 112, 111, 108, 105, 99, 121, 46, 119, 114, 105, 116, 101, 26, 12, 108,
-                 97, 98, 101, 108, 95, 112, 111, 108, 105, 99, 121>>}
+              {50000, 2, "\n\fpolicy.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -32954,9 +34978,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<42, 20, 47, 112, 111, 108, 105, 99, 105, 101, 115, 47, 108, 97, 98, 101, 108, 47,
                  105, 99, 111, 110>>},
-              {50000, 2,
-               <<10, 12, 112, 111, 108, 105, 99, 121, 46, 119, 114, 105, 116, 101, 26, 12, 108,
-                 97, 98, 101, 108, 95, 112, 111, 108, 105, 99, 121>>}
+              {50000, 2, "\n\fpolicy.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -32976,9 +34998,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<42, 25, 47, 112, 111, 108, 105, 99, 105, 101, 115, 47, 108, 97, 98, 101, 108, 47,
                  105, 99, 111, 110, 95, 100, 97, 114, 107>>},
-              {50000, 2,
-               <<10, 12, 112, 111, 108, 105, 99, 121, 46, 119, 114, 105, 116, 101, 26, 12, 108,
-                 97, 98, 101, 108, 95, 112, 111, 108, 105, 99, 121>>}
+              {50000, 2, "\n\fpolicy.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -32998,9 +35018,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<42, 20, 47, 112, 111, 108, 105, 99, 105, 101, 115, 47, 108, 97, 98, 101, 108, 47,
                  102, 111, 110, 116>>},
-              {50000, 2,
-               <<10, 12, 112, 111, 108, 105, 99, 121, 46, 119, 114, 105, 116, 101, 26, 12, 108,
-                 97, 98, 101, 108, 95, 112, 111, 108, 105, 99, 121>>}
+              {50000, 2, "\n\fpolicy.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -33080,10 +35098,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<26, 29, 47, 116, 101, 120, 116, 47, 109, 101, 115, 115, 97, 103, 101, 47, 105,
                  110, 105, 116, 47, 123, 108, 97, 110, 103, 117, 97, 103, 101, 125, 58, 1, 42>>},
-              {50000, 2,
-               <<10, 12, 112, 111, 108, 105, 99, 121, 46, 119, 114, 105, 116, 101, 26, 19, 99,
-                 117, 115, 116, 111, 109, 95, 116, 101, 120, 116, 46, 109, 101, 115, 115, 97, 103,
-                 101>>}
+              {50000, 2, "\n\fpolicy.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -33166,10 +35181,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<26, 38, 47, 116, 101, 120, 116, 47, 109, 101, 115, 115, 97, 103, 101, 47, 112,
                  97, 115, 115, 119, 111, 114, 100, 114, 101, 115, 101, 116, 47, 123, 108, 97, 110,
                  103, 117, 97, 103, 101, 125, 58, 1, 42>>},
-              {50000, 2,
-               <<10, 12, 112, 111, 108, 105, 99, 121, 46, 119, 114, 105, 116, 101, 26, 19, 99,
-                 117, 115, 116, 111, 109, 95, 116, 101, 120, 116, 46, 109, 101, 115, 115, 97, 103,
-                 101>>}
+              {50000, 2, "\n\fpolicy.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -33187,7 +35199,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
           options: %Google.Protobuf.MethodOptions{
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {72_295_728, 2, "*&/text/message/passwordreset/{language}"},
+              {72_295_728, 2, "*$/text/message/verifyemail/{language}"},
               {50000, 2, "\n\rpolicy.delete"}
             ],
             deprecated: false,
@@ -33252,10 +35264,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<26, 36, 47, 116, 101, 120, 116, 47, 109, 101, 115, 115, 97, 103, 101, 47, 118,
                  101, 114, 105, 102, 121, 101, 109, 97, 105, 108, 47, 123, 108, 97, 110, 103, 117,
                  97, 103, 101, 125, 58, 1, 42>>},
-              {50000, 2,
-               <<10, 12, 112, 111, 108, 105, 99, 121, 46, 119, 114, 105, 116, 101, 26, 19, 99,
-                 117, 115, 116, 111, 109, 95, 116, 101, 120, 116, 46, 109, 101, 115, 115, 97, 103,
-                 101>>}
+              {50000, 2, "\n\fpolicy.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -33337,10 +35346,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<26, 36, 47, 116, 101, 120, 116, 47, 109, 101, 115, 115, 97, 103, 101, 47, 118,
                  101, 114, 105, 102, 121, 112, 104, 111, 110, 101, 47, 123, 108, 97, 110, 103,
                  117, 97, 103, 101, 125, 58, 1, 42>>},
-              {50000, 2,
-               <<10, 12, 112, 111, 108, 105, 99, 121, 46, 119, 114, 105, 116, 101, 26, 19, 99,
-                 117, 115, 116, 111, 109, 95, 116, 101, 120, 116, 46, 109, 101, 115, 115, 97, 103,
-                 101>>}
+              {50000, 2, "\n\fpolicy.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -33422,10 +35428,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<26, 38, 47, 116, 101, 120, 116, 47, 109, 101, 115, 115, 97, 103, 101, 47, 100,
                  111, 109, 97, 105, 110, 99, 108, 97, 105, 109, 101, 100, 47, 123, 108, 97, 110,
                  103, 117, 97, 103, 101, 125, 58, 1, 42>>},
-              {50000, 2,
-               <<10, 12, 112, 111, 108, 105, 99, 121, 46, 119, 114, 105, 116, 101, 26, 19, 99,
-                 117, 115, 116, 111, 109, 95, 116, 101, 120, 116, 46, 109, 101, 115, 115, 97, 103,
-                 101>>}
+              {50000, 2, "\n\fpolicy.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -33516,10 +35519,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                  97, 115, 115, 119, 111, 114, 100, 108, 101, 115, 115, 95, 114, 101, 103, 105,
                  115, 116, 114, 97, 116, 105, 111, 110, 47, 123, 108, 97, 110, 103, 117, 97, 103,
                  101, 125, 58, 1, 42>>},
-              {50000, 2,
-               <<10, 12, 112, 111, 108, 105, 99, 121, 46, 119, 114, 105, 116, 101, 26, 19, 99,
-                 117, 115, 116, 111, 109, 95, 116, 101, 120, 116, 46, 109, 101, 115, 115, 97, 103,
-                 101>>}
+              {50000, 2, "\n\fpolicy.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -33600,9 +35600,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<26, 22, 47, 116, 101, 120, 116, 47, 108, 111, 103, 105, 110, 47, 123, 108, 97,
                  110, 103, 117, 97, 103, 101, 125, 58, 1, 42>>},
-              {50000, 2,
-               <<10, 12, 112, 111, 108, 105, 99, 121, 46, 119, 114, 105, 116, 101, 26, 17, 99,
-                 117, 115, 116, 111, 109, 95, 116, 101, 120, 116, 46, 108, 111, 103, 105, 110>>}
+              {50000, 2, "\n\fpolicy.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -33678,9 +35676,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
             __unknown_fields__: [
               {72_295_728, 2,
                <<34, 10, 47, 105, 100, 112, 115, 47, 111, 105, 100, 99, 58, 1, 42>>},
-              {50000, 2,
-               <<10, 13, 111, 114, 103, 46, 105, 100, 112, 46, 119, 114, 105, 116, 101, 26, 16,
-                 108, 111, 103, 105, 110, 95, 112, 111, 108, 105, 99, 121, 46, 105, 100, 112>>}
+              {50000, 2, "\n\rorg.idp.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -33698,9 +35694,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
             __pb_extensions__: %{},
             __unknown_fields__: [
               {72_295_728, 2, <<34, 9, 47, 105, 100, 112, 115, 47, 106, 119, 116, 58, 1, 42>>},
-              {50000, 2,
-               <<10, 13, 111, 114, 103, 46, 105, 100, 112, 46, 119, 114, 105, 116, 101, 26, 16,
-                 108, 111, 103, 105, 110, 95, 112, 111, 108, 105, 99, 121, 46, 105, 100, 112>>}
+              {50000, 2, "\n\rorg.idp.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -33720,9 +35714,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<34, 26, 47, 105, 100, 112, 115, 47, 123, 105, 100, 112, 95, 105, 100, 125, 47,
                  95, 100, 101, 97, 99, 116, 105, 118, 97, 116, 101, 58, 1, 42>>},
-              {50000, 2,
-               <<10, 13, 111, 114, 103, 46, 105, 100, 112, 46, 119, 114, 105, 116, 101, 26, 16,
-                 108, 111, 103, 105, 110, 95, 112, 111, 108, 105, 99, 121, 46, 105, 100, 112>>}
+              {50000, 2, "\n\rorg.idp.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -33742,9 +35734,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<34, 26, 47, 105, 100, 112, 115, 47, 123, 105, 100, 112, 95, 105, 100, 125, 47,
                  95, 114, 101, 97, 99, 116, 105, 118, 97, 116, 101, 58, 1, 42>>},
-              {50000, 2,
-               <<10, 13, 111, 114, 103, 46, 105, 100, 112, 46, 119, 114, 105, 116, 101, 26, 16,
-                 108, 111, 103, 105, 110, 95, 112, 111, 108, 105, 99, 121, 46, 105, 100, 112>>}
+              {50000, 2, "\n\rorg.idp.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -33763,9 +35753,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
             __unknown_fields__: [
               {72_295_728, 2,
                <<42, 14, 47, 105, 100, 112, 115, 47, 123, 105, 100, 112, 95, 105, 100, 125>>},
-              {50000, 2,
-               <<10, 13, 111, 114, 103, 46, 105, 100, 112, 46, 119, 114, 105, 116, 101, 26, 16,
-                 108, 111, 103, 105, 110, 95, 112, 111, 108, 105, 99, 121, 46, 105, 100, 112>>}
+              {50000, 2, "\n\rorg.idp.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -33785,9 +35773,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<26, 14, 47, 105, 100, 112, 115, 47, 123, 105, 100, 112, 95, 105, 100, 125, 58, 1,
                  42>>},
-              {50000, 2,
-               <<10, 13, 111, 114, 103, 46, 105, 100, 112, 46, 119, 114, 105, 116, 101, 26, 16,
-                 108, 111, 103, 105, 110, 95, 112, 111, 108, 105, 99, 121, 46, 105, 100, 112>>}
+              {50000, 2, "\n\rorg.idp.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -33807,9 +35793,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<26, 26, 47, 105, 100, 112, 115, 47, 123, 105, 100, 112, 95, 105, 100, 125, 47,
                  111, 105, 100, 99, 95, 99, 111, 110, 102, 105, 103, 58, 1, 42>>},
-              {50000, 2,
-               <<10, 13, 111, 114, 103, 46, 105, 100, 112, 46, 119, 114, 105, 116, 101, 26, 16,
-                 108, 111, 103, 105, 110, 95, 112, 111, 108, 105, 99, 121, 46, 105, 100, 112>>}
+              {50000, 2, "\n\rorg.idp.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -33829,9 +35813,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<26, 25, 47, 105, 100, 112, 115, 47, 123, 105, 100, 112, 95, 105, 100, 125, 47,
                  106, 119, 116, 95, 99, 111, 110, 102, 105, 103, 58, 1, 42>>},
-              {50000, 2,
-               <<10, 13, 111, 114, 103, 46, 105, 100, 112, 46, 119, 114, 105, 116, 101, 26, 16,
-                 108, 111, 103, 105, 110, 95, 112, 111, 108, 105, 99, 121, 46, 105, 100, 112>>}
+              {50000, 2, "\n\rorg.idp.write"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -33852,8 +35834,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<34, 16, 47, 97, 99, 116, 105, 111, 110, 115, 47, 95, 115, 101, 97, 114, 99, 104,
                  58, 1, 42>>},
               {50000, 2,
-               <<10, 15, 111, 114, 103, 46, 97, 99, 116, 105, 111, 110, 46, 114, 101, 97, 100, 26,
-                 7, 97, 99, 116, 105, 111, 110, 115>>}
+               <<10, 15, 111, 114, 103, 46, 97, 99, 116, 105, 111, 110, 46, 114, 101, 97, 100>>}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -33873,8 +35854,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2,
                <<18, 13, 47, 97, 99, 116, 105, 111, 110, 115, 47, 123, 105, 100, 125>>},
               {50000, 2,
-               <<10, 15, 111, 114, 103, 46, 97, 99, 116, 105, 111, 110, 46, 114, 101, 97, 100, 26,
-                 7, 97, 99, 116, 105, 111, 110, 115>>}
+               <<10, 15, 111, 114, 103, 46, 97, 99, 116, 105, 111, 110, 46, 114, 101, 97, 100>>}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -33894,7 +35874,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {72_295_728, 2, <<34, 8, 47, 97, 99, 116, 105, 111, 110, 115, 58, 1, 42>>},
               {50000, 2,
                <<10, 16, 111, 114, 103, 46, 97, 99, 116, 105, 111, 110, 46, 119, 114, 105, 116,
-                 101, 26, 7, 97, 99, 116, 105, 111, 110, 115>>}
+                 101>>}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -33915,7 +35895,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<26, 13, 47, 97, 99, 116, 105, 111, 110, 115, 47, 123, 105, 100, 125, 58, 1, 42>>},
               {50000, 2,
                <<10, 16, 111, 114, 103, 46, 97, 99, 116, 105, 111, 110, 46, 119, 114, 105, 116,
-                 101, 26, 7, 97, 99, 116, 105, 111, 110, 115>>}
+                 101>>}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -33937,7 +35917,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                  101, 97, 99, 116, 105, 118, 97, 116, 101, 58, 1, 42>>},
               {50000, 2,
                <<10, 16, 111, 114, 103, 46, 97, 99, 116, 105, 111, 110, 46, 119, 114, 105, 116,
-                 101, 26, 7, 97, 99, 116, 105, 111, 110, 115>>}
+                 101>>}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -33959,7 +35939,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                  101, 97, 99, 116, 105, 118, 97, 116, 101, 58, 1, 42>>},
               {50000, 2,
                <<10, 16, 111, 114, 103, 46, 97, 99, 116, 105, 111, 110, 46, 119, 114, 105, 116,
-                 101, 26, 7, 97, 99, 116, 105, 111, 110, 115>>}
+                 101>>}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -33980,13 +35960,53 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<42, 13, 47, 97, 99, 116, 105, 111, 110, 115, 47, 123, 105, 100, 125, 58, 1, 42>>},
               {50000, 2,
                <<10, 17, 111, 114, 103, 46, 97, 99, 116, 105, 111, 110, 46, 100, 101, 108, 101,
-                 116, 101, 26, 7, 97, 99, 116, 105, 111, 110, 115>>}
+                 116, 101>>}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
             uninterpreted_option: []
           },
           output_type: ".zitadel.management.v1.DeleteActionResponse",
+          server_streaming: false
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          __unknown_fields__: [],
+          client_streaming: false,
+          input_type: ".zitadel.management.v1.ListFlowTypesRequest",
+          name: "ListFlowTypes",
+          options: %Google.Protobuf.MethodOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<34, 20, 47, 102, 108, 111, 119, 115, 47, 116, 121, 112, 101, 115, 47, 95, 115,
+                 101, 97, 114, 99, 104>>},
+              {50000, 2, "\n\rorg.flow.read"}
+            ],
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: []
+          },
+          output_type: ".zitadel.management.v1.ListFlowTypesResponse",
+          server_streaming: false
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          __unknown_fields__: [],
+          client_streaming: false,
+          input_type: ".zitadel.management.v1.ListFlowTriggerTypesRequest",
+          name: "ListFlowTriggerTypes",
+          options: %Google.Protobuf.MethodOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<34, 30, 47, 102, 108, 111, 119, 115, 47, 123, 116, 121, 112, 101, 125, 47, 116,
+                 114, 105, 103, 103, 101, 114, 115, 47, 95, 115, 101, 97, 114, 99, 104>>},
+              {50000, 2, "\n\rorg.flow.read"}
+            ],
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: []
+          },
+          output_type: ".zitadel.management.v1.ListFlowTriggerTypesResponse",
           server_streaming: false
         },
         %Google.Protobuf.MethodDescriptorProto{
@@ -33999,9 +36019,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
             __unknown_fields__: [
               {72_295_728, 2,
                <<18, 13, 47, 102, 108, 111, 119, 115, 47, 123, 116, 121, 112, 101, 125>>},
-              {50000, 2,
-               <<10, 13, 111, 114, 103, 46, 102, 108, 111, 119, 46, 114, 101, 97, 100, 26, 7, 97,
-                 99, 116, 105, 111, 110, 115>>}
+              {50000, 2, "\n\rorg.flow.read"}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -34022,8 +36040,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<34, 20, 47, 102, 108, 111, 119, 115, 47, 123, 116, 121, 112, 101, 125, 47, 95,
                  99, 108, 101, 97, 114>>},
               {50000, 2,
-               <<10, 15, 111, 114, 103, 46, 102, 108, 111, 119, 46, 100, 101, 108, 101, 116, 101,
-                 26, 7, 97, 99, 116, 105, 111, 110, 115>>}
+               <<10, 15, 111, 114, 103, 46, 102, 108, 111, 119, 46, 100, 101, 108, 101, 116, 101>>}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -34045,8 +36062,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                  112, 101, 125, 47, 116, 114, 105, 103, 103, 101, 114, 47, 123, 116, 114, 105,
                  103, 103, 101, 114, 95, 116, 121, 112, 101, 125, 58, 1, 42>>},
               {50000, 2,
-               <<10, 14, 111, 114, 103, 46, 102, 108, 111, 119, 46, 119, 114, 105, 116, 101, 26,
-                 7, 97, 99, 116, 105, 111, 110, 115>>}
+               <<10, 14, 111, 114, 103, 46, 102, 108, 111, 119, 46, 119, 114, 105, 116, 101>>}
             ],
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
@@ -34418,6 +36434,42 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
   )
 
   rpc(
+    :SetOrgMetadata,
+    Zitadel.Management.V1.SetOrgMetadataRequest,
+    Zitadel.Management.V1.SetOrgMetadataResponse
+  )
+
+  rpc(
+    :BulkSetOrgMetadata,
+    Zitadel.Management.V1.BulkSetOrgMetadataRequest,
+    Zitadel.Management.V1.BulkSetOrgMetadataResponse
+  )
+
+  rpc(
+    :ListOrgMetadata,
+    Zitadel.Management.V1.ListOrgMetadataRequest,
+    Zitadel.Management.V1.ListOrgMetadataResponse
+  )
+
+  rpc(
+    :GetOrgMetadata,
+    Zitadel.Management.V1.GetOrgMetadataRequest,
+    Zitadel.Management.V1.GetOrgMetadataResponse
+  )
+
+  rpc(
+    :RemoveOrgMetadata,
+    Zitadel.Management.V1.RemoveOrgMetadataRequest,
+    Zitadel.Management.V1.RemoveOrgMetadataResponse
+  )
+
+  rpc(
+    :BulkRemoveOrgMetadata,
+    Zitadel.Management.V1.BulkRemoveOrgMetadataRequest,
+    Zitadel.Management.V1.BulkRemoveOrgMetadataResponse
+  )
+
+  rpc(
     :ListOrgDomains,
     Zitadel.Management.V1.ListOrgDomainsRequest,
     Zitadel.Management.V1.ListOrgDomainsResponse
@@ -34629,6 +36681,12 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
     Zitadel.Management.V1.AddOIDCAppResponse
   )
 
+  rpc(
+    :AddSAMLApp,
+    Zitadel.Management.V1.AddSAMLAppRequest,
+    Zitadel.Management.V1.AddSAMLAppResponse
+  )
+
   rpc(:AddAPIApp, Zitadel.Management.V1.AddAPIAppRequest, Zitadel.Management.V1.AddAPIAppResponse)
 
   rpc(:UpdateApp, Zitadel.Management.V1.UpdateAppRequest, Zitadel.Management.V1.UpdateAppResponse)
@@ -34637,6 +36695,12 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
     :UpdateOIDCAppConfig,
     Zitadel.Management.V1.UpdateOIDCAppConfigRequest,
     Zitadel.Management.V1.UpdateOIDCAppConfigResponse
+  )
+
+  rpc(
+    :UpdateSAMLAppConfig,
+    Zitadel.Management.V1.UpdateSAMLAppConfigRequest,
+    Zitadel.Management.V1.UpdateSAMLAppConfigResponse
   )
 
   rpc(
@@ -34685,6 +36749,12 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
     :RemoveAppKey,
     Zitadel.Management.V1.RemoveAppKeyRequest,
     Zitadel.Management.V1.RemoveAppKeyResponse
+  )
+
+  rpc(
+    :ListProjectGrantChanges,
+    Zitadel.Management.V1.ListProjectGrantChangesRequest,
+    Zitadel.Management.V1.ListProjectGrantChangesResponse
   )
 
   rpc(
@@ -34814,15 +36884,15 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
   )
 
   rpc(
-    :GetFeatures,
-    Zitadel.Management.V1.GetFeaturesRequest,
-    Zitadel.Management.V1.GetFeaturesResponse
-  )
-
-  rpc(
     :GetOrgIAMPolicy,
     Zitadel.Management.V1.GetOrgIAMPolicyRequest,
     Zitadel.Management.V1.GetOrgIAMPolicyResponse
+  )
+
+  rpc(
+    :GetDomainPolicy,
+    Zitadel.Management.V1.GetDomainPolicyRequest,
+    Zitadel.Management.V1.GetDomainPolicyResponse
   )
 
   rpc(
@@ -35365,6 +37435,18 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
     :DeleteAction,
     Zitadel.Management.V1.DeleteActionRequest,
     Zitadel.Management.V1.DeleteActionResponse
+  )
+
+  rpc(
+    :ListFlowTypes,
+    Zitadel.Management.V1.ListFlowTypesRequest,
+    Zitadel.Management.V1.ListFlowTypesResponse
+  )
+
+  rpc(
+    :ListFlowTriggerTypes,
+    Zitadel.Management.V1.ListFlowTriggerTypesRequest,
+    Zitadel.Management.V1.ListFlowTriggerTypesResponse
   )
 
   rpc(:GetFlow, Zitadel.Management.V1.GetFlowRequest, Zitadel.Management.V1.GetFlowResponse)

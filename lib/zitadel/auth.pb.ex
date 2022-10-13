@@ -4032,65 +4032,6 @@ defmodule Zitadel.Auth.V1.ListMyProjectOrgsResponse do
   field(:result, 2, repeated: true, type: Zitadel.Org.V1.Org)
 end
 
-defmodule Zitadel.Auth.V1.ListMyZitadelFeaturesRequest do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
-
-  def descriptor do
-    # credo:disable-for-next-line
-    %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
-      field: [],
-      name: "ListMyZitadelFeaturesRequest",
-      nested_type: [],
-      oneof_decl: [],
-      options: nil,
-      reserved_name: [],
-      reserved_range: []
-    }
-  end
-end
-
-defmodule Zitadel.Auth.V1.ListMyZitadelFeaturesResponse do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
-
-  def descriptor do
-    # credo:disable-for-next-line
-    %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
-      field: [
-        %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "result",
-          label: :LABEL_REPEATED,
-          name: "result",
-          number: 1,
-          oneof_index: nil,
-          options: nil,
-          proto3_optional: nil,
-          type: :TYPE_STRING,
-          type_name: nil
-        }
-      ],
-      name: "ListMyZitadelFeaturesResponse",
-      nested_type: [],
-      oneof_decl: [],
-      options: nil,
-      reserved_name: [],
-      reserved_range: []
-    }
-  end
-
-  field(:result, 1, repeated: true, type: :string)
-end
-
 defmodule Zitadel.Auth.V1.ListMyZitadelPermissionsRequest do
   use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
 
@@ -4313,6 +4254,124 @@ defmodule Zitadel.Auth.V1.ListMyMembershipsResponse do
 
   field(:details, 1, type: Zitadel.V1.ListDetails)
   field(:result, 2, repeated: true, type: Zitadel.User.V1.Membership)
+end
+
+defmodule Zitadel.Auth.V1.GetMyLabelPolicyRequest do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [],
+      name: "GetMyLabelPolicyRequest",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+end
+
+defmodule Zitadel.Auth.V1.GetMyLabelPolicyResponse do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "policy",
+          label: :LABEL_OPTIONAL,
+          name: "policy",
+          number: 1,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.policy.v1.LabelPolicy"
+        }
+      ],
+      name: "GetMyLabelPolicyResponse",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  field(:policy, 1, type: Zitadel.Policy.V1.LabelPolicy)
+end
+
+defmodule Zitadel.Auth.V1.GetMyPrivacyPolicyRequest do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [],
+      name: "GetMyPrivacyPolicyRequest",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+end
+
+defmodule Zitadel.Auth.V1.GetMyPrivacyPolicyResponse do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "policy",
+          label: :LABEL_OPTIONAL,
+          name: "policy",
+          number: 1,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.policy.v1.PrivacyPolicy"
+        }
+      ],
+      name: "GetMyPrivacyPolicyResponse",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  field(:policy, 1, type: Zitadel.Policy.V1.PrivacyPolicy)
 end
 
 defmodule Zitadel.Auth.V1.AuthService.Service do
@@ -5176,26 +5235,6 @@ defmodule Zitadel.Auth.V1.AuthService.Service do
         %Google.Protobuf.MethodDescriptorProto{
           __unknown_fields__: [],
           client_streaming: false,
-          input_type: ".zitadel.auth.v1.ListMyZitadelFeaturesRequest",
-          name: "ListMyZitadelFeatures",
-          options: %Google.Protobuf.MethodOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [
-              {72_295_728, 2,
-               <<34, 28, 47, 102, 101, 97, 116, 117, 114, 101, 115, 47, 122, 105, 116, 97, 100,
-                 101, 108, 47, 109, 101, 47, 95, 115, 101, 97, 114, 99, 104>>},
-              {50000, 2, "\n\rauthenticated"}
-            ],
-            deprecated: false,
-            idempotency_level: :IDEMPOTENCY_UNKNOWN,
-            uninterpreted_option: []
-          },
-          output_type: ".zitadel.auth.v1.ListMyZitadelFeaturesResponse",
-          server_streaming: false
-        },
-        %Google.Protobuf.MethodDescriptorProto{
-          __unknown_fields__: [],
-          client_streaming: false,
           input_type: ".zitadel.auth.v1.ListMyZitadelPermissionsRequest",
           name: "ListMyZitadelPermissions",
           options: %Google.Protobuf.MethodOptions{
@@ -5251,6 +5290,45 @@ defmodule Zitadel.Auth.V1.AuthService.Service do
             uninterpreted_option: []
           },
           output_type: ".zitadel.auth.v1.ListMyMembershipsResponse",
+          server_streaming: false
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          __unknown_fields__: [],
+          client_streaming: false,
+          input_type: ".zitadel.auth.v1.GetMyLabelPolicyRequest",
+          name: "GetMyLabelPolicy",
+          options: %Google.Protobuf.MethodOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<18, 15, 47, 112, 111, 108, 105, 99, 105, 101, 115, 47, 108, 97, 98, 101, 108>>},
+              {50000, 2, "\n\rauthenticated"}
+            ],
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: []
+          },
+          output_type: ".zitadel.auth.v1.GetMyLabelPolicyResponse",
+          server_streaming: false
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          __unknown_fields__: [],
+          client_streaming: false,
+          input_type: ".zitadel.auth.v1.GetMyPrivacyPolicyRequest",
+          name: "GetMyPrivacyPolicy",
+          options: %Google.Protobuf.MethodOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<18, 17, 47, 112, 111, 108, 105, 99, 105, 101, 115, 47, 112, 114, 105, 118, 97,
+                 99, 121>>},
+              {50000, 2, "\n\rauthenticated"}
+            ],
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: []
+          },
+          output_type: ".zitadel.auth.v1.GetMyPrivacyPolicyResponse",
           server_streaming: false
         }
       ],
@@ -5470,12 +5548,6 @@ defmodule Zitadel.Auth.V1.AuthService.Service do
   )
 
   rpc(
-    :ListMyZitadelFeatures,
-    Zitadel.Auth.V1.ListMyZitadelFeaturesRequest,
-    Zitadel.Auth.V1.ListMyZitadelFeaturesResponse
-  )
-
-  rpc(
     :ListMyZitadelPermissions,
     Zitadel.Auth.V1.ListMyZitadelPermissionsRequest,
     Zitadel.Auth.V1.ListMyZitadelPermissionsResponse
@@ -5491,6 +5563,18 @@ defmodule Zitadel.Auth.V1.AuthService.Service do
     :ListMyMemberships,
     Zitadel.Auth.V1.ListMyMembershipsRequest,
     Zitadel.Auth.V1.ListMyMembershipsResponse
+  )
+
+  rpc(
+    :GetMyLabelPolicy,
+    Zitadel.Auth.V1.GetMyLabelPolicyRequest,
+    Zitadel.Auth.V1.GetMyLabelPolicyResponse
+  )
+
+  rpc(
+    :GetMyPrivacyPolicy,
+    Zitadel.Auth.V1.GetMyPrivacyPolicyRequest,
+    Zitadel.Auth.V1.GetMyPrivacyPolicyResponse
   )
 end
 

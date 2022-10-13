@@ -417,6 +417,20 @@ defmodule Zitadel.App.V1.App do
           proto3_optional: nil,
           type: :TYPE_MESSAGE,
           type_name: ".zitadel.app.v1.APIConfig"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "samlConfig",
+          label: :LABEL_OPTIONAL,
+          name: "saml_config",
+          number: 7,
+          oneof_index: 0,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.app.v1.SAMLConfig"
         }
       ],
       name: "App",
@@ -442,6 +456,7 @@ defmodule Zitadel.App.V1.App do
   field(:name, 4, type: :string, deprecated: false)
   field(:oidc_config, 5, type: Zitadel.App.V1.OIDCConfig, json_name: "oidcConfig", oneof: 0)
   field(:api_config, 6, type: Zitadel.App.V1.APIConfig, json_name: "apiConfig", oneof: 0)
+  field(:saml_config, 7, type: Zitadel.App.V1.SAMLConfig, json_name: "samlConfig", oneof: 0)
 end
 
 defmodule Zitadel.App.V1.AppQuery do
@@ -700,36 +715,6 @@ defmodule Zitadel.App.V1.OIDCConfig do
                  50, 47, 111, 105, 100, 99, 32, 99, 108, 105, 101, 110, 116, 32, 105, 100, 74, 27,
                  34, 54, 57, 54, 50, 57, 48, 50, 51, 57, 48, 54, 52, 56, 56, 51, 51, 52, 64, 90,
                  73, 84, 65, 68, 69, 76, 34>>}
-            ],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
-          type: :TYPE_STRING,
-          type_name: nil
-        },
-        %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "clientSecret",
-          label: :LABEL_OPTIONAL,
-          name: "client_secret",
-          number: 6,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [
-              {1042, 2,
-               <<50, 32, 103, 101, 110, 101, 114, 97, 116, 101, 100, 32, 115, 101, 99, 114, 101,
-                 116, 32, 102, 111, 114, 32, 116, 104, 105, 115, 32, 99, 111, 110, 102, 105, 103,
-                 74, 17, 34, 103, 106, 195, 182, 113, 51, 52, 53, 56, 57, 117, 97, 115, 103, 104,
-                 34>>}
             ],
             ctype: :STRING,
             deprecated: false,
@@ -1107,8 +1092,10 @@ defmodule Zitadel.App.V1.OIDCConfig do
       nested_type: [],
       oneof_decl: [],
       options: nil,
-      reserved_name: [],
-      reserved_range: []
+      reserved_name: ["client_secret"],
+      reserved_range: [
+        %Google.Protobuf.DescriptorProto.ReservedRange{__unknown_fields__: [], end: 7, start: 6}
+      ]
     }
   end
 
@@ -1143,7 +1130,6 @@ defmodule Zitadel.App.V1.OIDCConfig do
   )
 
   field(:client_id, 5, type: :string, json_name: "clientId", deprecated: false)
-  field(:client_secret, 6, type: :string, json_name: "clientSecret", deprecated: false)
 
   field(:auth_method_type, 7,
     type: Zitadel.App.V1.OIDCAuthMethodType,
@@ -1213,6 +1199,67 @@ defmodule Zitadel.App.V1.OIDCConfig do
   )
 end
 
+defmodule Zitadel.App.V1.SAMLConfig do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "metadataXml",
+          label: :LABEL_OPTIONAL,
+          name: "metadata_xml",
+          number: 1,
+          oneof_index: 0,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_BYTES,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "metadataUrl",
+          label: :LABEL_OPTIONAL,
+          name: "metadata_url",
+          number: 2,
+          oneof_index: 0,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        }
+      ],
+      name: "SAMLConfig",
+      nested_type: [],
+      oneof_decl: [
+        %Google.Protobuf.OneofDescriptorProto{
+          __unknown_fields__: [],
+          name: "metadata",
+          options: nil
+        }
+      ],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  oneof(:metadata, 0)
+
+  field(:metadata_xml, 1, type: :bytes, json_name: "metadataXml", oneof: 0)
+  field(:metadata_url, 2, type: :string, json_name: "metadataUrl", oneof: 0)
+end
+
 defmodule Zitadel.App.V1.APIConfig do
   use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
 
@@ -1258,36 +1305,6 @@ defmodule Zitadel.App.V1.APIConfig do
           __unknown_fields__: [],
           default_value: nil,
           extendee: nil,
-          json_name: "clientSecret",
-          label: :LABEL_OPTIONAL,
-          name: "client_secret",
-          number: 2,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [
-              {1042, 2,
-               <<50, 32, 103, 101, 110, 101, 114, 97, 116, 101, 100, 32, 115, 101, 99, 114, 101,
-                 116, 32, 102, 111, 114, 32, 116, 104, 105, 115, 32, 99, 111, 110, 102, 105, 103,
-                 74, 17, 34, 103, 106, 195, 182, 113, 51, 52, 53, 56, 57, 117, 97, 115, 103, 104,
-                 34>>}
-            ],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
-          type: :TYPE_STRING,
-          type_name: nil
-        },
-        %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
           json_name: "authMethodType",
           label: :LABEL_OPTIONAL,
           name: "auth_method_type",
@@ -1313,13 +1330,14 @@ defmodule Zitadel.App.V1.APIConfig do
       nested_type: [],
       oneof_decl: [],
       options: nil,
-      reserved_name: [],
-      reserved_range: []
+      reserved_name: ["client_secret"],
+      reserved_range: [
+        %Google.Protobuf.DescriptorProto.ReservedRange{__unknown_fields__: [], end: 3, start: 2}
+      ]
     }
   end
 
   field(:client_id, 1, type: :string, json_name: "clientId", deprecated: false)
-  field(:client_secret, 2, type: :string, json_name: "clientSecret", deprecated: false)
 
   field(:auth_method_type, 3,
     type: Zitadel.App.V1.APIAuthMethodType,

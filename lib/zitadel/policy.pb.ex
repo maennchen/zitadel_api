@@ -199,6 +199,165 @@ defmodule Zitadel.Policy.V1.OrgIAMPolicy do
   field(:is_default, 3, type: :bool, json_name: "isDefault", deprecated: false)
 end
 
+defmodule Zitadel.Policy.V1.DomainPolicy do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "details",
+          label: :LABEL_OPTIONAL,
+          name: "details",
+          number: 1,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "userLoginMustBeDomain",
+          label: :LABEL_OPTIONAL,
+          name: "user_login_must_be_domain",
+          number: 2,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2, "2<the username has to end with the domain of it's organisation"}
+            ],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "isDefault",
+          label: :LABEL_OPTIONAL,
+          name: "is_default",
+          number: 3,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2, "26defines if the organisation's admin changed the policy"}
+            ],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "validateOrgDomains",
+          label: :LABEL_OPTIONAL,
+          name: "validate_org_domains",
+          number: 4,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               "2Xdefines if organisation domains should be validated org count as validated automatically"}
+            ],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "smtpSenderAddressMatchesInstanceDomain",
+          label: :LABEL_OPTIONAL,
+          name: "smtp_sender_address_matches_instance_domain",
+          number: 5,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               "2Ydefines if the smtp sender address domain should match an existing domain on the instance"}
+            ],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
+        }
+      ],
+      name: "DomainPolicy",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+
+  field(:user_login_must_be_domain, 2,
+    type: :bool,
+    json_name: "userLoginMustBeDomain",
+    deprecated: false
+  )
+
+  field(:is_default, 3, type: :bool, json_name: "isDefault", deprecated: false)
+  field(:validate_org_domains, 4, type: :bool, json_name: "validateOrgDomains", deprecated: false)
+
+  field(:smtp_sender_address_matches_instance_domain, 5,
+    type: :bool,
+    json_name: "smtpSenderAddressMatchesInstanceDomain",
+    deprecated: false
+  )
+end
+
 defmodule Zitadel.Policy.V1.LabelPolicy do
   use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
 
@@ -287,18 +446,7 @@ defmodule Zitadel.Policy.V1.LabelPolicy do
             __pb_extensions__: %{},
             __unknown_fields__: [
               {1042, 2,
-               <<50, 186, 1, 104, 105, 100, 101, 115, 32, 116, 104, 101, 32, 111, 114, 103, 32,
-                 115, 117, 102, 102, 105, 120, 32, 111, 110, 32, 116, 104, 101, 32, 108, 111, 103,
-                 105, 110, 32, 102, 111, 114, 109, 32, 105, 102, 32, 116, 104, 101, 32, 115, 99,
-                 111, 112, 101, 32, 34, 117, 114, 110, 58, 122, 105, 116, 97, 100, 101, 108, 58,
-                 105, 97, 109, 58, 111, 114, 103, 58, 100, 111, 109, 97, 105, 110, 58, 112, 114,
-                 105, 109, 97, 114, 121, 58, 123, 100, 111, 109, 97, 105, 110, 110, 97, 109, 101,
-                 125, 34, 32, 105, 115, 32, 115, 101, 116, 46, 32, 68, 101, 116, 97, 105, 108,
-                 115, 32, 97, 98, 111, 117, 116, 32, 116, 104, 105, 115, 32, 115, 99, 111, 112,
-                 101, 32, 105, 110, 32, 104, 116, 116, 112, 115, 58, 47, 47, 100, 111, 99, 115,
-                 46, 122, 105, 116, 97, 100, 101, 108, 46, 99, 104, 47, 99, 111, 110, 99, 101,
-                 112, 116, 115, 35, 82, 101, 115, 101, 114, 118, 101, 100, 95, 83, 99, 111, 112,
-                 101, 115>>}
+               "2lhides the org suffix on the login form if the scope \"urn:zitadel:iam:org:domain:primary:{domainname}\" is set"}
             ],
             ctype: :STRING,
             deprecated: false,
@@ -877,6 +1025,156 @@ defmodule Zitadel.Policy.V1.LoginPolicy do
           proto3_optional: nil,
           type: :TYPE_STRING,
           type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "passwordCheckLifetime",
+          label: :LABEL_OPTIONAL,
+          name: "password_check_lifetime",
+          number: 11,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".google.protobuf.Duration"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "externalLoginCheckLifetime",
+          label: :LABEL_OPTIONAL,
+          name: "external_login_check_lifetime",
+          number: 12,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".google.protobuf.Duration"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "mfaInitSkipLifetime",
+          label: :LABEL_OPTIONAL,
+          name: "mfa_init_skip_lifetime",
+          number: 13,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".google.protobuf.Duration"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "secondFactorCheckLifetime",
+          label: :LABEL_OPTIONAL,
+          name: "second_factor_check_lifetime",
+          number: 14,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".google.protobuf.Duration"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "multiFactorCheckLifetime",
+          label: :LABEL_OPTIONAL,
+          name: "multi_factor_check_lifetime",
+          number: 15,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".google.protobuf.Duration"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "secondFactors",
+          label: :LABEL_REPEATED,
+          name: "second_factors",
+          number: 16,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.policy.v1.SecondFactorType"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "multiFactors",
+          label: :LABEL_REPEATED,
+          name: "multi_factors",
+          number: 17,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.policy.v1.MultiFactorType"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "idps",
+          label: :LABEL_REPEATED,
+          name: "idps",
+          number: 18,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.idp.v1.IDPLoginPolicyLink"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "allowDomainDiscovery",
+          label: :LABEL_OPTIONAL,
+          name: "allow_domain_discovery",
+          number: 19,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<50, 200, 1, 73, 102, 32, 115, 101, 116, 32, 116, 111, 32, 116, 114, 117, 101, 44,
+                 32, 116, 104, 101, 32, 115, 117, 102, 102, 105, 120, 32, 40, 64, 100, 111, 109,
+                 97, 105, 110, 46, 99, 111, 109, 41, 32, 111, 102, 32, 97, 110, 32, 117, 110, 107,
+                 110, 111, 119, 110, 32, 117, 115, 101, 114, 110, 97, 109, 101, 32, 105, 110, 112,
+                 117, 116, 32, 111, 110, 32, 116, 104, 101, 32, 108, 111, 103, 105, 110, 32, 115,
+                 99, 114, 101, 101, 110, 32, 119, 105, 108, 108, 32, 98, 101, 32, 109, 97, 116,
+                 99, 104, 101, 100, 32, 97, 103, 97, 105, 110, 115, 116, 32, 116, 104, 101, 32,
+                 111, 114, 103, 32, 100, 111, 109, 97, 105, 110, 115, 32, 97, 110, 100, 32, 119,
+                 105, 108, 108, 32, 114, 101, 100, 105, 114, 101, 99, 116, 32, 116, 111, 32, 116,
+                 104, 101, 32, 114, 101, 103, 105, 115, 116, 114, 97, 116, 105, 111, 110, 32, 111,
+                 102, 32, 116, 104, 97, 116, 32, 111, 114, 103, 97, 110, 105, 115, 97, 116, 105,
+                 111, 110, 32, 111, 110, 32, 115, 117, 99, 99, 101, 115, 115, 46>>}
+            ],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
         }
       ],
       name: "LoginPolicy",
@@ -919,6 +1217,53 @@ defmodule Zitadel.Policy.V1.LoginPolicy do
   field(:default_redirect_uri, 10,
     type: :string,
     json_name: "defaultRedirectUri",
+    deprecated: false
+  )
+
+  field(:password_check_lifetime, 11,
+    type: Google.Protobuf.Duration,
+    json_name: "passwordCheckLifetime"
+  )
+
+  field(:external_login_check_lifetime, 12,
+    type: Google.Protobuf.Duration,
+    json_name: "externalLoginCheckLifetime"
+  )
+
+  field(:mfa_init_skip_lifetime, 13,
+    type: Google.Protobuf.Duration,
+    json_name: "mfaInitSkipLifetime"
+  )
+
+  field(:second_factor_check_lifetime, 14,
+    type: Google.Protobuf.Duration,
+    json_name: "secondFactorCheckLifetime"
+  )
+
+  field(:multi_factor_check_lifetime, 15,
+    type: Google.Protobuf.Duration,
+    json_name: "multiFactorCheckLifetime"
+  )
+
+  field(:second_factors, 16,
+    repeated: true,
+    type: Zitadel.Policy.V1.SecondFactorType,
+    json_name: "secondFactors",
+    enum: true
+  )
+
+  field(:multi_factors, 17,
+    repeated: true,
+    type: Zitadel.Policy.V1.MultiFactorType,
+    json_name: "multiFactors",
+    enum: true
+  )
+
+  field(:idps, 18, repeated: true, type: Zitadel.Idp.V1.IDPLoginPolicyLink)
+
+  field(:allow_domain_discovery, 19,
+    type: :bool,
+    json_name: "allowDomainDiscovery",
     deprecated: false
   )
 end

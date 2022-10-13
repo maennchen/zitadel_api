@@ -36,20 +36,6 @@ defmodule Zitadel.V1.AuthOption do
           proto3_optional: nil,
           type: :TYPE_STRING,
           type_name: nil
-        },
-        %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "feature",
-          label: :LABEL_OPTIONAL,
-          name: "feature",
-          number: 3,
-          oneof_index: nil,
-          options: nil,
-          proto3_optional: nil,
-          type: :TYPE_STRING,
-          type_name: nil
         }
       ],
       name: "AuthOption",
@@ -63,7 +49,6 @@ defmodule Zitadel.V1.AuthOption do
 
   field(:permission, 1, type: :string)
   field(:check_field_name, 2, type: :string, json_name: "checkFieldName")
-  field(:feature, 3, type: :string)
 end
 
 defmodule Zitadel.V1.PbExtension do

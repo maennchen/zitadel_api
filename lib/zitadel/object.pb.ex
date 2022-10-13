@@ -72,6 +72,31 @@ defmodule Zitadel.V1.TextQueryMethod do
   field(:TEXT_QUERY_METHOD_ENDS_WITH_IGNORE_CASE, 7)
 end
 
+defmodule Zitadel.V1.ListQueryMethod do
+  use Protobuf, enum: true, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.EnumDescriptorProto{
+      __unknown_fields__: [],
+      name: "ListQueryMethod",
+      options: nil,
+      reserved_name: [],
+      reserved_range: [],
+      value: [
+        %Google.Protobuf.EnumValueDescriptorProto{
+          __unknown_fields__: [],
+          name: "LIST_QUERY_METHOD_IN",
+          number: 0,
+          options: nil
+        }
+      ]
+    }
+  end
+
+  field(:LIST_QUERY_METHOD_IN, 0)
+end
+
 defmodule Zitadel.V1.ObjectDetails do
   use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
 
