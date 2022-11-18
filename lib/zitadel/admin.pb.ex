@@ -9403,6 +9403,60 @@ defmodule Zitadel.Admin.V1.UpdateLoginPolicyRequest do
           proto3_optional: nil,
           type: :TYPE_BOOL,
           type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "disableLoginWithEmail",
+          label: :LABEL_OPTIONAL,
+          name: "disable_login_with_email",
+          number: 15,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               "2adefines if user can additionally (to the loginname) be identified by their verified email address"}
+            ],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "disableLoginWithPhone",
+          label: :LABEL_OPTIONAL,
+          name: "disable_login_with_phone",
+          number: 16,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               "2`defines if user can additionally (to the loginname) be identified by their verified phone number"}
+            ],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
         }
       ],
       name: "UpdateLoginPolicyRequest",
@@ -9473,6 +9527,18 @@ defmodule Zitadel.Admin.V1.UpdateLoginPolicyRequest do
   field(:allow_domain_discovery, 14,
     type: :bool,
     json_name: "allowDomainDiscovery",
+    deprecated: false
+  )
+
+  field(:disable_login_with_email, 15,
+    type: :bool,
+    json_name: "disableLoginWithEmail",
+    deprecated: false
+  )
+
+  field(:disable_login_with_phone, 16,
+    type: :bool,
+    json_name: "disableLoginWithPhone",
     deprecated: false
   )
 end
@@ -17385,6 +17451,34 @@ defmodule Zitadel.Admin.V1.DataOrg do
           proto3_optional: nil,
           type: :TYPE_MESSAGE,
           type_name: ".zitadel.org.v1.Domain"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "appKeys",
+          label: :LABEL_REPEATED,
+          name: "app_keys",
+          number: 35,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.v1.DataAppKey"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "machineKeys",
+          label: :LABEL_REPEATED,
+          name: "machine_keys",
+          number: 36,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.v1.DataMachineKey"
         }
       ],
       name: "DataOrg",
@@ -17551,6 +17645,13 @@ defmodule Zitadel.Admin.V1.DataOrg do
   field(:jwt_idps, 32, repeated: true, type: Zitadel.V1.V1.DataJWTIDP, json_name: "jwtIdps")
   field(:user_links, 33, repeated: true, type: Zitadel.Idp.V1.IDPUserLink, json_name: "userLinks")
   field(:domains, 34, repeated: true, type: Zitadel.Org.V1.Domain)
+  field(:app_keys, 35, repeated: true, type: Zitadel.V1.V1.DataAppKey, json_name: "appKeys")
+
+  field(:machine_keys, 36,
+    repeated: true,
+    type: Zitadel.V1.V1.DataMachineKey,
+    json_name: "machineKeys"
+  )
 end
 
 defmodule Zitadel.Admin.V1.ImportDataResponse do
@@ -18002,6 +18103,34 @@ defmodule Zitadel.Admin.V1.ImportDataSuccessOrg do
           proto3_optional: nil,
           type: :TYPE_STRING,
           type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "appKeys",
+          label: :LABEL_REPEATED,
+          name: "app_keys",
+          number: 21,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "machineKeys",
+          label: :LABEL_REPEATED,
+          name: "machine_keys",
+          number: 22,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
         }
       ],
       name: "ImportDataSuccessOrg",
@@ -18071,6 +18200,8 @@ defmodule Zitadel.Admin.V1.ImportDataSuccessOrg do
   )
 
   field(:domains, 20, repeated: true, type: :string)
+  field(:app_keys, 21, repeated: true, type: :string, json_name: "appKeys")
+  field(:machine_keys, 22, repeated: true, type: :string, json_name: "machineKeys")
 end
 
 defmodule Zitadel.Admin.V1.ImportDataSuccessProjectGrant do

@@ -1893,6 +1893,104 @@ defmodule Zitadel.Management.V1.ImportHumanUserRequest.HashedPassword do
   field(:algorithm, 2, type: :string)
 end
 
+defmodule Zitadel.Management.V1.ImportHumanUserRequest.IDP do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "configId",
+          label: :LABEL_OPTIONAL,
+          name: "config_id",
+          number: 1,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "externalUserId",
+          label: :LABEL_OPTIONAL,
+          name: "external_user_id",
+          number: 2,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "displayName",
+          label: :LABEL_OPTIONAL,
+          name: "display_name",
+          number: 3,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        }
+      ],
+      name: "IDP",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  field(:config_id, 1, type: :string, json_name: "configId", deprecated: false)
+  field(:external_user_id, 2, type: :string, json_name: "externalUserId", deprecated: false)
+  field(:display_name, 3, type: :string, json_name: "displayName", deprecated: false)
+end
+
 defmodule Zitadel.Management.V1.ImportHumanUserRequest do
   use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
 
@@ -2059,6 +2157,20 @@ defmodule Zitadel.Management.V1.ImportHumanUserRequest do
           proto3_optional: nil,
           type: :TYPE_STRING,
           type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "idps",
+          label: :LABEL_REPEATED,
+          name: "idps",
+          number: 10,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.management.v1.ImportHumanUserRequest.IDP"
         }
       ],
       name: "ImportHumanUserRequest",
@@ -2356,6 +2468,92 @@ defmodule Zitadel.Management.V1.ImportHumanUserRequest do
           options: nil,
           reserved_name: [],
           reserved_range: []
+        },
+        %Google.Protobuf.DescriptorProto{
+          __unknown_fields__: [],
+          enum_type: [],
+          extension: [],
+          extension_range: [],
+          field: [
+            %Google.Protobuf.FieldDescriptorProto{
+              __unknown_fields__: [],
+              default_value: nil,
+              extendee: nil,
+              json_name: "configId",
+              label: :LABEL_OPTIONAL,
+              name: "config_id",
+              number: 1,
+              oneof_index: nil,
+              options: %Google.Protobuf.FieldOptions{
+                __pb_extensions__: %{},
+                __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
+                ctype: :STRING,
+                deprecated: false,
+                jstype: :JS_NORMAL,
+                lazy: false,
+                packed: nil,
+                uninterpreted_option: [],
+                weak: false
+              },
+              proto3_optional: nil,
+              type: :TYPE_STRING,
+              type_name: nil
+            },
+            %Google.Protobuf.FieldDescriptorProto{
+              __unknown_fields__: [],
+              default_value: nil,
+              extendee: nil,
+              json_name: "externalUserId",
+              label: :LABEL_OPTIONAL,
+              name: "external_user_id",
+              number: 2,
+              oneof_index: nil,
+              options: %Google.Protobuf.FieldOptions{
+                __pb_extensions__: %{},
+                __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
+                ctype: :STRING,
+                deprecated: false,
+                jstype: :JS_NORMAL,
+                lazy: false,
+                packed: nil,
+                uninterpreted_option: [],
+                weak: false
+              },
+              proto3_optional: nil,
+              type: :TYPE_STRING,
+              type_name: nil
+            },
+            %Google.Protobuf.FieldDescriptorProto{
+              __unknown_fields__: [],
+              default_value: nil,
+              extendee: nil,
+              json_name: "displayName",
+              label: :LABEL_OPTIONAL,
+              name: "display_name",
+              number: 3,
+              oneof_index: nil,
+              options: %Google.Protobuf.FieldOptions{
+                __pb_extensions__: %{},
+                __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}],
+                ctype: :STRING,
+                deprecated: false,
+                jstype: :JS_NORMAL,
+                lazy: false,
+                packed: nil,
+                uninterpreted_option: [],
+                weak: false
+              },
+              proto3_optional: nil,
+              type: :TYPE_STRING,
+              type_name: nil
+            }
+          ],
+          name: "IDP",
+          nested_type: [],
+          oneof_decl: [],
+          options: nil,
+          reserved_name: [],
+          reserved_range: []
         }
       ],
       oneof_decl: [],
@@ -2386,6 +2584,7 @@ defmodule Zitadel.Management.V1.ImportHumanUserRequest do
   )
 
   field(:otp_code, 9, type: :string, json_name: "otpCode")
+  field(:idps, 10, repeated: true, type: Zitadel.Management.V1.ImportHumanUserRequest.IDP)
 end
 
 defmodule Zitadel.Management.V1.ImportHumanUserResponse.PasswordlessRegistration do
@@ -19581,6 +19780,60 @@ defmodule Zitadel.Management.V1.AddCustomLoginPolicyRequest do
           proto3_optional: nil,
           type: :TYPE_BOOL,
           type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "disableLoginWithEmail",
+          label: :LABEL_OPTIONAL,
+          name: "disable_login_with_email",
+          number: 18,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               "2adefines if user can additionally (to the loginname) be identified by their verified email address"}
+            ],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "disableLoginWithPhone",
+          label: :LABEL_OPTIONAL,
+          name: "disable_login_with_phone",
+          number: 19,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               "2`defines if user can additionally (to the loginname) be identified by their verified phone number"}
+            ],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
         }
       ],
       name: "AddCustomLoginPolicyRequest",
@@ -19725,6 +19978,18 @@ defmodule Zitadel.Management.V1.AddCustomLoginPolicyRequest do
   field(:allow_domain_discovery, 17,
     type: :bool,
     json_name: "allowDomainDiscovery",
+    deprecated: false
+  )
+
+  field(:disable_login_with_email, 18,
+    type: :bool,
+    json_name: "disableLoginWithEmail",
+    deprecated: false
+  )
+
+  field(:disable_login_with_phone, 19,
+    type: :bool,
+    json_name: "disableLoginWithPhone",
     deprecated: false
   )
 end
@@ -20033,6 +20298,60 @@ defmodule Zitadel.Management.V1.UpdateCustomLoginPolicyRequest do
           proto3_optional: nil,
           type: :TYPE_BOOL,
           type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "disableLoginWithEmail",
+          label: :LABEL_OPTIONAL,
+          name: "disable_login_with_email",
+          number: 15,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               "2adefines if user can additionally (to the loginname) be identified by their verified email address"}
+            ],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "disableLoginWithPhone",
+          label: :LABEL_OPTIONAL,
+          name: "disable_login_with_phone",
+          number: 16,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               "2`defines if user can additionally (to the loginname) be identified by their verified phone number"}
+            ],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
         }
       ],
       name: "UpdateCustomLoginPolicyRequest",
@@ -20098,6 +20417,18 @@ defmodule Zitadel.Management.V1.UpdateCustomLoginPolicyRequest do
   field(:allow_domain_discovery, 14,
     type: :bool,
     json_name: "allowDomainDiscovery",
+    deprecated: false
+  )
+
+  field(:disable_login_with_email, 15,
+    type: :bool,
+    json_name: "disableLoginWithEmail",
+    deprecated: false
+  )
+
+  field(:disable_login_with_phone, 16,
+    type: :bool,
+    json_name: "disableLoginWithPhone",
     deprecated: false
   )
 end

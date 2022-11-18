@@ -1,3 +1,81 @@
+defmodule Zitadel.V1.V1.FlowType do
+  use Protobuf, enum: true, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.EnumDescriptorProto{
+      __unknown_fields__: [],
+      name: "FlowType",
+      options: nil,
+      reserved_name: [],
+      reserved_range: [],
+      value: [
+        %Google.Protobuf.EnumValueDescriptorProto{
+          __unknown_fields__: [],
+          name: "FLOW_TYPE_UNSPECIFIED",
+          number: 0,
+          options: nil
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          __unknown_fields__: [],
+          name: "FLOW_TYPE_EXTERNAL_AUTHENTICATION",
+          number: 1,
+          options: nil
+        }
+      ]
+    }
+  end
+
+  field(:FLOW_TYPE_UNSPECIFIED, 0)
+  field(:FLOW_TYPE_EXTERNAL_AUTHENTICATION, 1)
+end
+
+defmodule Zitadel.V1.V1.TriggerType do
+  use Protobuf, enum: true, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.EnumDescriptorProto{
+      __unknown_fields__: [],
+      name: "TriggerType",
+      options: nil,
+      reserved_name: [],
+      reserved_range: [],
+      value: [
+        %Google.Protobuf.EnumValueDescriptorProto{
+          __unknown_fields__: [],
+          name: "TRIGGER_TYPE_UNSPECIFIED",
+          number: 0,
+          options: nil
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          __unknown_fields__: [],
+          name: "TRIGGER_TYPE_POST_AUTHENTICATION",
+          number: 1,
+          options: nil
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          __unknown_fields__: [],
+          name: "TRIGGER_TYPE_PRE_CREATION",
+          number: 2,
+          options: nil
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          __unknown_fields__: [],
+          name: "TRIGGER_TYPE_POST_CREATION",
+          number: 3,
+          options: nil
+        }
+      ]
+    }
+  end
+
+  field(:TRIGGER_TYPE_UNSPECIFIED, 0)
+  field(:TRIGGER_TYPE_POST_AUTHENTICATION, 1)
+  field(:TRIGGER_TYPE_PRE_CREATION, 2)
+  field(:TRIGGER_TYPE_POST_CREATION, 3)
+end
+
 defmodule Zitadel.V1.V1.AddCustomOrgIAMPolicyRequest do
   use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
 
@@ -348,7 +426,7 @@ defmodule Zitadel.V1.V1.DataOrg do
           options: nil,
           proto3_optional: nil,
           type: :TYPE_MESSAGE,
-          type_name: ".zitadel.management.v1.SetTriggerActionsRequest"
+          type_name: ".zitadel.v1.v1.SetTriggerActionsRequest"
         },
         %Google.Protobuf.FieldDescriptorProto{
           __unknown_fields__: [],
@@ -643,6 +721,34 @@ defmodule Zitadel.V1.V1.DataOrg do
           proto3_optional: nil,
           type: :TYPE_MESSAGE,
           type_name: ".zitadel.org.v1.Domain"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "appKeys",
+          label: :LABEL_REPEATED,
+          name: "app_keys",
+          number: 38,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.v1.DataAppKey"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "machineKeys",
+          label: :LABEL_REPEATED,
+          name: "machine_keys",
+          number: 39,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.v1.DataMachineKey"
         }
       ],
       name: "DataOrg",
@@ -717,7 +823,7 @@ defmodule Zitadel.V1.V1.DataOrg do
 
   field(:trigger_actions, 16,
     repeated: true,
-    type: Zitadel.Management.V1.SetTriggerActionsRequest,
+    type: Zitadel.V1.V1.SetTriggerActionsRequest,
     json_name: "triggerActions"
   )
 
@@ -819,6 +925,13 @@ defmodule Zitadel.V1.V1.DataOrg do
   field(:idps, 35, repeated: true, type: Zitadel.Management.V1.AddIDPToLoginPolicyRequest)
   field(:user_links, 36, repeated: true, type: Zitadel.Idp.V1.IDPUserLink, json_name: "userLinks")
   field(:domains, 37, repeated: true, type: Zitadel.Org.V1.Domain)
+  field(:app_keys, 38, repeated: true, type: Zitadel.V1.V1.DataAppKey, json_name: "appKeys")
+
+  field(:machine_keys, 39,
+    repeated: true,
+    type: Zitadel.V1.V1.DataMachineKey,
+    json_name: "machineKeys"
+  )
 end
 
 defmodule Zitadel.V1.V1.DataOIDCIDP do
@@ -1762,6 +1875,232 @@ defmodule Zitadel.V1.V1.ExportHumanUser do
   field(:otp_code, 9, type: :string, json_name: "otpCode")
 end
 
+defmodule Zitadel.V1.V1.DataAppKey do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "id",
+          label: :LABEL_OPTIONAL,
+          name: "id",
+          number: 1,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "projectId",
+          label: :LABEL_OPTIONAL,
+          name: "project_id",
+          number: 2,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "appId",
+          label: :LABEL_OPTIONAL,
+          name: "app_id",
+          number: 3,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "clientId",
+          label: :LABEL_OPTIONAL,
+          name: "client_id",
+          number: 4,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "type",
+          label: :LABEL_OPTIONAL,
+          name: "type",
+          number: 5,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.authn.v1.KeyType"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "expirationDate",
+          label: :LABEL_OPTIONAL,
+          name: "expiration_date",
+          number: 6,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".google.protobuf.Timestamp"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "publicKey",
+          label: :LABEL_OPTIONAL,
+          name: "public_key",
+          number: 7,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_BYTES,
+          type_name: nil
+        }
+      ],
+      name: "DataAppKey",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  field(:id, 1, type: :string)
+  field(:project_id, 2, type: :string, json_name: "projectId")
+  field(:app_id, 3, type: :string, json_name: "appId")
+  field(:client_id, 4, type: :string, json_name: "clientId")
+  field(:type, 5, type: Zitadel.Authn.V1.KeyType, enum: true)
+  field(:expiration_date, 6, type: Google.Protobuf.Timestamp, json_name: "expirationDate")
+  field(:public_key, 7, type: :bytes, json_name: "publicKey")
+end
+
+defmodule Zitadel.V1.V1.DataMachineKey do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "keyId",
+          label: :LABEL_OPTIONAL,
+          name: "key_id",
+          number: 1,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "userId",
+          label: :LABEL_OPTIONAL,
+          name: "user_id",
+          number: 2,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "type",
+          label: :LABEL_OPTIONAL,
+          name: "type",
+          number: 3,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.authn.v1.KeyType"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "expirationDate",
+          label: :LABEL_OPTIONAL,
+          name: "expiration_date",
+          number: 4,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".google.protobuf.Timestamp"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "publicKey",
+          label: :LABEL_OPTIONAL,
+          name: "public_key",
+          number: 5,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_BYTES,
+          type_name: nil
+        }
+      ],
+      name: "DataMachineKey",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  field(:key_id, 1, type: :string, json_name: "keyId")
+  field(:user_id, 2, type: :string, json_name: "userId")
+  field(:type, 3, type: Zitadel.Authn.V1.KeyType, enum: true)
+  field(:expiration_date, 4, type: Google.Protobuf.Timestamp, json_name: "expirationDate")
+  field(:public_key, 5, type: :bytes, json_name: "publicKey")
+end
+
 defmodule Zitadel.V1.V1.DataProject do
   use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
 
@@ -2135,4 +2474,72 @@ defmodule Zitadel.V1.V1.DataProjectGrant do
     type: Zitadel.Management.V1.AddProjectGrantRequest,
     json_name: "projectGrant"
   )
+end
+
+defmodule Zitadel.V1.V1.SetTriggerActionsRequest do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "flowType",
+          label: :LABEL_OPTIONAL,
+          name: "flow_type",
+          number: 1,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.v1.v1.FlowType"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "triggerType",
+          label: :LABEL_OPTIONAL,
+          name: "trigger_type",
+          number: 2,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.v1.v1.TriggerType"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "actionIds",
+          label: :LABEL_REPEATED,
+          name: "action_ids",
+          number: 3,
+          oneof_index: nil,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        }
+      ],
+      name: "SetTriggerActionsRequest",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  field(:flow_type, 1, type: Zitadel.V1.V1.FlowType, json_name: "flowType", enum: true)
+  field(:trigger_type, 2, type: Zitadel.V1.V1.TriggerType, json_name: "triggerType", enum: true)
+  field(:action_ids, 3, repeated: true, type: :string, json_name: "actionIds")
 end

@@ -1252,6 +1252,20 @@ defmodule Zitadel.User.V1.SearchQuery do
           proto3_optional: nil,
           type: :TYPE_MESSAGE,
           type_name: ".zitadel.user.v1.TypeQuery"
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "loginNameQuery",
+          label: :LABEL_OPTIONAL,
+          name: "login_name_query",
+          number: 9,
+          oneof_index: 0,
+          options: nil,
+          proto3_optional: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.user.v1.LoginNameQuery"
         }
       ],
       name: "SearchQuery",
@@ -1308,6 +1322,12 @@ defmodule Zitadel.User.V1.SearchQuery do
   field(:email_query, 6, type: Zitadel.User.V1.EmailQuery, json_name: "emailQuery", oneof: 0)
   field(:state_query, 7, type: Zitadel.User.V1.StateQuery, json_name: "stateQuery", oneof: 0)
   field(:type_query, 8, type: Zitadel.User.V1.TypeQuery, json_name: "typeQuery", oneof: 0)
+
+  field(:login_name_query, 9,
+    type: Zitadel.User.V1.LoginNameQuery,
+    json_name: "loginNameQuery",
+    oneof: 0
+  )
 end
 
 defmodule Zitadel.User.V1.UserNameQuery do
@@ -1788,6 +1808,87 @@ defmodule Zitadel.User.V1.EmailQuery do
   end
 
   field(:email_address, 1, type: :string, json_name: "emailAddress", deprecated: false)
+  field(:method, 2, type: Zitadel.V1.TextQueryMethod, enum: true, deprecated: false)
+end
+
+defmodule Zitadel.User.V1.LoginNameQuery do
+  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      __unknown_fields__: [],
+      enum_type: [],
+      extension: [],
+      extension_range: [],
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "loginName",
+          label: :LABEL_OPTIONAL,
+          name: "login_name",
+          number: 1,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1042, 2,
+               <<74, 20, 34, 103, 105, 103, 105, 64, 122, 105, 116, 97, 100, 101, 108, 46, 99,
+                 108, 111, 117, 100, 34, 120, 200, 1>>}
+            ],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_STRING,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "method",
+          label: :LABEL_OPTIONAL,
+          name: "method",
+          number: 2,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<130, 1, 2, 16, 1>>},
+              {1042, 2, "2*defines which text equality method is used"}
+            ],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.v1.TextQueryMethod"
+        }
+      ],
+      name: "LoginNameQuery",
+      nested_type: [],
+      oneof_decl: [],
+      options: nil,
+      reserved_name: [],
+      reserved_range: []
+    }
+  end
+
+  field(:login_name, 1, type: :string, json_name: "loginName", deprecated: false)
   field(:method, 2, type: Zitadel.V1.TextQueryMethod, enum: true, deprecated: false)
 end
 

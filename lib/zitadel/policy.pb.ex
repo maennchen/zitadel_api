@@ -1175,6 +1175,60 @@ defmodule Zitadel.Policy.V1.LoginPolicy do
           proto3_optional: nil,
           type: :TYPE_BOOL,
           type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "disableLoginWithEmail",
+          label: :LABEL_OPTIONAL,
+          name: "disable_login_with_email",
+          number: 20,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               "2adefines if user can additionally (to the loginname) be identified by their verified email address"}
+            ],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          __unknown_fields__: [],
+          default_value: nil,
+          extendee: nil,
+          json_name: "disableLoginWithPhone",
+          label: :LABEL_OPTIONAL,
+          name: "disable_login_with_phone",
+          number: 21,
+          oneof_index: nil,
+          options: %Google.Protobuf.FieldOptions{
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               "2`defines if user can additionally (to the loginname) be identified by their verified phone number"}
+            ],
+            ctype: :STRING,
+            deprecated: false,
+            jstype: :JS_NORMAL,
+            lazy: false,
+            packed: nil,
+            uninterpreted_option: [],
+            weak: false
+          },
+          proto3_optional: nil,
+          type: :TYPE_BOOL,
+          type_name: nil
         }
       ],
       name: "LoginPolicy",
@@ -1264,6 +1318,18 @@ defmodule Zitadel.Policy.V1.LoginPolicy do
   field(:allow_domain_discovery, 19,
     type: :bool,
     json_name: "allowDomainDiscovery",
+    deprecated: false
+  )
+
+  field(:disable_login_with_email, 20,
+    type: :bool,
+    json_name: "disableLoginWithEmail",
+    deprecated: false
+  )
+
+  field(:disable_login_with_phone, 21,
+    type: :bool,
+    json_name: "disableLoginWithPhone",
     deprecated: false
   )
 end
