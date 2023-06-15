@@ -1,117 +1,118 @@
 defmodule Zitadel.System.V1.HealthzRequest do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
-      field: [],
       name: "HealthzRequest",
+      field: [],
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 end
 
 defmodule Zitadel.System.V1.HealthzResponse do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
-      field: [],
       name: "HealthzResponse",
+      field: [],
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 end
 
 defmodule Zitadel.System.V1.ListInstancesRequest do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "ListInstancesRequest",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "query",
-          label: :LABEL_OPTIONAL,
           name: "query",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: nil,
-          proto3_optional: nil,
-          type: :TYPE_MESSAGE,
-          type_name: ".zitadel.v1.ListQuery"
-        },
-        %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "sortingColumn",
           label: :LABEL_OPTIONAL,
-          name: "sorting_column",
-          number: 2,
-          oneof_index: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ListQuery",
+          default_value: nil,
           options: nil,
+          oneof_index: nil,
+          json_name: "query",
           proto3_optional: nil,
-          type: :TYPE_ENUM,
-          type_name: ".zitadel.instance.v1.FieldName"
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
+          name: "sorting_column",
           extendee: nil,
-          json_name: "queries",
-          label: :LABEL_REPEATED,
-          name: "queries",
-          number: 3,
-          oneof_index: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.instance.v1.FieldName",
+          default_value: nil,
           options: nil,
+          oneof_index: nil,
+          json_name: "sortingColumn",
           proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "queries",
+          extendee: nil,
+          number: 3,
+          label: :LABEL_REPEATED,
           type: :TYPE_MESSAGE,
-          type_name: ".zitadel.instance.v1.Query"
+          type_name: ".zitadel.instance.v1.Query",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "queries",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "ListInstancesRequest",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: %Google.Protobuf.MessageOptions{
+        message_set_wire_format: false,
+        no_standard_descriptor_accessor: false,
+        deprecated: false,
+        map_entry: nil,
+        deprecated_legacy_json_field_conflicts: nil,
+        uninterpreted_option: [],
         __pb_extensions__: %{},
         __unknown_fields__: [
           {1042, 2,
            <<10, 32, 50, 22, 83, 101, 97, 114, 99, 104, 32, 113, 117, 101, 114, 121, 32, 102, 111,
              114, 32, 108, 105, 115, 116, 115, 210, 1, 5, 113, 117, 101, 114, 121>>}
-        ],
-        deprecated: false,
-        map_entry: nil,
-        message_set_wire_format: false,
-        no_standard_descriptor_accessor: false,
-        uninterpreted_option: []
+        ]
       },
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -127,65 +128,65 @@ defmodule Zitadel.System.V1.ListInstancesRequest do
 end
 
 defmodule Zitadel.System.V1.ListInstancesResponse do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "ListInstancesResponse",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "details",
-          label: :LABEL_OPTIONAL,
           name: "details",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: nil,
-          proto3_optional: nil,
-          type: :TYPE_MESSAGE,
-          type_name: ".zitadel.v1.ListDetails"
-        },
-        %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "sortingColumn",
           label: :LABEL_OPTIONAL,
-          name: "sorting_column",
-          number: 2,
-          oneof_index: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ListDetails",
+          default_value: nil,
           options: nil,
+          oneof_index: nil,
+          json_name: "details",
           proto3_optional: nil,
-          type: :TYPE_ENUM,
-          type_name: ".zitadel.instance.v1.FieldName"
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
+          name: "sorting_column",
           extendee: nil,
-          json_name: "result",
-          label: :LABEL_REPEATED,
-          name: "result",
-          number: 3,
-          oneof_index: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.instance.v1.FieldName",
+          default_value: nil,
           options: nil,
+          oneof_index: nil,
+          json_name: "sortingColumn",
           proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "result",
+          extendee: nil,
+          number: 3,
+          label: :LABEL_REPEATED,
           type: :TYPE_MESSAGE,
-          type_name: ".zitadel.instance.v1.Instance"
+          type_name: ".zitadel.instance.v1.Instance",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "result",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "ListInstancesResponse",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -201,47 +202,49 @@ defmodule Zitadel.System.V1.ListInstancesResponse do
 end
 
 defmodule Zitadel.System.V1.GetInstanceRequest do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "GetInstanceRequest",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "instanceId",
-          label: :LABEL_OPTIONAL,
           name: "instance_id",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "instanceId",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "GetInstanceRequest",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -249,37 +252,37 @@ defmodule Zitadel.System.V1.GetInstanceRequest do
 end
 
 defmodule Zitadel.System.V1.GetInstanceResponse do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "GetInstanceResponse",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "instance",
-          label: :LABEL_OPTIONAL,
           name: "instance",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: nil,
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_MESSAGE,
-          type_name: ".zitadel.instance.v1.InstanceDetail"
+          type_name: ".zitadel.instance.v1.InstanceDetail",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "instance",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "GetInstanceResponse",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -287,95 +290,101 @@ defmodule Zitadel.System.V1.GetInstanceResponse do
 end
 
 defmodule Zitadel.System.V1.AddInstanceRequest.Profile do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "Profile",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "firstName",
-          label: :LABEL_OPTIONAL,
           name: "first_name",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "firstName",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "lastName",
-          label: :LABEL_OPTIONAL,
           name: "last_name",
+          extendee: nil,
           number: 2,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "lastName",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "preferredLanguage",
-          label: :LABEL_OPTIONAL,
           name: "preferred_language",
+          extendee: nil,
           number: 5,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 2, 24, 10>>}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 2, 24, 10>>}]
+          },
+          oneof_index: nil,
+          json_name: "preferredLanguage",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "Profile",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -385,61 +394,63 @@ defmodule Zitadel.System.V1.AddInstanceRequest.Profile do
 end
 
 defmodule Zitadel.System.V1.AddInstanceRequest.Email do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "Email",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "email",
-          label: :LABEL_OPTIONAL,
           name: "email",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "email",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "isEmailVerified",
-          label: :LABEL_OPTIONAL,
           name: "is_email_verified",
+          extendee: nil,
           number: 2,
-          oneof_index: nil,
-          options: nil,
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_BOOL,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "isEmailVerified",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "Email",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -448,61 +459,63 @@ defmodule Zitadel.System.V1.AddInstanceRequest.Email do
 end
 
 defmodule Zitadel.System.V1.AddInstanceRequest.Password do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "Password",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "password",
-          label: :LABEL_OPTIONAL,
           name: "password",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "password",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "passwordChangeRequired",
-          label: :LABEL_OPTIONAL,
           name: "password_change_required",
+          extendee: nil,
           number: 2,
-          oneof_index: nil,
-          options: nil,
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_BOOL,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "passwordChangeRequired",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "Password",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -511,406 +524,432 @@ defmodule Zitadel.System.V1.AddInstanceRequest.Password do
 end
 
 defmodule Zitadel.System.V1.AddInstanceRequest do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "AddInstanceRequest",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "instanceName",
-          label: :LABEL_OPTIONAL,
           name: "instance_name",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "instanceName",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "firstOrgName",
-          label: :LABEL_OPTIONAL,
           name: "first_org_name",
+          extendee: nil,
           number: 2,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "firstOrgName",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "customDomain",
-          label: :LABEL_OPTIONAL,
           name: "custom_domain",
+          extendee: nil,
           number: 3,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "customDomain",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "ownerUserName",
-          label: :LABEL_OPTIONAL,
           name: "owner_user_name",
+          extendee: nil,
           number: 4,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "ownerUserName",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "ownerEmail",
-          label: :LABEL_OPTIONAL,
           name: "owner_email",
+          extendee: nil,
           number: 5,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<138, 1, 2, 16, 1>>}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_MESSAGE,
-          type_name: ".zitadel.system.v1.AddInstanceRequest.Email"
+          type_name: ".zitadel.system.v1.AddInstanceRequest.Email",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<138, 1, 2, 16, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "ownerEmail",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "ownerProfile",
-          label: :LABEL_OPTIONAL,
           name: "owner_profile",
+          extendee: nil,
           number: 6,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<138, 1, 2, 16, 0>>}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_MESSAGE,
-          type_name: ".zitadel.system.v1.AddInstanceRequest.Profile"
+          type_name: ".zitadel.system.v1.AddInstanceRequest.Profile",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<138, 1, 2, 16, 0>>}]
+          },
+          oneof_index: nil,
+          json_name: "ownerProfile",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "ownerPassword",
-          label: :LABEL_OPTIONAL,
           name: "owner_password",
+          extendee: nil,
           number: 7,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<138, 1, 2, 16, 0>>}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_MESSAGE,
-          type_name: ".zitadel.system.v1.AddInstanceRequest.Password"
+          type_name: ".zitadel.system.v1.AddInstanceRequest.Password",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<138, 1, 2, 16, 0>>}]
+          },
+          oneof_index: nil,
+          json_name: "ownerPassword",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "defaultLanguage",
-          label: :LABEL_OPTIONAL,
           name: "default_language",
+          extendee: nil,
           number: 8,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 2, 24, 10>>}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 2, 24, 10>>}]
+          },
+          oneof_index: nil,
+          json_name: "defaultLanguage",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "AddInstanceRequest",
       nested_type: [
         %Google.Protobuf.DescriptorProto{
-          __unknown_fields__: [],
-          enum_type: [],
-          extension: [],
-          extension_range: [],
-          field: [
-            %Google.Protobuf.FieldDescriptorProto{
-              __unknown_fields__: [],
-              default_value: nil,
-              extendee: nil,
-              json_name: "firstName",
-              label: :LABEL_OPTIONAL,
-              name: "first_name",
-              number: 1,
-              oneof_index: nil,
-              options: %Google.Protobuf.FieldOptions{
-                __pb_extensions__: %{},
-                __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}],
-                ctype: :STRING,
-                deprecated: false,
-                jstype: :JS_NORMAL,
-                lazy: false,
-                packed: nil,
-                uninterpreted_option: [],
-                weak: false
-              },
-              proto3_optional: nil,
-              type: :TYPE_STRING,
-              type_name: nil
-            },
-            %Google.Protobuf.FieldDescriptorProto{
-              __unknown_fields__: [],
-              default_value: nil,
-              extendee: nil,
-              json_name: "lastName",
-              label: :LABEL_OPTIONAL,
-              name: "last_name",
-              number: 2,
-              oneof_index: nil,
-              options: %Google.Protobuf.FieldOptions{
-                __pb_extensions__: %{},
-                __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}],
-                ctype: :STRING,
-                deprecated: false,
-                jstype: :JS_NORMAL,
-                lazy: false,
-                packed: nil,
-                uninterpreted_option: [],
-                weak: false
-              },
-              proto3_optional: nil,
-              type: :TYPE_STRING,
-              type_name: nil
-            },
-            %Google.Protobuf.FieldDescriptorProto{
-              __unknown_fields__: [],
-              default_value: nil,
-              extendee: nil,
-              json_name: "preferredLanguage",
-              label: :LABEL_OPTIONAL,
-              name: "preferred_language",
-              number: 5,
-              oneof_index: nil,
-              options: %Google.Protobuf.FieldOptions{
-                __pb_extensions__: %{},
-                __unknown_fields__: [{1071, 2, <<114, 2, 24, 10>>}],
-                ctype: :STRING,
-                deprecated: false,
-                jstype: :JS_NORMAL,
-                lazy: false,
-                packed: nil,
-                uninterpreted_option: [],
-                weak: false
-              },
-              proto3_optional: nil,
-              type: :TYPE_STRING,
-              type_name: nil
-            }
-          ],
           name: "Profile",
-          nested_type: [],
-          oneof_decl: [],
-          options: nil,
-          reserved_name: [],
-          reserved_range: []
-        },
-        %Google.Protobuf.DescriptorProto{
-          __unknown_fields__: [],
-          enum_type: [],
-          extension: [],
-          extension_range: [],
           field: [
             %Google.Protobuf.FieldDescriptorProto{
-              __unknown_fields__: [],
-              default_value: nil,
+              name: "first_name",
               extendee: nil,
-              json_name: "email",
-              label: :LABEL_OPTIONAL,
-              name: "email",
               number: 1,
-              oneof_index: nil,
-              options: %Google.Protobuf.FieldOptions{
-                __pb_extensions__: %{},
-                __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
-                ctype: :STRING,
-                deprecated: false,
-                jstype: :JS_NORMAL,
-                lazy: false,
-                packed: nil,
-                uninterpreted_option: [],
-                weak: false
-              },
-              proto3_optional: nil,
+              label: :LABEL_OPTIONAL,
               type: :TYPE_STRING,
-              type_name: nil
+              type_name: nil,
+              default_value: nil,
+              options: %Google.Protobuf.FieldOptions{
+                ctype: :STRING,
+                packed: nil,
+                deprecated: false,
+                lazy: false,
+                jstype: :JS_NORMAL,
+                weak: false,
+                unverified_lazy: false,
+                debug_redact: false,
+                uninterpreted_option: [],
+                __pb_extensions__: %{},
+                __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+              },
+              oneof_index: nil,
+              json_name: "firstName",
+              proto3_optional: nil,
+              __unknown_fields__: []
             },
             %Google.Protobuf.FieldDescriptorProto{
-              __unknown_fields__: [],
-              default_value: nil,
+              name: "last_name",
               extendee: nil,
-              json_name: "isEmailVerified",
-              label: :LABEL_OPTIONAL,
-              name: "is_email_verified",
               number: 2,
+              label: :LABEL_OPTIONAL,
+              type: :TYPE_STRING,
+              type_name: nil,
+              default_value: nil,
+              options: %Google.Protobuf.FieldOptions{
+                ctype: :STRING,
+                packed: nil,
+                deprecated: false,
+                lazy: false,
+                jstype: :JS_NORMAL,
+                weak: false,
+                unverified_lazy: false,
+                debug_redact: false,
+                uninterpreted_option: [],
+                __pb_extensions__: %{},
+                __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+              },
               oneof_index: nil,
-              options: nil,
+              json_name: "lastName",
               proto3_optional: nil,
-              type: :TYPE_BOOL,
-              type_name: nil
+              __unknown_fields__: []
+            },
+            %Google.Protobuf.FieldDescriptorProto{
+              name: "preferred_language",
+              extendee: nil,
+              number: 5,
+              label: :LABEL_OPTIONAL,
+              type: :TYPE_STRING,
+              type_name: nil,
+              default_value: nil,
+              options: %Google.Protobuf.FieldOptions{
+                ctype: :STRING,
+                packed: nil,
+                deprecated: false,
+                lazy: false,
+                jstype: :JS_NORMAL,
+                weak: false,
+                unverified_lazy: false,
+                debug_redact: false,
+                uninterpreted_option: [],
+                __pb_extensions__: %{},
+                __unknown_fields__: [{1071, 2, <<114, 2, 24, 10>>}]
+              },
+              oneof_index: nil,
+              json_name: "preferredLanguage",
+              proto3_optional: nil,
+              __unknown_fields__: []
             }
           ],
+          nested_type: [],
+          enum_type: [],
+          extension_range: [],
+          extension: [],
+          options: nil,
+          oneof_decl: [],
+          reserved_range: [],
+          reserved_name: [],
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.DescriptorProto{
           name: "Email",
-          nested_type: [],
-          oneof_decl: [],
-          options: nil,
-          reserved_name: [],
-          reserved_range: []
-        },
-        %Google.Protobuf.DescriptorProto{
-          __unknown_fields__: [],
-          enum_type: [],
-          extension: [],
-          extension_range: [],
           field: [
             %Google.Protobuf.FieldDescriptorProto{
-              __unknown_fields__: [],
-              default_value: nil,
+              name: "email",
               extendee: nil,
-              json_name: "password",
-              label: :LABEL_OPTIONAL,
-              name: "password",
               number: 1,
-              oneof_index: nil,
-              options: %Google.Protobuf.FieldOptions{
-                __pb_extensions__: %{},
-                __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}],
-                ctype: :STRING,
-                deprecated: false,
-                jstype: :JS_NORMAL,
-                lazy: false,
-                packed: nil,
-                uninterpreted_option: [],
-                weak: false
-              },
-              proto3_optional: nil,
+              label: :LABEL_OPTIONAL,
               type: :TYPE_STRING,
-              type_name: nil
+              type_name: nil,
+              default_value: nil,
+              options: %Google.Protobuf.FieldOptions{
+                ctype: :STRING,
+                packed: nil,
+                deprecated: false,
+                lazy: false,
+                jstype: :JS_NORMAL,
+                weak: false,
+                unverified_lazy: false,
+                debug_redact: false,
+                uninterpreted_option: [],
+                __pb_extensions__: %{},
+                __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+              },
+              oneof_index: nil,
+              json_name: "email",
+              proto3_optional: nil,
+              __unknown_fields__: []
             },
             %Google.Protobuf.FieldDescriptorProto{
-              __unknown_fields__: [],
-              default_value: nil,
+              name: "is_email_verified",
               extendee: nil,
-              json_name: "passwordChangeRequired",
-              label: :LABEL_OPTIONAL,
-              name: "password_change_required",
               number: 2,
-              oneof_index: nil,
-              options: nil,
-              proto3_optional: nil,
+              label: :LABEL_OPTIONAL,
               type: :TYPE_BOOL,
-              type_name: nil
+              type_name: nil,
+              default_value: nil,
+              options: nil,
+              oneof_index: nil,
+              json_name: "isEmailVerified",
+              proto3_optional: nil,
+              __unknown_fields__: []
             }
           ],
-          name: "Password",
           nested_type: [],
-          oneof_decl: [],
+          enum_type: [],
+          extension_range: [],
+          extension: [],
           options: nil,
+          oneof_decl: [],
+          reserved_range: [],
           reserved_name: [],
-          reserved_range: []
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.DescriptorProto{
+          name: "Password",
+          field: [
+            %Google.Protobuf.FieldDescriptorProto{
+              name: "password",
+              extendee: nil,
+              number: 1,
+              label: :LABEL_OPTIONAL,
+              type: :TYPE_STRING,
+              type_name: nil,
+              default_value: nil,
+              options: %Google.Protobuf.FieldOptions{
+                ctype: :STRING,
+                packed: nil,
+                deprecated: false,
+                lazy: false,
+                jstype: :JS_NORMAL,
+                weak: false,
+                unverified_lazy: false,
+                debug_redact: false,
+                uninterpreted_option: [],
+                __pb_extensions__: %{},
+                __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+              },
+              oneof_index: nil,
+              json_name: "password",
+              proto3_optional: nil,
+              __unknown_fields__: []
+            },
+            %Google.Protobuf.FieldDescriptorProto{
+              name: "password_change_required",
+              extendee: nil,
+              number: 2,
+              label: :LABEL_OPTIONAL,
+              type: :TYPE_BOOL,
+              type_name: nil,
+              default_value: nil,
+              options: nil,
+              oneof_index: nil,
+              json_name: "passwordChangeRequired",
+              proto3_optional: nil,
+              __unknown_fields__: []
+            }
+          ],
+          nested_type: [],
+          enum_type: [],
+          extension_range: [],
+          extension: [],
+          options: nil,
+          oneof_decl: [],
+          reserved_range: [],
+          reserved_name: [],
+          __unknown_fields__: []
         }
       ],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -941,51 +980,51 @@ defmodule Zitadel.System.V1.AddInstanceRequest do
 end
 
 defmodule Zitadel.System.V1.AddInstanceResponse do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "AddInstanceResponse",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "instanceId",
-          label: :LABEL_OPTIONAL,
           name: "instance_id",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: nil,
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "instanceId",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "details",
-          label: :LABEL_OPTIONAL,
           name: "details",
+          extendee: nil,
           number: 2,
-          oneof_index: nil,
-          options: nil,
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_MESSAGE,
-          type_name: ".zitadel.v1.ObjectDetails"
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "AddInstanceResponse",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -993,62 +1032,1487 @@ defmodule Zitadel.System.V1.AddInstanceResponse do
   field(:details, 2, type: Zitadel.V1.ObjectDetails)
 end
 
-defmodule Zitadel.System.V1.UpdateInstanceRequest do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+defmodule Zitadel.System.V1.CreateInstanceRequest.Profile do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "Profile",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
+          name: "first_name",
           extendee: nil,
-          json_name: "instanceId",
-          label: :LABEL_OPTIONAL,
-          name: "instance_id",
           number: 1,
-          oneof_index: nil,
-          options: nil,
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "firstName",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
+          name: "last_name",
           extendee: nil,
-          json_name: "instanceName",
-          label: :LABEL_OPTIONAL,
-          name: "instance_name",
           number: 2,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "lastName",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "preferred_language",
+          extendee: nil,
+          number: 3,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 2, 24, 10>>}]
+          },
+          oneof_index: nil,
+          json_name: "preferredLanguage",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "UpdateInstanceRequest",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
+    }
+  end
+
+  field(:first_name, 1, type: :string, json_name: "firstName", deprecated: false)
+  field(:last_name, 2, type: :string, json_name: "lastName", deprecated: false)
+  field(:preferred_language, 3, type: :string, json_name: "preferredLanguage", deprecated: false)
+end
+
+defmodule Zitadel.System.V1.CreateInstanceRequest.Email do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "Email",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "email",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 7, 16, 1, 24, 200, 1, 96, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "email",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "is_email_verified",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_BOOL,
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "isEmailVerified",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:email, 1, type: :string, deprecated: false)
+  field(:is_email_verified, 2, type: :bool, json_name: "isEmailVerified")
+end
+
+defmodule Zitadel.System.V1.CreateInstanceRequest.Password do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "Password",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "password",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "password",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "password_change_required",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_BOOL,
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "passwordChangeRequired",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:password, 1, type: :string, deprecated: false)
+  field(:password_change_required, 2, type: :bool, json_name: "passwordChangeRequired")
+end
+
+defmodule Zitadel.System.V1.CreateInstanceRequest.Human do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "Human",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "user_name",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "userName",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "email",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.system.v1.CreateInstanceRequest.Email",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<138, 1, 2, 16, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "email",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "profile",
+          extendee: nil,
+          number: 3,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.system.v1.CreateInstanceRequest.Profile",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<138, 1, 2, 16, 0>>}]
+          },
+          oneof_index: nil,
+          json_name: "profile",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "password",
+          extendee: nil,
+          number: 4,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.system.v1.CreateInstanceRequest.Password",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<138, 1, 2, 16, 0>>}]
+          },
+          oneof_index: nil,
+          json_name: "password",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:user_name, 1, type: :string, json_name: "userName", deprecated: false)
+  field(:email, 2, type: Zitadel.System.V1.CreateInstanceRequest.Email, deprecated: false)
+  field(:profile, 3, type: Zitadel.System.V1.CreateInstanceRequest.Profile, deprecated: false)
+  field(:password, 4, type: Zitadel.System.V1.CreateInstanceRequest.Password, deprecated: false)
+end
+
+defmodule Zitadel.System.V1.CreateInstanceRequest.PersonalAccessToken do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "PersonalAccessToken",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "expiration_date",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".google.protobuf.Timestamp",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<50, 61, 84, 104, 101, 32, 100, 97, 116, 101, 32, 116, 104, 101, 32, 116, 111,
+                 107, 101, 110, 32, 119, 105, 108, 108, 32, 101, 120, 112, 105, 114, 101, 32, 97,
+                 110, 100, 32, 110, 111, 32, 108, 111, 103, 105, 110, 115, 32, 119, 105, 108, 108,
+                 32, 98, 101, 32, 112, 111, 115, 115, 105, 98, 108, 101, 74, 29, 34, 50, 53, 49,
+                 57, 45, 48, 52, 45, 48, 49, 84, 48, 56, 58, 52, 53, 58, 48, 48, 46, 48, 48, 48,
+                 48, 48, 48, 90, 34>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "expirationDate",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:expiration_date, 1,
+    type: Google.Protobuf.Timestamp,
+    json_name: "expirationDate",
+    deprecated: false
+  )
+end
+
+defmodule Zitadel.System.V1.CreateInstanceRequest.MachineKey do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "MachineKey",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "type",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.authn.v1.KeyType",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<130, 1, 4, 16, 1, 32, 0>>}]
+          },
+          oneof_index: nil,
+          json_name: "type",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "expiration_date",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".google.protobuf.Timestamp",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<50, 59, 84, 104, 101, 32, 100, 97, 116, 101, 32, 116, 104, 101, 32, 107, 101,
+                 121, 32, 119, 105, 108, 108, 32, 101, 120, 112, 105, 114, 101, 32, 97, 110, 100,
+                 32, 110, 111, 32, 108, 111, 103, 105, 110, 115, 32, 119, 105, 108, 108, 32, 98,
+                 101, 32, 112, 111, 115, 115, 105, 98, 108, 101, 74, 29, 34, 50, 53, 49, 57, 45,
+                 48, 52, 45, 48, 49, 84, 48, 56, 58, 52, 53, 58, 48, 48, 46, 48, 48, 48, 48, 48,
+                 48, 90, 34>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "expirationDate",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:type, 1, type: Zitadel.Authn.V1.KeyType, enum: true, deprecated: false)
+
+  field(:expiration_date, 2,
+    type: Google.Protobuf.Timestamp,
+    json_name: "expirationDate",
+    deprecated: false
+  )
+end
+
+defmodule Zitadel.System.V1.CreateInstanceRequest.Machine do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "Machine",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "user_name",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "userName",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "name",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "name",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "personal_access_token",
+          extendee: nil,
+          number: 3,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.system.v1.CreateInstanceRequest.PersonalAccessToken",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "personalAccessToken",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "machine_key",
+          extendee: nil,
+          number: 4,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.system.v1.CreateInstanceRequest.MachineKey",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "machineKey",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:user_name, 1, type: :string, json_name: "userName", deprecated: false)
+  field(:name, 2, type: :string, deprecated: false)
+
+  field(:personal_access_token, 3,
+    type: Zitadel.System.V1.CreateInstanceRequest.PersonalAccessToken,
+    json_name: "personalAccessToken"
+  )
+
+  field(:machine_key, 4,
+    type: Zitadel.System.V1.CreateInstanceRequest.MachineKey,
+    json_name: "machineKey"
+  )
+end
+
+defmodule Zitadel.System.V1.CreateInstanceRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "CreateInstanceRequest",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "instance_name",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "instanceName",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "first_org_name",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "firstOrgName",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "custom_domain",
+          extendee: nil,
+          number: 3,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "customDomain",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "human",
+          extendee: nil,
+          number: 4,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.system.v1.CreateInstanceRequest.Human",
+          default_value: nil,
+          options: nil,
+          oneof_index: 0,
+          json_name: "human",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "machine",
+          extendee: nil,
+          number: 5,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.system.v1.CreateInstanceRequest.Machine",
+          default_value: nil,
+          options: nil,
+          oneof_index: 0,
+          json_name: "machine",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "default_language",
+          extendee: nil,
+          number: 6,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 2, 24, 10>>}]
+          },
+          oneof_index: nil,
+          json_name: "defaultLanguage",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [
+        %Google.Protobuf.DescriptorProto{
+          name: "Profile",
+          field: [
+            %Google.Protobuf.FieldDescriptorProto{
+              name: "first_name",
+              extendee: nil,
+              number: 1,
+              label: :LABEL_OPTIONAL,
+              type: :TYPE_STRING,
+              type_name: nil,
+              default_value: nil,
+              options: %Google.Protobuf.FieldOptions{
+                ctype: :STRING,
+                packed: nil,
+                deprecated: false,
+                lazy: false,
+                jstype: :JS_NORMAL,
+                weak: false,
+                unverified_lazy: false,
+                debug_redact: false,
+                uninterpreted_option: [],
+                __pb_extensions__: %{},
+                __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+              },
+              oneof_index: nil,
+              json_name: "firstName",
+              proto3_optional: nil,
+              __unknown_fields__: []
+            },
+            %Google.Protobuf.FieldDescriptorProto{
+              name: "last_name",
+              extendee: nil,
+              number: 2,
+              label: :LABEL_OPTIONAL,
+              type: :TYPE_STRING,
+              type_name: nil,
+              default_value: nil,
+              options: %Google.Protobuf.FieldOptions{
+                ctype: :STRING,
+                packed: nil,
+                deprecated: false,
+                lazy: false,
+                jstype: :JS_NORMAL,
+                weak: false,
+                unverified_lazy: false,
+                debug_redact: false,
+                uninterpreted_option: [],
+                __pb_extensions__: %{},
+                __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+              },
+              oneof_index: nil,
+              json_name: "lastName",
+              proto3_optional: nil,
+              __unknown_fields__: []
+            },
+            %Google.Protobuf.FieldDescriptorProto{
+              name: "preferred_language",
+              extendee: nil,
+              number: 3,
+              label: :LABEL_OPTIONAL,
+              type: :TYPE_STRING,
+              type_name: nil,
+              default_value: nil,
+              options: %Google.Protobuf.FieldOptions{
+                ctype: :STRING,
+                packed: nil,
+                deprecated: false,
+                lazy: false,
+                jstype: :JS_NORMAL,
+                weak: false,
+                unverified_lazy: false,
+                debug_redact: false,
+                uninterpreted_option: [],
+                __pb_extensions__: %{},
+                __unknown_fields__: [{1071, 2, <<114, 2, 24, 10>>}]
+              },
+              oneof_index: nil,
+              json_name: "preferredLanguage",
+              proto3_optional: nil,
+              __unknown_fields__: []
+            }
+          ],
+          nested_type: [],
+          enum_type: [],
+          extension_range: [],
+          extension: [],
+          options: nil,
+          oneof_decl: [],
+          reserved_range: [],
+          reserved_name: [],
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.DescriptorProto{
+          name: "Email",
+          field: [
+            %Google.Protobuf.FieldDescriptorProto{
+              name: "email",
+              extendee: nil,
+              number: 1,
+              label: :LABEL_OPTIONAL,
+              type: :TYPE_STRING,
+              type_name: nil,
+              default_value: nil,
+              options: %Google.Protobuf.FieldOptions{
+                ctype: :STRING,
+                packed: nil,
+                deprecated: false,
+                lazy: false,
+                jstype: :JS_NORMAL,
+                weak: false,
+                unverified_lazy: false,
+                debug_redact: false,
+                uninterpreted_option: [],
+                __pb_extensions__: %{},
+                __unknown_fields__: [{1071, 2, <<114, 7, 16, 1, 24, 200, 1, 96, 1>>}]
+              },
+              oneof_index: nil,
+              json_name: "email",
+              proto3_optional: nil,
+              __unknown_fields__: []
+            },
+            %Google.Protobuf.FieldDescriptorProto{
+              name: "is_email_verified",
+              extendee: nil,
+              number: 2,
+              label: :LABEL_OPTIONAL,
+              type: :TYPE_BOOL,
+              type_name: nil,
+              default_value: nil,
+              options: nil,
+              oneof_index: nil,
+              json_name: "isEmailVerified",
+              proto3_optional: nil,
+              __unknown_fields__: []
+            }
+          ],
+          nested_type: [],
+          enum_type: [],
+          extension_range: [],
+          extension: [],
+          options: nil,
+          oneof_decl: [],
+          reserved_range: [],
+          reserved_name: [],
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.DescriptorProto{
+          name: "Password",
+          field: [
+            %Google.Protobuf.FieldDescriptorProto{
+              name: "password",
+              extendee: nil,
+              number: 1,
+              label: :LABEL_OPTIONAL,
+              type: :TYPE_STRING,
+              type_name: nil,
+              default_value: nil,
+              options: %Google.Protobuf.FieldOptions{
+                ctype: :STRING,
+                packed: nil,
+                deprecated: false,
+                lazy: false,
+                jstype: :JS_NORMAL,
+                weak: false,
+                unverified_lazy: false,
+                debug_redact: false,
+                uninterpreted_option: [],
+                __pb_extensions__: %{},
+                __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+              },
+              oneof_index: nil,
+              json_name: "password",
+              proto3_optional: nil,
+              __unknown_fields__: []
+            },
+            %Google.Protobuf.FieldDescriptorProto{
+              name: "password_change_required",
+              extendee: nil,
+              number: 2,
+              label: :LABEL_OPTIONAL,
+              type: :TYPE_BOOL,
+              type_name: nil,
+              default_value: nil,
+              options: nil,
+              oneof_index: nil,
+              json_name: "passwordChangeRequired",
+              proto3_optional: nil,
+              __unknown_fields__: []
+            }
+          ],
+          nested_type: [],
+          enum_type: [],
+          extension_range: [],
+          extension: [],
+          options: nil,
+          oneof_decl: [],
+          reserved_range: [],
+          reserved_name: [],
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.DescriptorProto{
+          name: "Human",
+          field: [
+            %Google.Protobuf.FieldDescriptorProto{
+              name: "user_name",
+              extendee: nil,
+              number: 1,
+              label: :LABEL_OPTIONAL,
+              type: :TYPE_STRING,
+              type_name: nil,
+              default_value: nil,
+              options: %Google.Protobuf.FieldOptions{
+                ctype: :STRING,
+                packed: nil,
+                deprecated: false,
+                lazy: false,
+                jstype: :JS_NORMAL,
+                weak: false,
+                unverified_lazy: false,
+                debug_redact: false,
+                uninterpreted_option: [],
+                __pb_extensions__: %{},
+                __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+              },
+              oneof_index: nil,
+              json_name: "userName",
+              proto3_optional: nil,
+              __unknown_fields__: []
+            },
+            %Google.Protobuf.FieldDescriptorProto{
+              name: "email",
+              extendee: nil,
+              number: 2,
+              label: :LABEL_OPTIONAL,
+              type: :TYPE_MESSAGE,
+              type_name: ".zitadel.system.v1.CreateInstanceRequest.Email",
+              default_value: nil,
+              options: %Google.Protobuf.FieldOptions{
+                ctype: :STRING,
+                packed: nil,
+                deprecated: false,
+                lazy: false,
+                jstype: :JS_NORMAL,
+                weak: false,
+                unverified_lazy: false,
+                debug_redact: false,
+                uninterpreted_option: [],
+                __pb_extensions__: %{},
+                __unknown_fields__: [{1071, 2, <<138, 1, 2, 16, 1>>}]
+              },
+              oneof_index: nil,
+              json_name: "email",
+              proto3_optional: nil,
+              __unknown_fields__: []
+            },
+            %Google.Protobuf.FieldDescriptorProto{
+              name: "profile",
+              extendee: nil,
+              number: 3,
+              label: :LABEL_OPTIONAL,
+              type: :TYPE_MESSAGE,
+              type_name: ".zitadel.system.v1.CreateInstanceRequest.Profile",
+              default_value: nil,
+              options: %Google.Protobuf.FieldOptions{
+                ctype: :STRING,
+                packed: nil,
+                deprecated: false,
+                lazy: false,
+                jstype: :JS_NORMAL,
+                weak: false,
+                unverified_lazy: false,
+                debug_redact: false,
+                uninterpreted_option: [],
+                __pb_extensions__: %{},
+                __unknown_fields__: [{1071, 2, <<138, 1, 2, 16, 0>>}]
+              },
+              oneof_index: nil,
+              json_name: "profile",
+              proto3_optional: nil,
+              __unknown_fields__: []
+            },
+            %Google.Protobuf.FieldDescriptorProto{
+              name: "password",
+              extendee: nil,
+              number: 4,
+              label: :LABEL_OPTIONAL,
+              type: :TYPE_MESSAGE,
+              type_name: ".zitadel.system.v1.CreateInstanceRequest.Password",
+              default_value: nil,
+              options: %Google.Protobuf.FieldOptions{
+                ctype: :STRING,
+                packed: nil,
+                deprecated: false,
+                lazy: false,
+                jstype: :JS_NORMAL,
+                weak: false,
+                unverified_lazy: false,
+                debug_redact: false,
+                uninterpreted_option: [],
+                __pb_extensions__: %{},
+                __unknown_fields__: [{1071, 2, <<138, 1, 2, 16, 0>>}]
+              },
+              oneof_index: nil,
+              json_name: "password",
+              proto3_optional: nil,
+              __unknown_fields__: []
+            }
+          ],
+          nested_type: [],
+          enum_type: [],
+          extension_range: [],
+          extension: [],
+          options: nil,
+          oneof_decl: [],
+          reserved_range: [],
+          reserved_name: [],
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.DescriptorProto{
+          name: "PersonalAccessToken",
+          field: [
+            %Google.Protobuf.FieldDescriptorProto{
+              name: "expiration_date",
+              extendee: nil,
+              number: 1,
+              label: :LABEL_OPTIONAL,
+              type: :TYPE_MESSAGE,
+              type_name: ".google.protobuf.Timestamp",
+              default_value: nil,
+              options: %Google.Protobuf.FieldOptions{
+                ctype: :STRING,
+                packed: nil,
+                deprecated: false,
+                lazy: false,
+                jstype: :JS_NORMAL,
+                weak: false,
+                unverified_lazy: false,
+                debug_redact: false,
+                uninterpreted_option: [],
+                __pb_extensions__: %{},
+                __unknown_fields__: [
+                  {1042, 2,
+                   <<50, 61, 84, 104, 101, 32, 100, 97, 116, 101, 32, 116, 104, 101, 32, 116, 111,
+                     107, 101, 110, 32, 119, 105, 108, 108, 32, 101, 120, 112, 105, 114, 101, 32,
+                     97, 110, 100, 32, 110, 111, 32, 108, 111, 103, 105, 110, 115, 32, 119, 105,
+                     108, 108, 32, 98, 101, 32, 112, 111, 115, 115, 105, 98, 108, 101, 74, 29, 34,
+                     50, 53, 49, 57, 45, 48, 52, 45, 48, 49, 84, 48, 56, 58, 52, 53, 58, 48, 48,
+                     46, 48, 48, 48, 48, 48, 48, 90, 34>>}
+                ]
+              },
+              oneof_index: nil,
+              json_name: "expirationDate",
+              proto3_optional: nil,
+              __unknown_fields__: []
+            }
+          ],
+          nested_type: [],
+          enum_type: [],
+          extension_range: [],
+          extension: [],
+          options: nil,
+          oneof_decl: [],
+          reserved_range: [],
+          reserved_name: [],
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.DescriptorProto{
+          name: "MachineKey",
+          field: [
+            %Google.Protobuf.FieldDescriptorProto{
+              name: "type",
+              extendee: nil,
+              number: 1,
+              label: :LABEL_OPTIONAL,
+              type: :TYPE_ENUM,
+              type_name: ".zitadel.authn.v1.KeyType",
+              default_value: nil,
+              options: %Google.Protobuf.FieldOptions{
+                ctype: :STRING,
+                packed: nil,
+                deprecated: false,
+                lazy: false,
+                jstype: :JS_NORMAL,
+                weak: false,
+                unverified_lazy: false,
+                debug_redact: false,
+                uninterpreted_option: [],
+                __pb_extensions__: %{},
+                __unknown_fields__: [{1071, 2, <<130, 1, 4, 16, 1, 32, 0>>}]
+              },
+              oneof_index: nil,
+              json_name: "type",
+              proto3_optional: nil,
+              __unknown_fields__: []
+            },
+            %Google.Protobuf.FieldDescriptorProto{
+              name: "expiration_date",
+              extendee: nil,
+              number: 2,
+              label: :LABEL_OPTIONAL,
+              type: :TYPE_MESSAGE,
+              type_name: ".google.protobuf.Timestamp",
+              default_value: nil,
+              options: %Google.Protobuf.FieldOptions{
+                ctype: :STRING,
+                packed: nil,
+                deprecated: false,
+                lazy: false,
+                jstype: :JS_NORMAL,
+                weak: false,
+                unverified_lazy: false,
+                debug_redact: false,
+                uninterpreted_option: [],
+                __pb_extensions__: %{},
+                __unknown_fields__: [
+                  {1042, 2,
+                   <<50, 59, 84, 104, 101, 32, 100, 97, 116, 101, 32, 116, 104, 101, 32, 107, 101,
+                     121, 32, 119, 105, 108, 108, 32, 101, 120, 112, 105, 114, 101, 32, 97, 110,
+                     100, 32, 110, 111, 32, 108, 111, 103, 105, 110, 115, 32, 119, 105, 108, 108,
+                     32, 98, 101, 32, 112, 111, 115, 115, 105, 98, 108, 101, 74, 29, 34, 50, 53,
+                     49, 57, 45, 48, 52, 45, 48, 49, 84, 48, 56, 58, 52, 53, 58, 48, 48, 46, 48,
+                     48, 48, 48, 48, 48, 90, 34>>}
+                ]
+              },
+              oneof_index: nil,
+              json_name: "expirationDate",
+              proto3_optional: nil,
+              __unknown_fields__: []
+            }
+          ],
+          nested_type: [],
+          enum_type: [],
+          extension_range: [],
+          extension: [],
+          options: nil,
+          oneof_decl: [],
+          reserved_range: [],
+          reserved_name: [],
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.DescriptorProto{
+          name: "Machine",
+          field: [
+            %Google.Protobuf.FieldDescriptorProto{
+              name: "user_name",
+              extendee: nil,
+              number: 1,
+              label: :LABEL_OPTIONAL,
+              type: :TYPE_STRING,
+              type_name: nil,
+              default_value: nil,
+              options: %Google.Protobuf.FieldOptions{
+                ctype: :STRING,
+                packed: nil,
+                deprecated: false,
+                lazy: false,
+                jstype: :JS_NORMAL,
+                weak: false,
+                unverified_lazy: false,
+                debug_redact: false,
+                uninterpreted_option: [],
+                __pb_extensions__: %{},
+                __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+              },
+              oneof_index: nil,
+              json_name: "userName",
+              proto3_optional: nil,
+              __unknown_fields__: []
+            },
+            %Google.Protobuf.FieldDescriptorProto{
+              name: "name",
+              extendee: nil,
+              number: 2,
+              label: :LABEL_OPTIONAL,
+              type: :TYPE_STRING,
+              type_name: nil,
+              default_value: nil,
+              options: %Google.Protobuf.FieldOptions{
+                ctype: :STRING,
+                packed: nil,
+                deprecated: false,
+                lazy: false,
+                jstype: :JS_NORMAL,
+                weak: false,
+                unverified_lazy: false,
+                debug_redact: false,
+                uninterpreted_option: [],
+                __pb_extensions__: %{},
+                __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+              },
+              oneof_index: nil,
+              json_name: "name",
+              proto3_optional: nil,
+              __unknown_fields__: []
+            },
+            %Google.Protobuf.FieldDescriptorProto{
+              name: "personal_access_token",
+              extendee: nil,
+              number: 3,
+              label: :LABEL_OPTIONAL,
+              type: :TYPE_MESSAGE,
+              type_name: ".zitadel.system.v1.CreateInstanceRequest.PersonalAccessToken",
+              default_value: nil,
+              options: nil,
+              oneof_index: nil,
+              json_name: "personalAccessToken",
+              proto3_optional: nil,
+              __unknown_fields__: []
+            },
+            %Google.Protobuf.FieldDescriptorProto{
+              name: "machine_key",
+              extendee: nil,
+              number: 4,
+              label: :LABEL_OPTIONAL,
+              type: :TYPE_MESSAGE,
+              type_name: ".zitadel.system.v1.CreateInstanceRequest.MachineKey",
+              default_value: nil,
+              options: nil,
+              oneof_index: nil,
+              json_name: "machineKey",
+              proto3_optional: nil,
+              __unknown_fields__: []
+            }
+          ],
+          nested_type: [],
+          enum_type: [],
+          extension_range: [],
+          extension: [],
+          options: nil,
+          oneof_decl: [],
+          reserved_range: [],
+          reserved_name: [],
+          __unknown_fields__: []
+        }
+      ],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [
+        %Google.Protobuf.OneofDescriptorProto{
+          name: "owner",
+          options: %Google.Protobuf.OneofOptions{
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 0, 1}]
+          },
+          __unknown_fields__: []
+        }
+      ],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  oneof(:owner, 0)
+
+  field(:instance_name, 1, type: :string, json_name: "instanceName", deprecated: false)
+  field(:first_org_name, 2, type: :string, json_name: "firstOrgName", deprecated: false)
+  field(:custom_domain, 3, type: :string, json_name: "customDomain", deprecated: false)
+  field(:human, 4, type: Zitadel.System.V1.CreateInstanceRequest.Human, oneof: 0)
+  field(:machine, 5, type: Zitadel.System.V1.CreateInstanceRequest.Machine, oneof: 0)
+  field(:default_language, 6, type: :string, json_name: "defaultLanguage", deprecated: false)
+end
+
+defmodule Zitadel.System.V1.CreateInstanceResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "CreateInstanceResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "instance_id",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "instanceId",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "details",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "pat",
+          extendee: nil,
+          number: 3,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "pat",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "machine_key",
+          extendee: nil,
+          number: 4,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_BYTES,
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "machineKey",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:instance_id, 1, type: :string, json_name: "instanceId")
+  field(:details, 2, type: Zitadel.V1.ObjectDetails)
+  field(:pat, 3, type: :string)
+  field(:machine_key, 4, type: :bytes, json_name: "machineKey")
+end
+
+defmodule Zitadel.System.V1.UpdateInstanceRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "UpdateInstanceRequest",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "instance_id",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "instanceId",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "instance_name",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "instanceName",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
     }
   end
 
@@ -1057,37 +2521,37 @@ defmodule Zitadel.System.V1.UpdateInstanceRequest do
 end
 
 defmodule Zitadel.System.V1.UpdateInstanceResponse do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "UpdateInstanceResponse",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "details",
-          label: :LABEL_OPTIONAL,
           name: "details",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: nil,
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_MESSAGE,
-          type_name: ".zitadel.v1.ObjectDetails"
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "UpdateInstanceResponse",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -1095,47 +2559,49 @@ defmodule Zitadel.System.V1.UpdateInstanceResponse do
 end
 
 defmodule Zitadel.System.V1.RemoveInstanceRequest do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "RemoveInstanceRequest",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "instanceId",
-          label: :LABEL_OPTIONAL,
           name: "instance_id",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "instanceId",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "RemoveInstanceRequest",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -1143,201 +2609,648 @@ defmodule Zitadel.System.V1.RemoveInstanceRequest do
 end
 
 defmodule Zitadel.System.V1.RemoveInstanceResponse do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "RemoveInstanceResponse",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "details",
-          label: :LABEL_OPTIONAL,
           name: "details",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: nil,
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_MESSAGE,
-          type_name: ".zitadel.v1.ObjectDetails"
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "RemoveInstanceResponse",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
   field(:details, 1, type: Zitadel.V1.ObjectDetails)
 end
 
-defmodule Zitadel.System.V1.GetUsageRequest do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+defmodule Zitadel.System.V1.ListIAMMembersRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "ListIAMMembersRequest",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
+          name: "query",
           extendee: nil,
-          json_name: "instanceId",
-          label: :LABEL_OPTIONAL,
-          name: "instance_id",
           number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ListQuery",
+          default_value: nil,
+          options: nil,
           oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
+          json_name: "query",
           proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "instance_id",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "instanceId",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "queries",
+          extendee: nil,
+          number: 3,
+          label: :LABEL_REPEATED,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.member.v1.SearchQuery",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "queries",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "GetUsageRequest",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
+    }
+  end
+
+  field(:query, 1, type: Zitadel.V1.ListQuery)
+  field(:instance_id, 2, type: :string, json_name: "instanceId")
+  field(:queries, 3, repeated: true, type: Zitadel.Member.V1.SearchQuery)
+end
+
+defmodule Zitadel.System.V1.ListIAMMembersResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "ListIAMMembersResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "details",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ListDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "result",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_REPEATED,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.member.v1.Member",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "result",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ListDetails)
+  field(:result, 2, repeated: true, type: Zitadel.Member.V1.Member)
+end
+
+defmodule Zitadel.System.V1.GetUsageRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "GetUsageRequest",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "instance_id",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "instanceId",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
     }
   end
 
   field(:instance_id, 1, type: :string, json_name: "instanceId", deprecated: false)
 end
 
-defmodule Zitadel.System.V1.GetUsageResponse do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+defmodule Zitadel.System.V1.AddQuotaRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "AddQuotaRequest",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
+          name: "instance_id",
           extendee: nil,
-          json_name: "details",
-          label: :LABEL_OPTIONAL,
-          name: "details",
           number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
           oneof_index: nil,
-          options: nil,
+          json_name: "instanceId",
           proto3_optional: nil,
-          type: :TYPE_MESSAGE,
-          type_name: ".zitadel.v1.ObjectDetails"
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
+          name: "unit",
           extendee: nil,
-          json_name: "executedRequests",
-          label: :LABEL_OPTIONAL,
-          name: "executed_requests",
           number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.quota.v1.Unit",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<130, 1, 4, 16, 1, 32, 0>>},
+              {1042, 2, "2%the unit a quota should be imposed on"}
+            ]
+          },
           oneof_index: nil,
-          options: nil,
+          json_name: "unit",
           proto3_optional: nil,
-          type: :TYPE_UINT64,
-          type_name: nil
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
+          name: "from",
           extendee: nil,
-          json_name: "executedActionMins",
-          label: :LABEL_OPTIONAL,
-          name: "executed_action_mins",
           number: 3,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".google.protobuf.Timestamp",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<178, 1, 2, 8, 1>>},
+              {1042, 2,
+               <<50, 122, 116, 104, 101, 32, 115, 116, 97, 114, 116, 105, 110, 103, 32, 116, 105,
+                 109, 101, 32, 102, 114, 111, 109, 32, 119, 104, 105, 99, 104, 32, 116, 104, 101,
+                 32, 99, 117, 114, 114, 101, 110, 116, 32, 113, 117, 111, 116, 97, 32, 112, 101,
+                 114, 105, 111, 100, 32, 105, 115, 32, 99, 97, 108, 99, 117, 108, 97, 116, 101,
+                 100, 32, 102, 114, 111, 109, 46, 32, 84, 104, 105, 115, 32, 105, 115, 32, 114,
+                 101, 108, 101, 118, 97, 110, 116, 32, 102, 111, 114, 32, 113, 117, 101, 114, 121,
+                 105, 110, 103, 32, 116, 104, 101, 32, 99, 117, 114, 114, 101, 110, 116, 32, 117,
+                 115, 97, 103, 101, 46, 74, 29, 34, 50, 48, 49, 57, 45, 48, 52, 45, 48, 49, 84,
+                 48, 56, 58, 52, 53, 58, 48, 48, 46, 48, 48, 48, 48, 48, 48, 90, 34>>}
+            ]
+          },
           oneof_index: nil,
-          options: nil,
+          json_name: "from",
           proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "reset_interval",
+          extendee: nil,
+          number: 4,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".google.protobuf.Duration",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<170, 1, 2, 8, 1>>},
+              {1042, 2,
+               <<50, 26, 116, 104, 101, 32, 113, 117, 111, 116, 97, 32, 112, 101, 114, 105, 111,
+                 100, 115, 32, 100, 117, 114, 97, 116, 105, 111, 110>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "resetInterval",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "amount",
+          extendee: nil,
+          number: 5,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_UINT64,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<50, 2, 32, 0>>},
+              {1042, 2,
+               <<50, 25, 116, 104, 101, 32, 113, 117, 111, 116, 97, 32, 97, 109, 111, 117, 110,
+                 116, 32, 111, 102, 32, 117, 110, 105, 116, 115>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "amount",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "limit",
+          extendee: nil,
+          number: 6,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_BOOL,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               "2Mwhether ZITADEL should block further usage when the configured amount is used"}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "limit",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "notifications",
+          extendee: nil,
+          number: 7,
+          label: :LABEL_REPEATED,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.quota.v1.Notification",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               "2Ithe handlers, ZITADEL executes when certain quota percentages are reached"}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "notifications",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "GetUsageResponse",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
+    }
+  end
+
+  field(:instance_id, 1, type: :string, json_name: "instanceId", deprecated: false)
+  field(:unit, 2, type: Zitadel.Quota.V1.Unit, enum: true, deprecated: false)
+  field(:from, 3, type: Google.Protobuf.Timestamp, deprecated: false)
+
+  field(:reset_interval, 4,
+    type: Google.Protobuf.Duration,
+    json_name: "resetInterval",
+    deprecated: false
+  )
+
+  field(:amount, 5, type: :uint64, deprecated: false)
+  field(:limit, 6, type: :bool, deprecated: false)
+  field(:notifications, 7, repeated: true, type: Zitadel.Quota.V1.Notification, deprecated: false)
+end
+
+defmodule Zitadel.System.V1.AddQuotaResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "AddQuotaResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "details",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
     }
   end
 
   field(:details, 1, type: Zitadel.V1.ObjectDetails)
-  field(:executed_requests, 2, type: :uint64, json_name: "executedRequests")
-  field(:executed_action_mins, 3, type: :uint64, json_name: "executedActionMins")
 end
 
-defmodule Zitadel.System.V1.ExistsDomainRequest do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+defmodule Zitadel.System.V1.RemoveQuotaRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "RemoveQuotaRequest",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
+          name: "instance_id",
           extendee: nil,
-          json_name: "domain",
-          label: :LABEL_OPTIONAL,
-          name: "domain",
           number: 1,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "instanceId",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "unit",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.quota.v1.Unit",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "unit",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "ExistsDomainRequest",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
+    }
+  end
+
+  field(:instance_id, 1, type: :string, json_name: "instanceId", deprecated: false)
+  field(:unit, 2, type: Zitadel.Quota.V1.Unit, enum: true)
+end
+
+defmodule Zitadel.System.V1.RemoveQuotaResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "RemoveQuotaResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "details",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.System.V1.ExistsDomainRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "ExistsDomainRequest",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "domain",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "domain",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
     }
   end
 
@@ -1345,37 +3258,37 @@ defmodule Zitadel.System.V1.ExistsDomainRequest do
 end
 
 defmodule Zitadel.System.V1.ExistsDomainResponse do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "ExistsDomainResponse",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "exists",
-          label: :LABEL_OPTIONAL,
           name: "exists",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: nil,
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_BOOL,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "exists",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "ExistsDomainResponse",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -1383,89 +3296,91 @@ defmodule Zitadel.System.V1.ExistsDomainResponse do
 end
 
 defmodule Zitadel.System.V1.ListDomainsRequest do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "ListDomainsRequest",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "instanceId",
-          label: :LABEL_OPTIONAL,
           name: "instance_id",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "instanceId",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "query",
-          label: :LABEL_OPTIONAL,
           name: "query",
+          extendee: nil,
           number: 2,
-          oneof_index: nil,
-          options: nil,
-          proto3_optional: nil,
-          type: :TYPE_MESSAGE,
-          type_name: ".zitadel.v1.ListQuery"
-        },
-        %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "sortingColumn",
           label: :LABEL_OPTIONAL,
-          name: "sorting_column",
-          number: 3,
-          oneof_index: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ListQuery",
+          default_value: nil,
           options: nil,
+          oneof_index: nil,
+          json_name: "query",
           proto3_optional: nil,
-          type: :TYPE_ENUM,
-          type_name: ".zitadel.instance.v1.DomainFieldName"
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
+          name: "sorting_column",
           extendee: nil,
-          json_name: "queries",
-          label: :LABEL_REPEATED,
-          name: "queries",
-          number: 4,
-          oneof_index: nil,
+          number: 3,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.instance.v1.DomainFieldName",
+          default_value: nil,
           options: nil,
+          oneof_index: nil,
+          json_name: "sortingColumn",
           proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "queries",
+          extendee: nil,
+          number: 4,
+          label: :LABEL_REPEATED,
           type: :TYPE_MESSAGE,
-          type_name: ".zitadel.instance.v1.DomainSearchQuery"
+          type_name: ".zitadel.instance.v1.DomainSearchQuery",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "queries",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "ListDomainsRequest",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -1482,65 +3397,65 @@ defmodule Zitadel.System.V1.ListDomainsRequest do
 end
 
 defmodule Zitadel.System.V1.ListDomainsResponse do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "ListDomainsResponse",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "details",
-          label: :LABEL_OPTIONAL,
           name: "details",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: nil,
-          proto3_optional: nil,
-          type: :TYPE_MESSAGE,
-          type_name: ".zitadel.v1.ListDetails"
-        },
-        %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "sortingColumn",
           label: :LABEL_OPTIONAL,
-          name: "sorting_column",
-          number: 2,
-          oneof_index: nil,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ListDetails",
+          default_value: nil,
           options: nil,
+          oneof_index: nil,
+          json_name: "details",
           proto3_optional: nil,
-          type: :TYPE_ENUM,
-          type_name: ".zitadel.instance.v1.DomainFieldName"
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
+          name: "sorting_column",
           extendee: nil,
-          json_name: "result",
-          label: :LABEL_REPEATED,
-          name: "result",
-          number: 3,
-          oneof_index: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.instance.v1.DomainFieldName",
+          default_value: nil,
           options: nil,
+          oneof_index: nil,
+          json_name: "sortingColumn",
           proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "result",
+          extendee: nil,
+          number: 3,
+          label: :LABEL_REPEATED,
           type: :TYPE_MESSAGE,
-          type_name: ".zitadel.instance.v1.Domain"
+          type_name: ".zitadel.instance.v1.Domain",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "result",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "ListDomainsResponse",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -1556,71 +3471,75 @@ defmodule Zitadel.System.V1.ListDomainsResponse do
 end
 
 defmodule Zitadel.System.V1.AddDomainRequest do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "AddDomainRequest",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "instanceId",
-          label: :LABEL_OPTIONAL,
           name: "instance_id",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "instanceId",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "domain",
-          label: :LABEL_OPTIONAL,
           name: "domain",
+          extendee: nil,
           number: 2,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "domain",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "AddDomainRequest",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -1629,37 +3548,37 @@ defmodule Zitadel.System.V1.AddDomainRequest do
 end
 
 defmodule Zitadel.System.V1.AddDomainResponse do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "AddDomainResponse",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "details",
-          label: :LABEL_OPTIONAL,
           name: "details",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: nil,
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_MESSAGE,
-          type_name: ".zitadel.v1.ObjectDetails"
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "AddDomainResponse",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -1667,71 +3586,75 @@ defmodule Zitadel.System.V1.AddDomainResponse do
 end
 
 defmodule Zitadel.System.V1.RemoveDomainRequest do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "RemoveDomainRequest",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "instanceId",
-          label: :LABEL_OPTIONAL,
           name: "instance_id",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "instanceId",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "domain",
-          label: :LABEL_OPTIONAL,
           name: "domain",
+          extendee: nil,
           number: 2,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "domain",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "RemoveDomainRequest",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -1740,37 +3663,37 @@ defmodule Zitadel.System.V1.RemoveDomainRequest do
 end
 
 defmodule Zitadel.System.V1.RemoveDomainResponse do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "RemoveDomainResponse",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "details",
-          label: :LABEL_OPTIONAL,
           name: "details",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: nil,
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_MESSAGE,
-          type_name: ".zitadel.v1.ObjectDetails"
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "RemoveDomainResponse",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -1778,71 +3701,75 @@ defmodule Zitadel.System.V1.RemoveDomainResponse do
 end
 
 defmodule Zitadel.System.V1.SetPrimaryDomainRequest do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "SetPrimaryDomainRequest",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "instanceId",
-          label: :LABEL_OPTIONAL,
           name: "instance_id",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "instanceId",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "domain",
-          label: :LABEL_OPTIONAL,
           name: "domain",
+          extendee: nil,
           number: 2,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "domain",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "SetPrimaryDomainRequest",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -1851,37 +3778,37 @@ defmodule Zitadel.System.V1.SetPrimaryDomainRequest do
 end
 
 defmodule Zitadel.System.V1.SetPrimaryDomainResponse do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "SetPrimaryDomainResponse",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "details",
-          label: :LABEL_OPTIONAL,
           name: "details",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: nil,
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_MESSAGE,
-          type_name: ".zitadel.v1.ObjectDetails"
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "SetPrimaryDomainResponse",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -1889,99 +3816,103 @@ defmodule Zitadel.System.V1.SetPrimaryDomainResponse do
 end
 
 defmodule Zitadel.System.V1.ChangeSubscriptionRequest do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "ChangeSubscriptionRequest",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "domain",
-          label: :LABEL_OPTIONAL,
           name: "domain",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "domain",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "subscriptionName",
-          label: :LABEL_OPTIONAL,
           name: "subscription_name",
+          extendee: nil,
           number: 2,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "subscriptionName",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "requestLimit",
-          label: :LABEL_OPTIONAL,
           name: "request_limit",
+          extendee: nil,
           number: 3,
-          oneof_index: nil,
-          options: nil,
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_UINT64,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "requestLimit",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "actionMinsLimit",
-          label: :LABEL_OPTIONAL,
           name: "action_mins_limit",
+          extendee: nil,
           number: 4,
-          oneof_index: nil,
-          options: nil,
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_UINT64,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "actionMinsLimit",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "ChangeSubscriptionRequest",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -1992,37 +3923,37 @@ defmodule Zitadel.System.V1.ChangeSubscriptionRequest do
 end
 
 defmodule Zitadel.System.V1.ChangeSubscriptionResponse do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "ChangeSubscriptionResponse",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "details",
-          label: :LABEL_OPTIONAL,
           name: "details",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: nil,
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_MESSAGE,
-          type_name: ".zitadel.v1.ObjectDetails"
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "ChangeSubscriptionResponse",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -2030,58 +3961,58 @@ defmodule Zitadel.System.V1.ChangeSubscriptionResponse do
 end
 
 defmodule Zitadel.System.V1.ListViewsRequest do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
-      field: [],
       name: "ListViewsRequest",
+      field: [],
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 end
 
 defmodule Zitadel.System.V1.ListViewsResponse do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "ListViewsResponse",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "result",
-          label: :LABEL_REPEATED,
           name: "result",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: nil,
-          proto3_optional: nil,
+          label: :LABEL_REPEATED,
           type: :TYPE_MESSAGE,
-          type_name: ".zitadel.system.v1.View"
+          type_name: ".zitadel.system.v1.View",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "result",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "ListViewsResponse",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -2089,92 +4020,97 @@ defmodule Zitadel.System.V1.ListViewsResponse do
 end
 
 defmodule Zitadel.System.V1.ClearViewRequest do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "ClearViewRequest",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "database",
-          label: :LABEL_OPTIONAL,
           name: "database",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
           options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
               {1071, 2, <<114, 5, 16, 1, 24, 200, 1>>},
               {1042, 2,
                <<74, 10, 34, 97, 100, 109, 105, 110, 97, 112, 105, 34, 120, 200, 1, 128, 1, 1>>}
-            ],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
+            ]
           },
+          oneof_index: nil,
+          json_name: "database",
           proto3_optional: nil,
-          type: :TYPE_STRING,
-          type_name: nil
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "viewName",
-          label: :LABEL_OPTIONAL,
           name: "view_name",
+          extendee: nil,
           number: 2,
-          oneof_index: nil,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
           options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
               {1071, 2, <<114, 5, 16, 1, 24, 200, 1>>},
               {1042, 2,
                <<74, 13, 34, 105, 97, 109, 95, 109, 101, 109, 98, 101, 114, 115, 34, 120, 200, 1,
                  128, 1, 1>>}
-            ],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
+            ]
           },
+          oneof_index: nil,
+          json_name: "viewName",
           proto3_optional: nil,
-          type: :TYPE_STRING,
-          type_name: nil
+          __unknown_fields__: []
         }
       ],
-      name: "ClearViewRequest",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: %Google.Protobuf.MessageOptions{
+        message_set_wire_format: false,
+        no_standard_descriptor_accessor: false,
+        deprecated: false,
+        map_entry: nil,
+        deprecated_legacy_json_field_conflicts: nil,
+        uninterpreted_option: [],
         __pb_extensions__: %{},
         __unknown_fields__: [
           {1042, 2,
            <<10, 23, 210, 1, 8, 100, 97, 116, 97, 98, 97, 115, 101, 210, 1, 9, 118, 105, 101, 119,
              95, 110, 97, 109, 101>>}
-        ],
-        deprecated: false,
-        map_entry: nil,
-        message_set_wire_format: false,
-        no_standard_descriptor_accessor: false,
-        uninterpreted_option: []
+        ]
       },
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -2183,79 +4119,79 @@ defmodule Zitadel.System.V1.ClearViewRequest do
 end
 
 defmodule Zitadel.System.V1.ClearViewResponse do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
-      field: [],
       name: "ClearViewResponse",
+      field: [],
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 end
 
 defmodule Zitadel.System.V1.ListFailedEventsRequest do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
-      field: [],
       name: "ListFailedEventsRequest",
+      field: [],
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 end
 
 defmodule Zitadel.System.V1.ListFailedEventsResponse do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "ListFailedEventsResponse",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "result",
-          label: :LABEL_REPEATED,
           name: "result",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: nil,
-          proto3_optional: nil,
+          label: :LABEL_REPEATED,
           type: :TYPE_MESSAGE,
-          type_name: ".zitadel.system.v1.FailedEvent"
+          type_name: ".zitadel.system.v1.FailedEvent",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "result",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "ListFailedEventsResponse",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -2263,239 +4199,287 @@ defmodule Zitadel.System.V1.ListFailedEventsResponse do
 end
 
 defmodule Zitadel.System.V1.RemoveFailedEventRequest do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "RemoveFailedEventRequest",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "database",
-          label: :LABEL_OPTIONAL,
           name: "database",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
           options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
               {1071, 2, <<114, 5, 16, 1, 24, 200, 1>>},
               {1042, 2,
                <<74, 10, 34, 97, 100, 109, 105, 110, 97, 112, 105, 34, 120, 200, 1, 128, 1, 1>>}
-            ],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
+            ]
           },
+          oneof_index: nil,
+          json_name: "database",
           proto3_optional: nil,
-          type: :TYPE_STRING,
-          type_name: nil
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "viewName",
-          label: :LABEL_OPTIONAL,
           name: "view_name",
+          extendee: nil,
           number: 2,
-          oneof_index: nil,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
           options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
               {1071, 2, <<114, 5, 16, 1, 24, 200, 1>>},
               {1042, 2,
                <<74, 13, 34, 105, 97, 109, 95, 109, 101, 109, 98, 101, 114, 115, 34, 120, 200, 1,
                  128, 1, 1>>}
-            ],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
+            ]
           },
+          oneof_index: nil,
+          json_name: "viewName",
           proto3_optional: nil,
-          type: :TYPE_STRING,
-          type_name: nil
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "failedSequence",
-          label: :LABEL_OPTIONAL,
           name: "failed_sequence",
+          extendee: nil,
           number: 3,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1042, 2, "J\t\"9823758\""}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_UINT64,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1042, 2, "J\t\"9823758\""}]
+          },
+          oneof_index: nil,
+          json_name: "failedSequence",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "instance_id",
+          extendee: nil,
+          number: 4,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<74, 17, 34, 56, 52, 48, 52, 57, 56, 48, 51, 52, 57, 51, 48, 56, 52, 48, 34>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "instanceId",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "RemoveFailedEventRequest",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: %Google.Protobuf.MessageOptions{
+        message_set_wire_format: false,
+        no_standard_descriptor_accessor: false,
+        deprecated: false,
+        map_entry: nil,
+        deprecated_legacy_json_field_conflicts: nil,
+        uninterpreted_option: [],
         __pb_extensions__: %{},
         __unknown_fields__: [
           {1042, 2,
            <<10, 41, 210, 1, 8, 100, 97, 116, 97, 98, 97, 115, 101, 210, 1, 9, 118, 105, 101, 119,
              95, 110, 97, 109, 101, 210, 1, 15, 102, 97, 105, 108, 101, 100, 95, 115, 101, 113,
              117, 101, 110, 99, 101>>}
-        ],
-        deprecated: false,
-        map_entry: nil,
-        message_set_wire_format: false,
-        no_standard_descriptor_accessor: false,
-        uninterpreted_option: []
+        ]
       },
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
   field(:database, 1, type: :string, deprecated: false)
   field(:view_name, 2, type: :string, json_name: "viewName", deprecated: false)
   field(:failed_sequence, 3, type: :uint64, json_name: "failedSequence", deprecated: false)
+  field(:instance_id, 4, type: :string, json_name: "instanceId", deprecated: false)
 end
 
 defmodule Zitadel.System.V1.RemoveFailedEventResponse do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
-      field: [],
       name: "RemoveFailedEventResponse",
+      field: [],
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 end
 
 defmodule Zitadel.System.V1.View do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "View",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "database",
-          label: :LABEL_OPTIONAL,
           name: "database",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1042, 2, "J\n\"adminapi\""}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1042, 2, "J\n\"adminapi\""}]
+          },
+          oneof_index: nil,
+          json_name: "database",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "viewName",
-          label: :LABEL_OPTIONAL,
           name: "view_name",
+          extendee: nil,
           number: 2,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1042, 2, "J\r\"iam_members\""}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
-        },
-        %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
+          type_name: nil,
           default_value: nil,
-          extendee: nil,
-          json_name: "processedSequence",
-          label: :LABEL_OPTIONAL,
-          name: "processed_sequence",
-          number: 3,
-          oneof_index: nil,
           options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1042, 2, "J\t\"9823758\""}],
             ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
             packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
             uninterpreted_option: [],
-            weak: false
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1042, 2, "J\r\"iam_members\""}]
           },
+          oneof_index: nil,
+          json_name: "viewName",
           proto3_optional: nil,
-          type: :TYPE_UINT64,
-          type_name: nil
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
+          name: "processed_sequence",
           extendee: nil,
-          json_name: "eventTimestamp",
+          number: 3,
           label: :LABEL_OPTIONAL,
-          name: "event_timestamp",
-          number: 4,
-          oneof_index: nil,
+          type: :TYPE_UINT64,
+          type_name: nil,
+          default_value: nil,
           options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1042, 2, "J\t\"9823758\""}]
+          },
+          oneof_index: nil,
+          json_name: "processedSequence",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "event_timestamp",
+          extendee: nil,
+          number: 4,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".google.protobuf.Timestamp",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
               {1042, 2,
@@ -2503,81 +4487,82 @@ defmodule Zitadel.System.V1.View do
                  104, 101, 32, 101, 118, 101, 110, 116, 32, 111, 99, 99, 117, 114, 101, 100, 74,
                  29, 34, 50, 48, 49, 57, 45, 48, 52, 45, 48, 49, 84, 48, 56, 58, 52, 53, 58, 48,
                  48, 46, 48, 48, 48, 48, 48, 48, 90, 34>>}
-            ],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
+            ]
           },
+          oneof_index: nil,
+          json_name: "eventTimestamp",
           proto3_optional: nil,
-          type: :TYPE_MESSAGE,
-          type_name: ".google.protobuf.Timestamp"
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "lastSuccessfulSpoolerRun",
-          label: :LABEL_OPTIONAL,
           name: "last_successful_spooler_run",
+          extendee: nil,
           number: 5,
-          oneof_index: nil,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".google.protobuf.Timestamp",
+          default_value: nil,
           options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
               {1042, 2,
                <<50, 31, 84, 104, 101, 32, 116, 105, 109, 101, 115, 116, 97, 109, 112, 32, 116,
                  104, 101, 32, 101, 118, 101, 110, 116, 32, 111, 99, 99, 117, 114, 101, 100>>}
-            ],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
+            ]
           },
+          oneof_index: nil,
+          json_name: "lastSuccessfulSpoolerRun",
           proto3_optional: nil,
-          type: :TYPE_MESSAGE,
-          type_name: ".google.protobuf.Timestamp"
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "instance",
-          label: :LABEL_OPTIONAL,
           name: "instance",
+          extendee: nil,
           number: 6,
-          oneof_index: nil,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
           options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
               {1042, 2,
                <<74, 17, 34, 56, 52, 48, 52, 57, 56, 48, 51, 52, 57, 51, 48, 56, 52, 48, 34>>}
-            ],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
+            ]
           },
+          oneof_index: nil,
+          json_name: "instance",
           proto3_optional: nil,
-          type: :TYPE_STRING,
-          type_name: nil
+          __unknown_fields__: []
         }
       ],
-      name: "View",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -2601,143 +4586,179 @@ defmodule Zitadel.System.V1.View do
 end
 
 defmodule Zitadel.System.V1.FailedEvent do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "FailedEvent",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "database",
-          label: :LABEL_OPTIONAL,
           name: "database",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1042, 2, "J\n\"adminapi\""}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1042, 2, "J\n\"adminapi\""}]
+          },
+          oneof_index: nil,
+          json_name: "database",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "viewName",
-          label: :LABEL_OPTIONAL,
           name: "view_name",
+          extendee: nil,
           number: 2,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1042, 2, "J\r\"iam_members\""}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1042, 2, "J\r\"iam_members\""}]
+          },
+          oneof_index: nil,
+          json_name: "viewName",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "failedSequence",
-          label: :LABEL_OPTIONAL,
           name: "failed_sequence",
+          extendee: nil,
           number: 3,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1042, 2, "J\t\"9823759\""}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_UINT64,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1042, 2, "J\t\"9823759\""}]
+          },
+          oneof_index: nil,
+          json_name: "failedSequence",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "failureCount",
-          label: :LABEL_OPTIONAL,
           name: "failure_count",
+          extendee: nil,
           number: 4,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1042, 2, <<74, 3, 34, 53, 34>>}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_UINT64,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1042, 2, <<74, 3, 34, 53, 34>>}]
+          },
+          oneof_index: nil,
+          json_name: "failureCount",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "errorMessage",
-          label: :LABEL_OPTIONAL,
           name: "error_message",
+          extendee: nil,
           number: 5,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1042, 2, "J(\"ID=EXAMP-ID3ER Message=Example message\""}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1042, 2, "J(\"ID=EXAMP-ID3ER Message=Example message\""}]
+          },
+          oneof_index: nil,
+          json_name: "errorMessage",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "last_failed",
+          extendee: nil,
+          number: 6,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".google.protobuf.Timestamp",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1042, 2, "2'The timestamp the failure last occurred"}]
+          },
+          oneof_index: nil,
+          json_name: "lastFailed",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "FailedEvent",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -2746,163 +4767,212 @@ defmodule Zitadel.System.V1.FailedEvent do
   field(:failed_sequence, 3, type: :uint64, json_name: "failedSequence", deprecated: false)
   field(:failure_count, 4, type: :uint64, json_name: "failureCount", deprecated: false)
   field(:error_message, 5, type: :string, json_name: "errorMessage", deprecated: false)
+
+  field(:last_failed, 6,
+    type: Google.Protobuf.Timestamp,
+    json_name: "lastFailed",
+    deprecated: false
+  )
 end
 
 defmodule Zitadel.System.V1.SystemService.Service do
-  use GRPC.Service, name: "zitadel.system.v1.SystemService", protoc_gen_elixir_version: "0.10.0"
+  use GRPC.Service, name: "zitadel.system.v1.SystemService", protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.ServiceDescriptorProto{
-      __unknown_fields__: [],
+      name: "SystemService",
       method: [
         %Google.Protobuf.MethodDescriptorProto{
-          __unknown_fields__: [],
-          client_streaming: false,
-          input_type: ".zitadel.system.v1.HealthzRequest",
           name: "Healthz",
+          input_type: ".zitadel.system.v1.HealthzRequest",
+          output_type: ".zitadel.system.v1.HealthzResponse",
           options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
               {72_295_728, 2, <<18, 8, 47, 104, 101, 97, 108, 116, 104, 122>>},
               {1042, 2,
-               <<10, 6, 112, 114, 111, 98, 101, 115, 74, 24, 10, 3, 50, 48, 48, 18, 17, 10, 15,
-                 90, 73, 84, 65, 68, 69, 76, 32, 115, 116, 97, 114, 116, 101, 100, 74, 36, 10, 7,
-                 100, 101, 102, 97, 117, 108, 116, 18, 25, 10, 23, 90, 73, 84, 65, 68, 69, 76, 32,
-                 78, 79, 84, 32, 115, 116, 97, 114, 116, 101, 100, 32, 121, 101, 116>>}
-            ],
-            deprecated: false,
-            idempotency_level: :IDEMPOTENCY_UNKNOWN,
-            uninterpreted_option: []
+               <<10, 7, 71, 101, 110, 101, 114, 97, 108, 74, 24, 10, 3, 50, 48, 48, 18, 17, 10,
+                 15, 90, 73, 84, 65, 68, 69, 76, 32, 115, 116, 97, 114, 116, 101, 100, 74, 36, 10,
+                 7, 100, 101, 102, 97, 117, 108, 116, 18, 25, 10, 23, 90, 73, 84, 65, 68, 69, 76,
+                 32, 78, 79, 84, 32, 115, 116, 97, 114, 116, 101, 100, 32, 121, 101, 116>>}
+            ]
           },
-          output_type: ".zitadel.system.v1.HealthzResponse",
-          server_streaming: false
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
         },
         %Google.Protobuf.MethodDescriptorProto{
-          __unknown_fields__: [],
-          client_streaming: false,
-          input_type: ".zitadel.system.v1.ListInstancesRequest",
           name: "ListInstances",
+          input_type: ".zitadel.system.v1.ListInstancesRequest",
+          output_type: ".zitadel.system.v1.ListInstancesResponse",
           options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
               {72_295_728, 2,
                <<34, 18, 47, 105, 110, 115, 116, 97, 110, 99, 101, 115, 47, 95, 115, 101, 97, 114,
                  99, 104, 58, 1, 42>>},
               {50000, 2, "\n\rauthenticated"}
-            ],
-            deprecated: false,
-            idempotency_level: :IDEMPOTENCY_UNKNOWN,
-            uninterpreted_option: []
+            ]
           },
-          output_type: ".zitadel.system.v1.ListInstancesResponse",
-          server_streaming: false
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
         },
         %Google.Protobuf.MethodDescriptorProto{
-          __unknown_fields__: [],
-          client_streaming: false,
-          input_type: ".zitadel.system.v1.GetInstanceRequest",
           name: "GetInstance",
+          input_type: ".zitadel.system.v1.GetInstanceRequest",
+          output_type: ".zitadel.system.v1.GetInstanceResponse",
           options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
               {72_295_728, 2,
                <<18, 24, 47, 105, 110, 115, 116, 97, 110, 99, 101, 115, 47, 123, 105, 110, 115,
                  116, 97, 110, 99, 101, 95, 105, 100, 125>>},
               {50000, 2, "\n\rauthenticated"}
-            ],
-            deprecated: false,
-            idempotency_level: :IDEMPOTENCY_UNKNOWN,
-            uninterpreted_option: []
+            ]
           },
-          output_type: ".zitadel.system.v1.GetInstanceResponse",
-          server_streaming: false
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
         },
         %Google.Protobuf.MethodDescriptorProto{
-          __unknown_fields__: [],
-          client_streaming: false,
-          input_type: ".zitadel.system.v1.AddInstanceRequest",
           name: "AddInstance",
+          input_type: ".zitadel.system.v1.AddInstanceRequest",
+          output_type: ".zitadel.system.v1.AddInstanceResponse",
           options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
               {72_295_728, 2,
                <<34, 10, 47, 105, 110, 115, 116, 97, 110, 99, 101, 115, 58, 1, 42>>},
               {50000, 2, "\n\rauthenticated"}
-            ],
-            deprecated: false,
-            idempotency_level: :IDEMPOTENCY_UNKNOWN,
-            uninterpreted_option: []
+            ]
           },
-          output_type: ".zitadel.system.v1.AddInstanceResponse",
-          server_streaming: false
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
         },
         %Google.Protobuf.MethodDescriptorProto{
-          __unknown_fields__: [],
-          client_streaming: false,
-          input_type: ".zitadel.system.v1.UpdateInstanceRequest",
           name: "UpdateInstance",
+          input_type: ".zitadel.system.v1.UpdateInstanceRequest",
+          output_type: ".zitadel.system.v1.UpdateInstanceResponse",
           options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
               {72_295_728, 2,
                <<26, 24, 47, 105, 110, 115, 116, 97, 110, 99, 101, 115, 47, 123, 105, 110, 115,
                  116, 97, 110, 99, 101, 95, 105, 100, 125, 58, 1, 42>>},
               {50000, 2, "\n\rauthenticated"}
-            ],
-            deprecated: false,
-            idempotency_level: :IDEMPOTENCY_UNKNOWN,
-            uninterpreted_option: []
+            ]
           },
-          output_type: ".zitadel.system.v1.UpdateInstanceResponse",
-          server_streaming: false
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
         },
         %Google.Protobuf.MethodDescriptorProto{
-          __unknown_fields__: [],
-          client_streaming: false,
-          input_type: ".zitadel.system.v1.RemoveInstanceRequest",
-          name: "RemoveInstance",
+          name: "CreateInstance",
+          input_type: ".zitadel.system.v1.CreateInstanceRequest",
+          output_type: ".zitadel.system.v1.CreateInstanceResponse",
           options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<34, 18, 47, 105, 110, 115, 116, 97, 110, 99, 101, 115, 47, 95, 99, 114, 101, 97,
+                 116, 101, 58, 1, 42>>},
+              {50000, 2, "\n\rauthenticated"}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "RemoveInstance",
+          input_type: ".zitadel.system.v1.RemoveInstanceRequest",
+          output_type: ".zitadel.system.v1.RemoveInstanceResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
               {72_295_728, 2,
                <<42, 24, 47, 105, 110, 115, 116, 97, 110, 99, 101, 115, 47, 123, 105, 110, 115,
                  116, 97, 110, 99, 101, 95, 105, 100, 125>>},
               {50000, 2, "\n\rauthenticated"}
-            ],
-            deprecated: false,
-            idempotency_level: :IDEMPOTENCY_UNKNOWN,
-            uninterpreted_option: []
+            ]
           },
-          output_type: ".zitadel.system.v1.RemoveInstanceResponse",
-          server_streaming: false
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
         },
         %Google.Protobuf.MethodDescriptorProto{
-          __unknown_fields__: [],
-          client_streaming: false,
-          input_type: ".zitadel.system.v1.ExistsDomainRequest",
-          name: "ExistsDomain",
+          name: "ListIAMMembers",
+          input_type: ".zitadel.system.v1.ListIAMMembersRequest",
+          output_type: ".zitadel.system.v1.ListIAMMembersResponse",
           options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<34, 40, 47, 105, 110, 115, 116, 97, 110, 99, 101, 115, 47, 123, 105, 110, 115,
+                 116, 97, 110, 99, 101, 95, 105, 100, 125, 47, 109, 101, 109, 98, 101, 114, 115,
+                 47, 95, 115, 101, 97, 114, 99, 104, 58, 1, 42>>},
+              {50000, 2, "\n\rauthenticated"}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "ExistsDomain",
+          input_type: ".zitadel.system.v1.ExistsDomainRequest",
+          output_type: ".zitadel.system.v1.ExistsDomainResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
               {72_295_728, 2,
                <<34, 25, 47, 100, 111, 109, 97, 105, 110, 115, 47, 123, 100, 111, 109, 97, 105,
                  110, 125, 47, 95, 101, 120, 105, 115, 116, 115, 58, 1, 42>>},
               {50000, 2, "\n\rauthenticated"}
-            ],
-            deprecated: false,
-            idempotency_level: :IDEMPOTENCY_UNKNOWN,
-            uninterpreted_option: []
+            ]
           },
-          output_type: ".zitadel.system.v1.ExistsDomainResponse",
-          server_streaming: false
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
         },
         %Google.Protobuf.MethodDescriptorProto{
-          __unknown_fields__: [],
-          client_streaming: false,
-          input_type: ".zitadel.system.v1.ListDomainsRequest",
           name: "ListDomains",
+          input_type: ".zitadel.system.v1.ListDomainsRequest",
+          output_type: ".zitadel.system.v1.ListDomainsResponse",
           options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
               {72_295_728, 2,
@@ -2910,20 +4980,20 @@ defmodule Zitadel.System.V1.SystemService.Service do
                  116, 97, 110, 99, 101, 95, 105, 100, 125, 47, 100, 111, 109, 97, 105, 110, 115,
                  47, 95, 115, 101, 97, 114, 99, 104, 58, 1, 42>>},
               {50000, 2, "\n\rauthenticated"}
-            ],
-            deprecated: false,
-            idempotency_level: :IDEMPOTENCY_UNKNOWN,
-            uninterpreted_option: []
+            ]
           },
-          output_type: ".zitadel.system.v1.ListDomainsResponse",
-          server_streaming: false
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
         },
         %Google.Protobuf.MethodDescriptorProto{
-          __unknown_fields__: [],
-          client_streaming: false,
-          input_type: ".zitadel.system.v1.AddDomainRequest",
           name: "AddDomain",
+          input_type: ".zitadel.system.v1.AddDomainRequest",
+          output_type: ".zitadel.system.v1.AddDomainResponse",
           options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
               {72_295_728, 2,
@@ -2931,38 +5001,38 @@ defmodule Zitadel.System.V1.SystemService.Service do
                  116, 97, 110, 99, 101, 95, 105, 100, 125, 47, 100, 111, 109, 97, 105, 110, 115,
                  58, 1, 42>>},
               {50000, 2, "\n\rauthenticated"}
-            ],
-            deprecated: false,
-            idempotency_level: :IDEMPOTENCY_UNKNOWN,
-            uninterpreted_option: []
+            ]
           },
-          output_type: ".zitadel.system.v1.AddDomainResponse",
-          server_streaming: false
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
         },
         %Google.Protobuf.MethodDescriptorProto{
-          __unknown_fields__: [],
-          client_streaming: false,
-          input_type: ".zitadel.system.v1.RemoveDomainRequest",
           name: "RemoveDomain",
+          input_type: ".zitadel.system.v1.RemoveDomainRequest",
+          output_type: ".zitadel.system.v1.RemoveDomainResponse",
           options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
               {72_295_728, 2, "*)/instances/{instance_id}/domains/{domain}"},
               {50000, 2, "\n\rauthenticated"}
-            ],
-            deprecated: false,
-            idempotency_level: :IDEMPOTENCY_UNKNOWN,
-            uninterpreted_option: []
+            ]
           },
-          output_type: ".zitadel.system.v1.RemoveDomainResponse",
-          server_streaming: false
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
         },
         %Google.Protobuf.MethodDescriptorProto{
-          __unknown_fields__: [],
-          client_streaming: false,
-          input_type: ".zitadel.system.v1.SetPrimaryDomainRequest",
           name: "SetPrimaryDomain",
+          input_type: ".zitadel.system.v1.SetPrimaryDomainRequest",
+          output_type: ".zitadel.system.v1.SetPrimaryDomainResponse",
           options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
               {72_295_728, 2,
@@ -2970,20 +5040,20 @@ defmodule Zitadel.System.V1.SystemService.Service do
                  116, 97, 110, 99, 101, 95, 105, 100, 125, 47, 100, 111, 109, 97, 105, 110, 115,
                  47, 95, 115, 101, 116, 95, 112, 114, 105, 109, 97, 114, 121, 58, 1, 42>>},
               {50000, 2, "\n\rauthenticated"}
-            ],
-            deprecated: false,
-            idempotency_level: :IDEMPOTENCY_UNKNOWN,
-            uninterpreted_option: []
+            ]
           },
-          output_type: ".zitadel.system.v1.SetPrimaryDomainResponse",
-          server_streaming: false
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
         },
         %Google.Protobuf.MethodDescriptorProto{
-          __unknown_fields__: [],
-          client_streaming: false,
-          input_type: ".zitadel.system.v1.ListViewsRequest",
           name: "ListViews",
+          input_type: ".zitadel.system.v1.ListViewsRequest",
+          output_type: ".zitadel.system.v1.ListViewsResponse",
           options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
               {72_295_728, 2,
@@ -2991,29 +5061,23 @@ defmodule Zitadel.System.V1.SystemService.Service do
                  42>>},
               {50000, 2, "\n\rauthenticated"},
               {1042, 2,
-               <<10, 5, 118, 105, 101, 119, 115, 34, 110, 10, 51, 100, 101, 116, 97, 105, 108,
-                 115, 32, 111, 102, 32, 90, 73, 84, 65, 68, 69, 76, 39, 115, 32, 101, 118, 101,
-                 110, 116, 32, 100, 114, 105, 118, 101, 110, 32, 115, 111, 102, 116, 119, 97, 114,
-                 101, 32, 99, 111, 110, 99, 101, 112, 116, 115, 18, 55, 104, 116, 116, 112, 115,
-                 58, 47, 47, 100, 111, 99, 115, 46, 122, 105, 116, 97, 100, 101, 108, 46, 99, 111,
-                 109, 47, 99, 111, 110, 99, 101, 112, 116, 115, 35, 83, 111, 102, 116, 119, 97,
-                 114, 101, 95, 65, 114, 99, 104, 105, 116, 101, 99, 116, 117, 114, 101, 74, 35,
-                 10, 3, 50, 48, 48, 18, 28, 10, 26, 86, 105, 101, 119, 115, 32, 102, 111, 114, 32,
-                 113, 117, 101, 114, 121, 32, 111, 112, 101, 114, 97, 116, 105, 111, 110, 115>>}
-            ],
-            deprecated: false,
-            idempotency_level: :IDEMPOTENCY_UNKNOWN,
-            uninterpreted_option: []
+               <<10, 5, 118, 105, 101, 119, 115, 74, 35, 10, 3, 50, 48, 48, 18, 28, 10, 26, 86,
+                 105, 101, 119, 115, 32, 102, 111, 114, 32, 113, 117, 101, 114, 121, 32, 111, 112,
+                 101, 114, 97, 116, 105, 111, 110, 115>>}
+            ]
           },
-          output_type: ".zitadel.system.v1.ListViewsResponse",
-          server_streaming: false
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
         },
         %Google.Protobuf.MethodDescriptorProto{
-          __unknown_fields__: [],
-          client_streaming: false,
-          input_type: ".zitadel.system.v1.ClearViewRequest",
           name: "ClearView",
+          input_type: ".zitadel.system.v1.ClearViewRequest",
+          output_type: ".zitadel.system.v1.ClearViewResponse",
           options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
               {72_295_728, 2,
@@ -3021,29 +5085,22 @@ defmodule Zitadel.System.V1.SystemService.Service do
                  125, 47, 123, 118, 105, 101, 119, 95, 110, 97, 109, 101, 125>>},
               {50000, 2, "\n\rauthenticated"},
               {1042, 2,
-               <<10, 5, 118, 105, 101, 119, 115, 34, 110, 10, 51, 100, 101, 116, 97, 105, 108,
-                 115, 32, 111, 102, 32, 90, 73, 84, 65, 68, 69, 76, 39, 115, 32, 101, 118, 101,
-                 110, 116, 32, 100, 114, 105, 118, 101, 110, 32, 115, 111, 102, 116, 119, 97, 114,
-                 101, 32, 99, 111, 110, 99, 101, 112, 116, 115, 18, 55, 104, 116, 116, 112, 115,
-                 58, 47, 47, 100, 111, 99, 115, 46, 122, 105, 116, 97, 100, 101, 108, 46, 99, 111,
-                 109, 47, 99, 111, 110, 99, 101, 112, 116, 115, 35, 83, 111, 102, 116, 119, 97,
-                 114, 101, 95, 65, 114, 99, 104, 105, 116, 101, 99, 116, 117, 114, 101, 74, 21,
-                 10, 3, 50, 48, 48, 18, 14, 10, 12, 86, 105, 101, 119, 32, 99, 108, 101, 97, 114,
-                 101, 100>>}
-            ],
-            deprecated: false,
-            idempotency_level: :IDEMPOTENCY_UNKNOWN,
-            uninterpreted_option: []
+               <<10, 5, 118, 105, 101, 119, 115, 74, 21, 10, 3, 50, 48, 48, 18, 14, 10, 12, 86,
+                 105, 101, 119, 32, 99, 108, 101, 97, 114, 101, 100>>}
+            ]
           },
-          output_type: ".zitadel.system.v1.ClearViewResponse",
-          server_streaming: false
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
         },
         %Google.Protobuf.MethodDescriptorProto{
-          __unknown_fields__: [],
-          client_streaming: false,
-          input_type: ".zitadel.system.v1.ListFailedEventsRequest",
           name: "ListFailedEvents",
+          input_type: ".zitadel.system.v1.ListFailedEventsRequest",
+          output_type: ".zitadel.system.v1.ListFailedEventsResponse",
           options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
               {72_295_728, 2,
@@ -3051,61 +5108,85 @@ defmodule Zitadel.System.V1.SystemService.Service do
                  115, 101, 97, 114, 99, 104, 58, 1, 42>>},
               {50000, 2, "\n\rauthenticated"},
               {1042, 2,
-               <<10, 13, 102, 97, 105, 108, 101, 100, 32, 101, 118, 101, 110, 116, 115, 34, 110,
-                 10, 51, 100, 101, 116, 97, 105, 108, 115, 32, 111, 102, 32, 90, 73, 84, 65, 68,
-                 69, 76, 39, 115, 32, 101, 118, 101, 110, 116, 32, 100, 114, 105, 118, 101, 110,
-                 32, 115, 111, 102, 116, 119, 97, 114, 101, 32, 99, 111, 110, 99, 101, 112, 116,
-                 115, 18, 55, 104, 116, 116, 112, 115, 58, 47, 47, 100, 111, 99, 115, 46, 122,
-                 105, 116, 97, 100, 101, 108, 46, 99, 111, 109, 47, 99, 111, 110, 99, 101, 112,
-                 116, 115, 35, 83, 111, 102, 116, 119, 97, 114, 101, 95, 65, 114, 99, 104, 105,
-                 116, 101, 99, 116, 117, 114, 101, 74, 53, 10, 3, 50, 48, 48, 18, 46, 10, 44, 69,
-                 118, 101, 110, 116, 115, 32, 119, 104, 105, 99, 104, 32, 119, 101, 114, 101, 32,
-                 110, 111, 116, 32, 112, 114, 111, 99, 101, 115, 115, 101, 100, 32, 98, 121, 32,
-                 116, 104, 101, 32, 118, 105, 101, 119, 115>>}
-            ],
-            deprecated: false,
-            idempotency_level: :IDEMPOTENCY_UNKNOWN,
-            uninterpreted_option: []
+               <<10, 13, 102, 97, 105, 108, 101, 100, 32, 101, 118, 101, 110, 116, 115, 74, 53,
+                 10, 3, 50, 48, 48, 18, 46, 10, 44, 69, 118, 101, 110, 116, 115, 32, 119, 104,
+                 105, 99, 104, 32, 119, 101, 114, 101, 32, 110, 111, 116, 32, 112, 114, 111, 99,
+                 101, 115, 115, 101, 100, 32, 98, 121, 32, 116, 104, 101, 32, 118, 105, 101, 119,
+                 115>>}
+            ]
           },
-          output_type: ".zitadel.system.v1.ListFailedEventsResponse",
-          server_streaming: false
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
         },
         %Google.Protobuf.MethodDescriptorProto{
-          __unknown_fields__: [],
-          client_streaming: false,
-          input_type: ".zitadel.system.v1.RemoveFailedEventRequest",
           name: "RemoveFailedEvent",
+          input_type: ".zitadel.system.v1.RemoveFailedEventRequest",
+          output_type: ".zitadel.system.v1.RemoveFailedEventResponse",
           options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
               {72_295_728, 2, "*6/failedevents/{database}/{view_name}/{failed_sequence}"},
               {50000, 2, "\n\rauthenticated"},
               {1042, 2,
-               <<10, 13, 102, 97, 105, 108, 101, 100, 32, 101, 118, 101, 110, 116, 115, 34, 110,
-                 10, 51, 100, 101, 116, 97, 105, 108, 115, 32, 111, 102, 32, 90, 73, 84, 65, 68,
-                 69, 76, 39, 115, 32, 101, 118, 101, 110, 116, 32, 100, 114, 105, 118, 101, 110,
-                 32, 115, 111, 102, 116, 119, 97, 114, 101, 32, 99, 111, 110, 99, 101, 112, 116,
-                 115, 18, 55, 104, 116, 116, 112, 115, 58, 47, 47, 100, 111, 99, 115, 46, 122,
-                 105, 116, 97, 100, 101, 108, 46, 99, 111, 109, 47, 99, 111, 110, 99, 101, 112,
-                 116, 115, 35, 83, 111, 102, 116, 119, 97, 114, 101, 95, 65, 114, 99, 104, 105,
-                 116, 101, 99, 116, 117, 114, 101, 74, 37, 10, 3, 50, 48, 48, 18, 30, 10, 28, 69,
-                 118, 101, 110, 116, 115, 32, 114, 101, 109, 111, 118, 101, 100, 32, 102, 114,
-                 111, 109, 32, 116, 104, 101, 32, 108, 105, 115, 116, 74, 60, 10, 3, 52, 48, 48,
-                 18, 53, 10, 22, 102, 97, 105, 108, 101, 100, 32, 101, 118, 101, 110, 116, 32,
-                 110, 111, 116, 32, 102, 111, 117, 110, 100, 18, 27, 10, 25, 26, 23, 35, 47, 100,
-                 101, 102, 105, 110, 105, 116, 105, 111, 110, 115, 47, 114, 112, 99, 83, 116, 97,
-                 116, 117, 115>>}
-            ],
+               <<10, 13, 102, 97, 105, 108, 101, 100, 32, 101, 118, 101, 110, 116, 115, 74, 37,
+                 10, 3, 50, 48, 48, 18, 30, 10, 28, 69, 118, 101, 110, 116, 115, 32, 114, 101,
+                 109, 111, 118, 101, 100, 32, 102, 114, 111, 109, 32, 116, 104, 101, 32, 108, 105,
+                 115, 116, 74, 60, 10, 3, 52, 48, 48, 18, 53, 10, 22, 102, 97, 105, 108, 101, 100,
+                 32, 101, 118, 101, 110, 116, 32, 110, 111, 116, 32, 102, 111, 117, 110, 100, 18,
+                 27, 10, 25, 26, 23, 35, 47, 100, 101, 102, 105, 110, 105, 116, 105, 111, 110,
+                 115, 47, 114, 112, 99, 83, 116, 97, 116, 117, 115>>}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "AddQuota",
+          input_type: ".zitadel.system.v1.AddQuotaRequest",
+          output_type: ".zitadel.system.v1.AddQuotaResponse",
+          options: %Google.Protobuf.MethodOptions{
             deprecated: false,
             idempotency_level: :IDEMPOTENCY_UNKNOWN,
-            uninterpreted_option: []
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<34, 31, 47, 105, 110, 115, 116, 97, 110, 99, 101, 115, 47, 123, 105, 110, 115,
+                 116, 97, 110, 99, 101, 95, 105, 100, 125, 47, 113, 117, 111, 116, 97, 115, 58, 1,
+                 42>>},
+              {50000, 2, "\n\rauthenticated"}
+            ]
           },
-          output_type: ".zitadel.system.v1.RemoveFailedEventResponse",
-          server_streaming: false
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "RemoveQuota",
+          input_type: ".zitadel.system.v1.RemoveQuotaRequest",
+          output_type: ".zitadel.system.v1.RemoveQuotaResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2, "*&/instances/{instance_id}/quotas/{unit}"},
+              {50000, 2, "\n\rauthenticated"}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
         }
       ],
-      name: "SystemService",
-      options: nil
+      options: nil,
+      __unknown_fields__: []
     }
   end
 
@@ -3128,9 +5209,21 @@ defmodule Zitadel.System.V1.SystemService.Service do
   )
 
   rpc(
+    :CreateInstance,
+    Zitadel.System.V1.CreateInstanceRequest,
+    Zitadel.System.V1.CreateInstanceResponse
+  )
+
+  rpc(
     :RemoveInstance,
     Zitadel.System.V1.RemoveInstanceRequest,
     Zitadel.System.V1.RemoveInstanceResponse
+  )
+
+  rpc(
+    :ListIAMMembers,
+    Zitadel.System.V1.ListIAMMembersRequest,
+    Zitadel.System.V1.ListIAMMembersResponse
   )
 
   rpc(
@@ -3170,6 +5263,10 @@ defmodule Zitadel.System.V1.SystemService.Service do
     Zitadel.System.V1.RemoveFailedEventRequest,
     Zitadel.System.V1.RemoveFailedEventResponse
   )
+
+  rpc(:AddQuota, Zitadel.System.V1.AddQuotaRequest, Zitadel.System.V1.AddQuotaResponse)
+
+  rpc(:RemoveQuota, Zitadel.System.V1.RemoveQuotaRequest, Zitadel.System.V1.RemoveQuotaResponse)
 end
 
 defmodule Zitadel.System.V1.SystemService.Stub do

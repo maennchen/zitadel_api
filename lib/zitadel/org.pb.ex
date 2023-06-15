@@ -1,73 +1,80 @@
 defmodule Zitadel.Org.V1.OrgState do
-  use Protobuf, enum: true, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, enum: true, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.EnumDescriptorProto{
-      __unknown_fields__: [],
       name: "OrgState",
-      options: nil,
-      reserved_name: [],
-      reserved_range: [],
       value: [
         %Google.Protobuf.EnumValueDescriptorProto{
-          __unknown_fields__: [],
           name: "ORG_STATE_UNSPECIFIED",
           number: 0,
-          options: nil
+          options: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.EnumValueDescriptorProto{
-          __unknown_fields__: [],
           name: "ORG_STATE_ACTIVE",
           number: 1,
-          options: nil
+          options: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.EnumValueDescriptorProto{
-          __unknown_fields__: [],
           name: "ORG_STATE_INACTIVE",
           number: 2,
-          options: nil
+          options: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "ORG_STATE_REMOVED",
+          number: 3,
+          options: nil,
+          __unknown_fields__: []
         }
-      ]
+      ],
+      options: nil,
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
     }
   end
 
   field(:ORG_STATE_UNSPECIFIED, 0)
   field(:ORG_STATE_ACTIVE, 1)
   field(:ORG_STATE_INACTIVE, 2)
+  field(:ORG_STATE_REMOVED, 3)
 end
 
 defmodule Zitadel.Org.V1.DomainValidationType do
-  use Protobuf, enum: true, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, enum: true, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.EnumDescriptorProto{
-      __unknown_fields__: [],
       name: "DomainValidationType",
-      options: nil,
-      reserved_name: [],
-      reserved_range: [],
       value: [
         %Google.Protobuf.EnumValueDescriptorProto{
-          __unknown_fields__: [],
           name: "DOMAIN_VALIDATION_TYPE_UNSPECIFIED",
           number: 0,
-          options: nil
+          options: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.EnumValueDescriptorProto{
-          __unknown_fields__: [],
           name: "DOMAIN_VALIDATION_TYPE_HTTP",
           number: 1,
-          options: nil
+          options: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.EnumValueDescriptorProto{
-          __unknown_fields__: [],
           name: "DOMAIN_VALIDATION_TYPE_DNS",
           number: 2,
-          options: nil
+          options: nil,
+          __unknown_fields__: []
         }
-      ]
+      ],
+      options: nil,
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
     }
   end
 
@@ -77,30 +84,30 @@ defmodule Zitadel.Org.V1.DomainValidationType do
 end
 
 defmodule Zitadel.Org.V1.OrgFieldName do
-  use Protobuf, enum: true, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, enum: true, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.EnumDescriptorProto{
-      __unknown_fields__: [],
       name: "OrgFieldName",
-      options: nil,
-      reserved_name: [],
-      reserved_range: [],
       value: [
         %Google.Protobuf.EnumValueDescriptorProto{
-          __unknown_fields__: [],
           name: "ORG_FIELD_NAME_UNSPECIFIED",
           number: 0,
-          options: nil
+          options: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.EnumValueDescriptorProto{
-          __unknown_fields__: [],
           name: "ORG_FIELD_NAME_NAME",
           number: 1,
-          options: nil
+          options: nil,
+          __unknown_fields__: []
         }
-      ]
+      ],
+      options: nil,
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
     }
   end
 
@@ -109,137 +116,148 @@ defmodule Zitadel.Org.V1.OrgFieldName do
 end
 
 defmodule Zitadel.Org.V1.Org do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "Org",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "id",
-          label: :LABEL_OPTIONAL,
           name: "id",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
           options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
               {1042, 2,
                <<74, 19, 34, 54, 57, 54, 50, 57, 48, 50, 51, 57, 48, 54, 52, 56, 56, 51, 51, 52,
                  34>>}
-            ],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
+            ]
           },
+          oneof_index: nil,
+          json_name: "id",
           proto3_optional: nil,
-          type: :TYPE_STRING,
-          type_name: nil
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "details",
-          label: :LABEL_OPTIONAL,
           name: "details",
+          extendee: nil,
           number: 2,
-          oneof_index: nil,
-          options: nil,
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_MESSAGE,
-          type_name: ".zitadel.v1.ObjectDetails"
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "state",
-          label: :LABEL_OPTIONAL,
           name: "state",
+          extendee: nil,
           number: 3,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1042, 2, "2!current state of the organisation"}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_ENUM,
-          type_name: ".zitadel.org.v1.OrgState"
+          type_name: ".zitadel.org.v1.OrgState",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1042, 2, "2!current state of the organization"}]
+          },
+          oneof_index: nil,
+          json_name: "state",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "name",
-          label: :LABEL_OPTIONAL,
           name: "name",
+          extendee: nil,
           number: 4,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1042, 2, "J\t\"CAOS AG\""}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1042, 2, "J\t\"ZITADEL\""}]
+          },
+          oneof_index: nil,
+          json_name: "name",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "primaryDomain",
-          label: :LABEL_OPTIONAL,
           name: "primary_domain",
+          extendee: nil,
           number: 5,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1042, 2, "J\t\"caos.ch\""}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<74, 15, 34, 122, 105, 116, 97, 100, 101, 108, 46, 99, 108, 111, 117, 100, 34>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "primaryDomain",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "Org",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -251,163 +269,173 @@ defmodule Zitadel.Org.V1.Org do
 end
 
 defmodule Zitadel.Org.V1.Domain do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "Domain",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "orgId",
-          label: :LABEL_OPTIONAL,
           name: "org_id",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
           options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
               {1042, 2,
                <<74, 19, 34, 54, 57, 54, 50, 57, 48, 50, 51, 57, 48, 54, 52, 56, 56, 51, 51, 52,
                  34>>}
-            ],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
+            ]
           },
+          oneof_index: nil,
+          json_name: "orgId",
           proto3_optional: nil,
-          type: :TYPE_STRING,
-          type_name: nil
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "details",
-          label: :LABEL_OPTIONAL,
           name: "details",
+          extendee: nil,
           number: 2,
-          oneof_index: nil,
-          options: nil,
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_MESSAGE,
-          type_name: ".zitadel.v1.ObjectDetails"
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "domainName",
-          label: :LABEL_OPTIONAL,
           name: "domain_name",
+          extendee: nil,
           number: 3,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1042, 2, "J\t\"caos.ch\""}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1042, 2, "J\r\"zitadel.com\""}]
+          },
+          oneof_index: nil,
+          json_name: "domainName",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "isVerified",
-          label: :LABEL_OPTIONAL,
           name: "is_verified",
+          extendee: nil,
           number: 4,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1042, 2, "2!defines if the domain is verified"}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_BOOL,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1042, 2, "2!defines if the domain is verified"}]
+          },
+          oneof_index: nil,
+          json_name: "isVerified",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "isPrimary",
-          label: :LABEL_OPTIONAL,
           name: "is_primary",
+          extendee: nil,
           number: 5,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1042, 2, "2+defines if the domain is the primary domain"}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_BOOL,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1042, 2, "2+defines if the domain is the primary domain"}]
+          },
+          oneof_index: nil,
+          json_name: "isPrimary",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "validationType",
-          label: :LABEL_OPTIONAL,
           name: "validation_type",
+          extendee: nil,
           number: 6,
-          oneof_index: nil,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.org.v1.DomainValidationType",
+          default_value: nil,
           options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
               {1042, 2, "22defines the protocol the domain was validated with"}
-            ],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
+            ]
           },
+          oneof_index: nil,
+          json_name: "validationType",
           proto3_optional: nil,
-          type: :TYPE_ENUM,
-          type_name: ".zitadel.org.v1.DomainValidationType"
+          __unknown_fields__: []
         }
       ],
-      name: "Domain",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -426,61 +454,75 @@ defmodule Zitadel.Org.V1.Domain do
 end
 
 defmodule Zitadel.Org.V1.OrgQuery do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "OrgQuery",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "nameQuery",
-          label: :LABEL_OPTIONAL,
           name: "name_query",
+          extendee: nil,
           number: 1,
-          oneof_index: 0,
-          options: nil,
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_MESSAGE,
-          type_name: ".zitadel.org.v1.OrgNameQuery"
+          type_name: ".zitadel.org.v1.OrgNameQuery",
+          default_value: nil,
+          options: nil,
+          oneof_index: 0,
+          json_name: "nameQuery",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "domainQuery",
-          label: :LABEL_OPTIONAL,
           name: "domain_query",
+          extendee: nil,
           number: 2,
-          oneof_index: 0,
-          options: nil,
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_MESSAGE,
-          type_name: ".zitadel.org.v1.OrgDomainQuery"
+          type_name: ".zitadel.org.v1.OrgDomainQuery",
+          default_value: nil,
+          options: nil,
+          oneof_index: 0,
+          json_name: "domainQuery",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "state_query",
+          extendee: nil,
+          number: 3,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.org.v1.OrgStateQuery",
+          default_value: nil,
+          options: nil,
+          oneof_index: 0,
+          json_name: "stateQuery",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "OrgQuery",
       nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
       oneof_decl: [
         %Google.Protobuf.OneofDescriptorProto{
-          __unknown_fields__: [],
           name: "query",
           options: %Google.Protobuf.OneofOptions{
+            uninterpreted_option: [],
             __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 0, 1}],
-            uninterpreted_option: []
-          }
+            __unknown_fields__: [{1071, 0, 1}]
+          },
+          __unknown_fields__: []
         }
       ],
-      options: nil,
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -488,77 +530,82 @@ defmodule Zitadel.Org.V1.OrgQuery do
 
   field(:name_query, 1, type: Zitadel.Org.V1.OrgNameQuery, json_name: "nameQuery", oneof: 0)
   field(:domain_query, 2, type: Zitadel.Org.V1.OrgDomainQuery, json_name: "domainQuery", oneof: 0)
+  field(:state_query, 3, type: Zitadel.Org.V1.OrgStateQuery, json_name: "stateQuery", oneof: 0)
 end
 
 defmodule Zitadel.Org.V1.OrgNameQuery do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "OrgNameQuery",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "name",
-          label: :LABEL_OPTIONAL,
           name: "name",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}, {1042, 2, "J\t\"caos ag\""}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}, {1042, 2, "J\t\"ZITADEL\""}]
+          },
+          oneof_index: nil,
+          json_name: "name",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "method",
-          label: :LABEL_OPTIONAL,
           name: "method",
+          extendee: nil,
           number: 2,
-          oneof_index: nil,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.v1.TextQueryMethod",
+          default_value: nil,
           options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
               {1071, 2, <<130, 1, 2, 16, 1>>},
               {1042, 2, "2*defines which text equality method is used"}
-            ],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
+            ]
           },
+          oneof_index: nil,
+          json_name: "method",
           proto3_optional: nil,
-          type: :TYPE_ENUM,
-          type_name: ".zitadel.v1.TextQueryMethod"
+          __unknown_fields__: []
         }
       ],
-      name: "OrgNameQuery",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -567,74 +614,82 @@ defmodule Zitadel.Org.V1.OrgNameQuery do
 end
 
 defmodule Zitadel.Org.V1.OrgDomainQuery do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "OrgDomainQuery",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "domain",
-          label: :LABEL_OPTIONAL,
           name: "domain",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}, {1042, 2, "J\b\"CAOS.C\""}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1042, 2,
+               <<74, 15, 34, 99, 105, 116, 97, 100, 101, 108, 46, 99, 108, 111, 117, 100, 34>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "domain",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "method",
-          label: :LABEL_OPTIONAL,
           name: "method",
+          extendee: nil,
           number: 2,
-          oneof_index: nil,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.v1.TextQueryMethod",
+          default_value: nil,
           options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
               {1071, 2, <<130, 1, 2, 16, 1>>},
               {1042, 2, "2*defines which text equality method is used"}
-            ],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
+            ]
           },
+          oneof_index: nil,
+          json_name: "method",
           proto3_optional: nil,
-          type: :TYPE_ENUM,
-          type_name: ".zitadel.v1.TextQueryMethod"
+          __unknown_fields__: []
         }
       ],
-      name: "OrgDomainQuery",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -642,48 +697,101 @@ defmodule Zitadel.Org.V1.OrgDomainQuery do
   field(:method, 2, type: Zitadel.V1.TextQueryMethod, enum: true, deprecated: false)
 end
 
-defmodule Zitadel.Org.V1.DomainSearchQuery do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+defmodule Zitadel.Org.V1.OrgStateQuery do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "OrgStateQuery",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
+          name: "state",
           extendee: nil,
-          json_name: "domainNameQuery",
-          label: :LABEL_OPTIONAL,
-          name: "domain_name_query",
           number: 1,
-          oneof_index: 0,
-          options: nil,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.org.v1.OrgState",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<130, 1, 2, 16, 1>>},
+              {1042, 2, "2!current state of the organization"}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "state",
           proto3_optional: nil,
-          type: :TYPE_MESSAGE,
-          type_name: ".zitadel.org.v1.DomainNameQuery"
+          __unknown_fields__: []
         }
       ],
-      name: "DomainSearchQuery",
       nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:state, 1, type: Zitadel.Org.V1.OrgState, enum: true, deprecated: false)
+end
+
+defmodule Zitadel.Org.V1.DomainSearchQuery do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "DomainSearchQuery",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "domain_name_query",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.org.v1.DomainNameQuery",
+          default_value: nil,
+          options: nil,
+          oneof_index: 0,
+          json_name: "domainNameQuery",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
       oneof_decl: [
         %Google.Protobuf.OneofDescriptorProto{
-          __unknown_fields__: [],
           name: "query",
           options: %Google.Protobuf.OneofOptions{
+            uninterpreted_option: [],
             __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 0, 1}],
-            uninterpreted_option: []
-          }
+            __unknown_fields__: [{1071, 0, 1}]
+          },
+          __unknown_fields__: []
         }
       ],
-      options: nil,
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
@@ -697,74 +805,82 @@ defmodule Zitadel.Org.V1.DomainSearchQuery do
 end
 
 defmodule Zitadel.Org.V1.DomainNameQuery do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "DomainNameQuery",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "name",
-          label: :LABEL_OPTIONAL,
           name: "name",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: %Google.Protobuf.FieldOptions{
-            __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}, {1042, 2, "J\t\"caos.ch\""}],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
-          },
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1042, 2,
+               <<74, 15, 34, 122, 105, 116, 97, 100, 101, 108, 46, 99, 108, 111, 117, 100, 34>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "name",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "method",
-          label: :LABEL_OPTIONAL,
           name: "method",
+          extendee: nil,
           number: 2,
-          oneof_index: nil,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.v1.TextQueryMethod",
+          default_value: nil,
           options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
               {1071, 2, <<130, 1, 2, 16, 1>>},
               {1042, 2, "2*defines which text equality method is used"}
-            ],
-            ctype: :STRING,
-            deprecated: false,
-            jstype: :JS_NORMAL,
-            lazy: false,
-            packed: nil,
-            uninterpreted_option: [],
-            weak: false
+            ]
           },
+          oneof_index: nil,
+          json_name: "method",
           proto3_optional: nil,
-          type: :TYPE_ENUM,
-          type_name: ".zitadel.v1.TextQueryMethod"
+          __unknown_fields__: []
         }
       ],
-      name: "DomainNameQuery",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 

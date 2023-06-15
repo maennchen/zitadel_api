@@ -1,62 +1,52 @@
 defmodule Zitadel.V1.AuthOption do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
   def descriptor do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
-      __unknown_fields__: [],
-      enum_type: [],
-      extension: [],
-      extension_range: [],
+      name: "AuthOption",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "permission",
-          label: :LABEL_OPTIONAL,
           name: "permission",
+          extendee: nil,
           number: 1,
-          oneof_index: nil,
-          options: nil,
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "permission",
+          proto3_optional: nil,
+          __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
-          __unknown_fields__: [],
-          default_value: nil,
-          extendee: nil,
-          json_name: "checkFieldName",
-          label: :LABEL_OPTIONAL,
           name: "check_field_name",
+          extendee: nil,
           number: 2,
-          oneof_index: nil,
-          options: nil,
-          proto3_optional: nil,
+          label: :LABEL_OPTIONAL,
           type: :TYPE_STRING,
-          type_name: nil
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "checkFieldName",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
-      name: "AuthOption",
       nested_type: [],
-      oneof_decl: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
       options: nil,
+      oneof_decl: [],
+      reserved_range: [],
       reserved_name: [],
-      reserved_range: []
+      __unknown_fields__: []
     }
   end
 
   field(:permission, 1, type: :string)
   field(:check_field_name, 2, type: :string, json_name: "checkFieldName")
-end
-
-defmodule Zitadel.V1.PbExtension do
-  use Protobuf, protoc_gen_elixir_version: "0.10.0", syntax: :proto3
-
-  extend(Google.Protobuf.MethodOptions, :auth_option, 50000,
-    optional: true,
-    type: Zitadel.V1.AuthOption,
-    json_name: "authOption"
-  )
 end

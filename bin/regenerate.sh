@@ -126,7 +126,7 @@ for PROTO in "$PROTO_ROOT"/zitadel/*.proto; do
 done
 
 echo >&2 "Remove @moduledoc false"
-sed -i 's/@moduledoc false//' $LIB_DIR/zitadel/*
+find $LIB_DIR/zitadel -name "*.ex" -exec sed -i 's/@moduledoc false//' {} +
 
 echo >&2 "Format"
 
