@@ -54,14 +54,14 @@ defmodule ZitadelApi.MixProject do
       files: ["lib", "mix.exs", "README*", "LICENSE*", "API_VERSION"],
       maintainers: ["Jonatan Männchen"],
       licenses: ["Apache-2.0"],
-      links: %{"GitHub" => "https://github.com/jshmrtn/zitadel_api"}
+      links: %{"GitHub" => "https://github.com/maennchen/zitadel_api"}
     ]
   end
 
   defp docs do
     [
       source_ref: "v" <> @version,
-      source_url: "https://github.com/jshmrtn/zitadel_api"
+      source_url: "https://github.com/maennchen/zitadel_api"
     ]
   end
 
