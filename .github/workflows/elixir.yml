@@ -50,11 +50,11 @@ jobs:
         with:
           otp-version: 24.1
           elixir-version: 1.12.3
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: deps
           path: deps
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: deps_lock
           path: .
@@ -96,11 +96,11 @@ jobs:
         with:
           otp-version: ${{matrix.otp}}
           elixir-version: ${{matrix.elixir}}
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: deps
           path: deps
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: deps_lock
           path: .
@@ -136,11 +136,11 @@ jobs:
         with:
           otp-version: 24.1
           elixir-version: 1.12.3
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: deps
           path: deps
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: deps_lock
           path: .
@@ -176,11 +176,11 @@ jobs:
         with:
           otp-version: 24.1
           elixir-version: 1.12.3
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: deps
           path: deps
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: deps_lock
           path: .
@@ -207,15 +207,15 @@ jobs:
         with:
           otp-version: ${{matrix.otp}}
           elixir-version: ${{matrix.elixir}}
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: deps
           path: deps
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: deps_lock
           path: .
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: compile_test-${{matrix.otp}}-${{matrix.elixir}}
           path: _build/test
@@ -236,15 +236,15 @@ jobs:
         with:
           otp-version: 24.1
           elixir-version: 1.12.3
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: deps
           path: deps
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: deps_lock
           path: .
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: compile_dev
           path: _build/dev
@@ -265,15 +265,15 @@ jobs:
         with:
           otp-version: 24.1
           elixir-version: 1.12.3
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: deps
           path: deps
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: deps_lock
           path: .
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: compile_dev
           path: _build/dev
@@ -306,19 +306,19 @@ jobs:
         with:
           otp-version: 24.1
           elixir-version: 1.12.3
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: deps
           path: deps
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: deps_lock
           path: .
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: compile_dev
           path: _build/dev
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: dialyzer_plt_dev
           path: priv/plts/
@@ -339,15 +339,15 @@ jobs:
         with:
           otp-version: 24.1
           elixir-version: 1.12.3
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: deps
           path: deps
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: deps_lock
           path: .
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: compile_dev
           path: _build/dev
