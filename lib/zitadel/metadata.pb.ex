@@ -144,7 +144,11 @@ defmodule Zitadel.Metadata.V1.MetadataQuery do
 
   oneof(:query, 0)
 
-  field(:key_query, 1, type: Zitadel.Metadata.V1.MetadataKeyQuery, json_name: "keyQuery", oneof: 0)
+  field(:key_query, 1,
+    type: Zitadel.Metadata.V1.MetadataKeyQuery,
+    json_name: "keyQuery",
+    oneof: 0
+  )
 end
 
 defmodule Zitadel.Metadata.V1.MetadataKeyQuery do

@@ -3104,6 +3104,292 @@ defmodule Zitadel.System.V1.AddQuotaResponse do
   field(:details, 1, type: Zitadel.V1.ObjectDetails)
 end
 
+defmodule Zitadel.System.V1.SetQuotaRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "SetQuotaRequest",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "instance_id",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "instanceId",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "unit",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.quota.v1.Unit",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<130, 1, 4, 16, 1, 32, 0>>},
+              {1042, 2, "2%the unit a quota should be imposed on"}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "unit",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "from",
+          extendee: nil,
+          number: 3,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".google.protobuf.Timestamp",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<178, 1, 2, 8, 1>>},
+              {1042, 2,
+               <<50, 122, 116, 104, 101, 32, 115, 116, 97, 114, 116, 105, 110, 103, 32, 116, 105,
+                 109, 101, 32, 102, 114, 111, 109, 32, 119, 104, 105, 99, 104, 32, 116, 104, 101,
+                 32, 99, 117, 114, 114, 101, 110, 116, 32, 113, 117, 111, 116, 97, 32, 112, 101,
+                 114, 105, 111, 100, 32, 105, 115, 32, 99, 97, 108, 99, 117, 108, 97, 116, 101,
+                 100, 32, 102, 114, 111, 109, 46, 32, 84, 104, 105, 115, 32, 105, 115, 32, 114,
+                 101, 108, 101, 118, 97, 110, 116, 32, 102, 111, 114, 32, 113, 117, 101, 114, 121,
+                 105, 110, 103, 32, 116, 104, 101, 32, 99, 117, 114, 114, 101, 110, 116, 32, 117,
+                 115, 97, 103, 101, 46, 74, 29, 34, 50, 48, 49, 57, 45, 48, 52, 45, 48, 49, 84,
+                 48, 56, 58, 52, 53, 58, 48, 48, 46, 48, 48, 48, 48, 48, 48, 90, 34>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "from",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "reset_interval",
+          extendee: nil,
+          number: 4,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".google.protobuf.Duration",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<170, 1, 2, 8, 1>>},
+              {1042, 2,
+               <<50, 26, 116, 104, 101, 32, 113, 117, 111, 116, 97, 32, 112, 101, 114, 105, 111,
+                 100, 115, 32, 100, 117, 114, 97, 116, 105, 111, 110>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "resetInterval",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "amount",
+          extendee: nil,
+          number: 5,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_UINT64,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<50, 25, 116, 104, 101, 32, 113, 117, 111, 116, 97, 32, 97, 109, 111, 117, 110,
+                 116, 32, 111, 102, 32, 117, 110, 105, 116, 115>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "amount",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "limit",
+          extendee: nil,
+          number: 6,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_BOOL,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               "2Mwhether ZITADEL should block further usage when the configured amount is used"}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "limit",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "notifications",
+          extendee: nil,
+          number: 7,
+          label: :LABEL_REPEATED,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.quota.v1.Notification",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               "2Ithe handlers, ZITADEL executes when certain quota percentages are reached"}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "notifications",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:instance_id, 1, type: :string, json_name: "instanceId", deprecated: false)
+  field(:unit, 2, type: Zitadel.Quota.V1.Unit, enum: true, deprecated: false)
+  field(:from, 3, type: Google.Protobuf.Timestamp, deprecated: false)
+
+  field(:reset_interval, 4,
+    type: Google.Protobuf.Duration,
+    json_name: "resetInterval",
+    deprecated: false
+  )
+
+  field(:amount, 5, type: :uint64, deprecated: false)
+  field(:limit, 6, type: :bool, deprecated: false)
+  field(:notifications, 7, repeated: true, type: Zitadel.Quota.V1.Notification, deprecated: false)
+end
+
+defmodule Zitadel.System.V1.SetQuotaResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "SetQuotaResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "details",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
 defmodule Zitadel.System.V1.RemoveQuotaRequest do
   use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
@@ -3176,6 +3462,362 @@ defmodule Zitadel.System.V1.RemoveQuotaResponse do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
       name: "RemoveQuotaResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "details",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.System.V1.SetLimitsRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "SetLimitsRequest",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "instance_id",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "instanceId",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "audit_log_retention",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".google.protobuf.Duration",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<50, 207, 1, 97, 117, 100, 105, 116, 76, 111, 103, 82, 101, 116, 101, 110, 116,
+                 105, 111, 110, 32, 108, 105, 109, 105, 116, 115, 32, 116, 104, 101, 32, 110, 117,
+                 109, 98, 101, 114, 32, 111, 102, 32, 101, 118, 101, 110, 116, 115, 32, 116, 104,
+                 97, 116, 32, 99, 97, 110, 32, 98, 101, 32, 113, 117, 101, 114, 105, 101, 100, 32,
+                 118, 105, 97, 32, 116, 104, 101, 32, 101, 118, 101, 110, 116, 115, 32, 65, 80,
+                 73, 32, 98, 121, 32, 116, 104, 101, 105, 114, 32, 97, 103, 101, 46, 32, 65, 32,
+                 118, 97, 108, 117, 101, 32, 111, 102, 32, 39, 48, 115, 39, 32, 109, 101, 97, 110,
+                 115, 32, 116, 104, 97, 116, 32, 97, 108, 108, 32, 101, 118, 101, 110, 116, 115,
+                 32, 97, 114, 101, 32, 97, 118, 97, 105, 108, 97, 98, 108, 101, 46, 32, 73, 102,
+                 32, 116, 104, 105, 115, 32, 118, 97, 108, 117, 101, 32, 105, 115, 32, 115, 101,
+                 116, 44, 32, 105, 116, 32, 111, 118, 101, 114, 119, 114, 105, 116, 101, 115, 32,
+                 116, 104, 101, 32, 115, 121, 115, 116, 101, 109, 32, 100, 101, 102, 97, 117, 108,
+                 116, 46>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "auditLogRetention",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "block",
+          extendee: nil,
+          number: 3,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_BOOL,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               "2Nif block is true, requests are responded with a resource exhausted error code."}
+            ]
+          },
+          oneof_index: 0,
+          json_name: "block",
+          proto3_optional: true,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [
+        %Google.Protobuf.OneofDescriptorProto{
+          name: "_block",
+          options: nil,
+          __unknown_fields__: []
+        }
+      ],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:instance_id, 1, type: :string, json_name: "instanceId", deprecated: false)
+
+  field(:audit_log_retention, 2,
+    type: Google.Protobuf.Duration,
+    json_name: "auditLogRetention",
+    deprecated: false
+  )
+
+  field(:block, 3, proto3_optional: true, type: :bool, deprecated: false)
+end
+
+defmodule Zitadel.System.V1.SetLimitsResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "SetLimitsResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "details",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.System.V1.BulkSetLimitsRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "BulkSetLimitsRequest",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "limits",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_REPEATED,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.system.v1.SetLimitsRequest",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "limits",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:limits, 1, repeated: true, type: Zitadel.System.V1.SetLimitsRequest)
+end
+
+defmodule Zitadel.System.V1.BulkSetLimitsResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "BulkSetLimitsResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "details",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "target_details",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_REPEATED,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "targetDetails",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+
+  field(:target_details, 2,
+    repeated: true,
+    type: Zitadel.V1.ObjectDetails,
+    json_name: "targetDetails"
+  )
+end
+
+defmodule Zitadel.System.V1.ResetLimitsRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "ResetLimitsRequest",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "instance_id",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "instanceId",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:instance_id, 1, type: :string, json_name: "instanceId", deprecated: false)
+end
+
+defmodule Zitadel.System.V1.ResetLimitsResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "ResetLimitsResponse",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
           name: "details",
@@ -4775,6 +5417,155 @@ defmodule Zitadel.System.V1.FailedEvent do
   )
 end
 
+defmodule Zitadel.System.V1.SetInstanceFeatureRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "SetInstanceFeatureRequest",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "instance_id",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "instanceId",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "feature_id",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.feature.v1.InstanceFeature",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<130, 1, 4, 16, 1, 32, 0>>}]
+          },
+          oneof_index: nil,
+          json_name: "featureId",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "bool",
+          extendee: nil,
+          number: 3,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_BOOL,
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: 0,
+          json_name: "bool",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [
+        %Google.Protobuf.OneofDescriptorProto{
+          name: "value",
+          options: %Google.Protobuf.OneofOptions{
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 0, 1}]
+          },
+          __unknown_fields__: []
+        }
+      ],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  oneof(:value, 0)
+
+  field(:instance_id, 1, type: :string, json_name: "instanceId", deprecated: false)
+
+  field(:feature_id, 2,
+    type: Zitadel.Feature.V1.InstanceFeature,
+    json_name: "featureId",
+    enum: true,
+    deprecated: false
+  )
+
+  field(:bool, 3, type: :bool, oneof: 0)
+end
+
+defmodule Zitadel.System.V1.SetInstanceFeatureResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "SetInstanceFeatureResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "details",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
 defmodule Zitadel.System.V1.SystemService.Service do
   use GRPC.Service, name: "zitadel.system.v1.SystemService", protoc_gen_elixir_version: "0.12.0"
 
@@ -4818,7 +5609,9 @@ defmodule Zitadel.System.V1.SystemService.Service do
               {72_295_728, 2,
                <<34, 18, 47, 105, 110, 115, 116, 97, 110, 99, 101, 115, 47, 95, 115, 101, 97, 114,
                  99, 104, 58, 1, 42>>},
-              {50000, 2, "\n\rauthenticated"}
+              {50000, 2,
+               <<10, 20, 115, 121, 115, 116, 101, 109, 46, 105, 110, 115, 116, 97, 110, 99, 101,
+                 46, 114, 101, 97, 100>>}
             ]
           },
           client_streaming: false,
@@ -4838,7 +5631,9 @@ defmodule Zitadel.System.V1.SystemService.Service do
               {72_295_728, 2,
                <<18, 24, 47, 105, 110, 115, 116, 97, 110, 99, 101, 115, 47, 123, 105, 110, 115,
                  116, 97, 110, 99, 101, 95, 105, 100, 125>>},
-              {50000, 2, "\n\rauthenticated"}
+              {50000, 2,
+               <<10, 20, 115, 121, 115, 116, 101, 109, 46, 105, 110, 115, 116, 97, 110, 99, 101,
+                 46, 114, 101, 97, 100>>}
             ]
           },
           client_streaming: false,
@@ -4857,7 +5652,9 @@ defmodule Zitadel.System.V1.SystemService.Service do
             __unknown_fields__: [
               {72_295_728, 2,
                <<34, 10, 47, 105, 110, 115, 116, 97, 110, 99, 101, 115, 58, 1, 42>>},
-              {50000, 2, "\n\rauthenticated"}
+              {50000, 2,
+               <<10, 21, 115, 121, 115, 116, 101, 109, 46, 105, 110, 115, 116, 97, 110, 99, 101,
+                 46, 119, 114, 105, 116, 101>>}
             ]
           },
           client_streaming: false,
@@ -4877,7 +5674,9 @@ defmodule Zitadel.System.V1.SystemService.Service do
               {72_295_728, 2,
                <<26, 24, 47, 105, 110, 115, 116, 97, 110, 99, 101, 115, 47, 123, 105, 110, 115,
                  116, 97, 110, 99, 101, 95, 105, 100, 125, 58, 1, 42>>},
-              {50000, 2, "\n\rauthenticated"}
+              {50000, 2,
+               <<10, 21, 115, 121, 115, 116, 101, 109, 46, 105, 110, 115, 116, 97, 110, 99, 101,
+                 46, 119, 114, 105, 116, 101>>}
             ]
           },
           client_streaming: false,
@@ -4897,7 +5696,9 @@ defmodule Zitadel.System.V1.SystemService.Service do
               {72_295_728, 2,
                <<34, 18, 47, 105, 110, 115, 116, 97, 110, 99, 101, 115, 47, 95, 99, 114, 101, 97,
                  116, 101, 58, 1, 42>>},
-              {50000, 2, "\n\rauthenticated"}
+              {50000, 2,
+               <<10, 21, 115, 121, 115, 116, 101, 109, 46, 105, 110, 115, 116, 97, 110, 99, 101,
+                 46, 119, 114, 105, 116, 101>>}
             ]
           },
           client_streaming: false,
@@ -4917,7 +5718,9 @@ defmodule Zitadel.System.V1.SystemService.Service do
               {72_295_728, 2,
                <<42, 24, 47, 105, 110, 115, 116, 97, 110, 99, 101, 115, 47, 123, 105, 110, 115,
                  116, 97, 110, 99, 101, 95, 105, 100, 125>>},
-              {50000, 2, "\n\rauthenticated"}
+              {50000, 2,
+               <<10, 22, 115, 121, 115, 116, 101, 109, 46, 105, 110, 115, 116, 97, 110, 99, 101,
+                 46, 100, 101, 108, 101, 116, 101>>}
             ]
           },
           client_streaming: false,
@@ -4938,7 +5741,9 @@ defmodule Zitadel.System.V1.SystemService.Service do
                <<34, 40, 47, 105, 110, 115, 116, 97, 110, 99, 101, 115, 47, 123, 105, 110, 115,
                  116, 97, 110, 99, 101, 95, 105, 100, 125, 47, 109, 101, 109, 98, 101, 114, 115,
                  47, 95, 115, 101, 97, 114, 99, 104, 58, 1, 42>>},
-              {50000, 2, "\n\rauthenticated"}
+              {50000, 2,
+               <<10, 22, 115, 121, 115, 116, 101, 109, 46, 105, 97, 109, 46, 109, 101, 109, 98,
+                 101, 114, 46, 114, 101, 97, 100>>}
             ]
           },
           client_streaming: false,
@@ -4958,7 +5763,9 @@ defmodule Zitadel.System.V1.SystemService.Service do
               {72_295_728, 2,
                <<34, 25, 47, 100, 111, 109, 97, 105, 110, 115, 47, 123, 100, 111, 109, 97, 105,
                  110, 125, 47, 95, 101, 120, 105, 115, 116, 115, 58, 1, 42>>},
-              {50000, 2, "\n\rauthenticated"}
+              {50000, 2,
+               <<10, 18, 115, 121, 115, 116, 101, 109, 46, 100, 111, 109, 97, 105, 110, 46, 114,
+                 101, 97, 100>>}
             ]
           },
           client_streaming: false,
@@ -4979,7 +5786,9 @@ defmodule Zitadel.System.V1.SystemService.Service do
                <<34, 40, 47, 105, 110, 115, 116, 97, 110, 99, 101, 115, 47, 123, 105, 110, 115,
                  116, 97, 110, 99, 101, 95, 105, 100, 125, 47, 100, 111, 109, 97, 105, 110, 115,
                  47, 95, 115, 101, 97, 114, 99, 104, 58, 1, 42>>},
-              {50000, 2, "\n\rauthenticated"}
+              {50000, 2,
+               <<10, 18, 115, 121, 115, 116, 101, 109, 46, 100, 111, 109, 97, 105, 110, 46, 114,
+                 101, 97, 100>>}
             ]
           },
           client_streaming: false,
@@ -5000,7 +5809,9 @@ defmodule Zitadel.System.V1.SystemService.Service do
                <<34, 32, 47, 105, 110, 115, 116, 97, 110, 99, 101, 115, 47, 123, 105, 110, 115,
                  116, 97, 110, 99, 101, 95, 105, 100, 125, 47, 100, 111, 109, 97, 105, 110, 115,
                  58, 1, 42>>},
-              {50000, 2, "\n\rauthenticated"}
+              {50000, 2,
+               <<10, 19, 115, 121, 115, 116, 101, 109, 46, 100, 111, 109, 97, 105, 110, 46, 119,
+                 114, 105, 116, 101>>}
             ]
           },
           client_streaming: false,
@@ -5018,7 +5829,9 @@ defmodule Zitadel.System.V1.SystemService.Service do
             __pb_extensions__: %{},
             __unknown_fields__: [
               {72_295_728, 2, "*)/instances/{instance_id}/domains/{domain}"},
-              {50000, 2, "\n\rauthenticated"}
+              {50000, 2,
+               <<10, 20, 115, 121, 115, 116, 101, 109, 46, 100, 111, 109, 97, 105, 110, 46, 100,
+                 101, 108, 101, 116, 101>>}
             ]
           },
           client_streaming: false,
@@ -5039,7 +5852,9 @@ defmodule Zitadel.System.V1.SystemService.Service do
                <<34, 45, 47, 105, 110, 115, 116, 97, 110, 99, 101, 115, 47, 123, 105, 110, 115,
                  116, 97, 110, 99, 101, 95, 105, 100, 125, 47, 100, 111, 109, 97, 105, 110, 115,
                  47, 95, 115, 101, 116, 95, 112, 114, 105, 109, 97, 114, 121, 58, 1, 42>>},
-              {50000, 2, "\n\rauthenticated"}
+              {50000, 2,
+               <<10, 19, 115, 121, 115, 116, 101, 109, 46, 100, 111, 109, 97, 105, 110, 46, 119,
+                 114, 105, 116, 101>>}
             ]
           },
           client_streaming: false,
@@ -5059,7 +5874,9 @@ defmodule Zitadel.System.V1.SystemService.Service do
               {72_295_728, 2,
                <<34, 14, 47, 118, 105, 101, 119, 115, 47, 95, 115, 101, 97, 114, 99, 104, 58, 1,
                  42>>},
-              {50000, 2, "\n\rauthenticated"},
+              {50000, 2,
+               <<10, 17, 115, 121, 115, 116, 101, 109, 46, 100, 101, 98, 117, 103, 46, 114, 101,
+                 97, 100>>},
               {1042, 2,
                <<10, 5, 118, 105, 101, 119, 115, 74, 35, 10, 3, 50, 48, 48, 18, 28, 10, 26, 86,
                  105, 101, 119, 115, 32, 102, 111, 114, 32, 113, 117, 101, 114, 121, 32, 111, 112,
@@ -5083,7 +5900,9 @@ defmodule Zitadel.System.V1.SystemService.Service do
               {72_295_728, 2,
                <<34, 29, 47, 118, 105, 101, 119, 115, 47, 123, 100, 97, 116, 97, 98, 97, 115, 101,
                  125, 47, 123, 118, 105, 101, 119, 95, 110, 97, 109, 101, 125>>},
-              {50000, 2, "\n\rauthenticated"},
+              {50000, 2,
+               <<10, 18, 115, 121, 115, 116, 101, 109, 46, 100, 101, 98, 117, 103, 46, 119, 114,
+                 105, 116, 101>>},
               {1042, 2,
                <<10, 5, 118, 105, 101, 119, 115, 74, 21, 10, 3, 50, 48, 48, 18, 14, 10, 12, 86,
                  105, 101, 119, 32, 99, 108, 101, 97, 114, 101, 100>>}
@@ -5106,7 +5925,9 @@ defmodule Zitadel.System.V1.SystemService.Service do
               {72_295_728, 2,
                <<34, 21, 47, 102, 97, 105, 108, 101, 100, 101, 118, 101, 110, 116, 115, 47, 95,
                  115, 101, 97, 114, 99, 104, 58, 1, 42>>},
-              {50000, 2, "\n\rauthenticated"},
+              {50000, 2,
+               <<10, 17, 115, 121, 115, 116, 101, 109, 46, 100, 101, 98, 117, 103, 46, 114, 101,
+                 97, 100>>},
               {1042, 2,
                <<10, 13, 102, 97, 105, 108, 101, 100, 32, 101, 118, 101, 110, 116, 115, 74, 53,
                  10, 3, 50, 48, 48, 18, 46, 10, 44, 69, 118, 101, 110, 116, 115, 32, 119, 104,
@@ -5130,7 +5951,9 @@ defmodule Zitadel.System.V1.SystemService.Service do
             __pb_extensions__: %{},
             __unknown_fields__: [
               {72_295_728, 2, "*6/failedevents/{database}/{view_name}/{failed_sequence}"},
-              {50000, 2, "\n\rauthenticated"},
+              {50000, 2,
+               <<10, 19, 115, 121, 115, 116, 101, 109, 46, 100, 101, 98, 117, 103, 46, 100, 101,
+                 108, 101, 116, 101>>},
               {1042, 2,
                <<10, 13, 102, 97, 105, 108, 101, 100, 32, 101, 118, 101, 110, 116, 115, 74, 37,
                  10, 3, 50, 48, 48, 18, 30, 10, 28, 69, 118, 101, 110, 116, 115, 32, 114, 101,
@@ -5155,11 +5978,42 @@ defmodule Zitadel.System.V1.SystemService.Service do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
+              {1042, 2,
+               <<10, 13, 85, 115, 97, 103, 101, 32, 67, 111, 110, 116, 114, 111, 108, 10, 6, 81,
+                 117, 111, 116, 97, 115>>},
               {72_295_728, 2,
                <<34, 31, 47, 105, 110, 115, 116, 97, 110, 99, 101, 115, 47, 123, 105, 110, 115,
                  116, 97, 110, 99, 101, 95, 105, 100, 125, 47, 113, 117, 111, 116, 97, 115, 58, 1,
                  42>>},
-              {50000, 2, "\n\rauthenticated"}
+              {50000, 2,
+               <<10, 18, 115, 121, 115, 116, 101, 109, 46, 113, 117, 111, 116, 97, 46, 119, 114,
+                 105, 116, 101>>}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "SetQuota",
+          input_type: ".zitadel.system.v1.SetQuotaRequest",
+          output_type: ".zitadel.system.v1.SetQuotaResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<10, 13, 85, 115, 97, 103, 101, 32, 67, 111, 110, 116, 114, 111, 108, 10, 6, 81,
+                 117, 111, 116, 97, 115>>},
+              {72_295_728, 2,
+               <<26, 31, 47, 105, 110, 115, 116, 97, 110, 99, 101, 115, 47, 123, 105, 110, 115,
+                 116, 97, 110, 99, 101, 95, 105, 100, 125, 47, 113, 117, 111, 116, 97, 115, 58, 1,
+                 42>>},
+              {50000, 2,
+               <<10, 18, 115, 121, 115, 116, 101, 109, 46, 113, 117, 111, 116, 97, 46, 119, 114,
+                 105, 116, 101>>}
             ]
           },
           client_streaming: false,
@@ -5176,8 +6030,132 @@ defmodule Zitadel.System.V1.SystemService.Service do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
+              {1042, 2,
+               <<10, 13, 85, 115, 97, 103, 101, 32, 67, 111, 110, 116, 114, 111, 108, 10, 6, 81,
+                 117, 111, 116, 97, 115>>},
               {72_295_728, 2, "*&/instances/{instance_id}/quotas/{unit}"},
-              {50000, 2, "\n\rauthenticated"}
+              {50000, 2,
+               <<10, 19, 115, 121, 115, 116, 101, 109, 46, 113, 117, 111, 116, 97, 46, 100, 101,
+                 108, 101, 116, 101>>}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "SetInstanceFeature",
+          input_type: ".zitadel.system.v1.SetInstanceFeatureRequest",
+          output_type: ".zitadel.system.v1.SetInstanceFeatureResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<26, 46, 47, 105, 110, 115, 116, 97, 110, 99, 101, 115, 47, 123, 105, 110, 115,
+                 116, 97, 110, 99, 101, 95, 105, 100, 125, 47, 102, 101, 97, 116, 117, 114, 101,
+                 115, 47, 123, 102, 101, 97, 116, 117, 114, 101, 95, 105, 100, 125, 58, 1, 42>>},
+              {50000, 2,
+               <<10, 20, 115, 121, 115, 116, 101, 109, 46, 102, 101, 97, 116, 117, 114, 101, 46,
+                 119, 114, 105, 116, 101>>}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "SetLimits",
+          input_type: ".zitadel.system.v1.SetLimitsRequest",
+          output_type: ".zitadel.system.v1.SetLimitsResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<26, 31, 47, 105, 110, 115, 116, 97, 110, 99, 101, 115, 47, 123, 105, 110, 115,
+                 116, 97, 110, 99, 101, 95, 105, 100, 125, 47, 108, 105, 109, 105, 116, 115, 58,
+                 1, 42>>},
+              {50000, 2,
+               <<10, 19, 115, 121, 115, 116, 101, 109, 46, 108, 105, 109, 105, 116, 115, 46, 119,
+                 114, 105, 116, 101>>},
+              {1042, 2,
+               <<10, 13, 85, 115, 97, 103, 101, 32, 67, 111, 110, 116, 114, 111, 108, 10, 6, 76,
+                 105, 109, 105, 116, 115, 74, 28, 10, 3, 50, 48, 48, 18, 21, 10, 19, 73, 110, 115,
+                 116, 97, 110, 99, 101, 32, 108, 105, 109, 105, 116, 115, 32, 115, 101, 116, 74,
+                 74, 10, 3, 52, 48, 48, 18, 67, 10, 36, 65, 116, 32, 108, 101, 97, 115, 116, 32,
+                 111, 110, 101, 32, 108, 105, 109, 105, 116, 32, 109, 117, 115, 116, 32, 98, 101,
+                 32, 115, 112, 101, 99, 105, 102, 105, 101, 100, 18, 27, 10, 25, 26, 23, 35, 47,
+                 100, 101, 102, 105, 110, 105, 116, 105, 111, 110, 115, 47, 114, 112, 99, 83, 116,
+                 97, 116, 117, 115>>}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "BulkSetLimits",
+          input_type: ".zitadel.system.v1.BulkSetLimitsRequest",
+          output_type: ".zitadel.system.v1.BulkSetLimitsResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<26, 23, 47, 105, 110, 115, 116, 97, 110, 99, 101, 115, 47, 108, 105, 109, 105,
+                 116, 115, 47, 95, 98, 117, 108, 107, 58, 1, 42>>},
+              {50000, 2,
+               <<10, 19, 115, 121, 115, 116, 101, 109, 46, 108, 105, 109, 105, 116, 115, 46, 119,
+                 114, 105, 116, 101>>},
+              {1042, 2,
+               <<10, 13, 85, 115, 97, 103, 101, 32, 67, 111, 110, 116, 114, 111, 108, 10, 6, 76,
+                 105, 109, 105, 116, 115, 74, 28, 10, 3, 50, 48, 48, 18, 21, 10, 19, 73, 110, 115,
+                 116, 97, 110, 99, 101, 32, 108, 105, 109, 105, 116, 115, 32, 115, 101, 116, 74,
+                 92, 10, 3, 52, 48, 48, 18, 85, 10, 54, 65, 116, 32, 108, 101, 97, 115, 116, 32,
+                 111, 110, 101, 32, 108, 105, 109, 105, 116, 32, 109, 117, 115, 116, 32, 98, 101,
+                 32, 115, 112, 101, 99, 105, 102, 105, 101, 100, 32, 102, 111, 114, 32, 101, 97,
+                 99, 104, 32, 105, 110, 115, 116, 97, 110, 99, 101, 18, 27, 10, 25, 26, 23, 35,
+                 47, 100, 101, 102, 105, 110, 105, 116, 105, 111, 110, 115, 47, 114, 112, 99, 83,
+                 116, 97, 116, 117, 115>>}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "ResetLimits",
+          input_type: ".zitadel.system.v1.ResetLimitsRequest",
+          output_type: ".zitadel.system.v1.ResetLimitsResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<42, 31, 47, 105, 110, 115, 116, 97, 110, 99, 101, 115, 47, 123, 105, 110, 115,
+                 116, 97, 110, 99, 101, 95, 105, 100, 125, 47, 108, 105, 109, 105, 116, 115>>},
+              {50000, 2,
+               <<10, 20, 115, 121, 115, 116, 101, 109, 46, 108, 105, 109, 105, 116, 115, 46, 100,
+                 101, 108, 101, 116, 101>>},
+              {1042, 2,
+               <<10, 13, 85, 115, 97, 103, 101, 32, 67, 111, 110, 116, 114, 111, 108, 10, 6, 76,
+                 105, 109, 105, 116, 115, 74, 48, 10, 3, 50, 48, 48, 18, 41, 10, 39, 76, 105, 109,
+                 105, 116, 115, 32, 97, 114, 101, 32, 114, 101, 115, 101, 116, 32, 116, 111, 32,
+                 116, 104, 101, 32, 115, 121, 115, 116, 101, 109, 32, 100, 101, 102, 97, 117, 108,
+                 116, 115, 74, 83, 10, 3, 52, 48, 52, 18, 76, 10, 45, 76, 105, 109, 105, 116, 115,
+                 32, 97, 114, 101, 32, 97, 108, 114, 101, 97, 100, 121, 32, 115, 101, 116, 32,
+                 116, 111, 32, 116, 104, 101, 32, 115, 121, 115, 116, 101, 109, 32, 100, 101, 102,
+                 97, 117, 108, 116, 115, 18, 27, 10, 25, 26, 23, 35, 47, 100, 101, 102, 105, 110,
+                 105, 116, 105, 111, 110, 115, 47, 114, 112, 99, 83, 116, 97, 116, 117, 115>>}
             ]
           },
           client_streaming: false,
@@ -5266,7 +6244,25 @@ defmodule Zitadel.System.V1.SystemService.Service do
 
   rpc(:AddQuota, Zitadel.System.V1.AddQuotaRequest, Zitadel.System.V1.AddQuotaResponse)
 
+  rpc(:SetQuota, Zitadel.System.V1.SetQuotaRequest, Zitadel.System.V1.SetQuotaResponse)
+
   rpc(:RemoveQuota, Zitadel.System.V1.RemoveQuotaRequest, Zitadel.System.V1.RemoveQuotaResponse)
+
+  rpc(
+    :SetInstanceFeature,
+    Zitadel.System.V1.SetInstanceFeatureRequest,
+    Zitadel.System.V1.SetInstanceFeatureResponse
+  )
+
+  rpc(:SetLimits, Zitadel.System.V1.SetLimitsRequest, Zitadel.System.V1.SetLimitsResponse)
+
+  rpc(
+    :BulkSetLimits,
+    Zitadel.System.V1.BulkSetLimitsRequest,
+    Zitadel.System.V1.BulkSetLimitsResponse
+  )
+
+  rpc(:ResetLimits, Zitadel.System.V1.ResetLimitsRequest, Zitadel.System.V1.ResetLimitsResponse)
 end
 
 defmodule Zitadel.System.V1.SystemService.Stub do

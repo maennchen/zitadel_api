@@ -1,3 +1,42 @@
+defmodule Zitadel.Settings.V1.SMTPConfigState do
+  use Protobuf, enum: true, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.EnumDescriptorProto{
+      name: "SMTPConfigState",
+      value: [
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "SMTP_CONFIG_STATE_UNSPECIFIED",
+          number: 0,
+          options: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "SMTP_CONFIG_ACTIVE",
+          number: 1,
+          options: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "SMTP_CONFIG_INACTIVE",
+          number: 2,
+          options: nil,
+          __unknown_fields__: []
+        }
+      ],
+      options: nil,
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:SMTP_CONFIG_STATE_UNSPECIFIED, 0)
+  field(:SMTP_CONFIG_ACTIVE, 1)
+  field(:SMTP_CONFIG_INACTIVE, 2)
+end
+
 defmodule Zitadel.Settings.V1.SecretGeneratorType do
   use Protobuf, enum: true, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
@@ -47,6 +86,18 @@ defmodule Zitadel.Settings.V1.SecretGeneratorType do
           number: 6,
           options: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "SECRET_GENERATOR_TYPE_OTP_SMS",
+          number: 7,
+          options: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "SECRET_GENERATOR_TYPE_OTP_EMAIL",
+          number: 8,
+          options: nil,
+          __unknown_fields__: []
         }
       ],
       options: nil,
@@ -63,6 +114,47 @@ defmodule Zitadel.Settings.V1.SecretGeneratorType do
   field(:SECRET_GENERATOR_TYPE_PASSWORD_RESET_CODE, 4)
   field(:SECRET_GENERATOR_TYPE_PASSWORDLESS_INIT_CODE, 5)
   field(:SECRET_GENERATOR_TYPE_APP_SECRET, 6)
+  field(:SECRET_GENERATOR_TYPE_OTP_SMS, 7)
+  field(:SECRET_GENERATOR_TYPE_OTP_EMAIL, 8)
+end
+
+defmodule Zitadel.Settings.V1.EmailProviderState do
+  use Protobuf, enum: true, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.EnumDescriptorProto{
+      name: "EmailProviderState",
+      value: [
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "EMAIL_PROVIDER_STATE_UNSPECIFIED",
+          number: 0,
+          options: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "EMAIL_PROVIDER_ACTIVE",
+          number: 1,
+          options: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "EMAIL_PROVIDER_INACTIVE",
+          number: 2,
+          options: nil,
+          __unknown_fields__: []
+        }
+      ],
+      options: nil,
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:EMAIL_PROVIDER_STATE_UNSPECIFIED, 0)
+  field(:EMAIL_PROVIDER_ACTIVE, 1)
+  field(:EMAIL_PROVIDER_INACTIVE, 2)
 end
 
 defmodule Zitadel.Settings.V1.SMSProviderConfigState do
@@ -519,6 +611,90 @@ defmodule Zitadel.Settings.V1.SMTPConfig do
           json_name: "user",
           proto3_optional: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "reply_to_address",
+          extendee: nil,
+          number: 7,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<74, 25, 34, 114, 101, 112, 108, 121, 116, 111, 64, 109, 46, 122, 105, 116, 97,
+                 100, 101, 108, 46, 99, 108, 111, 117, 100, 34>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "replyToAddress",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "state",
+          extendee: nil,
+          number: 8,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.settings.v1.SMTPConfigState",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "state",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "description",
+          extendee: nil,
+          number: 9,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1042, 2, "J\t\"Mailjet\""}]
+          },
+          oneof_index: nil,
+          json_name: "description",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "id",
+          extendee: nil,
+          number: 10,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "id",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
       nested_type: [],
@@ -539,6 +715,354 @@ defmodule Zitadel.Settings.V1.SMTPConfig do
   field(:tls, 4, type: :bool)
   field(:host, 5, type: :string, deprecated: false)
   field(:user, 6, type: :string, deprecated: false)
+  field(:reply_to_address, 7, type: :string, json_name: "replyToAddress", deprecated: false)
+  field(:state, 8, type: Zitadel.Settings.V1.SMTPConfigState, enum: true)
+  field(:description, 9, type: :string, deprecated: false)
+  field(:id, 10, type: :string)
+end
+
+defmodule Zitadel.Settings.V1.EmailProvider do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "EmailProvider",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "details",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "id",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "id",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "state",
+          extendee: nil,
+          number: 3,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.settings.v1.EmailProviderState",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "state",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "description",
+          extendee: nil,
+          number: 6,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "description",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "smtp",
+          extendee: nil,
+          number: 4,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.settings.v1.EmailProviderSMTP",
+          default_value: nil,
+          options: nil,
+          oneof_index: 0,
+          json_name: "smtp",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "http",
+          extendee: nil,
+          number: 5,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.settings.v1.EmailProviderHTTP",
+          default_value: nil,
+          options: nil,
+          oneof_index: 0,
+          json_name: "http",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [
+        %Google.Protobuf.OneofDescriptorProto{
+          name: "config",
+          options: nil,
+          __unknown_fields__: []
+        }
+      ],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  oneof(:config, 0)
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+  field(:id, 2, type: :string)
+  field(:state, 3, type: Zitadel.Settings.V1.EmailProviderState, enum: true)
+  field(:description, 6, type: :string)
+  field(:smtp, 4, type: Zitadel.Settings.V1.EmailProviderSMTP, oneof: 0)
+  field(:http, 5, type: Zitadel.Settings.V1.EmailProviderHTTP, oneof: 0)
+end
+
+defmodule Zitadel.Settings.V1.EmailProviderSMTP do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "EmailProviderSMTP",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "sender_address",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<74, 25, 34, 110, 111, 114, 101, 112, 108, 121, 64, 109, 46, 122, 105, 116, 97,
+                 100, 101, 108, 46, 99, 108, 111, 117, 100, 34>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "senderAddress",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "sender_name",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1042, 2, "J\t\"ZITADEL\""}]
+          },
+          oneof_index: nil,
+          json_name: "senderName",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "tls",
+          extendee: nil,
+          number: 3,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_BOOL,
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "tls",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "host",
+          extendee: nil,
+          number: 4,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<74, 26, 34, 115, 109, 116, 112, 46, 112, 111, 115, 116, 109, 97, 114, 107, 97,
+                 112, 112, 46, 99, 111, 109, 58, 53, 56, 55, 34>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "host",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "user",
+          extendee: nil,
+          number: 5,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1042, 2, "J&\"197f0117-529e-443d-bf6c-0292dd9a02b7\""}]
+          },
+          oneof_index: nil,
+          json_name: "user",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "reply_to_address",
+          extendee: nil,
+          number: 6,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<74, 25, 34, 114, 101, 112, 108, 121, 116, 111, 64, 109, 46, 122, 105, 116, 97,
+                 100, 101, 108, 46, 99, 108, 111, 117, 100, 34>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "replyToAddress",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:sender_address, 1, type: :string, json_name: "senderAddress", deprecated: false)
+  field(:sender_name, 2, type: :string, json_name: "senderName", deprecated: false)
+  field(:tls, 3, type: :bool)
+  field(:host, 4, type: :string, deprecated: false)
+  field(:user, 5, type: :string, deprecated: false)
+  field(:reply_to_address, 6, type: :string, json_name: "replyToAddress", deprecated: false)
+end
+
+defmodule Zitadel.Settings.V1.EmailProviderHTTP do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "EmailProviderHTTP",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "endpoint",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "endpoint",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:endpoint, 1, type: :string)
 end
 
 defmodule Zitadel.Settings.V1.SMSProvider do
@@ -592,6 +1116,20 @@ defmodule Zitadel.Settings.V1.SMSProvider do
           __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
+          name: "description",
+          extendee: nil,
+          number: 6,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "description",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
           name: "twilio",
           extendee: nil,
           number: 4,
@@ -602,6 +1140,20 @@ defmodule Zitadel.Settings.V1.SMSProvider do
           options: nil,
           oneof_index: 0,
           json_name: "twilio",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "http",
+          extendee: nil,
+          number: 5,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.settings.v1.HTTPConfig",
+          default_value: nil,
+          options: nil,
+          oneof_index: 0,
+          json_name: "http",
           proto3_optional: nil,
           __unknown_fields__: []
         }
@@ -629,7 +1181,9 @@ defmodule Zitadel.Settings.V1.SMSProvider do
   field(:details, 1, type: Zitadel.V1.ObjectDetails)
   field(:id, 2, type: :string)
   field(:state, 3, type: Zitadel.Settings.V1.SMSProviderConfigState, enum: true)
+  field(:description, 6, type: :string)
   field(:twilio, 4, type: Zitadel.Settings.V1.TwilioConfig, oneof: 0)
+  field(:http, 5, type: Zitadel.Settings.V1.HTTPConfig, oneof: 0)
 end
 
 defmodule Zitadel.Settings.V1.TwilioConfig do
@@ -683,6 +1237,44 @@ defmodule Zitadel.Settings.V1.TwilioConfig do
 
   field(:sid, 1, type: :string)
   field(:sender_number, 2, type: :string, json_name: "senderNumber")
+end
+
+defmodule Zitadel.Settings.V1.HTTPConfig do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "HTTPConfig",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "endpoint",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "endpoint",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:endpoint, 1, type: :string)
 end
 
 defmodule Zitadel.Settings.V1.DebugNotificationProvider do
@@ -898,6 +1490,20 @@ defmodule Zitadel.Settings.V1.SecurityPolicy do
           json_name: "allowedOrigins",
           proto3_optional: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "enable_impersonation",
+          extendee: nil,
+          number: 4,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_BOOL,
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "enableImpersonation",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
       nested_type: [],
@@ -915,4 +1521,5 @@ defmodule Zitadel.Settings.V1.SecurityPolicy do
   field(:details, 1, type: Zitadel.V1.ObjectDetails)
   field(:enable_iframe_embedding, 2, type: :bool, json_name: "enableIframeEmbedding")
   field(:allowed_origins, 3, repeated: true, type: :string, json_name: "allowedOrigins")
+  field(:enable_impersonation, 4, type: :bool, json_name: "enableImpersonation")
 end

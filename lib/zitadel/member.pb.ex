@@ -433,7 +433,11 @@ defmodule Zitadel.Member.V1.SearchQuery do
 
   field(:email_query, 3, type: Zitadel.Member.V1.EmailQuery, json_name: "emailQuery", oneof: 0)
 
-  field(:user_id_query, 4, type: Zitadel.Member.V1.UserIDQuery, json_name: "userIdQuery", oneof: 0)
+  field(:user_id_query, 4,
+    type: Zitadel.Member.V1.UserIDQuery,
+    json_name: "userIdQuery",
+    oneof: 0
+  )
 end
 
 defmodule Zitadel.Member.V1.FirstNameQuery do
@@ -632,13 +636,9 @@ defmodule Zitadel.Member.V1.EmailQuery do
             __unknown_fields__: [
               {1071, 2, <<114, 3, 24, 200, 1>>},
               {1042, 2,
-               <<50, 84, 101, 109, 97, 105, 108, 32, 97, 100, 100, 114, 101, 115, 115, 32, 111,
-                 102, 32, 116, 104, 101, 32, 117, 115, 101, 114, 46, 32, 40, 115, 112, 101, 99,
-                 58, 32, 104, 116, 116, 112, 115, 58, 47, 47, 116, 111, 111, 108, 115, 46, 105,
-                 101, 116, 102, 46, 111, 114, 103, 47, 104, 116, 109, 108, 47, 114, 102, 99, 50,
-                 56, 50, 50, 35, 115, 101, 99, 116, 105, 111, 110, 45, 51, 46, 52, 46, 49, 41, 74,
-                 18, 34, 103, 105, 103, 105, 64, 122, 105, 116, 97, 100, 101, 108, 46, 99, 111,
-                 109, 34, 120, 200, 1>>}
+               <<50, 25, 101, 109, 97, 105, 108, 32, 97, 100, 100, 114, 101, 115, 115, 32, 111,
+                 102, 32, 116, 104, 101, 32, 117, 115, 101, 114, 74, 18, 34, 103, 105, 103, 105,
+                 64, 122, 105, 116, 97, 100, 101, 108, 46, 99, 111, 109, 34, 120, 200, 1>>}
             ]
           },
           oneof_index: nil,

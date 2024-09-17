@@ -2046,23 +2046,24 @@ defmodule Zitadel.Management.V1.ImportHumanUserRequest.HashedPassword do
           type: :TYPE_STRING,
           type_name: nil,
           default_value: nil,
-          options: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               "2yEncoded hash of a password in Modular Crypt Format: https://zitadel.com/docs/concepts/architecture/secrets#hashed-secretsJ>\"$2y$12$hXUrnqdq1RIIYZ2HPytIIe5lXdIvbhqrTvdPsSF7o.jFh817Z6lwm\""}
+            ]
+          },
           oneof_index: nil,
           json_name: "value",
-          proto3_optional: nil,
-          __unknown_fields__: []
-        },
-        %Google.Protobuf.FieldDescriptorProto{
-          name: "algorithm",
-          extendee: nil,
-          number: 2,
-          label: :LABEL_OPTIONAL,
-          type: :TYPE_STRING,
-          type_name: nil,
-          default_value: nil,
-          options: nil,
-          oneof_index: nil,
-          json_name: "algorithm",
           proto3_optional: nil,
           __unknown_fields__: []
         }
@@ -2089,14 +2090,15 @@ defmodule Zitadel.Management.V1.ImportHumanUserRequest.HashedPassword do
         ]
       },
       oneof_decl: [],
-      reserved_range: [],
-      reserved_name: [],
+      reserved_range: [
+        %Google.Protobuf.DescriptorProto.ReservedRange{start: 2, end: 3, __unknown_fields__: []}
+      ],
+      reserved_name: ["algortithm"],
       __unknown_fields__: []
     }
   end
 
-  field(:value, 1, type: :string)
-  field(:algorithm, 2, type: :string)
+  field(:value, 1, type: :string, deprecated: false)
 end
 
 defmodule Zitadel.Management.V1.ImportHumanUserRequest.IDP do
@@ -2166,8 +2168,8 @@ defmodule Zitadel.Management.V1.ImportHumanUserRequest.IDP do
                <<50, 52, 84, 104, 101, 32, 105, 100, 32, 111, 102, 32, 116, 104, 101, 32, 117,
                  115, 101, 114, 32, 105, 110, 32, 116, 104, 101, 32, 101, 120, 116, 101, 114, 110,
                  97, 108, 32, 105, 100, 101, 110, 116, 105, 116, 121, 32, 112, 114, 111, 118, 105,
-                 100, 101, 114, 74, 15, 34, 105, 100, 112, 45, 99, 111, 110, 102, 105, 103, 45,
-                 105, 100, 34, 120, 200, 1, 128, 1, 1>>}
+                 100, 101, 114, 74, 18, 34, 101, 120, 116, 101, 114, 110, 97, 108, 45, 117, 115,
+                 101, 114, 45, 105, 100, 34, 120, 200, 1, 128, 1, 1>>}
             ]
           },
           oneof_index: nil,
@@ -2863,23 +2865,24 @@ defmodule Zitadel.Management.V1.ImportHumanUserRequest do
               type: :TYPE_STRING,
               type_name: nil,
               default_value: nil,
-              options: nil,
+              options: %Google.Protobuf.FieldOptions{
+                ctype: :STRING,
+                packed: nil,
+                deprecated: false,
+                lazy: false,
+                jstype: :JS_NORMAL,
+                weak: false,
+                unverified_lazy: false,
+                debug_redact: false,
+                uninterpreted_option: [],
+                __pb_extensions__: %{},
+                __unknown_fields__: [
+                  {1042, 2,
+                   "2yEncoded hash of a password in Modular Crypt Format: https://zitadel.com/docs/concepts/architecture/secrets#hashed-secretsJ>\"$2y$12$hXUrnqdq1RIIYZ2HPytIIe5lXdIvbhqrTvdPsSF7o.jFh817Z6lwm\""}
+                ]
+              },
               oneof_index: nil,
               json_name: "value",
-              proto3_optional: nil,
-              __unknown_fields__: []
-            },
-            %Google.Protobuf.FieldDescriptorProto{
-              name: "algorithm",
-              extendee: nil,
-              number: 2,
-              label: :LABEL_OPTIONAL,
-              type: :TYPE_STRING,
-              type_name: nil,
-              default_value: nil,
-              options: nil,
-              oneof_index: nil,
-              json_name: "algorithm",
               proto3_optional: nil,
               __unknown_fields__: []
             }
@@ -2906,8 +2909,14 @@ defmodule Zitadel.Management.V1.ImportHumanUserRequest do
             ]
           },
           oneof_decl: [],
-          reserved_range: [],
-          reserved_name: [],
+          reserved_range: [
+            %Google.Protobuf.DescriptorProto.ReservedRange{
+              start: 2,
+              end: 3,
+              __unknown_fields__: []
+            }
+          ],
+          reserved_name: ["algortithm"],
           __unknown_fields__: []
         },
         %Google.Protobuf.DescriptorProto{
@@ -2973,8 +2982,8 @@ defmodule Zitadel.Management.V1.ImportHumanUserRequest do
                    <<50, 52, 84, 104, 101, 32, 105, 100, 32, 111, 102, 32, 116, 104, 101, 32, 117,
                      115, 101, 114, 32, 105, 110, 32, 116, 104, 101, 32, 101, 120, 116, 101, 114,
                      110, 97, 108, 32, 105, 100, 101, 110, 116, 105, 116, 121, 32, 112, 114, 111,
-                     118, 105, 100, 101, 114, 74, 15, 34, 105, 100, 112, 45, 99, 111, 110, 102,
-                     105, 103, 45, 105, 100, 34, 120, 200, 1, 128, 1, 1>>}
+                     118, 105, 100, 101, 114, 74, 18, 34, 101, 120, 116, 101, 114, 110, 97, 108,
+                     45, 117, 115, 101, 114, 45, 105, 100, 34, 120, 200, 1, 128, 1, 1>>}
                 ]
               },
               oneof_index: nil,
@@ -3042,7 +3051,10 @@ defmodule Zitadel.Management.V1.ImportHumanUserRequest do
 
   field(:user_name, 1, type: :string, json_name: "userName", deprecated: false)
 
-  field(:profile, 2, type: Zitadel.Management.V1.ImportHumanUserRequest.Profile, deprecated: false)
+  field(:profile, 2,
+    type: Zitadel.Management.V1.ImportHumanUserRequest.Profile,
+    deprecated: false
+  )
 
   field(:email, 3, type: Zitadel.Management.V1.ImportHumanUserRequest.Email, deprecated: false)
   field(:phone, 4, type: Zitadel.Management.V1.ImportHumanUserRequest.Phone)
@@ -3398,6 +3410,38 @@ defmodule Zitadel.Management.V1.AddMachineUserRequest do
           json_name: "accessTokenType",
           proto3_optional: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "user_id",
+          extendee: nil,
+          number: 5,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 5, 16, 1, 24, 200, 1>>},
+              {1042, 2,
+               <<74, 38, 34, 51, 49, 54, 98, 55, 102, 97, 53, 45, 48, 53, 51, 53, 45, 52, 97, 100,
+                 98, 45, 57, 101, 57, 51, 45, 57, 54, 51, 97, 57, 49, 98, 49, 48, 49, 48, 99, 34,
+                 120, 200, 1>>}
+            ]
+          },
+          oneof_index: 0,
+          json_name: "userId",
+          proto3_optional: true,
+          __unknown_fields__: []
         }
       ],
       nested_type: [],
@@ -3405,7 +3449,13 @@ defmodule Zitadel.Management.V1.AddMachineUserRequest do
       extension_range: [],
       extension: [],
       options: nil,
-      oneof_decl: [],
+      oneof_decl: [
+        %Google.Protobuf.OneofDescriptorProto{
+          name: "_user_id",
+          options: nil,
+          __unknown_fields__: []
+        }
+      ],
       reserved_range: [],
       reserved_name: [],
       __unknown_fields__: []
@@ -3422,6 +3472,8 @@ defmodule Zitadel.Management.V1.AddMachineUserRequest do
     enum: true,
     deprecated: false
   )
+
+  field(:user_id, 5, proto3_optional: true, type: :string, json_name: "userId", deprecated: false)
 end
 
 defmodule Zitadel.Management.V1.AddMachineUserResponse do
@@ -5270,6 +5322,7 @@ defmodule Zitadel.Management.V1.UpdateHumanProfileRequest do
             __pb_extensions__: %{},
             __unknown_fields__: [
               {1071, 2, <<114, 5, 16, 1, 24, 200, 1>>},
+              {1052, 0, 2},
               {1042, 2, <<74, 6, 34, 71, 105, 103, 105, 34, 120, 200, 1, 128, 1, 1>>}
             ]
           },
@@ -7023,6 +7076,182 @@ defmodule Zitadel.Management.V1.RemoveHumanAuthFactorU2FResponse do
   field(:details, 1, type: Zitadel.V1.ObjectDetails)
 end
 
+defmodule Zitadel.Management.V1.RemoveHumanAuthFactorOTPSMSRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "RemoveHumanAuthFactorOTPSMSRequest",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "user_id",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "userId",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:user_id, 1, type: :string, json_name: "userId", deprecated: false)
+end
+
+defmodule Zitadel.Management.V1.RemoveHumanAuthFactorOTPSMSResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "RemoveHumanAuthFactorOTPSMSResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "details",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Management.V1.RemoveHumanAuthFactorOTPEmailRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "RemoveHumanAuthFactorOTPEmailRequest",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "user_id",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "userId",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:user_id, 1, type: :string, json_name: "userId", deprecated: false)
+end
+
+defmodule Zitadel.Management.V1.RemoveHumanAuthFactorOTPEmailResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "RemoveHumanAuthFactorOTPEmailResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "details",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
 defmodule Zitadel.Management.V1.ListHumanPasswordlessRequest do
   use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
@@ -8147,6 +8376,35 @@ defmodule Zitadel.Management.V1.AddMachineKeyRequest do
           json_name: "expirationDate",
           proto3_optional: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "public_key",
+          extendee: nil,
+          number: 4,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_BYTES,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               "2FOptionally provide a public key of your own generated RSA private key.J,\"LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1...\""}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "publicKey",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
       nested_type: [],
@@ -8169,6 +8427,8 @@ defmodule Zitadel.Management.V1.AddMachineKeyRequest do
     json_name: "expirationDate",
     deprecated: false
   )
+
+  field(:public_key, 4, type: :bytes, json_name: "publicKey", deprecated: false)
 end
 
 defmodule Zitadel.Management.V1.AddMachineKeyResponse do
@@ -15702,7 +15962,19 @@ defmodule Zitadel.Management.V1.AddOIDCAppRequest do
             __pb_extensions__: %{},
             __unknown_fields__: [
               {1042, 2,
-               "2PAdditional origins (other than the redirect_uris) from where the API can be usedJ,[\"https://console.zitadel.ch/auth/callback\"]"}
+               <<50, 176, 1, 65, 100, 100, 105, 116, 105, 111, 110, 97, 108, 32, 111, 114, 105,
+                 103, 105, 110, 115, 32, 40, 111, 116, 104, 101, 114, 32, 116, 104, 97, 110, 32,
+                 116, 104, 101, 32, 114, 101, 100, 105, 114, 101, 99, 116, 95, 117, 114, 105, 115,
+                 41, 32, 102, 114, 111, 109, 32, 119, 104, 101, 114, 101, 32, 116, 104, 101, 32,
+                 65, 80, 73, 32, 99, 97, 110, 32, 98, 101, 32, 117, 115, 101, 100, 44, 32, 112,
+                 114, 111, 118, 105, 100, 101, 100, 32, 115, 116, 114, 105, 110, 103, 32, 104, 97,
+                 115, 32, 116, 111, 32, 98, 101, 32, 97, 110, 32, 111, 114, 105, 103, 105, 110,
+                 32, 40, 115, 99, 104, 101, 109, 101, 58, 47, 47, 104, 111, 115, 116, 110, 97,
+                 109, 101, 91, 58, 112, 111, 114, 116, 93, 41, 32, 119, 105, 116, 104, 111, 117,
+                 116, 32, 112, 97, 116, 104, 44, 32, 113, 117, 101, 114, 121, 32, 111, 114, 32,
+                 102, 114, 97, 103, 109, 101, 110, 116, 74, 27, 91, 34, 115, 99, 104, 101, 109,
+                 101, 58, 47, 47, 108, 111, 99, 97, 108, 104, 111, 115, 116, 58, 56, 48, 56, 48,
+                 34, 93>>}
             ]
           },
           oneof_index: nil,
@@ -15827,7 +16099,11 @@ defmodule Zitadel.Management.V1.AddOIDCAppRequest do
     deprecated: false
   )
 
-  field(:clock_skew, 15, type: Google.Protobuf.Duration, json_name: "clockSkew", deprecated: false)
+  field(:clock_skew, 15,
+    type: Google.Protobuf.Duration,
+    json_name: "clockSkew",
+    deprecated: false
+  )
 
   field(:additional_origins, 16,
     repeated: true,
@@ -17021,7 +17297,19 @@ defmodule Zitadel.Management.V1.UpdateOIDCAppConfigRequest do
             __pb_extensions__: %{},
             __unknown_fields__: [
               {1042, 2,
-               "2PAdditional origins (other than the redirect_uris) from where the API can be usedJ,[\"https://console.zitadel.ch/auth/callback\"]"}
+               <<50, 176, 1, 65, 100, 100, 105, 116, 105, 111, 110, 97, 108, 32, 111, 114, 105,
+                 103, 105, 110, 115, 32, 40, 111, 116, 104, 101, 114, 32, 116, 104, 97, 110, 32,
+                 116, 104, 101, 32, 114, 101, 100, 105, 114, 101, 99, 116, 95, 117, 114, 105, 115,
+                 41, 32, 102, 114, 111, 109, 32, 119, 104, 101, 114, 101, 32, 116, 104, 101, 32,
+                 65, 80, 73, 32, 99, 97, 110, 32, 98, 101, 32, 117, 115, 101, 100, 44, 32, 112,
+                 114, 111, 118, 105, 100, 101, 100, 32, 115, 116, 114, 105, 110, 103, 32, 104, 97,
+                 115, 32, 116, 111, 32, 98, 101, 32, 97, 110, 32, 111, 114, 105, 103, 105, 110,
+                 32, 40, 115, 99, 104, 101, 109, 101, 58, 47, 47, 104, 111, 115, 116, 110, 97,
+                 109, 101, 91, 58, 112, 111, 114, 116, 93, 41, 32, 119, 105, 116, 104, 111, 117,
+                 116, 32, 112, 97, 116, 104, 44, 32, 113, 117, 101, 114, 121, 32, 111, 114, 32,
+                 102, 114, 97, 103, 109, 101, 110, 116, 74, 27, 91, 34, 115, 99, 104, 101, 109,
+                 101, 58, 47, 47, 108, 111, 99, 97, 108, 104, 111, 115, 116, 58, 56, 48, 56, 48,
+                 34, 93>>}
             ]
           },
           oneof_index: nil,
@@ -17145,7 +17433,11 @@ defmodule Zitadel.Management.V1.UpdateOIDCAppConfigRequest do
     deprecated: false
   )
 
-  field(:clock_skew, 14, type: Google.Protobuf.Duration, json_name: "clockSkew", deprecated: false)
+  field(:clock_skew, 14,
+    type: Google.Protobuf.Duration,
+    json_name: "clockSkew",
+    deprecated: false
+  )
 
   field(:additional_origins, 15,
     repeated: true,
@@ -22614,6 +22906,42 @@ defmodule Zitadel.Management.V1.AddCustomLoginPolicyRequest do
           json_name: "disableLoginWithPhone",
           proto3_optional: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "force_mfa_local_only",
+          extendee: nil,
+          number: 20,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_BOOL,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<50, 133, 1, 105, 102, 32, 97, 99, 116, 105, 118, 97, 116, 101, 100, 44, 32, 111,
+                 110, 108, 121, 32, 108, 111, 99, 97, 108, 32, 97, 117, 116, 104, 101, 110, 116,
+                 105, 99, 97, 116, 101, 100, 32, 117, 115, 101, 114, 115, 32, 97, 114, 101, 32,
+                 102, 111, 114, 99, 101, 100, 32, 116, 111, 32, 117, 115, 101, 32, 77, 70, 65, 46,
+                 32, 65, 117, 116, 104, 101, 110, 116, 105, 99, 97, 116, 105, 111, 110, 32, 116,
+                 104, 114, 111, 117, 103, 104, 32, 73, 68, 80, 115, 32, 119, 111, 110, 39, 116,
+                 32, 112, 114, 111, 109, 112, 116, 32, 97, 32, 77, 70, 65, 32, 115, 116, 101, 112,
+                 32, 105, 110, 32, 116, 104, 101, 32, 108, 111, 103, 105, 110, 46>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "forceMfaLocalOnly",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
       nested_type: [
@@ -22779,6 +23107,8 @@ defmodule Zitadel.Management.V1.AddCustomLoginPolicyRequest do
     json_name: "disableLoginWithPhone",
     deprecated: false
   )
+
+  field(:force_mfa_local_only, 20, type: :bool, json_name: "forceMfaLocalOnly", deprecated: false)
 end
 
 defmodule Zitadel.Management.V1.AddCustomLoginPolicyResponse do
@@ -23148,6 +23478,42 @@ defmodule Zitadel.Management.V1.UpdateCustomLoginPolicyRequest do
           json_name: "disableLoginWithPhone",
           proto3_optional: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "force_mfa_local_only",
+          extendee: nil,
+          number: 17,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_BOOL,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<50, 133, 1, 105, 102, 32, 97, 99, 116, 105, 118, 97, 116, 101, 100, 44, 32, 111,
+                 110, 108, 121, 32, 108, 111, 99, 97, 108, 32, 97, 117, 116, 104, 101, 110, 116,
+                 105, 99, 97, 116, 101, 100, 32, 117, 115, 101, 114, 115, 32, 97, 114, 101, 32,
+                 102, 111, 114, 99, 101, 100, 32, 116, 111, 32, 117, 115, 101, 32, 77, 70, 65, 46,
+                 32, 65, 117, 116, 104, 101, 110, 116, 105, 99, 97, 116, 105, 111, 110, 32, 116,
+                 104, 114, 111, 117, 103, 104, 32, 73, 68, 80, 115, 32, 119, 111, 110, 39, 116,
+                 32, 112, 114, 111, 109, 112, 116, 32, 97, 32, 77, 70, 65, 32, 115, 116, 101, 112,
+                 32, 105, 110, 32, 116, 104, 101, 32, 108, 111, 103, 105, 110, 46>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "forceMfaLocalOnly",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
       nested_type: [],
@@ -23230,6 +23596,8 @@ defmodule Zitadel.Management.V1.UpdateCustomLoginPolicyRequest do
     json_name: "disableLoginWithPhone",
     deprecated: false
   )
+
+  field(:force_mfa_local_only, 17, type: :bool, json_name: "forceMfaLocalOnly", deprecated: false)
 end
 
 defmodule Zitadel.Management.V1.UpdateCustomLoginPolicyResponse do
@@ -25343,6 +25711,46 @@ defmodule Zitadel.Management.V1.AddCustomLockoutPolicyRequest do
           json_name: "maxPasswordAttempts",
           proto3_optional: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "max_otp_attempts",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_UINT32,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<50, 202, 1, 77, 97, 120, 105, 109, 117, 109, 32, 102, 97, 105, 108, 101, 100, 32,
+                 97, 116, 116, 101, 109, 112, 116, 115, 32, 102, 111, 114, 32, 97, 32, 115, 105,
+                 110, 103, 108, 101, 32, 79, 84, 80, 32, 116, 121, 112, 101, 32, 40, 84, 79, 84,
+                 80, 44, 32, 83, 77, 83, 44, 32, 69, 109, 97, 105, 108, 41, 32, 98, 101, 102, 111,
+                 114, 101, 32, 116, 104, 101, 32, 97, 99, 99, 111, 117, 110, 116, 32, 103, 101,
+                 116, 115, 32, 108, 111, 99, 107, 101, 100, 46, 32, 65, 116, 116, 101, 109, 112,
+                 116, 115, 32, 97, 114, 101, 32, 114, 101, 115, 101, 116, 32, 97, 115, 32, 115,
+                 111, 111, 110, 32, 97, 115, 32, 116, 104, 101, 32, 79, 84, 80, 32, 105, 115, 32,
+                 101, 110, 116, 101, 114, 101, 100, 32, 99, 111, 114, 114, 101, 99, 116, 108, 121,
+                 46, 32, 73, 102, 32, 115, 101, 116, 32, 116, 111, 32, 48, 32, 116, 104, 101, 32,
+                 97, 99, 99, 111, 117, 110, 116, 32, 119, 105, 108, 108, 32, 110, 101, 118, 101,
+                 114, 32, 98, 101, 32, 108, 111, 99, 107, 101, 100, 46, 74, 4, 34, 49, 48, 34>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "maxOtpAttempts",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
       nested_type: [],
@@ -25362,6 +25770,8 @@ defmodule Zitadel.Management.V1.AddCustomLockoutPolicyRequest do
     json_name: "maxPasswordAttempts",
     deprecated: false
   )
+
+  field(:max_otp_attempts, 2, type: :uint32, json_name: "maxOtpAttempts", deprecated: false)
 end
 
 defmodule Zitadel.Management.V1.AddCustomLockoutPolicyResponse do
@@ -25446,6 +25856,46 @@ defmodule Zitadel.Management.V1.UpdateCustomLockoutPolicyRequest do
           json_name: "maxPasswordAttempts",
           proto3_optional: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "max_otp_attempts",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_UINT32,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<50, 202, 1, 77, 97, 120, 105, 109, 117, 109, 32, 102, 97, 105, 108, 101, 100, 32,
+                 97, 116, 116, 101, 109, 112, 116, 115, 32, 102, 111, 114, 32, 97, 32, 115, 105,
+                 110, 103, 108, 101, 32, 79, 84, 80, 32, 116, 121, 112, 101, 32, 40, 84, 79, 84,
+                 80, 44, 32, 83, 77, 83, 44, 32, 69, 109, 97, 105, 108, 41, 32, 98, 101, 102, 111,
+                 114, 101, 32, 116, 104, 101, 32, 97, 99, 99, 111, 117, 110, 116, 32, 103, 101,
+                 116, 115, 32, 108, 111, 99, 107, 101, 100, 46, 32, 65, 116, 116, 101, 109, 112,
+                 116, 115, 32, 97, 114, 101, 32, 114, 101, 115, 101, 116, 32, 97, 115, 32, 115,
+                 111, 111, 110, 32, 97, 115, 32, 116, 104, 101, 32, 79, 84, 80, 32, 105, 115, 32,
+                 101, 110, 116, 101, 114, 101, 100, 32, 99, 111, 114, 114, 101, 99, 116, 108, 121,
+                 46, 32, 73, 102, 32, 115, 101, 116, 32, 116, 111, 32, 48, 32, 116, 104, 101, 32,
+                 97, 99, 99, 111, 117, 110, 116, 32, 119, 105, 108, 108, 32, 110, 101, 118, 101,
+                 114, 32, 98, 101, 32, 108, 111, 99, 107, 101, 100, 46, 74, 4, 34, 49, 48, 34>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "maxOtpAttempts",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
       nested_type: [],
@@ -25465,6 +25915,8 @@ defmodule Zitadel.Management.V1.UpdateCustomLockoutPolicyRequest do
     json_name: "maxPasswordAttempts",
     deprecated: false
   )
+
+  field(:max_otp_attempts, 2, type: :uint32, json_name: "maxOtpAttempts", deprecated: false)
 end
 
 defmodule Zitadel.Management.V1.UpdateCustomLockoutPolicyResponse do
@@ -25831,6 +26283,102 @@ defmodule Zitadel.Management.V1.AddCustomPrivacyPolicyRequest do
           json_name: "supportEmail",
           proto3_optional: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "docs_link",
+          extendee: nil,
+          number: 5,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<50, 49, 76, 105, 110, 107, 32, 116, 111, 32, 100, 111, 99, 117, 109, 101, 110,
+                 116, 97, 116, 105, 111, 110, 32, 116, 111, 32, 98, 101, 32, 115, 104, 111, 119,
+                 110, 32, 105, 110, 32, 116, 104, 101, 32, 99, 111, 110, 115, 111, 108, 101, 46,
+                 74, 26, 34, 104, 116, 116, 112, 115, 58, 47, 47, 122, 105, 116, 97, 100, 101,
+                 108, 46, 99, 111, 109, 47, 100, 111, 99, 115, 34>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "docsLink",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "custom_link",
+          extendee: nil,
+          number: 6,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<50, 76, 76, 105, 110, 107, 32, 116, 111, 32, 97, 110, 32, 101, 120, 116, 101,
+                 114, 110, 97, 108, 32, 114, 101, 115, 111, 117, 114, 99, 101, 32, 116, 104, 97,
+                 116, 32, 119, 105, 108, 108, 32, 98, 101, 32, 97, 118, 97, 105, 108, 97, 98, 108,
+                 101, 32, 116, 111, 32, 117, 115, 101, 114, 115, 32, 105, 110, 32, 116, 104, 101,
+                 32, 99, 111, 110, 115, 111, 108, 101, 46, 74, 23, 34, 104, 116, 116, 112, 115,
+                 58, 47, 47, 101, 120, 116, 101, 114, 110, 97, 108, 46, 108, 105, 110, 107, 34>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "customLink",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "custom_link_text",
+          extendee: nil,
+          number: 7,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               "2GThe button text that would be shown in console pointing to custom link.J\n\"External\""}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "customLinkText",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
       nested_type: [],
@@ -25849,6 +26397,9 @@ defmodule Zitadel.Management.V1.AddCustomPrivacyPolicyRequest do
   field(:privacy_link, 2, type: :string, json_name: "privacyLink", deprecated: false)
   field(:help_link, 3, type: :string, json_name: "helpLink", deprecated: false)
   field(:support_email, 4, type: :string, json_name: "supportEmail", deprecated: false)
+  field(:docs_link, 5, type: :string, json_name: "docsLink", deprecated: false)
+  field(:custom_link, 6, type: :string, json_name: "customLink", deprecated: false)
+  field(:custom_link_text, 7, type: :string, json_name: "customLinkText", deprecated: false)
 end
 
 defmodule Zitadel.Management.V1.AddCustomPrivacyPolicyResponse do
@@ -26038,6 +26589,102 @@ defmodule Zitadel.Management.V1.UpdateCustomPrivacyPolicyRequest do
           json_name: "supportEmail",
           proto3_optional: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "docs_link",
+          extendee: nil,
+          number: 5,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<50, 49, 76, 105, 110, 107, 32, 116, 111, 32, 100, 111, 99, 117, 109, 101, 110,
+                 116, 97, 116, 105, 111, 110, 32, 116, 111, 32, 98, 101, 32, 115, 104, 111, 119,
+                 110, 32, 105, 110, 32, 116, 104, 101, 32, 99, 111, 110, 115, 111, 108, 101, 46,
+                 74, 26, 34, 104, 116, 116, 112, 115, 58, 47, 47, 122, 105, 116, 97, 100, 101,
+                 108, 46, 99, 111, 109, 47, 100, 111, 99, 115, 34>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "docsLink",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "custom_link",
+          extendee: nil,
+          number: 6,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<50, 76, 76, 105, 110, 107, 32, 116, 111, 32, 97, 110, 32, 101, 120, 116, 101,
+                 114, 110, 97, 108, 32, 114, 101, 115, 111, 117, 114, 99, 101, 32, 116, 104, 97,
+                 116, 32, 119, 105, 108, 108, 32, 98, 101, 32, 97, 118, 97, 105, 108, 97, 98, 108,
+                 101, 32, 116, 111, 32, 117, 115, 101, 114, 115, 32, 105, 110, 32, 116, 104, 101,
+                 32, 99, 111, 110, 115, 111, 108, 101, 46, 74, 23, 34, 104, 116, 116, 112, 115,
+                 58, 47, 47, 101, 120, 116, 101, 114, 110, 97, 108, 46, 108, 105, 110, 107, 34>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "customLink",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "custom_link_text",
+          extendee: nil,
+          number: 7,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               "2GThe button text that would be shown in console pointing to custom link.J\n\"External\""}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "customLinkText",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
       nested_type: [],
@@ -26056,6 +26703,9 @@ defmodule Zitadel.Management.V1.UpdateCustomPrivacyPolicyRequest do
   field(:privacy_link, 2, type: :string, json_name: "privacyLink", deprecated: false)
   field(:help_link, 3, type: :string, json_name: "helpLink", deprecated: false)
   field(:support_email, 4, type: :string, json_name: "supportEmail", deprecated: false)
+  field(:docs_link, 5, type: :string, json_name: "docsLink", deprecated: false)
+  field(:custom_link, 6, type: :string, json_name: "customLink", deprecated: false)
+  field(:custom_link_text, 7, type: :string, json_name: "customLinkText", deprecated: false)
 end
 
 defmodule Zitadel.Management.V1.UpdateCustomPrivacyPolicyResponse do
@@ -27015,6 +27665,35 @@ defmodule Zitadel.Management.V1.AddCustomLabelPolicyRequest do
           json_name: "disableWatermark",
           proto3_optional: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "theme_mode",
+          extendee: nil,
+          number: 12,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.policy.v1.ThemeMode",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               "2Fsetting if there should be a restriction on which themes are available"}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "themeMode",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
       nested_type: [],
@@ -27051,6 +27730,13 @@ defmodule Zitadel.Management.V1.AddCustomLabelPolicyRequest do
   field(:warn_color_dark, 9, type: :string, json_name: "warnColorDark", deprecated: false)
   field(:font_color_dark, 10, type: :string, json_name: "fontColorDark", deprecated: false)
   field(:disable_watermark, 11, type: :bool, json_name: "disableWatermark")
+
+  field(:theme_mode, 12,
+    type: Zitadel.Policy.V1.ThemeMode,
+    json_name: "themeMode",
+    enum: true,
+    deprecated: false
+  )
 end
 
 defmodule Zitadel.Management.V1.AddCustomLabelPolicyResponse do
@@ -27379,6 +28065,35 @@ defmodule Zitadel.Management.V1.UpdateCustomLabelPolicyRequest do
           json_name: "disableWatermark",
           proto3_optional: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "theme_mode",
+          extendee: nil,
+          number: 12,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.policy.v1.ThemeMode",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               "2Fsetting if there should be a restriction on which themes are available"}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "themeMode",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
       nested_type: [],
@@ -27415,6 +28130,13 @@ defmodule Zitadel.Management.V1.UpdateCustomLabelPolicyRequest do
   field(:warn_color_dark, 9, type: :string, json_name: "warnColorDark", deprecated: false)
   field(:font_color_dark, 10, type: :string, json_name: "fontColorDark", deprecated: false)
   field(:disable_watermark, 11, type: :bool, json_name: "disableWatermark")
+
+  field(:theme_mode, 12,
+    type: Zitadel.Policy.V1.ThemeMode,
+    json_name: "themeMode",
+    enum: true,
+    deprecated: false
+  )
 end
 
 defmodule Zitadel.Management.V1.UpdateCustomLabelPolicyResponse do
@@ -28101,10 +28823,10 @@ defmodule Zitadel.Management.V1.SetCustomInitMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 208, 15>>},
               {1042, 2,
                <<74, 27, 34, 90, 73, 84, 65, 68, 69, 76, 32, 45, 32, 73, 110, 105, 116, 105, 97,
-                 108, 105, 122, 101, 32, 85, 115, 101, 114, 34, 120, 200, 1>>}
+                 108, 105, 122, 101, 32, 85, 115, 101, 114, 34, 120, 244, 3>>}
             ]
           },
           oneof_index: nil,
@@ -28132,10 +28854,10 @@ defmodule Zitadel.Management.V1.SetCustomInitMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 208, 15>>},
               {1042, 2,
                <<74, 17, 34, 73, 110, 105, 116, 105, 97, 108, 105, 122, 101, 32, 85, 115, 101,
-                 114, 34, 120, 200, 1>>}
+                 114, 34, 120, 244, 3>>}
             ]
           },
           oneof_index: nil,
@@ -28163,10 +28885,10 @@ defmodule Zitadel.Management.V1.SetCustomInitMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 208, 15>>},
               {1042, 2,
                <<74, 17, 34, 73, 110, 105, 116, 105, 97, 108, 105, 122, 101, 32, 85, 115, 101,
-                 114, 34, 120, 200, 1>>}
+                 114, 34, 120, 244, 3>>}
             ]
           },
           oneof_index: nil,
@@ -28194,11 +28916,11 @@ defmodule Zitadel.Management.V1.SetCustomInitMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 160, 31>>},
               {1042, 2,
                <<74, 37, 34, 72, 101, 108, 108, 111, 32, 123, 123, 46, 70, 105, 114, 115, 116, 78,
                  97, 109, 101, 125, 125, 32, 123, 123, 46, 76, 97, 115, 116, 78, 97, 109, 101,
-                 125, 125, 44, 34, 120, 200, 1>>}
+                 125, 125, 44, 34, 120, 232, 7>>}
             ]
           },
           oneof_index: nil,
@@ -28226,7 +28948,7 @@ defmodule Zitadel.Management.V1.SetCustomInitMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 160, 6>>},
+              {1071, 2, <<114, 4, 40, 192, 184, 2>>},
               {1042, 2,
                <<74, 223, 1, 34, 84, 104, 105, 115, 32, 117, 115, 101, 114, 32, 119, 97, 115, 32,
                  99, 114, 101, 97, 116, 101, 100, 32, 105, 110, 32, 90, 105, 116, 97, 100, 101,
@@ -28241,7 +28963,7 @@ defmodule Zitadel.Management.V1.SetCustomInitMessageTextRequest do
                  125, 41, 32, 73, 102, 32, 121, 111, 117, 32, 100, 105, 100, 110, 39, 116, 32, 97,
                  115, 107, 32, 102, 111, 114, 32, 116, 104, 105, 115, 32, 109, 97, 105, 108, 44,
                  32, 112, 108, 101, 97, 115, 101, 32, 105, 103, 110, 111, 114, 101, 32, 105, 116,
-                 46, 34, 120, 160, 6>>}
+                 46, 34, 120, 144, 78>>}
             ]
           },
           oneof_index: nil,
@@ -28269,10 +28991,10 @@ defmodule Zitadel.Management.V1.SetCustomInitMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 160, 31>>},
               {1042, 2,
                <<74, 23, 34, 70, 105, 110, 105, 115, 104, 32, 105, 110, 105, 116, 105, 97, 108,
-                 105, 122, 97, 116, 105, 111, 110, 34, 120, 200, 1>>}
+                 105, 122, 97, 116, 105, 111, 110, 34, 120, 232, 7>>}
             ]
           },
           oneof_index: nil,
@@ -28299,7 +29021,7 @@ defmodule Zitadel.Management.V1.SetCustomInitMessageTextRequest do
             debug_redact: false,
             uninterpreted_option: [],
             __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+            __unknown_fields__: [{1071, 2, <<114, 3, 40, 192, 62>>}]
           },
           oneof_index: nil,
           json_name: "footerText",
@@ -29143,6 +29865,32 @@ defmodule Zitadel.Management.V1.SetCustomLoginTextsRequest do
           json_name: "externalRegistrationUserOverviewText",
           proto3_optional: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "linking_user_prompt_text",
+          extendee: nil,
+          number: 36,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.text.v1.LinkingUserPromptScreenText",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: true,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: []
+          },
+          oneof_index: nil,
+          json_name: "linkingUserPromptText",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
       nested_type: [],
@@ -29313,6 +30061,12 @@ defmodule Zitadel.Management.V1.SetCustomLoginTextsRequest do
   field(:external_registration_user_overview_text, 35,
     type: Zitadel.Text.V1.ExternalRegistrationUserOverviewScreenText,
     json_name: "externalRegistrationUserOverviewText"
+  )
+
+  field(:linking_user_prompt_text, 36,
+    type: Zitadel.Text.V1.LinkingUserPromptScreenText,
+    json_name: "linkingUserPromptText",
+    deprecated: true
   )
 end
 
@@ -29675,10 +30429,10 @@ defmodule Zitadel.Management.V1.SetCustomPasswordResetMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 208, 15>>},
               {1042, 2,
                <<74, 26, 34, 90, 73, 84, 65, 68, 69, 76, 32, 45, 32, 82, 101, 115, 101, 116, 32,
-                 80, 97, 115, 115, 119, 111, 114, 100, 34, 120, 200, 1>>}
+                 80, 97, 115, 115, 119, 111, 114, 100, 34, 120, 244, 3>>}
             ]
           },
           oneof_index: nil,
@@ -29706,10 +30460,10 @@ defmodule Zitadel.Management.V1.SetCustomPasswordResetMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 208, 15>>},
               {1042, 2,
                <<74, 16, 34, 82, 101, 115, 101, 116, 32, 80, 97, 115, 115, 119, 111, 114, 100, 34,
-                 120, 200, 1>>}
+                 120, 244, 3>>}
             ]
           },
           oneof_index: nil,
@@ -29737,10 +30491,10 @@ defmodule Zitadel.Management.V1.SetCustomPasswordResetMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 208, 15>>},
               {1042, 2,
                <<74, 16, 34, 82, 101, 115, 101, 116, 32, 80, 97, 115, 115, 119, 111, 114, 100, 34,
-                 120, 200, 1>>}
+                 120, 244, 3>>}
             ]
           },
           oneof_index: nil,
@@ -29768,11 +30522,11 @@ defmodule Zitadel.Management.V1.SetCustomPasswordResetMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 160, 31>>},
               {1042, 2,
                <<74, 37, 34, 72, 101, 108, 108, 111, 32, 123, 123, 46, 70, 105, 114, 115, 116, 78,
                  97, 109, 101, 125, 125, 32, 123, 123, 46, 76, 97, 115, 116, 78, 97, 109, 101,
-                 125, 125, 44, 34, 120, 200, 1>>}
+                 125, 125, 44, 34, 120, 232, 7>>}
             ]
           },
           oneof_index: nil,
@@ -29800,7 +30554,7 @@ defmodule Zitadel.Management.V1.SetCustomPasswordResetMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 160, 6>>},
+              {1071, 2, <<114, 4, 40, 192, 184, 2>>},
               {1042, 2,
                <<74, 159, 1, 34, 87, 101, 32, 114, 101, 99, 101, 105, 118, 101, 100, 32, 97, 32,
                  112, 97, 115, 115, 119, 111, 114, 100, 32, 114, 101, 115, 101, 116, 32, 114, 101,
@@ -29811,7 +30565,7 @@ defmodule Zitadel.Management.V1.SetCustomPasswordResetMessageTextRequest do
                  67, 111, 100, 101, 125, 125, 41, 32, 73, 102, 32, 121, 111, 117, 32, 100, 105,
                  100, 110, 39, 116, 32, 97, 115, 107, 32, 102, 111, 114, 32, 116, 104, 105, 115,
                  32, 109, 97, 105, 108, 44, 32, 112, 108, 101, 97, 115, 101, 32, 105, 103, 110,
-                 111, 114, 101, 32, 105, 116, 46, 34, 120, 160, 6>>}
+                 111, 114, 101, 32, 105, 116, 46, 34, 120, 144, 78>>}
             ]
           },
           oneof_index: nil,
@@ -29839,10 +30593,10 @@ defmodule Zitadel.Management.V1.SetCustomPasswordResetMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 160, 31>>},
               {1042, 2,
                <<74, 16, 34, 82, 101, 115, 101, 116, 32, 80, 97, 115, 115, 119, 111, 114, 100, 34,
-                 120, 200, 1>>}
+                 120, 232, 7>>}
             ]
           },
           oneof_index: nil,
@@ -29869,7 +30623,7 @@ defmodule Zitadel.Management.V1.SetCustomPasswordResetMessageTextRequest do
             debug_redact: false,
             uninterpreted_option: [],
             __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+            __unknown_fields__: [{1071, 2, <<114, 3, 40, 192, 62>>}]
           },
           oneof_index: nil,
           json_name: "footerText",
@@ -30258,10 +31012,10 @@ defmodule Zitadel.Management.V1.SetCustomVerifyEmailMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 208, 15>>},
               {1042, 2,
                <<74, 24, 34, 90, 73, 84, 65, 68, 69, 76, 32, 45, 32, 86, 101, 114, 105, 102, 121,
-                 32, 69, 109, 97, 105, 108, 34, 120, 200, 1>>}
+                 32, 69, 109, 97, 105, 108, 34, 120, 244, 3>>}
             ]
           },
           oneof_index: nil,
@@ -30289,10 +31043,10 @@ defmodule Zitadel.Management.V1.SetCustomVerifyEmailMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 208, 15>>},
               {1042, 2,
-               <<74, 14, 34, 86, 101, 114, 105, 102, 121, 32, 69, 109, 97, 105, 108, 34, 120, 200,
-                 1>>}
+               <<74, 14, 34, 86, 101, 114, 105, 102, 121, 32, 69, 109, 97, 105, 108, 34, 120, 244,
+                 3>>}
             ]
           },
           oneof_index: nil,
@@ -30320,10 +31074,10 @@ defmodule Zitadel.Management.V1.SetCustomVerifyEmailMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 208, 15>>},
               {1042, 2,
-               <<74, 14, 34, 86, 101, 114, 105, 102, 121, 32, 69, 109, 97, 105, 108, 34, 120, 200,
-                 1>>}
+               <<74, 14, 34, 86, 101, 114, 105, 102, 121, 32, 69, 109, 97, 105, 108, 34, 120, 244,
+                 3>>}
             ]
           },
           oneof_index: nil,
@@ -30351,11 +31105,11 @@ defmodule Zitadel.Management.V1.SetCustomVerifyEmailMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 160, 31>>},
               {1042, 2,
                <<74, 37, 34, 72, 101, 108, 108, 111, 32, 123, 123, 46, 70, 105, 114, 115, 116, 78,
                  97, 109, 101, 125, 125, 32, 123, 123, 46, 76, 97, 115, 116, 78, 97, 109, 101,
-                 125, 125, 44, 34, 120, 200, 1>>}
+                 125, 125, 44, 34, 120, 232, 7>>}
             ]
           },
           oneof_index: nil,
@@ -30383,18 +31137,18 @@ defmodule Zitadel.Management.V1.SetCustomVerifyEmailMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 160, 6>>},
+              {1071, 2, <<114, 4, 40, 192, 184, 2>>},
               {1042, 2,
-               <<74, 152, 1, 34, 65, 32, 110, 101, 119, 32, 101, 109, 97, 105, 108, 32, 104, 97,
+               <<74, 153, 1, 34, 65, 32, 110, 101, 119, 32, 101, 109, 97, 105, 108, 32, 104, 97,
                  115, 32, 98, 101, 101, 110, 32, 97, 100, 100, 101, 100, 46, 32, 80, 108, 101, 97,
                  115, 101, 32, 117, 115, 101, 32, 116, 104, 101, 32, 98, 117, 116, 116, 111, 110,
                  32, 98, 101, 108, 111, 119, 32, 116, 111, 32, 118, 101, 114, 105, 102, 121, 32,
-                 121, 111, 117, 114, 32, 109, 97, 105, 108, 46, 32, 40, 67, 111, 100, 101, 32,
-                 123, 123, 46, 67, 111, 100, 101, 125, 125, 41, 32, 73, 102, 32, 121, 111, 117,
-                 32, 100, 105, 100, 110, 39, 116, 32, 97, 100, 100, 32, 97, 32, 110, 101, 119, 32,
-                 101, 109, 97, 105, 108, 44, 32, 112, 108, 101, 97, 115, 101, 32, 105, 103, 110,
-                 111, 114, 101, 32, 116, 104, 105, 115, 32, 101, 109, 97, 105, 108, 46, 34, 120,
-                 160, 6>>}
+                 121, 111, 117, 114, 32, 101, 109, 97, 105, 108, 46, 32, 40, 67, 111, 100, 101,
+                 32, 123, 123, 46, 67, 111, 100, 101, 125, 125, 41, 32, 73, 102, 32, 121, 111,
+                 117, 32, 100, 105, 100, 110, 39, 116, 32, 97, 100, 100, 32, 97, 32, 110, 101,
+                 119, 32, 101, 109, 97, 105, 108, 44, 32, 112, 108, 101, 97, 115, 101, 32, 105,
+                 103, 110, 111, 114, 101, 32, 116, 104, 105, 115, 32, 101, 109, 97, 105, 108, 46,
+                 34, 120, 144, 78>>}
             ]
           },
           oneof_index: nil,
@@ -30422,10 +31176,10 @@ defmodule Zitadel.Management.V1.SetCustomVerifyEmailMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 160, 31>>},
               {1042, 2,
-               <<74, 14, 34, 86, 101, 114, 105, 102, 121, 32, 69, 109, 97, 105, 108, 34, 120, 200,
-                 1>>}
+               <<74, 14, 34, 86, 101, 114, 105, 102, 121, 32, 69, 109, 97, 105, 108, 34, 120, 232,
+                 7>>}
             ]
           },
           oneof_index: nil,
@@ -30452,7 +31206,7 @@ defmodule Zitadel.Management.V1.SetCustomVerifyEmailMessageTextRequest do
             debug_redact: false,
             uninterpreted_option: [],
             __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+            __unknown_fields__: [{1071, 2, <<114, 3, 40, 192, 62>>}]
           },
           oneof_index: nil,
           json_name: "footerText",
@@ -30841,10 +31595,10 @@ defmodule Zitadel.Management.V1.SetCustomVerifyPhoneMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 208, 15>>},
               {1042, 2,
                <<74, 24, 34, 90, 73, 84, 65, 68, 69, 76, 32, 45, 32, 86, 101, 114, 105, 102, 121,
-                 32, 80, 104, 111, 110, 101, 34, 120, 200, 1>>}
+                 32, 80, 104, 111, 110, 101, 34, 120, 244, 3>>}
             ]
           },
           oneof_index: nil,
@@ -30872,10 +31626,10 @@ defmodule Zitadel.Management.V1.SetCustomVerifyPhoneMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 208, 15>>},
               {1042, 2,
                <<74, 14, 34, 86, 101, 114, 105, 102, 121, 32, 80, 104, 111, 110, 101, 34, 120,
-                 200, 1>>}
+                 244, 3>>}
             ]
           },
           oneof_index: nil,
@@ -30903,10 +31657,10 @@ defmodule Zitadel.Management.V1.SetCustomVerifyPhoneMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 208, 15>>},
               {1042, 2,
                <<74, 14, 34, 86, 101, 114, 105, 102, 121, 32, 80, 104, 111, 110, 101, 34, 120,
-                 200, 1>>}
+                 244, 3>>}
             ]
           },
           oneof_index: nil,
@@ -30934,11 +31688,11 @@ defmodule Zitadel.Management.V1.SetCustomVerifyPhoneMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 160, 31>>},
               {1042, 2,
                <<74, 37, 34, 72, 101, 108, 108, 111, 32, 123, 123, 46, 70, 105, 114, 115, 116, 78,
                  97, 109, 101, 125, 125, 32, 123, 123, 46, 76, 97, 115, 116, 78, 97, 109, 101,
-                 125, 125, 44, 34, 120, 200, 1>>}
+                 125, 125, 44, 34, 120, 232, 7>>}
             ]
           },
           oneof_index: nil,
@@ -31001,10 +31755,10 @@ defmodule Zitadel.Management.V1.SetCustomVerifyPhoneMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 160, 31>>},
               {1042, 2,
                <<74, 14, 34, 86, 101, 114, 105, 102, 121, 32, 80, 104, 111, 110, 101, 34, 120,
-                 200, 1>>}
+                 232, 7>>}
             ]
           },
           oneof_index: nil,
@@ -31031,7 +31785,7 @@ defmodule Zitadel.Management.V1.SetCustomVerifyPhoneMessageTextRequest do
             debug_redact: false,
             uninterpreted_option: [],
             __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+            __unknown_fields__: [{1071, 2, <<114, 3, 40, 192, 62>>}]
           },
           oneof_index: nil,
           json_name: "footerText",
@@ -31156,6 +31910,987 @@ defmodule Zitadel.Management.V1.ResetCustomVerifyPhoneMessageTextToDefaultRespon
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
       name: "ResetCustomVerifyPhoneMessageTextToDefaultResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "details",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Management.V1.GetCustomVerifySMSOTPMessageTextRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "GetCustomVerifySMSOTPMessageTextRequest",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "language",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "language",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:language, 1, type: :string, deprecated: false)
+end
+
+defmodule Zitadel.Management.V1.GetCustomVerifySMSOTPMessageTextResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "GetCustomVerifySMSOTPMessageTextResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "custom_text",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.text.v1.MessageCustomText",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "customText",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:custom_text, 1, type: Zitadel.Text.V1.MessageCustomText, json_name: "customText")
+end
+
+defmodule Zitadel.Management.V1.GetDefaultVerifySMSOTPMessageTextRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "GetDefaultVerifySMSOTPMessageTextRequest",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "language",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "language",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:language, 1, type: :string, deprecated: false)
+end
+
+defmodule Zitadel.Management.V1.GetDefaultVerifySMSOTPMessageTextResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "GetDefaultVerifySMSOTPMessageTextResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "custom_text",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.text.v1.MessageCustomText",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "customText",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:custom_text, 1, type: Zitadel.Text.V1.MessageCustomText, json_name: "customText")
+end
+
+defmodule Zitadel.Management.V1.SetCustomVerifySMSOTPMessageTextRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "SetCustomVerifySMSOTPMessageTextRequest",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "language",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 5, 16, 1, 24, 200, 1>>},
+              {1042, 2, <<74, 4, 34, 100, 101, 34>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "language",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "text",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 3, 24, 160, 6>>},
+              {1042, 2,
+               <<74, 181, 1, 34, 80, 108, 101, 97, 115, 101, 32, 118, 105, 115, 105, 116, 32, 123,
+                 123, 32, 46, 86, 101, 114, 105, 102, 121, 85, 82, 76, 32, 125, 125, 32, 111, 114,
+                 32, 99, 111, 112, 121, 32, 116, 104, 101, 32, 111, 110, 101, 45, 116, 105, 109,
+                 101, 32, 112, 97, 115, 115, 119, 111, 114, 100, 32, 123, 123, 46, 79, 84, 80,
+                 125, 125, 32, 97, 110, 100, 32, 112, 97, 115, 116, 101, 32, 105, 116, 32, 116,
+                 111, 32, 116, 111, 32, 116, 104, 101, 32, 97, 117, 116, 104, 101, 110, 116, 105,
+                 99, 97, 116, 105, 111, 110, 32, 115, 99, 114, 101, 101, 110, 32, 105, 110, 32,
+                 111, 114, 100, 101, 114, 32, 116, 111, 32, 97, 117, 116, 104, 101, 110, 116, 105,
+                 99, 97, 116, 101, 32, 97, 116, 32, 90, 73, 84, 65, 68, 69, 76, 32, 119, 105, 116,
+                 104, 105, 110, 32, 116, 104, 101, 32, 110, 101, 120, 116, 32, 102, 105, 118, 101,
+                 32, 109, 105, 110, 117, 116, 101, 115, 46, 34, 120, 160, 6>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "text",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:language, 1, type: :string, deprecated: false)
+  field(:text, 2, type: :string, deprecated: false)
+end
+
+defmodule Zitadel.Management.V1.SetCustomVerifySMSOTPMessageTextResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "SetCustomVerifySMSOTPMessageTextResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "details",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Management.V1.ResetCustomVerifySMSOTPMessageTextToDefaultRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "ResetCustomVerifySMSOTPMessageTextToDefaultRequest",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "language",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "language",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:language, 1, type: :string, deprecated: false)
+end
+
+defmodule Zitadel.Management.V1.ResetCustomVerifySMSOTPMessageTextToDefaultResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "ResetCustomVerifySMSOTPMessageTextToDefaultResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "details",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Management.V1.GetCustomVerifyEmailOTPMessageTextRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "GetCustomVerifyEmailOTPMessageTextRequest",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "language",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "language",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:language, 1, type: :string, deprecated: false)
+end
+
+defmodule Zitadel.Management.V1.GetCustomVerifyEmailOTPMessageTextResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "GetCustomVerifyEmailOTPMessageTextResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "custom_text",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.text.v1.MessageCustomText",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "customText",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:custom_text, 1, type: Zitadel.Text.V1.MessageCustomText, json_name: "customText")
+end
+
+defmodule Zitadel.Management.V1.GetDefaultVerifyEmailOTPMessageTextRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "GetDefaultVerifyEmailOTPMessageTextRequest",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "language",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "language",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:language, 1, type: :string, deprecated: false)
+end
+
+defmodule Zitadel.Management.V1.GetDefaultVerifyEmailOTPMessageTextResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "GetDefaultVerifyEmailOTPMessageTextResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "custom_text",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.text.v1.MessageCustomText",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "customText",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:custom_text, 1, type: Zitadel.Text.V1.MessageCustomText, json_name: "customText")
+end
+
+defmodule Zitadel.Management.V1.SetCustomVerifyEmailOTPMessageTextRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "SetCustomVerifyEmailOTPMessageTextRequest",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "language",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 5, 16, 1, 24, 200, 1>>},
+              {1042, 2, <<74, 4, 34, 100, 101, 34>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "language",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "title",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 3, 40, 208, 15>>},
+              {1042, 2,
+               <<74, 29, 34, 90, 73, 84, 65, 68, 69, 76, 32, 45, 32, 79, 110, 101, 45, 116, 105,
+                 109, 101, 32, 80, 97, 115, 115, 119, 111, 114, 100, 34, 120, 244, 3>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "title",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "pre_header",
+          extendee: nil,
+          number: 3,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 3, 40, 208, 15>>},
+              {1042, 2,
+               <<74, 27, 34, 86, 101, 114, 105, 102, 121, 32, 79, 110, 101, 45, 116, 105, 109,
+                 101, 32, 80, 97, 115, 115, 119, 111, 114, 100, 32, 34, 120, 244, 3>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "preHeader",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "subject",
+          extendee: nil,
+          number: 4,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 3, 40, 208, 15>>},
+              {1042, 2,
+               <<74, 26, 34, 86, 101, 114, 105, 102, 121, 32, 79, 110, 101, 45, 116, 105, 109,
+                 101, 32, 80, 97, 115, 115, 119, 111, 114, 100, 34, 120, 244, 3>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "subject",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "greeting",
+          extendee: nil,
+          number: 5,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 3, 40, 160, 31>>},
+              {1042, 2,
+               <<74, 37, 34, 72, 101, 108, 108, 111, 32, 123, 123, 46, 70, 105, 114, 115, 116, 78,
+                 97, 109, 101, 125, 125, 32, 123, 123, 46, 76, 97, 115, 116, 78, 97, 109, 101,
+                 125, 125, 44, 34, 120, 232, 7>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "greeting",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "text",
+          extendee: nil,
+          number: 6,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 4, 40, 192, 184, 2>>},
+              {1042, 2,
+               <<74, 190, 1, 34, 80, 108, 101, 97, 115, 101, 32, 117, 115, 101, 32, 116, 104, 101,
+                 32, 92, 34, 65, 117, 116, 104, 101, 110, 116, 105, 99, 97, 116, 101, 92, 34, 32,
+                 98, 117, 116, 116, 111, 110, 32, 111, 114, 32, 99, 111, 112, 121, 32, 116, 104,
+                 101, 32, 111, 110, 101, 45, 116, 105, 109, 101, 32, 112, 97, 115, 115, 119, 111,
+                 114, 100, 32, 123, 123, 46, 79, 84, 80, 125, 125, 32, 97, 110, 100, 32, 112, 97,
+                 115, 116, 101, 32, 105, 116, 32, 116, 111, 32, 116, 111, 32, 116, 104, 101, 32,
+                 97, 117, 116, 104, 101, 110, 116, 105, 99, 97, 116, 105, 111, 110, 32, 115, 99,
+                 114, 101, 101, 110, 32, 105, 110, 32, 111, 114, 100, 101, 114, 32, 116, 111, 32,
+                 97, 117, 116, 104, 101, 110, 116, 105, 99, 97, 116, 101, 32, 97, 116, 32, 90, 73,
+                 84, 65, 68, 69, 76, 32, 119, 105, 116, 104, 105, 110, 32, 116, 104, 101, 32, 110,
+                 101, 120, 116, 32, 102, 105, 118, 101, 32, 109, 105, 110, 117, 116, 101, 115, 46,
+                 34, 120, 144, 78>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "text",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "button_text",
+          extendee: nil,
+          number: 7,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 3, 40, 160, 31>>},
+              {1042, 2,
+               <<74, 14, 34, 65, 117, 116, 104, 101, 110, 116, 105, 99, 97, 116, 101, 34, 120,
+                 232, 7>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "buttonText",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "footer_text",
+          extendee: nil,
+          number: 8,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 3, 40, 192, 62>>}]
+          },
+          oneof_index: nil,
+          json_name: "footerText",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:language, 1, type: :string, deprecated: false)
+  field(:title, 2, type: :string, deprecated: false)
+  field(:pre_header, 3, type: :string, json_name: "preHeader", deprecated: false)
+  field(:subject, 4, type: :string, deprecated: false)
+  field(:greeting, 5, type: :string, deprecated: false)
+  field(:text, 6, type: :string, deprecated: false)
+  field(:button_text, 7, type: :string, json_name: "buttonText", deprecated: false)
+  field(:footer_text, 8, type: :string, json_name: "footerText", deprecated: false)
+end
+
+defmodule Zitadel.Management.V1.SetCustomVerifyEmailOTPMessageTextResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "SetCustomVerifyEmailOTPMessageTextResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "details",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Management.V1.ResetCustomVerifyEmailOTPMessageTextToDefaultRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "ResetCustomVerifyEmailOTPMessageTextToDefaultRequest",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "language",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "language",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:language, 1, type: :string, deprecated: false)
+end
+
+defmodule Zitadel.Management.V1.ResetCustomVerifyEmailOTPMessageTextToDefaultResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "ResetCustomVerifyEmailOTPMessageTextToDefaultResponse",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
           name: "details",
@@ -31420,11 +33155,11 @@ defmodule Zitadel.Management.V1.SetCustomDomainClaimedMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 208, 15>>},
               {1042, 2,
                <<74, 35, 34, 90, 73, 84, 65, 68, 69, 76, 32, 45, 32, 68, 111, 109, 97, 105, 110,
                  32, 104, 97, 115, 32, 98, 101, 101, 110, 32, 99, 108, 97, 105, 109, 101, 100, 34,
-                 120, 200, 1>>}
+                 120, 244, 3>>}
             ]
           },
           oneof_index: nil,
@@ -31452,10 +33187,10 @@ defmodule Zitadel.Management.V1.SetCustomDomainClaimedMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 208, 15>>},
               {1042, 2,
                <<74, 25, 34, 67, 104, 97, 110, 103, 101, 32, 101, 109, 97, 105, 108, 32, 47, 32,
-                 117, 115, 101, 114, 110, 97, 109, 101, 34, 120, 200, 1>>}
+                 117, 115, 101, 114, 110, 97, 109, 101, 34, 120, 244, 3>>}
             ]
           },
           oneof_index: nil,
@@ -31483,10 +33218,10 @@ defmodule Zitadel.Management.V1.SetCustomDomainClaimedMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 208, 15>>},
               {1042, 2,
                <<74, 25, 34, 68, 111, 109, 97, 105, 110, 32, 104, 97, 115, 32, 98, 101, 101, 110,
-                 32, 99, 108, 97, 105, 109, 101, 100, 34, 120, 200, 1>>}
+                 32, 99, 108, 97, 105, 109, 101, 100, 34, 120, 244, 3>>}
             ]
           },
           oneof_index: nil,
@@ -31514,11 +33249,11 @@ defmodule Zitadel.Management.V1.SetCustomDomainClaimedMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 160, 31>>},
               {1042, 2,
                <<74, 37, 34, 72, 101, 108, 108, 111, 32, 123, 123, 46, 70, 105, 114, 115, 116, 78,
                  97, 109, 101, 125, 125, 32, 123, 123, 46, 76, 97, 115, 116, 78, 97, 109, 101,
-                 125, 125, 44, 34, 120, 200, 1>>}
+                 125, 125, 44, 34, 120, 232, 7>>}
             ]
           },
           oneof_index: nil,
@@ -31546,7 +33281,7 @@ defmodule Zitadel.Management.V1.SetCustomDomainClaimedMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 160, 6>>},
+              {1071, 2, <<114, 4, 40, 192, 184, 2>>},
               {1042, 2,
                <<74, 132, 2, 34, 84, 104, 101, 32, 100, 111, 109, 97, 105, 110, 32, 123, 123, 46,
                  68, 111, 109, 97, 105, 110, 125, 125, 32, 104, 97, 115, 32, 98, 101, 101, 110,
@@ -31563,7 +33298,7 @@ defmodule Zitadel.Management.V1.SetCustomDomainClaimedMessageTextRequest do
                  32, 116, 101, 109, 112, 111, 114, 97, 114, 121, 32, 117, 115, 101, 114, 110, 97,
                  109, 101, 32, 40, 123, 123, 46, 84, 101, 109, 112, 85, 115, 101, 114, 110, 97,
                  109, 101, 125, 125, 41, 32, 102, 111, 114, 32, 116, 104, 105, 115, 32, 108, 111,
-                 103, 105, 110, 46, 34, 120, 160, 6>>}
+                 103, 105, 110, 46, 34, 120, 144, 78>>}
             ]
           },
           oneof_index: nil,
@@ -31591,8 +33326,8 @@ defmodule Zitadel.Management.V1.SetCustomDomainClaimedMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
-              {1042, 2, <<74, 7, 34, 76, 111, 103, 105, 110, 34, 120, 200, 1>>}
+              {1071, 2, <<114, 3, 40, 160, 31>>},
+              {1042, 2, <<74, 7, 34, 76, 111, 103, 105, 110, 34, 120, 232, 7>>}
             ]
           },
           oneof_index: nil,
@@ -31619,7 +33354,7 @@ defmodule Zitadel.Management.V1.SetCustomDomainClaimedMessageTextRequest do
             debug_redact: false,
             uninterpreted_option: [],
             __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+            __unknown_fields__: [{1071, 2, <<114, 3, 40, 192, 62>>}]
           },
           oneof_index: nil,
           json_name: "footerText",
@@ -32008,11 +33743,11 @@ defmodule Zitadel.Management.V1.SetCustomPasswordlessRegistrationMessageTextRequ
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 208, 15>>},
               {1042, 2,
                <<74, 44, 34, 90, 73, 84, 65, 68, 69, 76, 32, 45, 32, 80, 97, 115, 115, 119, 111,
                  114, 100, 32, 111, 102, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97,
-                 115, 32, 99, 104, 97, 110, 103, 101, 100, 34, 120, 200, 1>>}
+                 115, 32, 99, 104, 97, 110, 103, 101, 100, 34, 120, 244, 3>>}
             ]
           },
           oneof_index: nil,
@@ -32040,10 +33775,10 @@ defmodule Zitadel.Management.V1.SetCustomPasswordlessRegistrationMessageTextRequ
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 208, 15>>},
               {1042, 2,
                <<74, 18, 34, 80, 97, 115, 115, 119, 111, 114, 100, 32, 67, 104, 97, 110, 103, 101,
-                 100, 34, 120, 200, 1>>}
+                 100, 34, 120, 244, 3>>}
             ]
           },
           oneof_index: nil,
@@ -32071,11 +33806,11 @@ defmodule Zitadel.Management.V1.SetCustomPasswordlessRegistrationMessageTextRequ
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 208, 15>>},
               {1042, 2,
                <<74, 30, 34, 80, 97, 115, 115, 119, 111, 114, 100, 32, 111, 102, 32, 117, 115,
-                 101, 114, 32, 104, 97, 115, 32, 99, 104, 97, 110, 103, 101, 100, 34, 120, 200,
-                 1>>}
+                 101, 114, 32, 104, 97, 115, 32, 99, 104, 97, 110, 103, 101, 100, 34, 120, 244,
+                 3>>}
             ]
           },
           oneof_index: nil,
@@ -32103,11 +33838,11 @@ defmodule Zitadel.Management.V1.SetCustomPasswordlessRegistrationMessageTextRequ
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 160, 31>>},
               {1042, 2,
                <<74, 37, 34, 72, 101, 108, 108, 111, 32, 123, 123, 46, 70, 105, 114, 115, 116, 78,
                  97, 109, 101, 125, 125, 32, 123, 123, 46, 76, 97, 115, 116, 78, 97, 109, 101,
-                 125, 125, 44, 34, 120, 200, 1>>}
+                 125, 125, 44, 34, 120, 232, 7>>}
             ]
           },
           oneof_index: nil,
@@ -32135,7 +33870,7 @@ defmodule Zitadel.Management.V1.SetCustomPasswordlessRegistrationMessageTextRequ
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 160, 6>>},
+              {1071, 2, <<114, 4, 40, 192, 184, 2>>},
               {1042, 2,
                <<74, 130, 1, 34, 84, 104, 101, 32, 112, 97, 115, 115, 119, 111, 114, 100, 32, 111,
                  102, 32, 121, 111, 117, 114, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 99,
@@ -32144,7 +33879,7 @@ defmodule Zitadel.Management.V1.SetCustomPasswordlessRegistrationMessageTextRequ
                  101, 32, 98, 121, 32, 121, 111, 117, 44, 32, 112, 108, 101, 97, 115, 101, 32, 98,
                  101, 32, 97, 100, 118, 105, 115, 101, 100, 32, 116, 111, 32, 105, 109, 109, 101,
                  100, 105, 97, 116, 101, 108, 121, 32, 114, 101, 115, 101, 116, 32, 121, 111, 117,
-                 114, 32, 112, 97, 115, 115, 119, 111, 114, 100, 46, 34, 120, 160, 6>>}
+                 114, 32, 112, 97, 115, 115, 119, 111, 114, 100, 46, 34, 120, 144, 78>>}
             ]
           },
           oneof_index: nil,
@@ -32172,8 +33907,8 @@ defmodule Zitadel.Management.V1.SetCustomPasswordlessRegistrationMessageTextRequ
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
-              {1042, 2, <<74, 7, 34, 76, 111, 103, 105, 110, 34, 120, 200, 1>>}
+              {1071, 2, <<114, 3, 40, 160, 31>>},
+              {1042, 2, <<74, 7, 34, 76, 111, 103, 105, 110, 34, 120, 244, 3>>}
             ]
           },
           oneof_index: nil,
@@ -32200,7 +33935,7 @@ defmodule Zitadel.Management.V1.SetCustomPasswordlessRegistrationMessageTextRequ
             debug_redact: false,
             uninterpreted_option: [],
             __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+            __unknown_fields__: [{1071, 2, <<114, 3, 40, 192, 62>>}]
           },
           oneof_index: nil,
           json_name: "footerText",
@@ -32589,11 +34324,11 @@ defmodule Zitadel.Management.V1.SetCustomPasswordChangeMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 208, 15>>},
               {1042, 2,
                <<74, 34, 34, 90, 73, 84, 65, 68, 69, 76, 32, 45, 32, 65, 100, 100, 32, 80, 97,
                  115, 115, 119, 111, 114, 100, 108, 101, 115, 115, 32, 76, 111, 103, 105, 110, 34,
-                 120, 200, 1>>}
+                 120, 244, 3>>}
             ]
           },
           oneof_index: nil,
@@ -32621,10 +34356,10 @@ defmodule Zitadel.Management.V1.SetCustomPasswordChangeMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 208, 15>>},
               {1042, 2,
                <<74, 24, 34, 65, 100, 100, 32, 80, 97, 115, 115, 119, 111, 114, 100, 108, 101,
-                 115, 115, 32, 76, 111, 103, 105, 110, 34, 120, 200, 1>>}
+                 115, 115, 32, 76, 111, 103, 105, 110, 34, 120, 244, 3>>}
             ]
           },
           oneof_index: nil,
@@ -32652,10 +34387,10 @@ defmodule Zitadel.Management.V1.SetCustomPasswordChangeMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 208, 15>>},
               {1042, 2,
                <<74, 24, 34, 65, 100, 100, 32, 80, 97, 115, 115, 119, 111, 114, 100, 108, 101,
-                 115, 115, 32, 76, 111, 103, 105, 110, 34, 120, 200, 1>>}
+                 115, 115, 32, 76, 111, 103, 105, 110, 34, 120, 244, 3>>}
             ]
           },
           oneof_index: nil,
@@ -32683,11 +34418,11 @@ defmodule Zitadel.Management.V1.SetCustomPasswordChangeMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 160, 31>>},
               {1042, 2,
                <<74, 37, 34, 72, 101, 108, 108, 111, 32, 123, 123, 46, 70, 105, 114, 115, 116, 78,
                  97, 109, 101, 125, 125, 32, 123, 123, 46, 76, 97, 115, 116, 78, 97, 109, 101,
-                 125, 125, 44, 34, 120, 200, 1>>}
+                 125, 125, 44, 34, 120, 232, 7>>}
             ]
           },
           oneof_index: nil,
@@ -32715,7 +34450,7 @@ defmodule Zitadel.Management.V1.SetCustomPasswordChangeMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 160, 6>>},
+              {1071, 2, <<114, 4, 40, 192, 184, 2>>},
               {1042, 2,
                <<74, 142, 1, 34, 87, 101, 32, 114, 101, 99, 101, 105, 118, 101, 100, 32, 97, 32,
                  114, 101, 113, 117, 101, 115, 116, 32, 116, 111, 32, 97, 100, 100, 32, 97, 32,
@@ -32725,7 +34460,7 @@ defmodule Zitadel.Management.V1.SetCustomPasswordChangeMessageTextRequest do
                  32, 98, 101, 108, 111, 119, 32, 116, 111, 32, 97, 100, 100, 32, 121, 111, 117,
                  114, 32, 116, 111, 107, 101, 110, 32, 111, 114, 32, 100, 101, 118, 105, 99, 101,
                  32, 102, 111, 114, 32, 112, 97, 115, 115, 119, 111, 114, 100, 108, 101, 115, 115,
-                 32, 108, 111, 103, 105, 110, 46, 34, 120, 160, 6>>}
+                 32, 108, 111, 103, 105, 110, 46, 34, 120, 144, 78>>}
             ]
           },
           oneof_index: nil,
@@ -32753,10 +34488,10 @@ defmodule Zitadel.Management.V1.SetCustomPasswordChangeMessageTextRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 40, 160, 31>>},
               {1042, 2,
                <<74, 24, 34, 65, 100, 100, 32, 80, 97, 115, 115, 119, 111, 114, 100, 108, 101,
-                 115, 115, 32, 76, 111, 103, 105, 110, 34, 120, 200, 1>>}
+                 115, 115, 32, 76, 111, 103, 105, 110, 34, 120, 244, 3>>}
             ]
           },
           oneof_index: nil,
@@ -32783,7 +34518,7 @@ defmodule Zitadel.Management.V1.SetCustomPasswordChangeMessageTextRequest do
             debug_redact: false,
             uninterpreted_option: [],
             __pb_extensions__: %{},
-            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+            __unknown_fields__: [{1071, 2, <<114, 3, 40, 192, 62>>}]
           },
           oneof_index: nil,
           json_name: "footerText",
@@ -32908,6 +34643,591 @@ defmodule Zitadel.Management.V1.ResetCustomPasswordChangeMessageTextToDefaultRes
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
       name: "ResetCustomPasswordChangeMessageTextToDefaultResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "details",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Management.V1.GetCustomInviteUserMessageTextRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "GetCustomInviteUserMessageTextRequest",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "language",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "language",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:language, 1, type: :string, deprecated: false)
+end
+
+defmodule Zitadel.Management.V1.GetCustomInviteUserMessageTextResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "GetCustomInviteUserMessageTextResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "custom_text",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.text.v1.MessageCustomText",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "customText",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:custom_text, 1, type: Zitadel.Text.V1.MessageCustomText, json_name: "customText")
+end
+
+defmodule Zitadel.Management.V1.GetDefaultInviteUserMessageTextRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "GetDefaultInviteUserMessageTextRequest",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "language",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "language",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:language, 1, type: :string, deprecated: false)
+end
+
+defmodule Zitadel.Management.V1.GetDefaultInviteUserMessageTextResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "GetDefaultInviteUserMessageTextResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "custom_text",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.text.v1.MessageCustomText",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "customText",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:custom_text, 1, type: Zitadel.Text.V1.MessageCustomText, json_name: "customText")
+end
+
+defmodule Zitadel.Management.V1.SetCustomInviteUserMessageTextRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "SetCustomInviteUserMessageTextRequest",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "language",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 5, 16, 1, 24, 200, 1>>},
+              {1042, 2, <<74, 4, 34, 100, 101, 34>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "language",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "title",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 3, 40, 208, 15>>},
+              {1042, 2,
+               <<74, 36, 34, 73, 110, 118, 105, 116, 97, 116, 105, 111, 110, 32, 116, 111, 32,
+                 123, 123, 46, 65, 112, 112, 108, 105, 99, 97, 116, 105, 111, 110, 78, 97, 109,
+                 101, 125, 125, 34, 120, 244, 3>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "title",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "pre_header",
+          extendee: nil,
+          number: 3,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 3, 40, 208, 15>>},
+              {1042, 2,
+               <<74, 36, 34, 73, 110, 118, 105, 116, 97, 116, 105, 111, 110, 32, 116, 111, 32,
+                 123, 123, 46, 65, 112, 112, 108, 105, 99, 97, 116, 105, 111, 110, 78, 97, 109,
+                 101, 125, 125, 34, 120, 244, 3>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "preHeader",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "subject",
+          extendee: nil,
+          number: 4,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 3, 40, 208, 15>>},
+              {1042, 2,
+               <<74, 36, 34, 73, 110, 118, 105, 116, 97, 116, 105, 111, 110, 32, 116, 111, 32,
+                 123, 123, 46, 65, 112, 112, 108, 105, 99, 97, 116, 105, 111, 110, 78, 97, 109,
+                 101, 125, 125, 34, 120, 244, 3>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "subject",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "greeting",
+          extendee: nil,
+          number: 5,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 3, 40, 160, 31>>},
+              {1042, 2,
+               <<74, 25, 34, 72, 101, 108, 108, 111, 32, 123, 123, 46, 68, 105, 115, 112, 108, 97,
+                 121, 78, 97, 109, 101, 125, 125, 44, 34, 120, 232, 7>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "greeting",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "text",
+          extendee: nil,
+          number: 6,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 4, 40, 192, 184, 2>>},
+              {1042, 2,
+               <<74, 164, 1, 34, 89, 111, 117, 114, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32,
+                 98, 101, 101, 110, 32, 105, 110, 118, 105, 116, 101, 100, 32, 116, 111, 32, 123,
+                 123, 46, 65, 112, 112, 108, 105, 99, 97, 116, 105, 111, 110, 78, 97, 109, 101,
+                 125, 125, 46, 32, 80, 108, 101, 97, 115, 101, 32, 99, 108, 105, 99, 107, 32, 116,
+                 104, 101, 32, 98, 117, 116, 116, 111, 110, 32, 98, 101, 108, 111, 119, 32, 116,
+                 111, 32, 102, 105, 110, 105, 115, 104, 32, 116, 104, 101, 32, 105, 110, 118, 105,
+                 116, 101, 32, 112, 114, 111, 99, 101, 115, 115, 46, 32, 73, 102, 32, 121, 111,
+                 117, 32, 100, 105, 100, 110, 39, 116, 32, 97, 115, 107, 32, 102, 111, 114, 32,
+                 116, 104, 105, 115, 32, 109, 97, 105, 108, 44, 32, 112, 108, 101, 97, 115, 101,
+                 32, 105, 103, 110, 111, 114, 101, 32, 105, 116, 46, 34, 120, 144, 78>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "text",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "button_text",
+          extendee: nil,
+          number: 7,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 3, 40, 160, 31>>},
+              {1042, 2,
+               <<74, 15, 34, 65, 99, 99, 101, 112, 116, 32, 105, 110, 118, 105, 116, 101, 34, 120,
+                 244, 3>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "buttonText",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "footer_text",
+          extendee: nil,
+          number: 8,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 3, 40, 192, 62>>}]
+          },
+          oneof_index: nil,
+          json_name: "footerText",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:language, 1, type: :string, deprecated: false)
+  field(:title, 2, type: :string, deprecated: false)
+  field(:pre_header, 3, type: :string, json_name: "preHeader", deprecated: false)
+  field(:subject, 4, type: :string, deprecated: false)
+  field(:greeting, 5, type: :string, deprecated: false)
+  field(:text, 6, type: :string, deprecated: false)
+  field(:button_text, 7, type: :string, json_name: "buttonText", deprecated: false)
+  field(:footer_text, 8, type: :string, json_name: "footerText", deprecated: false)
+end
+
+defmodule Zitadel.Management.V1.SetCustomInviteUserMessageTextResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "SetCustomInviteUserMessageTextResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "details",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Management.V1.ResetCustomInviteUserMessageTextToDefaultRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "ResetCustomInviteUserMessageTextToDefaultRequest",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "language",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "language",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:language, 1, type: :string, deprecated: false)
+end
+
+defmodule Zitadel.Management.V1.ResetCustomInviteUserMessageTextToDefaultResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "ResetCustomInviteUserMessageTextToDefaultResponse",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
           name: "details",
@@ -33178,7 +35498,11 @@ defmodule Zitadel.Management.V1.IDPQuery do
 
   field(:idp_id_query, 1, type: Zitadel.Idp.V1.IDPIDQuery, json_name: "idpIdQuery", oneof: 0)
 
-  field(:idp_name_query, 2, type: Zitadel.Idp.V1.IDPNameQuery, json_name: "idpNameQuery", oneof: 0)
+  field(:idp_name_query, 2,
+    type: Zitadel.Idp.V1.IDPNameQuery,
+    json_name: "idpNameQuery",
+    oneof: 0
+  )
 
   field(:owner_type_query, 3,
     type: Zitadel.Idp.V1.IDPOwnerTypeQuery,
@@ -35059,7 +37383,11 @@ defmodule Zitadel.Management.V1.ProviderQuery do
 
   field(:idp_id_query, 1, type: Zitadel.Idp.V1.IDPIDQuery, json_name: "idpIdQuery", oneof: 0)
 
-  field(:idp_name_query, 2, type: Zitadel.Idp.V1.IDPNameQuery, json_name: "idpNameQuery", oneof: 0)
+  field(:idp_name_query, 2,
+    type: Zitadel.Idp.V1.IDPNameQuery,
+    json_name: "idpNameQuery",
+    oneof: 0
+  )
 
   field(:owner_type_query, 3,
     type: Zitadel.Idp.V1.IDPOwnerTypeQuery,
@@ -35295,7 +37623,7 @@ defmodule Zitadel.Management.V1.AddGenericOAuthProviderRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 5, 16, 1, 24, 200, 1>>},
+              {1071, 2, <<114, 5, 16, 1, 24, 232, 7>>},
               {1042, 2,
                <<50, 48, 67, 108, 105, 101, 110, 116, 32, 115, 101, 99, 114, 101, 116, 32, 103,
                  101, 110, 101, 114, 97, 116, 101, 100, 32, 98, 121, 32, 116, 104, 101, 32, 105,
@@ -35673,7 +38001,7 @@ defmodule Zitadel.Management.V1.UpdateGenericOAuthProviderRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 24, 232, 7>>},
               {1042, 2,
                <<50, 46, 67, 108, 105, 101, 110, 116, 32, 115, 101, 99, 114, 101, 116, 32, 119,
                  105, 108, 108, 32, 111, 110, 108, 121, 32, 98, 101, 32, 117, 112, 100, 97, 116,
@@ -36045,7 +38373,7 @@ defmodule Zitadel.Management.V1.AddGenericOIDCProviderRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 5, 16, 1, 24, 200, 1>>},
+              {1071, 2, <<114, 5, 16, 1, 24, 232, 7>>},
               {1042, 2, "2)secret generated by the identity providerJ\b\"secret\""}
             ]
           },
@@ -36344,7 +38672,7 @@ defmodule Zitadel.Management.V1.UpdateGenericOIDCProviderRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1071, 2, <<114, 3, 24, 232, 7>>},
               {1042, 2, "2.client secret will only be updated if providedJ\b\"secret\""}
             ]
           },
@@ -36447,6 +38775,137 @@ defmodule Zitadel.Management.V1.UpdateGenericOIDCProviderResponse do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
       name: "UpdateGenericOIDCProviderResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "details",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Management.V1.MigrateGenericOIDCProviderRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "MigrateGenericOIDCProviderRequest",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "id",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 5, 16, 1, 24, 200, 1>>},
+              {1042, 2,
+               <<74, 19, 34, 54, 57, 54, 50, 57, 48, 50, 51, 57, 48, 54, 52, 56, 56, 51, 51, 52,
+                 34>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "id",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "azure",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.management.v1.AddAzureADProviderRequest",
+          default_value: nil,
+          options: nil,
+          oneof_index: 0,
+          json_name: "azure",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "google",
+          extendee: nil,
+          number: 3,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.management.v1.AddGoogleProviderRequest",
+          default_value: nil,
+          options: nil,
+          oneof_index: 0,
+          json_name: "google",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [
+        %Google.Protobuf.OneofDescriptorProto{
+          name: "template",
+          options: nil,
+          __unknown_fields__: []
+        }
+      ],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  oneof(:template, 0)
+
+  field(:id, 1, type: :string, deprecated: false)
+  field(:azure, 2, type: Zitadel.Management.V1.AddAzureADProviderRequest, oneof: 0)
+  field(:google, 3, type: Zitadel.Management.V1.AddGoogleProviderRequest, oneof: 0)
+end
+
+defmodule Zitadel.Management.V1.MigrateGenericOIDCProviderResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "MigrateGenericOIDCProviderResponse",
       field: [
         %Google.Protobuf.FieldDescriptorProto{
           name: "details",
@@ -40776,6 +43235,1255 @@ defmodule Zitadel.Management.V1.UpdateLDAPProviderResponse do
   field(:details, 1, type: Zitadel.V1.ObjectDetails)
 end
 
+defmodule Zitadel.Management.V1.AddSAMLProviderRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "AddSAMLProviderRequest",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "name",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "name",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "metadata_xml",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_BYTES,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<122, 4, 24, 160, 194, 30>>}]
+          },
+          oneof_index: 0,
+          json_name: "metadataXml",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "metadata_url",
+          extendee: nil,
+          number: 3,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1042, 2, "J \"https://test.com/saml/metadata\""}
+            ]
+          },
+          oneof_index: 0,
+          json_name: "metadataUrl",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "binding",
+          extendee: nil,
+          number: 4,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.idp.v1.SAMLBinding",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "binding",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "with_signed_request",
+          extendee: nil,
+          number: 5,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_BOOL,
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "withSignedRequest",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "provider_options",
+          extendee: nil,
+          number: 6,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.idp.v1.Options",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "providerOptions",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "name_id_format",
+          extendee: nil,
+          number: 7,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.idp.v1.SAMLNameIDFormat",
+          default_value: nil,
+          options: nil,
+          oneof_index: 1,
+          json_name: "nameIdFormat",
+          proto3_optional: true,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "transient_mapping_attribute_name",
+          extendee: nil,
+          number: 8,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: 2,
+          json_name: "transientMappingAttributeName",
+          proto3_optional: true,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [
+        %Google.Protobuf.OneofDescriptorProto{
+          name: "metadata",
+          options: %Google.Protobuf.OneofOptions{
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 0, 1}]
+          },
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.OneofDescriptorProto{
+          name: "_name_id_format",
+          options: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.OneofDescriptorProto{
+          name: "_transient_mapping_attribute_name",
+          options: nil,
+          __unknown_fields__: []
+        }
+      ],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  oneof(:metadata, 0)
+
+  field(:name, 1, type: :string, deprecated: false)
+  field(:metadata_xml, 2, type: :bytes, json_name: "metadataXml", oneof: 0, deprecated: false)
+  field(:metadata_url, 3, type: :string, json_name: "metadataUrl", oneof: 0, deprecated: false)
+  field(:binding, 4, type: Zitadel.Idp.V1.SAMLBinding, enum: true)
+  field(:with_signed_request, 5, type: :bool, json_name: "withSignedRequest")
+  field(:provider_options, 6, type: Zitadel.Idp.V1.Options, json_name: "providerOptions")
+
+  field(:name_id_format, 7,
+    proto3_optional: true,
+    type: Zitadel.Idp.V1.SAMLNameIDFormat,
+    json_name: "nameIdFormat",
+    enum: true
+  )
+
+  field(:transient_mapping_attribute_name, 8,
+    proto3_optional: true,
+    type: :string,
+    json_name: "transientMappingAttributeName"
+  )
+end
+
+defmodule Zitadel.Management.V1.AddSAMLProviderResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "AddSAMLProviderResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "details",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "id",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "id",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+  field(:id, 2, type: :string)
+end
+
+defmodule Zitadel.Management.V1.UpdateSAMLProviderRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "UpdateSAMLProviderRequest",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "id",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "id",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "name",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "name",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "metadata_xml",
+          extendee: nil,
+          number: 3,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_BYTES,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<122, 4, 24, 160, 194, 30>>}]
+          },
+          oneof_index: 0,
+          json_name: "metadataXml",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "metadata_url",
+          extendee: nil,
+          number: 4,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1042, 2, "J \"https://test.com/saml/metadata\""}
+            ]
+          },
+          oneof_index: 0,
+          json_name: "metadataUrl",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "binding",
+          extendee: nil,
+          number: 5,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.idp.v1.SAMLBinding",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "binding",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "with_signed_request",
+          extendee: nil,
+          number: 6,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_BOOL,
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "withSignedRequest",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "provider_options",
+          extendee: nil,
+          number: 7,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.idp.v1.Options",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "providerOptions",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "name_id_format",
+          extendee: nil,
+          number: 8,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.idp.v1.SAMLNameIDFormat",
+          default_value: nil,
+          options: nil,
+          oneof_index: 1,
+          json_name: "nameIdFormat",
+          proto3_optional: true,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "transient_mapping_attribute_name",
+          extendee: nil,
+          number: 9,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: 2,
+          json_name: "transientMappingAttributeName",
+          proto3_optional: true,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [
+        %Google.Protobuf.OneofDescriptorProto{
+          name: "metadata",
+          options: %Google.Protobuf.OneofOptions{
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 0, 1}]
+          },
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.OneofDescriptorProto{
+          name: "_name_id_format",
+          options: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.OneofDescriptorProto{
+          name: "_transient_mapping_attribute_name",
+          options: nil,
+          __unknown_fields__: []
+        }
+      ],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  oneof(:metadata, 0)
+
+  field(:id, 1, type: :string, deprecated: false)
+  field(:name, 2, type: :string, deprecated: false)
+  field(:metadata_xml, 3, type: :bytes, json_name: "metadataXml", oneof: 0, deprecated: false)
+  field(:metadata_url, 4, type: :string, json_name: "metadataUrl", oneof: 0, deprecated: false)
+  field(:binding, 5, type: Zitadel.Idp.V1.SAMLBinding, enum: true)
+  field(:with_signed_request, 6, type: :bool, json_name: "withSignedRequest")
+  field(:provider_options, 7, type: Zitadel.Idp.V1.Options, json_name: "providerOptions")
+
+  field(:name_id_format, 8,
+    proto3_optional: true,
+    type: Zitadel.Idp.V1.SAMLNameIDFormat,
+    json_name: "nameIdFormat",
+    enum: true
+  )
+
+  field(:transient_mapping_attribute_name, 9,
+    proto3_optional: true,
+    type: :string,
+    json_name: "transientMappingAttributeName"
+  )
+end
+
+defmodule Zitadel.Management.V1.UpdateSAMLProviderResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "UpdateSAMLProviderResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "details",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Management.V1.RegenerateSAMLProviderCertificateRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "RegenerateSAMLProviderCertificateRequest",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "id",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "id",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:id, 1, type: :string, deprecated: false)
+end
+
+defmodule Zitadel.Management.V1.RegenerateSAMLProviderCertificateResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "RegenerateSAMLProviderCertificateResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "details",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Management.V1.AddAppleProviderRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "AddAppleProviderRequest",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "name",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1042, 2,
+               <<50, 53, 65, 112, 112, 108, 101, 32, 119, 105, 108, 108, 32, 98, 101, 32, 117,
+                 115, 101, 100, 32, 97, 115, 32, 100, 101, 102, 97, 117, 108, 116, 44, 32, 105,
+                 102, 32, 110, 111, 32, 110, 97, 109, 101, 32, 105, 115, 32, 112, 114, 111, 118,
+                 105, 100, 101, 100, 74, 7, 34, 65, 112, 112, 108, 101, 34, 120, 200, 1>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "name",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "client_id",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 5, 16, 1, 24, 200, 1>>},
+              {1052, 0, 2},
+              {1042, 2,
+               <<50, 50, 67, 108, 105, 101, 110, 116, 32, 105, 100, 32, 40, 65, 112, 112, 32, 73,
+                 68, 32, 111, 114, 32, 83, 101, 114, 118, 105, 99, 101, 32, 73, 68, 41, 32, 112,
+                 114, 111, 118, 105, 100, 101, 100, 32, 98, 121, 32, 65, 112, 112, 108, 101, 74,
+                 15, 34, 99, 111, 109, 46, 99, 108, 105, 101, 110, 116, 46, 105, 100, 34, 120,
+                 200, 1, 128, 1, 1>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "clientId",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "team_id",
+          extendee: nil,
+          number: 3,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 3, 152, 1, 10>>},
+              {1052, 0, 2},
+              {1042, 2,
+               <<50, 40, 40, 49, 48, 45, 99, 104, 97, 114, 97, 99, 116, 101, 114, 41, 32, 84, 101,
+                 97, 109, 32, 73, 68, 32, 112, 114, 111, 118, 105, 100, 101, 100, 32, 98, 121, 32,
+                 65, 112, 112, 108, 101, 74, 12, 34, 65, 76, 84, 48, 51, 74, 86, 51, 79, 83, 34,
+                 120, 10, 128, 1, 10>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "teamId",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "key_id",
+          extendee: nil,
+          number: 4,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 3, 152, 1, 10>>},
+              {1052, 0, 2},
+              {1042, 2,
+               <<50, 55, 40, 49, 48, 45, 99, 104, 97, 114, 97, 99, 116, 101, 114, 41, 32, 73, 68,
+                 32, 111, 102, 32, 116, 104, 101, 32, 112, 114, 105, 118, 97, 116, 101, 32, 107,
+                 101, 121, 32, 103, 101, 110, 101, 114, 97, 116, 101, 100, 32, 98, 121, 32, 65,
+                 112, 112, 108, 101, 74, 11, 34, 79, 71, 75, 68, 75, 50, 53, 75, 68, 34, 120, 10,
+                 128, 1, 10>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "keyId",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "private_key",
+          extendee: nil,
+          number: 5,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_BYTES,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<122, 5, 16, 1, 24, 136, 39>>},
+              {1052, 0, 2},
+              {1042, 2,
+               <<50, 30, 80, 114, 105, 118, 97, 116, 101, 32, 75, 101, 121, 32, 103, 101, 110,
+                 101, 114, 97, 116, 101, 100, 32, 98, 121, 32, 65, 112, 112, 108, 101, 74, 44, 34,
+                 76, 83, 48, 116, 76, 83, 49, 67, 82, 85, 100, 74, 84, 105, 66, 81, 85, 107, 108,
+                 87, 81, 86, 82, 70, 73, 69, 116, 70, 87, 83, 48, 116, 76, 83, 48, 116, 67, 107,
+                 49, 46, 46, 46, 34, 120, 136, 39, 128, 1, 1>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "privateKey",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "scopes",
+          extendee: nil,
+          number: 6,
+          label: :LABEL_REPEATED,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<146, 1, 10, 16, 20, 34, 6, 114, 4, 16, 1, 24, 100>>},
+              {1042, 2,
+               <<50, 59, 84, 104, 101, 32, 115, 99, 111, 112, 101, 115, 32, 114, 101, 113, 117,
+                 101, 115, 116, 101, 100, 32, 98, 121, 32, 90, 73, 84, 65, 68, 69, 76, 32, 100,
+                 117, 114, 105, 110, 103, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115,
+                 116, 32, 116, 111, 32, 65, 112, 112, 108, 101, 74, 17, 91, 34, 110, 97, 109, 101,
+                 34, 44, 32, 34, 101, 109, 97, 105, 108, 34, 93, 160, 1, 20>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "scopes",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "provider_options",
+          extendee: nil,
+          number: 7,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.idp.v1.Options",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "providerOptions",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:name, 1, type: :string, deprecated: false)
+  field(:client_id, 2, type: :string, json_name: "clientId", deprecated: false)
+  field(:team_id, 3, type: :string, json_name: "teamId", deprecated: false)
+  field(:key_id, 4, type: :string, json_name: "keyId", deprecated: false)
+  field(:private_key, 5, type: :bytes, json_name: "privateKey", deprecated: false)
+  field(:scopes, 6, repeated: true, type: :string, deprecated: false)
+  field(:provider_options, 7, type: Zitadel.Idp.V1.Options, json_name: "providerOptions")
+end
+
+defmodule Zitadel.Management.V1.AddAppleProviderResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "AddAppleProviderResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "details",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "id",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "id",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+  field(:id, 2, type: :string)
+end
+
+defmodule Zitadel.Management.V1.UpdateAppleProviderRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "UpdateAppleProviderRequest",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "id",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 5, 16, 1, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "id",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "name",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1042, 2, <<74, 7, 34, 65, 112, 112, 108, 101, 34, 120, 200, 1>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "name",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "client_id",
+          extendee: nil,
+          number: 3,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 5, 16, 1, 24, 200, 1>>},
+              {1052, 0, 2},
+              {1042, 2,
+               <<50, 50, 67, 108, 105, 101, 110, 116, 32, 105, 100, 32, 40, 65, 112, 112, 32, 73,
+                 68, 32, 111, 114, 32, 83, 101, 114, 118, 105, 99, 101, 32, 73, 68, 41, 32, 112,
+                 114, 111, 118, 105, 100, 101, 100, 32, 98, 121, 32, 65, 112, 112, 108, 101, 74,
+                 11, 34, 99, 108, 105, 101, 110, 116, 45, 105, 100, 34, 120, 200, 1, 128, 1, 1>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "clientId",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "team_id",
+          extendee: nil,
+          number: 4,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 3, 152, 1, 10>>},
+              {1052, 0, 2},
+              {1042, 2,
+               <<50, 40, 40, 49, 48, 45, 99, 104, 97, 114, 97, 99, 116, 101, 114, 41, 32, 84, 101,
+                 97, 109, 32, 73, 68, 32, 112, 114, 111, 118, 105, 100, 101, 100, 32, 98, 121, 32,
+                 65, 112, 112, 108, 101, 74, 12, 34, 65, 76, 84, 48, 51, 74, 86, 51, 79, 83, 34,
+                 120, 10, 128, 1, 10>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "teamId",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "key_id",
+          extendee: nil,
+          number: 5,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 3, 152, 1, 10>>},
+              {1052, 0, 2},
+              {1042, 2,
+               <<50, 55, 40, 49, 48, 45, 99, 104, 97, 114, 97, 99, 116, 101, 114, 41, 32, 73, 68,
+                 32, 111, 102, 32, 116, 104, 101, 32, 112, 114, 105, 118, 97, 116, 101, 32, 107,
+                 101, 121, 32, 103, 101, 110, 101, 114, 97, 116, 101, 100, 32, 98, 121, 32, 65,
+                 112, 112, 108, 101, 74, 11, 34, 79, 71, 75, 68, 75, 50, 53, 75, 68, 34, 120, 10,
+                 128, 1, 10>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "keyId",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "private_key",
+          extendee: nil,
+          number: 6,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_BYTES,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<122, 3, 24, 136, 39>>},
+              {1042, 2,
+               <<50, 30, 80, 114, 105, 118, 97, 116, 101, 32, 75, 101, 121, 32, 103, 101, 110,
+                 101, 114, 97, 116, 101, 100, 32, 98, 121, 32, 65, 112, 112, 108, 101, 74, 44, 34,
+                 76, 83, 48, 116, 76, 83, 49, 67, 82, 85, 100, 74, 84, 105, 66, 81, 85, 107, 108,
+                 87, 81, 86, 82, 70, 73, 69, 116, 70, 87, 83, 48, 116, 76, 83, 48, 116, 67, 107,
+                 49, 46, 46, 46, 34, 120, 136, 39>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "privateKey",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "scopes",
+          extendee: nil,
+          number: 7,
+          label: :LABEL_REPEATED,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<146, 1, 10, 16, 20, 34, 6, 114, 4, 16, 1, 24, 100>>},
+              {1042, 2,
+               <<50, 59, 84, 104, 101, 32, 115, 99, 111, 112, 101, 115, 32, 114, 101, 113, 117,
+                 101, 115, 116, 101, 100, 32, 98, 121, 32, 90, 73, 84, 65, 68, 69, 76, 32, 100,
+                 117, 114, 105, 110, 103, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115,
+                 116, 32, 116, 111, 32, 65, 112, 112, 108, 101, 74, 30, 91, 34, 111, 112, 101,
+                 110, 105, 100, 34, 44, 32, 34, 112, 114, 111, 102, 105, 108, 101, 34, 44, 32, 34,
+                 101, 109, 97, 105, 108, 34, 93, 160, 1, 20>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "scopes",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "provider_options",
+          extendee: nil,
+          number: 8,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.idp.v1.Options",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "providerOptions",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:id, 1, type: :string, deprecated: false)
+  field(:name, 2, type: :string, deprecated: false)
+  field(:client_id, 3, type: :string, json_name: "clientId", deprecated: false)
+  field(:team_id, 4, type: :string, json_name: "teamId", deprecated: false)
+  field(:key_id, 5, type: :string, json_name: "keyId", deprecated: false)
+  field(:private_key, 6, type: :bytes, json_name: "privateKey", deprecated: false)
+  field(:scopes, 7, repeated: true, type: :string, deprecated: false)
+  field(:provider_options, 8, type: Zitadel.Idp.V1.Options, json_name: "providerOptions")
+end
+
+defmodule Zitadel.Management.V1.UpdateAppleProviderResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "UpdateAppleProviderResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "details",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
 defmodule Zitadel.Management.V1.DeleteProviderRequest do
   use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
@@ -41166,7 +44874,7 @@ defmodule Zitadel.Management.V1.CreateActionRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 5, 16, 1, 24, 208, 15>>},
+              {1071, 2, <<114, 6, 16, 1, 40, 192, 184, 2>>},
               {1052, 0, 2},
               {1042, 2,
                <<50, 39, 74, 97, 118, 97, 115, 99, 114, 105, 112, 116, 32, 99, 111, 100, 101, 32,
@@ -41174,7 +44882,7 @@ defmodule Zitadel.Management.V1.CreateActionRequest do
                  101, 99, 117, 116, 101, 100, 74, 52, 34, 102, 117, 110, 99, 116, 105, 111, 110,
                  32, 108, 111, 103, 40, 99, 111, 110, 116, 101, 120, 116, 44, 32, 99, 97, 108,
                  108, 115, 41, 123, 99, 111, 110, 115, 111, 108, 101, 46, 108, 111, 103, 40, 99,
-                 111, 110, 116, 101, 120, 116, 41, 125, 34, 120, 208, 15, 128, 1, 1>>}
+                 111, 110, 116, 101, 120, 116, 41, 125, 34, 120, 144, 78, 128, 1, 1>>}
             ]
           },
           oneof_index: nil,
@@ -41475,8 +45183,14 @@ defmodule Zitadel.Management.V1.UpdateActionRequest do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1071, 2, <<114, 5, 16, 1, 24, 208, 15>>},
-              {1042, 2, "J4\"function log(context, calls){console.log(context)}\""}
+              {1071, 2, <<114, 6, 16, 1, 40, 192, 184, 2>>},
+              {1042, 2,
+               <<50, 39, 74, 97, 118, 97, 115, 99, 114, 105, 112, 116, 32, 99, 111, 100, 101, 32,
+                 116, 104, 97, 116, 32, 115, 104, 111, 117, 108, 100, 32, 98, 101, 32, 101, 120,
+                 101, 99, 117, 116, 101, 100, 74, 52, 34, 102, 117, 110, 99, 116, 105, 111, 110,
+                 32, 108, 111, 103, 40, 99, 111, 110, 116, 101, 120, 116, 44, 32, 99, 97, 108,
+                 108, 115, 41, 123, 99, 111, 110, 115, 111, 108, 101, 46, 108, 111, 103, 40, 99,
+                 111, 110, 116, 101, 120, 116, 41, 125, 34, 120, 144, 78, 128, 1, 1>>}
             ]
           },
           oneof_index: nil,
@@ -42124,18 +45838,7 @@ defmodule Zitadel.Management.V1.SetTriggerActionsRequest do
             debug_redact: false,
             uninterpreted_option: [],
             __pb_extensions__: %{},
-            __unknown_fields__: [
-              {1042, 2,
-               <<50, 147, 1, 65, 116, 32, 116, 104, 101, 32, 109, 111, 109, 101, 110, 116, 32,
-                 121, 111, 117, 32, 104, 97, 118, 101, 32, 116, 111, 32, 115, 101, 110, 100, 32,
-                 116, 104, 101, 32, 73, 68, 32, 111, 102, 32, 116, 104, 101, 32, 70, 108, 111,
-                 119, 32, 84, 121, 112, 101, 58, 32, 69, 120, 116, 101, 114, 110, 97, 108, 65,
-                 117, 116, 104, 101, 110, 116, 105, 99, 97, 116, 105, 111, 110, 61, 49, 44, 32,
-                 67, 117, 115, 116, 111, 109, 105, 115, 101, 84, 111, 107, 101, 110, 61, 50, 44,
-                 32, 73, 110, 116, 101, 114, 110, 97, 108, 65, 117, 116, 104, 101, 110, 116, 105,
-                 99, 97, 116, 105, 111, 110, 61, 51, 44, 32, 80, 114, 101, 85, 115, 101, 114, 105,
-                 110, 102, 111, 67, 114, 101, 97, 116, 105, 111, 110, 61, 51, 74, 3, 34, 49, 34>>}
-            ]
+            __unknown_fields__: [{1042, 2, <<74, 3, 34, 49, 34>>}]
           },
           oneof_index: nil,
           json_name: "flowType",
@@ -42161,19 +45864,7 @@ defmodule Zitadel.Management.V1.SetTriggerActionsRequest do
             debug_redact: false,
             uninterpreted_option: [],
             __pb_extensions__: %{},
-            __unknown_fields__: [
-              {1042, 2,
-               <<50, 159, 1, 65, 116, 32, 116, 104, 101, 32, 109, 111, 109, 101, 110, 116, 32,
-                 121, 111, 117, 32, 104, 97, 118, 101, 32, 116, 111, 32, 115, 101, 110, 100, 32,
-                 116, 104, 101, 32, 73, 68, 32, 111, 102, 32, 116, 104, 101, 32, 84, 114, 105,
-                 103, 103, 101, 114, 32, 84, 121, 112, 101, 58, 32, 80, 111, 115, 116, 65, 117,
-                 116, 104, 101, 110, 116, 105, 99, 97, 116, 105, 111, 110, 61, 49, 44, 32, 80,
-                 114, 101, 67, 114, 101, 97, 116, 105, 111, 110, 61, 50, 44, 32, 80, 111, 115,
-                 116, 67, 114, 101, 97, 116, 105, 111, 110, 61, 51, 44, 32, 80, 114, 101, 85, 115,
-                 101, 114, 105, 110, 102, 111, 67, 114, 101, 97, 116, 105, 111, 110, 61, 52, 44,
-                 32, 80, 114, 101, 65, 99, 99, 101, 115, 115, 84, 111, 107, 101, 110, 67, 114,
-                 101, 97, 116, 105, 111, 110, 61, 53, 74, 3, 34, 49, 34>>}
-            ]
+            __unknown_fields__: [{1042, 2, <<74, 3, 34, 49, 34>>}]
           },
           oneof_index: nil,
           json_name: "triggerType",
@@ -42355,13 +46046,11 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {50000, 2, "\n\rauthenticated"},
               {1042, 2,
                <<10, 7, 71, 101, 110, 101, 114, 97, 108, 18, 19, 83, 117, 112, 112, 111, 114, 116,
-                 101, 100, 32, 76, 97, 110, 103, 117, 97, 103, 101, 115, 26, 92, 84, 104, 101, 32,
-                 115, 117, 112, 112, 111, 114, 116, 101, 100, 47, 100, 101, 102, 97, 117, 108,
-                 116, 32, 108, 97, 110, 103, 117, 97, 103, 101, 115, 32, 111, 102, 32, 116, 104,
-                 101, 32, 115, 121, 115, 116, 101, 109, 32, 119, 105, 108, 108, 32, 98, 101, 32,
-                 114, 101, 116, 117, 114, 110, 101, 100, 32, 98, 121, 32, 116, 104, 101, 32, 108,
-                 97, 110, 103, 117, 97, 103, 101, 32, 97, 98, 98, 114, 101, 118, 105, 97, 116,
-                 105, 111, 110, 46, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75>>}
+                 101, 100, 32, 76, 97, 110, 103, 117, 97, 103, 101, 115, 26, 55, 85, 115, 101, 32,
+                 71, 101, 116, 83, 117, 112, 112, 111, 114, 116, 101, 100, 76, 97, 110, 103, 117,
+                 97, 103, 101, 115, 32, 111, 110, 32, 116, 104, 101, 32, 97, 100, 109, 105, 110,
+                 32, 115, 101, 114, 118, 105, 99, 101, 32, 105, 110, 115, 116, 101, 97, 100, 46,
+                 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 88, 1>>}
             ]
           },
           client_streaming: false,
@@ -42382,25 +46071,28 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {50000, 2, "\n\tuser.read"},
               {1042, 2,
                <<10, 5, 85, 115, 101, 114, 115, 18, 10, 85, 115, 101, 114, 32, 98, 121, 32, 73,
-                 68, 26, 82, 82, 101, 116, 117, 114, 110, 115, 32, 116, 104, 101, 32, 102, 117,
-                 108, 108, 32, 117, 115, 101, 114, 32, 111, 98, 106, 101, 99, 116, 32, 40, 104,
-                 117, 109, 97, 110, 32, 111, 114, 32, 109, 97, 99, 104, 105, 110, 101, 41, 32,
-                 105, 110, 99, 108, 117, 100, 105, 110, 103, 32, 116, 104, 101, 32, 112, 114, 111,
-                 102, 105, 108, 101, 44, 32, 101, 109, 97, 105, 108, 44, 32, 101, 116, 99, 46, 74,
-                 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 114, 220, 1, 10, 217, 1, 10, 15,
-                 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 195,
-                 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108,
-                 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97,
-                 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101,
-                 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111,
-                 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 32, 117, 115, 101,
-                 114, 115, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103,
-                 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101,
-                 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32,
-                 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115,
-                 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99,
-                 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
-                 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
+                 68, 26, 134, 1, 82, 101, 116, 117, 114, 110, 115, 32, 116, 104, 101, 32, 102,
+                 117, 108, 108, 32, 117, 115, 101, 114, 32, 111, 98, 106, 101, 99, 116, 32, 40,
+                 104, 117, 109, 97, 110, 32, 111, 114, 32, 109, 97, 99, 104, 105, 110, 101, 41,
+                 32, 105, 110, 99, 108, 117, 100, 105, 110, 103, 32, 116, 104, 101, 32, 112, 114,
+                 111, 102, 105, 108, 101, 44, 32, 101, 109, 97, 105, 108, 44, 32, 101, 116, 99,
+                 46, 10, 10, 68, 101, 112, 114, 101, 99, 97, 116, 101, 100, 58, 32, 112, 108, 101,
+                 97, 115, 101, 32, 117, 115, 101, 32, 117, 115, 101, 114, 32, 115, 101, 114, 118,
+                 105, 99, 101, 32, 118, 50, 32, 71, 101, 116, 85, 115, 101, 114, 66, 121, 73, 68,
+                 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 88, 1, 114, 220, 1, 10, 217, 1,
+                 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100,
+                 18, 195, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32,
+                 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105,
+                 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113,
+                 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32,
+                 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 32, 117,
+                 115, 101, 114, 115, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111,
+                 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117,
+                 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97,
+                 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32,
+                 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116, 111,
+                 32, 97, 99, 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101,
+                 115, 116, 101, 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -42426,15 +46118,19 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {1042, 2,
                <<10, 5, 85, 115, 101, 114, 115, 10, 6, 71, 108, 111, 98, 97, 108, 18, 33, 71, 101,
                  116, 32, 85, 115, 101, 114, 32, 98, 121, 32, 108, 111, 103, 105, 110, 32, 110,
-                 97, 109, 101, 32, 40, 103, 108, 111, 98, 97, 108, 108, 121, 41, 26, 122, 71, 101,
-                 116, 32, 97, 32, 117, 115, 101, 114, 32, 98, 121, 32, 108, 111, 103, 105, 110,
-                 32, 110, 97, 109, 101, 32, 115, 101, 97, 114, 99, 104, 101, 100, 32, 111, 118,
-                 101, 114, 32, 97, 108, 108, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105,
-                 111, 110, 115, 46, 32, 84, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 32,
-                 111, 110, 108, 121, 32, 114, 101, 116, 117, 114, 110, 115, 32, 100, 97, 116, 97,
-                 32, 105, 102, 32, 116, 104, 101, 32, 108, 111, 103, 105, 110, 32, 110, 97, 109,
-                 101, 32, 109, 97, 116, 99, 104, 101, 115, 32, 101, 120, 97, 99, 116, 108, 121,
-                 46, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75>>}
+                 97, 109, 101, 32, 40, 103, 108, 111, 98, 97, 108, 108, 121, 41, 26, 193, 1, 71,
+                 101, 116, 32, 97, 32, 117, 115, 101, 114, 32, 98, 121, 32, 108, 111, 103, 105,
+                 110, 32, 110, 97, 109, 101, 32, 115, 101, 97, 114, 99, 104, 101, 100, 32, 111,
+                 118, 101, 114, 32, 97, 108, 108, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116,
+                 105, 111, 110, 115, 46, 32, 84, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116,
+                 32, 111, 110, 108, 121, 32, 114, 101, 116, 117, 114, 110, 115, 32, 100, 97, 116,
+                 97, 32, 105, 102, 32, 116, 104, 101, 32, 108, 111, 103, 105, 110, 32, 110, 97,
+                 109, 101, 32, 109, 97, 116, 99, 104, 101, 115, 32, 101, 120, 97, 99, 116, 108,
+                 121, 46, 10, 10, 68, 101, 112, 114, 101, 99, 97, 116, 101, 100, 58, 32, 112, 108,
+                 101, 97, 115, 101, 32, 117, 115, 101, 32, 117, 115, 101, 114, 32, 115, 101, 114,
+                 118, 105, 99, 101, 32, 118, 50, 32, 76, 105, 115, 116, 85, 115, 101, 114, 115,
+                 44, 32, 119, 105, 116, 104, 32, 76, 111, 103, 105, 110, 78, 97, 109, 101, 81,
+                 117, 101, 114, 121, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 88, 1>>}
             ]
           },
           client_streaming: false,
@@ -42457,7 +46153,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {50000, 2, "\n\tuser.read"},
               {1042, 2,
                <<10, 5, 85, 115, 101, 114, 115, 18, 12, 83, 101, 97, 114, 99, 104, 32, 85, 115,
-                 101, 114, 115, 26, 152, 1, 83, 101, 97, 114, 99, 104, 32, 102, 111, 114, 32, 117,
+                 101, 114, 115, 26, 202, 1, 83, 101, 97, 114, 99, 104, 32, 102, 111, 114, 32, 117,
                  115, 101, 114, 115, 32, 119, 105, 116, 104, 105, 110, 32, 97, 110, 32, 111, 114,
                  103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 46, 32, 66, 121, 32, 100, 101,
                  102, 97, 117, 108, 116, 44, 32, 119, 101, 32, 119, 105, 108, 108, 32, 114, 101,
@@ -42466,17 +46162,20 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                  97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 111, 32, 105, 110, 99, 108, 117,
                  100, 101, 32, 97, 32, 108, 105, 109, 105, 116, 32, 97, 110, 100, 32, 115, 111,
                  114, 116, 105, 110, 103, 32, 102, 111, 114, 32, 112, 97, 103, 105, 110, 97, 116,
-                 105, 111, 110, 46, 74, 47, 10, 3, 50, 48, 48, 18, 40, 10, 38, 65, 32, 108, 105,
-                 115, 116, 32, 111, 102, 32, 97, 108, 108, 32, 117, 115, 101, 114, 115, 32, 109,
-                 97, 116, 99, 104, 105, 110, 103, 32, 116, 104, 101, 32, 113, 117, 101, 114, 121,
-                 74, 56, 10, 3, 52, 48, 48, 18, 49, 10, 18, 105, 110, 118, 97, 108, 105, 100, 32,
-                 108, 105, 115, 116, 32, 113, 117, 101, 114, 121, 18, 27, 10, 25, 26, 23, 35, 47,
-                 100, 101, 102, 105, 110, 105, 116, 105, 111, 110, 115, 47, 114, 112, 99, 83, 116,
-                 97, 116, 117, 115, 114, 220, 1, 10, 217, 1, 10, 15, 120, 45, 122, 105, 116, 97,
-                 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 195, 1, 84, 104, 101, 32, 100,
-                 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32,
-                 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32,
-                 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110,
+                 105, 111, 110, 46, 10, 10, 68, 101, 112, 114, 101, 99, 97, 116, 101, 100, 58, 32,
+                 112, 108, 101, 97, 115, 101, 32, 117, 115, 101, 32, 117, 115, 101, 114, 32, 115,
+                 101, 114, 118, 105, 99, 101, 32, 118, 50, 32, 76, 105, 115, 116, 85, 115, 101,
+                 114, 115, 74, 47, 10, 3, 50, 48, 48, 18, 40, 10, 38, 65, 32, 108, 105, 115, 116,
+                 32, 111, 102, 32, 97, 108, 108, 32, 117, 115, 101, 114, 115, 32, 109, 97, 116,
+                 99, 104, 105, 110, 103, 32, 116, 104, 101, 32, 113, 117, 101, 114, 121, 74, 56,
+                 10, 3, 52, 48, 48, 18, 49, 10, 18, 105, 110, 118, 97, 108, 105, 100, 32, 108,
+                 105, 115, 116, 32, 113, 117, 101, 114, 121, 18, 27, 10, 25, 26, 23, 35, 47, 100,
+                 101, 102, 105, 110, 105, 116, 105, 111, 110, 115, 47, 114, 112, 99, 83, 116, 97,
+                 116, 117, 115, 88, 1, 114, 220, 1, 10, 217, 1, 10, 15, 120, 45, 122, 105, 116,
+                 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 195, 1, 84, 104, 101, 32,
+                 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115,
+                 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110,
+                 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110,
                  103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105,
                  107, 101, 32, 116, 111, 32, 103, 101, 116, 32, 117, 115, 101, 114, 115, 32, 111,
                  102, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122,
@@ -42552,25 +46251,30 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {50000, 2, "\n\tuser.read"},
               {1042, 2,
                <<10, 5, 85, 115, 101, 114, 115, 18, 23, 67, 104, 101, 99, 107, 32, 102, 111, 114,
-                 32, 101, 120, 105, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 26, 93, 82,
-                 101, 116, 117, 114, 110, 115, 32, 105, 102, 32, 97, 32, 117, 115, 101, 114, 32,
-                 119, 105, 116, 104, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116,
+                 32, 101, 120, 105, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 26, 180, 1,
+                 82, 101, 116, 117, 114, 110, 115, 32, 105, 102, 32, 97, 32, 117, 115, 101, 114,
+                 32, 119, 105, 116, 104, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116,
                  101, 100, 32, 101, 109, 97, 105, 108, 32, 111, 114, 32, 117, 115, 101, 114, 110,
                  97, 109, 101, 32, 105, 115, 32, 117, 110, 105, 113, 117, 101, 46, 32, 83, 111,
                  32, 121, 111, 117, 32, 99, 97, 110, 32, 99, 114, 101, 97, 116, 101, 32, 116, 104,
-                 101, 32, 117, 115, 101, 114, 46, 114, 220, 1, 10, 217, 1, 10, 15, 120, 45, 122,
-                 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 195, 1, 84, 104,
-                 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97,
-                 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105,
-                 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116,
-                 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32,
-                 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 32, 117, 115, 101, 114, 115,
-                 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110,
-                 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116,
-                 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115,
-                 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32,
-                 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99, 99,
-                 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
+                 101, 32, 117, 115, 101, 114, 46, 32, 10, 10, 68, 101, 112, 114, 101, 99, 97, 116,
+                 101, 100, 58, 32, 112, 108, 101, 97, 115, 101, 32, 117, 115, 101, 32, 117, 115,
+                 101, 114, 32, 115, 101, 114, 118, 105, 99, 101, 32, 118, 50, 32, 76, 105, 115,
+                 116, 85, 115, 101, 114, 115, 44, 32, 105, 115, 32, 117, 110, 105, 113, 117, 101,
+                 32, 119, 104, 101, 110, 32, 110, 111, 32, 117, 115, 101, 114, 32, 105, 115, 32,
+                 114, 101, 116, 117, 114, 110, 101, 100, 88, 1, 114, 220, 1, 10, 217, 1, 10, 15,
+                 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 195,
+                 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108,
+                 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97,
+                 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101,
+                 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111,
+                 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 32, 117, 115, 101,
+                 114, 115, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103,
+                 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101,
+                 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32,
+                 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115,
+                 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99,
+                 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
                  100, 32, 100, 97, 116, 97, 46, 24, 1>>}
             ]
           },
@@ -42594,7 +46298,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {1042, 2,
                <<10, 5, 85, 115, 101, 114, 115, 18, 31, 68, 101, 112, 114, 101, 99, 97, 116, 101,
                  100, 58, 32, 67, 114, 101, 97, 116, 101, 32, 85, 115, 101, 114, 32, 40, 72, 117,
-                 109, 97, 110, 41, 26, 132, 2, 67, 114, 101, 97, 116, 101, 32, 97, 32, 110, 101,
+                 109, 97, 110, 41, 26, 165, 2, 67, 114, 101, 97, 116, 101, 32, 97, 32, 110, 101,
                  119, 32, 117, 115, 101, 114, 32, 119, 105, 116, 104, 32, 116, 104, 101, 32, 116,
                  121, 112, 101, 32, 104, 117, 109, 97, 110, 46, 32, 84, 104, 101, 32, 110, 101,
                  119, 108, 121, 32, 99, 114, 101, 97, 116, 101, 100, 32, 117, 115, 101, 114, 32,
@@ -42609,7 +46313,22 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                  101, 114, 32, 119, 105, 108, 108, 32, 110, 111, 116, 32, 98, 101, 32, 114, 101,
                  113, 117, 101, 115, 116, 101, 100, 32, 116, 111, 32, 115, 101, 116, 32, 97, 32,
                  110, 101, 119, 32, 111, 110, 101, 32, 111, 110, 32, 116, 104, 101, 32, 102, 105,
-                 114, 115, 116, 32, 108, 111, 103, 105, 110, 46, 88, 1>>}
+                 114, 115, 116, 32, 108, 111, 103, 105, 110, 46, 10, 10, 68, 101, 112, 114, 101,
+                 99, 97, 116, 101, 100, 58, 32, 117, 115, 101, 32, 73, 109, 112, 111, 114, 116,
+                 72, 117, 109, 97, 110, 85, 115, 101, 114, 88, 1, 114, 227, 1, 10, 224, 1, 10, 15,
+                 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 202,
+                 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108,
+                 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97,
+                 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101,
+                 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111,
+                 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 47, 115, 101, 116,
+                 32, 97, 32, 114, 101, 115, 117, 108, 116, 32, 111, 102, 32, 97, 110, 111, 116,
+                 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32,
+                 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101,
+                 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32,
+                 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105,
+                 111, 110, 32, 116, 111, 32, 97, 99, 99, 101, 115, 115, 32, 116, 104, 101, 32,
+                 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -42633,7 +46352,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {1042, 2,
                <<10, 5, 85, 115, 101, 114, 115, 10, 10, 85, 115, 101, 114, 32, 72, 117, 109, 97,
                  110, 18, 26, 67, 114, 101, 97, 116, 101, 47, 73, 109, 112, 111, 114, 116, 32, 85,
-                 115, 101, 114, 32, 40, 72, 117, 109, 97, 110, 41, 26, 139, 2, 67, 114, 101, 97,
+                 115, 101, 114, 32, 40, 72, 117, 109, 97, 110, 41, 26, 192, 2, 67, 114, 101, 97,
                  116, 101, 47, 105, 109, 112, 111, 114, 116, 32, 97, 32, 110, 101, 119, 32, 117,
                  115, 101, 114, 32, 119, 105, 116, 104, 32, 116, 104, 101, 32, 116, 121, 112, 101,
                  32, 104, 117, 109, 97, 110, 46, 32, 84, 104, 101, 32, 110, 101, 119, 108, 121,
@@ -42649,20 +46368,23 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                  32, 119, 105, 108, 108, 32, 110, 111, 116, 32, 98, 101, 32, 114, 101, 113, 117,
                  101, 115, 116, 101, 100, 32, 116, 111, 32, 115, 101, 116, 32, 97, 32, 110, 101,
                  119, 32, 111, 110, 101, 32, 111, 110, 32, 116, 104, 101, 32, 102, 105, 114, 115,
-                 116, 32, 108, 111, 103, 105, 110, 46, 114, 221, 1, 10, 218, 1, 10, 15, 120, 45,
-                 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 196, 1, 84,
-                 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119,
-                 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116,
-                 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115,
-                 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117,
-                 32, 108, 105, 107, 101, 32, 116, 111, 32, 97, 100, 100, 32, 117, 115, 101, 114,
-                 115, 32, 116, 111, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97,
-                 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32,
-                 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32,
-                 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115,
-                 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 105, 110, 32, 116, 104,
-                 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 111, 114, 103, 97, 110,
-                 105, 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
+                 116, 32, 108, 111, 103, 105, 110, 46, 10, 10, 68, 101, 112, 114, 101, 99, 97,
+                 116, 101, 100, 58, 32, 112, 108, 101, 97, 115, 101, 32, 117, 115, 101, 32, 117,
+                 115, 101, 114, 32, 115, 101, 114, 118, 105, 99, 101, 32, 118, 50, 32, 65, 100,
+                 100, 72, 117, 109, 97, 110, 85, 115, 101, 114, 88, 1, 114, 221, 1, 10, 218, 1,
+                 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100,
+                 18, 196, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32,
+                 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105,
+                 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113,
+                 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32,
+                 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 97, 100, 100, 32, 117,
+                 115, 101, 114, 115, 32, 116, 111, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111,
+                 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117,
+                 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97,
+                 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32,
+                 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 105, 110,
+                 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 111, 114,
+                 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -42695,7 +46417,21 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                  100, 32, 102, 111, 114, 32, 110, 111, 110, 45, 105, 110, 116, 101, 114, 97, 99,
                  116, 105, 118, 101, 32, 97, 117, 116, 104, 101, 110, 116, 105, 99, 97, 116, 105,
                  111, 110, 32, 102, 108, 111, 119, 115, 46, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10,
-                 2, 79, 75>>}
+                 2, 79, 75, 114, 235, 1, 10, 232, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101,
+                 108, 45, 111, 114, 103, 105, 100, 18, 210, 1, 84, 104, 101, 32, 100, 101, 102,
+                 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104,
+                 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102,
+                 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117,
+                 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32,
+                 116, 111, 32, 103, 101, 116, 32, 97, 32, 117, 115, 101, 114, 32, 102, 114, 111,
+                 109, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122,
+                 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101,
+                 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114,
+                 101, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32,
+                 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105,
+                 111, 110, 32, 105, 110, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116,
+                 101, 100, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 46, 24,
+                 1>>}
             ]
           },
           client_streaming: false,
@@ -42718,7 +46454,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {50000, 2, "\n\nuser.write"},
               {1042, 2,
                <<10, 5, 85, 115, 101, 114, 115, 18, 15, 68, 101, 97, 99, 116, 105, 118, 97, 116,
-                 101, 32, 117, 115, 101, 114, 26, 178, 2, 84, 104, 101, 32, 115, 116, 97, 116,
+                 101, 32, 117, 115, 101, 114, 26, 233, 2, 84, 104, 101, 32, 115, 116, 97, 116,
                  101, 32, 111, 102, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 119, 105, 108,
                  108, 32, 98, 101, 32, 99, 104, 97, 110, 103, 101, 100, 32, 116, 111, 32, 39, 100,
                  101, 97, 99, 116, 105, 118, 97, 116, 101, 100, 39, 46, 32, 84, 104, 101, 32, 117,
@@ -42736,7 +46472,25 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                  111, 117, 110, 116, 32, 97, 110, 121, 109, 111, 114, 101, 44, 32, 98, 117, 116,
                  32, 121, 111, 117, 32, 115, 116, 105, 108, 108, 32, 110, 101, 101, 100, 32, 97,
                  99, 99, 101, 115, 115, 32, 116, 111, 32, 116, 104, 101, 32, 117, 115, 101, 114,
-                 32, 100, 97, 116, 97, 46, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75>>}
+                 32, 100, 97, 116, 97, 46, 10, 10, 68, 101, 112, 114, 101, 99, 97, 116, 101, 100,
+                 58, 32, 112, 108, 101, 97, 115, 101, 32, 117, 115, 101, 32, 117, 115, 101, 114,
+                 32, 115, 101, 114, 118, 105, 99, 101, 32, 118, 50, 32, 68, 101, 97, 99, 116, 105,
+                 118, 97, 116, 101, 85, 115, 101, 114, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2,
+                 79, 75, 88, 1, 114, 235, 1, 10, 232, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100,
+                 101, 108, 45, 111, 114, 103, 105, 100, 18, 210, 1, 84, 104, 101, 32, 100, 101,
+                 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116,
+                 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111,
+                 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32,
+                 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101,
+                 32, 116, 111, 32, 103, 101, 116, 32, 97, 32, 117, 115, 101, 114, 32, 102, 114,
+                 111, 109, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105,
+                 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104,
+                 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117,
+                 114, 101, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110,
+                 103, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115,
+                 115, 105, 111, 110, 32, 105, 110, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101,
+                 115, 116, 101, 100, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110,
+                 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -42759,7 +46513,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {50000, 2, "\n\nuser.write"},
               {1042, 2,
                <<10, 5, 85, 115, 101, 114, 115, 18, 15, 82, 101, 97, 99, 116, 105, 118, 97, 116,
-                 101, 32, 117, 115, 101, 114, 26, 173, 1, 82, 101, 97, 99, 116, 105, 118, 97, 116,
+                 101, 32, 117, 115, 101, 114, 26, 228, 1, 82, 101, 97, 99, 116, 105, 118, 97, 116,
                  101, 32, 97, 32, 117, 115, 101, 114, 32, 119, 105, 116, 104, 32, 116, 104, 101,
                  32, 115, 116, 97, 116, 101, 32, 39, 100, 101, 97, 99, 116, 105, 118, 97, 116,
                  101, 100, 39, 46, 32, 84, 104, 101, 32, 117, 115, 101, 114, 32, 119, 105, 108,
@@ -42769,8 +46523,25 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                  116, 117, 114, 110, 115, 32, 97, 110, 32, 101, 114, 114, 111, 114, 32, 105, 102,
                  32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 105, 115, 32, 110, 111, 116, 32,
                  105, 110, 32, 116, 104, 101, 32, 115, 116, 97, 116, 101, 32, 39, 100, 101, 97,
-                 99, 116, 105, 118, 97, 116, 101, 100, 39, 46, 74, 11, 10, 3, 50, 48, 48, 18, 4,
-                 10, 2, 79, 75>>}
+                 99, 116, 105, 118, 97, 116, 101, 100, 39, 46, 10, 10, 68, 101, 112, 114, 101, 99,
+                 97, 116, 101, 100, 58, 32, 112, 108, 101, 97, 115, 101, 32, 117, 115, 101, 32,
+                 117, 115, 101, 114, 32, 115, 101, 114, 118, 105, 99, 101, 32, 118, 50, 32, 82,
+                 101, 97, 99, 116, 105, 118, 97, 116, 101, 85, 115, 101, 114, 74, 11, 10, 3, 50,
+                 48, 48, 18, 4, 10, 2, 79, 75, 88, 1, 114, 235, 1, 10, 232, 1, 10, 15, 120, 45,
+                 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 210, 1, 84,
+                 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119,
+                 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116,
+                 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115,
+                 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117,
+                 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 32, 97, 32, 117, 115,
+                 101, 114, 32, 102, 114, 111, 109, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111,
+                 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117,
+                 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97,
+                 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101,
+                 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101,
+                 114, 109, 105, 115, 115, 105, 111, 110, 32, 105, 110, 32, 116, 104, 101, 32, 114,
+                 101, 113, 117, 101, 115, 116, 101, 100, 32, 111, 114, 103, 97, 110, 105, 122, 97,
+                 116, 105, 111, 110, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -42793,7 +46564,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {50000, 2, "\n\nuser.write"},
               {1042, 2,
                <<10, 5, 85, 115, 101, 114, 115, 18, 9, 76, 111, 99, 107, 32, 117, 115, 101, 114,
-                 26, 171, 2, 84, 104, 101, 32, 115, 116, 97, 116, 101, 32, 111, 102, 32, 116, 104,
+                 26, 221, 2, 84, 104, 101, 32, 115, 116, 97, 116, 101, 32, 111, 102, 32, 116, 104,
                  101, 32, 117, 115, 101, 114, 32, 119, 105, 108, 108, 32, 98, 101, 32, 99, 104,
                  97, 110, 103, 101, 100, 32, 116, 111, 32, 39, 108, 111, 99, 107, 101, 100, 39,
                  46, 32, 84, 104, 101, 32, 117, 115, 101, 114, 32, 119, 105, 108, 108, 32, 110,
@@ -42810,8 +46581,25 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                  97, 114, 105, 108, 121, 32, 98, 101, 99, 97, 117, 115, 101, 32, 111, 102, 32, 97,
                  110, 32, 101, 118, 101, 110, 116, 32, 116, 104, 97, 116, 32, 104, 97, 112, 112,
                  101, 110, 101, 100, 32, 40, 119, 114, 111, 110, 103, 32, 112, 97, 115, 115, 119,
-                 111, 114, 100, 44, 32, 101, 116, 99, 46, 41, 74, 11, 10, 3, 50, 48, 48, 18, 4,
-                 10, 2, 79, 75>>}
+                 111, 114, 100, 44, 32, 101, 116, 99, 46, 41, 44, 10, 10, 68, 101, 112, 114, 101,
+                 99, 97, 116, 101, 100, 58, 32, 112, 108, 101, 97, 115, 101, 32, 117, 115, 101,
+                 32, 117, 115, 101, 114, 32, 115, 101, 114, 118, 105, 99, 101, 32, 118, 50, 32,
+                 76, 111, 99, 107, 85, 115, 101, 114, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79,
+                 75, 88, 1, 114, 235, 1, 10, 232, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101,
+                 108, 45, 111, 114, 103, 105, 100, 18, 210, 1, 84, 104, 101, 32, 100, 101, 102,
+                 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104,
+                 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102,
+                 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117,
+                 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32,
+                 116, 111, 32, 103, 101, 116, 32, 97, 32, 117, 115, 101, 114, 32, 102, 114, 111,
+                 109, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122,
+                 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101,
+                 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114,
+                 101, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32,
+                 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105,
+                 111, 110, 32, 105, 110, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116,
+                 101, 100, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 46, 24,
+                 1>>}
             ]
           },
           client_streaming: false,
@@ -42834,7 +46622,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {50000, 2, "\n\nuser.write"},
               {1042, 2,
                <<10, 5, 85, 115, 101, 114, 115, 18, 11, 85, 110, 108, 111, 99, 107, 32, 117, 115,
-                 101, 114, 26, 159, 1, 85, 110, 108, 111, 99, 107, 32, 97, 32, 117, 115, 101, 114,
+                 101, 114, 26, 210, 1, 85, 110, 108, 111, 99, 107, 32, 97, 32, 117, 115, 101, 114,
                  32, 119, 105, 116, 104, 32, 116, 104, 101, 32, 115, 116, 97, 116, 101, 32, 39,
                  108, 111, 99, 107, 101, 100, 39, 46, 32, 84, 104, 101, 32, 117, 115, 101, 114,
                  32, 119, 105, 108, 108, 32, 98, 101, 32, 97, 98, 108, 101, 32, 116, 111, 32, 108,
@@ -42843,8 +46631,25 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                  116, 32, 114, 101, 116, 117, 114, 110, 115, 32, 97, 110, 32, 101, 114, 114, 111,
                  114, 32, 105, 102, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 105, 115, 32,
                  110, 111, 116, 32, 105, 110, 32, 116, 104, 101, 32, 115, 116, 97, 116, 101, 32,
-                 39, 108, 111, 99, 107, 101, 100, 39, 46, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2,
-                 79, 75>>}
+                 39, 108, 111, 99, 107, 101, 100, 39, 46, 10, 10, 68, 101, 112, 114, 101, 99, 97,
+                 116, 101, 100, 58, 32, 112, 108, 101, 97, 115, 101, 32, 117, 115, 101, 32, 117,
+                 115, 101, 114, 32, 115, 101, 114, 118, 105, 99, 101, 32, 118, 50, 32, 85, 110,
+                 108, 111, 99, 107, 85, 115, 101, 114, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2,
+                 79, 75, 88, 1, 114, 235, 1, 10, 232, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100,
+                 101, 108, 45, 111, 114, 103, 105, 100, 18, 210, 1, 84, 104, 101, 32, 100, 101,
+                 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116,
+                 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111,
+                 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32,
+                 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101,
+                 32, 116, 111, 32, 103, 101, 116, 32, 97, 32, 117, 115, 101, 114, 32, 102, 114,
+                 111, 109, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105,
+                 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104,
+                 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117,
+                 114, 101, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110,
+                 103, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115,
+                 115, 105, 111, 110, 32, 105, 110, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101,
+                 115, 116, 101, 100, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110,
+                 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -42865,7 +46670,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {50000, 2, "\n\vuser.delete"},
               {1042, 2,
                <<10, 5, 85, 115, 101, 114, 115, 18, 11, 68, 101, 108, 101, 116, 101, 32, 117, 115,
-                 101, 114, 26, 164, 1, 84, 104, 101, 32, 115, 116, 97, 116, 101, 32, 111, 102, 32,
+                 101, 114, 26, 216, 1, 84, 104, 101, 32, 115, 116, 97, 116, 101, 32, 111, 102, 32,
                  116, 104, 101, 32, 117, 115, 101, 114, 32, 119, 105, 108, 108, 32, 98, 101, 32,
                  99, 104, 97, 110, 103, 101, 100, 32, 116, 111, 32, 39, 100, 101, 108, 101, 116,
                  101, 100, 39, 46, 32, 84, 104, 101, 32, 117, 115, 101, 114, 32, 119, 105, 108,
@@ -42874,8 +46679,25 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                  100, 112, 111, 105, 110, 116, 115, 32, 114, 101, 113, 117, 101, 115, 116, 105,
                  110, 103, 32, 116, 104, 105, 115, 32, 117, 115, 101, 114, 32, 119, 105, 108, 108,
                  32, 114, 101, 116, 117, 114, 110, 32, 97, 110, 32, 101, 114, 114, 111, 114, 32,
-                 39, 85, 115, 101, 114, 32, 110, 111, 116, 32, 102, 111, 117, 110, 100, 74, 11,
-                 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75>>}
+                 39, 85, 115, 101, 114, 32, 110, 111, 116, 32, 102, 111, 117, 110, 100, 46, 10,
+                 10, 68, 101, 112, 114, 101, 99, 97, 116, 101, 100, 58, 32, 112, 108, 101, 97,
+                 115, 101, 32, 117, 115, 101, 32, 117, 115, 101, 114, 32, 115, 101, 114, 118, 105,
+                 99, 101, 32, 118, 50, 32, 82, 101, 109, 111, 118, 101, 85, 115, 101, 114, 74, 11,
+                 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 88, 1, 114, 235, 1, 10, 232, 1, 10, 15,
+                 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 210,
+                 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108,
+                 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97,
+                 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101,
+                 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111,
+                 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 32, 97, 32, 117,
+                 115, 101, 114, 32, 102, 114, 111, 109, 32, 97, 110, 111, 116, 104, 101, 114, 32,
+                 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108,
+                 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77,
+                 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 114, 101, 113, 117,
+                 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112,
+                 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 105, 110, 32, 116, 104, 101, 32,
+                 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 111, 114, 103, 97, 110, 105,
+                 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -42898,14 +46720,31 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {50000, 2, "\n\nuser.write"},
               {1042, 2,
                <<10, 5, 85, 115, 101, 114, 115, 18, 16, 67, 104, 97, 110, 103, 101, 32, 117, 115,
-                 101, 114, 32, 110, 97, 109, 101, 26, 110, 67, 104, 97, 110, 103, 101, 32, 116,
+                 101, 114, 32, 110, 97, 109, 101, 26, 166, 1, 67, 104, 97, 110, 103, 101, 32, 116,
                  104, 101, 32, 117, 115, 101, 114, 110, 97, 109, 101, 32, 111, 102, 32, 116, 104,
                  101, 32, 117, 115, 101, 114, 46, 32, 66, 101, 32, 97, 119, 97, 114, 101, 32, 116,
                  104, 97, 116, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32,
                  116, 111, 32, 108, 111, 103, 32, 105, 110, 32, 119, 105, 116, 104, 32, 116, 104,
                  101, 32, 110, 101, 119, 108, 121, 32, 97, 100, 100, 101, 100, 32, 117, 115, 101,
-                 114, 110, 97, 109, 101, 32, 97, 102, 116, 101, 114, 119, 97, 114, 100, 46, 74,
-                 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75>>}
+                 114, 110, 97, 109, 101, 32, 97, 102, 116, 101, 114, 119, 97, 114, 100, 46, 10,
+                 10, 68, 101, 112, 114, 101, 99, 97, 116, 101, 100, 58, 32, 112, 108, 101, 97,
+                 115, 101, 32, 117, 115, 101, 32, 117, 115, 101, 114, 32, 115, 101, 114, 118, 105,
+                 99, 101, 32, 118, 50, 32, 85, 112, 100, 97, 116, 101, 72, 117, 109, 97, 110, 85,
+                 115, 101, 114, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 88, 1, 114, 235,
+                 1, 10, 232, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114,
+                 103, 105, 100, 18, 210, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116,
+                 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114,
+                 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101,
+                 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46,
+                 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103,
+                 101, 116, 32, 97, 32, 117, 115, 101, 114, 32, 102, 114, 111, 109, 32, 97, 110,
+                 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111,
+                 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97,
+                 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104,
+                 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101,
+                 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32,
+                 105, 110, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32,
+                 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -43177,25 +47016,29 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {1042, 2,
                <<10, 5, 85, 115, 101, 114, 115, 10, 10, 85, 115, 101, 114, 32, 72, 117, 109, 97,
                  110, 18, 24, 71, 101, 116, 32, 85, 115, 101, 114, 32, 80, 114, 111, 102, 105,
-                 108, 101, 32, 40, 72, 117, 109, 97, 110, 41, 26, 62, 71, 101, 116, 32, 98, 97,
+                 108, 101, 32, 40, 72, 117, 109, 97, 110, 41, 26, 114, 71, 101, 116, 32, 98, 97,
                  115, 105, 99, 32, 105, 110, 102, 111, 114, 109, 97, 116, 105, 111, 110, 32, 108,
                  105, 107, 101, 32, 102, 105, 114, 115, 116, 95, 110, 97, 109, 101, 32, 97, 110,
                  100, 32, 108, 97, 115, 116, 95, 110, 97, 109, 101, 32, 111, 102, 32, 97, 32, 117,
-                 115, 101, 114, 46, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 114, 238, 1,
-                 10, 235, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103,
-                 105, 100, 18, 213, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32,
-                 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103,
-                 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32,
-                 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32,
-                 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 117, 112,
-                 100, 97, 116, 101, 32, 97, 32, 117, 115, 101, 114, 32, 102, 114, 111, 109, 32,
-                 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116,
-                 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104,
-                 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32,
-                 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117,
-                 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111,
-                 110, 32, 105, 110, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
-                 100, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
+                 115, 101, 114, 46, 10, 10, 68, 101, 112, 114, 101, 99, 97, 116, 101, 100, 58, 32,
+                 112, 108, 101, 97, 115, 101, 32, 117, 115, 101, 32, 117, 115, 101, 114, 32, 115,
+                 101, 114, 118, 105, 99, 101, 32, 118, 50, 32, 71, 101, 116, 85, 115, 101, 114,
+                 66, 121, 73, 68, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 88, 1, 114,
+                 238, 1, 10, 235, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111,
+                 114, 103, 105, 100, 18, 213, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108,
+                 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111,
+                 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104,
+                 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101,
+                 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111,
+                 32, 117, 112, 100, 97, 116, 101, 32, 97, 32, 117, 115, 101, 114, 32, 102, 114,
+                 111, 109, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105,
+                 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104,
+                 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117,
+                 114, 101, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110,
+                 103, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115,
+                 115, 105, 111, 110, 32, 105, 110, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101,
+                 115, 116, 101, 100, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110,
+                 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -43219,29 +47062,32 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {1042, 2,
                <<10, 5, 85, 115, 101, 114, 115, 10, 10, 85, 115, 101, 114, 32, 72, 117, 109, 97,
                  110, 18, 27, 85, 112, 100, 97, 116, 101, 32, 85, 115, 101, 114, 32, 80, 114, 111,
-                 102, 105, 108, 101, 32, 40, 72, 117, 109, 97, 110, 41, 26, 113, 85, 112, 100, 97,
-                 116, 101, 32, 116, 104, 101, 32, 112, 114, 111, 102, 105, 108, 101, 32, 105, 110,
-                 102, 111, 114, 109, 97, 116, 105, 111, 110, 32, 102, 114, 111, 109, 32, 97, 32,
-                 117, 115, 101, 114, 46, 32, 84, 104, 101, 32, 112, 114, 111, 102, 105, 108, 101,
-                 32, 105, 110, 99, 108, 117, 100, 101, 115, 32, 98, 97, 115, 105, 99, 32, 105,
-                 110, 102, 111, 114, 109, 97, 116, 105, 111, 110, 32, 108, 105, 107, 101, 32, 102,
-                 105, 114, 115, 116, 95, 110, 97, 109, 101, 32, 97, 110, 100, 32, 108, 97, 115,
-                 116, 95, 110, 97, 109, 101, 46, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75,
-                 114, 238, 1, 10, 235, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45,
-                 111, 114, 103, 105, 100, 18, 213, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117,
-                 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32,
-                 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116,
-                 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115,
-                 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116,
-                 111, 32, 117, 112, 100, 97, 116, 101, 32, 97, 32, 117, 115, 101, 114, 32, 102,
-                 114, 111, 109, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110,
-                 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116,
-                 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115,
-                 117, 114, 101, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105,
-                 110, 103, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105,
-                 115, 115, 105, 111, 110, 32, 105, 110, 32, 116, 104, 101, 32, 114, 101, 113, 117,
-                 101, 115, 116, 101, 100, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111,
-                 110, 46, 24, 1>>}
+                 102, 105, 108, 101, 32, 40, 72, 117, 109, 97, 110, 41, 26, 169, 1, 85, 112, 100,
+                 97, 116, 101, 32, 116, 104, 101, 32, 112, 114, 111, 102, 105, 108, 101, 32, 105,
+                 110, 102, 111, 114, 109, 97, 116, 105, 111, 110, 32, 102, 114, 111, 109, 32, 97,
+                 32, 117, 115, 101, 114, 46, 32, 84, 104, 101, 32, 112, 114, 111, 102, 105, 108,
+                 101, 32, 105, 110, 99, 108, 117, 100, 101, 115, 32, 98, 97, 115, 105, 99, 32,
+                 105, 110, 102, 111, 114, 109, 97, 116, 105, 111, 110, 32, 108, 105, 107, 101, 32,
+                 102, 105, 114, 115, 116, 95, 110, 97, 109, 101, 32, 97, 110, 100, 32, 108, 97,
+                 115, 116, 95, 110, 97, 109, 101, 46, 10, 10, 68, 101, 112, 114, 101, 99, 97, 116,
+                 101, 100, 58, 32, 112, 108, 101, 97, 115, 101, 32, 117, 115, 101, 32, 117, 115,
+                 101, 114, 32, 115, 101, 114, 118, 105, 99, 101, 32, 118, 50, 32, 85, 112, 100,
+                 97, 116, 101, 72, 117, 109, 97, 110, 85, 115, 101, 114, 74, 11, 10, 3, 50, 48,
+                 48, 18, 4, 10, 2, 79, 75, 88, 1, 114, 238, 1, 10, 235, 1, 10, 15, 120, 45, 122,
+                 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 213, 1, 84, 104,
+                 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97,
+                 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105,
+                 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116,
+                 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32,
+                 108, 105, 107, 101, 32, 116, 111, 32, 117, 112, 100, 97, 116, 101, 32, 97, 32,
+                 117, 115, 101, 114, 32, 102, 114, 111, 109, 32, 97, 110, 111, 116, 104, 101, 114,
+                 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99,
+                 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32,
+                 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 114, 101, 113,
+                 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32,
+                 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 105, 110, 32, 116, 104,
+                 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 111, 114, 103, 97, 110,
+                 105, 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -43265,25 +47111,28 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {1042, 2,
                <<10, 5, 85, 115, 101, 114, 115, 10, 10, 85, 115, 101, 114, 32, 72, 117, 109, 97,
                  110, 18, 22, 71, 101, 116, 32, 85, 115, 101, 114, 32, 69, 109, 97, 105, 108, 32,
-                 40, 72, 117, 109, 97, 110, 41, 26, 64, 71, 101, 116, 32, 116, 104, 101, 32, 101,
+                 40, 72, 117, 109, 97, 110, 41, 26, 116, 71, 101, 116, 32, 116, 104, 101, 32, 101,
                  109, 97, 105, 108, 32, 97, 100, 100, 114, 101, 115, 115, 32, 97, 110, 100, 32,
                  116, 104, 101, 32, 118, 101, 114, 105, 102, 105, 99, 97, 116, 105, 111, 110, 32,
                  115, 116, 97, 116, 101, 32, 111, 102, 32, 116, 104, 101, 32, 97, 100, 100, 114,
-                 101, 115, 115, 46, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 114, 235, 1,
-                 10, 232, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103,
-                 105, 100, 18, 210, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32,
-                 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103,
-                 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32,
-                 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32,
-                 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101,
-                 116, 32, 97, 32, 117, 115, 101, 114, 32, 102, 114, 111, 109, 32, 97, 110, 111,
-                 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110,
-                 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100,
-                 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101,
-                 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 32,
-                 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 105, 110,
-                 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 111, 114,
-                 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
+                 101, 115, 115, 46, 10, 10, 68, 101, 112, 114, 101, 99, 97, 116, 101, 100, 58, 32,
+                 112, 108, 101, 97, 115, 101, 32, 117, 115, 101, 32, 117, 115, 101, 114, 32, 115,
+                 101, 114, 118, 105, 99, 101, 32, 118, 50, 32, 71, 101, 116, 85, 115, 101, 114,
+                 66, 121, 73, 68, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 88, 1, 114,
+                 235, 1, 10, 232, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111,
+                 114, 103, 105, 100, 18, 210, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108,
+                 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111,
+                 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104,
+                 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101,
+                 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111,
+                 32, 103, 101, 116, 32, 97, 32, 117, 115, 101, 114, 32, 102, 114, 111, 109, 32,
+                 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116,
+                 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104,
+                 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32,
+                 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117,
+                 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111,
+                 110, 32, 105, 110, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
+                 100, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -43307,14 +47156,17 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {1042, 2,
                <<10, 5, 85, 115, 101, 114, 115, 10, 10, 85, 115, 101, 114, 32, 72, 117, 109, 97,
                  110, 18, 25, 85, 112, 100, 97, 116, 101, 32, 85, 115, 101, 114, 32, 69, 109, 97,
-                 105, 108, 32, 40, 72, 117, 109, 97, 110, 41, 26, 112, 67, 104, 97, 110, 103, 101,
-                 32, 116, 104, 101, 32, 101, 109, 97, 105, 108, 32, 97, 100, 100, 114, 101, 115,
-                 115, 32, 111, 102, 32, 97, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 116, 104,
-                 101, 32, 115, 116, 97, 116, 101, 32, 105, 115, 32, 115, 101, 116, 32, 116, 111,
-                 32, 110, 111, 116, 32, 118, 101, 114, 105, 102, 105, 101, 100, 44, 32, 116, 104,
-                 101, 32, 117, 115, 101, 114, 32, 119, 105, 108, 108, 32, 103, 101, 116, 32, 97,
-                 32, 118, 101, 114, 105, 102, 105, 99, 97, 116, 105, 111, 110, 32, 101, 109, 97,
-                 105, 108, 46, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 114, 238, 1, 10,
+                 105, 108, 32, 40, 72, 117, 109, 97, 110, 41, 26, 161, 1, 67, 104, 97, 110, 103,
+                 101, 32, 116, 104, 101, 32, 101, 109, 97, 105, 108, 32, 97, 100, 100, 114, 101,
+                 115, 115, 32, 111, 102, 32, 97, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 116,
+                 104, 101, 32, 115, 116, 97, 116, 101, 32, 105, 115, 32, 115, 101, 116, 32, 116,
+                 111, 32, 110, 111, 116, 32, 118, 101, 114, 105, 102, 105, 101, 100, 44, 32, 116,
+                 104, 101, 32, 117, 115, 101, 114, 32, 119, 105, 108, 108, 32, 103, 101, 116, 32,
+                 97, 32, 118, 101, 114, 105, 102, 105, 99, 97, 116, 105, 111, 110, 32, 101, 109,
+                 97, 105, 108, 46, 10, 10, 68, 101, 112, 114, 101, 99, 97, 116, 101, 100, 58, 32,
+                 112, 108, 101, 97, 115, 101, 32, 117, 115, 101, 32, 117, 115, 101, 114, 32, 115,
+                 101, 114, 118, 105, 99, 101, 32, 118, 50, 32, 83, 101, 116, 69, 109, 97, 105,
+                 108, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 88, 1, 114, 238, 1, 10,
                  235, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103,
                  105, 100, 18, 213, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32,
                  105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103,
@@ -43354,7 +47206,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<10, 5, 85, 115, 101, 114, 115, 10, 10, 85, 115, 101, 114, 32, 72, 117, 109, 97,
                  110, 18, 32, 82, 101, 115, 101, 110, 100, 32, 85, 115, 101, 114, 32, 73, 110,
                  105, 116, 105, 97, 108, 105, 122, 97, 116, 105, 111, 110, 32, 69, 109, 97, 105,
-                 108, 26, 191, 1, 65, 32, 110, 101, 119, 108, 121, 32, 99, 114, 101, 97, 116, 101,
+                 108, 26, 235, 1, 65, 32, 110, 101, 119, 108, 121, 32, 99, 114, 101, 97, 116, 101,
                  100, 32, 117, 115, 101, 114, 32, 119, 105, 108, 108, 32, 103, 101, 116, 32, 97,
                  110, 32, 105, 110, 105, 116, 105, 97, 108, 105, 122, 97, 116, 105, 111, 110, 32,
                  101, 109, 97, 105, 108, 32, 116, 111, 32, 118, 101, 114, 105, 102, 121, 32, 116,
@@ -43365,22 +47217,24 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                  101, 115, 116, 32, 116, 111, 32, 116, 104, 101, 32, 117, 115, 101, 114, 39, 115,
                  32, 101, 109, 97, 105, 108, 32, 97, 100, 100, 114, 101, 115, 115, 44, 32, 111,
                  114, 32, 97, 32, 110, 101, 119, 108, 121, 32, 97, 100, 100, 101, 100, 32, 97,
-                 100, 100, 114, 101, 115, 115, 46, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79,
-                 75, 114, 238, 1, 10, 235, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108,
-                 45, 111, 114, 103, 105, 100, 18, 213, 1, 84, 104, 101, 32, 100, 101, 102, 97,
-                 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101,
-                 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32,
-                 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117,
-                 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32,
-                 116, 111, 32, 117, 112, 100, 97, 116, 101, 32, 97, 32, 117, 115, 101, 114, 32,
-                 102, 114, 111, 109, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97,
-                 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32,
-                 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32,
-                 115, 117, 114, 101, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116,
-                 105, 110, 103, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109,
-                 105, 115, 115, 105, 111, 110, 32, 105, 110, 32, 116, 104, 101, 32, 114, 101, 113,
-                 117, 101, 115, 116, 101, 100, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105,
-                 111, 110, 46, 24, 1>>}
+                 100, 100, 114, 101, 115, 115, 46, 10, 10, 68, 101, 112, 114, 101, 99, 97, 116,
+                 101, 100, 58, 32, 110, 111, 116, 32, 117, 115, 101, 100, 32, 97, 110, 121, 109,
+                 111, 114, 101, 32, 105, 110, 32, 117, 115, 101, 114, 32, 115, 116, 97, 116, 101,
+                 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 88, 1, 114, 238, 1, 10, 235, 1,
+                 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100,
+                 18, 213, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32,
+                 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105,
+                 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113,
+                 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32,
+                 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 117, 112, 100, 97, 116,
+                 101, 32, 97, 32, 117, 115, 101, 114, 32, 102, 114, 111, 109, 32, 97, 110, 111,
+                 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110,
+                 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100,
+                 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101,
+                 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 32,
+                 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 105, 110,
+                 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 111, 114,
+                 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -43405,27 +47259,30 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {1042, 2,
                <<10, 5, 85, 115, 101, 114, 115, 10, 10, 85, 115, 101, 114, 32, 72, 117, 109, 97,
                  110, 18, 30, 82, 101, 115, 101, 110, 100, 32, 85, 115, 101, 114, 32, 69, 109, 97,
-                 105, 108, 32, 86, 101, 114, 105, 102, 105, 99, 97, 116, 105, 111, 110, 26, 82,
-                 82, 101, 115, 101, 110, 100, 32, 116, 104, 101, 32, 101, 109, 97, 105, 108, 32,
-                 118, 101, 114, 105, 102, 105, 99, 97, 116, 105, 111, 110, 32, 110, 111, 116, 105,
-                 102, 105, 99, 97, 116, 105, 111, 110, 32, 116, 111, 32, 116, 104, 101, 32, 103,
-                 105, 118, 101, 110, 32, 101, 109, 97, 105, 108, 32, 97, 100, 100, 114, 101, 115,
-                 115, 32, 111, 102, 32, 116, 104, 101, 32, 117, 115, 101, 114, 46, 74, 11, 10, 3,
-                 50, 48, 48, 18, 4, 10, 2, 79, 75, 114, 238, 1, 10, 235, 1, 10, 15, 120, 45, 122,
-                 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 213, 1, 84, 104,
-                 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97,
-                 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105,
-                 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116,
-                 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32,
-                 108, 105, 107, 101, 32, 116, 111, 32, 117, 112, 100, 97, 116, 101, 32, 97, 32,
-                 117, 115, 101, 114, 32, 102, 114, 111, 109, 32, 97, 110, 111, 116, 104, 101, 114,
-                 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99,
-                 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32,
-                 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 114, 101, 113,
-                 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32,
-                 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 105, 110, 32, 116, 104,
-                 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 111, 114, 103, 97, 110,
-                 105, 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
+                 105, 108, 32, 86, 101, 114, 105, 102, 105, 99, 97, 116, 105, 111, 110, 26, 138,
+                 1, 82, 101, 115, 101, 110, 100, 32, 116, 104, 101, 32, 101, 109, 97, 105, 108,
+                 32, 118, 101, 114, 105, 102, 105, 99, 97, 116, 105, 111, 110, 32, 110, 111, 116,
+                 105, 102, 105, 99, 97, 116, 105, 111, 110, 32, 116, 111, 32, 116, 104, 101, 32,
+                 103, 105, 118, 101, 110, 32, 101, 109, 97, 105, 108, 32, 97, 100, 100, 114, 101,
+                 115, 115, 32, 111, 102, 32, 116, 104, 101, 32, 117, 115, 101, 114, 46, 10, 10,
+                 68, 101, 112, 114, 101, 99, 97, 116, 101, 100, 58, 32, 112, 108, 101, 97, 115,
+                 101, 32, 117, 115, 101, 32, 117, 115, 101, 114, 32, 115, 101, 114, 118, 105, 99,
+                 101, 32, 118, 50, 32, 82, 101, 115, 101, 110, 100, 69, 109, 97, 105, 108, 67,
+                 111, 100, 101, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 88, 1, 114, 238,
+                 1, 10, 235, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114,
+                 103, 105, 100, 18, 213, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116,
+                 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114,
+                 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101,
+                 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46,
+                 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 117,
+                 112, 100, 97, 116, 101, 32, 97, 32, 117, 115, 101, 114, 32, 102, 114, 111, 109,
+                 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97,
+                 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32,
+                 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101,
+                 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117,
+                 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111,
+                 110, 32, 105, 110, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
+                 100, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -43449,7 +47306,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {1042, 2,
                <<10, 5, 85, 115, 101, 114, 115, 10, 10, 85, 115, 101, 114, 32, 72, 117, 109, 97,
                  110, 18, 22, 71, 101, 116, 32, 85, 115, 101, 114, 32, 80, 104, 111, 110, 101, 32,
-                 40, 72, 117, 109, 97, 110, 41, 26, 166, 1, 71, 101, 116, 32, 116, 104, 101, 32,
+                 40, 72, 117, 109, 97, 110, 41, 26, 218, 1, 71, 101, 116, 32, 116, 104, 101, 32,
                  112, 104, 111, 110, 101, 32, 110, 117, 109, 98, 101, 114, 32, 97, 110, 100, 32,
                  116, 104, 101, 32, 118, 101, 114, 105, 102, 105, 99, 97, 116, 105, 111, 110, 32,
                  115, 116, 97, 116, 101, 32, 111, 102, 32, 116, 104, 101, 32, 110, 117, 109, 98,
@@ -43459,21 +47316,24 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                  111, 115, 101, 115, 32, 97, 110, 100, 32, 116, 111, 32, 115, 101, 110, 100, 32,
                  109, 101, 115, 115, 97, 103, 101, 115, 44, 32, 110, 111, 116, 32, 102, 111, 114,
                  32, 65, 117, 116, 104, 101, 110, 116, 105, 99, 97, 116, 105, 111, 110, 32, 40,
-                 50, 70, 65, 41, 46, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 114, 235, 1,
-                 10, 232, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103,
-                 105, 100, 18, 210, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32,
-                 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103,
-                 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32,
-                 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32,
-                 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101,
-                 116, 32, 97, 32, 117, 115, 101, 114, 32, 102, 114, 111, 109, 32, 97, 110, 111,
-                 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110,
-                 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100,
-                 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101,
-                 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 32,
-                 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 105, 110,
-                 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 111, 114,
-                 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
+                 50, 70, 65, 41, 46, 10, 10, 68, 101, 112, 114, 101, 99, 97, 116, 101, 100, 58,
+                 32, 112, 108, 101, 97, 115, 101, 32, 117, 115, 101, 32, 117, 115, 101, 114, 32,
+                 115, 101, 114, 118, 105, 99, 101, 32, 118, 50, 32, 71, 101, 116, 85, 115, 101,
+                 114, 66, 121, 73, 68, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 88, 1,
+                 114, 235, 1, 10, 232, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45,
+                 111, 114, 103, 105, 100, 18, 210, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117,
+                 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32,
+                 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116,
+                 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115,
+                 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116,
+                 111, 32, 103, 101, 116, 32, 97, 32, 117, 115, 101, 114, 32, 102, 114, 111, 109,
+                 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97,
+                 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32,
+                 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101,
+                 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117,
+                 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111,
+                 110, 32, 105, 110, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
+                 100, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -43497,7 +47357,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {1042, 2,
                <<10, 5, 85, 115, 101, 114, 115, 10, 10, 85, 115, 101, 114, 32, 72, 117, 109, 97,
                  110, 18, 25, 85, 112, 100, 97, 116, 101, 32, 85, 115, 101, 114, 32, 80, 104, 111,
-                 110, 101, 32, 40, 72, 117, 109, 97, 110, 41, 26, 254, 1, 67, 104, 97, 110, 103,
+                 110, 101, 32, 40, 72, 117, 109, 97, 110, 41, 26, 175, 2, 67, 104, 97, 110, 103,
                  101, 32, 116, 104, 101, 32, 112, 104, 111, 110, 101, 32, 110, 117, 109, 98, 101,
                  114, 32, 111, 102, 32, 97, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 116, 104,
                  101, 32, 115, 116, 97, 116, 101, 32, 105, 115, 32, 115, 101, 116, 32, 116, 111,
@@ -43512,12 +47372,15 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                  112, 117, 114, 112, 111, 115, 101, 115, 32, 97, 110, 100, 32, 116, 111, 32, 115,
                  101, 110, 100, 32, 109, 101, 115, 115, 97, 103, 101, 115, 44, 32, 110, 111, 116,
                  32, 102, 111, 114, 32, 65, 117, 116, 104, 101, 110, 116, 105, 99, 97, 116, 105,
-                 111, 110, 32, 40, 50, 70, 65, 41, 46, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2,
-                 79, 75, 114, 238, 1, 10, 235, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101,
-                 108, 45, 111, 114, 103, 105, 100, 18, 213, 1, 84, 104, 101, 32, 100, 101, 102,
-                 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104,
-                 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102,
-                 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117,
+                 111, 110, 32, 40, 50, 70, 65, 41, 46, 10, 10, 68, 101, 112, 114, 101, 99, 97,
+                 116, 101, 100, 58, 32, 112, 108, 101, 97, 115, 101, 32, 117, 115, 101, 32, 117,
+                 115, 101, 114, 32, 115, 101, 114, 118, 105, 99, 101, 32, 118, 50, 32, 83, 101,
+                 116, 80, 104, 111, 110, 101, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 88,
+                 1, 114, 238, 1, 10, 235, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108,
+                 45, 111, 114, 103, 105, 100, 18, 213, 1, 84, 104, 101, 32, 100, 101, 102, 97,
+                 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101,
+                 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32,
+                 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117,
                  115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32,
                  116, 111, 32, 117, 112, 100, 97, 116, 101, 32, 97, 32, 117, 115, 101, 114, 32,
                  102, 114, 111, 109, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97,
@@ -43551,10 +47414,13 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {1042, 2,
                <<10, 5, 85, 115, 101, 114, 115, 10, 10, 85, 115, 101, 114, 32, 72, 117, 109, 97,
                  110, 18, 25, 82, 101, 109, 111, 118, 101, 32, 85, 115, 101, 114, 32, 80, 104,
-                 111, 110, 101, 32, 40, 72, 117, 109, 97, 110, 41, 26, 45, 82, 101, 109, 111, 118,
+                 111, 110, 101, 32, 40, 72, 117, 109, 97, 110, 41, 26, 94, 82, 101, 109, 111, 118,
                  101, 32, 116, 104, 101, 32, 99, 111, 110, 102, 105, 103, 117, 114, 101, 100, 32,
                  112, 104, 111, 110, 101, 32, 110, 117, 109, 98, 101, 114, 32, 111, 102, 32, 97,
-                 32, 117, 115, 101, 114, 46, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 114,
+                 32, 117, 115, 101, 114, 46, 10, 10, 68, 101, 112, 114, 101, 99, 97, 116, 101,
+                 100, 58, 32, 112, 108, 101, 97, 115, 101, 32, 117, 115, 101, 32, 117, 115, 101,
+                 114, 32, 115, 101, 114, 118, 105, 99, 101, 32, 118, 50, 32, 83, 101, 116, 80,
+                 104, 111, 110, 101, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 88, 1, 114,
                  238, 1, 10, 235, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111,
                  114, 103, 105, 100, 18, 213, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108,
                  116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111,
@@ -43595,27 +47461,31 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<10, 5, 85, 115, 101, 114, 115, 10, 10, 85, 115, 101, 114, 32, 72, 117, 109, 97,
                  110, 18, 30, 82, 101, 115, 101, 110, 100, 32, 85, 115, 101, 114, 32, 80, 104,
                  111, 110, 101, 32, 86, 101, 114, 105, 102, 105, 99, 97, 116, 105, 111, 110, 26,
-                 99, 82, 101, 115, 101, 110, 100, 32, 116, 104, 101, 32, 110, 111, 116, 105, 102,
-                 105, 99, 97, 116, 105, 111, 110, 32, 102, 111, 114, 32, 116, 104, 101, 32, 118,
-                 101, 114, 105, 102, 105, 99, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104,
-                 101, 32, 112, 104, 111, 110, 101, 32, 110, 117, 109, 98, 101, 114, 44, 32, 116,
-                 111, 32, 116, 104, 101, 32, 110, 117, 109, 98, 101, 114, 32, 115, 116, 111, 114,
-                 101, 100, 32, 111, 110, 32, 116, 104, 101, 32, 117, 115, 101, 114, 46, 74, 11,
-                 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 114, 238, 1, 10, 235, 1, 10, 15, 120,
-                 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 213, 1,
-                 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108,
-                 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97,
-                 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101,
-                 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111,
-                 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 117, 112, 100, 97, 116, 101, 32,
-                 97, 32, 117, 115, 101, 114, 32, 102, 114, 111, 109, 32, 97, 110, 111, 116, 104,
-                 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105,
-                 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114,
-                 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 114,
-                 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 32, 104, 97,
-                 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 105, 110, 32, 116,
-                 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 111, 114, 103, 97,
-                 110, 105, 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
+                 155, 1, 82, 101, 115, 101, 110, 100, 32, 116, 104, 101, 32, 110, 111, 116, 105,
+                 102, 105, 99, 97, 116, 105, 111, 110, 32, 102, 111, 114, 32, 116, 104, 101, 32,
+                 118, 101, 114, 105, 102, 105, 99, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116,
+                 104, 101, 32, 112, 104, 111, 110, 101, 32, 110, 117, 109, 98, 101, 114, 44, 32,
+                 116, 111, 32, 116, 104, 101, 32, 110, 117, 109, 98, 101, 114, 32, 115, 116, 111,
+                 114, 101, 100, 32, 111, 110, 32, 116, 104, 101, 32, 117, 115, 101, 114, 46, 10,
+                 10, 68, 101, 112, 114, 101, 99, 97, 116, 101, 100, 58, 32, 112, 108, 101, 97,
+                 115, 101, 32, 117, 115, 101, 32, 117, 115, 101, 114, 32, 115, 101, 114, 118, 105,
+                 99, 101, 32, 118, 50, 32, 82, 101, 115, 101, 110, 100, 80, 104, 111, 110, 101,
+                 67, 111, 100, 101, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 88, 1, 114,
+                 238, 1, 10, 235, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111,
+                 114, 103, 105, 100, 18, 213, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108,
+                 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111,
+                 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104,
+                 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101,
+                 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111,
+                 32, 117, 112, 100, 97, 116, 101, 32, 97, 32, 117, 115, 101, 114, 32, 102, 114,
+                 111, 109, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105,
+                 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104,
+                 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117,
+                 114, 101, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110,
+                 103, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115,
+                 115, 105, 111, 110, 32, 105, 110, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101,
+                 115, 116, 101, 100, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110,
+                 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -43681,8 +47551,25 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {50000, 2, "\n\nuser.write"},
               {1042, 2,
                <<10, 5, 85, 115, 101, 114, 115, 10, 10, 85, 115, 101, 114, 32, 72, 117, 109, 97,
-                 110, 18, 26, 83, 101, 116, 32, 72, 117, 109, 97, 110, 32, 73, 110, 105, 116, 105,
-                 97, 108, 32, 80, 97, 115, 115, 119, 111, 114, 100, 88, 1>>}
+                 110, 18, 78, 83, 101, 116, 32, 72, 117, 109, 97, 110, 32, 73, 110, 105, 116, 105,
+                 97, 108, 32, 80, 97, 115, 115, 119, 111, 114, 100, 10, 10, 68, 101, 112, 114,
+                 101, 99, 97, 116, 101, 100, 58, 32, 112, 108, 101, 97, 115, 101, 32, 117, 115,
+                 101, 32, 117, 115, 101, 114, 32, 115, 101, 114, 118, 105, 99, 101, 32, 118, 50,
+                 32, 83, 101, 116, 80, 97, 115, 115, 119, 111, 114, 100, 88, 1, 114, 227, 1, 10,
+                 224, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103,
+                 105, 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32,
+                 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103,
+                 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32,
+                 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32,
+                 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101,
+                 116, 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117, 108, 116, 32, 111, 102,
+                 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97,
+                 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32,
+                 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101,
+                 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114,
+                 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99, 99, 101, 115, 115,
+                 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 100, 97,
+                 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -43706,7 +47593,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {1042, 2,
                <<10, 5, 85, 115, 101, 114, 115, 10, 10, 85, 115, 101, 114, 32, 72, 117, 109, 97,
                  110, 18, 17, 83, 101, 116, 32, 85, 115, 101, 114, 32, 80, 97, 115, 115, 119, 111,
-                 114, 100, 26, 177, 1, 83, 101, 116, 32, 97, 32, 110, 101, 119, 32, 112, 97, 115,
+                 114, 100, 26, 229, 1, 83, 101, 116, 32, 97, 32, 110, 101, 119, 32, 112, 97, 115,
                  115, 119, 111, 114, 100, 32, 102, 111, 114, 32, 97, 32, 117, 115, 101, 114, 46,
                  32, 80, 101, 114, 32, 100, 101, 102, 97, 117, 108, 116, 44, 32, 116, 104, 101,
                  32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 116, 111, 32, 99, 104, 97, 110,
@@ -43716,22 +47603,25 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                  97, 110, 103, 101, 95, 114, 101, 113, 117, 105, 114, 101, 100, 32, 116, 111, 32,
                  116, 114, 117, 101, 44, 32, 116, 111, 32, 97, 118, 111, 105, 100, 32, 116, 104,
                  101, 32, 99, 104, 97, 110, 103, 101, 32, 111, 110, 32, 116, 104, 101, 32, 110,
-                 101, 120, 116, 32, 108, 111, 103, 105, 110, 46, 74, 11, 10, 3, 50, 48, 48, 18, 4,
-                 10, 2, 79, 75, 114, 238, 1, 10, 235, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100,
-                 101, 108, 45, 111, 114, 103, 105, 100, 18, 213, 1, 84, 104, 101, 32, 100, 101,
-                 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116,
-                 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111,
-                 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32,
-                 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101,
-                 32, 116, 111, 32, 117, 112, 100, 97, 116, 101, 32, 97, 32, 117, 115, 101, 114,
-                 32, 102, 114, 111, 109, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103,
-                 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101,
-                 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32,
-                 115, 117, 114, 101, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116,
-                 105, 110, 103, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109,
-                 105, 115, 115, 105, 111, 110, 32, 105, 110, 32, 116, 104, 101, 32, 114, 101, 113,
-                 117, 101, 115, 116, 101, 100, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105,
-                 111, 110, 46, 24, 1>>}
+                 101, 120, 116, 32, 108, 111, 103, 105, 110, 46, 10, 10, 68, 101, 112, 114, 101,
+                 99, 97, 116, 101, 100, 58, 32, 112, 108, 101, 97, 115, 101, 32, 117, 115, 101,
+                 32, 117, 115, 101, 114, 32, 115, 101, 114, 118, 105, 99, 101, 32, 118, 50, 32,
+                 83, 101, 116, 80, 97, 115, 115, 119, 111, 114, 100, 74, 11, 10, 3, 50, 48, 48,
+                 18, 4, 10, 2, 79, 75, 88, 1, 114, 238, 1, 10, 235, 1, 10, 15, 120, 45, 122, 105,
+                 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 213, 1, 84, 104, 101,
+                 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121,
+                 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111,
+                 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105,
+                 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108,
+                 105, 107, 101, 32, 116, 111, 32, 117, 112, 100, 97, 116, 101, 32, 97, 32, 117,
+                 115, 101, 114, 32, 102, 114, 111, 109, 32, 97, 110, 111, 116, 104, 101, 114, 32,
+                 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108,
+                 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77,
+                 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 114, 101, 113, 117,
+                 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112,
+                 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 105, 110, 32, 116, 104, 101, 32,
+                 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 111, 114, 103, 97, 110, 105,
+                 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -43757,25 +47647,28 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<10, 5, 85, 115, 101, 114, 115, 10, 10, 85, 115, 101, 114, 32, 72, 117, 109, 97,
                  110, 18, 32, 83, 101, 110, 100, 32, 82, 101, 115, 101, 116, 32, 80, 97, 115, 115,
                  119, 111, 114, 100, 32, 78, 111, 116, 105, 102, 105, 99, 97, 116, 105, 111, 110,
-                 26, 66, 84, 104, 101, 32, 117, 115, 101, 114, 32, 119, 105, 108, 108, 32, 114,
+                 26, 120, 84, 104, 101, 32, 117, 115, 101, 114, 32, 119, 105, 108, 108, 32, 114,
                  101, 99, 101, 105, 118, 101, 32, 97, 110, 32, 101, 109, 97, 105, 108, 32, 119,
                  105, 116, 104, 32, 97, 32, 108, 105, 110, 107, 32, 116, 111, 32, 99, 104, 97,
                  110, 103, 101, 32, 116, 104, 101, 32, 112, 97, 115, 115, 119, 111, 114, 100, 46,
-                 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 114, 238, 1, 10, 235, 1, 10, 15,
-                 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 213,
-                 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108,
-                 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97,
-                 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101,
-                 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111,
-                 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 117, 112, 100, 97, 116, 101, 32,
-                 97, 32, 117, 115, 101, 114, 32, 102, 114, 111, 109, 32, 97, 110, 111, 116, 104,
-                 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105,
-                 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114,
-                 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 114,
-                 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 32, 104, 97,
-                 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 105, 110, 32, 116,
-                 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 111, 114, 103, 97,
-                 110, 105, 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
+                 10, 10, 68, 101, 112, 114, 101, 99, 97, 116, 101, 100, 58, 32, 112, 108, 101, 97,
+                 115, 101, 32, 117, 115, 101, 32, 117, 115, 101, 114, 32, 115, 101, 114, 118, 105,
+                 99, 101, 32, 118, 50, 32, 80, 97, 115, 115, 119, 111, 114, 100, 82, 101, 115,
+                 101, 116, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 88, 1, 114, 238, 1,
+                 10, 235, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103,
+                 105, 100, 18, 213, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32,
+                 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103,
+                 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32,
+                 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32,
+                 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 117, 112,
+                 100, 97, 116, 101, 32, 97, 32, 117, 115, 101, 114, 32, 102, 114, 111, 109, 32,
+                 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116,
+                 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104,
+                 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32,
+                 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117,
+                 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111,
+                 110, 32, 105, 110, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
+                 100, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -43798,28 +47691,32 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<10, 5, 85, 115, 101, 114, 115, 10, 10, 85, 115, 101, 114, 32, 72, 117, 109, 97,
                  110, 18, 41, 71, 101, 116, 32, 85, 115, 101, 114, 32, 65, 117, 116, 104, 101,
                  110, 116, 105, 99, 97, 116, 105, 111, 110, 32, 70, 97, 99, 116, 111, 114, 115,
-                 32, 40, 50, 70, 65, 47, 77, 70, 65, 41, 26, 110, 71, 101, 116, 32, 97, 32, 108,
-                 105, 115, 116, 32, 111, 102, 32, 97, 117, 116, 104, 101, 110, 116, 105, 99, 97,
-                 116, 105, 111, 110, 32, 102, 97, 99, 116, 111, 114, 115, 32, 116, 104, 101, 32,
-                 117, 115, 101, 114, 32, 104, 97, 115, 32, 115, 101, 116, 46, 32, 73, 110, 99,
+                 32, 40, 50, 70, 65, 47, 77, 70, 65, 41, 26, 180, 1, 71, 101, 116, 32, 97, 32,
+                 108, 105, 115, 116, 32, 111, 102, 32, 97, 117, 116, 104, 101, 110, 116, 105, 99,
+                 97, 116, 105, 111, 110, 32, 102, 97, 99, 116, 111, 114, 115, 32, 116, 104, 101,
+                 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 115, 101, 116, 46, 32, 73, 110, 99,
                  108, 117, 100, 105, 110, 103, 32, 83, 101, 99, 111, 110, 100, 45, 70, 97, 99,
                  116, 111, 114, 115, 32, 40, 50, 70, 65, 41, 32, 97, 110, 100, 32, 77, 117, 108,
-                 116, 105, 45, 70, 97, 99, 116, 111, 114, 115, 32, 40, 77, 70, 65, 41, 46, 74, 11,
-                 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 114, 235, 1, 10, 232, 1, 10, 15, 120,
-                 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 210, 1,
-                 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108,
-                 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97,
-                 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101,
-                 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111,
-                 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 32, 97, 32, 117,
-                 115, 101, 114, 32, 102, 114, 111, 109, 32, 97, 110, 111, 116, 104, 101, 114, 32,
-                 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108,
-                 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77,
-                 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 114, 101, 113, 117,
-                 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112,
-                 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 105, 110, 32, 116, 104, 101, 32,
-                 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 111, 114, 103, 97, 110, 105,
-                 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
+                 116, 105, 45, 70, 97, 99, 116, 111, 114, 115, 32, 40, 77, 70, 65, 41, 46, 10, 10,
+                 68, 101, 112, 114, 101, 99, 97, 116, 101, 100, 58, 32, 112, 108, 101, 97, 115,
+                 101, 32, 117, 115, 101, 32, 117, 115, 101, 114, 32, 115, 101, 114, 118, 105, 99,
+                 101, 32, 118, 50, 32, 76, 105, 115, 116, 65, 117, 116, 104, 101, 110, 116, 105,
+                 99, 97, 116, 105, 111, 110, 77, 101, 116, 104, 111, 100, 84, 121, 112, 101, 115,
+                 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 88, 1, 114, 235, 1, 10, 232, 1,
+                 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100,
+                 18, 210, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32,
+                 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105,
+                 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113,
+                 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32,
+                 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 32, 97,
+                 32, 117, 115, 101, 114, 32, 102, 114, 111, 109, 32, 97, 110, 111, 116, 104, 101,
+                 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110,
+                 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46,
+                 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 114, 101,
+                 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 32, 104, 97, 115,
+                 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 105, 110, 32, 116, 104,
+                 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 111, 114, 103, 97, 110,
+                 105, 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -43841,7 +47738,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {1042, 2,
                <<10, 5, 85, 115, 101, 114, 115, 10, 10, 85, 115, 101, 114, 32, 72, 117, 109, 97,
                  110, 18, 23, 82, 101, 109, 111, 118, 101, 32, 77, 117, 108, 116, 105, 45, 70, 97,
-                 99, 116, 111, 114, 32, 79, 84, 80, 26, 149, 1, 82, 101, 109, 111, 118, 101, 32,
+                 99, 116, 111, 114, 32, 79, 84, 80, 26, 199, 1, 82, 101, 109, 111, 118, 101, 32,
                  116, 104, 101, 32, 99, 111, 110, 102, 105, 103, 117, 114, 101, 100, 32, 79, 110,
                  101, 45, 84, 105, 109, 101, 45, 80, 97, 115, 115, 119, 111, 114, 100, 32, 40, 79,
                  84, 80, 41, 32, 97, 115, 32, 97, 32, 102, 97, 99, 116, 111, 114, 32, 102, 114,
@@ -43850,21 +47747,24 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                  111, 110, 32, 97, 112, 112, 44, 32, 108, 105, 107, 101, 32, 65, 117, 116, 104,
                  121, 32, 111, 114, 32, 71, 111, 111, 103, 108, 101, 47, 77, 105, 99, 114, 111,
                  115, 111, 102, 116, 32, 65, 117, 116, 104, 101, 110, 116, 105, 99, 97, 116, 111,
-                 114, 46, 46, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 114, 235, 1, 10,
-                 232, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103,
-                 105, 100, 18, 210, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32,
-                 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103,
-                 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32,
-                 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32,
-                 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101,
-                 116, 32, 97, 32, 117, 115, 101, 114, 32, 102, 114, 111, 109, 32, 97, 110, 111,
-                 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110,
-                 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100,
-                 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101,
-                 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 32,
-                 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 105, 110,
-                 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 111, 114,
-                 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
+                 114, 46, 10, 10, 68, 101, 112, 114, 101, 99, 97, 116, 101, 100, 58, 32, 112, 108,
+                 101, 97, 115, 101, 32, 117, 115, 101, 32, 117, 115, 101, 114, 32, 115, 101, 114,
+                 118, 105, 99, 101, 32, 118, 50, 32, 82, 101, 109, 111, 118, 101, 84, 79, 84, 80,
+                 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 88, 1, 114, 235, 1, 10, 232, 1,
+                 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100,
+                 18, 210, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32,
+                 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105,
+                 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113,
+                 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32,
+                 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 32, 97,
+                 32, 117, 115, 101, 114, 32, 102, 114, 111, 109, 32, 97, 110, 111, 116, 104, 101,
+                 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110,
+                 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46,
+                 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 114, 101,
+                 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 32, 104, 97, 115,
+                 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 105, 110, 32, 116, 104,
+                 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 111, 114, 103, 97, 110,
+                 105, 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -43886,7 +47786,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {1042, 2,
                <<10, 5, 85, 115, 101, 114, 115, 10, 10, 85, 115, 101, 114, 32, 72, 117, 109, 97,
                  110, 18, 23, 82, 101, 109, 111, 118, 101, 32, 77, 117, 108, 116, 105, 45, 70, 97,
-                 99, 116, 111, 114, 32, 85, 50, 70, 26, 149, 1, 82, 101, 109, 111, 118, 101, 32,
+                 99, 116, 111, 114, 32, 85, 50, 70, 26, 199, 1, 82, 101, 109, 111, 118, 101, 32,
                  116, 104, 101, 32, 99, 111, 110, 102, 105, 103, 117, 114, 101, 100, 32, 85, 110,
                  105, 118, 101, 114, 115, 97, 108, 45, 83, 101, 99, 111, 110, 100, 45, 70, 97, 99,
                  116, 111, 114, 32, 40, 85, 50, 70, 41, 32, 97, 115, 32, 97, 32, 102, 97, 99, 116,
@@ -43895,21 +47795,125 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                  101, 112, 101, 110, 100, 101, 110, 116, 32, 102, 97, 99, 116, 111, 114, 32, 108,
                  105, 107, 101, 32, 70, 105, 110, 103, 101, 114, 80, 114, 105, 110, 116, 44, 32,
                  87, 105, 110, 100, 111, 119, 115, 45, 72, 101, 108, 108, 111, 44, 32, 101, 116,
-                 99, 46, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 114, 235, 1, 10, 232, 1,
-                 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100,
-                 18, 210, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32,
-                 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105,
-                 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113,
-                 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32,
-                 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 32, 97,
-                 32, 117, 115, 101, 114, 32, 102, 114, 111, 109, 32, 97, 110, 111, 116, 104, 101,
-                 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110,
-                 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46,
-                 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 114, 101,
-                 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 32, 104, 97, 115,
-                 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 105, 110, 32, 116, 104,
+                 99, 46, 10, 10, 68, 101, 112, 114, 101, 99, 97, 116, 101, 100, 58, 32, 112, 108,
+                 101, 97, 115, 101, 32, 117, 115, 101, 32, 117, 115, 101, 114, 32, 115, 101, 114,
+                 118, 105, 99, 101, 32, 118, 50, 32, 82, 101, 109, 111, 118, 101, 85, 50, 70, 74,
+                 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 88, 1, 114, 235, 1, 10, 232, 1, 10,
+                 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18,
+                 210, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97,
+                 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122,
+                 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117,
+                 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121,
+                 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 32, 97, 32,
+                 117, 115, 101, 114, 32, 102, 114, 111, 109, 32, 97, 110, 111, 116, 104, 101, 114,
+                 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99,
+                 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32,
+                 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 114, 101, 113,
+                 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32,
+                 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 105, 110, 32, 116, 104,
                  101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 111, 114, 103, 97, 110,
                  105, 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "RemoveHumanAuthFactorOTPSMS",
+          input_type: ".zitadel.management.v1.RemoveHumanAuthFactorOTPSMSRequest",
+          output_type: ".zitadel.management.v1.RemoveHumanAuthFactorOTPSMSResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2, "*%/users/{user_id}/auth_factors/otp_sms"},
+              {50000, 2, "\n\nuser.write"},
+              {1042, 2,
+               <<10, 5, 85, 115, 101, 114, 115, 10, 10, 85, 115, 101, 114, 32, 72, 117, 109, 97,
+                 110, 18, 27, 82, 101, 109, 111, 118, 101, 32, 77, 117, 108, 116, 105, 45, 70, 97,
+                 99, 116, 111, 114, 32, 79, 84, 80, 32, 83, 77, 83, 26, 231, 1, 82, 101, 109, 111,
+                 118, 101, 32, 116, 104, 101, 32, 99, 111, 110, 102, 105, 103, 117, 114, 101, 100,
+                 32, 79, 110, 101, 45, 84, 105, 109, 101, 45, 80, 97, 115, 115, 119, 111, 114,
+                 100, 32, 40, 79, 84, 80, 41, 32, 83, 77, 83, 32, 97, 115, 32, 97, 32, 102, 97,
+                 99, 116, 111, 114, 32, 102, 114, 111, 109, 32, 116, 104, 101, 32, 117, 115, 101,
+                 114, 46, 32, 65, 115, 32, 111, 110, 108, 121, 32, 111, 110, 101, 32, 79, 84, 80,
+                 32, 83, 77, 83, 32, 112, 101, 114, 32, 117, 115, 101, 114, 32, 105, 115, 32, 97,
+                 108, 108, 111, 119, 101, 100, 44, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32,
+                 119, 105, 108, 108, 32, 110, 111, 116, 32, 104, 97, 118, 101, 32, 79, 84, 80, 32,
+                 83, 77, 83, 32, 97, 115, 32, 97, 32, 115, 101, 99, 111, 110, 100, 45, 102, 97,
+                 99, 116, 111, 114, 32, 97, 102, 116, 101, 114, 119, 97, 114, 100, 46, 10, 10, 68,
+                 101, 112, 114, 101, 99, 97, 116, 101, 100, 58, 32, 112, 108, 101, 97, 115, 101,
+                 32, 117, 115, 101, 32, 117, 115, 101, 114, 32, 115, 101, 114, 118, 105, 99, 101,
+                 32, 118, 50, 32, 82, 101, 109, 111, 118, 101, 79, 84, 80, 83, 77, 83, 74, 11, 10,
+                 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 88, 1, 114, 235, 1, 10, 232, 1, 10, 15, 120,
+                 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 210, 1,
+                 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108,
+                 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97,
+                 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101,
+                 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111,
+                 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 32, 97, 32, 117,
+                 115, 101, 114, 32, 102, 114, 111, 109, 32, 97, 110, 111, 116, 104, 101, 114, 32,
+                 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108,
+                 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77,
+                 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 114, 101, 113, 117,
+                 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112,
+                 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 105, 110, 32, 116, 104, 101, 32,
+                 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 111, 114, 103, 97, 110, 105,
+                 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "RemoveHumanAuthFactorOTPEmail",
+          input_type: ".zitadel.management.v1.RemoveHumanAuthFactorOTPEmailRequest",
+          output_type: ".zitadel.management.v1.RemoveHumanAuthFactorOTPEmailResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2, "*'/users/{user_id}/auth_factors/otp_email"},
+              {50000, 2, "\n\nuser.write"},
+              {1042, 2,
+               <<10, 5, 85, 115, 101, 114, 115, 10, 10, 85, 115, 101, 114, 32, 72, 117, 109, 97,
+                 110, 18, 27, 82, 101, 109, 111, 118, 101, 32, 77, 117, 108, 116, 105, 45, 70, 97,
+                 99, 116, 111, 114, 32, 79, 84, 80, 32, 83, 77, 83, 26, 239, 1, 82, 101, 109, 111,
+                 118, 101, 32, 116, 104, 101, 32, 99, 111, 110, 102, 105, 103, 117, 114, 101, 100,
+                 32, 79, 110, 101, 45, 84, 105, 109, 101, 45, 80, 97, 115, 115, 119, 111, 114,
+                 100, 32, 40, 79, 84, 80, 41, 32, 69, 109, 97, 105, 108, 32, 97, 115, 32, 97, 32,
+                 102, 97, 99, 116, 111, 114, 32, 102, 114, 111, 109, 32, 116, 104, 101, 32, 117,
+                 115, 101, 114, 46, 32, 65, 115, 32, 111, 110, 108, 121, 32, 111, 110, 101, 32,
+                 79, 84, 80, 32, 69, 109, 97, 105, 108, 32, 112, 101, 114, 32, 117, 115, 101, 114,
+                 32, 105, 115, 32, 97, 108, 108, 111, 119, 101, 100, 44, 32, 116, 104, 101, 32,
+                 117, 115, 101, 114, 32, 119, 105, 108, 108, 32, 110, 111, 116, 32, 104, 97, 118,
+                 101, 32, 79, 84, 80, 32, 69, 109, 97, 105, 108, 32, 97, 115, 32, 97, 32, 115,
+                 101, 99, 111, 110, 100, 45, 102, 97, 99, 116, 111, 114, 32, 97, 102, 116, 101,
+                 114, 119, 97, 114, 100, 46, 10, 10, 68, 101, 112, 114, 101, 99, 97, 116, 101,
+                 100, 58, 32, 112, 108, 101, 97, 115, 101, 32, 117, 115, 101, 32, 117, 115, 101,
+                 114, 32, 115, 101, 114, 118, 105, 99, 101, 32, 118, 50, 32, 82, 101, 109, 111,
+                 118, 101, 79, 84, 80, 69, 109, 97, 105, 108, 74, 11, 10, 3, 50, 48, 48, 18, 4,
+                 10, 2, 79, 75, 88, 1, 114, 235, 1, 10, 232, 1, 10, 15, 120, 45, 122, 105, 116,
+                 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 210, 1, 84, 104, 101, 32,
+                 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115,
+                 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110,
+                 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110,
+                 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105,
+                 107, 101, 32, 116, 111, 32, 103, 101, 116, 32, 97, 32, 117, 115, 101, 114, 32,
+                 102, 114, 111, 109, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97,
+                 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32,
+                 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32,
+                 115, 117, 114, 101, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116,
+                 105, 110, 103, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109,
+                 105, 115, 115, 105, 111, 110, 32, 105, 110, 32, 116, 104, 101, 32, 114, 101, 113,
+                 117, 101, 115, 116, 101, 100, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105,
+                 111, 110, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -43932,7 +47936,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<10, 5, 85, 115, 101, 114, 115, 10, 10, 85, 115, 101, 114, 32, 72, 117, 109, 97,
                  110, 18, 42, 83, 101, 97, 114, 99, 104, 32, 80, 97, 115, 115, 119, 111, 114, 100,
                  108, 101, 115, 115, 47, 80, 97, 115, 115, 107, 101, 121, 32, 97, 117, 116, 104,
-                 101, 110, 116, 105, 99, 97, 116, 105, 111, 110, 26, 192, 1, 71, 101, 116, 32, 97,
+                 101, 110, 116, 105, 99, 97, 116, 105, 111, 110, 26, 245, 1, 71, 101, 116, 32, 97,
                  32, 108, 105, 115, 116, 32, 111, 102, 32, 99, 111, 110, 102, 105, 103, 117, 114,
                  101, 100, 32, 112, 97, 115, 115, 119, 111, 114, 100, 108, 101, 115, 115, 47, 112,
                  97, 115, 115, 107, 101, 121, 32, 97, 117, 116, 104, 101, 110, 116, 105, 99, 97,
@@ -43944,21 +47948,24 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                  110, 32, 108, 105, 107, 101, 32, 70, 105, 110, 103, 101, 114, 83, 99, 97, 110,
                  44, 32, 87, 105, 110, 100, 111, 119, 115, 72, 101, 108, 108, 111, 32, 111, 114,
                  32, 97, 32, 72, 97, 114, 100, 119, 97, 114, 101, 32, 84, 111, 107, 101, 110, 46,
-                 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 114, 235, 1, 10, 232, 1, 10, 15,
-                 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 210,
-                 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108,
-                 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97,
-                 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101,
-                 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111,
-                 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 32, 97, 32, 117,
-                 115, 101, 114, 32, 102, 114, 111, 109, 32, 97, 110, 111, 116, 104, 101, 114, 32,
-                 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108,
-                 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77,
-                 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 114, 101, 113, 117,
-                 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112,
-                 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 105, 110, 32, 116, 104, 101, 32,
-                 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 111, 114, 103, 97, 110, 105,
-                 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
+                 10, 10, 68, 101, 112, 114, 101, 99, 97, 116, 101, 100, 58, 32, 112, 108, 101, 97,
+                 115, 101, 32, 117, 115, 101, 32, 117, 115, 101, 114, 32, 115, 101, 114, 118, 105,
+                 99, 101, 32, 118, 50, 32, 76, 105, 115, 116, 80, 97, 115, 115, 107, 101, 121,
+                 115, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 88, 1, 114, 235, 1, 10,
+                 232, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103,
+                 105, 100, 18, 210, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32,
+                 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103,
+                 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32,
+                 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32,
+                 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101,
+                 116, 32, 97, 32, 117, 115, 101, 114, 32, 102, 114, 111, 109, 32, 97, 110, 111,
+                 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110,
+                 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100,
+                 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101,
+                 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 32,
+                 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 105, 110,
+                 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 111, 114,
+                 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -43983,7 +47990,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<10, 5, 85, 115, 101, 114, 115, 10, 10, 85, 115, 101, 114, 32, 72, 117, 109, 97,
                  110, 18, 42, 65, 100, 100, 32, 80, 97, 115, 115, 119, 111, 114, 100, 108, 101,
                  115, 115, 47, 80, 97, 115, 115, 107, 101, 121, 32, 82, 101, 103, 105, 115, 116,
-                 114, 97, 116, 105, 111, 110, 32, 76, 105, 110, 107, 26, 180, 2, 65, 100, 100,
+                 114, 97, 116, 105, 111, 110, 32, 76, 105, 110, 107, 26, 236, 2, 65, 100, 100,
                  115, 32, 97, 32, 110, 101, 119, 32, 112, 97, 115, 115, 119, 111, 114, 100, 108,
                  101, 115, 115, 47, 112, 97, 115, 115, 107, 101, 121, 32, 97, 117, 116, 104, 101,
                  110, 116, 105, 99, 97, 116, 111, 114, 32, 108, 105, 110, 107, 32, 116, 111, 32,
@@ -44001,22 +48008,25 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                  101, 103, 105, 115, 116, 101, 114, 101, 100, 32, 87, 105, 110, 100, 111, 119,
                  115, 32, 72, 101, 108, 108, 111, 32, 97, 110, 100, 32, 119, 97, 110, 116, 115,
                  32, 116, 111, 32, 114, 101, 103, 105, 115, 116, 101, 114, 32, 70, 97, 99, 101,
-                 73, 68, 32, 111, 110, 32, 116, 104, 101, 32, 105, 80, 104, 111, 110, 101, 74, 11,
-                 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 114, 235, 1, 10, 232, 1, 10, 15, 120,
-                 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 210, 1,
-                 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108,
-                 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97,
-                 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101,
-                 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111,
-                 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 32, 97, 32, 117,
-                 115, 101, 114, 32, 102, 114, 111, 109, 32, 97, 110, 111, 116, 104, 101, 114, 32,
-                 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108,
-                 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77,
-                 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 114, 101, 113, 117,
-                 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112,
-                 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 105, 110, 32, 116, 104, 101, 32,
-                 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 111, 114, 103, 97, 110, 105,
-                 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
+                 73, 68, 32, 111, 110, 32, 116, 104, 101, 32, 105, 80, 104, 111, 110, 101, 10, 10,
+                 68, 101, 112, 114, 101, 99, 97, 116, 101, 100, 58, 32, 112, 108, 101, 97, 115,
+                 101, 32, 117, 115, 101, 32, 117, 115, 101, 114, 32, 115, 101, 114, 118, 105, 99,
+                 101, 32, 118, 50, 32, 82, 101, 103, 105, 115, 116, 101, 114, 80, 97, 115, 115,
+                 107, 101, 121, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 88, 1, 114, 235,
+                 1, 10, 232, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114,
+                 103, 105, 100, 18, 210, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116,
+                 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114,
+                 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101,
+                 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46,
+                 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103,
+                 101, 116, 32, 97, 32, 117, 115, 101, 114, 32, 102, 114, 111, 109, 32, 97, 110,
+                 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111,
+                 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97,
+                 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104,
+                 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101,
+                 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32,
+                 105, 110, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32,
+                 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -44042,7 +48052,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<10, 5, 85, 115, 101, 114, 115, 10, 10, 85, 115, 101, 114, 32, 72, 117, 109, 97,
                  110, 18, 43, 83, 101, 110, 100, 32, 80, 97, 115, 115, 119, 111, 114, 100, 108,
                  101, 115, 115, 47, 80, 97, 115, 115, 107, 101, 121, 32, 82, 101, 103, 105, 115,
-                 116, 114, 97, 116, 105, 111, 110, 32, 76, 105, 110, 107, 26, 184, 2, 65, 100,
+                 116, 114, 97, 116, 105, 111, 110, 32, 76, 105, 110, 107, 26, 241, 2, 65, 100,
                  100, 115, 32, 97, 32, 110, 101, 119, 32, 112, 97, 115, 115, 119, 111, 114, 100,
                  108, 101, 115, 115, 47, 112, 97, 115, 115, 107, 101, 121, 32, 97, 117, 116, 104,
                  101, 110, 116, 105, 99, 97, 116, 111, 114, 32, 108, 105, 110, 107, 32, 116, 111,
@@ -44061,21 +48071,25 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                  105, 110, 100, 111, 119, 115, 32, 72, 101, 108, 108, 111, 32, 97, 110, 100, 32,
                  119, 97, 110, 116, 115, 32, 116, 111, 32, 114, 101, 103, 105, 115, 116, 101, 114,
                  32, 70, 97, 99, 101, 73, 68, 32, 111, 110, 32, 116, 104, 101, 32, 105, 80, 104,
-                 111, 110, 101, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 114, 235, 1, 10,
-                 232, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103,
-                 105, 100, 18, 210, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32,
-                 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103,
-                 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32,
-                 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32,
-                 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101,
-                 116, 32, 97, 32, 117, 115, 101, 114, 32, 102, 114, 111, 109, 32, 97, 110, 111,
-                 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110,
-                 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100,
-                 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101,
-                 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 32,
-                 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 105, 110,
-                 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 111, 114,
-                 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
+                 111, 110, 101, 46, 10, 10, 68, 101, 112, 114, 101, 99, 97, 116, 101, 100, 58, 32,
+                 112, 108, 101, 97, 115, 101, 32, 117, 115, 101, 32, 117, 115, 101, 114, 32, 115,
+                 101, 114, 118, 105, 99, 101, 32, 118, 50, 32, 82, 101, 103, 105, 115, 116, 101,
+                 114, 80, 97, 115, 115, 107, 101, 121, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2,
+                 79, 75, 88, 1, 114, 235, 1, 10, 232, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100,
+                 101, 108, 45, 111, 114, 103, 105, 100, 18, 210, 1, 84, 104, 101, 32, 100, 101,
+                 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116,
+                 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111,
+                 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32,
+                 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101,
+                 32, 116, 111, 32, 103, 101, 116, 32, 97, 32, 117, 115, 101, 114, 32, 102, 114,
+                 111, 109, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105,
+                 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104,
+                 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117,
+                 114, 101, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110,
+                 103, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115,
+                 115, 105, 111, 110, 32, 105, 110, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101,
+                 115, 116, 101, 100, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110,
+                 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -44097,29 +48111,32 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {1042, 2,
                <<10, 5, 85, 115, 101, 114, 115, 10, 10, 85, 115, 101, 114, 32, 72, 117, 109, 97,
                  110, 18, 27, 68, 101, 108, 101, 116, 101, 32, 80, 97, 115, 115, 119, 111, 114,
-                 100, 108, 101, 115, 115, 47, 80, 97, 115, 115, 107, 101, 121, 26, 123, 82, 101,
-                 109, 111, 118, 101, 32, 97, 32, 99, 111, 110, 102, 105, 103, 117, 114, 101, 100,
-                 32, 112, 97, 115, 115, 119, 111, 114, 100, 108, 101, 115, 115, 47, 112, 97, 115,
-                 115, 107, 101, 121, 32, 97, 117, 116, 104, 101, 110, 116, 105, 99, 97, 116, 105,
-                 111, 110, 32, 109, 101, 116, 104, 111, 100, 32, 102, 114, 111, 109, 32, 116, 104,
-                 101, 32, 117, 115, 101, 114, 46, 32, 40, 101, 46, 103, 32, 70, 97, 99, 101, 73,
-                 68, 44, 32, 70, 105, 110, 103, 101, 114, 83, 99, 97, 110, 101, 44, 32, 87, 105,
-                 110, 100, 111, 119, 115, 72, 101, 108, 108, 111, 44, 32, 101, 116, 99, 46, 41,
-                 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 114, 235, 1, 10, 232, 1, 10, 15,
-                 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 210,
-                 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108,
-                 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97,
-                 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101,
-                 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111,
-                 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 32, 97, 32, 117,
-                 115, 101, 114, 32, 102, 114, 111, 109, 32, 97, 110, 111, 116, 104, 101, 114, 32,
-                 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108,
-                 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77,
-                 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 114, 101, 113, 117,
-                 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112,
-                 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 105, 110, 32, 116, 104, 101, 32,
-                 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 111, 114, 103, 97, 110, 105,
-                 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
+                 100, 108, 101, 115, 115, 47, 80, 97, 115, 115, 107, 101, 121, 26, 178, 1, 82,
+                 101, 109, 111, 118, 101, 32, 97, 32, 99, 111, 110, 102, 105, 103, 117, 114, 101,
+                 100, 32, 112, 97, 115, 115, 119, 111, 114, 100, 108, 101, 115, 115, 47, 112, 97,
+                 115, 115, 107, 101, 121, 32, 97, 117, 116, 104, 101, 110, 116, 105, 99, 97, 116,
+                 105, 111, 110, 32, 109, 101, 116, 104, 111, 100, 32, 102, 114, 111, 109, 32, 116,
+                 104, 101, 32, 117, 115, 101, 114, 46, 32, 40, 101, 46, 103, 32, 70, 97, 99, 101,
+                 73, 68, 44, 32, 70, 105, 110, 103, 101, 114, 83, 99, 97, 110, 101, 44, 32, 87,
+                 105, 110, 100, 111, 119, 115, 72, 101, 108, 108, 111, 44, 32, 101, 116, 99, 46,
+                 41, 46, 10, 10, 68, 101, 112, 114, 101, 99, 97, 116, 101, 100, 58, 32, 112, 108,
+                 101, 97, 115, 101, 32, 117, 115, 101, 32, 117, 115, 101, 114, 32, 115, 101, 114,
+                 118, 105, 99, 101, 32, 118, 50, 32, 82, 101, 109, 111, 118, 101, 80, 97, 115,
+                 115, 107, 101, 121, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 88, 1, 114,
+                 235, 1, 10, 232, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111,
+                 114, 103, 105, 100, 18, 210, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108,
+                 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111,
+                 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104,
+                 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101,
+                 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111,
+                 32, 103, 101, 116, 32, 97, 32, 117, 115, 101, 114, 32, 102, 114, 111, 109, 32,
+                 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116,
+                 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104,
+                 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32,
+                 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117,
+                 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111,
+                 110, 32, 105, 110, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
+                 100, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -44371,31 +48388,38 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {1042, 2,
                <<10, 5, 85, 115, 101, 114, 115, 10, 12, 85, 115, 101, 114, 32, 77, 97, 99, 104,
                  105, 110, 101, 18, 27, 67, 114, 101, 97, 116, 101, 32, 75, 101, 121, 32, 102,
-                 111, 114, 32, 109, 97, 99, 104, 105, 110, 101, 32, 117, 115, 101, 114, 26, 153,
-                 1, 65, 32, 110, 101, 119, 32, 107, 101, 121, 32, 105, 115, 32, 103, 101, 110,
-                 101, 114, 97, 116, 101, 100, 32, 97, 110, 100, 32, 119, 105, 108, 108, 32, 98,
-                 101, 32, 114, 101, 116, 117, 114, 110, 101, 100, 32, 105, 110, 32, 116, 104, 101,
-                 32, 114, 101, 115, 112, 111, 110, 115, 101, 46, 32, 77, 97, 107, 101, 32, 115,
-                 117, 114, 101, 32, 116, 111, 32, 115, 116, 111, 114, 101, 32, 116, 104, 101, 32,
-                 114, 101, 116, 117, 114, 110, 101, 100, 32, 107, 101, 121, 46, 32, 77, 97, 99,
-                 104, 105, 110, 101, 32, 107, 101, 121, 115, 32, 97, 114, 101, 32, 117, 115, 101,
-                 100, 32, 116, 111, 32, 97, 117, 116, 104, 101, 110, 116, 105, 99, 97, 116, 101,
-                 32, 119, 105, 116, 104, 32, 106, 119, 116, 32, 112, 114, 111, 102, 105, 108, 101,
-                 46, 74, 11, 10, 3, 50, 48, 48, 18, 4, 10, 2, 79, 75, 114, 238, 1, 10, 235, 1, 10,
-                 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18,
-                 213, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97,
-                 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122,
-                 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117,
-                 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121,
-                 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 117, 112, 100, 97, 116, 101,
-                 32, 97, 32, 117, 115, 101, 114, 32, 102, 114, 111, 109, 32, 97, 110, 111, 116,
-                 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32,
-                 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101,
-                 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32,
-                 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 32,
-                 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 105, 110,
-                 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 111, 114,
-                 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 46, 24, 1>>}
+                 111, 114, 32, 109, 97, 99, 104, 105, 110, 101, 32, 117, 115, 101, 114, 26, 138,
+                 2, 73, 102, 32, 97, 32, 112, 117, 98, 108, 105, 99, 32, 107, 101, 121, 32, 105,
+                 115, 32, 110, 111, 116, 32, 115, 117, 112, 112, 108, 105, 101, 100, 44, 32, 97,
+                 32, 110, 101, 119, 32, 107, 101, 121, 32, 105, 115, 32, 103, 101, 110, 101, 114,
+                 97, 116, 101, 100, 32, 97, 110, 100, 32, 119, 105, 108, 108, 32, 98, 101, 32,
+                 114, 101, 116, 117, 114, 110, 101, 100, 32, 105, 110, 32, 116, 104, 101, 32, 114,
+                 101, 115, 112, 111, 110, 115, 101, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114,
+                 101, 32, 116, 111, 32, 115, 116, 111, 114, 101, 32, 116, 104, 101, 32, 114, 101,
+                 116, 117, 114, 110, 101, 100, 32, 107, 101, 121, 46, 32, 73, 102, 32, 97, 110,
+                 32, 82, 83, 65, 32, 112, 117, 98, 108, 105, 99, 32, 107, 101, 121, 32, 105, 115,
+                 32, 115, 117, 112, 112, 108, 105, 101, 100, 44, 32, 116, 104, 101, 32, 112, 114,
+                 105, 118, 97, 116, 101, 32, 107, 101, 121, 32, 105, 115, 32, 111, 109, 105, 116,
+                 116, 101, 100, 32, 102, 114, 111, 109, 32, 116, 104, 101, 32, 114, 101, 115, 112,
+                 111, 110, 115, 101, 46, 32, 77, 97, 99, 104, 105, 110, 101, 32, 107, 101, 121,
+                 115, 32, 97, 114, 101, 32, 117, 115, 101, 100, 32, 116, 111, 32, 97, 117, 116,
+                 104, 101, 110, 116, 105, 99, 97, 116, 101, 32, 119, 105, 116, 104, 32, 106, 119,
+                 116, 32, 112, 114, 111, 102, 105, 108, 101, 46, 74, 11, 10, 3, 50, 48, 48, 18, 4,
+                 10, 2, 79, 75, 114, 238, 1, 10, 235, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100,
+                 101, 108, 45, 111, 114, 103, 105, 100, 18, 213, 1, 84, 104, 101, 32, 100, 101,
+                 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116,
+                 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111,
+                 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32,
+                 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101,
+                 32, 116, 111, 32, 117, 112, 100, 97, 116, 101, 32, 97, 32, 117, 115, 101, 114,
+                 32, 102, 114, 111, 109, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103,
+                 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101,
+                 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32,
+                 115, 117, 114, 101, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116,
+                 105, 110, 103, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109,
+                 105, 115, 115, 105, 111, 110, 32, 105, 110, 32, 116, 104, 101, 32, 114, 101, 113,
+                 117, 101, 115, 116, 101, 100, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105,
+                 111, 110, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -44418,7 +48442,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {50000, 2, "\n\nuser.write"},
               {1042, 2,
                <<10, 5, 85, 115, 101, 114, 115, 10, 12, 85, 115, 101, 114, 32, 77, 97, 99, 104,
-                 105, 110, 101, 18, 27, 67, 114, 101, 97, 116, 101, 32, 75, 101, 121, 32, 102,
+                 105, 110, 101, 18, 27, 68, 101, 108, 101, 116, 101, 32, 75, 101, 121, 32, 102,
                  111, 114, 32, 109, 97, 99, 104, 105, 110, 101, 32, 117, 115, 101, 114, 26, 101,
                  68, 101, 108, 101, 116, 101, 32, 97, 32, 115, 112, 101, 99, 105, 102, 105, 99,
                  32, 107, 101, 121, 32, 102, 114, 111, 109, 32, 97, 32, 117, 115, 101, 114, 46,
@@ -44661,27 +48685,30 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {50000, 2, "\n\tuser.read"},
               {1042, 2,
                <<10, 5, 85, 115, 101, 114, 115, 18, 18, 76, 105, 115, 116, 32, 83, 111, 99, 105,
-                 97, 108, 32, 76, 111, 103, 105, 110, 115, 26, 112, 82, 101, 116, 117, 114, 110,
-                 115, 32, 97, 32, 108, 105, 115, 116, 32, 111, 102, 32, 97, 108, 108, 32, 108,
-                 105, 110, 107, 101, 100, 32, 105, 100, 101, 110, 116, 105, 116, 121, 32, 112,
-                 114, 111, 118, 105, 100, 101, 114, 115, 47, 115, 111, 99, 105, 97, 108, 32, 108,
-                 111, 103, 105, 110, 115, 32, 111, 102, 32, 116, 104, 101, 32, 117, 115, 101, 114,
-                 46, 32, 40, 101, 46, 32, 71, 111, 111, 103, 108, 101, 44, 32, 77, 105, 99, 114,
-                 111, 115, 111, 102, 116, 44, 32, 65, 122, 117, 114, 101, 65, 68, 44, 32, 101,
-                 116, 99, 46, 41, 114, 225, 1, 10, 222, 1, 10, 15, 120, 45, 122, 105, 116, 97,
-                 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 200, 1, 84, 104, 101, 32, 100,
-                 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32,
-                 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32,
-                 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110,
-                 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105,
-                 107, 101, 32, 116, 111, 32, 103, 101, 116, 32, 116, 104, 101, 32, 114, 101, 115,
-                 117, 108, 116, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114,
-                 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100,
-                 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107,
-                 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104,
-                 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32,
-                 97, 99, 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115,
-                 116, 101, 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
+                 97, 108, 32, 76, 111, 103, 105, 110, 115, 26, 168, 1, 82, 101, 116, 117, 114,
+                 110, 115, 32, 97, 32, 108, 105, 115, 116, 32, 111, 102, 32, 97, 108, 108, 32,
+                 108, 105, 110, 107, 101, 100, 32, 105, 100, 101, 110, 116, 105, 116, 121, 32,
+                 112, 114, 111, 118, 105, 100, 101, 114, 115, 47, 115, 111, 99, 105, 97, 108, 32,
+                 108, 111, 103, 105, 110, 115, 32, 111, 102, 32, 116, 104, 101, 32, 117, 115, 101,
+                 114, 46, 32, 40, 101, 46, 32, 71, 111, 111, 103, 108, 101, 44, 32, 77, 105, 99,
+                 114, 111, 115, 111, 102, 116, 44, 32, 65, 122, 117, 114, 101, 65, 68, 44, 32,
+                 101, 116, 99, 46, 41, 46, 10, 10, 68, 101, 112, 114, 101, 99, 97, 116, 101, 100,
+                 58, 32, 112, 108, 101, 97, 115, 101, 32, 117, 115, 101, 32, 117, 115, 101, 114,
+                 32, 115, 101, 114, 118, 105, 99, 101, 32, 118, 50, 32, 76, 105, 115, 116, 76,
+                 105, 110, 107, 101, 100, 73, 68, 80, 115, 88, 1, 114, 225, 1, 10, 222, 1, 10, 15,
+                 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 200,
+                 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108,
+                 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97,
+                 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101,
+                 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111,
+                 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 32, 116, 104, 101,
+                 32, 114, 101, 115, 117, 108, 116, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101,
+                 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110,
+                 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46,
+                 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115,
+                 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110,
+                 32, 116, 111, 32, 97, 99, 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101,
+                 113, 117, 101, 115, 116, 101, 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -44702,7 +48729,7 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {50000, 2, "\n\nuser.write"},
               {1042, 2,
                <<10, 5, 85, 115, 101, 114, 115, 18, 19, 82, 101, 109, 111, 118, 101, 32, 83, 111,
-                 99, 105, 97, 108, 32, 76, 111, 103, 105, 110, 26, 242, 1, 82, 101, 109, 111, 118,
+                 99, 105, 97, 108, 32, 76, 111, 103, 105, 110, 26, 170, 2, 82, 101, 109, 111, 118,
                  101, 32, 97, 32, 99, 111, 110, 102, 105, 103, 117, 114, 101, 100, 32, 115, 111,
                  99, 105, 97, 108, 32, 108, 111, 103, 105, 110, 115, 47, 105, 100, 101, 110, 116,
                  105, 116, 121, 32, 112, 114, 111, 118, 105, 100, 101, 114, 115, 32, 111, 102, 32,
@@ -44716,21 +48743,24 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                  32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115,
                  101, 114, 32, 100, 111, 101, 115, 32, 104, 97, 118, 101, 32, 111, 116, 104, 101,
                  114, 32, 112, 111, 115, 115, 105, 98, 105, 108, 105, 116, 105, 101, 115, 32, 116,
-                 111, 32, 97, 117, 116, 104, 101, 110, 116, 105, 99, 97, 116, 101, 46, 114, 225,
-                 1, 10, 222, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114,
-                 103, 105, 100, 18, 200, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116,
-                 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114,
-                 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101,
-                 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46,
-                 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103,
-                 101, 116, 32, 116, 104, 101, 32, 114, 101, 115, 117, 108, 116, 32, 111, 102, 32,
-                 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116,
-                 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104,
-                 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32,
-                 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109,
-                 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99, 99, 101, 115, 115, 32,
-                 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 100, 97, 116,
-                 97, 46, 24, 1>>}
+                 111, 32, 97, 117, 116, 104, 101, 110, 116, 105, 99, 97, 116, 101, 46, 10, 10, 68,
+                 101, 112, 114, 101, 99, 97, 116, 101, 100, 58, 32, 112, 108, 101, 97, 115, 101,
+                 32, 117, 115, 101, 32, 117, 115, 101, 114, 32, 115, 101, 114, 118, 105, 99, 101,
+                 32, 118, 50, 32, 82, 101, 109, 111, 118, 101, 76, 105, 110, 107, 101, 100, 73,
+                 68, 80, 88, 1, 114, 225, 1, 10, 222, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100,
+                 101, 108, 45, 111, 114, 103, 105, 100, 18, 200, 1, 84, 104, 101, 32, 100, 101,
+                 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116,
+                 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111,
+                 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32,
+                 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101,
+                 32, 116, 111, 32, 103, 101, 116, 32, 116, 104, 101, 32, 114, 101, 115, 117, 108,
+                 116, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97,
+                 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32,
+                 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32,
+                 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115,
+                 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99,
+                 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
+                 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -45082,30 +49112,28 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {1042, 2,
                <<10, 13, 79, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 115, 18, 19, 68,
                  101, 108, 101, 116, 101, 32, 79, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111,
-                 110, 26, 166, 1, 83, 101, 116, 115, 32, 116, 104, 101, 32, 115, 116, 97, 116,
-                 101, 32, 111, 102, 32, 109, 121, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116,
-                 105, 111, 110, 32, 97, 110, 100, 32, 97, 108, 108, 32, 105, 116, 115, 32, 114,
-                 101, 115, 111, 117, 114, 99, 101, 32, 40, 85, 115, 101, 114, 115, 44, 32, 80,
-                 114, 111, 106, 101, 99, 116, 115, 44, 32, 71, 114, 97, 110, 116, 115, 32, 116,
-                 111, 32, 97, 110, 100, 32, 102, 114, 111, 109, 32, 116, 104, 101, 32, 111, 114,
-                 103, 41, 32, 116, 111, 32, 114, 101, 109, 111, 118, 101, 46, 32, 85, 115, 101,
-                 114, 115, 32, 111, 102, 32, 116, 104, 105, 115, 32, 111, 114, 103, 97, 110, 105,
-                 122, 97, 116, 105, 111, 110, 32, 119, 105, 108, 108, 32, 110, 111, 116, 32, 98,
-                 101, 32, 97, 98, 108, 101, 32, 116, 111, 32, 108, 111, 103, 32, 105, 110, 46,
-                 114, 220, 1, 10, 217, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45,
-                 111, 114, 103, 105, 100, 18, 195, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117,
-                 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32,
-                 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116,
-                 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115,
-                 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116,
-                 111, 32, 103, 101, 116, 32, 117, 115, 101, 114, 115, 32, 111, 102, 32, 97, 110,
-                 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111,
-                 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97,
-                 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104,
-                 101, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115,
-                 115, 105, 111, 110, 32, 116, 111, 32, 97, 99, 99, 101, 115, 115, 32, 116, 104,
-                 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 100, 97, 116, 97, 46,
-                 24, 1>>}
+                 110, 26, 147, 1, 68, 101, 108, 101, 116, 101, 115, 32, 109, 121, 32, 111, 114,
+                 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 97, 110, 100, 32, 97, 108,
+                 108, 32, 105, 116, 115, 32, 114, 101, 115, 111, 117, 114, 99, 101, 115, 32, 40,
+                 85, 115, 101, 114, 115, 44, 32, 80, 114, 111, 106, 101, 99, 116, 115, 44, 32, 71,
+                 114, 97, 110, 116, 115, 32, 116, 111, 32, 97, 110, 100, 32, 102, 114, 111, 109,
+                 32, 116, 104, 101, 32, 111, 114, 103, 41, 46, 32, 85, 115, 101, 114, 115, 32,
+                 111, 102, 32, 116, 104, 105, 115, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116,
+                 105, 111, 110, 32, 119, 105, 108, 108, 32, 110, 111, 116, 32, 98, 101, 32, 97,
+                 98, 108, 101, 32, 116, 111, 32, 108, 111, 103, 32, 105, 110, 46, 114, 220, 1, 10,
+                 217, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103,
+                 105, 100, 18, 195, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32,
+                 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103,
+                 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32,
+                 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32,
+                 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101,
+                 116, 32, 117, 115, 101, 114, 115, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101,
+                 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110,
+                 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46,
+                 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115,
+                 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110,
+                 32, 116, 111, 32, 97, 99, 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101,
+                 113, 117, 101, 115, 116, 101, 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -48315,35 +52343,35 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {1042, 2,
                <<10, 14, 80, 114, 111, 106, 101, 99, 116, 32, 71, 114, 97, 110, 116, 115, 10, 7,
                  77, 101, 109, 98, 101, 114, 115, 10, 22, 90, 73, 84, 65, 68, 69, 76, 32, 65, 100,
-                 109, 105, 110, 105, 115, 116, 114, 97, 116, 111, 114, 115, 18, 20, 76, 105, 115,
-                 116, 32, 80, 114, 111, 106, 101, 99, 116, 32, 77, 101, 109, 98, 101, 114, 115,
-                 26, 222, 1, 77, 101, 109, 98, 101, 114, 115, 32, 97, 114, 101, 32, 117, 115, 101,
-                 114, 115, 32, 119, 105, 116, 104, 32, 112, 101, 114, 109, 105, 115, 115, 105,
-                 111, 110, 32, 116, 111, 32, 97, 100, 109, 105, 110, 105, 115, 116, 114, 97, 116,
-                 101, 32, 90, 73, 84, 65, 68, 69, 76, 32, 111, 110, 32, 100, 105, 102, 102, 101,
-                 114, 101, 110, 116, 32, 108, 101, 118, 101, 108, 115, 46, 32, 84, 104, 105, 115,
-                 32, 114, 101, 113, 117, 101, 115, 116, 32, 114, 101, 116, 117, 114, 110, 115, 32,
-                 97, 108, 108, 32, 117, 115, 101, 114, 115, 32, 119, 105, 116, 104, 32, 109, 101,
-                 109, 98, 101, 114, 115, 104, 105, 112, 115, 32, 111, 110, 32, 116, 104, 101, 32,
-                 112, 114, 111, 106, 101, 99, 116, 32, 103, 114, 97, 110, 116, 32, 108, 101, 118,
-                 101, 108, 44, 32, 109, 97, 116, 99, 104, 105, 110, 103, 32, 116, 104, 101, 32,
-                 115, 101, 97, 114, 99, 104, 32, 113, 117, 101, 114, 105, 101, 115, 46, 32, 84,
-                 104, 101, 32, 115, 101, 97, 114, 99, 104, 32, 113, 117, 101, 114, 105, 101, 115,
-                 32, 119, 105, 108, 108, 32, 98, 101, 32, 65, 78, 68, 32, 108, 105, 110, 107, 101,
-                 100, 46, 114, 227, 1, 10, 224, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101,
-                 108, 45, 111, 114, 103, 105, 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102,
-                 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104,
-                 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102,
-                 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117,
-                 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32,
-                 116, 111, 32, 103, 101, 116, 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117,
-                 108, 116, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103,
-                 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101,
-                 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32,
-                 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115,
-                 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99,
-                 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
-                 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
+                 109, 105, 110, 105, 115, 116, 114, 97, 116, 111, 114, 115, 18, 26, 76, 105, 115,
+                 116, 32, 80, 114, 111, 106, 101, 99, 116, 32, 71, 114, 97, 110, 116, 32, 77, 101,
+                 109, 98, 101, 114, 115, 26, 222, 1, 77, 101, 109, 98, 101, 114, 115, 32, 97, 114,
+                 101, 32, 117, 115, 101, 114, 115, 32, 119, 105, 116, 104, 32, 112, 101, 114, 109,
+                 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 100, 109, 105, 110, 105, 115,
+                 116, 114, 97, 116, 101, 32, 90, 73, 84, 65, 68, 69, 76, 32, 111, 110, 32, 100,
+                 105, 102, 102, 101, 114, 101, 110, 116, 32, 108, 101, 118, 101, 108, 115, 46, 32,
+                 84, 104, 105, 115, 32, 114, 101, 113, 117, 101, 115, 116, 32, 114, 101, 116, 117,
+                 114, 110, 115, 32, 97, 108, 108, 32, 117, 115, 101, 114, 115, 32, 119, 105, 116,
+                 104, 32, 109, 101, 109, 98, 101, 114, 115, 104, 105, 112, 115, 32, 111, 110, 32,
+                 116, 104, 101, 32, 112, 114, 111, 106, 101, 99, 116, 32, 103, 114, 97, 110, 116,
+                 32, 108, 101, 118, 101, 108, 44, 32, 109, 97, 116, 99, 104, 105, 110, 103, 32,
+                 116, 104, 101, 32, 115, 101, 97, 114, 99, 104, 32, 113, 117, 101, 114, 105, 101,
+                 115, 46, 32, 84, 104, 101, 32, 115, 101, 97, 114, 99, 104, 32, 113, 117, 101,
+                 114, 105, 101, 115, 32, 119, 105, 108, 108, 32, 98, 101, 32, 65, 78, 68, 32, 108,
+                 105, 110, 107, 101, 100, 46, 114, 227, 1, 10, 224, 1, 10, 15, 120, 45, 122, 105,
+                 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 202, 1, 84, 104, 101,
+                 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121,
+                 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111,
+                 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105,
+                 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108,
+                 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 47, 115, 101, 116, 32, 97, 32,
+                 114, 101, 115, 117, 108, 116, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114,
+                 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99,
+                 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32,
+                 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101,
+                 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32,
+                 116, 111, 32, 97, 99, 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113,
+                 117, 101, 115, 116, 101, 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -48911,7 +52939,21 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                  32, 83, 101, 116, 116, 105, 110, 103, 115, 18, 18, 71, 101, 116, 32, 79, 114,
                  103, 32, 73, 65, 77, 32, 80, 111, 108, 105, 99, 121, 26, 31, 85, 115, 101, 32,
                  71, 101, 116, 32, 68, 111, 109, 97, 105, 110, 32, 83, 101, 116, 116, 105, 110,
-                 103, 115, 32, 105, 110, 115, 116, 101, 97, 100, 88, 1>>}
+                 103, 115, 32, 105, 110, 115, 116, 101, 97, 100, 88, 1, 114, 227, 1, 10, 224, 1,
+                 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100,
+                 18, 202, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32,
+                 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105,
+                 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113,
+                 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32,
+                 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 47, 115,
+                 101, 116, 32, 97, 32, 114, 101, 115, 117, 108, 116, 32, 111, 102, 32, 97, 110,
+                 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111,
+                 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97,
+                 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104,
+                 101, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115,
+                 115, 105, 111, 110, 32, 116, 111, 32, 97, 99, 99, 101, 115, 115, 32, 116, 104,
+                 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 100, 97, 116, 97, 46,
+                 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -50026,21 +54068,30 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<10, 8, 83, 101, 116, 116, 105, 110, 103, 115, 10, 17, 80, 97, 115, 115, 119, 111,
                  114, 100, 32, 83, 101, 116, 116, 105, 110, 103, 115, 18, 25, 71, 101, 116, 32,
                  80, 97, 115, 115, 119, 111, 114, 100, 32, 65, 103, 101, 32, 83, 101, 116, 116,
-                 105, 110, 103, 115, 26, 15, 78, 111, 116, 32, 105, 109, 112, 108, 101, 109, 101,
-                 110, 116, 101, 100, 114, 227, 1, 10, 224, 1, 10, 15, 120, 45, 122, 105, 116, 97,
-                 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 202, 1, 84, 104, 101, 32, 100,
-                 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32,
-                 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32,
-                 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110,
-                 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105,
-                 107, 101, 32, 116, 111, 32, 103, 101, 116, 47, 115, 101, 116, 32, 97, 32, 114,
-                 101, 115, 117, 108, 116, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32,
-                 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108,
-                 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77,
-                 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114,
-                 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116,
-                 111, 32, 97, 99, 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117,
-                 101, 115, 116, 101, 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
+                 105, 110, 103, 115, 26, 171, 1, 82, 101, 116, 117, 114, 110, 115, 32, 116, 104,
+                 101, 32, 112, 97, 115, 115, 119, 111, 114, 100, 32, 97, 103, 101, 32, 115, 101,
+                 116, 116, 105, 110, 103, 115, 32, 99, 111, 110, 102, 105, 103, 117, 114, 101,
+                 100, 32, 111, 110, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97,
+                 116, 105, 111, 110, 46, 32, 84, 104, 101, 32, 115, 101, 116, 116, 105, 110, 103,
+                 115, 32, 115, 112, 101, 99, 105, 102, 121, 32, 116, 104, 101, 32, 101, 120, 112,
+                 105, 114, 121, 32, 111, 102, 32, 112, 97, 115, 115, 119, 111, 114, 100, 44, 32,
+                 97, 102, 116, 101, 114, 32, 119, 104, 105, 99, 104, 32, 97, 32, 117, 115, 101,
+                 114, 32, 105, 115, 32, 102, 111, 114, 99, 101, 100, 32, 116, 111, 32, 99, 104,
+                 97, 110, 103, 101, 32, 105, 116, 32, 111, 110, 32, 116, 104, 101, 32, 110, 101,
+                 120, 116, 32, 108, 111, 103, 105, 110, 46, 114, 227, 1, 10, 224, 1, 10, 15, 120,
+                 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 202, 1,
+                 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108,
+                 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97,
+                 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101,
+                 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111,
+                 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 47, 115, 101, 116,
+                 32, 97, 32, 114, 101, 115, 117, 108, 116, 32, 111, 102, 32, 97, 110, 111, 116,
+                 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32,
+                 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101,
+                 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32,
+                 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105,
+                 111, 110, 32, 116, 111, 32, 97, 99, 99, 101, 115, 115, 32, 116, 104, 101, 32,
+                 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -50065,22 +54116,31 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<10, 8, 83, 101, 116, 116, 105, 110, 103, 115, 10, 17, 80, 97, 115, 115, 119, 111,
                  114, 100, 32, 83, 101, 116, 116, 105, 110, 103, 115, 18, 33, 71, 101, 116, 32,
                  68, 101, 102, 97, 117, 108, 116, 32, 80, 97, 115, 115, 119, 111, 114, 100, 32,
-                 65, 103, 101, 32, 83, 101, 116, 116, 105, 110, 103, 115, 26, 15, 78, 111, 116,
-                 32, 105, 109, 112, 108, 101, 109, 101, 110, 116, 101, 100, 114, 227, 1, 10, 224,
-                 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105,
-                 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105,
-                 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97,
-                 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114,
-                 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73,
-                 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116,
-                 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117, 108, 116, 32, 111, 102, 32,
-                 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116,
-                 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104,
-                 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32,
-                 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109,
-                 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99, 99, 101, 115, 115, 32,
-                 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 100, 97, 116,
-                 97, 46, 24, 1>>}
+                 65, 103, 101, 32, 83, 101, 116, 116, 105, 110, 103, 115, 26, 175, 1, 82, 101,
+                 116, 117, 114, 110, 115, 32, 116, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116,
+                 32, 112, 97, 115, 115, 119, 111, 114, 100, 32, 97, 103, 101, 32, 115, 101, 116,
+                 116, 105, 110, 103, 115, 32, 99, 111, 110, 102, 105, 103, 117, 114, 101, 100, 32,
+                 111, 110, 32, 116, 104, 101, 32, 105, 110, 115, 116, 97, 110, 99, 101, 46, 32,
+                 84, 104, 101, 32, 115, 101, 116, 116, 105, 110, 103, 115, 32, 115, 112, 101, 99,
+                 105, 102, 121, 32, 116, 104, 101, 32, 101, 120, 112, 105, 114, 121, 32, 111, 102,
+                 32, 112, 97, 115, 115, 119, 111, 114, 100, 44, 32, 97, 102, 116, 101, 114, 32,
+                 119, 104, 105, 99, 104, 32, 97, 32, 117, 115, 101, 114, 32, 105, 115, 32, 102,
+                 111, 114, 99, 101, 100, 32, 116, 111, 32, 99, 104, 97, 110, 103, 101, 32, 105,
+                 116, 32, 111, 110, 32, 116, 104, 101, 32, 110, 101, 120, 116, 32, 108, 111, 103,
+                 105, 110, 46, 114, 227, 1, 10, 224, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100,
+                 101, 108, 45, 111, 114, 103, 105, 100, 18, 202, 1, 84, 104, 101, 32, 100, 101,
+                 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116,
+                 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111,
+                 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32,
+                 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101,
+                 32, 116, 111, 32, 103, 101, 116, 47, 115, 101, 116, 32, 97, 32, 114, 101, 115,
+                 117, 108, 116, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114,
+                 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100,
+                 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107,
+                 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104,
+                 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32,
+                 97, 99, 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115,
+                 116, 101, 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -50105,21 +54165,34 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<10, 8, 83, 101, 116, 116, 105, 110, 103, 115, 10, 17, 80, 97, 115, 115, 119, 111,
                  114, 100, 32, 83, 101, 116, 116, 105, 110, 103, 115, 18, 25, 65, 100, 100, 32,
                  80, 97, 115, 115, 119, 111, 114, 100, 32, 65, 103, 101, 32, 83, 101, 116, 116,
-                 105, 110, 103, 115, 26, 15, 78, 111, 116, 32, 105, 109, 112, 108, 101, 109, 101,
-                 110, 116, 101, 100, 114, 227, 1, 10, 224, 1, 10, 15, 120, 45, 122, 105, 116, 97,
-                 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 202, 1, 84, 104, 101, 32, 100,
-                 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32,
-                 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32,
-                 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110,
-                 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105,
-                 107, 101, 32, 116, 111, 32, 103, 101, 116, 47, 115, 101, 116, 32, 97, 32, 114,
-                 101, 115, 117, 108, 116, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32,
-                 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108,
-                 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77,
-                 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114,
-                 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116,
-                 111, 32, 97, 99, 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117,
-                 101, 115, 116, 101, 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
+                 105, 110, 103, 115, 26, 232, 1, 67, 114, 101, 97, 116, 101, 32, 110, 101, 119,
+                 32, 112, 97, 115, 115, 119, 111, 114, 100, 32, 97, 103, 101, 32, 115, 101, 116,
+                 116, 105, 110, 103, 115, 32, 102, 111, 114, 32, 116, 104, 101, 32, 111, 114, 103,
+                 97, 110, 105, 122, 97, 116, 105, 111, 110, 46, 32, 84, 104, 105, 115, 32, 119,
+                 105, 108, 108, 32, 111, 118, 101, 114, 119, 114, 105, 116, 101, 32, 116, 104,
+                 101, 32, 115, 101, 116, 116, 105, 110, 103, 115, 32, 111, 102, 32, 116, 104, 101,
+                 32, 105, 110, 115, 116, 97, 110, 99, 101, 32, 102, 111, 114, 32, 116, 104, 105,
+                 115, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 46, 32, 84,
+                 104, 101, 32, 115, 101, 116, 116, 105, 110, 103, 115, 32, 115, 112, 101, 99, 105,
+                 102, 121, 32, 116, 104, 101, 32, 101, 120, 112, 105, 114, 121, 32, 111, 102, 32,
+                 112, 97, 115, 115, 119, 111, 114, 100, 44, 32, 97, 102, 116, 101, 114, 32, 119,
+                 104, 105, 99, 104, 32, 97, 32, 117, 115, 101, 114, 32, 105, 115, 32, 102, 111,
+                 114, 99, 101, 100, 32, 116, 111, 32, 99, 104, 97, 110, 103, 101, 32, 105, 116,
+                 32, 111, 110, 32, 116, 104, 101, 32, 110, 101, 120, 116, 32, 108, 111, 103, 105,
+                 110, 46, 114, 227, 1, 10, 224, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101,
+                 108, 45, 111, 114, 103, 105, 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102,
+                 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104,
+                 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102,
+                 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117,
+                 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32,
+                 116, 111, 32, 103, 101, 116, 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117,
+                 108, 116, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103,
+                 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101,
+                 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32,
+                 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115,
+                 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99,
+                 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
+                 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -50144,21 +54217,30 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<10, 8, 83, 101, 116, 116, 105, 110, 103, 115, 10, 17, 80, 97, 115, 115, 119, 111,
                  114, 100, 32, 83, 101, 116, 116, 105, 110, 103, 115, 18, 28, 85, 112, 100, 97,
                  116, 101, 32, 80, 97, 115, 115, 119, 111, 114, 100, 32, 65, 103, 101, 32, 83,
-                 101, 116, 116, 105, 110, 103, 115, 26, 15, 78, 111, 116, 32, 105, 109, 112, 108,
-                 101, 109, 101, 110, 116, 101, 100, 114, 227, 1, 10, 224, 1, 10, 15, 120, 45, 122,
-                 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 202, 1, 84, 104,
-                 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97,
-                 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105,
-                 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116,
-                 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32,
-                 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 47, 115, 101, 116, 32, 97,
-                 32, 114, 101, 115, 117, 108, 116, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101,
-                 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110,
-                 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46,
-                 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115,
-                 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110,
-                 32, 116, 111, 32, 97, 99, 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101,
-                 113, 117, 101, 115, 116, 101, 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
+                 101, 116, 116, 105, 110, 103, 115, 26, 159, 1, 85, 112, 100, 97, 116, 101, 32,
+                 116, 104, 101, 32, 112, 97, 115, 115, 119, 111, 114, 100, 32, 97, 103, 101, 32,
+                 115, 101, 116, 116, 105, 110, 103, 115, 32, 111, 102, 32, 116, 104, 101, 32, 111,
+                 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 46, 32, 84, 104, 101, 32,
+                 115, 101, 116, 116, 105, 110, 103, 115, 32, 115, 112, 101, 99, 105, 102, 121, 32,
+                 116, 104, 101, 32, 101, 120, 112, 105, 114, 121, 32, 111, 102, 32, 112, 97, 115,
+                 115, 119, 111, 114, 100, 44, 32, 97, 102, 116, 101, 114, 32, 119, 104, 105, 99,
+                 104, 32, 97, 32, 117, 115, 101, 114, 32, 105, 115, 32, 102, 111, 114, 99, 101,
+                 100, 32, 116, 111, 32, 99, 104, 97, 110, 103, 101, 32, 105, 116, 32, 111, 110,
+                 32, 116, 104, 101, 32, 110, 101, 120, 116, 32, 108, 111, 103, 105, 110, 46, 114,
+                 227, 1, 10, 224, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111,
+                 114, 103, 105, 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108,
+                 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111,
+                 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104,
+                 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101,
+                 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111,
+                 32, 103, 101, 116, 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117, 108, 116,
+                 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110,
+                 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116,
+                 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115,
+                 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32,
+                 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99, 99,
+                 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
+                 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -50184,21 +54266,33 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                  114, 100, 32, 83, 101, 116, 116, 105, 110, 103, 115, 18, 38, 82, 101, 115, 101,
                  116, 32, 80, 97, 115, 115, 119, 111, 114, 100, 32, 65, 103, 101, 32, 83, 101,
                  116, 116, 105, 110, 103, 115, 32, 116, 111, 32, 68, 101, 102, 97, 117, 108, 116,
-                 26, 15, 78, 111, 116, 32, 105, 109, 112, 108, 101, 109, 101, 110, 116, 101, 100,
-                 114, 227, 1, 10, 224, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45,
-                 111, 114, 103, 105, 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117,
-                 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32,
-                 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116,
-                 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115,
-                 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116,
-                 111, 32, 103, 101, 116, 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117, 108,
-                 116, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97,
-                 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32,
-                 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32,
-                 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115,
-                 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99,
-                 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
-                 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
+                 26, 215, 1, 82, 101, 109, 111, 118, 101, 32, 116, 104, 101, 32, 112, 97, 115,
+                 115, 119, 111, 114, 100, 32, 97, 103, 101, 32, 115, 101, 116, 116, 105, 110, 103,
+                 115, 32, 111, 102, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97,
+                 116, 105, 111, 110, 32, 97, 110, 100, 32, 116, 104, 101, 114, 101, 102, 111, 114,
+                 101, 32, 117, 115, 101, 32, 116, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116,
+                 32, 115, 101, 116, 116, 105, 110, 103, 115, 32, 111, 110, 32, 116, 104, 101, 32,
+                 105, 110, 115, 116, 97, 110, 99, 101, 46, 46, 32, 84, 104, 101, 32, 115, 101,
+                 116, 116, 105, 110, 103, 115, 32, 115, 112, 101, 99, 105, 102, 121, 32, 116, 104,
+                 101, 32, 101, 120, 112, 105, 114, 121, 32, 111, 102, 32, 112, 97, 115, 115, 119,
+                 111, 114, 100, 44, 32, 97, 102, 116, 101, 114, 32, 119, 104, 105, 99, 104, 32,
+                 97, 32, 117, 115, 101, 114, 32, 105, 115, 32, 102, 111, 114, 99, 101, 100, 32,
+                 116, 111, 32, 99, 104, 97, 110, 103, 101, 32, 105, 116, 32, 111, 110, 32, 116,
+                 104, 101, 32, 110, 101, 120, 116, 32, 108, 111, 103, 105, 110, 46, 114, 227, 1,
+                 10, 224, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103,
+                 105, 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32,
+                 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103,
+                 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32,
+                 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32,
+                 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101,
+                 116, 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117, 108, 116, 32, 111, 102,
+                 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97,
+                 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32,
+                 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101,
+                 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114,
+                 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99, 99, 101, 115, 115,
+                 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 100, 97,
+                 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -52477,6 +56571,438 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
           __unknown_fields__: []
         },
         %Google.Protobuf.MethodDescriptorProto{
+          name: "GetCustomVerifySMSOTPMessageText",
+          input_type: ".zitadel.management.v1.GetCustomVerifySMSOTPMessageTextRequest",
+          output_type: ".zitadel.management.v1.GetCustomVerifySMSOTPMessageTextResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<18, 37, 47, 116, 101, 120, 116, 47, 109, 101, 115, 115, 97, 103, 101, 47, 118,
+                 101, 114, 105, 102, 121, 115, 109, 115, 111, 116, 112, 47, 123, 108, 97, 110,
+                 103, 117, 97, 103, 101, 125>>},
+              {50000, 2, "\n\vpolicy.read"},
+              {1042, 2,
+               <<10, 13, 77, 101, 115, 115, 97, 103, 101, 32, 84, 101, 120, 116, 115, 18, 38, 71,
+                 101, 116, 32, 67, 117, 115, 116, 111, 109, 32, 86, 101, 114, 105, 102, 121, 32,
+                 83, 77, 83, 32, 79, 84, 80, 32, 77, 101, 115, 115, 97, 103, 101, 32, 84, 101,
+                 120, 116, 26, 194, 1, 71, 101, 116, 32, 116, 104, 101, 32, 99, 117, 115, 116,
+                 111, 109, 32, 116, 101, 120, 116, 32, 111, 102, 32, 116, 104, 101, 32, 118, 101,
+                 114, 105, 102, 121, 32, 83, 77, 83, 32, 79, 84, 80, 32, 109, 101, 115, 115, 97,
+                 103, 101, 32, 116, 104, 97, 116, 32, 105, 115, 32, 115, 101, 116, 32, 111, 110,
+                 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110,
+                 46, 32, 84, 104, 101, 32, 109, 101, 115, 115, 97, 103, 101, 32, 105, 115, 32,
+                 115, 101, 110, 116, 32, 119, 104, 101, 110, 32, 97, 110, 32, 83, 77, 83, 32, 79,
+                 110, 101, 45, 116, 105, 109, 101, 32, 112, 97, 115, 115, 119, 111, 114, 100, 32,
+                 115, 104, 111, 117, 108, 100, 32, 98, 101, 32, 118, 101, 114, 105, 102, 105, 101,
+                 100, 32, 97, 110, 100, 32, 97, 32, 110, 111, 116, 105, 102, 105, 99, 97, 116,
+                 105, 111, 110, 32, 112, 114, 111, 118, 105, 100, 101, 114, 32, 105, 115, 32, 99,
+                 111, 110, 102, 105, 103, 117, 114, 101, 100, 46, 114, 227, 1, 10, 224, 1, 10, 15,
+                 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 202,
+                 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108,
+                 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97,
+                 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101,
+                 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111,
+                 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 47, 115, 101, 116,
+                 32, 97, 32, 114, 101, 115, 117, 108, 116, 32, 111, 102, 32, 97, 110, 111, 116,
+                 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32,
+                 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101,
+                 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32,
+                 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105,
+                 111, 110, 32, 116, 111, 32, 97, 99, 99, 101, 115, 115, 32, 116, 104, 101, 32,
+                 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "GetDefaultVerifySMSOTPMessageText",
+          input_type: ".zitadel.management.v1.GetDefaultVerifySMSOTPMessageTextRequest",
+          output_type: ".zitadel.management.v1.GetDefaultVerifySMSOTPMessageTextResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<18, 45, 47, 116, 101, 120, 116, 47, 100, 101, 102, 97, 117, 108, 116, 47, 109,
+                 101, 115, 115, 97, 103, 101, 47, 118, 101, 114, 105, 102, 121, 115, 109, 115,
+                 111, 116, 112, 47, 123, 108, 97, 110, 103, 117, 97, 103, 101, 125>>},
+              {50000, 2, "\n\vpolicy.read"},
+              {1042, 2,
+               <<10, 13, 77, 101, 115, 115, 97, 103, 101, 32, 84, 101, 120, 116, 115, 18, 39, 71,
+                 101, 116, 32, 68, 101, 102, 97, 117, 108, 116, 32, 86, 101, 114, 105, 102, 121,
+                 32, 83, 77, 83, 32, 79, 84, 80, 32, 77, 101, 115, 115, 97, 103, 101, 32, 84, 101,
+                 120, 116, 26, 233, 1, 71, 101, 116, 32, 116, 104, 101, 32, 100, 101, 102, 97,
+                 117, 108, 116, 32, 116, 101, 120, 116, 32, 111, 102, 32, 116, 104, 101, 32, 118,
+                 101, 114, 105, 102, 121, 32, 83, 77, 83, 32, 79, 84, 80, 32, 109, 101, 115, 115,
+                 97, 103, 101, 32, 116, 104, 97, 116, 32, 105, 115, 32, 115, 101, 116, 32, 111,
+                 110, 32, 116, 104, 101, 32, 105, 110, 115, 116, 97, 110, 99, 101, 32, 111, 114,
+                 32, 97, 115, 32, 116, 114, 97, 110, 115, 108, 97, 116, 105, 111, 110, 32, 102,
+                 105, 108, 101, 115, 32, 105, 110, 32, 90, 73, 84, 65, 68, 69, 76, 32, 105, 116,
+                 115, 101, 108, 102, 46, 32, 84, 104, 101, 32, 109, 101, 115, 115, 97, 103, 101,
+                 32, 105, 115, 32, 115, 101, 110, 116, 32, 119, 104, 101, 110, 32, 97, 110, 32,
+                 83, 77, 83, 32, 79, 110, 101, 45, 116, 105, 109, 101, 32, 112, 97, 115, 115, 119,
+                 111, 114, 100, 32, 115, 104, 111, 117, 108, 100, 32, 98, 101, 32, 118, 101, 114,
+                 105, 102, 105, 101, 100, 32, 97, 110, 100, 32, 97, 32, 110, 111, 116, 105, 102,
+                 105, 99, 97, 116, 105, 111, 110, 32, 112, 114, 111, 118, 105, 100, 101, 114, 32,
+                 105, 115, 32, 99, 111, 110, 102, 105, 103, 117, 114, 101, 100, 46, 114, 227, 1,
+                 10, 224, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103,
+                 105, 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32,
+                 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103,
+                 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32,
+                 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32,
+                 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101,
+                 116, 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117, 108, 116, 32, 111, 102,
+                 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97,
+                 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32,
+                 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101,
+                 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114,
+                 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99, 99, 101, 115, 115,
+                 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 100, 97,
+                 116, 97, 46, 24, 1>>}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "SetCustomVerifySMSOTPMessageText",
+          input_type: ".zitadel.management.v1.SetCustomVerifySMSOTPMessageTextRequest",
+          output_type: ".zitadel.management.v1.SetCustomVerifySMSOTPMessageTextResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<26, 37, 47, 116, 101, 120, 116, 47, 109, 101, 115, 115, 97, 103, 101, 47, 118,
+                 101, 114, 105, 102, 121, 115, 109, 115, 111, 116, 112, 47, 123, 108, 97, 110,
+                 103, 117, 97, 103, 101, 125, 58, 1, 42>>},
+              {50000, 2, "\n\fpolicy.write"},
+              {1042, 2,
+               <<10, 13, 77, 101, 115, 115, 97, 103, 101, 32, 84, 101, 120, 116, 115, 18, 44, 83,
+                 101, 116, 32, 67, 117, 115, 116, 111, 109, 32, 86, 101, 114, 105, 102, 121, 32,
+                 83, 77, 83, 32, 79, 84, 80, 32, 82, 101, 115, 101, 116, 32, 77, 101, 115, 115,
+                 97, 103, 101, 32, 84, 101, 120, 116, 26, 190, 3, 83, 101, 116, 32, 116, 104, 101,
+                 32, 99, 117, 115, 116, 111, 109, 32, 116, 101, 120, 116, 32, 111, 102, 32, 116,
+                 104, 101, 32, 118, 101, 114, 105, 102, 121, 32, 83, 77, 83, 32, 79, 84, 80, 32,
+                 109, 101, 115, 115, 97, 103, 101, 32, 102, 111, 114, 32, 116, 104, 101, 32, 111,
+                 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 46, 32, 84, 104, 101, 32,
+                 109, 101, 115, 115, 97, 103, 101, 32, 105, 115, 32, 115, 101, 110, 116, 32, 119,
+                 104, 101, 110, 32, 97, 110, 32, 83, 77, 83, 32, 79, 110, 101, 45, 116, 105, 109,
+                 101, 32, 112, 97, 115, 115, 119, 111, 114, 100, 32, 115, 104, 111, 117, 108, 100,
+                 32, 98, 101, 32, 118, 101, 114, 105, 102, 105, 101, 100, 32, 97, 110, 100, 32,
+                 97, 32, 110, 111, 116, 105, 102, 105, 99, 97, 116, 105, 111, 110, 32, 112, 114,
+                 111, 118, 105, 100, 101, 114, 32, 105, 115, 32, 99, 111, 110, 102, 105, 103, 117,
+                 114, 101, 100, 46, 32, 84, 104, 101, 32, 70, 111, 108, 108, 111, 119, 105, 110,
+                 103, 32, 86, 97, 114, 105, 97, 98, 108, 101, 115, 32, 99, 97, 110, 32, 98, 101,
+                 32, 117, 115, 101, 100, 58, 32, 123, 123, 46, 67, 111, 100, 101, 125, 125, 32,
+                 123, 123, 46, 85, 115, 101, 114, 78, 97, 109, 101, 125, 125, 32, 123, 123, 46,
+                 70, 105, 114, 115, 116, 78, 97, 109, 101, 125, 125, 32, 123, 123, 46, 76, 97,
+                 115, 116, 78, 97, 109, 101, 125, 125, 32, 123, 123, 46, 78, 105, 99, 107, 78, 97,
+                 109, 101, 125, 125, 32, 123, 123, 46, 68, 105, 115, 112, 108, 97, 121, 78, 97,
+                 109, 101, 125, 125, 32, 123, 123, 46, 76, 97, 115, 116, 69, 109, 97, 105, 108,
+                 125, 125, 32, 123, 123, 46, 86, 101, 114, 105, 102, 105, 101, 100, 69, 109, 97,
+                 105, 108, 125, 125, 32, 123, 123, 46, 76, 97, 115, 116, 80, 104, 111, 110, 101,
+                 125, 125, 32, 123, 123, 46, 86, 101, 114, 105, 102, 105, 101, 100, 80, 104, 111,
+                 110, 101, 125, 125, 32, 123, 123, 46, 80, 114, 101, 102, 101, 114, 114, 101, 100,
+                 76, 111, 103, 105, 110, 78, 97, 109, 101, 125, 125, 32, 123, 123, 46, 76, 111,
+                 103, 105, 110, 78, 97, 109, 101, 115, 125, 125, 32, 123, 123, 46, 67, 104, 97,
+                 110, 103, 101, 68, 97, 116, 101, 125, 125, 32, 123, 123, 46, 67, 114, 101, 97,
+                 116, 105, 111, 110, 68, 97, 116, 101, 125, 125, 114, 227, 1, 10, 224, 1, 10, 15,
+                 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 202,
+                 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108,
+                 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97,
+                 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101,
+                 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111,
+                 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 47, 115, 101, 116,
+                 32, 97, 32, 114, 101, 115, 117, 108, 116, 32, 111, 102, 32, 97, 110, 111, 116,
+                 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32,
+                 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101,
+                 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32,
+                 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105,
+                 111, 110, 32, 116, 111, 32, 97, 99, 99, 101, 115, 115, 32, 116, 104, 101, 32,
+                 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "ResetCustomVerifySMSOTPMessageTextToDefault",
+          input_type: ".zitadel.management.v1.ResetCustomVerifySMSOTPMessageTextToDefaultRequest",
+          output_type:
+            ".zitadel.management.v1.ResetCustomVerifySMSOTPMessageTextToDefaultResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2, "*%/text/message/verifysmsotp/{language}"},
+              {50000, 2, "\n\rpolicy.delete"},
+              {1042, 2,
+               <<10, 13, 77, 101, 115, 115, 97, 103, 101, 32, 84, 101, 120, 116, 115, 18, 51, 82,
+                 101, 115, 101, 116, 32, 67, 117, 115, 116, 111, 109, 32, 86, 101, 114, 105, 102,
+                 121, 32, 83, 77, 83, 32, 79, 84, 80, 32, 77, 101, 115, 115, 97, 103, 101, 32, 84,
+                 101, 120, 116, 32, 116, 111, 32, 68, 101, 102, 97, 117, 108, 116, 26, 145, 1, 82,
+                 101, 109, 111, 118, 101, 115, 32, 116, 104, 101, 32, 99, 117, 115, 116, 111, 109,
+                 32, 116, 101, 120, 116, 32, 111, 102, 32, 116, 104, 101, 32, 118, 101, 114, 105,
+                 102, 121, 32, 83, 77, 83, 32, 79, 84, 80, 32, 109, 101, 115, 115, 97, 103, 101,
+                 32, 102, 114, 111, 109, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122,
+                 97, 116, 105, 111, 110, 32, 97, 110, 100, 32, 116, 104, 101, 114, 101, 102, 111,
+                 114, 101, 32, 116, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 116, 101,
+                 120, 116, 115, 32, 119, 105, 108, 108, 32, 116, 114, 105, 103, 103, 101, 114, 32,
+                 102, 111, 114, 32, 116, 104, 101, 32, 117, 115, 101, 114, 115, 32, 97, 102, 116,
+                 101, 114, 119, 97, 114, 100, 46, 114, 227, 1, 10, 224, 1, 10, 15, 120, 45, 122,
+                 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 202, 1, 84, 104,
+                 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97,
+                 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105,
+                 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116,
+                 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32,
+                 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 47, 115, 101, 116, 32, 97,
+                 32, 114, 101, 115, 117, 108, 116, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101,
+                 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110,
+                 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46,
+                 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115,
+                 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110,
+                 32, 116, 111, 32, 97, 99, 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101,
+                 113, 117, 101, 115, 116, 101, 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "GetCustomVerifyEmailOTPMessageText",
+          input_type: ".zitadel.management.v1.GetCustomVerifyEmailOTPMessageTextRequest",
+          output_type: ".zitadel.management.v1.GetCustomVerifyEmailOTPMessageTextResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<18, 39, 47, 116, 101, 120, 116, 47, 109, 101, 115, 115, 97, 103, 101, 47, 118,
+                 101, 114, 105, 102, 121, 101, 109, 97, 105, 108, 111, 116, 112, 47, 123, 108, 97,
+                 110, 103, 117, 97, 103, 101, 125>>},
+              {50000, 2, "\n\vpolicy.read"},
+              {1042, 2,
+               <<10, 13, 77, 101, 115, 115, 97, 103, 101, 32, 84, 101, 120, 116, 115, 18, 40, 71,
+                 101, 116, 32, 67, 117, 115, 116, 111, 109, 32, 86, 101, 114, 105, 102, 121, 32,
+                 69, 109, 97, 105, 108, 32, 79, 84, 80, 32, 77, 101, 115, 115, 97, 103, 101, 32,
+                 84, 101, 120, 116, 26, 198, 1, 71, 101, 116, 32, 116, 104, 101, 32, 99, 117, 115,
+                 116, 111, 109, 32, 116, 101, 120, 116, 32, 111, 102, 32, 116, 104, 101, 32, 118,
+                 101, 114, 105, 102, 121, 32, 69, 109, 97, 105, 108, 32, 79, 84, 80, 32, 109, 101,
+                 115, 115, 97, 103, 101, 32, 116, 104, 97, 116, 32, 105, 115, 32, 115, 101, 116,
+                 32, 111, 110, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116,
+                 105, 111, 110, 46, 32, 84, 104, 101, 32, 109, 101, 115, 115, 97, 103, 101, 32,
+                 105, 115, 32, 115, 101, 110, 116, 32, 119, 104, 101, 110, 32, 97, 110, 32, 69,
+                 109, 97, 105, 108, 32, 79, 110, 101, 45, 116, 105, 109, 101, 32, 112, 97, 115,
+                 115, 119, 111, 114, 100, 32, 115, 104, 111, 117, 108, 100, 32, 98, 101, 32, 118,
+                 101, 114, 105, 102, 105, 101, 100, 32, 97, 110, 100, 32, 97, 32, 110, 111, 116,
+                 105, 102, 105, 99, 97, 116, 105, 111, 110, 32, 112, 114, 111, 118, 105, 100, 101,
+                 114, 32, 105, 115, 32, 99, 111, 110, 102, 105, 103, 117, 114, 101, 100, 46, 114,
+                 227, 1, 10, 224, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111,
+                 114, 103, 105, 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108,
+                 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111,
+                 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104,
+                 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101,
+                 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111,
+                 32, 103, 101, 116, 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117, 108, 116,
+                 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110,
+                 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116,
+                 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115,
+                 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32,
+                 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99, 99,
+                 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
+                 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "GetDefaultVerifyEmailOTPMessageText",
+          input_type: ".zitadel.management.v1.GetDefaultVerifyEmailOTPMessageTextRequest",
+          output_type: ".zitadel.management.v1.GetDefaultVerifyEmailOTPMessageTextResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<18, 47, 47, 116, 101, 120, 116, 47, 100, 101, 102, 97, 117, 108, 116, 47, 109,
+                 101, 115, 115, 97, 103, 101, 47, 118, 101, 114, 105, 102, 121, 101, 109, 97, 105,
+                 108, 111, 116, 112, 47, 123, 108, 97, 110, 103, 117, 97, 103, 101, 125>>},
+              {50000, 2, "\n\vpolicy.read"},
+              {1042, 2,
+               <<10, 13, 77, 101, 115, 115, 97, 103, 101, 32, 84, 101, 120, 116, 115, 18, 41, 71,
+                 101, 116, 32, 68, 101, 102, 97, 117, 108, 116, 32, 86, 101, 114, 105, 102, 121,
+                 32, 69, 109, 97, 105, 108, 32, 79, 84, 80, 32, 77, 101, 115, 115, 97, 103, 101,
+                 32, 84, 101, 120, 116, 26, 237, 1, 71, 101, 116, 32, 116, 104, 101, 32, 100, 101,
+                 102, 97, 117, 108, 116, 32, 116, 101, 120, 116, 32, 111, 102, 32, 116, 104, 101,
+                 32, 118, 101, 114, 105, 102, 121, 32, 69, 109, 97, 105, 108, 32, 79, 84, 80, 32,
+                 109, 101, 115, 115, 97, 103, 101, 32, 116, 104, 97, 116, 32, 105, 115, 32, 115,
+                 101, 116, 32, 111, 110, 32, 116, 104, 101, 32, 105, 110, 115, 116, 97, 110, 99,
+                 101, 32, 111, 114, 32, 97, 115, 32, 116, 114, 97, 110, 115, 108, 97, 116, 105,
+                 111, 110, 32, 102, 105, 108, 101, 115, 32, 105, 110, 32, 90, 73, 84, 65, 68, 69,
+                 76, 32, 105, 116, 115, 101, 108, 102, 46, 32, 84, 104, 101, 32, 109, 101, 115,
+                 115, 97, 103, 101, 32, 105, 115, 32, 115, 101, 110, 116, 32, 119, 104, 101, 110,
+                 32, 97, 110, 32, 69, 109, 97, 105, 108, 32, 79, 110, 101, 45, 116, 105, 109, 101,
+                 32, 112, 97, 115, 115, 119, 111, 114, 100, 32, 115, 104, 111, 117, 108, 100, 32,
+                 98, 101, 32, 118, 101, 114, 105, 102, 105, 101, 100, 32, 97, 110, 100, 32, 97,
+                 32, 110, 111, 116, 105, 102, 105, 99, 97, 116, 105, 111, 110, 32, 112, 114, 111,
+                 118, 105, 100, 101, 114, 32, 105, 115, 32, 99, 111, 110, 102, 105, 103, 117, 114,
+                 101, 100, 46, 114, 227, 1, 10, 224, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100,
+                 101, 108, 45, 111, 114, 103, 105, 100, 18, 202, 1, 84, 104, 101, 32, 100, 101,
+                 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116,
+                 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111,
+                 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32,
+                 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101,
+                 32, 116, 111, 32, 103, 101, 116, 47, 115, 101, 116, 32, 97, 32, 114, 101, 115,
+                 117, 108, 116, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114,
+                 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100,
+                 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107,
+                 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104,
+                 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32,
+                 97, 99, 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115,
+                 116, 101, 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "SetCustomVerifyEmailOTPMessageText",
+          input_type: ".zitadel.management.v1.SetCustomVerifyEmailOTPMessageTextRequest",
+          output_type: ".zitadel.management.v1.SetCustomVerifyEmailOTPMessageTextResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<26, 39, 47, 116, 101, 120, 116, 47, 109, 101, 115, 115, 97, 103, 101, 47, 118,
+                 101, 114, 105, 102, 121, 101, 109, 97, 105, 108, 111, 116, 112, 47, 123, 108, 97,
+                 110, 103, 117, 97, 103, 101, 125, 58, 1, 42>>},
+              {50000, 2, "\n\fpolicy.write"},
+              {1042, 2,
+               <<10, 13, 77, 101, 115, 115, 97, 103, 101, 32, 84, 101, 120, 116, 115, 18, 46, 83,
+                 101, 116, 32, 67, 117, 115, 116, 111, 109, 32, 86, 101, 114, 105, 102, 121, 32,
+                 69, 109, 97, 105, 108, 32, 79, 84, 80, 32, 82, 101, 115, 101, 116, 32, 77, 101,
+                 115, 115, 97, 103, 101, 32, 84, 101, 120, 116, 26, 194, 3, 83, 101, 116, 32, 116,
+                 104, 101, 32, 99, 117, 115, 116, 111, 109, 32, 116, 101, 120, 116, 32, 111, 102,
+                 32, 116, 104, 101, 32, 118, 101, 114, 105, 102, 121, 32, 69, 109, 97, 105, 108,
+                 32, 79, 84, 80, 32, 109, 101, 115, 115, 97, 103, 101, 32, 102, 111, 114, 32, 116,
+                 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 46, 32,
+                 84, 104, 101, 32, 109, 101, 115, 115, 97, 103, 101, 32, 105, 115, 32, 115, 101,
+                 110, 116, 32, 119, 104, 101, 110, 32, 97, 110, 32, 69, 109, 97, 105, 108, 32, 79,
+                 110, 101, 45, 116, 105, 109, 101, 32, 112, 97, 115, 115, 119, 111, 114, 100, 32,
+                 115, 104, 111, 117, 108, 100, 32, 98, 101, 32, 118, 101, 114, 105, 102, 105, 101,
+                 100, 32, 97, 110, 100, 32, 97, 32, 110, 111, 116, 105, 102, 105, 99, 97, 116,
+                 105, 111, 110, 32, 112, 114, 111, 118, 105, 100, 101, 114, 32, 105, 115, 32, 99,
+                 111, 110, 102, 105, 103, 117, 114, 101, 100, 46, 32, 84, 104, 101, 32, 70, 111,
+                 108, 108, 111, 119, 105, 110, 103, 32, 86, 97, 114, 105, 97, 98, 108, 101, 115,
+                 32, 99, 97, 110, 32, 98, 101, 32, 117, 115, 101, 100, 58, 32, 123, 123, 46, 67,
+                 111, 100, 101, 125, 125, 32, 123, 123, 46, 85, 115, 101, 114, 78, 97, 109, 101,
+                 125, 125, 32, 123, 123, 46, 70, 105, 114, 115, 116, 78, 97, 109, 101, 125, 125,
+                 32, 123, 123, 46, 76, 97, 115, 116, 78, 97, 109, 101, 125, 125, 32, 123, 123, 46,
+                 78, 105, 99, 107, 78, 97, 109, 101, 125, 125, 32, 123, 123, 46, 68, 105, 115,
+                 112, 108, 97, 121, 78, 97, 109, 101, 125, 125, 32, 123, 123, 46, 76, 97, 115,
+                 116, 69, 109, 97, 105, 108, 125, 125, 32, 123, 123, 46, 86, 101, 114, 105, 102,
+                 105, 101, 100, 69, 109, 97, 105, 108, 125, 125, 32, 123, 123, 46, 76, 97, 115,
+                 116, 80, 104, 111, 110, 101, 125, 125, 32, 123, 123, 46, 86, 101, 114, 105, 102,
+                 105, 101, 100, 80, 104, 111, 110, 101, 125, 125, 32, 123, 123, 46, 80, 114, 101,
+                 102, 101, 114, 114, 101, 100, 76, 111, 103, 105, 110, 78, 97, 109, 101, 125, 125,
+                 32, 123, 123, 46, 76, 111, 103, 105, 110, 78, 97, 109, 101, 115, 125, 125, 32,
+                 123, 123, 46, 67, 104, 97, 110, 103, 101, 68, 97, 116, 101, 125, 125, 32, 123,
+                 123, 46, 67, 114, 101, 97, 116, 105, 111, 110, 68, 97, 116, 101, 125, 125, 114,
+                 227, 1, 10, 224, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111,
+                 114, 103, 105, 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108,
+                 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111,
+                 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104,
+                 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101,
+                 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111,
+                 32, 103, 101, 116, 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117, 108, 116,
+                 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110,
+                 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116,
+                 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115,
+                 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32,
+                 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99, 99,
+                 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
+                 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "ResetCustomVerifyEmailOTPMessageTextToDefault",
+          input_type:
+            ".zitadel.management.v1.ResetCustomVerifyEmailOTPMessageTextToDefaultRequest",
+          output_type:
+            ".zitadel.management.v1.ResetCustomVerifyEmailOTPMessageTextToDefaultResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2, "*'/text/message/verifyemailotp/{language}"},
+              {50000, 2, "\n\rpolicy.delete"},
+              {1042, 2,
+               <<10, 13, 77, 101, 115, 115, 97, 103, 101, 32, 84, 101, 120, 116, 115, 18, 53, 82,
+                 101, 115, 101, 116, 32, 67, 117, 115, 116, 111, 109, 32, 86, 101, 114, 105, 102,
+                 121, 32, 69, 109, 97, 105, 108, 32, 79, 84, 80, 32, 77, 101, 115, 115, 97, 103,
+                 101, 32, 84, 101, 120, 116, 32, 116, 111, 32, 68, 101, 102, 97, 117, 108, 116,
+                 26, 147, 1, 82, 101, 109, 111, 118, 101, 115, 32, 116, 104, 101, 32, 99, 117,
+                 115, 116, 111, 109, 32, 116, 101, 120, 116, 32, 111, 102, 32, 116, 104, 101, 32,
+                 118, 101, 114, 105, 102, 121, 32, 69, 109, 97, 105, 108, 32, 79, 84, 80, 32, 109,
+                 101, 115, 115, 97, 103, 101, 32, 102, 114, 111, 109, 32, 116, 104, 101, 32, 111,
+                 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 97, 110, 100, 32, 116,
+                 104, 101, 114, 101, 102, 111, 114, 101, 32, 116, 104, 101, 32, 100, 101, 102, 97,
+                 117, 108, 116, 32, 116, 101, 120, 116, 115, 32, 119, 105, 108, 108, 32, 116, 114,
+                 105, 103, 103, 101, 114, 32, 102, 111, 114, 32, 116, 104, 101, 32, 117, 115, 101,
+                 114, 115, 32, 97, 102, 116, 101, 114, 119, 97, 114, 100, 46, 114, 227, 1, 10,
+                 224, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103,
+                 105, 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32,
+                 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103,
+                 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32,
+                 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32,
+                 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101,
+                 116, 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117, 108, 116, 32, 111, 102,
+                 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97,
+                 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32,
+                 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101,
+                 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114,
+                 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99, 99, 101, 115, 115,
+                 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 100, 97,
+                 116, 97, 46, 24, 1>>}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
           name: "GetCustomDomainClaimedMessageText",
           input_type: ".zitadel.management.v1.GetCustomDomainClaimedMessageTextRequest",
           output_type: ".zitadel.management.v1.GetCustomDomainClaimedMessageTextResponse",
@@ -53147,6 +57673,214 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                  114, 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99, 99, 101, 115,
                  115, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 100,
                  97, 116, 97, 46, 24, 1>>}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "GetCustomInviteUserMessageText",
+          input_type: ".zitadel.management.v1.GetCustomInviteUserMessageTextRequest",
+          output_type: ".zitadel.management.v1.GetCustomInviteUserMessageTextResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<18, 36, 47, 116, 101, 120, 116, 47, 109, 101, 115, 115, 97, 103, 101, 47, 105,
+                 110, 118, 105, 116, 101, 95, 117, 115, 101, 114, 47, 123, 108, 97, 110, 103, 117,
+                 97, 103, 101, 125>>},
+              {50000, 2, "\n\vpolicy.read"},
+              {1042, 2,
+               <<10, 13, 77, 101, 115, 115, 97, 103, 101, 32, 84, 101, 120, 116, 115, 18, 35, 71,
+                 101, 116, 32, 67, 117, 115, 116, 111, 109, 32, 73, 110, 118, 105, 116, 101, 32,
+                 85, 115, 101, 114, 32, 77, 101, 115, 115, 97, 103, 101, 32, 84, 101, 120, 116,
+                 26, 157, 1, 71, 101, 116, 32, 116, 104, 101, 32, 99, 117, 115, 116, 111, 109, 32,
+                 116, 101, 120, 116, 32, 111, 102, 32, 116, 104, 101, 32, 112, 97, 115, 115, 119,
+                 111, 114, 100, 45, 99, 104, 97, 110, 103, 101, 100, 32, 109, 101, 115, 115, 97,
+                 103, 101, 47, 101, 109, 97, 105, 108, 32, 116, 104, 97, 116, 32, 105, 115, 32,
+                 99, 111, 110, 102, 105, 103, 117, 114, 101, 100, 32, 111, 110, 32, 116, 104, 101,
+                 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 46, 32, 84, 104,
+                 101, 32, 109, 101, 115, 115, 97, 103, 101, 32, 105, 115, 32, 115, 101, 110, 116,
+                 32, 119, 104, 101, 110, 32, 97, 110, 32, 105, 110, 118, 105, 116, 101, 32, 99,
+                 111, 100, 101, 32, 101, 109, 97, 105, 108, 32, 105, 115, 32, 114, 101, 113, 117,
+                 101, 115, 116, 101, 100, 46, 114, 227, 1, 10, 224, 1, 10, 15, 120, 45, 122, 105,
+                 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 202, 1, 84, 104, 101,
+                 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121,
+                 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111,
+                 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105,
+                 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108,
+                 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 47, 115, 101, 116, 32, 97, 32,
+                 114, 101, 115, 117, 108, 116, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114,
+                 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99,
+                 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32,
+                 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101,
+                 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32,
+                 116, 111, 32, 97, 99, 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113,
+                 117, 101, 115, 116, 101, 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "GetDefaultInviteUserMessageText",
+          input_type: ".zitadel.management.v1.GetDefaultInviteUserMessageTextRequest",
+          output_type: ".zitadel.management.v1.GetDefaultInviteUserMessageTextResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<18, 44, 47, 116, 101, 120, 116, 47, 100, 101, 102, 97, 117, 108, 116, 47, 109,
+                 101, 115, 115, 97, 103, 101, 47, 105, 110, 118, 105, 116, 101, 95, 117, 115, 101,
+                 114, 47, 123, 108, 97, 110, 103, 117, 97, 103, 101, 125>>},
+              {50000, 2, "\n\vpolicy.read"},
+              {1042, 2,
+               <<10, 13, 77, 101, 115, 115, 97, 103, 101, 32, 84, 101, 120, 116, 115, 18, 36, 71,
+                 101, 116, 32, 68, 101, 102, 97, 117, 108, 116, 32, 73, 110, 118, 105, 116, 101,
+                 32, 85, 115, 101, 114, 32, 77, 101, 115, 115, 97, 103, 101, 32, 84, 101, 120,
+                 116, 26, 191, 1, 71, 101, 116, 32, 116, 104, 101, 32, 100, 101, 102, 97, 117,
+                 108, 116, 32, 116, 101, 120, 116, 32, 111, 102, 32, 116, 104, 101, 32, 105, 110,
+                 118, 105, 116, 101, 32, 117, 115, 101, 114, 32, 109, 101, 115, 115, 97, 103, 101,
+                 47, 101, 109, 97, 105, 108, 32, 116, 104, 97, 116, 32, 105, 115, 32, 99, 111,
+                 110, 102, 105, 103, 117, 114, 101, 100, 32, 111, 110, 32, 116, 104, 101, 32, 105,
+                 110, 115, 116, 97, 110, 99, 101, 32, 111, 114, 32, 97, 115, 32, 116, 114, 97,
+                 110, 115, 108, 97, 116, 105, 111, 110, 32, 102, 105, 108, 101, 115, 32, 105, 110,
+                 32, 90, 73, 84, 65, 68, 69, 76, 32, 105, 116, 115, 101, 108, 102, 46, 32, 84,
+                 104, 101, 32, 109, 101, 115, 115, 97, 103, 101, 32, 105, 115, 32, 115, 101, 110,
+                 116, 32, 119, 104, 101, 110, 32, 97, 110, 32, 105, 110, 118, 105, 116, 101, 32,
+                 99, 111, 100, 101, 32, 101, 109, 97, 105, 108, 32, 105, 115, 32, 114, 101, 113,
+                 117, 101, 115, 116, 101, 100, 46, 114, 227, 1, 10, 224, 1, 10, 15, 120, 45, 122,
+                 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 202, 1, 84, 104,
+                 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97,
+                 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105,
+                 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116,
+                 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32,
+                 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 47, 115, 101, 116, 32, 97,
+                 32, 114, 101, 115, 117, 108, 116, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101,
+                 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110,
+                 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46,
+                 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115,
+                 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110,
+                 32, 116, 111, 32, 97, 99, 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101,
+                 113, 117, 101, 115, 116, 101, 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "SetCustomInviteUserMessageCustomText",
+          input_type: ".zitadel.management.v1.SetCustomInviteUserMessageTextRequest",
+          output_type: ".zitadel.management.v1.SetCustomInviteUserMessageTextResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<26, 36, 47, 116, 101, 120, 116, 47, 109, 101, 115, 115, 97, 103, 101, 47, 105,
+                 110, 118, 105, 116, 101, 95, 117, 115, 101, 114, 47, 123, 108, 97, 110, 103, 117,
+                 97, 103, 101, 125, 58, 1, 42>>},
+              {50000, 2, "\n\fpolicy.write"},
+              {1042, 2,
+               <<10, 13, 77, 101, 115, 115, 97, 103, 101, 32, 84, 101, 120, 116, 115, 18, 35, 83,
+                 101, 116, 32, 67, 117, 115, 116, 111, 109, 32, 73, 110, 118, 105, 116, 101, 32,
+                 85, 115, 101, 114, 32, 77, 101, 115, 115, 97, 103, 101, 32, 84, 101, 120, 116,
+                 26, 152, 3, 83, 101, 116, 32, 116, 104, 101, 32, 99, 117, 115, 116, 111, 109, 32,
+                 116, 101, 120, 116, 32, 111, 102, 32, 116, 104, 101, 32, 105, 110, 118, 105, 116,
+                 101, 32, 117, 115, 101, 114, 32, 109, 101, 115, 115, 97, 103, 101, 47, 101, 109,
+                 97, 105, 108, 32, 102, 111, 114, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110,
+                 105, 122, 97, 116, 105, 111, 110, 46, 32, 84, 104, 101, 32, 109, 101, 115, 115,
+                 97, 103, 101, 32, 105, 115, 32, 115, 101, 110, 116, 32, 119, 104, 101, 110, 32,
+                 97, 110, 32, 105, 110, 118, 105, 116, 101, 32, 99, 111, 100, 101, 32, 101, 109,
+                 97, 105, 108, 32, 105, 115, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 46,
+                 32, 84, 104, 101, 32, 70, 111, 108, 108, 111, 119, 105, 110, 103, 32, 86, 97,
+                 114, 105, 97, 98, 108, 101, 115, 32, 99, 97, 110, 32, 98, 101, 32, 117, 115, 101,
+                 100, 58, 32, 123, 123, 46, 85, 115, 101, 114, 78, 97, 109, 101, 125, 125, 32,
+                 123, 123, 46, 70, 105, 114, 115, 116, 78, 97, 109, 101, 125, 125, 32, 123, 123,
+                 46, 76, 97, 115, 116, 78, 97, 109, 101, 125, 125, 32, 123, 123, 46, 78, 105, 99,
+                 107, 78, 97, 109, 101, 125, 125, 32, 123, 123, 46, 68, 105, 115, 112, 108, 97,
+                 121, 78, 97, 109, 101, 125, 125, 32, 123, 123, 46, 76, 97, 115, 116, 69, 109, 97,
+                 105, 108, 125, 125, 32, 123, 123, 46, 86, 101, 114, 105, 102, 105, 101, 100, 69,
+                 109, 97, 105, 108, 125, 125, 32, 123, 123, 46, 76, 97, 115, 116, 80, 104, 111,
+                 110, 101, 125, 125, 32, 123, 123, 46, 86, 101, 114, 105, 102, 105, 101, 100, 80,
+                 104, 111, 110, 101, 125, 125, 32, 123, 123, 46, 80, 114, 101, 102, 101, 114, 114,
+                 101, 100, 76, 111, 103, 105, 110, 78, 97, 109, 101, 125, 125, 32, 123, 123, 46,
+                 76, 111, 103, 105, 110, 78, 97, 109, 101, 115, 125, 125, 32, 123, 123, 46, 67,
+                 104, 97, 110, 103, 101, 68, 97, 116, 101, 125, 125, 32, 123, 123, 46, 67, 114,
+                 101, 97, 116, 105, 111, 110, 68, 97, 116, 101, 125, 125, 32, 123, 123, 46, 65,
+                 112, 112, 108, 105, 99, 97, 116, 105, 111, 110, 78, 97, 109, 101, 125, 125, 114,
+                 227, 1, 10, 224, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111,
+                 114, 103, 105, 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108,
+                 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111,
+                 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104,
+                 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101,
+                 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111,
+                 32, 103, 101, 116, 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117, 108, 116,
+                 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110,
+                 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116,
+                 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115,
+                 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32,
+                 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99, 99,
+                 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
+                 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "ResetCustomInviteUserMessageTextToDefault",
+          input_type: ".zitadel.management.v1.ResetCustomInviteUserMessageTextToDefaultRequest",
+          output_type: ".zitadel.management.v1.ResetCustomInviteUserMessageTextToDefaultResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2, "*$/text/message/invite_user/{language}"},
+              {50000, 2, "\n\rpolicy.delete"},
+              {1042, 2,
+               <<10, 13, 77, 101, 115, 115, 97, 103, 101, 32, 84, 101, 120, 116, 115, 18, 48, 82,
+                 101, 115, 101, 116, 32, 67, 117, 115, 116, 111, 109, 32, 73, 110, 118, 105, 116,
+                 101, 32, 85, 115, 101, 114, 32, 77, 101, 115, 115, 97, 103, 101, 32, 84, 101,
+                 120, 116, 32, 116, 111, 32, 68, 101, 102, 97, 117, 108, 116, 26, 176, 1, 82, 101,
+                 109, 111, 118, 101, 115, 32, 116, 104, 101, 32, 99, 117, 115, 116, 111, 109, 32,
+                 116, 101, 120, 116, 32, 111, 102, 32, 116, 104, 101, 32, 105, 110, 118, 105, 116,
+                 101, 32, 117, 115, 101, 114, 32, 109, 101, 115, 115, 97, 103, 101, 32, 102, 114,
+                 111, 109, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105,
+                 111, 110, 32, 97, 110, 100, 32, 116, 104, 101, 114, 101, 102, 111, 114, 101, 32,
+                 116, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 116, 101, 120, 116, 115,
+                 32, 102, 114, 111, 109, 32, 116, 104, 101, 32, 105, 110, 115, 116, 97, 110, 99,
+                 101, 32, 111, 114, 32, 116, 114, 97, 110, 115, 108, 97, 116, 105, 111, 110, 32,
+                 102, 105, 108, 101, 115, 32, 119, 105, 108, 108, 32, 98, 101, 32, 116, 114, 105,
+                 103, 103, 101, 114, 101, 100, 32, 102, 111, 114, 32, 116, 104, 101, 32, 117, 115,
+                 101, 114, 115, 46, 114, 227, 1, 10, 224, 1, 10, 15, 120, 45, 122, 105, 116, 97,
+                 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 202, 1, 84, 104, 101, 32, 100,
+                 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32,
+                 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32,
+                 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110,
+                 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105,
+                 107, 101, 32, 116, 111, 32, 103, 101, 116, 47, 115, 101, 116, 32, 97, 32, 114,
+                 101, 115, 117, 108, 116, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32,
+                 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108,
+                 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77,
+                 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114,
+                 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116,
+                 111, 32, 97, 99, 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117,
+                 101, 115, 116, 101, 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -53852,7 +58586,21 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {1042, 2,
                <<10, 18, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100,
                  101, 114, 115, 18, 23, 76, 105, 115, 116, 32, 73, 100, 101, 110, 116, 105, 116,
-                 121, 32, 80, 114, 111, 118, 105, 100, 101, 114, 115>>}
+                 121, 32, 80, 114, 111, 118, 105, 100, 101, 114, 115, 114, 227, 1, 10, 224, 1, 10,
+                 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18,
+                 202, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97,
+                 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122,
+                 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117,
+                 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121,
+                 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 47, 115, 101,
+                 116, 32, 97, 32, 114, 101, 115, 117, 108, 116, 32, 111, 102, 32, 97, 110, 111,
+                 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110,
+                 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100,
+                 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101,
+                 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115,
+                 105, 111, 110, 32, 116, 111, 32, 97, 99, 99, 101, 115, 115, 32, 116, 104, 101,
+                 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 100, 97, 116, 97, 46, 24,
+                 1>>}
             ]
           },
           client_streaming: false,
@@ -53876,7 +58624,21 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {1042, 2,
                <<10, 18, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100,
                  101, 114, 115, 18, 27, 71, 101, 116, 32, 73, 100, 101, 110, 116, 105, 116, 121,
-                 32, 80, 114, 111, 118, 105, 100, 101, 114, 32, 66, 121, 32, 73, 68>>}
+                 32, 80, 114, 111, 118, 105, 100, 101, 114, 32, 66, 121, 32, 73, 68, 114, 227, 1,
+                 10, 224, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103,
+                 105, 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32,
+                 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103,
+                 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32,
+                 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32,
+                 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101,
+                 116, 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117, 108, 116, 32, 111, 102,
+                 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97,
+                 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32,
+                 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101,
+                 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114,
+                 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99, 99, 101, 115, 115,
+                 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 100, 97,
+                 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -53900,7 +58662,20 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<10, 18, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100,
                  101, 114, 115, 18, 35, 65, 100, 100, 32, 71, 101, 110, 101, 114, 105, 99, 32, 79,
                  65, 117, 116, 104, 32, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111,
-                 118, 105, 100, 101, 114>>}
+                 118, 105, 100, 101, 114, 114, 227, 1, 10, 224, 1, 10, 15, 120, 45, 122, 105, 116,
+                 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 202, 1, 84, 104, 101, 32,
+                 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115,
+                 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110,
+                 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110,
+                 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105,
+                 107, 101, 32, 116, 111, 32, 103, 101, 116, 47, 115, 101, 116, 32, 97, 32, 114,
+                 101, 115, 117, 108, 116, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32,
+                 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108,
+                 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77,
+                 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114,
+                 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116,
+                 111, 32, 97, 99, 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117,
+                 101, 115, 116, 101, 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -53925,7 +58700,20 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<10, 18, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100,
                  101, 114, 115, 18, 38, 85, 112, 100, 97, 116, 101, 32, 71, 101, 110, 101, 114,
                  105, 99, 32, 79, 65, 117, 116, 104, 32, 73, 100, 101, 110, 116, 105, 116, 121,
-                 32, 80, 114, 111, 118, 105, 100, 101, 114>>}
+                 32, 80, 114, 111, 118, 105, 100, 101, 114, 114, 227, 1, 10, 224, 1, 10, 15, 120,
+                 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 202, 1,
+                 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108,
+                 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97,
+                 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101,
+                 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111,
+                 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 47, 115, 101, 116,
+                 32, 97, 32, 114, 101, 115, 117, 108, 116, 32, 111, 102, 32, 97, 110, 111, 116,
+                 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32,
+                 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101,
+                 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32,
+                 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105,
+                 111, 110, 32, 116, 111, 32, 97, 99, 99, 101, 115, 115, 32, 116, 104, 101, 32,
+                 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -53950,7 +58738,20 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<10, 18, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100,
                  101, 114, 115, 18, 34, 65, 100, 100, 32, 71, 101, 110, 101, 114, 105, 99, 32, 79,
                  73, 68, 67, 32, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118,
-                 105, 100, 101, 114>>}
+                 105, 100, 101, 114, 114, 227, 1, 10, 224, 1, 10, 15, 120, 45, 122, 105, 116, 97,
+                 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 202, 1, 84, 104, 101, 32, 100,
+                 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32,
+                 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32,
+                 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110,
+                 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105,
+                 107, 101, 32, 116, 111, 32, 103, 101, 116, 47, 115, 101, 116, 32, 97, 32, 114,
+                 101, 115, 117, 108, 116, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32,
+                 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108,
+                 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77,
+                 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114,
+                 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116,
+                 111, 32, 97, 99, 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117,
+                 101, 115, 116, 101, 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -53975,7 +58776,59 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<10, 18, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100,
                  101, 114, 115, 18, 37, 85, 112, 100, 97, 116, 101, 32, 71, 101, 110, 101, 114,
                  105, 99, 32, 79, 73, 68, 67, 32, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80,
-                 114, 111, 118, 105, 100, 101, 114>>}
+                 114, 111, 118, 105, 100, 101, 114, 114, 227, 1, 10, 224, 1, 10, 15, 120, 45, 122,
+                 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 202, 1, 84, 104,
+                 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97,
+                 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105,
+                 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116,
+                 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32,
+                 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 47, 115, 101, 116, 32, 97,
+                 32, 114, 101, 115, 117, 108, 116, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101,
+                 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110,
+                 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46,
+                 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115,
+                 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110,
+                 32, 116, 111, 32, 97, 99, 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101,
+                 113, 117, 101, 115, 116, 101, 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "MigrateGenericOIDCProvider",
+          input_type: ".zitadel.management.v1.MigrateGenericOIDCProviderRequest",
+          output_type: ".zitadel.management.v1.MigrateGenericOIDCProviderResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<34, 32, 47, 105, 100, 112, 115, 47, 103, 101, 110, 101, 114, 105, 99, 95, 111,
+                 105, 100, 99, 47, 123, 105, 100, 125, 47, 95, 109, 105, 103, 114, 97, 116, 101,
+                 58, 1, 42>>},
+              {50000, 2, "\n\rorg.idp.write"},
+              {1042, 2,
+               <<10, 18, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100,
+                 101, 114, 115, 18, 38, 77, 105, 103, 114, 97, 116, 101, 32, 71, 101, 110, 101,
+                 114, 105, 99, 32, 79, 73, 68, 67, 32, 73, 100, 101, 110, 116, 105, 116, 121, 32,
+                 80, 114, 111, 118, 105, 100, 101, 114, 114, 227, 1, 10, 224, 1, 10, 15, 120, 45,
+                 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 202, 1, 84,
+                 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119,
+                 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116,
+                 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115,
+                 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117,
+                 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 47, 115, 101, 116, 32,
+                 97, 32, 114, 101, 115, 117, 108, 116, 32, 111, 102, 32, 97, 110, 111, 116, 104,
+                 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105,
+                 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114,
+                 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 117,
+                 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111,
+                 110, 32, 116, 111, 32, 97, 99, 99, 101, 115, 115, 32, 116, 104, 101, 32, 114,
+                 101, 113, 117, 101, 115, 116, 101, 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -53999,7 +58852,21 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {1042, 2,
                <<10, 18, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100,
                  101, 114, 115, 18, 25, 65, 100, 100, 32, 74, 87, 84, 32, 73, 100, 101, 110, 116,
-                 105, 116, 121, 32, 80, 114, 111, 118, 105, 100, 101, 114>>}
+                 105, 116, 121, 32, 80, 114, 111, 118, 105, 100, 101, 114, 114, 227, 1, 10, 224,
+                 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105,
+                 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105,
+                 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97,
+                 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114,
+                 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73,
+                 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116,
+                 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117, 108, 116, 32, 111, 102, 32,
+                 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116,
+                 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104,
+                 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32,
+                 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109,
+                 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99, 99, 101, 115, 115, 32,
+                 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 100, 97, 116,
+                 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -54023,7 +58890,21 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {1042, 2,
                <<10, 18, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100,
                  101, 114, 115, 18, 28, 85, 112, 100, 97, 116, 101, 32, 74, 87, 84, 32, 73, 100,
-                 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100, 101, 114>>}
+                 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100, 101, 114, 114,
+                 227, 1, 10, 224, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111,
+                 114, 103, 105, 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108,
+                 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111,
+                 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104,
+                 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101,
+                 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111,
+                 32, 103, 101, 116, 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117, 108, 116,
+                 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110,
+                 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116,
+                 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115,
+                 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32,
+                 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99, 99,
+                 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
+                 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -54046,8 +58927,21 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {1042, 2,
                <<10, 18, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100,
                  101, 114, 115, 18, 30, 65, 100, 100, 32, 65, 122, 117, 114, 101, 32, 65, 68, 32,
-                 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100, 101,
-                 114>>}
+                 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100, 101, 114,
+                 114, 227, 1, 10, 224, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45,
+                 111, 114, 103, 105, 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117,
+                 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32,
+                 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116,
+                 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115,
+                 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116,
+                 111, 32, 103, 101, 116, 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117, 108,
+                 116, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97,
+                 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32,
+                 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32,
+                 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115,
+                 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99,
+                 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
+                 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -54072,7 +58966,20 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<10, 18, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100,
                  101, 114, 115, 18, 33, 85, 112, 100, 97, 116, 101, 32, 65, 122, 117, 114, 101,
                  32, 65, 68, 32, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118,
-                 105, 100, 101, 114>>}
+                 105, 100, 101, 114, 114, 227, 1, 10, 224, 1, 10, 15, 120, 45, 122, 105, 116, 97,
+                 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 202, 1, 84, 104, 101, 32, 100,
+                 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32,
+                 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32,
+                 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110,
+                 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105,
+                 107, 101, 32, 116, 111, 32, 103, 101, 116, 47, 115, 101, 116, 32, 97, 32, 114,
+                 101, 115, 117, 108, 116, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32,
+                 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108,
+                 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77,
+                 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114,
+                 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116,
+                 111, 32, 97, 99, 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117,
+                 101, 115, 116, 101, 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -54095,7 +59002,21 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {1042, 2,
                <<10, 18, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100,
                  101, 114, 115, 18, 28, 65, 100, 100, 32, 71, 105, 116, 72, 117, 98, 32, 73, 100,
-                 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100, 101, 114>>}
+                 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100, 101, 114, 114,
+                 227, 1, 10, 224, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111,
+                 114, 103, 105, 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108,
+                 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111,
+                 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104,
+                 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101,
+                 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111,
+                 32, 103, 101, 116, 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117, 108, 116,
+                 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110,
+                 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116,
+                 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115,
+                 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32,
+                 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99, 99,
+                 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
+                 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -54120,7 +59041,20 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<10, 18, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100,
                  101, 114, 115, 18, 31, 85, 112, 100, 97, 116, 101, 32, 71, 105, 116, 72, 117, 98,
                  32, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100, 101,
-                 114>>}
+                 114, 114, 227, 1, 10, 224, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108,
+                 45, 111, 114, 103, 105, 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102, 97,
+                 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101,
+                 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32,
+                 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117,
+                 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32,
+                 116, 111, 32, 103, 101, 116, 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117,
+                 108, 116, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103,
+                 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101,
+                 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32,
+                 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115,
+                 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99,
+                 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
+                 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -54145,7 +59079,20 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<10, 18, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100,
                  101, 114, 115, 18, 39, 65, 100, 100, 32, 71, 105, 116, 72, 117, 98, 32, 69, 110,
                  116, 101, 114, 112, 114, 105, 115, 101, 32, 73, 100, 101, 110, 116, 105, 116,
-                 121, 32, 80, 114, 111, 118, 105, 100, 101, 114>>}
+                 121, 32, 80, 114, 111, 118, 105, 100, 101, 114, 114, 227, 1, 10, 224, 1, 10, 15,
+                 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 202,
+                 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108,
+                 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97,
+                 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101,
+                 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111,
+                 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 47, 115, 101, 116,
+                 32, 97, 32, 114, 101, 115, 117, 108, 116, 32, 111, 102, 32, 97, 110, 111, 116,
+                 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32,
+                 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101,
+                 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32,
+                 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105,
+                 111, 110, 32, 116, 111, 32, 97, 99, 99, 101, 115, 115, 32, 116, 104, 101, 32,
+                 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -54170,7 +59117,21 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<10, 18, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100,
                  101, 114, 115, 18, 42, 85, 112, 100, 97, 116, 101, 32, 71, 105, 116, 72, 117, 98,
                  32, 69, 110, 116, 101, 114, 112, 114, 105, 115, 101, 32, 73, 100, 101, 110, 116,
-                 105, 116, 121, 32, 80, 114, 111, 118, 105, 100, 101, 114>>}
+                 105, 116, 121, 32, 80, 114, 111, 118, 105, 100, 101, 114, 114, 227, 1, 10, 224,
+                 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105,
+                 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105,
+                 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97,
+                 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114,
+                 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73,
+                 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116,
+                 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117, 108, 116, 32, 111, 102, 32,
+                 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116,
+                 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104,
+                 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32,
+                 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109,
+                 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99, 99, 101, 115, 115, 32,
+                 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 100, 97, 116,
+                 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -54193,7 +59154,21 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {1042, 2,
                <<10, 18, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100,
                  101, 114, 115, 18, 28, 65, 100, 100, 32, 71, 105, 116, 76, 97, 98, 32, 73, 100,
-                 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100, 101, 114>>}
+                 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100, 101, 114, 114,
+                 227, 1, 10, 224, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111,
+                 114, 103, 105, 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108,
+                 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111,
+                 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104,
+                 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101,
+                 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111,
+                 32, 103, 101, 116, 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117, 108, 116,
+                 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110,
+                 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116,
+                 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115,
+                 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32,
+                 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99, 99,
+                 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
+                 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -54218,7 +59193,20 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<10, 18, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100,
                  101, 114, 115, 18, 31, 85, 112, 100, 97, 116, 101, 32, 71, 105, 116, 76, 97, 98,
                  32, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100, 101,
-                 114>>}
+                 114, 114, 227, 1, 10, 224, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108,
+                 45, 111, 114, 103, 105, 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102, 97,
+                 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101,
+                 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32,
+                 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117,
+                 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32,
+                 116, 111, 32, 103, 101, 116, 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117,
+                 108, 116, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103,
+                 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101,
+                 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32,
+                 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115,
+                 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99,
+                 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
+                 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -54243,7 +59231,20 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<10, 18, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100,
                  101, 114, 115, 18, 39, 65, 100, 100, 32, 71, 105, 116, 76, 97, 98, 32, 83, 101,
                  108, 102, 104, 111, 115, 116, 101, 100, 32, 73, 100, 101, 110, 116, 105, 116,
-                 121, 32, 80, 114, 111, 118, 105, 100, 101, 114>>}
+                 121, 32, 80, 114, 111, 118, 105, 100, 101, 114, 114, 227, 1, 10, 224, 1, 10, 15,
+                 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105, 100, 18, 202,
+                 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105, 115, 32, 97, 108,
+                 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97,
+                 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101,
+                 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73, 102, 32, 121, 111,
+                 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116, 47, 115, 101, 116,
+                 32, 97, 32, 114, 101, 115, 117, 108, 116, 32, 111, 102, 32, 97, 110, 111, 116,
+                 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32,
+                 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104, 101, 97, 100, 101,
+                 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32, 116, 104, 101, 32,
+                 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109, 105, 115, 115, 105,
+                 111, 110, 32, 116, 111, 32, 97, 99, 99, 101, 115, 115, 32, 116, 104, 101, 32,
+                 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -54268,7 +59269,21 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<10, 18, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100,
                  101, 114, 115, 18, 42, 85, 112, 100, 97, 116, 101, 32, 71, 105, 116, 76, 97, 98,
                  32, 83, 101, 108, 102, 104, 111, 115, 116, 101, 100, 32, 73, 100, 101, 110, 116,
-                 105, 116, 121, 32, 80, 114, 111, 118, 105, 100, 101, 114>>}
+                 105, 116, 121, 32, 80, 114, 111, 118, 105, 100, 101, 114, 114, 227, 1, 10, 224,
+                 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105,
+                 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105,
+                 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97,
+                 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114,
+                 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73,
+                 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116,
+                 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117, 108, 116, 32, 111, 102, 32,
+                 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116,
+                 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104,
+                 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32,
+                 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109,
+                 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99, 99, 101, 115, 115, 32,
+                 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 100, 97, 116,
+                 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -54291,7 +59306,21 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {1042, 2,
                <<10, 18, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100,
                  101, 114, 115, 18, 28, 65, 100, 100, 32, 71, 111, 111, 103, 108, 101, 32, 73,
-                 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100, 101, 114>>}
+                 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100, 101, 114,
+                 114, 227, 1, 10, 224, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45,
+                 111, 114, 103, 105, 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117,
+                 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32,
+                 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116,
+                 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115,
+                 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116,
+                 111, 32, 103, 101, 116, 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117, 108,
+                 116, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97,
+                 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32,
+                 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32,
+                 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115,
+                 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99,
+                 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
+                 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -54316,7 +59345,20 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
                <<10, 18, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100,
                  101, 114, 115, 18, 31, 85, 112, 100, 97, 116, 101, 32, 71, 111, 111, 103, 108,
                  101, 32, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100,
-                 101, 114>>}
+                 101, 114, 114, 227, 1, 10, 224, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101,
+                 108, 45, 111, 114, 103, 105, 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102,
+                 97, 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104,
+                 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102,
+                 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117,
+                 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32,
+                 116, 111, 32, 103, 101, 116, 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117,
+                 108, 116, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103,
+                 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101,
+                 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32,
+                 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115,
+                 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99,
+                 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
+                 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -54339,7 +59381,21 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {1042, 2,
                <<10, 18, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100,
                  101, 114, 115, 18, 26, 65, 100, 100, 32, 76, 68, 65, 80, 32, 73, 100, 101, 110,
-                 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100, 101, 114>>}
+                 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100, 101, 114, 114, 227, 1, 10,
+                 224, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103,
+                 105, 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32,
+                 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103,
+                 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32,
+                 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32,
+                 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101,
+                 116, 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117, 108, 116, 32, 111, 102,
+                 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97,
+                 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32,
+                 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101,
+                 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114,
+                 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99, 99, 101, 115, 115,
+                 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 100, 97,
+                 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -54363,7 +59419,211 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {1042, 2,
                <<10, 18, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100,
                  101, 114, 115, 18, 29, 85, 112, 100, 97, 116, 101, 32, 76, 68, 65, 80, 32, 73,
-                 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100, 101, 114>>}
+                 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100, 101, 114,
+                 114, 227, 1, 10, 224, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45,
+                 111, 114, 103, 105, 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117,
+                 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32,
+                 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116,
+                 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115,
+                 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116,
+                 111, 32, 103, 101, 116, 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117, 108,
+                 116, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97,
+                 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32,
+                 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32,
+                 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115,
+                 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99,
+                 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
+                 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "AddAppleProvider",
+          input_type: ".zitadel.management.v1.AddAppleProviderRequest",
+          output_type: ".zitadel.management.v1.AddAppleProviderResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<34, 11, 47, 105, 100, 112, 115, 47, 97, 112, 112, 108, 101, 58, 1, 42>>},
+              {50000, 2, "\n\rorg.idp.write"},
+              {1042, 2,
+               <<10, 18, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100,
+                 101, 114, 115, 18, 27, 65, 100, 100, 32, 65, 112, 112, 108, 101, 32, 73, 100,
+                 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100, 101, 114, 114,
+                 227, 1, 10, 224, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111,
+                 114, 103, 105, 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108,
+                 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111,
+                 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104,
+                 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101,
+                 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111,
+                 32, 103, 101, 116, 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117, 108, 116,
+                 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110,
+                 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116,
+                 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115,
+                 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32,
+                 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99, 99,
+                 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
+                 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "UpdateAppleProvider",
+          input_type: ".zitadel.management.v1.UpdateAppleProviderRequest",
+          output_type: ".zitadel.management.v1.UpdateAppleProviderResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<26, 16, 47, 105, 100, 112, 115, 47, 97, 112, 112, 108, 101, 47, 123, 105, 100,
+                 125, 58, 1, 42>>},
+              {50000, 2, "\n\rorg.idp.write"},
+              {1042, 2,
+               <<10, 18, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100,
+                 101, 114, 115, 18, 30, 85, 112, 100, 97, 116, 101, 32, 65, 112, 112, 108, 101,
+                 32, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100, 101,
+                 114, 114, 227, 1, 10, 224, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108,
+                 45, 111, 114, 103, 105, 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102, 97,
+                 117, 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101,
+                 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32,
+                 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117,
+                 115, 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32,
+                 116, 111, 32, 103, 101, 116, 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117,
+                 108, 116, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103,
+                 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101,
+                 32, 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32,
+                 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115,
+                 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99,
+                 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
+                 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "AddSAMLProvider",
+          input_type: ".zitadel.management.v1.AddSAMLProviderRequest",
+          output_type: ".zitadel.management.v1.AddSAMLProviderResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<34, 10, 47, 105, 100, 112, 115, 47, 115, 97, 109, 108, 58, 1, 42>>},
+              {50000, 2, "\n\rorg.idp.write"},
+              {1042, 2,
+               <<10, 18, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100,
+                 101, 114, 115, 18, 26, 65, 100, 100, 32, 83, 65, 77, 76, 32, 73, 100, 101, 110,
+                 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100, 101, 114, 114, 227, 1, 10,
+                 224, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103,
+                 105, 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32,
+                 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103,
+                 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32,
+                 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32,
+                 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101,
+                 116, 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117, 108, 116, 32, 111, 102,
+                 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97,
+                 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32,
+                 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101,
+                 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114,
+                 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99, 99, 101, 115, 115,
+                 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 100, 97,
+                 116, 97, 46, 24, 1>>}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "UpdateSAMLProvider",
+          input_type: ".zitadel.management.v1.UpdateSAMLProviderRequest",
+          output_type: ".zitadel.management.v1.UpdateSAMLProviderResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<26, 15, 47, 105, 100, 112, 115, 47, 115, 97, 109, 108, 47, 123, 105, 100, 125,
+                 58, 1, 42>>},
+              {50000, 2, "\n\rorg.idp.write"},
+              {1042, 2,
+               <<10, 18, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100,
+                 101, 114, 115, 18, 29, 85, 112, 100, 97, 116, 101, 32, 83, 65, 77, 76, 32, 73,
+                 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100, 101, 114,
+                 114, 227, 1, 10, 224, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45,
+                 111, 114, 103, 105, 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117,
+                 108, 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32,
+                 111, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116,
+                 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115,
+                 101, 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116,
+                 111, 32, 103, 101, 116, 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117, 108,
+                 116, 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97,
+                 110, 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32,
+                 116, 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32,
+                 115, 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115,
+                 32, 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99,
+                 99, 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
+                 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "RegenerateSAMLProviderCertificate",
+          input_type: ".zitadel.management.v1.RegenerateSAMLProviderCertificateRequest",
+          output_type: ".zitadel.management.v1.RegenerateSAMLProviderCertificateResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<34, 37, 47, 105, 100, 112, 115, 47, 115, 97, 109, 108, 47, 123, 105, 100, 125,
+                 47, 95, 103, 101, 110, 101, 114, 97, 116, 101, 95, 99, 101, 114, 116, 105, 102,
+                 105, 99, 97, 116, 101, 58, 1, 42>>},
+              {50000, 2, "\n\rorg.idp.write"},
+              {1042, 2,
+               <<10, 18, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100,
+                 101, 114, 115, 18, 45, 82, 101, 103, 101, 110, 101, 114, 97, 116, 101, 32, 83,
+                 65, 77, 76, 32, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118,
+                 105, 100, 101, 114, 32, 67, 101, 114, 116, 105, 102, 105, 99, 97, 116, 101, 114,
+                 227, 1, 10, 224, 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111,
+                 114, 103, 105, 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108,
+                 116, 32, 105, 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111,
+                 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104,
+                 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101,
+                 114, 46, 32, 73, 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111,
+                 32, 103, 101, 116, 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117, 108, 116,
+                 32, 111, 102, 32, 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110,
+                 105, 122, 97, 116, 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116,
+                 104, 101, 32, 104, 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115,
+                 117, 114, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32,
+                 112, 101, 114, 109, 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99, 99,
+                 101, 115, 115, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
+                 100, 32, 100, 97, 116, 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -54387,7 +59647,21 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
               {1042, 2,
                <<10, 18, 73, 100, 101, 110, 116, 105, 116, 121, 32, 80, 114, 111, 118, 105, 100,
                  101, 114, 115, 18, 24, 68, 101, 108, 101, 116, 101, 32, 73, 100, 101, 110, 116,
-                 105, 116, 121, 32, 80, 114, 111, 118, 105, 100, 101, 114>>}
+                 105, 116, 121, 32, 80, 114, 111, 118, 105, 100, 101, 114, 114, 227, 1, 10, 224,
+                 1, 10, 15, 120, 45, 122, 105, 116, 97, 100, 101, 108, 45, 111, 114, 103, 105,
+                 100, 18, 202, 1, 84, 104, 101, 32, 100, 101, 102, 97, 117, 108, 116, 32, 105,
+                 115, 32, 97, 108, 119, 97, 121, 115, 32, 116, 104, 101, 32, 111, 114, 103, 97,
+                 110, 105, 122, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104, 101, 32, 114,
+                 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 117, 115, 101, 114, 46, 32, 73,
+                 102, 32, 121, 111, 117, 32, 108, 105, 107, 101, 32, 116, 111, 32, 103, 101, 116,
+                 47, 115, 101, 116, 32, 97, 32, 114, 101, 115, 117, 108, 116, 32, 111, 102, 32,
+                 97, 110, 111, 116, 104, 101, 114, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116,
+                 105, 111, 110, 32, 105, 110, 99, 108, 117, 100, 101, 32, 116, 104, 101, 32, 104,
+                 101, 97, 100, 101, 114, 46, 32, 77, 97, 107, 101, 32, 115, 117, 114, 101, 32,
+                 116, 104, 101, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 112, 101, 114, 109,
+                 105, 115, 115, 105, 111, 110, 32, 116, 111, 32, 97, 99, 99, 101, 115, 115, 32,
+                 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 100, 97, 116,
+                 97, 46, 24, 1>>}
             ]
           },
           client_streaming: false,
@@ -55142,6 +60416,18 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
     :RemoveHumanAuthFactorU2F,
     Zitadel.Management.V1.RemoveHumanAuthFactorU2FRequest,
     Zitadel.Management.V1.RemoveHumanAuthFactorU2FResponse
+  )
+
+  rpc(
+    :RemoveHumanAuthFactorOTPSMS,
+    Zitadel.Management.V1.RemoveHumanAuthFactorOTPSMSRequest,
+    Zitadel.Management.V1.RemoveHumanAuthFactorOTPSMSResponse
+  )
+
+  rpc(
+    :RemoveHumanAuthFactorOTPEmail,
+    Zitadel.Management.V1.RemoveHumanAuthFactorOTPEmailRequest,
+    Zitadel.Management.V1.RemoveHumanAuthFactorOTPEmailResponse
   )
 
   rpc(
@@ -56149,6 +61435,54 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
   )
 
   rpc(
+    :GetCustomVerifySMSOTPMessageText,
+    Zitadel.Management.V1.GetCustomVerifySMSOTPMessageTextRequest,
+    Zitadel.Management.V1.GetCustomVerifySMSOTPMessageTextResponse
+  )
+
+  rpc(
+    :GetDefaultVerifySMSOTPMessageText,
+    Zitadel.Management.V1.GetDefaultVerifySMSOTPMessageTextRequest,
+    Zitadel.Management.V1.GetDefaultVerifySMSOTPMessageTextResponse
+  )
+
+  rpc(
+    :SetCustomVerifySMSOTPMessageText,
+    Zitadel.Management.V1.SetCustomVerifySMSOTPMessageTextRequest,
+    Zitadel.Management.V1.SetCustomVerifySMSOTPMessageTextResponse
+  )
+
+  rpc(
+    :ResetCustomVerifySMSOTPMessageTextToDefault,
+    Zitadel.Management.V1.ResetCustomVerifySMSOTPMessageTextToDefaultRequest,
+    Zitadel.Management.V1.ResetCustomVerifySMSOTPMessageTextToDefaultResponse
+  )
+
+  rpc(
+    :GetCustomVerifyEmailOTPMessageText,
+    Zitadel.Management.V1.GetCustomVerifyEmailOTPMessageTextRequest,
+    Zitadel.Management.V1.GetCustomVerifyEmailOTPMessageTextResponse
+  )
+
+  rpc(
+    :GetDefaultVerifyEmailOTPMessageText,
+    Zitadel.Management.V1.GetDefaultVerifyEmailOTPMessageTextRequest,
+    Zitadel.Management.V1.GetDefaultVerifyEmailOTPMessageTextResponse
+  )
+
+  rpc(
+    :SetCustomVerifyEmailOTPMessageText,
+    Zitadel.Management.V1.SetCustomVerifyEmailOTPMessageTextRequest,
+    Zitadel.Management.V1.SetCustomVerifyEmailOTPMessageTextResponse
+  )
+
+  rpc(
+    :ResetCustomVerifyEmailOTPMessageTextToDefault,
+    Zitadel.Management.V1.ResetCustomVerifyEmailOTPMessageTextToDefaultRequest,
+    Zitadel.Management.V1.ResetCustomVerifyEmailOTPMessageTextToDefaultResponse
+  )
+
+  rpc(
     :GetCustomDomainClaimedMessageText,
     Zitadel.Management.V1.GetCustomDomainClaimedMessageTextRequest,
     Zitadel.Management.V1.GetCustomDomainClaimedMessageTextResponse
@@ -56218,6 +61552,30 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
     :ResetCustomPasswordChangeMessageTextToDefault,
     Zitadel.Management.V1.ResetCustomPasswordChangeMessageTextToDefaultRequest,
     Zitadel.Management.V1.ResetCustomPasswordChangeMessageTextToDefaultResponse
+  )
+
+  rpc(
+    :GetCustomInviteUserMessageText,
+    Zitadel.Management.V1.GetCustomInviteUserMessageTextRequest,
+    Zitadel.Management.V1.GetCustomInviteUserMessageTextResponse
+  )
+
+  rpc(
+    :GetDefaultInviteUserMessageText,
+    Zitadel.Management.V1.GetDefaultInviteUserMessageTextRequest,
+    Zitadel.Management.V1.GetDefaultInviteUserMessageTextResponse
+  )
+
+  rpc(
+    :SetCustomInviteUserMessageCustomText,
+    Zitadel.Management.V1.SetCustomInviteUserMessageTextRequest,
+    Zitadel.Management.V1.SetCustomInviteUserMessageTextResponse
+  )
+
+  rpc(
+    :ResetCustomInviteUserMessageTextToDefault,
+    Zitadel.Management.V1.ResetCustomInviteUserMessageTextToDefaultRequest,
+    Zitadel.Management.V1.ResetCustomInviteUserMessageTextToDefaultResponse
   )
 
   rpc(
@@ -56341,6 +61699,12 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
   )
 
   rpc(
+    :MigrateGenericOIDCProvider,
+    Zitadel.Management.V1.MigrateGenericOIDCProviderRequest,
+    Zitadel.Management.V1.MigrateGenericOIDCProviderResponse
+  )
+
+  rpc(
     :AddJWTProvider,
     Zitadel.Management.V1.AddJWTProviderRequest,
     Zitadel.Management.V1.AddJWTProviderResponse
@@ -56434,6 +61798,36 @@ defmodule Zitadel.Management.V1.ManagementService.Service do
     :UpdateLDAPProvider,
     Zitadel.Management.V1.UpdateLDAPProviderRequest,
     Zitadel.Management.V1.UpdateLDAPProviderResponse
+  )
+
+  rpc(
+    :AddAppleProvider,
+    Zitadel.Management.V1.AddAppleProviderRequest,
+    Zitadel.Management.V1.AddAppleProviderResponse
+  )
+
+  rpc(
+    :UpdateAppleProvider,
+    Zitadel.Management.V1.UpdateAppleProviderRequest,
+    Zitadel.Management.V1.UpdateAppleProviderResponse
+  )
+
+  rpc(
+    :AddSAMLProvider,
+    Zitadel.Management.V1.AddSAMLProviderRequest,
+    Zitadel.Management.V1.AddSAMLProviderResponse
+  )
+
+  rpc(
+    :UpdateSAMLProvider,
+    Zitadel.Management.V1.UpdateSAMLProviderRequest,
+    Zitadel.Management.V1.UpdateSAMLProviderResponse
+  )
+
+  rpc(
+    :RegenerateSAMLProviderCertificate,
+    Zitadel.Management.V1.RegenerateSAMLProviderCertificateRequest,
+    Zitadel.Management.V1.RegenerateSAMLProviderCertificateResponse
   )
 
   rpc(

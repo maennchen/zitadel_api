@@ -502,6 +502,20 @@ defmodule Zitadel.Org.V1.OrgQuery do
           json_name: "stateQuery",
           proto3_optional: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "id_query",
+          extendee: nil,
+          number: 4,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.org.v1.OrgIDQuery",
+          default_value: nil,
+          options: nil,
+          oneof_index: 0,
+          json_name: "idQuery",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
       nested_type: [],
@@ -531,6 +545,7 @@ defmodule Zitadel.Org.V1.OrgQuery do
   field(:name_query, 1, type: Zitadel.Org.V1.OrgNameQuery, json_name: "nameQuery", oneof: 0)
   field(:domain_query, 2, type: Zitadel.Org.V1.OrgDomainQuery, json_name: "domainQuery", oneof: 0)
   field(:state_query, 3, type: Zitadel.Org.V1.OrgStateQuery, json_name: "stateQuery", oneof: 0)
+  field(:id_query, 4, type: Zitadel.Org.V1.OrgIDQuery, json_name: "idQuery", oneof: 0)
 end
 
 defmodule Zitadel.Org.V1.OrgNameQuery do
@@ -748,6 +763,61 @@ defmodule Zitadel.Org.V1.OrgStateQuery do
   end
 
   field(:state, 1, type: Zitadel.Org.V1.OrgState, enum: true, deprecated: false)
+end
+
+defmodule Zitadel.Org.V1.OrgIDQuery do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "OrgIDQuery",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "id",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<114, 3, 24, 200, 1>>},
+              {1042, 2,
+               <<74, 19, 34, 54, 57, 54, 50, 57, 48, 50, 51, 57, 48, 54, 52, 56, 56, 51, 51, 52,
+                 34>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "id",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:id, 1, type: :string, deprecated: false)
 end
 
 defmodule Zitadel.Org.V1.DomainSearchQuery do

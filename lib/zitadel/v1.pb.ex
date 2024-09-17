@@ -751,6 +751,20 @@ defmodule Zitadel.V1.V1.DataOrg do
           json_name: "machineKeys",
           proto3_optional: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "invite_user_messages",
+          extendee: nil,
+          number: 40,
+          label: :LABEL_REPEATED,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.management.v1.SetCustomInviteUserMessageTextRequest",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "inviteUserMessages",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
       nested_type: [],
@@ -936,6 +950,12 @@ defmodule Zitadel.V1.V1.DataOrg do
     repeated: true,
     type: Zitadel.V1.V1.DataMachineKey,
     json_name: "machineKeys"
+  )
+
+  field(:invite_user_messages, 40,
+    repeated: true,
+    type: Zitadel.Management.V1.SetCustomInviteUserMessageTextRequest,
+    json_name: "inviteUserMessages"
   )
 end
 

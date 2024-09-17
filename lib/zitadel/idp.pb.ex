@@ -291,6 +291,18 @@ defmodule Zitadel.Idp.V1.ProviderType do
           number: 10,
           options: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "PROVIDER_TYPE_APPLE",
+          number: 11,
+          options: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "PROVIDER_TYPE_SAML",
+          number: 12,
+          options: nil,
+          __unknown_fields__: []
         }
       ],
       options: nil,
@@ -311,6 +323,139 @@ defmodule Zitadel.Idp.V1.ProviderType do
   field(:PROVIDER_TYPE_GITLAB, 8)
   field(:PROVIDER_TYPE_GITLAB_SELF_HOSTED, 9)
   field(:PROVIDER_TYPE_GOOGLE, 10)
+  field(:PROVIDER_TYPE_APPLE, 11)
+  field(:PROVIDER_TYPE_SAML, 12)
+end
+
+defmodule Zitadel.Idp.V1.SAMLBinding do
+  use Protobuf, enum: true, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.EnumDescriptorProto{
+      name: "SAMLBinding",
+      value: [
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "SAML_BINDING_UNSPECIFIED",
+          number: 0,
+          options: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "SAML_BINDING_POST",
+          number: 1,
+          options: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "SAML_BINDING_REDIRECT",
+          number: 2,
+          options: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "SAML_BINDING_ARTIFACT",
+          number: 3,
+          options: nil,
+          __unknown_fields__: []
+        }
+      ],
+      options: nil,
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:SAML_BINDING_UNSPECIFIED, 0)
+  field(:SAML_BINDING_POST, 1)
+  field(:SAML_BINDING_REDIRECT, 2)
+  field(:SAML_BINDING_ARTIFACT, 3)
+end
+
+defmodule Zitadel.Idp.V1.SAMLNameIDFormat do
+  use Protobuf, enum: true, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.EnumDescriptorProto{
+      name: "SAMLNameIDFormat",
+      value: [
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "SAML_NAME_ID_FORMAT_UNSPECIFIED",
+          number: 0,
+          options: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "SAML_NAME_ID_FORMAT_EMAIL_ADDRESS",
+          number: 1,
+          options: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "SAML_NAME_ID_FORMAT_PERSISTENT",
+          number: 2,
+          options: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "SAML_NAME_ID_FORMAT_TRANSIENT",
+          number: 3,
+          options: nil,
+          __unknown_fields__: []
+        }
+      ],
+      options: nil,
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:SAML_NAME_ID_FORMAT_UNSPECIFIED, 0)
+  field(:SAML_NAME_ID_FORMAT_EMAIL_ADDRESS, 1)
+  field(:SAML_NAME_ID_FORMAT_PERSISTENT, 2)
+  field(:SAML_NAME_ID_FORMAT_TRANSIENT, 3)
+end
+
+defmodule Zitadel.Idp.V1.AutoLinkingOption do
+  use Protobuf, enum: true, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.EnumDescriptorProto{
+      name: "AutoLinkingOption",
+      value: [
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "AUTO_LINKING_OPTION_UNSPECIFIED",
+          number: 0,
+          options: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "AUTO_LINKING_OPTION_USERNAME",
+          number: 1,
+          options: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "AUTO_LINKING_OPTION_EMAIL",
+          number: 2,
+          options: nil,
+          __unknown_fields__: []
+        }
+      ],
+      options: nil,
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:AUTO_LINKING_OPTION_UNSPECIFIED, 0)
+  field(:AUTO_LINKING_OPTION_USERNAME, 1)
+  field(:AUTO_LINKING_OPTION_EMAIL, 2)
 end
 
 defmodule Zitadel.Idp.V1.AzureADTenantType do
@@ -1788,6 +1933,34 @@ defmodule Zitadel.Idp.V1.ProviderConfig do
           json_name: "azureAd",
           proto3_optional: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "apple",
+          extendee: nil,
+          number: 12,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.idp.v1.AppleConfig",
+          default_value: nil,
+          options: nil,
+          oneof_index: 0,
+          json_name: "apple",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "saml",
+          extendee: nil,
+          number: 13,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.idp.v1.SAMLConfig",
+          default_value: nil,
+          options: nil,
+          oneof_index: 0,
+          json_name: "saml",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
       nested_type: [],
@@ -1833,6 +2006,8 @@ defmodule Zitadel.Idp.V1.ProviderConfig do
   )
 
   field(:azure_ad, 11, type: Zitadel.Idp.V1.AzureADConfig, json_name: "azureAd", oneof: 0)
+  field(:apple, 12, type: Zitadel.Idp.V1.AppleConfig, oneof: 0)
+  field(:saml, 13, type: Zitadel.Idp.V1.SAMLConfig, oneof: 0)
 end
 
 defmodule Zitadel.Idp.V1.OAuthConfig do
@@ -2161,7 +2336,27 @@ defmodule Zitadel.Idp.V1.GenericOIDCConfig do
           type: :TYPE_BOOL,
           type_name: nil,
           default_value: nil,
-          options: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<50, 90, 105, 102, 32, 116, 114, 117, 101, 44, 32, 112, 114, 111, 118, 105, 100,
+                 101, 114, 32, 105, 110, 102, 111, 114, 109, 97, 116, 105, 111, 110, 32, 103, 101,
+                 116, 32, 109, 97, 112, 112, 101, 100, 32, 102, 114, 111, 109, 32, 116, 104, 101,
+                 32, 105, 100, 32, 116, 111, 107, 101, 110, 44, 32, 110, 111, 116, 32, 102, 114,
+                 111, 109, 32, 116, 104, 101, 32, 117, 115, 101, 114, 105, 110, 102, 111, 32, 101,
+                 110, 100, 112, 111, 105, 110, 116, 74, 4, 116, 114, 117, 101>>}
+            ]
+          },
           oneof_index: nil,
           json_name: "isIdTokenMapping",
           proto3_optional: nil,
@@ -2183,7 +2378,7 @@ defmodule Zitadel.Idp.V1.GenericOIDCConfig do
   field(:issuer, 1, type: :string, deprecated: false)
   field(:client_id, 2, type: :string, json_name: "clientId", deprecated: false)
   field(:scopes, 3, repeated: true, type: :string, deprecated: false)
-  field(:is_id_token_mapping, 4, type: :bool, json_name: "isIdTokenMapping")
+  field(:is_id_token_mapping, 4, type: :bool, json_name: "isIdTokenMapping", deprecated: false)
 end
 
 defmodule Zitadel.Idp.V1.GitHubConfig do
@@ -2845,6 +3040,120 @@ defmodule Zitadel.Idp.V1.LDAPConfig do
   field(:attributes, 9, type: Zitadel.Idp.V1.LDAPAttributes)
 end
 
+defmodule Zitadel.Idp.V1.SAMLConfig do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "SAMLConfig",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "metadata_xml",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_BYTES,
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "metadataXml",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "binding",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.idp.v1.SAMLBinding",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "binding",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "with_signed_request",
+          extendee: nil,
+          number: 3,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_BOOL,
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "withSignedRequest",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "name_id_format",
+          extendee: nil,
+          number: 4,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.idp.v1.SAMLNameIDFormat",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "nameIdFormat",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "transient_mapping_attribute_name",
+          extendee: nil,
+          number: 5,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: nil,
+          oneof_index: 0,
+          json_name: "transientMappingAttributeName",
+          proto3_optional: true,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [
+        %Google.Protobuf.OneofDescriptorProto{
+          name: "_transient_mapping_attribute_name",
+          options: nil,
+          __unknown_fields__: []
+        }
+      ],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:metadata_xml, 1, type: :bytes, json_name: "metadataXml")
+  field(:binding, 2, type: Zitadel.Idp.V1.SAMLBinding, enum: true)
+  field(:with_signed_request, 3, type: :bool, json_name: "withSignedRequest")
+
+  field(:name_id_format, 4,
+    type: Zitadel.Idp.V1.SAMLNameIDFormat,
+    json_name: "nameIdFormat",
+    enum: true
+  )
+
+  field(:transient_mapping_attribute_name, 5,
+    proto3_optional: true,
+    type: :string,
+    json_name: "transientMappingAttributeName"
+  )
+end
+
 defmodule Zitadel.Idp.V1.AzureADConfig do
   use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
@@ -3025,7 +3334,18 @@ defmodule Zitadel.Idp.V1.Options do
             __pb_extensions__: %{},
             __unknown_fields__: [
               {1042, 2,
-               "2YEnable if users should be able to link an existing ZITADEL user with an external account."}
+               <<50, 199, 1, 69, 110, 97, 98, 108, 101, 32, 105, 102, 32, 117, 115, 101, 114, 115,
+                 32, 115, 104, 111, 117, 108, 100, 32, 98, 101, 32, 97, 98, 108, 101, 32, 116,
+                 111, 32, 109, 97, 110, 117, 97, 108, 108, 121, 32, 108, 105, 110, 107, 32, 97,
+                 110, 32, 101, 120, 105, 115, 116, 105, 110, 103, 32, 90, 73, 84, 65, 68, 69, 76,
+                 32, 117, 115, 101, 114, 32, 119, 105, 116, 104, 32, 97, 110, 32, 101, 120, 116,
+                 101, 114, 110, 97, 108, 32, 97, 99, 99, 111, 117, 110, 116, 46, 32, 68, 105, 115,
+                 97, 98, 108, 101, 32, 105, 102, 32, 117, 115, 101, 114, 115, 32, 115, 104, 111,
+                 117, 108, 100, 32, 111, 110, 108, 121, 32, 98, 101, 32, 97, 108, 108, 111, 119,
+                 101, 100, 32, 116, 111, 32, 108, 105, 110, 107, 32, 116, 104, 101, 32, 112, 114,
+                 111, 112, 111, 115, 101, 100, 32, 97, 99, 99, 111, 117, 110, 116, 32, 105, 110,
+                 32, 99, 97, 115, 101, 32, 111, 102, 32, 97, 99, 116, 105, 118, 101, 32, 97, 117,
+                 116, 111, 95, 108, 105, 110, 107, 105, 110, 103, 46>>}
             ]
           },
           oneof_index: nil,
@@ -3054,7 +3374,18 @@ defmodule Zitadel.Idp.V1.Options do
             __pb_extensions__: %{},
             __unknown_fields__: [
               {1042, 2,
-               "2aEnable if users should be able to create a new account in ZITADEL when using an external account."}
+               <<50, 201, 1, 69, 110, 97, 98, 108, 101, 32, 105, 102, 32, 117, 115, 101, 114, 115,
+                 32, 115, 104, 111, 117, 108, 100, 32, 98, 101, 32, 97, 98, 108, 101, 32, 116,
+                 111, 32, 109, 97, 110, 117, 97, 108, 108, 121, 32, 99, 114, 101, 97, 116, 101,
+                 32, 97, 32, 110, 101, 119, 32, 97, 99, 99, 111, 117, 110, 116, 32, 105, 110, 32,
+                 90, 73, 84, 65, 68, 69, 76, 32, 119, 104, 101, 110, 32, 117, 115, 105, 110, 103,
+                 32, 97, 110, 32, 101, 120, 116, 101, 114, 110, 97, 108, 32, 97, 99, 99, 111, 117,
+                 110, 116, 46, 32, 68, 105, 115, 97, 98, 108, 101, 32, 105, 102, 32, 117, 115,
+                 101, 114, 115, 32, 115, 104, 111, 117, 108, 100, 32, 110, 111, 116, 32, 98, 101,
+                 32, 97, 98, 108, 101, 32, 116, 111, 32, 101, 100, 105, 116, 32, 97, 99, 99, 111,
+                 117, 110, 116, 32, 105, 110, 102, 111, 114, 109, 97, 116, 105, 111, 110, 32, 119,
+                 104, 101, 110, 32, 97, 117, 116, 111, 95, 99, 114, 101, 97, 116, 105, 111, 110,
+                 32, 105, 115, 32, 101, 110, 97, 98, 108, 101, 100, 46>>}
             ]
           },
           oneof_index: nil,
@@ -3119,6 +3450,35 @@ defmodule Zitadel.Idp.V1.Options do
           json_name: "isAutoUpdate",
           proto3_optional: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "auto_linking",
+          extendee: nil,
+          number: 5,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.idp.v1.AutoLinkingOption",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               "2~Enable if users should get prompted to link an existing ZITADEL user to an external account if the selected attribute matches."}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "autoLinking",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
       nested_type: [],
@@ -3137,6 +3497,13 @@ defmodule Zitadel.Idp.V1.Options do
   field(:is_creation_allowed, 2, type: :bool, json_name: "isCreationAllowed", deprecated: false)
   field(:is_auto_creation, 3, type: :bool, json_name: "isAutoCreation", deprecated: false)
   field(:is_auto_update, 4, type: :bool, json_name: "isAutoUpdate", deprecated: false)
+
+  field(:auto_linking, 5,
+    type: Zitadel.Idp.V1.AutoLinkingOption,
+    json_name: "autoLinking",
+    enum: true,
+    deprecated: false
+  )
 end
 
 defmodule Zitadel.Idp.V1.LDAPAttributes do
@@ -3614,4 +3981,155 @@ defmodule Zitadel.Idp.V1.AzureADTenant do
   )
 
   field(:tenant_id, 2, type: :string, json_name: "tenantId", oneof: 0)
+end
+
+defmodule Zitadel.Idp.V1.AppleConfig do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "AppleConfig",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "client_id",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<50, 50, 67, 108, 105, 101, 110, 116, 32, 105, 100, 32, 40, 65, 112, 112, 32, 73,
+                 68, 32, 111, 114, 32, 83, 101, 114, 118, 105, 99, 101, 32, 73, 68, 41, 32, 112,
+                 114, 111, 118, 105, 100, 101, 100, 32, 98, 121, 32, 65, 112, 112, 108, 101, 74,
+                 15, 34, 99, 111, 109, 46, 99, 108, 105, 101, 110, 116, 46, 105, 100, 34>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "clientId",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "team_id",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<50, 25, 84, 101, 97, 109, 32, 73, 68, 32, 112, 114, 111, 118, 105, 100, 101, 100,
+                 32, 98, 121, 32, 65, 112, 112, 108, 101, 74, 12, 34, 65, 76, 84, 48, 51, 74, 86,
+                 51, 79, 83, 34>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "teamId",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "key_id",
+          extendee: nil,
+          number: 3,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2, "2(ID of the private key generated by AppleJ\v\"OGKDK25KD\""}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "keyId",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "scopes",
+          extendee: nil,
+          number: 4,
+          label: :LABEL_REPEATED,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<50, 59, 116, 104, 101, 32, 115, 99, 111, 112, 101, 115, 32, 114, 101, 113, 117,
+                 101, 115, 116, 101, 100, 32, 98, 121, 32, 90, 73, 84, 65, 68, 69, 76, 32, 100,
+                 117, 114, 105, 110, 103, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115,
+                 116, 32, 116, 111, 32, 65, 112, 112, 108, 101, 74, 17, 91, 34, 110, 97, 109, 101,
+                 34, 44, 32, 34, 101, 109, 97, 105, 108, 34, 93>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "scopes",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:client_id, 1, type: :string, json_name: "clientId", deprecated: false)
+  field(:team_id, 2, type: :string, json_name: "teamId", deprecated: false)
+  field(:key_id, 3, type: :string, json_name: "keyId", deprecated: false)
+  field(:scopes, 4, repeated: true, type: :string, deprecated: false)
 end

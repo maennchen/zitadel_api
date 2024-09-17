@@ -199,7 +199,11 @@ defmodule Zitadel.Auth.V1.GetMyUserResponse do
 
   field(:user, 1, type: Zitadel.User.V1.User)
 
-  field(:last_login, 2, type: Google.Protobuf.Timestamp, json_name: "lastLogin", deprecated: false)
+  field(:last_login, 2,
+    type: Google.Protobuf.Timestamp,
+    json_name: "lastLogin",
+    deprecated: false
+  )
 end
 
 defmodule Zitadel.Auth.V1.RemoveMyUserRequest do
@@ -3343,6 +3347,242 @@ defmodule Zitadel.Auth.V1.RemoveMyAuthFactorOTPResponse do
   field(:details, 1, type: Zitadel.V1.ObjectDetails)
 end
 
+defmodule Zitadel.Auth.V1.AddMyAuthFactorOTPSMSRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "AddMyAuthFactorOTPSMSRequest",
+      field: [],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+end
+
+defmodule Zitadel.Auth.V1.AddMyAuthFactorOTPSMSResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "AddMyAuthFactorOTPSMSResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "details",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Auth.V1.RemoveMyAuthFactorOTPSMSRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "RemoveMyAuthFactorOTPSMSRequest",
+      field: [],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+end
+
+defmodule Zitadel.Auth.V1.RemoveMyAuthFactorOTPSMSResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "RemoveMyAuthFactorOTPSMSResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "details",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Auth.V1.AddMyAuthFactorOTPEmailRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "AddMyAuthFactorOTPEmailRequest",
+      field: [],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+end
+
+defmodule Zitadel.Auth.V1.AddMyAuthFactorOTPEmailResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "AddMyAuthFactorOTPEmailResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "details",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
+defmodule Zitadel.Auth.V1.RemoveMyAuthFactorOTPEmailRequest do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "RemoveMyAuthFactorOTPEmailRequest",
+      field: [],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+end
+
+defmodule Zitadel.Auth.V1.RemoveMyAuthFactorOTPEmailResponse do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "RemoveMyAuthFactorOTPEmailResponse",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "details",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+end
+
 defmodule Zitadel.Auth.V1.RemoveMyAuthFactorU2FRequest do
   use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
@@ -4417,6 +4657,20 @@ defmodule Zitadel.Auth.V1.ListMyProjectOrgsRequest do
           json_name: "queries",
           proto3_optional: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "sorting_column",
+          extendee: nil,
+          number: 3,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.org.v1.OrgFieldName",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "sortingColumn",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
       nested_type: [],
@@ -4433,6 +4687,12 @@ defmodule Zitadel.Auth.V1.ListMyProjectOrgsRequest do
 
   field(:query, 1, type: Zitadel.V1.ListQuery)
   field(:queries, 2, repeated: true, type: Zitadel.Org.V1.OrgQuery)
+
+  field(:sorting_column, 3,
+    type: Zitadel.Org.V1.OrgFieldName,
+    json_name: "sortingColumn",
+    enum: true
+  )
 end
 
 defmodule Zitadel.Auth.V1.ListMyProjectOrgsResponse do
@@ -4968,13 +5228,11 @@ defmodule Zitadel.Auth.V1.AuthService.Service do
               {50000, 2, "\n\rauthenticated"},
               {1042, 2,
                <<10, 7, 71, 101, 110, 101, 114, 97, 108, 18, 19, 83, 117, 112, 112, 111, 114, 116,
-                 101, 100, 32, 76, 97, 110, 103, 117, 97, 103, 101, 115, 26, 92, 84, 104, 101, 32,
-                 115, 117, 112, 112, 111, 114, 116, 101, 100, 47, 100, 101, 102, 97, 117, 108,
-                 116, 32, 108, 97, 110, 103, 117, 97, 103, 101, 115, 32, 111, 102, 32, 116, 104,
-                 101, 32, 115, 121, 115, 116, 101, 109, 32, 119, 105, 108, 108, 32, 98, 101, 32,
-                 114, 101, 116, 117, 114, 110, 101, 100, 32, 98, 121, 32, 116, 104, 101, 32, 108,
-                 97, 110, 103, 117, 97, 103, 101, 32, 97, 98, 98, 114, 101, 118, 105, 97, 116,
-                 105, 111, 110, 46>>}
+                 101, 100, 32, 76, 97, 110, 103, 117, 97, 103, 101, 115, 26, 55, 85, 115, 101, 32,
+                 71, 101, 116, 83, 117, 112, 112, 111, 114, 116, 101, 100, 76, 97, 110, 103, 117,
+                 97, 103, 101, 115, 32, 111, 110, 32, 116, 104, 101, 32, 97, 100, 109, 105, 110,
+                 32, 115, 101, 114, 118, 105, 99, 101, 32, 105, 110, 115, 116, 101, 97, 100, 46,
+                 88, 1>>}
             ]
           },
           client_streaming: false,
@@ -5361,13 +5619,13 @@ defmodule Zitadel.Auth.V1.AuthService.Service do
               {50000, 2, "\n\rauthenticated"},
               {1042, 2,
                <<10, 12, 85, 115, 101, 114, 32, 80, 114, 111, 102, 105, 108, 101, 18, 14, 71, 101,
-                 116, 32, 77, 121, 32, 80, 114, 111, 102, 105, 108, 101, 26, 100, 82, 101, 116,
+                 116, 32, 77, 121, 32, 80, 114, 111, 102, 105, 108, 101, 26, 102, 82, 101, 116,
                  117, 114, 110, 115, 32, 116, 104, 101, 32, 112, 114, 111, 102, 105, 108, 101, 32,
                  105, 110, 102, 111, 114, 109, 97, 116, 105, 111, 110, 32, 111, 102, 32, 116, 104,
                  101, 32, 97, 117, 116, 104, 101, 110, 116, 105, 99, 97, 116, 101, 100, 32, 117,
                  115, 101, 114, 44, 32, 116, 104, 105, 115, 32, 105, 110, 99, 108, 117, 100, 101,
-                 115, 32, 102, 105, 114, 115, 116, 32, 110, 97, 109, 101, 44, 32, 108, 97, 115,
-                 116, 32, 110, 97, 109, 101, 44, 32, 101, 116, 99, 46>>}
+                 115, 32, 103, 105, 118, 101, 110, 32, 110, 97, 109, 101, 44, 32, 102, 97, 109,
+                 105, 108, 121, 32, 110, 97, 109, 101, 44, 32, 101, 116, 99, 46>>}
             ]
           },
           client_streaming: false,
@@ -5390,15 +5648,15 @@ defmodule Zitadel.Auth.V1.AuthService.Service do
               {50000, 2, "\n\rauthenticated"},
               {1042, 2,
                <<10, 12, 85, 115, 101, 114, 32, 80, 114, 111, 102, 105, 108, 101, 18, 17, 85, 112,
-                 100, 97, 116, 101, 32, 77, 121, 32, 80, 114, 111, 102, 105, 108, 101, 26, 126,
+                 100, 97, 116, 101, 32, 77, 121, 32, 80, 114, 111, 102, 105, 108, 101, 26, 128, 1,
                  67, 104, 97, 110, 103, 101, 32, 116, 104, 101, 32, 112, 114, 111, 102, 105, 108,
                  101, 32, 105, 110, 102, 111, 114, 109, 97, 116, 105, 111, 110, 32, 111, 102, 32,
                  116, 104, 101, 32, 97, 117, 116, 104, 101, 110, 116, 105, 99, 97, 116, 101, 100,
                  32, 117, 115, 101, 114, 46, 32, 84, 104, 105, 115, 32, 105, 110, 99, 108, 117,
                  100, 101, 115, 32, 105, 110, 102, 111, 114, 109, 97, 116, 105, 111, 110, 32, 108,
-                 105, 107, 101, 32, 102, 105, 114, 115, 116, 32, 110, 97, 109, 101, 44, 32, 108,
-                 97, 115, 116, 32, 110, 97, 109, 101, 44, 32, 108, 97, 110, 103, 117, 97, 103,
-                 101, 44, 32, 101, 116, 99, 46>>}
+                 105, 107, 101, 32, 103, 105, 118, 101, 110, 32, 110, 97, 109, 101, 44, 32, 102,
+                 97, 109, 105, 108, 121, 32, 110, 97, 109, 101, 44, 32, 108, 97, 110, 103, 117,
+                 97, 103, 101, 44, 32, 101, 116, 99, 46>>}
             ]
           },
           client_streaming: false,
@@ -5917,6 +6175,153 @@ defmodule Zitadel.Auth.V1.AuthService.Service do
           __unknown_fields__: []
         },
         %Google.Protobuf.MethodDescriptorProto{
+          name: "AddMyAuthFactorOTPSMS",
+          input_type: ".zitadel.auth.v1.AddMyAuthFactorOTPSMSRequest",
+          output_type: ".zitadel.auth.v1.AddMyAuthFactorOTPSMSResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<34, 30, 47, 117, 115, 101, 114, 115, 47, 109, 101, 47, 97, 117, 116, 104, 95,
+                 102, 97, 99, 116, 111, 114, 115, 47, 111, 116, 112, 95, 115, 109, 115, 58, 1,
+                 42>>},
+              {50000, 2, "\n\rauthenticated"},
+              {1042, 2,
+               <<10, 26, 85, 115, 101, 114, 32, 65, 117, 116, 104, 101, 110, 116, 105, 99, 97,
+                 116, 105, 111, 110, 32, 70, 97, 99, 116, 111, 114, 18, 31, 65, 100, 100, 32, 79,
+                 110, 101, 45, 84, 105, 109, 101, 45, 80, 97, 115, 115, 119, 111, 114, 100, 32,
+                 40, 79, 84, 80, 41, 32, 83, 77, 83, 26, 217, 1, 65, 100, 100, 32, 97, 32, 110,
+                 101, 119, 32, 79, 110, 101, 45, 84, 105, 109, 101, 45, 80, 97, 115, 115, 119,
+                 111, 114, 100, 32, 40, 79, 84, 80, 41, 32, 83, 77, 83, 32, 102, 97, 99, 116, 111,
+                 114, 32, 116, 111, 32, 116, 104, 101, 32, 97, 117, 116, 104, 101, 110, 116, 105,
+                 99, 97, 116, 101, 100, 32, 117, 115, 101, 114, 46, 32, 79, 84, 80, 32, 83, 77,
+                 83, 32, 119, 105, 108, 108, 32, 101, 110, 97, 98, 108, 101, 32, 116, 104, 101,
+                 32, 117, 115, 101, 114, 32, 116, 111, 32, 118, 101, 114, 105, 102, 121, 32, 97,
+                 32, 79, 84, 80, 32, 119, 105, 116, 104, 32, 116, 104, 101, 32, 108, 97, 116, 101,
+                 115, 116, 32, 118, 101, 114, 105, 102, 105, 101, 100, 32, 112, 104, 111, 110,
+                 101, 32, 110, 117, 109, 98, 101, 114, 46, 32, 84, 104, 101, 32, 112, 104, 111,
+                 110, 101, 32, 110, 117, 109, 98, 101, 114, 32, 104, 97, 115, 32, 116, 111, 32,
+                 98, 101, 32, 118, 101, 114, 105, 102, 105, 101, 100, 32, 116, 111, 32, 97, 100,
+                 100, 32, 116, 104, 101, 32, 115, 101, 99, 111, 110, 100, 32, 102, 97, 99, 116,
+                 111, 114, 46>>}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "RemoveMyAuthFactorOTPSMS",
+          input_type: ".zitadel.auth.v1.RemoveMyAuthFactorOTPSMSRequest",
+          output_type: ".zitadel.auth.v1.RemoveMyAuthFactorOTPSMSResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<42, 30, 47, 117, 115, 101, 114, 115, 47, 109, 101, 47, 97, 117, 116, 104, 95,
+                 102, 97, 99, 116, 111, 114, 115, 47, 111, 116, 112, 95, 115, 109, 115>>},
+              {50000, 2, "\n\rauthenticated"},
+              {1042, 2,
+               <<10, 26, 85, 115, 101, 114, 32, 65, 117, 116, 104, 101, 110, 116, 105, 99, 97,
+                 116, 105, 111, 110, 32, 70, 97, 99, 116, 111, 114, 18, 34, 82, 101, 109, 111,
+                 118, 101, 32, 79, 110, 101, 45, 84, 105, 109, 101, 45, 80, 97, 115, 115, 119,
+                 111, 114, 100, 32, 40, 79, 84, 80, 41, 32, 83, 77, 83, 26, 185, 1, 82, 101, 109,
+                 111, 118, 101, 32, 116, 104, 101, 32, 99, 111, 110, 102, 105, 103, 117, 114, 101,
+                 100, 32, 79, 110, 101, 45, 84, 105, 109, 101, 45, 80, 97, 115, 115, 119, 111,
+                 114, 100, 32, 40, 79, 84, 80, 41, 32, 83, 77, 83, 32, 102, 97, 99, 116, 111, 114,
+                 32, 111, 102, 32, 116, 104, 101, 32, 97, 117, 116, 104, 101, 110, 116, 105, 99,
+                 97, 116, 101, 100, 32, 117, 115, 101, 114, 46, 32, 65, 115, 32, 111, 110, 108,
+                 121, 32, 111, 110, 101, 32, 79, 84, 80, 32, 83, 77, 83, 32, 112, 101, 114, 32,
+                 117, 115, 101, 114, 32, 105, 115, 32, 97, 108, 108, 111, 119, 101, 100, 44, 32,
+                 116, 104, 101, 32, 117, 115, 101, 114, 32, 119, 105, 108, 108, 32, 110, 111, 116,
+                 32, 104, 97, 118, 101, 32, 79, 84, 80, 32, 83, 77, 83, 32, 97, 115, 32, 97, 32,
+                 115, 101, 99, 111, 110, 100, 45, 102, 97, 99, 116, 111, 114, 32, 97, 102, 116,
+                 101, 114, 119, 97, 114, 100, 46>>}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "AddMyAuthFactorOTPEmail",
+          input_type: ".zitadel.auth.v1.AddMyAuthFactorOTPEmailRequest",
+          output_type: ".zitadel.auth.v1.AddMyAuthFactorOTPEmailResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2,
+               <<34, 32, 47, 117, 115, 101, 114, 115, 47, 109, 101, 47, 97, 117, 116, 104, 95,
+                 102, 97, 99, 116, 111, 114, 115, 47, 111, 116, 112, 95, 101, 109, 97, 105, 108,
+                 58, 1, 42>>},
+              {50000, 2, "\n\rauthenticated"},
+              {1042, 2,
+               <<10, 26, 85, 115, 101, 114, 32, 65, 117, 116, 104, 101, 110, 116, 105, 99, 97,
+                 116, 105, 111, 110, 32, 70, 97, 99, 116, 111, 114, 18, 33, 65, 100, 100, 32, 79,
+                 110, 101, 45, 84, 105, 109, 101, 45, 80, 97, 115, 115, 119, 111, 114, 100, 32,
+                 40, 79, 84, 80, 41, 32, 69, 109, 97, 105, 108, 26, 207, 1, 65, 100, 100, 32, 97,
+                 32, 110, 101, 119, 32, 79, 110, 101, 45, 84, 105, 109, 101, 45, 80, 97, 115, 115,
+                 119, 111, 114, 100, 32, 40, 79, 84, 80, 41, 32, 69, 109, 97, 105, 108, 32, 102,
+                 97, 99, 116, 111, 114, 32, 116, 111, 32, 116, 104, 101, 32, 97, 117, 116, 104,
+                 101, 110, 116, 105, 99, 97, 116, 101, 100, 32, 117, 115, 101, 114, 46, 32, 79,
+                 84, 80, 32, 69, 109, 97, 105, 108, 32, 119, 105, 108, 108, 32, 101, 110, 97, 98,
+                 108, 101, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 116, 111, 32, 118, 101,
+                 114, 105, 102, 121, 32, 97, 32, 79, 84, 80, 32, 119, 105, 116, 104, 32, 116, 104,
+                 101, 32, 108, 97, 116, 101, 115, 116, 32, 118, 101, 114, 105, 102, 105, 101, 100,
+                 32, 101, 109, 97, 105, 108, 46, 32, 84, 104, 101, 32, 101, 109, 97, 105, 108, 32,
+                 104, 97, 115, 32, 116, 111, 32, 98, 101, 32, 118, 101, 114, 105, 102, 105, 101,
+                 100, 32, 116, 111, 32, 97, 100, 100, 32, 116, 104, 101, 32, 115, 101, 99, 111,
+                 110, 100, 32, 102, 97, 99, 116, 111, 114, 46>>}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
+          name: "RemoveMyAuthFactorOTPEmail",
+          input_type: ".zitadel.auth.v1.RemoveMyAuthFactorOTPEmailRequest",
+          output_type: ".zitadel.auth.v1.RemoveMyAuthFactorOTPEmailResponse",
+          options: %Google.Protobuf.MethodOptions{
+            deprecated: false,
+            idempotency_level: :IDEMPOTENCY_UNKNOWN,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {72_295_728, 2, "* /users/me/auth_factors/otp_email"},
+              {50000, 2, "\n\rauthenticated"},
+              {1042, 2,
+               <<10, 26, 85, 115, 101, 114, 32, 65, 117, 116, 104, 101, 110, 116, 105, 99, 97,
+                 116, 105, 111, 110, 32, 70, 97, 99, 116, 111, 114, 18, 36, 82, 101, 109, 111,
+                 118, 101, 32, 79, 110, 101, 45, 84, 105, 109, 101, 45, 80, 97, 115, 115, 119,
+                 111, 114, 100, 32, 40, 79, 84, 80, 41, 32, 69, 109, 97, 105, 108, 26, 191, 1, 82,
+                 101, 109, 111, 118, 101, 32, 116, 104, 101, 32, 99, 111, 110, 102, 105, 103, 117,
+                 114, 101, 100, 32, 79, 110, 101, 45, 84, 105, 109, 101, 45, 80, 97, 115, 115,
+                 119, 111, 114, 100, 32, 40, 79, 84, 80, 41, 32, 69, 109, 97, 105, 108, 32, 102,
+                 97, 99, 116, 111, 114, 32, 111, 102, 32, 116, 104, 101, 32, 97, 117, 116, 104,
+                 101, 110, 116, 105, 99, 97, 116, 101, 100, 32, 117, 115, 101, 114, 46, 32, 65,
+                 115, 32, 111, 110, 108, 121, 32, 111, 110, 101, 32, 79, 84, 80, 32, 69, 109, 97,
+                 105, 108, 32, 112, 101, 114, 32, 117, 115, 101, 114, 32, 105, 115, 32, 97, 108,
+                 108, 111, 119, 101, 100, 44, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 119,
+                 105, 108, 108, 32, 110, 111, 116, 32, 104, 97, 118, 101, 32, 79, 84, 80, 32, 69,
+                 109, 97, 105, 108, 32, 97, 115, 32, 97, 32, 115, 101, 99, 111, 110, 100, 45, 102,
+                 97, 99, 116, 111, 114, 32, 97, 102, 116, 101, 114, 119, 97, 114, 100, 46>>}
+            ]
+          },
+          client_streaming: false,
+          server_streaming: false,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.MethodDescriptorProto{
           name: "AddMyAuthFactorU2F",
           input_type: ".zitadel.auth.v1.AddMyAuthFactorU2FRequest",
           output_type: ".zitadel.auth.v1.AddMyAuthFactorU2FResponse",
@@ -6275,24 +6680,23 @@ defmodule Zitadel.Auth.V1.AuthService.Service do
               {50000, 2, "\n\rauthenticated"},
               {1042, 2,
                <<10, 26, 85, 115, 101, 114, 32, 65, 117, 116, 104, 111, 114, 105, 122, 97, 116,
-                 105, 111, 110, 115, 47, 71, 114, 97, 110, 116, 115, 18, 29, 76, 105, 115, 116,
-                 32, 77, 121, 32, 65, 117, 116, 104, 111, 114, 105, 122, 97, 116, 105, 111, 110,
-                 115, 47, 71, 114, 97, 110, 116, 115, 26, 252, 1, 82, 101, 116, 117, 114, 110,
-                 115, 32, 97, 32, 108, 105, 115, 116, 32, 111, 102, 32, 116, 104, 101, 32, 111,
-                 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 115, 32, 119, 104, 101, 114,
-                 101, 32, 116, 104, 101, 32, 97, 117, 116, 104, 101, 110, 116, 105, 99, 97, 116,
-                 101, 100, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 97, 110, 121, 32, 97,
-                 117, 116, 104, 111, 114, 105, 122, 97, 116, 105, 111, 110, 115, 47, 117, 115,
-                 101, 114, 32, 103, 114, 97, 110, 116, 115, 46, 32, 84, 104, 101, 32, 114, 101,
-                 113, 117, 101, 115, 116, 32, 105, 115, 32, 109, 97, 100, 101, 32, 105, 110, 32,
-                 116, 104, 101, 32, 99, 111, 110, 116, 101, 120, 116, 32, 111, 102, 32, 116, 104,
-                 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 112, 114, 111, 106,
-                 101, 99, 116, 46, 32, 84, 104, 105, 115, 32, 114, 101, 113, 117, 101, 115, 116,
-                 32, 99, 97, 110, 32, 98, 101, 32, 117, 115, 101, 100, 32, 105, 110, 32, 109, 117,
-                 108, 116, 105, 45, 116, 101, 110, 97, 110, 99, 121, 32, 97, 112, 112, 108, 105,
-                 99, 97, 116, 105, 111, 110, 115, 32, 116, 111, 32, 115, 104, 111, 119, 32, 116,
-                 104, 101, 32, 117, 115, 101, 114, 32, 97, 32, 116, 101, 110, 97, 110, 116, 32,
-                 115, 119, 105, 116, 99, 104, 101, 114, 46>>}
+                 105, 111, 110, 115, 47, 71, 114, 97, 110, 116, 115, 18, 21, 76, 105, 115, 116,
+                 32, 77, 121, 32, 79, 114, 103, 97, 110, 105, 122, 97, 116, 105, 111, 110, 115,
+                 26, 252, 1, 82, 101, 116, 117, 114, 110, 115, 32, 97, 32, 108, 105, 115, 116, 32,
+                 111, 102, 32, 116, 104, 101, 32, 111, 114, 103, 97, 110, 105, 122, 97, 116, 105,
+                 111, 110, 115, 32, 119, 104, 101, 114, 101, 32, 116, 104, 101, 32, 97, 117, 116,
+                 104, 101, 110, 116, 105, 99, 97, 116, 101, 100, 32, 117, 115, 101, 114, 32, 104,
+                 97, 115, 32, 97, 110, 121, 32, 97, 117, 116, 104, 111, 114, 105, 122, 97, 116,
+                 105, 111, 110, 115, 47, 117, 115, 101, 114, 32, 103, 114, 97, 110, 116, 115, 46,
+                 32, 84, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 32, 105, 115, 32, 109,
+                 97, 100, 101, 32, 105, 110, 32, 116, 104, 101, 32, 99, 111, 110, 116, 101, 120,
+                 116, 32, 111, 102, 32, 116, 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101,
+                 100, 32, 112, 114, 111, 106, 101, 99, 116, 46, 32, 84, 104, 105, 115, 32, 114,
+                 101, 113, 117, 101, 115, 116, 32, 99, 97, 110, 32, 98, 101, 32, 117, 115, 101,
+                 100, 32, 105, 110, 32, 109, 117, 108, 116, 105, 45, 116, 101, 110, 97, 110, 99,
+                 121, 32, 97, 112, 112, 108, 105, 99, 97, 116, 105, 111, 110, 115, 32, 116, 111,
+                 32, 115, 104, 111, 119, 32, 116, 104, 101, 32, 117, 115, 101, 114, 32, 97, 32,
+                 116, 101, 110, 97, 110, 116, 32, 115, 119, 105, 116, 99, 104, 101, 114, 46>>}
             ]
           },
           client_streaming: false,
@@ -6349,15 +6753,15 @@ defmodule Zitadel.Auth.V1.AuthService.Service do
               {50000, 2, "\n\rauthenticated"},
               {1042, 2,
                <<10, 26, 85, 115, 101, 114, 32, 65, 117, 116, 104, 111, 114, 105, 122, 97, 116,
-                 105, 111, 110, 115, 47, 71, 114, 97, 110, 116, 115, 18, 27, 76, 105, 115, 116,
-                 32, 77, 121, 32, 80, 114, 111, 106, 101, 99, 116, 32, 80, 101, 114, 109, 105,
-                 115, 115, 105, 111, 110, 115, 26, 103, 82, 101, 116, 117, 114, 110, 115, 32, 97,
-                 32, 108, 105, 115, 116, 32, 111, 102, 32, 114, 111, 108, 101, 115, 32, 102, 111,
-                 114, 32, 116, 104, 101, 32, 97, 117, 116, 104, 101, 110, 116, 105, 99, 97, 116,
-                 101, 100, 32, 117, 115, 101, 114, 32, 97, 110, 100, 32, 102, 111, 114, 32, 116,
-                 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 105, 110, 103, 32, 112, 114,
-                 111, 106, 101, 99, 116, 32, 40, 98, 97, 115, 101, 100, 32, 111, 110, 32, 116,
-                 104, 101, 32, 116, 111, 107, 101, 110, 41, 46>>}
+                 105, 111, 110, 115, 47, 71, 114, 97, 110, 116, 115, 18, 21, 76, 105, 115, 116,
+                 32, 77, 121, 32, 80, 114, 111, 106, 101, 99, 116, 32, 82, 111, 108, 101, 115, 26,
+                 103, 82, 101, 116, 117, 114, 110, 115, 32, 97, 32, 108, 105, 115, 116, 32, 111,
+                 102, 32, 114, 111, 108, 101, 115, 32, 102, 111, 114, 32, 116, 104, 101, 32, 97,
+                 117, 116, 104, 101, 110, 116, 105, 99, 97, 116, 101, 100, 32, 117, 115, 101, 114,
+                 32, 97, 110, 100, 32, 102, 111, 114, 32, 116, 104, 101, 32, 114, 101, 113, 117,
+                 101, 115, 116, 105, 110, 103, 32, 112, 114, 111, 106, 101, 99, 116, 32, 40, 98,
+                 97, 115, 101, 100, 32, 111, 110, 32, 116, 104, 101, 32, 116, 111, 107, 101, 110,
+                 41, 46>>}
             ]
           },
           client_streaming: false,
@@ -6380,12 +6784,12 @@ defmodule Zitadel.Auth.V1.AuthService.Service do
               {50000, 2, "\n\rauthenticated"},
               {1042, 2,
                <<10, 16, 85, 115, 101, 114, 32, 77, 101, 109, 98, 101, 114, 115, 104, 105, 112,
-                 115, 18, 27, 76, 105, 115, 116, 32, 77, 121, 32, 90, 73, 84, 65, 68, 69, 76, 32,
-                 80, 101, 114, 109, 105, 115, 115, 105, 111, 110, 115, 26, 66, 83, 104, 111, 119,
-                 32, 97, 108, 108, 32, 116, 104, 101, 32, 112, 101, 114, 109, 105, 115, 115, 105,
-                 111, 110, 115, 32, 109, 121, 32, 117, 115, 101, 114, 32, 104, 97, 115, 32, 105,
-                 110, 32, 90, 73, 84, 65, 68, 69, 76, 32, 40, 90, 73, 84, 65, 68, 69, 76, 32, 77,
-                 97, 110, 97, 103, 101, 114, 41, 46>>}
+                 115, 18, 29, 76, 105, 115, 116, 32, 77, 121, 32, 90, 73, 84, 65, 68, 69, 76, 32,
+                 77, 97, 110, 97, 103, 101, 114, 32, 82, 111, 108, 101, 115, 26, 71, 83, 104, 111,
+                 119, 32, 97, 108, 108, 32, 116, 104, 101, 32, 109, 97, 110, 97, 103, 101, 109,
+                 101, 110, 116, 32, 114, 111, 108, 101, 115, 32, 109, 121, 32, 117, 115, 101, 114,
+                 32, 104, 97, 115, 32, 105, 110, 32, 90, 73, 84, 65, 68, 69, 76, 32, 40, 90, 73,
+                 84, 65, 68, 69, 76, 32, 77, 97, 110, 97, 103, 101, 114, 41, 46>>}
             ]
           },
           client_streaming: false,
@@ -6644,6 +7048,30 @@ defmodule Zitadel.Auth.V1.AuthService.Service do
     :RemoveMyAuthFactorOTP,
     Zitadel.Auth.V1.RemoveMyAuthFactorOTPRequest,
     Zitadel.Auth.V1.RemoveMyAuthFactorOTPResponse
+  )
+
+  rpc(
+    :AddMyAuthFactorOTPSMS,
+    Zitadel.Auth.V1.AddMyAuthFactorOTPSMSRequest,
+    Zitadel.Auth.V1.AddMyAuthFactorOTPSMSResponse
+  )
+
+  rpc(
+    :RemoveMyAuthFactorOTPSMS,
+    Zitadel.Auth.V1.RemoveMyAuthFactorOTPSMSRequest,
+    Zitadel.Auth.V1.RemoveMyAuthFactorOTPSMSResponse
+  )
+
+  rpc(
+    :AddMyAuthFactorOTPEmail,
+    Zitadel.Auth.V1.AddMyAuthFactorOTPEmailRequest,
+    Zitadel.Auth.V1.AddMyAuthFactorOTPEmailResponse
+  )
+
+  rpc(
+    :RemoveMyAuthFactorOTPEmail,
+    Zitadel.Auth.V1.RemoveMyAuthFactorOTPEmailRequest,
+    Zitadel.Auth.V1.RemoveMyAuthFactorOTPEmailResponse
   )
 
   rpc(

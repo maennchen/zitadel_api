@@ -107,6 +107,12 @@ defmodule Zitadel.App.V1.OIDCGrantType do
           number: 3,
           options: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "OIDC_GRANT_TYPE_TOKEN_EXCHANGE",
+          number: 4,
+          options: nil,
+          __unknown_fields__: []
         }
       ],
       options: nil,
@@ -120,6 +126,7 @@ defmodule Zitadel.App.V1.OIDCGrantType do
   field(:OIDC_GRANT_TYPE_IMPLICIT, 1)
   field(:OIDC_GRANT_TYPE_REFRESH_TOKEN, 2)
   field(:OIDC_GRANT_TYPE_DEVICE_CODE, 3)
+  field(:OIDC_GRANT_TYPE_TOKEN_EXCHANGE, 4)
 end
 
 defmodule Zitadel.App.V1.OIDCAppType do
@@ -1263,7 +1270,11 @@ defmodule Zitadel.App.V1.OIDCConfig do
     deprecated: false
   )
 
-  field(:clock_skew, 17, type: Google.Protobuf.Duration, json_name: "clockSkew", deprecated: false)
+  field(:clock_skew, 17,
+    type: Google.Protobuf.Duration,
+    json_name: "clockSkew",
+    deprecated: false
+  )
 
   field(:additional_origins, 18,
     repeated: true,

@@ -1,3 +1,49 @@
+defmodule Zitadel.Policy.V1.ThemeMode do
+  use Protobuf, enum: true, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.EnumDescriptorProto{
+      name: "ThemeMode",
+      value: [
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "THEME_MODE_UNSPECIFIED",
+          number: 0,
+          options: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "THEME_MODE_AUTO",
+          number: 1,
+          options: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "THEME_MODE_DARK",
+          number: 2,
+          options: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "THEME_MODE_LIGHT",
+          number: 3,
+          options: nil,
+          __unknown_fields__: []
+        }
+      ],
+      options: nil,
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:THEME_MODE_UNSPECIFIED, 0)
+  field(:THEME_MODE_AUTO, 1)
+  field(:THEME_MODE_DARK, 2)
+  field(:THEME_MODE_LIGHT, 3)
+end
+
 defmodule Zitadel.Policy.V1.SecondFactorType do
   use Protobuf, enum: true, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 
@@ -23,6 +69,18 @@ defmodule Zitadel.Policy.V1.SecondFactorType do
           number: 2,
           options: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "SECOND_FACTOR_TYPE_OTP_EMAIL",
+          number: 3,
+          options: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "SECOND_FACTOR_TYPE_OTP_SMS",
+          number: 4,
+          options: nil,
+          __unknown_fields__: []
         }
       ],
       options: nil,
@@ -35,6 +93,8 @@ defmodule Zitadel.Policy.V1.SecondFactorType do
   field(:SECOND_FACTOR_TYPE_UNSPECIFIED, 0)
   field(:SECOND_FACTOR_TYPE_OTP, 1)
   field(:SECOND_FACTOR_TYPE_U2F, 2)
+  field(:SECOND_FACTOR_TYPE_OTP_EMAIL, 3)
+  field(:SECOND_FACTOR_TYPE_OTP_SMS, 4)
 end
 
 defmodule Zitadel.Policy.V1.MultiFactorType do
@@ -821,6 +881,20 @@ defmodule Zitadel.Policy.V1.LabelPolicy do
           json_name: "fontUrl",
           proto3_optional: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "theme_mode",
+          extendee: nil,
+          number: 19,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_ENUM,
+          type_name: ".zitadel.policy.v1.ThemeMode",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "themeMode",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
       nested_type: [],
@@ -864,6 +938,7 @@ defmodule Zitadel.Policy.V1.LabelPolicy do
   field(:logo_url_dark, 16, type: :string, json_name: "logoUrlDark", deprecated: false)
   field(:icon_url_dark, 17, type: :string, json_name: "iconUrlDark", deprecated: false)
   field(:font_url, 18, type: :string, json_name: "fontUrl")
+  field(:theme_mode, 19, type: Zitadel.Policy.V1.ThemeMode, json_name: "themeMode", enum: true)
 end
 
 defmodule Zitadel.Policy.V1.LoginPolicy do
@@ -908,7 +983,7 @@ defmodule Zitadel.Policy.V1.LoginPolicy do
             uninterpreted_option: [],
             __pb_extensions__: %{},
             __unknown_fields__: [
-              {1042, 2, "2Edefines if a user is allowed to log in with his username and password"}
+              {1042, 2, "2Adefines if a user is allowed to log in with username and password"}
             ]
           },
           oneof_index: nil,
@@ -1419,6 +1494,42 @@ defmodule Zitadel.Policy.V1.LoginPolicy do
           json_name: "disableLoginWithPhone",
           proto3_optional: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "force_mfa_local_only",
+          extendee: nil,
+          number: 22,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_BOOL,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<50, 133, 1, 105, 102, 32, 97, 99, 116, 105, 118, 97, 116, 101, 100, 44, 32, 111,
+                 110, 108, 121, 32, 108, 111, 99, 97, 108, 32, 97, 117, 116, 104, 101, 110, 116,
+                 105, 99, 97, 116, 101, 100, 32, 117, 115, 101, 114, 115, 32, 97, 114, 101, 32,
+                 102, 111, 114, 99, 101, 100, 32, 116, 111, 32, 117, 115, 101, 32, 77, 70, 65, 46,
+                 32, 65, 117, 116, 104, 101, 110, 116, 105, 99, 97, 116, 105, 111, 110, 32, 116,
+                 104, 114, 111, 117, 103, 104, 32, 73, 68, 80, 115, 32, 119, 111, 110, 39, 116,
+                 32, 112, 114, 111, 109, 112, 116, 32, 97, 32, 77, 70, 65, 32, 115, 116, 101, 112,
+                 32, 105, 110, 32, 116, 104, 101, 32, 108, 111, 103, 105, 110, 46>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "forceMfaLocalOnly",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
       nested_type: [],
@@ -1530,6 +1641,8 @@ defmodule Zitadel.Policy.V1.LoginPolicy do
     json_name: "disableLoginWithPhone",
     deprecated: false
   )
+
+  field(:force_mfa_local_only, 22, type: :bool, json_name: "forceMfaLocalOnly", deprecated: false)
 end
 
 defmodule Zitadel.Policy.V1.PasswordComplexityPolicy do
@@ -1781,12 +1894,7 @@ defmodule Zitadel.Policy.V1.PasswordAgePolicy do
             debug_redact: false,
             uninterpreted_option: [],
             __pb_extensions__: %{},
-            __unknown_fields__: [
-              {1042, 2,
-               <<50, 39, 77, 97, 120, 105, 109, 117, 109, 32, 100, 97, 121, 115, 32, 115, 105,
-                 110, 99, 101, 32, 108, 97, 115, 116, 32, 112, 97, 115, 115, 119, 111, 114, 100,
-                 32, 99, 104, 97, 110, 103, 101, 74, 5, 34, 51, 54, 53, 34>>}
-            ]
+            __unknown_fields__: [{1042, 2, <<74, 5, 34, 51, 54, 53, 34>>}]
           },
           oneof_index: nil,
           json_name: "maxAgeDays",
@@ -1812,14 +1920,7 @@ defmodule Zitadel.Policy.V1.PasswordAgePolicy do
             debug_redact: false,
             uninterpreted_option: [],
             __pb_extensions__: %{},
-            __unknown_fields__: [
-              {1042, 2,
-               <<50, 77, 68, 97, 121, 115, 32, 98, 101, 102, 111, 114, 101, 32, 116, 104, 101, 32,
-                 112, 97, 115, 115, 119, 111, 114, 100, 32, 101, 120, 112, 105, 114, 121, 32, 116,
-                 104, 101, 32, 117, 115, 101, 114, 32, 103, 101, 116, 115, 32, 110, 111, 116, 105,
-                 102, 105, 101, 100, 32, 116, 111, 32, 99, 104, 97, 110, 103, 101, 32, 116, 104,
-                 101, 32, 112, 97, 115, 115, 119, 111, 114, 100, 74, 4, 34, 49, 48, 34>>}
-            ]
+            __unknown_fields__: [{1042, 2, <<74, 4, 34, 49, 48, 34>>}]
           },
           oneof_index: nil,
           json_name: "expireWarnDays",
@@ -1834,21 +1935,7 @@ defmodule Zitadel.Policy.V1.PasswordAgePolicy do
           type: :TYPE_BOOL,
           type_name: nil,
           default_value: nil,
-          options: %Google.Protobuf.FieldOptions{
-            ctype: :STRING,
-            packed: nil,
-            deprecated: false,
-            lazy: false,
-            jstype: :JS_NORMAL,
-            weak: false,
-            unverified_lazy: false,
-            debug_redact: false,
-            uninterpreted_option: [],
-            __pb_extensions__: %{},
-            __unknown_fields__: [
-              {1042, 2, "26defines if the organization's admin changed the policy"}
-            ]
-          },
+          options: nil,
           oneof_index: nil,
           json_name: "isDefault",
           proto3_optional: nil,
@@ -1870,7 +1957,7 @@ defmodule Zitadel.Policy.V1.PasswordAgePolicy do
   field(:details, 1, type: Zitadel.V1.ObjectDetails)
   field(:max_age_days, 2, type: :uint64, json_name: "maxAgeDays", deprecated: false)
   field(:expire_warn_days, 3, type: :uint64, json_name: "expireWarnDays", deprecated: false)
-  field(:is_default, 4, type: :bool, json_name: "isDefault", deprecated: false)
+  field(:is_default, 4, type: :bool, json_name: "isDefault")
 end
 
 defmodule Zitadel.Policy.V1.LockoutPolicy do
@@ -1937,6 +2024,46 @@ defmodule Zitadel.Policy.V1.LockoutPolicy do
           __unknown_fields__: []
         },
         %Google.Protobuf.FieldDescriptorProto{
+          name: "max_otp_attempts",
+          extendee: nil,
+          number: 3,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_UINT64,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<50, 202, 1, 77, 97, 120, 105, 109, 117, 109, 32, 102, 97, 105, 108, 101, 100, 32,
+                 97, 116, 116, 101, 109, 112, 116, 115, 32, 102, 111, 114, 32, 97, 32, 115, 105,
+                 110, 103, 108, 101, 32, 79, 84, 80, 32, 116, 121, 112, 101, 32, 40, 84, 79, 84,
+                 80, 44, 32, 83, 77, 83, 44, 32, 69, 109, 97, 105, 108, 41, 32, 98, 101, 102, 111,
+                 114, 101, 32, 116, 104, 101, 32, 97, 99, 99, 111, 117, 110, 116, 32, 103, 101,
+                 116, 115, 32, 108, 111, 99, 107, 101, 100, 46, 32, 65, 116, 116, 101, 109, 112,
+                 116, 115, 32, 97, 114, 101, 32, 114, 101, 115, 101, 116, 32, 97, 115, 32, 115,
+                 111, 111, 110, 32, 97, 115, 32, 116, 104, 101, 32, 79, 84, 80, 32, 105, 115, 32,
+                 101, 110, 116, 101, 114, 101, 100, 32, 99, 111, 114, 114, 101, 99, 116, 108, 121,
+                 46, 32, 73, 102, 32, 115, 101, 116, 32, 116, 111, 32, 48, 32, 116, 104, 101, 32,
+                 97, 99, 99, 111, 117, 110, 116, 32, 119, 105, 108, 108, 32, 110, 101, 118, 101,
+                 114, 32, 98, 101, 32, 108, 111, 99, 107, 101, 100, 46, 74, 4, 34, 49, 48, 34>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "maxOtpAttempts",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
           name: "is_default",
           extendee: nil,
           number: 4,
@@ -1985,6 +2112,7 @@ defmodule Zitadel.Policy.V1.LockoutPolicy do
     deprecated: false
   )
 
+  field(:max_otp_attempts, 3, type: :uint64, json_name: "maxOtpAttempts", deprecated: false)
   field(:is_default, 4, type: :bool, json_name: "isDefault", deprecated: false)
 end
 
@@ -2136,6 +2264,102 @@ defmodule Zitadel.Policy.V1.PrivacyPolicy do
           json_name: "supportEmail",
           proto3_optional: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "docs_link",
+          extendee: nil,
+          number: 7,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<50, 49, 76, 105, 110, 107, 32, 116, 111, 32, 100, 111, 99, 117, 109, 101, 110,
+                 116, 97, 116, 105, 111, 110, 32, 116, 111, 32, 98, 101, 32, 115, 104, 111, 119,
+                 110, 32, 105, 110, 32, 116, 104, 101, 32, 99, 111, 110, 115, 111, 108, 101, 46,
+                 74, 26, 34, 104, 116, 116, 112, 115, 58, 47, 47, 122, 105, 116, 97, 100, 101,
+                 108, 46, 99, 111, 109, 47, 100, 111, 99, 115, 34>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "docsLink",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "custom_link",
+          extendee: nil,
+          number: 8,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<50, 76, 76, 105, 110, 107, 32, 116, 111, 32, 97, 110, 32, 101, 120, 116, 101,
+                 114, 110, 97, 108, 32, 114, 101, 115, 111, 117, 114, 99, 101, 32, 116, 104, 97,
+                 116, 32, 119, 105, 108, 108, 32, 98, 101, 32, 97, 118, 97, 105, 108, 97, 98, 108,
+                 101, 32, 116, 111, 32, 117, 115, 101, 114, 115, 32, 105, 110, 32, 116, 104, 101,
+                 32, 99, 111, 110, 115, 111, 108, 101, 46, 74, 23, 34, 104, 116, 116, 112, 115,
+                 58, 47, 47, 101, 120, 116, 101, 114, 110, 97, 108, 46, 108, 105, 110, 107, 34>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "customLink",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "custom_link_text",
+          extendee: nil,
+          number: 9,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               "2GThe button text that would be shown in console pointing to custom link.J\n\"External\""}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "customLinkText",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
       nested_type: [],
@@ -2156,6 +2380,9 @@ defmodule Zitadel.Policy.V1.PrivacyPolicy do
   field(:is_default, 4, type: :bool, json_name: "isDefault")
   field(:help_link, 5, type: :string, json_name: "helpLink", deprecated: false)
   field(:support_email, 6, type: :string, json_name: "supportEmail", deprecated: false)
+  field(:docs_link, 7, type: :string, json_name: "docsLink", deprecated: false)
+  field(:custom_link, 8, type: :string, json_name: "customLink", deprecated: false)
+  field(:custom_link_text, 9, type: :string, json_name: "customLinkText", deprecated: false)
 end
 
 defmodule Zitadel.Policy.V1.NotificationPolicy do

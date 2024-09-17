@@ -97,6 +97,59 @@ defmodule Zitadel.V1.ListQueryMethod do
   field(:LIST_QUERY_METHOD_IN, 0)
 end
 
+defmodule Zitadel.V1.TimestampQueryMethod do
+  use Protobuf, enum: true, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.EnumDescriptorProto{
+      name: "TimestampQueryMethod",
+      value: [
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "TIMESTAMP_QUERY_METHOD_EQUALS",
+          number: 0,
+          options: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "TIMESTAMP_QUERY_METHOD_GREATER",
+          number: 1,
+          options: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "TIMESTAMP_QUERY_METHOD_GREATER_OR_EQUALS",
+          number: 2,
+          options: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "TIMESTAMP_QUERY_METHOD_LESS",
+          number: 3,
+          options: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.EnumValueDescriptorProto{
+          name: "TIMESTAMP_QUERY_METHOD_LESS_OR_EQUALS",
+          number: 4,
+          options: nil,
+          __unknown_fields__: []
+        }
+      ],
+      options: nil,
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:TIMESTAMP_QUERY_METHOD_EQUALS, 0)
+  field(:TIMESTAMP_QUERY_METHOD_GREATER, 1)
+  field(:TIMESTAMP_QUERY_METHOD_GREATER_OR_EQUALS, 2)
+  field(:TIMESTAMP_QUERY_METHOD_LESS, 3)
+  field(:TIMESTAMP_QUERY_METHOD_LESS_OR_EQUALS, 4)
+end
+
 defmodule Zitadel.V1.ObjectDetails do
   use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
 

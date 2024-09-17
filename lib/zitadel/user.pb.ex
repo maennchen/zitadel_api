@@ -637,7 +637,12 @@ defmodule Zitadel.User.V1.User do
   field(:state, 3, type: Zitadel.User.V1.UserState, enum: true, deprecated: false)
   field(:user_name, 4, type: :string, json_name: "userName", deprecated: false)
 
-  field(:login_names, 5, repeated: true, type: :string, json_name: "loginNames", deprecated: false)
+  field(:login_names, 5,
+    repeated: true,
+    type: :string,
+    json_name: "loginNames",
+    deprecated: false
+  )
 
   field(:preferred_login_name, 6,
     type: :string,
@@ -698,6 +703,20 @@ defmodule Zitadel.User.V1.Human do
           json_name: "phone",
           proto3_optional: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "password_changed",
+          extendee: nil,
+          number: 4,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".google.protobuf.Timestamp",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "passwordChanged",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
       nested_type: [],
@@ -715,6 +734,7 @@ defmodule Zitadel.User.V1.Human do
   field(:profile, 1, type: Zitadel.User.V1.Profile)
   field(:email, 2, type: Zitadel.User.V1.Email)
   field(:phone, 3, type: Zitadel.User.V1.Phone)
+  field(:password_changed, 4, type: Google.Protobuf.Timestamp, json_name: "passwordChanged")
 end
 
 defmodule Zitadel.User.V1.Machine do
@@ -972,8 +992,8 @@ defmodule Zitadel.User.V1.Profile do
             __pb_extensions__: %{},
             __unknown_fields__: [
               {1042, 2,
-               <<50, 90, 97, 32, 117, 115, 101, 114, 32, 99, 97, 110, 32, 115, 101, 116, 32, 104,
-                 105, 115, 32, 100, 105, 115, 112, 108, 97, 121, 32, 110, 97, 109, 101, 44, 32,
+               <<50, 90, 97, 32, 117, 115, 101, 114, 32, 99, 97, 110, 32, 115, 101, 116, 32, 116,
+                 104, 101, 32, 100, 105, 115, 112, 108, 97, 121, 32, 110, 97, 109, 101, 44, 32,
                  105, 102, 32, 110, 111, 116, 104, 105, 110, 103, 32, 105, 115, 32, 115, 101, 116,
                  32, 90, 73, 84, 65, 68, 69, 76, 32, 99, 111, 109, 112, 117, 116, 101, 115, 32,
                  34, 102, 105, 114, 115, 116, 95, 110, 97, 109, 101, 32, 108, 97, 115, 116, 95,
@@ -1167,7 +1187,7 @@ defmodule Zitadel.User.V1.Email do
             __pb_extensions__: %{},
             __unknown_fields__: [
               {1042, 2,
-               "2QIs true if the user verified his email or if the email is managed outside ZITADEL"}
+               "2QIs true if the user verified the email or if the email is managed outside ZITADEL"}
             ]
           },
           oneof_index: nil,
@@ -1256,7 +1276,7 @@ defmodule Zitadel.User.V1.Phone do
             __pb_extensions__: %{},
             __unknown_fields__: [
               {1042, 2,
-               "2QIs true if the user verified his phone or if the phone is managed outside ZITADEL"}
+               "2QIs true if the user verified the phone or if the phone is managed outside ZITADEL"}
             ]
           },
           oneof_index: nil,
@@ -1414,6 +1434,76 @@ defmodule Zitadel.User.V1.SearchQuery do
           json_name: "loginNameQuery",
           proto3_optional: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "in_user_ids_query",
+          extendee: nil,
+          number: 10,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.user.v1.InUserIDQuery",
+          default_value: nil,
+          options: nil,
+          oneof_index: 0,
+          json_name: "inUserIdsQuery",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "or_query",
+          extendee: nil,
+          number: 11,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.user.v1.OrQuery",
+          default_value: nil,
+          options: nil,
+          oneof_index: 0,
+          json_name: "orQuery",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "and_query",
+          extendee: nil,
+          number: 12,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.user.v1.AndQuery",
+          default_value: nil,
+          options: nil,
+          oneof_index: 0,
+          json_name: "andQuery",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "not_query",
+          extendee: nil,
+          number: 13,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.user.v1.NotQuery",
+          default_value: nil,
+          options: nil,
+          oneof_index: 0,
+          json_name: "notQuery",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "in_user_emails_query",
+          extendee: nil,
+          number: 14,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.user.v1.InUserEmailsQuery",
+          default_value: nil,
+          options: nil,
+          oneof_index: 0,
+          json_name: "inUserEmailsQuery",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
       nested_type: [],
@@ -1478,6 +1568,299 @@ defmodule Zitadel.User.V1.SearchQuery do
     type: Zitadel.User.V1.LoginNameQuery,
     json_name: "loginNameQuery",
     oneof: 0
+  )
+
+  field(:in_user_ids_query, 10,
+    type: Zitadel.User.V1.InUserIDQuery,
+    json_name: "inUserIdsQuery",
+    oneof: 0
+  )
+
+  field(:or_query, 11, type: Zitadel.User.V1.OrQuery, json_name: "orQuery", oneof: 0)
+  field(:and_query, 12, type: Zitadel.User.V1.AndQuery, json_name: "andQuery", oneof: 0)
+  field(:not_query, 13, type: Zitadel.User.V1.NotQuery, json_name: "notQuery", oneof: 0)
+
+  field(:in_user_emails_query, 14,
+    type: Zitadel.User.V1.InUserEmailsQuery,
+    json_name: "inUserEmailsQuery",
+    oneof: 0
+  )
+end
+
+defmodule Zitadel.User.V1.OrQuery do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "OrQuery",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "queries",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_REPEATED,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.user.v1.SearchQuery",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<50, 23, 116, 104, 101, 32, 115, 117, 98, 32, 113, 117, 101, 114, 105, 101, 115,
+                 32, 116, 111, 32, 39, 79, 82, 39>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "queries",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:queries, 1, repeated: true, type: Zitadel.User.V1.SearchQuery, deprecated: false)
+end
+
+defmodule Zitadel.User.V1.AndQuery do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "AndQuery",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "queries",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_REPEATED,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.user.v1.SearchQuery",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<50, 24, 116, 104, 101, 32, 115, 117, 98, 32, 113, 117, 101, 114, 105, 101, 115,
+                 32, 116, 111, 32, 39, 65, 78, 68, 39>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "queries",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:queries, 1, repeated: true, type: Zitadel.User.V1.SearchQuery, deprecated: false)
+end
+
+defmodule Zitadel.User.V1.NotQuery do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "NotQuery",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "query",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.user.v1.SearchQuery",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<50, 29, 116, 104, 101, 32, 115, 117, 98, 32, 113, 117, 101, 114, 121, 32, 116,
+                 111, 32, 110, 101, 103, 97, 116, 101, 32, 40, 78, 79, 84, 41>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "query",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:query, 1, type: Zitadel.User.V1.SearchQuery, deprecated: false)
+end
+
+defmodule Zitadel.User.V1.InUserIDQuery do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "InUserIDQuery",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "user_ids",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_REPEATED,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<50, 31, 116, 104, 101, 32, 105, 100, 115, 32, 111, 102, 32, 116, 104, 101, 32,
+                 117, 115, 101, 114, 115, 32, 116, 111, 32, 105, 110, 99, 108, 117, 100, 101, 74,
+                 41, 91, 34, 54, 57, 54, 50, 57, 48, 50, 51, 57, 48, 54, 52, 56, 56, 51, 51, 52,
+                 34, 44, 34, 54, 57, 54, 50, 50, 51, 54, 54, 48, 49, 50, 51, 53, 53, 54, 54, 50,
+                 34, 93>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "userIds",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:user_ids, 1, repeated: true, type: :string, json_name: "userIds", deprecated: false)
+end
+
+defmodule Zitadel.User.V1.InUserEmailsQuery do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "InUserEmailsQuery",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "user_emails",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_REPEATED,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               "2\"the emails of the users to includeJ'[\"test@example.com\",\"test@example.org\"]"}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "userEmails",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:user_emails, 1,
+    repeated: true,
+    type: :string,
+    json_name: "userEmails",
+    deprecated: false
   )
 end
 
@@ -1927,13 +2310,9 @@ defmodule Zitadel.User.V1.EmailQuery do
             __unknown_fields__: [
               {1071, 2, <<114, 3, 24, 200, 1>>},
               {1042, 2,
-               <<50, 84, 101, 109, 97, 105, 108, 32, 97, 100, 100, 114, 101, 115, 115, 32, 111,
-                 102, 32, 116, 104, 101, 32, 117, 115, 101, 114, 46, 32, 40, 115, 112, 101, 99,
-                 58, 32, 104, 116, 116, 112, 115, 58, 47, 47, 116, 111, 111, 108, 115, 46, 105,
-                 101, 116, 102, 46, 111, 114, 103, 47, 104, 116, 109, 108, 47, 114, 102, 99, 50,
-                 56, 50, 50, 35, 115, 101, 99, 116, 105, 111, 110, 45, 51, 46, 52, 46, 49, 41, 74,
-                 18, 34, 103, 105, 103, 105, 64, 122, 105, 116, 97, 100, 101, 108, 46, 99, 111,
-                 109, 34, 120, 200, 1>>}
+               <<50, 25, 101, 109, 97, 105, 108, 32, 97, 100, 100, 114, 101, 115, 115, 32, 111,
+                 102, 32, 116, 104, 101, 32, 117, 115, 101, 114, 74, 18, 34, 103, 105, 103, 105,
+                 64, 122, 105, 116, 97, 100, 101, 108, 46, 99, 111, 109, 34, 120, 200, 1>>}
             ]
           },
           oneof_index: nil,
@@ -2235,11 +2614,7 @@ defmodule Zitadel.User.V1.AuthFactor do
             debug_redact: false,
             uninterpreted_option: [],
             __pb_extensions__: %{},
-            __unknown_fields__: [
-              {1042, 2,
-               <<50, 23, 111, 110, 101, 32, 116, 121, 112, 101, 32, 117, 115, 101, 32, 79, 84, 80,
-                 32, 111, 114, 32, 85, 50, 70>>}
-            ]
+            __unknown_fields__: [{1042, 2, "2)one type use OTP, OTPSMS, OTPEmail or U2F"}]
           },
           oneof_index: 0,
           json_name: "otp",
@@ -2265,14 +2640,62 @@ defmodule Zitadel.User.V1.AuthFactor do
             debug_redact: false,
             uninterpreted_option: [],
             __pb_extensions__: %{},
-            __unknown_fields__: [
-              {1042, 2,
-               <<50, 23, 111, 110, 101, 32, 116, 121, 112, 101, 32, 117, 115, 101, 32, 79, 84, 80,
-                 32, 111, 114, 32, 85, 50, 70>>}
-            ]
+            __unknown_fields__: [{1042, 2, "2)one type use OTP, OTPSMS, OTPEmail or U2F"}]
           },
           oneof_index: 0,
           json_name: "u2f",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "otp_sms",
+          extendee: nil,
+          number: 4,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.user.v1.AuthFactorOTPSMS",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1042, 2, "2)one type use OTP, OTPSMS, OTPEmail or U2F"}]
+          },
+          oneof_index: 0,
+          json_name: "otpSms",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "otp_email",
+          extendee: nil,
+          number: 5,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.user.v1.AuthFactorOTPEmail",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1042, 2, "2)one type use OTP, OTPSMS, OTPEmail or U2F"}]
+          },
+          oneof_index: 0,
+          json_name: "otpEmail",
           proto3_optional: nil,
           __unknown_fields__: []
         }
@@ -2296,6 +2719,20 @@ defmodule Zitadel.User.V1.AuthFactor do
   field(:state, 1, type: Zitadel.User.V1.AuthFactorState, enum: true, deprecated: false)
   field(:otp, 2, type: Zitadel.User.V1.AuthFactorOTP, oneof: 0, deprecated: false)
   field(:u2f, 3, type: Zitadel.User.V1.AuthFactorU2F, oneof: 0, deprecated: false)
+
+  field(:otp_sms, 4,
+    type: Zitadel.User.V1.AuthFactorOTPSMS,
+    json_name: "otpSms",
+    oneof: 0,
+    deprecated: false
+  )
+
+  field(:otp_email, 5,
+    type: Zitadel.User.V1.AuthFactorOTPEmail,
+    json_name: "otpEmail",
+    oneof: 0,
+    deprecated: false
+  )
 end
 
 defmodule Zitadel.User.V1.AuthFactorOTP do
@@ -2305,6 +2742,48 @@ defmodule Zitadel.User.V1.AuthFactorOTP do
     # credo:disable-for-next-line
     %Google.Protobuf.DescriptorProto{
       name: "AuthFactorOTP",
+      field: [],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+end
+
+defmodule Zitadel.User.V1.AuthFactorOTPSMS do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "AuthFactorOTPSMS",
+      field: [],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+end
+
+defmodule Zitadel.User.V1.AuthFactorOTPEmail do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "AuthFactorOTPEmail",
       field: [],
       nested_type: [],
       enum_type: [],
@@ -4533,6 +5012,91 @@ defmodule Zitadel.User.V1.UserGrant do
           json_name: "userType",
           proto3_optional: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "granted_org_id",
+          extendee: nil,
+          number: 20,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<74, 19, 34, 54, 57, 54, 50, 57, 48, 50, 51, 57, 48, 54, 52, 56, 56, 51, 51, 52,
+                 34>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "grantedOrgId",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "granted_org_name",
+          extendee: nil,
+          number: 21,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1042, 2, "J\t\"ZITADEL\""}]
+          },
+          oneof_index: nil,
+          json_name: "grantedOrgName",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "granted_org_domain",
+          extendee: nil,
+          number: 22,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1042, 2,
+               <<74, 15, 34, 122, 105, 116, 97, 100, 101, 108, 46, 99, 108, 111, 117, 100, 34>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "grantedOrgDomain",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
       nested_type: [],
@@ -4577,6 +5141,10 @@ defmodule Zitadel.User.V1.UserGrant do
     enum: true,
     deprecated: false
   )
+
+  field(:granted_org_id, 20, type: :string, json_name: "grantedOrgId", deprecated: false)
+  field(:granted_org_name, 21, type: :string, json_name: "grantedOrgName", deprecated: false)
+  field(:granted_org_domain, 22, type: :string, json_name: "grantedOrgDomain", deprecated: false)
 end
 
 defmodule Zitadel.User.V1.UserGrantQuery do

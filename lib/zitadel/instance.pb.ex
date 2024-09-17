@@ -509,6 +509,20 @@ defmodule Zitadel.Instance.V1.Query do
           json_name: "idQuery",
           proto3_optional: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "domain_query",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.instance.v1.DomainsQuery",
+          default_value: nil,
+          options: nil,
+          oneof_index: 0,
+          json_name: "domainQuery",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
       nested_type: [],
@@ -536,6 +550,12 @@ defmodule Zitadel.Instance.V1.Query do
   oneof(:query, 0)
 
   field(:id_query, 1, type: Zitadel.Instance.V1.IdsQuery, json_name: "idQuery", oneof: 0)
+
+  field(:domain_query, 2,
+    type: Zitadel.Instance.V1.DomainsQuery,
+    json_name: "domainQuery",
+    oneof: 0
+  )
 end
 
 defmodule Zitadel.Instance.V1.IdsQuery do
@@ -589,6 +609,66 @@ defmodule Zitadel.Instance.V1.IdsQuery do
   end
 
   field(:ids, 1, repeated: true, type: :string, deprecated: false)
+end
+
+defmodule Zitadel.Instance.V1.DomainsQuery do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "DomainsQuery",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "domains",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_REPEATED,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [
+              {1071, 2, <<146, 1, 10, 16, 20, 34, 6, 114, 4, 16, 1, 24, 100>>},
+              {1042, 2,
+               <<50, 52, 82, 101, 116, 117, 114, 110, 32, 116, 104, 101, 32, 105, 110, 115, 116,
+                 97, 110, 99, 101, 115, 32, 116, 104, 97, 116, 32, 104, 97, 118, 101, 32, 116,
+                 104, 101, 32, 114, 101, 113, 117, 101, 115, 116, 101, 100, 32, 100, 111, 109, 97,
+                 105, 110, 115, 74, 47, 91, 34, 109, 121, 45, 105, 110, 115, 116, 97, 99, 101, 46,
+                 122, 105, 116, 97, 100, 101, 108, 46, 99, 108, 111, 117, 100, 34, 44, 32, 34, 97,
+                 117, 116, 104, 46, 99, 117, 115, 116, 111, 109, 46, 99, 111, 109, 34, 93, 160, 1,
+                 20>>}
+            ]
+          },
+          oneof_index: nil,
+          json_name: "domains",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:domains, 1, repeated: true, type: :string, deprecated: false)
 end
 
 defmodule Zitadel.Instance.V1.Domain do
@@ -965,4 +1045,123 @@ defmodule Zitadel.Instance.V1.DomainPrimaryQuery do
   end
 
   field(:primary, 1, type: :bool, deprecated: false)
+end
+
+defmodule Zitadel.Instance.V1.TrustedDomain do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "TrustedDomain",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "details",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.v1.ObjectDetails",
+          default_value: nil,
+          options: nil,
+          oneof_index: nil,
+          json_name: "details",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "domain",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1042, 2, "J\r\"zitadel.com\""}]
+          },
+          oneof_index: nil,
+          json_name: "domain",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:details, 1, type: Zitadel.V1.ObjectDetails)
+  field(:domain, 2, type: :string, deprecated: false)
+end
+
+defmodule Zitadel.Instance.V1.TrustedDomainSearchQuery do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "TrustedDomainSearchQuery",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "domain_query",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.instance.v1.DomainQuery",
+          default_value: nil,
+          options: nil,
+          oneof_index: 0,
+          json_name: "domainQuery",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [
+        %Google.Protobuf.OneofDescriptorProto{
+          name: "query",
+          options: %Google.Protobuf.OneofOptions{
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 0, 1}]
+          },
+          __unknown_fields__: []
+        }
+      ],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  oneof(:query, 0)
+
+  field(:domain_query, 1,
+    type: Zitadel.Instance.V1.DomainQuery,
+    json_name: "domainQuery",
+    oneof: 0
+  )
 end

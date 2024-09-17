@@ -797,6 +797,32 @@ defmodule Zitadel.Text.V1.LoginCustomText do
           json_name: "isDefault",
           proto3_optional: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "linking_user_prompt_text",
+          extendee: nil,
+          number: 37,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_MESSAGE,
+          type_name: ".zitadel.text.v1.LinkingUserPromptScreenText",
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: true,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: []
+          },
+          oneof_index: nil,
+          json_name: "linkingUserPromptText",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
       nested_type: [],
@@ -970,6 +996,12 @@ defmodule Zitadel.Text.V1.LoginCustomText do
   )
 
   field(:is_default, 36, type: :bool, json_name: "isDefault")
+
+  field(:linking_user_prompt_text, 37,
+    type: Zitadel.Text.V1.LinkingUserPromptScreenText,
+    json_name: "linkingUserPromptText",
+    deprecated: true
+  )
 end
 
 defmodule Zitadel.Text.V1.SelectAccountScreenText do
@@ -4714,6 +4746,32 @@ defmodule Zitadel.Text.V1.PasswordChangeScreenText do
           json_name: "nextButtonText",
           proto3_optional: nil,
           __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "expired_description",
+          extendee: nil,
+          number: 8,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 3, 24, 244, 3>>}]
+          },
+          oneof_index: nil,
+          json_name: "expiredDescription",
+          proto3_optional: nil,
+          __unknown_fields__: []
         }
       ],
       nested_type: [],
@@ -4741,6 +4799,12 @@ defmodule Zitadel.Text.V1.PasswordChangeScreenText do
 
   field(:cancel_button_text, 6, type: :string, json_name: "cancelButtonText", deprecated: false)
   field(:next_button_text, 7, type: :string, json_name: "nextButtonText", deprecated: false)
+
+  field(:expired_description, 8,
+    type: :string,
+    json_name: "expiredDescription",
+    deprecated: false
+  )
 end
 
 defmodule Zitadel.Text.V1.PasswordChangeDoneScreenText do
@@ -6580,6 +6644,137 @@ defmodule Zitadel.Text.V1.RegistrationOrgScreenText do
   field(:privacy_confirm, 15, type: :string, json_name: "privacyConfirm", deprecated: false)
   field(:privacy_link_text, 17, type: :string, json_name: "privacyLinkText", deprecated: false)
   field(:save_button_text, 19, type: :string, json_name: "saveButtonText", deprecated: false)
+end
+
+defmodule Zitadel.Text.V1.LinkingUserPromptScreenText do
+  use Protobuf, syntax: :proto3, protoc_gen_elixir_version: "0.12.0"
+
+  def descriptor do
+    # credo:disable-for-next-line
+    %Google.Protobuf.DescriptorProto{
+      name: "LinkingUserPromptScreenText",
+      field: [
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "title",
+          extendee: nil,
+          number: 1,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 3, 24, 200, 1>>}]
+          },
+          oneof_index: nil,
+          json_name: "title",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "description",
+          extendee: nil,
+          number: 2,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 3, 24, 244, 3>>}]
+          },
+          oneof_index: nil,
+          json_name: "description",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "link_button_text",
+          extendee: nil,
+          number: 3,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 2, 24, 100>>}]
+          },
+          oneof_index: nil,
+          json_name: "linkButtonText",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        },
+        %Google.Protobuf.FieldDescriptorProto{
+          name: "other_button_text",
+          extendee: nil,
+          number: 4,
+          label: :LABEL_OPTIONAL,
+          type: :TYPE_STRING,
+          type_name: nil,
+          default_value: nil,
+          options: %Google.Protobuf.FieldOptions{
+            ctype: :STRING,
+            packed: nil,
+            deprecated: false,
+            lazy: false,
+            jstype: :JS_NORMAL,
+            weak: false,
+            unverified_lazy: false,
+            debug_redact: false,
+            uninterpreted_option: [],
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1071, 2, <<114, 2, 24, 100>>}]
+          },
+          oneof_index: nil,
+          json_name: "otherButtonText",
+          proto3_optional: nil,
+          __unknown_fields__: []
+        }
+      ],
+      nested_type: [],
+      enum_type: [],
+      extension_range: [],
+      extension: [],
+      options: nil,
+      oneof_decl: [],
+      reserved_range: [],
+      reserved_name: [],
+      __unknown_fields__: []
+    }
+  end
+
+  field(:title, 1, type: :string, deprecated: false)
+  field(:description, 2, type: :string, deprecated: false)
+  field(:link_button_text, 3, type: :string, json_name: "linkButtonText", deprecated: false)
+  field(:other_button_text, 4, type: :string, json_name: "otherButtonText", deprecated: false)
 end
 
 defmodule Zitadel.Text.V1.LinkingUserDoneScreenText do
